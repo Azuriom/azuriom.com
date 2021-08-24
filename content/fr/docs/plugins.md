@@ -7,7 +7,7 @@ title: Plugins
 ## Introduction
 
 Un plugin vous permet d'ajouter de nouvelles fonctionnalités à votre site, de
-nombreux plugins sont disponibles sur notre [Market](https://azuriom.com/market)
+nombreux plugins sont disponibles sur notre [Market](https://market.azuriom.com)
 mais vous pouvez en créer un si vous n'en trouvez pas un qui correspond à vos
 besoins.
 

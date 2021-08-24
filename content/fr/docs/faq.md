@@ -102,7 +102,7 @@ Vous pouvez activer la compatibilité ipv4/ipv6 dans les paramètres du plugin v
 pour résoudre ce problème.
 
 Si vous utilisez Cloudflare, pensez également à installer le plugin
-[Cloudflare Support](https://azuriom.com/market/resources/12).
+[Cloudflare Support](https://market.azuriom.com/resources/12).
 
 ### Changer les identifiants de la base de données
 

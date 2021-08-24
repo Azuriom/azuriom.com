@@ -101,7 +101,7 @@ You can enable ipv4/ipv6 compatibility in the vote plugin settings
 to solve this issue.
 
 If you use Cloudflare, also consider installing the plugin
-[Cloudflare Support](https://azuriom.com/market/resources/12).
+[Cloudflare Support](https://market.azuriom.com/resources/12).
 
 ### Change the database credentials
 

@@ -27,7 +27,7 @@ to = "https://discord.gg/VKpSJrV"
 
 [[redirects]]
 from = "/market/*"
-to = "https://azuriom.com/market/:splat"
+to = "https://market.azuriom.com/:splat"
 
 [[redirects]]
 from = "/api/download"
