@@ -1,0 +1,89 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary-gradient">
+    <div class="container">
+        <a class="navbar-brand" href="{{ absLangURL "" }}">
+            <img src="{{ absURL "assets/svg/logo-white.svg" }}" height="45" alt="Azuriom">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar">
+            <!-- Left Side Of Navbar -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link {{ if .IsHome }}active{{ end }}" href="{{ absLangURL "/" }}">
+                        {{ i18n "nav.home" }}
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {{ if eq .Title (i18n "nav.download") }}active{{ end }}" href="{{ absLangURL "download" }}">
+                        {{ i18n "nav.download" }}
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {{ if eq .Type "docs" }}active{{ end }}" href="{{ absLangURL "docs" }}">
+                        {{ i18n "nav.docs" }}
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="https://azuriom.com/market">
+                        {{ i18n "nav.extensions" }}
+                    </a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a id="demoDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ i18n "nav.demo" }}
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="demoDropdown">
+                        <a class="dropdown-item" href="https://demo.azuriom.com/" target="_blank" rel="noopener noreferrer">
+                            {{ i18n "nav.demoMC" }}
+                        </a>
+
+                        <a class="dropdown-item" href="https://demo-steam.azuriom.com/" target="_blank" rel="noopener noreferrer">
+                            {{ i18n "nav.demoSteam" }}
+                        </a>
+                    </div>
+                </li>
+            </ul>
+
+            <!-- Right Side Of Navbar -->
+            <ul class="navbar-nav ms-auto flex-row">
+                <li class="nav-item">
+                    <a href="https://github.com/Azuriom" target="_blank" rel="noopener noreferrer" title="GitHub" class="nav-link ps-0 ps-lg-3 pe-3">
+                        {{ partial "icon.html" "github" }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://azuriom.com/discord" target="_blank" rel="noopener noreferrer" title="Discord" class="nav-link pe-3">
+                        {{ partial "icon.html" "discord" }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://twitter.com/{{ .Param "twitter" }}" target="_blank" rel="noopener noreferrer" title="Twitter" class="nav-link pe-3">
+                        {{ partial "icon.html" "twitter" }}
+                    </a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a id="langDropdown" class="nav-link dropdown-toggle px-3" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="{{ printf "assets/svg/country/%s.svg" .Site.Language.Lang | absURL }}" class="svg country" alt="{{ .Site.Language.LanguageName }}">
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="langDropdown">
+                        {{ range .AllTranslations }}
+                        <a class="dropdown-item" href="{{ partial "permalink.html" . }}">
+                            <img src="{{ printf "assets/svg/country/%s.svg" .Language.Lang | absURL }}" class="svg" alt="{{ .Language.LanguageName }}">
+                            {{ .Language.LanguageName }}
+                        </a>
+                        {{ end }}
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,74 @@
+[build]
+command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
+publish = "public"
+
+[build.environment]
+HUGO_VERSION = "0.87.0"
+HUGO_UGLYURLS = "true"
+
+[context.deploy-preview]
+command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
+
+[context.branch-deploy]
+command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
+
+[[headers]]
+for = "/*"
+[headers.values]
+X-Frame-Options = "DENY"
+X-XSS-Protection = "1; mode=block"
+X-Content-Type-Options = "nosniff"
+Referrer-Policy = "strict-origin-when-cross-origin"
+Content-Security-Policy = "default-src 'none'; base-uri 'self'; connect-src 'self' https://api.github.com; font-src 'self'; img-src 'self'; script-src 'self'; style-src 'self';"
+
+[[redirects]]
+from = "/discord"
+to = "https://discord.gg/VKpSJrV"
+
+[[redirects]]
+from = "/market/*"
+to = "https://azuriom.com/market/:splat"
+
+[[redirects]]
+from = "/api/download"
+to = "https://azuriom.com/api/download"
+
+[[redirects]]
+from = "/api/updates"
+to = "https://azuriom.com/api/updates"
+
+[[redirects]]
+from = "/en/*"
+to = "/en/404.html"
+status = 404
+
+[[redirects]]
+from = "/fr/*"
+to = "/fr/404.html"
+status = 404
+
+[[redirects]]
+from = "/"
+to = "/fr"
+# TODO use Language when possible,
+#  see https://answers.netlify.com/t/language-based-redirect-only-works-when-1-browser-language-set/4252
+conditions = { Country = ["fr"] }
+force = true
+status = 302
+
+[[redirects]]
+from = "/"
+to = "/en"
+force = true
+status = 302
+
+[[redirects]]
+from = "/*"
+to = "/fr/:splat"
+conditions = { Country = ["fr"] }
+status = 302
+
+[[redirects]]
+from = "/*"
+to = "/en/:splat"
+status = 302

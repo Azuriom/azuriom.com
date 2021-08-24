@@ -1,0 +1,33 @@
+{{ define "main" }}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <img src="{{ absURL "assets/svg/azlink.svg" }}" alt="Azuriom" class="img-fluid mb-4 mx-md-4">
+
+        <h2 class="title-divider">{{ i18n "azlink.title" }}</h2>
+
+        <p>{{ i18n "azlink.info" }}</p>
+
+        <h3 class="title-divider">{{ i18n "azlink.download" }}</h3>
+
+        <p>{{ i18n "azlink.supported" }}</p>
+
+        <p>{{ i18n "azlink.sources" (dict "github" (absURL "https://github.com/Azuriom/AzLink")) | safeHTML }}</p>
+
+        <div class="text-center">
+            <a href="https://azuriom.s3.fr-par.scw.cloud/AzLink.jar" class="btn btn-primary" download>
+                {{ partial "icon.html" "download" }} AzLink
+            </a>
+
+            <a href="https://azuriom.s3.fr-par.scw.cloud/AzLink-Legacy.jar" class="btn btn-primary" download>
+                {{ partial "icon.html" "download" }} AzLink Legacy
+            </a>
+
+            <br class="mb-4">
+
+            <a href="https://azuriom.s3.fr-par.scw.cloud/AzLink-PocketMine.phar" class="btn btn-secondary" download>
+                {{ partial "icon.html" "download" }} AzLink PocketMine
+            </a>
+        </div>
+    </div>
+</div>
+{{ end }}

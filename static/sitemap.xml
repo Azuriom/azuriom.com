@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://azuriom.com/</loc>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://azuriom.com/en"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://azuriom.com/fr"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://azuriom.com/"/>
+    </url>
+    <url>
+        <loc>https://azuriom.com/download</loc>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://azuriom.com/en/download"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://azuriom.com/fr/download"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://azuriom.com/download"/>
+    </url>
+    <url>
+        <loc>https://azuriom.com/docs</loc>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://azuriom.com/en/docs"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://azuriom.com/fr/docs"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://azuriom.com/docs"/>
+    </url>
+    <url>
+        <loc>https://azuriom.com/market</loc>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://azuriom.com/support-us</loc>
+        <priority>0.5</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://azuriom.com/en/support-us"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://azuriom.com/fr/support-us"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://azuriom.com/support-us"/>
+    </url>
+
+    <url>
+        <loc>https://azuriom.com/en</loc>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://azuriom.com/en"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://azuriom.com/fr"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://azuriom.com/"/>
+    </url>
+    <url>
+        <loc>https://azuriom.com/en/download</loc>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://azuriom.com/en/download"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://azuriom.com/fr/download"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://azuriom.com/download"/>
+    </url>
+    <url>
+        <loc>https://azuriom.com/en/docs</loc>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://azuriom.com/en/docs"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://azuriom.com/fr/docs"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://azuriom.com/docs"/>
+    </url>
+    <url>
+        <loc>https://azuriom.com/en/support-us</loc>
+        <priority>0.5</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://azuriom.com/en/support-us"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://azuriom.com/fr/support-us"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://azuriom.com/support-us"/>
+    </url>
+
+    <url>
+        <loc>https://azuriom.com/fr</loc>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://azuriom.com/en"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://azuriom.com/fr"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://azuriom.com/"/>
+    </url>
+    <url>
+        <loc>https://azuriom.com/fr/download</loc>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://azuriom.com/en/download"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://azuriom.com/fr/download"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://azuriom.com/download"/>
+    </url>
+    <url>
+        <loc>https://azuriom.com/fr/docs</loc>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://azuriom.com/en/docs"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://azuriom.com/fr/docs"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://azuriom.com/docs"/>
+    </url>
+    <url>
+        <loc>https://azuriom.com/fr/support-us</loc>
+        <priority>0.5</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://azuriom.com/en/support-us"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://azuriom.com/fr/support-us"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://azuriom.com/support-us"/>
+    </url>
+</urlset>

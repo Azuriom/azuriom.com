@@ -1,0 +1,158 @@
+{{ define "title" }}{{ i18n "home.header.title" }}{{ end }}
+
+{{ define "body" }}
+<section id="home" class="home-hero">
+    <header>
+        {{ partial "navbar.html" . }}
+    </header>
+
+    <div class="position-relative">
+        <div class="container">
+            <div class="row align-items-center py-5 hero-wrapper">
+                <div class="col-md-5 mb-3">
+                    <h1 class="mb-4">
+                        <img src="{{ absURL "assets/svg/logo-text-white.svg" }}" alt="Azuriom" class="logo">
+                    </h1>
+
+                    <h2 class="mb-4">{{ i18n "home.header.heading" }}
+                        <span data-typed="{{ i18n "home.header.typed" }}">{{ i18n "home.header.typedFallback" }}</span>
+                    </h2>
+
+                    <p class="lead mb-4">{{ i18n "home.header.subtitle" }}</p>
+
+                    <a href="{{ absLangURL "download" }}" class="btn btn-success btn-lg home-button text-white text-uppercase rounded-pill">
+                        {{ partial "icon.html" "download" }} {{ i18n "nav.download" }}
+                    </a>
+
+                    <ul class="list-inline social-icons text-white mt-4 mb-0">
+                        <li class="list-inline-item me-4">
+                            <a href="https://github.com/Azuriom" target="_blank" rel="noopener noreferrer" title="GitHub">
+                                {{ partial "icon.html" "github" }}
+                            </a>
+                        </li>
+                        <li class="list-inline-item me-4">
+                            <a href="https://azuriom.com/discord" target="_blank" rel="noopener noreferrer" title="Discord">
+                                {{ partial "icon.html" "discord" }}
+                            </a>
+                        </li>
+                        <li class="list-inline-item me-4">
+                            <a href="https://twitter.com/{{ .Param "twitter" }}" target="_blank" rel="noopener noreferrer" title="Twitter">
+                                {{ partial "icon.html" "twitter" }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-7" data-aos="fade-left" data-aos-delay="75">
+                    <img src="{{ absURL "assets/img/home.png" }}" alt="Azuriom" class="img-fluid float-animation">
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-waves">
+            <svg viewBox="0 0 1000 90" xmlns="http://www.w3.org/2000/svg" fill="#fff">
+                <path d="M1000,53.893c-5.811,-2.777 -11.849,-5.257 -17.717,-7.315c-23.556,-8.258 -53.919,-11.928 -80.808,-7.291c-41.443,7.191 -64.629,31.319 -104.135,41.089c-34.75,8.58 -75.994,4.563 -111.713,-2.802c-69.471,-14.333 -135.695,-31.021 -212.601,-27.525c-42.156,1.91 -82.887,9.621 -120.03,20.334c-38.31,11.059 -83.684,26.458 -127.805,14.457c-37.541,-10.242 -57.081,-32.757 -91.831,-45.131c-25.977,-9.249 -59.189,-12.572 -89.752,-9.001c-15.694,1.834 -30.591,5.504 -43.608,10.563l0,48.9l1000,0l0,-36.278Z"/>
+                <path opacity="0.4" d="M438.248,90c-2.421,-1.652 -4.843,-3.276 -7.235,-4.899c-57.281,-38.168 -126.211,-57.85 -194.571,-55.629c-64.8,2.137 -127.179,24.439 -180.956,60.5l382.762,0l0,0.028Z"/>
+                <path opacity="0.4" d="M1000,71.314c-33.468,-27.125 -68.794,-47.564 -113.741,-40.658c-31.731,4.874 -56.619,23.28 -84.533,36.369c-36.259,16.988 -64.686,-4.706 -97.129,-19.299c-43.779,-19.661 -97.869,-14.314 -136.92,13.534c-12.077,8.633 -23.641,19.494 -35.662,28.74l467.985,0l0,-18.686Z"/>
+                <path opacity="0.4" d="M1000,55.451c-6.152,-0.666 -23.544,14.253 -29.988,14.674c-20.793,1.356 -29.337,-14.373 -50.256,-10.473c-20.105,3.748 -35.599,13.315 -56.192,16.151c-7.911,1.088 -15.664,1.488 -23.289,1.324c-58.588,-1.26 -109.545,-35.852 -165.699,-47.943c-57.509,-12.383 -118.435,-1.678 -174.263,15.441c-27.043,8.287 -54.505,18.167 -82.231,25.125c-30.532,7.662 -61.384,11.78 -92.344,6.325c-41.586,-7.326 -76.393,-31.056 -114.817,-46.645c-68.105,-27.676 -140.424,-27.059 -210.921,-13.665l0,73.95l1000,0l0,-34.264Z"/>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="section">
+    <div class="container aos-init aos-animate" data-aos="zoom-in">
+        <h2 class="title-divider">{{ i18n "home.about.title" }}</h2>
+
+        <p>{{ i18n "home.about.description1" | safeHTML }}</p>
+        <p>{{ i18n "home.about.description2" }}</p>
+
+        <h3 class="title-divider mt-5">{{ i18n "home.about.gamesTitle" }}</h3>
+
+        <p>{{ i18n "home.about.games" | safeHTML }}</p>
+    </div>
+</section>
+
+<div>
+    <svg viewBox="0 0 1000 70" xmlns="http://www.w3.org/2000/svg" fill="#f7f7f7" class="section-waves">
+        <path d="M439.407,12.801c-80.921,15.363 -167.082,18.455 -248.277,2.849c-80.448,-15.463 -119.602,-14.391 -191.13,-14.391l0,68.741l1000,0l0,-68.741c-93.992,-8.581 -127.476,35.688 -278.561,19.139c-151.084,-16.548 -201.114,-22.958 -282.035,-7.597l0.003,0Z"></path>
+    </svg>
+</div>
+
+<section id="features" class="section bg-light text-center features">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 feature" data-aos="zoom-in" data-aos-delay="50">
+                <img class="svg" src="{{ absURL "assets/svg/rocket.svg" }}" alt="Rocket">
+                <h3>{{ i18n "home.features.modern.title" }}</h3>
+                <p>{{ i18n "home.features.modern.desc" }}</p>
+            </div>
+            <div class="col-md-3 feature" data-aos="zoom-in" data-aos-delay="200">
+                <img class="svg" src="{{ absURL "assets/svg/guarantee.svg" }}" alt="Guarantee">
+                <h3>{{ i18n "home.features.reliable.title" }}</h3>
+                <p>{{ i18n "home.features.reliable.desc" }}</p>
+            </div>
+            <div class="col-md-3 feature" data-aos="zoom-in" data-aos-delay="350">
+                <img class="svg" src="{{ absURL "assets/svg/speed-up.svg" }}" alt="Speed up">
+                <h3>{{ i18n "home.features.fast.title" }}</h3>
+                <p>{{ i18n "home.features.fast.desc" }}</p>
+            </div>
+            <div class="col-md-3 feature" data-aos="zoom-in" data-aos-delay="500">
+                <img class="svg" src="{{ absURL "assets/svg/key.svg" }}" alt="Key">
+                <h3>{{ i18n "home.features.secure.title" }}</h3>
+                <p>{{ i18n "home.features.secure.desc" }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div>
+    <svg viewBox="0 0 1000 70" xmlns="http://www.w3.org/2000/svg" fill="#f7f7f7" class="section-waves-reversed">
+        <path d="M430.384,47.909c-80.92,-12.748 -115.959,-16.648 -197.154,-3.698c-80.447,12.831 -161.702,12.831 -233.23,12.831l0,-57.042l1000,0l0,57.042c-93.992,7.12 -125.071,-27.464 -276.155,-13.732c-151.084,13.732 -212.54,17.346 -293.461,4.599Z"></path>
+    </svg>
+</div>
+
+<section id="screen-1" class="section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-4 text-center" data-aos="fade-up-right">
+                <img src="{{ absURL "assets/svg/code.svg" }}" alt="Screen 1" class="img-fluid float-animation">
+            </div>
+            <div class="col-md-8" data-aos="fade-left">
+                <h2 class="title-divider">{{ i18n "home.desc1.title" }}</h2>
+
+                <p>{{ i18n "home.desc1.description1" }}</p>
+                <p>{{ i18n "home.desc1.description2" }}</p>
+                <p>{{ i18n "home.desc1.description3" }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div>
+    <svg viewBox="0 0 1000 70" xmlns="http://www.w3.org/2000/svg" fill="#f7f7f7" class="section-waves">
+        <path d="M439.407,12.801c-80.921,15.363 -167.082,18.455 -248.277,2.849c-80.448,-15.463 -119.602,-14.391 -191.13,-14.391l0,68.741l1000,0l0,-68.741c-93.992,-8.581 -127.476,35.688 -278.561,19.139c-151.084,-16.548 -201.114,-22.958 -282.035,-7.597l0.003,0Z"></path>
+    </svg>
+</div>
+
+<svg viewBox="0 0 1000 70" xmlns="http://www.w3.org/2000/svg" fill="#f7f7f7" class="section-waves">
+    <path d="M439.407,12.801c-80.921,15.363 -167.082,18.455 -248.277,2.849c-80.448,-15.463 -119.602,-14.391 -191.13,-14.391l0,68.741l1000,0l0,-68.741c-93.992,-8.581 -127.476,35.688 -278.561,19.139c-151.084,-16.548 -201.114,-22.958 -282.035,-7.597l0.003,0Z"></path>
+</svg>
+
+<section id="screen-2" class="section bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8" data-aos="fade-right">
+                <h2 class="title-divider">{{ i18n "home.desc2.title" }}</h2>
+
+                <p>{{ i18n "home.desc2.description1" }}</p>
+                <p>{{ i18n "home.desc2.description2" }}</p>
+            </div>
+            <div class="col-md-4 text-center" data-aos="fade-up-left">
+                <img src="{{ absURL "assets/svg/support.svg" }}" alt="Screen 2" class="img-fluid float-animation">
+            </div>
+        </div>
+    </div>
+</section>
+{{ partial "footer.html" . }}
+{{ end }}

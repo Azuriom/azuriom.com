@@ -1,0 +1,27 @@
+{{ define "main" }}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <h2 class="title-divider">{{ i18n "support.title" }}</h2>
+
+        <p>{{ i18n "support.description1" }}</p>
+
+        <p>{{ i18n "support.description2" }}</p>
+
+        <p class="mb-5">{{ i18n "support.description3" }}</p>
+
+        <div class="row text-center">
+            <div class="col-md-6">
+                <a href="https://donorbox.org/azuriom" class="btn btn-primary btn-lg">
+                    {{ partial "icon.html" "heart" }} {{ i18n "support.donate" }}
+                </a>
+            </div>
+
+            <div class="col-md-6">
+                <a href="https://github.com/Azuriom/Azuriom" class="btn btn-secondary btn-lg">
+                    {{ partial "icon.html" "star" }} {{ i18n "support.star" }}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

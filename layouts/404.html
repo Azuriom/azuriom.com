@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div class="row justify-content-center align-items-center">
+    <div class="col-md-4">
+        <h1 class="title-divider mb-4 display-1 fw-bold">404</h1>
+
+        <h2 class="mb-4">{{ i18n "errors.notFound.title" }}</h2>
+
+        <p class="mb-4">{{ i18n "errors.notFound.info" }}</p>
+
+        <a href="{{ .Site.BaseURL | absLangURL }}" class="btn btn-primary">{{ i18n "nav.home" }}</a>
+    </div>
+
+    <div class="col-md-4">
+        <img src="{{ absURL "assets/svg/error.svg" }}" class="float-animation img-fluid" alt="Error">
+    </div>
+</div>
+{{ end }}

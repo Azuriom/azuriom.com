@@ -1,0 +1,17 @@
+{
+  "name": "azuriom.com",
+  "version": "1.0.0",
+  "description": "The Azuriom website",
+  "scripts": {
+    "build": "hugo --gc --minify",
+    "serve": "hugo server"
+  },
+  "author": "Azuriom",
+  "license": "MIT",
+  "devDependencies": {
+    "@popperjs/core": "^2.9.2",
+    "bootstrap": "^5.0.0",
+    "bootstrap-icons": "^1.4.1",
+    "typed.js": "^2.0.12"
+  }
+}

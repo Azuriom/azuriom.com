@@ -1,0 +1,29 @@
+// Typography
+// $font-family-sans-serif: 'Open Sans', sans-serif;
+$line-height-base: 1.6;
+$headings-font-weight: 600;
+$spacer: 1rem;
+$link-decoration: none;
+
+// Colors
+//$blue: #3490dc;
+$blue: #034ce2;
+$indigo: #6574cd;
+$purple: #9561e2;
+$pink: #f66d9b;
+$red: #e3342f;
+$orange: #f6993f;
+$yellow: #ffed4a;
+$green: #38c172;
+$teal: #4dc0b5;
+$cyan: #6cb2eb;
+$white: #fff;
+
+// Navbar
+$navbar-padding-y: $spacer;
+$navbar-nav-link-padding-x: 1rem;
+$navbar-dark-color: rgba($white, .6);
+
+// Buttons
+$btn-padding-y: .55rem;
+$btn-padding-x: 1rem;

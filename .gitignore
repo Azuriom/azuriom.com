@@ -1,0 +1,15 @@
+# JetBrains
+.idea/
+*.iml
+*.iws
+
+# Visual Studio Code
+.vscode/
+.history
+
+# npm
+/node_modules/
+
+# Hugo
+/public/
+/resources/_gen/

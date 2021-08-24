@@ -1,0 +1,21 @@
+{{ define "main" }}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <img src="{{ absURL "assets/svg/logo-text.svg" }}" alt="Azuriom" class="img-fluid mb-4 mx-md-4">
+
+        <h2 class="title-divider">{{ i18n "download.title" }}</h2>
+
+        <p>{{ i18n "download.docs" (dict "docs" (absURL "docs")) | safeHTML }}</p>
+
+        <p>{{ i18n "download.support" (dict "discord" (absURL "discord")) | safeHTML }}</p>
+
+        <p>{{ i18n "download.sources" (dict "github" (absURL "https://github.com/Azuriom/Azuriom")) | safeHTML }}</p>
+
+        <div class="text-center">
+            <a href="https://azuriom.s3.fr-par.scw.cloud/AzuriomInstaller.zip" target="_blank" class="btn btn-primary mb-3">
+                {{ partial "icon.html" "download" }} <span class="azuriom-last-version"><span class="spinner-border spinner-border-sm" role="status"></span> ...</span>
+            </a>
+        </div>
+    </div>
+</div>
+{{ end }}

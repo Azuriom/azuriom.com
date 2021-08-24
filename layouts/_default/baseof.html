@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Meta -->
+  <title>{{ block "title" . }}{{ .Title }} | Azuriom{{ end }}</title>
+  <meta name="description" content="{{ block "description" . }}{{ i18n "meta.desc" }}{{ end }}">
+  <meta name="keywords" content="Azuriom, CMS Minecraft, game, CMS, Minecraft, Hytale, garrysmod, ark, rust, open-source, free, fast, secure">
+  <meta name="author" content="Azuriom">
+  <meta name="theme-color" content="#004de6">
+  <link rel="icon" href="{{ absURL "assets/img/logo.png" }}">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@Azuriom">
+  <meta name="twitter:creator" content="@Azuriom">
+  <meta name="twitter:title" content="{{ .Title }}">
+  <meta name="twitter:description" content="{{ i18n "meta.desc" }}">
+  <meta name="twitter:image" content="{{ absURL "assets/img/banner.png" }}">
+
+  <meta property="og:title" content="{{ .Title }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ partial "permalink.html" . }}">
+  <meta property="og:site_name" content="Azuriom">
+  <meta property="og:description" content="{{ i18n "meta.desc" }}">
+  <meta property="og:locale" content="{{ .Param "code" }}">
+  <meta property="og:image" content="{{ absURL "assets/img/logo.png" }}">
+  {{ block "meta" . }}{{ end -}}
+
+  <!-- Locales -->
+  {{- range .AllTranslations }}
+  <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ partial "permalink.html" . }}">
+  {{- end }}
+  <link rel="alternate" hreflang="x-default" href="{{ replace (replace .Permalink ".html" "") (printf "/%s" .Site.Language.Lang) "" }}">
+
+  {{- $js := resources.Get "js/app.js" | js.Build (dict "targetPath" "assets/js/app.js" "target" "es2015") -}}
+  {{- $style := resources.Get "scss/app.scss" | resources.ToCSS (dict "targetPath" "assets/css/app.css") -}}
+  {{- if hugo.IsProduction -}}
+    {{ $js = $js | resources.Minify }}
+    {{ $style = $style | resources.Minify }}
+  {{- end }}
+  <!-- Scripts -->
+  <script src="{{ $js.Permalink }}" defer></script>
+  {{- block "scripts" . }}{{ end -}}
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="{{ $style.Permalink }}">
+  {{- block "styles" . }}{{ end -}}
+</head>
+<body>
+
+{{ block "body" . }}
+<div class="page-wrapper">
+  <header class="bg-primary-gradient">
+    {{ partial "navbar.html" . }}
+  </header>
+
+  <main class="container content">
+    {{ block "main" . }}
+    {{ end }}
+  </main>
+</div>
+
+<footer>
+  {{ partial "footer.html" . }}
+</footer>
+{{ end }}
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+.markdown-content {
+    hr {
+        border-top: 0.3em solid #e1e4e8;
+        margin: 24px 0;
+    }
+
+    input {
+        font: inherit;
+        margin: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-bottom: 16px;
+        margin-top: 24px;
+    }
+
+    h1 {
+        font-size: 2em;
+        margin: .67em 0;
+    }
+
+    h1,
+    h2 {
+        border-bottom: 1px solid #eaecef;
+        padding-bottom: .3em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.25em;
+    }
+
+    h3,
+    h4 {
+        font-weight: 600;
+    }
+
+    h4 {
+        font-size: 1em;
+    }
+
+    h5 {
+        font-size: .875em;
+    }
+
+    h6 {
+        font-size: .85em;
+    }
+
+    img {
+        background: #fff;
+        box-sizing: content-box;
+        max-width: 100%;
+    }
+
+    blockquote {
+        color: #6a737d;
+        border-left: .25em solid #dfe2e5;
+        padding-left: 1em;
+    }
+
+    blockquote:first-child {
+        margin-top: 0;
+    }
+
+    blockquote:last-child {
+        margin-bottom: 0;
+    }
+
+    code {
+        background: rgba(27, 31, 35, .05);
+        border-radius: 3px;
+        padding: .2em .4em;
+        font-size: 82%;
+    }
+
+    pre {
+        background: #f6f8fa;
+        border-radius: 3px;
+        padding: 1rem;
+    }
+
+    pre code {
+        font-size: inherit;
+        background: transparent;
+        padding: 0;
+    }
+
+    ol,
+    ul {
+        padding-left: 2em;
+    }
+
+    ol ol,
+    ul ol {
+        list-style-type: lower-roman;
+    }
+
+    ol ol ol,
+    ol ul ol,
+    ul ol ol,
+    ul ul ol {
+        list-style-type: lower-alpha;
+    }
+
+    li + li {
+        margin-top: .25em;
+    }
+
+    table {
+        display: block;
+        overflow: auto;
+        width: 100%;
+        border-spacing: 0;
+    }
+
+    table th {
+        font-weight: 600;
+    }
+
+    table td,
+    table th {
+        border: 1px solid #dfe2e5;
+        padding: 6px 13px;
+    }
+
+    table tr {
+        background: #fff;
+        border-top: 1px solid #c6cbd1;
+    }
+
+    table tr:nth-child(2n) {
+        background: #f6f8fa;
+    }
+
+    td,
+    th {
+        padding: 0;
+    }
+
+    .heading-permalink {
+        opacity: 0.75;
+        margin-right: 0.2em;
+
+        &::before {
+            content: '#';
+        }
+    }
+
+    h1:hover .heading-permalink,
+    h2:hover .heading-permalink,
+    h3:hover .heading-permalink,
+    h4:hover .heading-permalink,
+    h5:hover .heading-permalink,
+    h6:hover .heading-permalink {
+        opacity: 1;
+    }
+}
