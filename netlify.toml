@@ -19,7 +19,7 @@ X-Frame-Options = "DENY"
 X-XSS-Protection = "1; mode=block"
 X-Content-Type-Options = "nosniff"
 Referrer-Policy = "strict-origin-when-cross-origin"
-#Content-Security-Policy = "default-src 'none'; base-uri 'self'; connect-src 'self' https://api.github.com; font-src 'self'; img-src 'self'; script-src 'self'; style-src 'self';"
+Content-Security-Policy = "default-src 'none'; base-uri 'self'; connect-src 'self' https://api.github.com; font-src 'self'; img-src 'self' data:; script-src 'self'; style-src 'self';"
 
 [[redirects]]
 from = "/discord"
@@ -31,11 +31,11 @@ to = "https://market.azuriom.com/:splat"
 
 [[redirects]]
 from = "/api/download"
-to = "https://azuriom.com/api/download"
+to = "https://market.azuriom.com/api/download"
 
 [[redirects]]
 from = "/api/updates"
-to = "https://azuriom.com/api/updates"
+to = "https://market.azuriom.com/api/updates"
 
 [[redirects]]
 from = "/en/*"
