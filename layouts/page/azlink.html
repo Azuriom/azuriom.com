@@ -13,7 +13,7 @@
 
         <p>{{ i18n "azlink.sources" (dict "github" (absURL "https://github.com/Azuriom/AzLink")) | safeHTML }}</p>
 
-        <div class="text-center">
+        <div class="text-center mb-3">
             <a href="https://azuriom.s3.fr-par.scw.cloud/AzLink.jar" class="btn btn-primary" download>
                 {{ partial "icon.html" "download" }} AzLink
             </a>
@@ -21,9 +21,9 @@
             <a href="https://azuriom.s3.fr-par.scw.cloud/AzLink-Legacy.jar" class="btn btn-primary" download>
                 {{ partial "icon.html" "download" }} AzLink Legacy
             </a>
+        </div>
 
-            <br class="mb-4">
-
+        <div class="text-center">
             <a href="https://azuriom.s3.fr-par.scw.cloud/AzLink-PocketMine.phar" class="btn btn-secondary" download>
                 {{ partial "icon.html" "download" }} AzLink PocketMine
             </a>

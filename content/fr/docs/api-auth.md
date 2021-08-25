@@ -10,7 +10,7 @@ AzAuth est une api qui permet d'authentifier les utilisateurs d'un site sous Azu
 ## Téléchargement
 
 Les sources d'AzAuth sont disponibles sur [GitHub](https://github.com/Azuriom/AzAuth)
-et le jar peut être téléchargé [ici](https://azuriom.com/storage/azauth-1.0-SNAPSHOT.jar).
+et le jar peut être téléchargé [ici](https://azuriom.s3.fr-par.scw.cloud/azauth-1.0-SNAPSHOT.jar).
 
 Si vous utilisez un gestionnaire de dépendances, vous pouvez ajouter AzAuth comme
 dépendance de la façon suivante :

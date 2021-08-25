@@ -8,12 +8,6 @@ layout: single
 
 ## Introduction
 
-{{< info >}}
-If you prefer, you can also use this unofficial
-[auto-install script](https://github.com/AzuriomCommunity/Script-AutoInstall)
-which will install all the prerequisites automatically.
-{{< /info >}}
-
 [Azuriom](https://azuriom.com/) is the **next generation** game CMS,
  it's **free** and **open-source**, and is a **modern**, **reliable**, **fast and secure**
 alternative to existing CMS, so you can have the **best web experience possible**.

@@ -13,7 +13,7 @@ nav:
 footer:
   about: "About us"
   aboutDescription: "Azuriom est un CMS de jeux dernière génération, gratuit et open-source, qui débuté en août 2019 avec pour objectif d\'être une alternative moderne, fiable, rapide et sécurisée par rapport aux CMS existants afin de vous proposer la meilleure expérience web possible pour votre serveur Minecraft, Garry\'s Mod, Rust, Ark, FiveM et bien d\'autres."
-  copyright: "Copyright &copy; 2019-{{ .year }} Azuriom - Tous droits réservés. Fait avec {{ .love }} par Azuriom."
+  copyright: "Copyright &copy; 2019-{{ .year }} Azuriom - Tous droits réservés. Fait avec&nbsp;{{ .love }} par Azuriom."
   partners: "Partenaires"
   links: "Liens"
   supportUs: "Nous soutenir"
