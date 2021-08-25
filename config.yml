@@ -23,3 +23,8 @@ languages:
     params:
       code: fr_FR
       twitter: AzuriomFR
+  nl:
+    languageName: Dutch
+    contentDir: content/nl
+    params:
+      code: nl_NL

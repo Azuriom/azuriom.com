@@ -48,11 +48,23 @@ to = "/fr/404.html"
 status = 404
 
 [[redirects]]
+from = "/nl/*"
+to = "/nl/404.html"
+status = 404
+
+[[redirects]]
 from = "/"
 to = "/fr"
 # TODO use Language when possible,
 #  see https://answers.netlify.com/t/language-based-redirect-only-works-when-1-browser-language-set/4252
 conditions = { Country = ["fr"] }
+force = true
+status = 302
+
+[[redirects]]
+from = "/"
+to = "/nl"
+conditions = { Country = ["nl"] }
 force = true
 status = 302
 
@@ -66,6 +78,12 @@ status = 302
 from = "/*"
 to = "/fr/:splat"
 conditions = { Country = ["fr"] }
+status = 302
+
+[[redirects]]
+from = "/*"
+to = "/nl/:splat"
+conditions = { Country = ["nl"] }
 status = 302
 
 [[redirects]]
