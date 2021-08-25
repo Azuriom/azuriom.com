@@ -12,7 +12,7 @@ nav:
 
 footer:
   about: "About us"
-  aboutDescription: "Azuriom is the next generation game CMS, it\'s free and open-source, and is a modern, reliable, fast and secure alternative to existing CMS so you can have the best web experience possible for your website on Minecraft, Garry\'s Mod, Ark, Rust and many other games."
+  aboutDescription: "Azuriom is the next generation game CMS, it\'s free, open-source, and is a modern, reliable, fast and secure alternative to existing CMS so you can have the best web experience possible for your website on Minecraft, Garry\'s Mod, Ark, Rust and many other games."
   copyright: "Copyright &copy; 2019-{{ .year }} Azuriom - All rights reserved. Made with&nbsp;{{ .love }} by Azuriom."
   partners: "Partners"
   links: "Links"
@@ -22,13 +22,13 @@ home:
   header:
     title: "Azuriom | The next-generation gaming website"
     subtitle: "The next generation of gaming website for your server, used by hundreds of websites."
-    heading: "A game CMS"
+    heading: "A game CMS that is"
     typed: "free and open source.|fast and secure.|modern and reliable."
     typedFallback: "free and open source, fast, secure, modern and reliable."
 
   about:
     title: "What is Azuriom"
-    description1: "Azuriom is the <strong>next generation</strong> game CMS, it\'s <strong>free</strong> and <strong>open-source</strong>, and is a <strong>modern, reliable, fast and secure</strong> alternative to existing CMS so you can have the <strong>best web experience possible</strong>."
+    description1: "Azuriom is the <strong>next generation</strong> game CMS, it\'s <strong>free</strong>, <strong>open-source</strong>, and is a <strong>modern, reliable, fast and secure</strong> alternative to existing CMS so you can have the <strong>best web experience possible</strong>."
     description2: "Azuriom is the ideal choice for your website on Minecraft, Garry\'s Mod, Rust, FiveM, Ark and many others games."
     gamesTitle: "Supported games"
     games: "Azuriom is a <strong>Minecraft CMS</strong>, but not only! In addition to Minecraft, it also supports <strong>Garry\'s Mod, Ark, Rust, FiveM, CS:GO and Team Fortress 2</strong>!"
