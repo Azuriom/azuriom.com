@@ -1,6 +1,16 @@
-window.Popper = require('@popperjs/core');
+import Cookies from 'js-cookie'
+import Typed from 'typed.js';
+
 window.bootstrap = require('bootstrap');
-const Typed = require('typed.js');
+
+document.querySelectorAll('.locale-selector [data-locale]').forEach(function (el) {
+   el.addEventListener('click', function () {
+       Cookies.set('nf_country', el.dataset['locale'], {
+           expires: 30,
+           secure: true,
+       });
+   });
+});
 
 document.querySelectorAll('.azuriom-last-version').forEach(function (el) {
     fetch('https://api.github.com/repos/Azuriom/Azuriom/releases/latest')
