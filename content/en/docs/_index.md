@@ -27,7 +27,7 @@ Azuriom was created by [MrMicky](https://mrmicky.fr/) & [SkyWarZzeur](https://tw
 framework [Laravel](https://laravel.com/).
 
 Also a huge thank you to [Jav](https://www.linkedin.com/in/jean-alexandre-valentin-531236153/) for his great contributions,
-to our partner [NiHost](https://ni-host.com) for trusting us, and to all
+to our partner [NiHost](https://www.ni-host.com/?utm_source=home&utm_medium=links&utm_campaign=AzuriomCom) for trusting us, and to all
 [Azuriom contributors](https://github.com/Azuriom/Azuriom/graphs/contributors) for their help.
 
 ### Donors
