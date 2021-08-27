@@ -62,7 +62,6 @@ hébergeurs ne sont pas compatibles ou nécessitent des petites adaptations :
   et très fortement déconseillé pour un serveur MineCraft.
 * [mTxServ](https://mtxserv.com/) : Incompatible (La fonction `symlink()` est désactivée).
 * [LWS](https://www.lws.fr/) : Incompatible (La fonction `symlink()` est désactivée et la réécriture d'URL pose problème).
-* [LiveHost](https://www.livehost.fr/) : Incompatible (La fonction `symlink()` est désactivée).
 * [Ionos](https://www.ionos.fr/) : En cas d'erreur 500 après l'installation,
   il faut simplement modifier le fichier `.htaccess` à la racine du site et
   rajouter `RewriteBase /` juste au-dessus de la ligne `RewriteEngine On`,
@@ -79,7 +78,7 @@ hébergeurs ne sont pas compatibles ou nécessitent des petites adaptations :
     ```
 
 Si vous recherchez un hébergeur web associatif **performant à petit prix**, nous
-vous recommandons notre partenaire [NiHost](https://www.ni-host.com/) chez lequel
+vous recommandons notre partenaire [NiHost](https://www.ni-host.com/?utm_source=installation&utm_medium=links&utm_campaign=AzuriomCom) chez lequel
 vous pouvez avoir **une réduction de 10% avec le code `AZURIOM`** _(hors domaines & TeamSpeak)_.
 
 ## Installation
