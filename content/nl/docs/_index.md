@@ -30,7 +30,7 @@ Azuriom is gemaakt door [MrMicky](https://mrmicky.fr/) & [SkyWarZzeur](https://t
 framework [Laravel](https://laravel.com/).
 
 Ook een dikke dankjewel aan [Jav](https://www.linkedin.com/in/jean-alexandre-valentin-531236153/) voor zijn vele contributies,
-ook onze partner [NiHost](https://ni-host.com) voor het vertrouwen in ons, en aan alle
+ook onze partner [NiHost](https://www.ni-host.com/?utm_source=home&utm_medium=links&utm_campaign=AzuriomCom) voor het vertrouwen in ons, en aan alle
 [Azuriom bijdragers](https://github.com/Azuriom/Azuriom/graphs/contributors) voor hun hulp.
 
 ### Donateurs
