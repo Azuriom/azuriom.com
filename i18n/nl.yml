@@ -1,5 +1,5 @@
 meta:
-  desc: "Azuriom is een moderne, betrouwbare, snel en veilige game CMS. Het is de ideale keuze voor je website op Minecraft, Garry\'s Mod, Rust, Ark, FiveM en veel meer games."
+  desc: "Azuriom is een moderne, betrouwbare, snel en veilige game CMS. Het is de ideale keuze voor je website op Minecraft, Garry's Mod, Rust, Ark, FiveM en veel meer games."
 
 nav:
   home: "Index"
@@ -12,8 +12,8 @@ nav:
 
 footer:
   about: "Over ons"
-  aboutDescription: "Azuriom is de volgende generatie game CMS, het is gratis en open-source, modern, betrouwbaar, snel en een veilig alternatief tegenover bestaande CMS zodat u de best mogelijke webervaring voor uw website op Minecraft, Garry\'s Mod, Ark, Rust en vele andere games kunt hebben."
-  copyright: "Auteursrechten &copy; 2019-{{ .year }} Azuriom - Alle rechten voorbehouden Gemaakt met {{ .love }} door Azuriom."
+  aboutDescription: "Azuriom is de volgende generatie game CMS, het is gratis en open-source, modern, betrouwbaar, snel en een veilig alternatief tegenover bestaande CMS zodat u de best mogelijke webervaring voor uw website op Minecraft, Garry's Mod, Ark, Rust en vele andere games kunt hebben."
+  copyright: "Auteursrechten &copy; 2019-{{ .year }} Azuriom - Alle rechten voorbehouden Gemaakt met&nbsp;{{ .love }} door Azuriom."
   partners: "Partners"
   links: "Links"
   supportUs: "Steun ons"
@@ -29,9 +29,9 @@ home:
   about:
     title: "Wat is Azuriom"
     description1: "Azuriom is de <strong>volgende generatie</strong> game CMS, Het is <strong>gratis</strong> en <strong>open-source</strong>, is <strong>modern, betrouwbaar, snel en veilig</strong> alternatief voor het bestaande CMS, zodat u de <strong>best mogelijke webervaring kunt hebben</strong>."
-    description2: "Azuriom is de ideale keuze voor je website voor Minecraft, Garry\'s Mod, Rust, FiveM, Ark en vele andere games."
+    description2: "Azuriom is de ideale keuze voor je website voor Minecraft, Garry's Mod, Rust, FiveM, Ark en vele andere games."
     gamesTitle: "Ondersteunde games"
-    games: "Azuriom is een <strong>Minecraft CMS</strong>, maar niet alleen! Naast Minecraft, ondersteunt het ook <strong>Garry\'s Mod, Ark, Rust, FiveM, CS:GO en Team Fortress 2</strong>!"
+    games: "Azuriom is een <strong>Minecraft CMS</strong>, maar niet alleen! Naast Minecraft, ondersteunt het ook <strong>Garry's Mod, Ark, Rust, FiveM, CS:GO en Team Fortress 2</strong>!"
 
   features:
     modern:
@@ -84,13 +84,6 @@ support:
 
 docs:
   index: "Index"
-  installation: "Installatie"
-  server-link: "Server link"
-  mails: "Mails"
-  themes: "Thema's"
-  #: "Plugins"
-  api-auth: "API-verificatie"
-  troubleshooting: "Probleemoplossen"
 
 errors:
   title: "Fout"

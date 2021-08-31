@@ -1,7 +1,7 @@
 ---
 title: Index
 weight: 0
-layout: enkel
+layout: single
 ---
 
 # Index
