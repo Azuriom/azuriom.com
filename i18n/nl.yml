@@ -1,0 +1,92 @@
+meta:
+  desc: "Azuriom is een moderne, betrouwbare, snel en veilige game CMS. Het is de ideale keuze voor je website op Minecraft, Garry's Mod, Rust, Ark, FiveM en veel meer games."
+
+nav:
+  home: "Index"
+  download: "Download"
+  extensions: "Extensies"
+  docs: "Documentatie"
+  demo: "Demo"
+  demoMC: "Minecraft Demo"
+  demoSteam: "Steam Demo"
+
+footer:
+  about: "Over ons"
+  aboutDescription: "Azuriom is de volgende generatie game CMS, het is gratis en open-source, modern, betrouwbaar, snel en een veilig alternatief tegenover bestaande CMS zodat u de best mogelijke webervaring voor uw website op Minecraft, Garry's Mod, Ark, Rust en vele andere games kunt hebben."
+  copyright: "Auteursrechten &copy; 2019-{{ .year }} Azuriom - Alle rechten voorbehouden Gemaakt met&nbsp;{{ .love }} door Azuriom."
+  partners: "Partners"
+  links: "Links"
+  supportUs: "Steun ons"
+
+home:
+  header:
+    title: "Azuriom | De gamingwebsite van de volgende generatie"
+    subtitle: "De volgende generatie gamingwebsite voor uw server, gebruikt door honderden websites."
+    heading: "Een game CMS dat"
+    typed: "gratis en open-source is.|snel en veilig is.|modern en betrouwbaar is."
+    typedFallback: "gratis en open-source, snel, veilig, modern en betrouwbaar."
+
+  about:
+    title: "Wat is Azuriom"
+    description1: "Azuriom is de <strong>volgende generatie</strong> game CMS, Het is <strong>gratis</strong> en <strong>open-source</strong>, is <strong>modern, betrouwbaar, snel en veilig</strong> alternatief voor het bestaande CMS, zodat u de <strong>best mogelijke webervaring kunt hebben</strong>."
+    description2: "Azuriom is de ideale keuze voor je website voor Minecraft, Garry's Mod, Rust, FiveM, Ark en vele andere games."
+    gamesTitle: "Ondersteunde games"
+    games: "Azuriom is een <strong>Minecraft CMS</strong>, maar niet alleen! Naast Minecraft, ondersteunt het ook <strong>Garry's Mod, Ark, Rust, FiveM, CS:GO en Team Fortress 2</strong>!"
+
+  features:
+    modern:
+      title: "Modern"
+      desc: "Gebouwd met de laatste technologieën, met solide patronen."
+
+    reliable:
+      title: "Betrouwbaar"
+      desc: "Onze testprotocollen helpen fouten in de productie te voorkomen."
+
+    fast:
+      title: "Snel"
+      desc: "Elk onderdeel van Azuriom is maximaal geoptimaliseerd voor ongeëvenaarde prestaties."
+
+    secure:
+      title: "Veilig"
+      desc: "Met zijn sterke concept, en afhankelijkheden up-to-date, is de beveiliging sterk."
+
+  desc1:
+    title: "Unieke extensies"
+    description1: "Onze extensies, dat wil zeggen onze thema's en plug-ins, worden op dezelfde manier gemaakt als het CMS, zodat het één is met de extensies zodra ze zijn geïnstalleerd."
+    description2: "Voor ontwikkelaars die hun uitbreidingen willen uitvoeren, zijn tools en volledige documentatie beschikbaar voor een uniek werkcomfort."
+    description3: "Er is ook een Community-markt beschikbaar om uw extensies te plaatsen. We controleren elke extensie en volgen regelmatig de updates die erop worden voorgesteld om een schone markt te behouden."
+
+  desc2:
+    title: "Actieve ondersteuning"
+    description1: "We hebben een actieve ondersteuning op Discord en op GitHub, en aangezien Azuriom open-source is, kan iedereen bijdragen aan het project op GitHub!"
+    description2: "Azuriom is open-source, dus iedereen kan bijdragen en het project verbeteren."
+
+download:
+  title: "Download"
+  docs: "Voordat u Azuriom downloadt, is het raadzaam om <a href=\"{{ .docs }}\" target=\"_blank\">onze documentatie te lezen</a>."
+  support: 'Als u hulp nodig hebt of een vraag hebt, kunt u lid worden van onze <a href="{{ .discord }}" target="_blank">Discord</a> server.'
+  sources: 'Azuriom is open-source en de bronnen zijn beschikbaar op <a href="{{ .github }}" target="_blank">GitHub</a>.'
+
+azlink:
+  title: "AzLink"
+  info: "AzLink is een plug-in gemaakt voor Azuriom om uw server op een gemakkelijke, snelle en veilige manier to koppelen aan uw Azuriom-website."
+  download: "Download"
+  supported: "AzLink ondersteunt Bukkit (en op Bukkit gebaseerde servers zoals Spigot, Glowstone, Cauldron en Mohist), BungeeCord, Sponge en Velocity in dezelfde plug-in. Als u Minecraft 1.7.10 gebruikt, moet u de oude versie downloaden."
+  sources: 'AzLink is open-source en de bronnen zijn beschikbaar op <a href="{{ .github }}" target="_blank">GitHub</a>.'
+
+support:
+  title: "Steun ons"
+  description1: "Het maken van dit project is tijdrovend en uw donatie zal ons helpen dit project te verbeteren."
+  description2: "Uw donatie zal ook helpen om de financiële kosten van dit project te dekken: we moeten het domein betalen, servers huren (website, demo), grafisch ontwerper, ..."
+  description3: "Je kunt ons ook steunen door de GitHub-repository een ster te geven, het is gratis en je hebt alleen een GitHub-account nodig."
+  star: "Geef het project een ster"
+  donate: "Doneren"
+
+docs:
+  index: "Index"
+
+errors:
+  title: "Fout"
+  notFound:
+    title: "Niet gevonden"
+    info: "De pagina die u zoekt is niet gevonden."
