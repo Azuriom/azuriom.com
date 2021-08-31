@@ -74,9 +74,9 @@
                         <img src="{{ printf "assets/svg/country/%s.svg" .Site.Language.Lang | absURL }}" class="svg country" alt="{{ .Site.Language.LanguageName }}">
                     </a>
 
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="langDropdown">
+                    <div class="dropdown-menu dropdown-menu-right locale-selector" aria-labelledby="langDropdown">
                         {{ range .AllTranslations }}
-                        <a class="dropdown-item" href="{{ partial "permalink.html" . }}">
+                        <a class="dropdown-item" data-locale="{{ .Language.Lang }}" href="{{ partial "permalink.html" . }}">
                             <img src="{{ printf "assets/svg/country/%s.svg" .Language.Lang | absURL }}" class="svg" alt="{{ .Language.LanguageName }}">
                             {{ .Language.LanguageName }}
                         </a>
