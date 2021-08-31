@@ -9,7 +9,7 @@ layout: enkel
 ## Introductie
 
 [Azuriom](https://azuriom.com/) is de **volgende generatie** spel-CMS,
-het is **gratis** en **open-source**, en is een **moderne**, **betrouwbare**,
+het is **gratis** en **open-source**, en een **moderne**, **betrouwbare**,
 **Snelle en veilige** alternatief voor bestaande CMS, zodat u de
 **best mogelijke webervaring** kunt hebben.
 
@@ -21,7 +21,7 @@ een **winkel**, **forum** en veel meer!
 In deze documentatie vindt u alle informatie over:
 Azuriom
 
-Als je hulp nodig hebt of vragen hebt, kun je meedoen op
+Als u hulp nodig hebt of vragen heeft, kunt u meedoen op
 onze [Discord-server](https://azuriom.com/discord).
 
 ## Credits

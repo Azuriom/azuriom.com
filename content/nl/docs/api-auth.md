@@ -85,7 +85,7 @@ public static void auth(String username, String password) throws AuthenticationE
 }
 ```
 Zodra dit is gebeurd, hoeft u alleen maar de klasse `AzAuthenticator` & `AuthenticationException`
-uit het `com.azuriom.auth`-pakket en AzAuth worden geïntegreerd in uw opstartprogramma.
+uit het `com.azuriom.auth`-pakket en AzAuth wordt geïntegreerd in uw opstartprogramma.
 
 ### Gebruik zonder OpenLauncherLib
 
@@ -137,7 +137,7 @@ Verifieer een gebruiker met hun website-inloggegevens
 
 ##### Antwoord
 
-Retourneert de gebruiker met zijn verschillende informatie en het unieke token
+Retourneert de gebruiker met verschillende informatie en het unieke token
 die kan worden gebruikt om de verbinding te verifiëren of om de verbinding te verbreken.
 
 ```json
@@ -168,7 +168,7 @@ die kan worden gebruikt om de verbinding te verifiëren of om de verbinding te v
 
 ##### Antwoord
 
-Retourneert de gebruiker met zijn verschillende informatie en het unieke token
+Retourneert de gebruiker met verschillende informatie en het unieke token
 die kan worden gebruikt om de verbinding te verifiëren of om de verbinding te verbreken.
 
 ```json

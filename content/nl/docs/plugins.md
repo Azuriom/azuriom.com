@@ -18,7 +18,7 @@ Voordat u een plug-in maakt, is het raadzaam om de
 
 {{< warn >}}
 Wanneer Azuriom lokaal is geïnstalleerd voor de ontwikkeling van plug-ins,
-wordt het sterk aanbevolen om debug in te schakelen om de ontwikkeling te vereenvoudigen.
+wordt het sterk aanbevolen om foutopsporing in te schakelen om de ontwikkeling te vereenvoudigen.
 Dit kan gedaan worden door simpelweg deze 2 regels in het `.env` bestand te bewerken:
 ```
 APP_ENV=local
@@ -32,7 +32,7 @@ APP_DEBUG=true
 plugins/  <-- Map met de verschillende geïnstalleerde plug-ins
 |  example/  <-- ID van uw plug-in
 |  |  plugin.json  <-- Het hoofdbestand van uw plug-in met verschillende informatie
-|  |  assets/  <-- De map met de middelen van uw plug-in (css, js, images, svg, etc)
+|  |  assets/  <-- De map met de middelen van uw plug-in (css, js, afbeeldingen, svg, etc)
 |  |  database/
 |  |  | migrations/ <-- De map met de migraties van uw plug-in
 |  |  resources/
@@ -65,7 +65,7 @@ bevat de verschillende informatie van een plug-in:
 
 #### Plug-in ID
 
-Elke plug-in moet een ID hebben, die uniek moet zijn en alleen cijfers, kleine letters en streepjes moet bevatten,
+Elke plug-in moet een ID hebben, die uniek moet zijn en alleen cijfers, kleine letters en streepjes mag bevatten,
 Het wordt aanbevolen om de naam te gebruiken als basis voor:
 Het maken van de ID, bijvoorbeeld als de naam `Hallo Wereld` is, kan de
 ID zijn `hallo-wereld`. Ook moet de map van de plug-in dezelfde naam hebben als zijn ID.
@@ -113,7 +113,7 @@ Als je Blade niet onder de knie hebt, wordt het ten zeerste aanbevolen om
 
 {{< warn >}}
 Het wordt ten zeerste aanbevolen om GEEN PHP-syntaxis te gebruiken.
-Wanneer je met Blade werkt, want Blade brengt niet traditionele
+Wanneer je met Blade werkt, want Blade brengt
 geen voordelen en alleen nadelen. 
 {{< /warn >}}
 
@@ -196,7 +196,7 @@ class TicketController extends Controller
         // We halen alle tickets op.
         $tickets = Ticket::all();
 
-        // We geven een uitzicht terug, geven hem de tickets...
+        // We geven een overzicht terug, geven de tickets...
         return view('support::tickets.index', [
             'tickets' => $tickets,
         ]);
@@ -206,7 +206,7 @@ class TicketController extends Controller
 
 ### Modellen
 
-Sjablonen vertegenwoordigen een item in een database tabel en
+modellen vertegenwoordigen een item in een database tabel en
 stellen u in staat om te communiceren met de databank.
 
 U kunt in een model ook de verschillende relaties van het model definiëren,
@@ -254,7 +254,7 @@ class Ticket extends Model
     protected $userKey = 'author_id';
 
     /**
-     * Haal de gebruiker op die dit ticket heeft gemaakt.
+     * Haal de gebruiker op die deze ticket heeft gemaakt.
      */
     public function author()
     {
@@ -262,7 +262,7 @@ class Ticket extends Model
     }
 
     /**
-     * Verkrijg de categorie van dit ticket.
+     * Verkrijg de categorie van deze ticket.
      */
     public function category()
     {
@@ -270,7 +270,7 @@ class Ticket extends Model
     }
 
     /**
-     * Ontvang de opmerkingen van dit ticket.
+     * Ontvang de opmerkingen van deze ticket.
      */
     public function comments()
     {
@@ -430,7 +430,7 @@ return [
 
 Het wordt aanbevolen om de hoofdroutes van uw plug-in te registreren,
 zodat ze eenvoudig kunnen worden toegevoegd in de navigatiebalk.
-Om dit te doen, belt u gewoon de `$thiS->registerRouteDescriptions()` methode in de plug-in verlener en
+Om dit te doen, neemt u gewoon de `$thiS->registerRouteDescriptions()` methode in de plug-in verlener en
 stuur terug de verschillende routes in `routeDescriptions()` methode met het formaat
 `[<route> => <description>]`:
 ```php
@@ -447,7 +447,7 @@ stuur terug de verschillende routes in `routeDescriptions()` methode met het for
     }
 
     /**
-     * Geeft de routes terug die aan de navigatiebalk moeten kunnen worden toegevoegd.
+     * Geeft de routes terug die aan de navigatiebalk kunnen worden toegevoegd.
      *
      * @return array
      */

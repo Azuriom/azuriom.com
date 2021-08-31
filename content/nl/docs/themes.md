@@ -31,7 +31,7 @@ php artisan theme:create <thema naam>
 
 {{< info >}}
 Om thema's te maken met een meer geavanceerde setup met een webpack om te compileren
-SASS-bestanden en optimaliseer de JavaScript bestanden, kunt u dit gebruiken
+SASS-bestanden en optimaliseerde JavaScript bestanden, kunt u dit gebruiken
 [onofficiële boilerplate](https://github.com/nolway/azuriom-theme-boilerplate)
 (ook moet je [Node.js](https://nodejs.org) installeren met NPM)
 {{< /info >}}
@@ -42,7 +42,7 @@ SASS-bestanden en optimaliseer de JavaScript bestanden, kunt u dit gebruiken
 themes/ <-- Map met alle geïnstalleerde thema's
 | example/ <-- ID van je thema
 | | theme.json <-- Het hoofdbestand van uw thema met verschillende informatie
-| |  assets/  <-- De map met de middelen van je thema (css, js, images, svg, etc)
+| |  assets/  <-- De map met de middelen van je thema (css, js, afbeeldingen, svg, etc)
 | | views/ <-- De map met de weergaven van uw thema.
 | | config/
 | | | config.blade.php
@@ -70,23 +70,23 @@ het enige essentiële element voor een thema, het ziet er zo uit:
 #### Thema ID
 
 Elk thema moet een ID hebben, die uniek moet zijn en alleen cijfers, kleine letters
-en streepjes kan bevatten. Het wordt aanbevolen om de naam te gebruiken als basis voor:
-het maken van de ID, bijvoorbeeld als de naam `Hello World` is, de ID kan
-`hello-world` zijn. Ook moet de map van het thema dezelfde naam hebben als zijn ID.
+en streepjes mag bevatten. Het wordt aanbevolen om de naam te gebruiken als basis voor:
+het maken van de ID, bijvoorbeeld als de naam `Hallo Wereld` is, dan kan de ID
+`hallo-wereld` zijn. Ook moet de map van het thema dezelfde naam hebben als zijn ID.
 
-### Weergaven
+### Views
 
-De weergaven vormen het hart van een thema, het zijn de HTML-inhoudsbestanden van
+De views vormen het hart van een thema, het zijn de HTML-inhoudsbestanden van
 een thema voor de verschillende onderdelen van de website.
 
-Azuriom met behulp van [Laravel](https://laravel.com/), weergaven kunnen worden
+Azuriom is gemaakt met behulp van [Laravel](https://laravel.com/), views kunnen worden
 gemaakt met behulp van de sjabloon Blade. Als je Blade niet onder de knie hebt, wordt het ten
-zeerste aanbevolen om [De documentatie](https://laravel.com/docs/blade) te leven, vooral omdat het vrij kort is.
+zeerste aanbevolen om [De documentatie](https://laravel.com/docs/blade) te lezen, vooral omdat het vrij kort is.
 
 {{< warn >}}
 Het wordt ten zeerste aanbevolen om GEEN PHP-syntaxis te gebruiken.
-Wanneer je met Blade werkt, want Blade brengt je niet de traditionele
-voordelen maar alleen nadelen.
+Wanneer je met Blade werkt, want Blade brengt
+geen voordelen maar alleen nadelen.
 {{< /warn >}}
 
 Aan de CSS-kant wordt aanbevolen om het standaardframework van de CMS te gebruiken, namelijk [Bootstrap 4](https://getbootstrap.com), 
@@ -97,21 +97,21 @@ Maar als u wilt, kunt u een ander CSS-framework gebruiken.
 In Javascript is de enige vereiste afhankelijkheid: [Axios](https://github.com/axios/axios).
 
 {{< warn >}}
-Hoewel jQuery zonder problemen kan worden gebruikt en toegevoegd, is het:
+Hoewel jQuery zonder problemen kan worden toegevoegd en gebruikt, is het:
 aanbevolen om het niet te gebruiken, zodat het gemakkelijk kan worden verwijderd wanneer
 Bootstrap 5 uitkomt. In het algemeen [jQuery is vandaag niet meer nodig en kan worden
 verwijderd](http://youmightnotneedjquery.com/).
 {{< /warn >}}
 
 {{< info >}}
-Als een weergave niet aanwezig is in het thema, maar wel in het CMS of in een plug-in,
+Als een view niet aanwezig is in het thema, maar wel in het CMS of in een plug-in,
 zal het automatisch gebruikt worden.
 {{< /info >}}
 
 #### Lay-out
 
 De lay-out is de structuur van alle pagina's van een thema. Het bevat
-inderdaad de meta's, middelen van een thema, header, footer etc...
+de meta's, middelen van een thema, header, footer etc...
 
 Om de inhoud van de huidige pagina weer te geven kunt u gebruik maken van
 `@yield('content')`, en om de titel van de huidige pagina weer te geven kunt u
@@ -121,15 +121,15 @@ U kunt ook verschillende elementen integreren met
 `@include('<name of the view>')`, bijvoorbeeld `@include('element.navbar')` voor
 inclusief de navigatiebalk.
 
-Om de lay-out van de pagina te definiëren, moet de weergave de weergave uitbreiden met
+Om de lay-out van de pagina te definiëren, moet de view de weergave uitbreiden met
 de lay-out, kunt u ofwel de standaardlay-out gebruiken met
 `@extends('layouts.app')`, of maak je eigen lay-out en breid deze uit.
 
-#### Plug-in weergaven
+#### Plug-in views
 
-Om de weergaven van een plug-in te wijzigen, maakt u eenvoudig een `plugins` map in
+Om de views van een plug-in te wijzigen, maakt u eenvoudig een `plugins` map in
 de map `views` van het thema, en maak een map voor elke plug-in (met
-behulp van de plug-in ID en niet de naam van de plug-in), en voeg vervolgens de plug-in weergaven toe..
+behulp van de plug-in ID en niet de naam van de plug-in), en voeg vervolgens de plug-in views toe..
 
 Bijvoorbeeld, voor de stem plug-in, geeft dit `views/plugins/vote/index.blade.php`.
 
@@ -156,8 +156,8 @@ U kunt via de functies een bepaald aantal parameters van de website ophalen zoal
 |    Fonction      |               Description                           |
 | ---------------- | --------------------------------------------------- |
 | `site_name()`    | Haalt de sitenaam op                                |
-| `site_logo()`    | Hiermee kunt u de link naar de website-logo hebben  |
-| `favicon()`      | Hiermee kunt u de favicon-link krijgen              |
+| `site_logo()`    | Hiermee kunt u de link naar de website-logo ophalen |
+| `favicon()`      | Hiermee kunt u de favicon-link ophalen              |
 | `format_date()`  | Geeft een datum weer die is opgemaakt met de huidige taal. Deze functie neemt een instantie van `Carbon\Carbon` aan als parameter |
 | `money_name()`   | Retourneert de naam van de valuta van de website   |
 | `format_money()` | Retourneert een bedrag dat is opgemaakt met de valuta van de website |

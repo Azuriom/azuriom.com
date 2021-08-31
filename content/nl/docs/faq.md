@@ -50,7 +50,7 @@ de configuratie van het verzenden van e-mails op het beheerders paneel van uw si
 
 Als u deze fout krijgt:
 `curl: (60) SSL Certificate: Unable to get local issuer certificate`,
-volg gewoon deze stappen:
+volg deze stappen:
 1) Download de nieuwste `cacert.pem` op https://curl.haxx.se/ca/cacert.pem
 1) Voeg deze regel toe aan de php.ini bestand (vervang `/path/to/cacert.pem` voor
 de locatie van het bestand `cacert.pem`):
@@ -61,7 +61,7 @@ de locatie van het bestand `cacert.pem`):
 
 ### Het bestand is niet geüpload bij het uploaden van een afbeelding
 
-Dit probleem doet zich voor wanneer u een afbeelding uploadt met een grotere bestandsgrootte
+Dit probleem doet zich voor wanneer u een afbeelding upload met een grotere bestandsgrootte
 dan de maximum toegestane bestandsgrootte door PHP (standaard 2MB)
 
 U kunt de maximaal toegestane grootte wijzigen bij het uploaden in de configuratie
@@ -71,9 +71,9 @@ upload_max_filesize = 10M
 post_max_size = 10M
 ```
 
-### Probleem met AzLink en betalings diensten met Cloudflare
+### Probleem met AzLink en betalingsdiensten met Cloudflare
 
-Cloudflare kan voorkomen dat AzLink of sommige betalings diensten correct werken.
+Cloudflare kan voorkomen dat AzLink of sommige betalingsdiensten correct werken.
 
 Om dit probleem op te lossen, kunt u Cloudflare op de API uitschakelen door naar Paginaregels te gaan
 -> Voeg een regel toe, voeg dan `/api/*` toe als de URL en de volgende acties:
@@ -112,7 +112,7 @@ Als je klaar bent, verwijder je het bestand `bootstrap/cache/config.php` als het
 
 Als u een andere site wilt installeren (bijv. Pterodactyl-paneel, enz.)
 op dezelfde webserver als waarop Azuriom is geïnstalleerd,
-word aanbevolen om het op een subdomein te installeren (bijv. panel.uw-website.com).
+word aanbevolen om het op een subdomein te installeren (bijv. panel.uw-website.nl).
 
 Als het niet mogelijk is, kunt u Apache configureren om:
 Ze uit te voeren op hetzelfde domein, door een `.htaccess`-bestand toe te voegen aan de map

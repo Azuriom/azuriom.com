@@ -50,7 +50,7 @@ Uitleg vindt u onderaan dit artikel.
 {{< info >}}
 Als je wilt, kun je dit ook onofficieel gebruiken
 [automatisch installatie script](https://github.com/AzuriomCommunity/Script-AutoInstall)
-waarmee alle vereisten automatisch geïnstalleerd.
+waarmee alle vereisten automatisch geïnstalleerd worden.
 {{< /info >}}
 
 ## Installatie
@@ -163,7 +163,7 @@ server {
 }
 ```
 
-Deze configuratie moet in een site in `site-available` worden geplaatst
+Deze configuratie moet in de site in `site-available` worden geplaatst
 en niet in het `nginx.conf` bestand.
 
 Vergeet niet om `example.com` te vervangen door uw domein,
