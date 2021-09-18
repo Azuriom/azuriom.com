@@ -79,6 +79,23 @@ php artisan plugin:create <plugin name>
 ```
 {{< /info >}}
 
+#### Dependencies
+
+The `dependencies` section allows you to specify the plugins (using their id) that must
+be installed in order to use the plugin. A `?` after the plugin name means that the plugin
+is optional, i.e., it does not need to be installed, but when it is, the version must match.
+It is also possible to specify a version of Azuriom using the value `azuriom`.
+
+For example, this plugin needs Azuriom `0.4.0` or higher, the Shop plugin version `0.1.0` or
+higher. Also, when the Vote plugin is installed, it must be in version `0.2.0` or higher:
+```json
+"dependencies": {
+    "azuriom": "^0.4.0",
+    "shop": "^0.1.0",
+    "vote?": "^0.2.0"
+}
+```
+
 ### Routes
 
 Routes allow you to associate a URL with a particular action.

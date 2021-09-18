@@ -29,7 +29,7 @@ les informations du serveur SMTP.
 Si vous êtes sur un hébergement web mutualisés, Sendmail sera probablement déjà
 installé. Sur un VPS ou serveur dédié Sendmail peut être installé avec la commande suivante :
 ```
-apt install sendmail
+apt install -y sendmail
 ```
 
 Il suffit ensuite de choisir Sendmail dans les paramètres mail d’Azuriom.

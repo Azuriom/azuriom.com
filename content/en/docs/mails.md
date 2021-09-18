@@ -24,7 +24,7 @@ Then simply choose SMTP in Azuriom's email settings and fill in the SMTP server 
 If you are on shared web hosting, Sendmail will probably already be installed
 On a VPS or dedicated server Sendmail can be installed with the following command:
 ```
-apt install sendmail
+apt install -y sendmail
 ```
 
 Then simply choose Sendmail in Azuriom's email settings.

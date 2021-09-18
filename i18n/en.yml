@@ -84,13 +84,6 @@ support:
 
 docs:
   index: "Home"
-  installation: "Installation"
-  server-link: "Server link"
-  mails: "Mails"
-  themes: "Themes"
-  #: "Plugins"
-  api-auth: "API Auth"
-  troubleshooting: "Troubleshooting"
 
 errors:
   title: "Error"

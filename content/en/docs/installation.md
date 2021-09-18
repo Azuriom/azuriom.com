@@ -21,8 +21,8 @@ of disk space and the following requirements:
 - PDO PHP Extension
 - Tokenizer PHP Extension
 - XML PHP Extension
+- XMLWriter PHP Extension
 - cURL PHP Extension
-- GD2 PHP Extension
 - Zip PHP Extension
 
 It's also highly recommended having a **MySQL/MariaDB or PostgreSQL database**.
@@ -33,15 +33,14 @@ If you are using a VPS or a dedicated server, it will probably be necessary to i
 This can be done with the following commands :
 
 ```
-apt update && apt upgrade
+apt update -y && apt upgrade -y
 
-apt install nginx zip curl
+apt install -y nginx zip curl lsb-release apt-transport-https ca-certificates
 
-apt install lsb-release apt-transport-https ca-certificates
 wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
 echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list
-apt update
-apt install php8.0 php8.0-fpm php8.0-mysql php8.0-pgsql php8.0-sqlite php8.0-bcmath php8.0-mbstring php8.0-xml php8.0-curl php8.0-zip php8.0-gd
+apt update -y
+apt install -y php8.0 php8.0-fpm php8.0-mysql php8.0-pgsql php8.0-sqlite3 php8.0-bcmath php8.0-mbstring php8.0-xml php8.0-curl php8.0-zip php8.0-gd
 ```
 
 Once the requirements are installed, you must configure the web server. Explanations are available at the bottom of this

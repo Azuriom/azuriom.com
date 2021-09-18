@@ -81,6 +81,24 @@ le nom pour créer l'id, par exemple si le nom est `Hello World`, l'id pourra ê
 `hello-world`.
 Également le dossier du plugin doit avoir le même nom que son id.
 
+#### Dépendances
+
+La partie `dependencies` permet de spécifier les plugins (en utilisant leur id)
+qui doivent être installés pour pouvoir utiliser le plugin.
+Un `?` après le nom du plugin signifie que le plugin est optionnel, c’est-à-dire que
+celui-ci n’a pas besoin d’être installé, mais que lorsqu’il l’est, la version doit correspondre.
+Il est également possible de spécifier une version d’Azuriom en utilisant la valeur `azuriom`.
+
+Par exemple, ce plugin a besoin d’Azuriom `0.4.0` ou supérieur, du plugin Shop version`0.1.0`
+ou supérieur. Enfin, lorsque le plugin Vote est installé, celui-ci doit être en version `0.2.0` ou plus récent:
+```json
+"dependencies": {
+    "azuriom": "^0.4.0",
+    "shop": "^0.1.0",
+    "vote?": "^0.2.0"
+}
+```
+
 ### Routes
 
 Les routes permettent d'associer une URL à une action en particulier.

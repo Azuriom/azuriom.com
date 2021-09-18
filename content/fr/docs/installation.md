@@ -20,8 +20,8 @@ d'espace disque ainsi que des prérequis suivants :
 - Extension PHP PDO
 - Extension PHP Tokenizer
 - Extension PHP XML
+- Extension PHP XMLWriter
 - Extension PHP cURL
-- Extension PHP GD2
 - Extension PHP Zip
 
 Il est également très fortement recommandé de posséder **une base de données MySQL/MariaDB ou PostgreSQL**.
@@ -31,15 +31,14 @@ Il est également très fortement recommandé de posséder **une base de donnée
 Si vous utilisez un VPS ou un serveur dédié, il sera sûrement nécessaire d'installer
 vous-même un serveur web, PHP et MySQL, cela peut se faire par exemple avec les commandes suivantes :
 ```
-apt update && apt upgrade
+apt update -y && apt upgrade -y
 
-apt install nginx zip curl
+apt install -y nginx zip curl lsb-release apt-transport-https ca-certificates
 
-apt install lsb-release apt-transport-https ca-certificates
 wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
 echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list
-apt update
-apt install php8.0 php8.0-fpm php8.0-mysql php8.0-pgsql php8.0-sqlite php8.0-bcmath php8.0-mbstring php8.0-xml php8.0-curl php8.0-zip php8.0-gd
+apt update -y
+apt install -y php8.0 php8.0-fpm php8.0-mysql php8.0-pgsql php8.0-sqlite3 php8.0-bcmath php8.0-mbstring php8.0-xml php8.0-curl php8.0-zip php8.0-gd
 ```
 
 Une fois les pré-requis installés, vous devez configurer le serveur web. Pour ce
@@ -58,8 +57,6 @@ la majorité des hébergeurs web ayant les prérequis ci-dessus, cependant certa
 hébergeurs ne sont pas compatibles ou nécessitent des petites adaptations :
 * [000webhost](https://www.000webhost.com/) : Incompatible (La fonction `putenv()` est désactivée).
 * [InovaPerf](https://inovaperf.fr/) : Incompatible avec l'offre gratuite (La fonction `fsockopen()` est désactivée).
-* [BoxToPlay](https://www.boxtoplay.com/) : Incompatible (Extensions BCMath et XML manquantes)
-  et très fortement déconseillé pour un serveur MineCraft.
 * [mTxServ](https://mtxserv.com/) : Incompatible (La fonction `symlink()` est désactivée).
 * [LWS](https://www.lws.fr/) : Incompatible (La fonction `symlink()` est désactivée et la réécriture d'URL pose problème).
 * [Ionos](https://www.ionos.fr/) : En cas d'erreur 500 après l'installation,
@@ -77,9 +74,13 @@ hébergeurs ne sont pas compatibles ou nécessitent des petites adaptations :
         ...
     ```
 
-Si vous recherchez un hébergeur web associatif **performant à petit prix**, nous
-vous recommandons notre partenaire [NiHost](https://www.ni-host.com/?utm_source=installation&utm_medium=links&utm_campaign=AzuriomCom) chez lequel
-vous pouvez avoir **une réduction de 10% avec le code `AZURIOM`** _(hors domaines & TeamSpeak)_.
+{{< info >}}
+Si vous recherchez un hébergeur web associatif **abordable mais de qualité**, nous
+vous recommandons notre partenaire [NiHost](https://www.ni-host.com/?utm_source=installation&utm_medium=links&utm_campaign=AzuriomCom) !
+
+Le code `AZURIOM` vous permet d'avoir une **réduction de 10% sur vos services**
+_(hors domaines & TeamSpeak)_.
+{{< /info >}}
 
 ## Installation
 

@@ -21,8 +21,8 @@ schijfruimte en de volgende vereisten:
 - PDO PHP Extensie
 - Tokenizer PHP Extensie
 - XML PHP Extensie
+- XMLWriter PHP Extensie
 - cURL PHP Extensie
-- GD2 PHP Extensie
 - Zip PHP Extensie
 
 Het wordt ook sterk aanbevolen om een **MySQL/MariaDB- of PostgreSQL-database** te gebruiken.
@@ -33,15 +33,14 @@ Als je een VPS of een dedicated server gebruikt, zal het waarschijnlijk nodig zi
 om zelf een webserver, PHP en MySQL te installeren. Dit kan met de volgende commando's:
 
 ```
-apt update && apt upgrade
+apt update -y && apt upgrade -y
 
-apt install nginx zip curl
+apt install -y nginx zip curl lsb-release apt-transport-https ca-certificates
 
-apt install lsb-release apt-transport-https ca-certificates
 wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
 echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list
-apt update
-apt install php8.0 php8.0-fpm php8.0-mysql php8.0-pgsql php8.0-sqlite php8.0-bcmath php8.0-mbstring php8.0-xml php8.0-curl php8.0-zip php8.0-gd
+apt update -y
+apt install -y php8.0 php8.0-fpm php8.0-mysql php8.0-pgsql php8.0-sqlite3 php8.0-bcmath php8.0-mbstring php8.0-xml php8.0-curl php8.0-zip php8.0-gd
 ```
 
 nadat de vereisten zijn geïnstalleerd, moet u de webserver configureren.

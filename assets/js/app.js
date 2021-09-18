@@ -7,6 +7,8 @@ document.querySelectorAll('.locale-selector [data-locale]').forEach(function (el
    el.addEventListener('click', function () {
        Cookies.set('nf_country', el.dataset['locale'], {
            expires: 30,
+           domain: 'azuriom.com',
+           sameSite: 'Lax',
            secure: true,
        });
    });

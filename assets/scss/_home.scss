@@ -44,6 +44,12 @@
     -webkit-animation: flash ease-in-out 2.5s infinite;
     animation: flash ease-in-out 2.5s infinite;
 
+    .bi {
+        height: 1.1em;
+        width: 1.1em;
+        vertical-align: -.195em;
+    }
+
     &:hover {
         box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
         transform: translate3d(0, -.2rem, 0);
