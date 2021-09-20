@@ -41,7 +41,7 @@ You must:
     * Set `rcon.port` with `your-port` _(default 25575)_
     * Backup and restart your server
    
-1. Go to your site and add a new server with the link type "Rcon",
+1. Go to your site, add a new server with the link type "Rcon",
 and fill in the requested information. _(Default Rcon port is 25575)_.
 
 ### Link by Plugin
