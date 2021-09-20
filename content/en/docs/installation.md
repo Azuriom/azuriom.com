@@ -54,7 +54,7 @@ which will install all the prerequisites automatically.
 
 ## Installation
 
-Azuriom offers an automatic installer to install Azuriom easily by following these few steps :
+Azuriom offers an automatic installer to install Azuriom easily by following these few steps:
 
 {{< info >}}
 You can also install it with [Docker](https://www.docker.com/) by following the steps listed [here](https://github.com/Azuriom/Azuriom/blob/master/docker/INSTALL.md).
