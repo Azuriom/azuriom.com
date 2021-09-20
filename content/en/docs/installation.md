@@ -30,7 +30,7 @@ It's also highly recommended having a **MySQL/MariaDB or PostgreSQL database**.
 ### Requirements installations
 
 If you are using a VPS or a dedicated server, it will probably be necessary to install yourself a web server, PHP and MySQL.
-This can be done with the following commands :
+This can be done with the following commands:
 
 ```
 apt update -y && apt upgrade -y
