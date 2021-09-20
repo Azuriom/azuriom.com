@@ -99,5 +99,5 @@ You must:
 
 1. Go to the file where the Rcon information of your server can be found.
    
-1. Go to your site and add a new server with the link type "Source Rcon",
+1. Go to your site, add a new server with the link type "Source Rcon",
 and fill in the requested information.
