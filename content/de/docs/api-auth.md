@@ -61,8 +61,9 @@ ob das vom Client zurückgegebene Zugriffstoken mithilfe der Überprüfungsmetho
 
 ## Verwendung von AzAuth (Java)
 
-Before using AzAuth, please make sure that the API is activated by going to
-in the settings of your site, on your admin panel.
+Bevor Du AzAuth verwendest, stelle bitte sicher,
+dass die API aktiviert ist, indem Du in den Einstellungen
+Deiner Site in Dein Admin-Panel gehst.
 
 
 ### Verwendung mit [OpenLauncherLib](https://github.com/Litarvan/OpenLauncherLib/) _(für Minecraft Launcher)_
