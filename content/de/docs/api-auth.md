@@ -1,22 +1,24 @@
-﻿---
+---
 title: Auth API
 ---
 
 # AzAuth
 
-AzAuth is an api allowing you to authenticate users of a website under Azuriom on any platform.
+AzAuth ist eine API, mit der Du Benutzer einer Website unter Azuriom
+auf jeder Plattform authentifizieren kannst.
 
 ## Download
 
-AzAuth sources are available on [GitHub](https://github.com/Azuriom/AzAuth)
-and the jar file can be downloaded [here](https://azuriom.s3.fr-par.scw.cloud/azauth-1.0-SNAPSHOT.jar).
+AzAuth-Quellen sind auf [GitHub](https://github.com/Azuriom/AzAuth) verfügbar,
+die JAR-Datei kann [hier](https://azuriom.s3.fr-par.scw.cloud/azauth-1.0-SNAPSHOT.jar)
+heruntergeladen werden.
 
-If you are using a dependency manager, you can add AzAuth as a
-dependency by the following way:
+Wenn Du einen Abhängigkeitsmanager verwendest,
+kannst Du AzAuth wie folgt als Abhängigkeit hinzufügen:
 
 ### Gradle
 
-in `build.gradle`:
+In `build.gradle`:
 
 ```groovy
 repositories {
@@ -31,7 +33,7 @@ dependencies {
 
 ### Maven
 
-in `pom.xml`:
+In `pom.xml`:
 ```xml
 <repositories>
     <repository>
@@ -52,9 +54,9 @@ in `pom.xml`:
 ```
 
 {{< warn >}}
-Regardless of how you use the client-side auth api, you must verify on
-the server that the access token returned by the client is valid by using
-the `verify` method.
+Unabhängig davon, wie Du die clientseitige Authentifizierungs-API verwendest,
+musst Du auf dem Server überprüfen,
+ob das vom Client zurückgegebene Zugriffstoken mithilfe der Überprüfungsmethode gültig ist.
 {{< /warn >}}
 
 ## Use of AzAuth (Java)
@@ -62,13 +64,14 @@ the `verify` method.
 Before using AzAuth, please make sure that the API is activated by going to
 in the settings of your site, on your admin panel.
 
-### Using with [OpenLauncherLib](https://github.com/Litarvan/OpenLauncherLib/) _(for minecraft launcher)_
 
-To begin, add AzAuth as a dependency to your project.
-Also, if you are using [OpenAuth](https://github.com/Litarvan/OpenAuth/), it is recommended that you remove it,
-although it does not cause any real problems, it is no longer used if you use AzAuth.
+### Verwendung mit [OpenLauncherLib](https://github.com/Litarvan/OpenLauncherLib/) _(für Minecraft Launcher)_
 
-You should have in the code of your launcher an `auth` method similar to the code below:
+Füge zunächst AzAuth als Abhängigkeit zu Deinem Projekt hinzu.
+Wenn Du [OpenAuth](https://github.com/Litarvan/OpenAuth/) verwendest, wird außerdem empfohlen, es zu entfernen.
+Obwohl es keine wirklichen Probleme verursacht, wird es nicht mehr verwendet, wenn Du AzAuth verwendest.
+
+Du solltest im Code Deines Launchers eine `Authentifizierungs`methode ähnlich dem folgenden Code haben:
 ```java
 public static void auth(String username, String password) throws AuthenticationException {
     Authenticator authenticator = new Authenticator(Authenticator.MOJANG_AUTH_URL, AuthPoints.NORMAL_AUTH_POINTS);
@@ -76,30 +79,32 @@ public static void auth(String username, String password) throws AuthenticationE
     authInfos = new AuthInfos(response.getSelectedProfile().getName(), response.getAccessToken(), response.getSelectedProfile().getId());
 }
 ```
-You just have to replace it by the code below, to modify `<url>` by the URL of your Azuriom's website root.
+Du musst es nur durch den folgenden Code ersetzen, um die `<url>` durch die URL des Website-Roots Deiner Azuriom-Website zu ändern.
 ```java
 public static void auth(String username, String password) throws AuthenticationException, IOException {
     AzAuthenticator authenticator = new AzAuthenticator("<url>");
     authInfos = authenticator.authenticate(username, password, AuthInfos.class);
 }
 ```
-Once this is done, you just need to import the class `AzAuthenticator` &
-`AuthenticationException` from the `com.azuriom.auth` package and AzAuth will be integrated
-into your launcher.
 
-### Usage without OpenLauncherLib
+Anschließend musst Du nur noch die Klasse `AzAuthenticator` & `AuthenticationException` aus dem Paket `com.azuriom.auth` importieren und AzAuth werden
+in deinen Launcher integriert.
 
-AzAuth has been designed with [Gson](https://github.com/google/gson) as its only dependency, so you can use it perfectly well if you don't use
-OpenLauncherLib, you can simply use `AzAuthenticator#authenticate(String username, String password)` and that will 
-give you directly a `User` containing a username, uuid, rank, access token and lots of other useful data.
+### Nutzung ohne OpenLauncherLib
+
+AzAuth wurde mit [Gson](https://github.com/google/gson) als einziger Abhängigkeit entwickelt, sodass Di es perfekt verwenden kannst, wenn Du es nicht verwendest
+OpenLauncherLib, Sie können einfach AzAuthenticator#authenticate(String-Benutzername, String-Passwort) verwenden und das wird
+Geben Sie direkt einen Benutzer mit einem Benutzernamen, einer UUID, einem Rang, einem Zugriffstoken und vielen anderen nützlichen Daten.
+
+OpenLauncherLib, Du kannst einfach `AzAuthenticator#authenticate(String-Benutzername, String-Passwort)` verwenden, das wird Dir direkt `einen Benutzer` mit einem Benutzernamen, einer UUID, einem Rang, einem Zugriffstoken und viele andere nützlichen Daten geben.
 
 
-## Usage with NodeJs
+## Verwendung mit NodeJs
 
 ### Installation
 
-The source code is available on [GitHub](https://github.com/Azuriom/AzAuthJs)
-and the package can be installed with `npm install azuriom-auth`.
+Der Quellcode ist auf [GitHub](https://github.com/Azuriom/AzAuthJs) verfügbar,
+das paket kann mit `npm install azuriom-auth` installiert werden.
 
 ### Usage
 
@@ -126,18 +131,18 @@ async function login(email, password) {
 
 **POST** `/authenticate`
 
-Authenticate a user with their website credentials
+Authentifiziere einen Benutzer mit seinen Website-Anmeldeinformationen
 
-##### Request
+##### Anfrage
 |   Field   |        Description         |
 | --------- | -------------------------- |
-|   email   | Username or e-mail address |
-| password  |           Password         |
+|   email   | Benutzername oder E-Mail-Adresse |
+| password  |           Passwort         |
 
-##### Response
+##### Antwort
 
-Returns the user with his various information, and the unique token
-which can be used to verify the connection or to disconnect.
+Gibt den Benutzer mit seinen verschiedenen Informationen und dem einzigartigen Token zurück
+die verwendet werden kann, um die Verbindung zu überprüfen oder zu trennen.
 
 ```json
 {
@@ -156,19 +161,19 @@ which can be used to verify the connection or to disconnect.
 }
 ```
 
-#### Verification
+#### Verifizierung
 
 **POST** `/verify`
 
-##### Request
+##### Anfrage
 |     Field    |     Description     |
 | ------------ | ------------------- |
-| access_token | Unique access token |
+| access_token | Einzigartiges Zugriffstoken |
 
-##### Réponse
+##### Anwort
 
-Returns the user with his various information, and the unique token
-which can be used to verify the connection or to disconnect.
+Gibt den Benutzer mit seinen verschiedenen Informationen und dem einzigartigen Token zurück
+die verwendet werden kann, um die Verbindung zu überprüfen oder zu trennen.
 
 ```json
 {
@@ -191,13 +196,13 @@ which can be used to verify the connection or to disconnect.
 
 **POST** `/logout`
 
-Logout the user and invalidates the access token.
+Meldet den Benutzer ab und macht das Zugriffstoken ungültig.
 
-##### Request
+##### Anfrage
 |     Field    |     Description     |
 | ------------ | ------------------- |
-| access_token | Unique access token |
+| access_token | Einzigartiges Zugriffstoken |
 
-##### Response
+##### Anwort
 
-Empty response, with `2xx` status code.
+Leere Antwort mit `2xx` Statuscode.
