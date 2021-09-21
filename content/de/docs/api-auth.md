@@ -59,7 +59,7 @@ musst Du auf dem Server überprüfen,
 ob das vom Client zurückgegebene Zugriffstoken mithilfe der Überprüfungsmethode gültig ist.
 {{< /warn >}}
 
-## Use of AzAuth (Java)
+## Verwendung von AzAuth (Java)
 
 Before using AzAuth, please make sure that the API is activated by going to
 in the settings of your site, on your admin panel.
