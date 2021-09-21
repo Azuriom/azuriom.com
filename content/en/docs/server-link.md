@@ -28,7 +28,7 @@ To be able to link your server with a site under Azuriom by ping,
 you just have to add a new server with "Ping" as the link type,
 and fill in the requested information _(the default port of Minecraft is `25565`)_.
 
-### link by Rcon
+### Link by Rcon
 
 To be able to link your server with your website under Azuriom by Rcon, 
 You must:
@@ -41,12 +41,12 @@ You must:
     * Set `rcon.port` with `your-port` _(default 25575)_
     * Backup and restart your server
    
-1. Go to your site and add a new server with the link type "Rcon",
+1. Go to your site, add a new server with the link type "Rcon",
 and fill in the requested information. _(Default Rcon port is 25575)_.
 
-### Plugin link
+### Link by Plugin
 
-#### What is AzLink ?
+#### What is AzLink?
 
 AzLink is a site-to-server link plugin specially designed for and by Azuriom. 
 to allow you to link your server to your site simply, quickly and securely.
@@ -99,5 +99,5 @@ You must:
 
 1. Go to the file where the Rcon information of your server can be found.
    
-1. Go to your site and add a new server with the link type "Source Rcon",
+1. Go to your site, add a new server with the link type "Source Rcon",
 and fill in the requested information.

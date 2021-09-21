@@ -30,7 +30,7 @@ It's also highly recommended having a **MySQL/MariaDB or PostgreSQL database**.
 ### Requirements installations
 
 If you are using a VPS or a dedicated server, it will probably be necessary to install yourself a web server, PHP and MySQL.
-This can be done with the following commands :
+This can be done with the following commands:
 
 ```
 apt update -y && apt upgrade -y
@@ -54,7 +54,7 @@ which will install all the prerequisites automatically.
 
 ## Installation
 
-Azuriom offers an automatic installer to install Azuriom easily by following these few steps :
+Azuriom offers an automatic installer to install Azuriom easily by following these few steps:
 
 {{< info >}}
 You can also install it with [Docker](https://www.docker.com/) by following the steps listed [here](https://github.com/Azuriom/Azuriom/blob/master/docker/INSTALL.md).
