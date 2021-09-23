@@ -1,5 +1,5 @@
 ﻿---
-title: Home
+title: Startseite
 weight: 0
 layout: single
 ---
