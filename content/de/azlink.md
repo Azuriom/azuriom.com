@@ -1,4 +1,0 @@
-﻿---
-title: AzLink
-layout: azlink
----
