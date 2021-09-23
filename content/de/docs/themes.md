@@ -1,5 +1,5 @@
 ﻿---
-title: Themes
+title: Themen
 ---
 
 # Themes
