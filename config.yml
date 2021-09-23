@@ -24,7 +24,12 @@ languages:
       code: fr_FR
       twitter: AzuriomFR
   nl:
-    languageName: Dutch
+    languageName: Nederlands
     contentDir: content/nl
     params:
       code: nl_NL
+  de:
+    languageName: Deutsch
+    contentDir: content/de
+    params:
+      code: de_DE
