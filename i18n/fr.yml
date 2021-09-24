@@ -82,6 +82,9 @@ support:
   star: "Star le projet"
   donate: "Faire un don"
 
+docs:
+  index: "Accueil"
+
 errors:
   title: "Erreur"
   notFound:

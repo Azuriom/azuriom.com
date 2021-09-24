@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="row">
+    <aside class="col-md-3 col-xl-2 bd-sidebar">
+        <nav>
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                    <a class="nav-link {{ if eq .Title (i18n "nav.home") }}active{{ end}}" href="{{ absLangURL "docs" }}">
+                        {{ i18n "docs.index" }}
+                    </a>
+                </li>
+                {{ $title := .Title }}
+                {{ range (where site.RegularPages "Section" "docs") }}
+                <li class="nav-item">
+                    <a class="nav-link {{ if eq .Title $title }}active{{ end }}" href="{{ partial "permalink.html" . }}">
+                        {{ .Title }}
+                    </a>
+                </li>
+                {{ end }}
+
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="col-md-9 col-xl-10 markdown-content">
+        {{ .Content }}
+    </main>
+</div>
+{{ end }}

@@ -82,6 +82,9 @@ support:
   star: "Gebe dem Projekt einen Stern"
   donate: "Spenden"
 
+docs:
+  index: "Startseite"
+
 errors:
   title: "Fehler"
   notFound:
