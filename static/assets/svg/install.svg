@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 500">
+    <defs>
+        <linearGradient id="gradient" x1="-77.27" y1="560.02" x2="-28.31" y2="530.77" gradientTransform="matrix(-0.91, -0.41, 0.41, -0.91, 544.23, 663.86)" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#93278f"/>
+            <stop offset="0.22" stop-color="#9a258a"/>
+            <stop offset="0.53" stop-color="#ac207b"/>
+            <stop offset="0.89" stop-color="#ca1762"/>
+            <stop offset="1" stop-color="#d4145a"/>
+        </linearGradient>
+        <linearGradient id="gradient-2" x1="-57.76" y1="511.8" x2="-8.81" y2="482.55" xlink:href="#gradient"/>
+        <linearGradient id="gradient-3" x1="393.51" y1="106.77" x2="442.47" y2="77.52" xlink:href="#gradient"/>
+        <linearGradient id="gradient-4" x1="413.02" y1="58.56" x2="461.98" y2="29.31" xlink:href="#gradient"/>
+        <linearGradient id="gradient-5" x1="375.87" y1="460.98" x2="424.82" y2="431.73" xlink:href="#gradient"/>
+        <linearGradient id="gradient-6" x1="395.37" y1="412.77" x2="444.33" y2="383.52" xlink:href="#gradient"/>
+        <linearGradient id="gradient-7" x1="662.33" y1="519.5" x2="1024.28" y2="303.24" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" xlink:href="#gradient"/>
+        <linearGradient id="gradient-8" x1="0" y1="103.77" x2="235" y2="103.77" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" xlink:href="#gradient"/>
+        <linearGradient id="gradient-9" x1="263.83" y1="58.13" x2="312.92" y2="28.8" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" xlink:href="#gradient"/>
+        <linearGradient id="gradient-10" x1="575.64" y1="60.66" x2="639.39" y2="22.57" gradientTransform="translate(140.35 466.03) rotate(-45.19)" xlink:href="#gradient"/>
+        <linearGradient id="gradient-11" x1="398" y1="399.1" x2="496.49" y2="340.26" gradientTransform="translate(-116.65 188.42) rotate(-20.04)" xlink:href="#gradient"/>
+        <linearGradient id="gradient-12" x1="112.22" y1="308.3" x2="162.07" y2="278.51" gradientTransform="translate(-167.9 187.31) rotate(-45.19)" xlink:href="#gradient"/>
+        <linearGradient id="gradient-13" x1="438.27" y1="257.29" x2="507.6" y2="215.86" gradientTransform="translate(145.92 -179.84) rotate(24.99)" xlink:href="#gradient"/>
+        <linearGradient id="gradient-14" x1="786.5" y1="109.51" x2="889.28" y2="48.11" gradientTransform="translate(-1.39 150.46) rotate(-10.14)" xlink:href="#gradient"/>
+    </defs>
+    <polygon points="843.96 157.11 824.54 214.06 784.93 168.76 843.96 157.11" opacity="0.55" fill="url(#gradient)"/>
+    <polygon points="806.44 193.12 787.02 250.07 747.41 204.78 806.44 193.12" opacity="0.55" fill="url(#gradient-2)"/>
+    <polygon points="228.96 378.11 209.54 435.06 169.94 389.76 228.96 378.11" opacity="0.3" fill="url(#gradient-3)"/>
+    <polygon points="191.44 414.12 172.02 471.07 132.41 425.78 191.44 414.12" opacity="0.3" fill="url(#gradient-4)"/>
+    <polygon points="389.96 62.11 370.54 119.06 330.94 73.76 389.96 62.11" opacity="0.6" fill="url(#gradient-5)"/>
+    <polygon points="352.44 98.12 333.02 155.07 293.41 109.78 352.44 98.12" opacity="0.6" fill="url(#gradient-6)"/>
+    <path d="M1000,268V500H622c-24.57-45-31.85-114.38-4-136,30-23.31,77.53,27,128,4,29.57-13.46,37.41-41.72,48.81-68.92a186.48,186.48,0,0,1,8.59-18.14c6.5-11.76,14.91-22.57,27.6-30.94C881,217,957.78,241.63,1000,268Z" opacity="0.25" fill="url(#gradient-7)"/>
+    <path d="M235,0c-.93,5.9-35.68-3.29-71,20-4.8,3.17-25.26,17.25-44,56-33.62,69.51-12.56,116.7-36,129-22.06,11.57-62.55-18.77-84-44V0Z" opacity="0.25" fill="url(#gradient-8)"/>
+    <path d="M322,58.43,272.56,71.51a5.5,5.5,0,0,1-6.71-6.76l13.4-49.36A5.5,5.5,0,0,1,288.46,13l36.05,36.28A5.5,5.5,0,0,1,322,58.43Z" opacity="0.3" fill="url(#gradient-9)"/>
+    <path d="M643.35,44.51,608,105.8a5,5,0,0,1-8.74,0L563.84,44.51a5,5,0,0,1,4.37-7.57H639A5,5,0,0,1,643.35,44.51Z" opacity="0.4" fill="url(#gradient-10)"/>
+    <path d="M508.54,382.2l-93.62,65.2a5.52,5.52,0,0,1-8.65-4.06l-9.65-113.67a5.51,5.51,0,0,1,7.84-5.46l103.27,48.47A5.52,5.52,0,0,1,508.54,382.2Z" opacity="0.35" fill="url(#gradient-11)"/>
+    <path d="M172.05,282.32l-26.79,46.39a4.8,4.8,0,0,1-8.31,0l-26.78-46.39a4.8,4.8,0,0,1,4.16-7.2h53.56A4.81,4.81,0,0,1,172.05,282.32Z" opacity="0.25" fill="url(#gradient-12)"/>
+    <path d="M512.34,273.35l-76.77-13.77a5,5,0,0,1-2.94-8.14L483,191.85a5,5,0,0,1,8.51,1.52l26.46,73.38A5,5,0,0,1,512.34,273.35Z" opacity="0.6" fill="url(#gradient-13)"/>
+    <path d="M918.09,94.12l-108.4,50.44a5.51,5.51,0,0,1-7.81-5.47L812.4,20A5.5,5.5,0,0,1,821,16l97.89,68.66A5.5,5.5,0,0,1,918.09,94.12Z" opacity="0.5" fill="url(#gradient-14)"/>
+</svg>

@@ -1,5 +1,6 @@
 ---
 title: Home
+description: The Azuriom documentation contains a lot of useful information about Azuriom, for installation, use or extensions development.
 weight: 0
 layout: single
 ---

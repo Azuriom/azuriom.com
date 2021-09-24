@@ -1,5 +1,6 @@
 ---
 title: Accueil
+description: La documentation d'Azuriom contient de nombreuses informations utiles sur Azuriom, que ce soit pour l'installation, l'utilisation ou le développement d'extensions.
 weight: 0
 layout: single
 ---

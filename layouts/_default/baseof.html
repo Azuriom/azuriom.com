@@ -4,8 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Meta -->
+  {{ $description := i18n "meta.desc" -}}
+  {{- if .Description -}}
+    {{ $description = .Description }}
+  {{- end }}
   <title>{{ block "title" . }}{{ .Title }} | Azuriom{{ end }}</title>
-  <meta name="description" content="{{ block "description" . }}{{ i18n "meta.desc" }}{{ end }}">
+  <meta name="description" content="{{ $description }}">
   <meta name="keywords" content="Azuriom, CMS Minecraft, game, CMS, Minecraft, Hytale, garrysmod, ark, rust, open-source, free, fast, secure">
   <meta name="author" content="Azuriom">
   <meta name="theme-color" content="#004de6">
@@ -15,14 +19,14 @@
   <meta name="twitter:site" content="@Azuriom">
   <meta name="twitter:creator" content="@Azuriom">
   <meta name="twitter:title" content="{{ .Title }}">
-  <meta name="twitter:description" content="{{ i18n "meta.desc" }}">
+  <meta name="twitter:description" content="{{ $description }}">
   <meta name="twitter:image" content="{{ absURL "assets/img/banner.png" }}">
 
   <meta property="og:title" content="{{ .Title }}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ partial "permalink.html" . }}">
   <meta property="og:site_name" content="Azuriom">
-  <meta property="og:description" content="{{ i18n "meta.desc" }}">
+  <meta property="og:description" content="{{ $description }}">
   <meta property="og:locale" content="{{ .Param "code" }}">
   <meta property="og:image" content="{{ absURL "assets/img/logo.png" }}">
   {{ block "meta" . }}{{ end -}}
