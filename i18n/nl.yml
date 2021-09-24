@@ -82,9 +82,6 @@ support:
   star: "Geef het project een ster"
   donate: "Doneren"
 
-docs:
-  index: "Index"
-
 errors:
   title: "Fout"
   notFound:
