@@ -1,0 +1,92 @@
+meta:
+  desc: "Azuriom ist ein modernes, zuverlässiges, schnelles und sichere Gaming CMS. Es ist die ideale Wahl für Ihre Website über Minecraft, Garrys Mod, Rust, Ark, FIVEM und viele andere Spiele."
+
+nav:
+  home: "Startseite"
+  download: "Herunterladen"
+  extensions: "Erweiterungen"
+  docs: "Dokumentation"
+  demo: "Demo"
+  demoMC: "Minecraft Demo"
+  demoSteam: "Steam Demo"
+
+footer:
+  about: "Über uns"
+  aboutDescription: "Azuriom ist das nächste Generation-Spiel CMS, es ist kostenlos und Open-Source, und ist eine moderne, zuverlässige, schnelle und sichere Alternative zu bestehenden CMS, sodass Du das beste Web-Erlebnis für Deine Website auf Minecraft, Garrys Mod, Ark, Rost haben können und viele andere Spiele."
+  copyright: "Copyright &copy; 2019-{{ .year }} Azuriom - Alle Rechte vorbehalten. Geschaffen with&nbsp;{{ .love }} von Azuriom."
+  partners: "Partner"
+  links: "Links"
+  supportUs: "Unterstütze uns"
+
+home:
+  header:
+    title: "Azuriom | Die Gaming-Website der nächsten Generation"
+    subtitle: "Die Gaming-Website der nächsten Generation für Deinen Server, die von Hunderten von Websites verwendet wird."
+    heading: "Ein Spiele CMS"
+    typed: "kostenfrei und Open-Source.|schnell und sicher.|modern und zuverlässig."
+    typedFallback: "kostenfrei und quelloffen, schnell, sicher, modern und zuverlässig."
+
+  about:
+    title: "Was ist Azuriom"
+    description1: "Azuriom ist die <strong>nächste Generation</strong> der Spiele CMS, es ist <strong>kostenfrei</strong> und <strong>Open-Source</strong>, ebenfalls ist es eine <strong>moderne, zuverlässige, schnellere und sichere</strong> Alternative zu bestehenden CMS, sodass Sie über das <strong>beste Weberlebnis</strong> verfügen können."
+    description2: "Azuriom ist die ideale Wahl für Ihre Website über Minecraft, Garrys Mod, Rust, FIVEM, Ark und viele andere Spiele."
+    gamesTitle: "Unterstützte Spiele"
+    games: "Azuriom ist ein <strong>Minecraft CMS</strong>, jedoch nicht nur! Zusätzlich zu Minecraft, unterstützt es ebenfalls <strong>Garry's Mod, Ark, Rust, FiveM, CS:GO and Team Fortress 2</strong>!"
+
+  features:
+    modern:
+      title: "Modern"
+      desc: "Geschaffen mit den neuesten Technologien, mit soliden Mustern."
+
+    reliable:
+      title: "Zuverlässig"
+      desc: "Unsere Prüfprotokolle helfen, Fehler in der Produktion zu vermeiden."
+
+    fast:
+      title: "Schnell"
+      desc: "Jede Komponente von Azuriom ist auf das Maximum für unübertroffene Leistung optimiert."
+
+    secure:
+      title: "Sicher"
+      desc: "Mit seinem starken Konzept und den aktuellen Abhängigkeiten ist die Sicherheit stark."
+
+  desc1:
+    title: "Einzigartige Erweiterungen"
+    description1: "Unsere Erweiterungen, also unseren Themes und Plugins, werden auf die gleiche Weise wie das CMS erstellt, sodass es nach der Installation eins mit den Erweiterungen ist."
+    descriptioh2: "Für Entwickler, die ihre Erweiterungen durchführen möchten, stehen Tools und eine komplette Dokumentation für einen einzigartigen Arbeitskomfort zur Verfügung."
+    description3: "Ein Community-Markt ist ebenfalls verfügbar, um Ihre Erweiterungen zu veröffentlichen. Wir überprüfen jede Erweiterung und verfolgen dann regelmäßig die vorgeschlagenen Aktualisierungen, um einen sauberen Markt zu gewährleisten."
+
+  desc2:
+    title: "Aktive Unterstützung"
+    description1: "Wir haben eine aktive Unterstützung auf Discord und auf GitHub und da Azuriom Open Source ist, kann jeder auf GitHub zum Projekt beitragen!"
+    description2: "Und Azuriom ist Open Source, sodass jeder einen Beitrag leisten und das Projekt verbessern kann."
+
+download:
+  title: "Herunterladen"
+  docs: "Es wird empfohlen, vor dem Herunterladen von Azuriom <a href=\"{{ .docs }}\" target=\"_blank\">unsere Dokumentation zu lesen</a>."
+  support: 'Solltest du Hilfe benötigen oder eine Frage haben, kannst du unserem <a href="{{ .discord }}" target="_blank">Discord</a> Server beitreten.'
+  sources: 'Azuriom ist Open-Source, dessen Ressohrcen sind auf <a href="{{ .github }}" target="_blank">GitHub</a> verfügbar.'
+
+azlink:
+  title: "AzLink"
+  info: "AzLink ist ein Plugin für Azuriom, um Deinen Server auf einfache, schnelle und sichere Weise mit Deiner Azuriom-Website zu verknüpfen."
+  download: "Herunterladen"
+  supported: "AzLink unterstützt Bukkit (und andere Bukkit-basierte Server wie Spigot, Glowstone, Cauldron und Mohist), BungeeCord, Sponge und Velocity im selben Plugin. Wenn Du Minecraft 1.7.10 verwendest, musst Du die Legacy-Version herunterladen."
+  sources: 'AzLink ist Open-Source, die Quellen sind auf <a href="{{ .github }}" target="_blank">GitHub</a> verfügbar.'
+
+support:
+  title: "Unterstütze uns"
+  description1: "Die Durchführung dieses Projekts ist zeitaufwändig und Deine Spende hilft uns bei der Arbeit und Verbesserung dieses Projekts."
+  description2: "Deine Spende hilft auch, die finanziellen Kosten dieses Projekts zu decken: Wir müssen die Domain bezahlen, Server mieten (Website, Demo), Grafikdesigner, ..."
+  description3: "Du kannst uns auch unterstützen, indem du das GitHub-Repository startest, es ist kostenlos und du brauchst nur einen GitHub-Account."
+  star: "Gebe dem Projekt einen Stern"
+  donate: "Spenden"
+
+docs:
+  index: "Startseite"
+
+errors:
+  title: "Fehler"
+  notFound:
+    title: "Nicht gefunden"
+    info: "Die Seite, nach der du suchst, existiert nicht"
