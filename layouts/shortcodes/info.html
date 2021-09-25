@@ -1,6 +1,8 @@
+{{ $img := "assets/svg/help.svg" }}
+{{- if .Get "img" }}{{ $img = .Get "img" }}{{ end -}}
 <blockquote class="alert alert-info d-flex align-items-center documentation-alert">
     <div class="flex-shrink-0">
-        <img class="svg bg-transparent mr-3" alt="info" src="{{ absURL "assets/svg/help.svg" }}">
+        <img class="svg bg-transparent mr-3" alt="info" src="{{ absURL $img }}">
     </div>
     <div class="flex-grow-1 ms-3">
         {{- .Inner | markdownify -}}
