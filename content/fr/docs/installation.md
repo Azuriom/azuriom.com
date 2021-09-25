@@ -74,7 +74,7 @@ hébergeurs ne sont pas compatibles ou nécessitent des petites adaptations :
         ...
     ```
 
-{{< info >}}
+{{< info src="assets/svg/nihost-circle.svg" >}}
 Si vous recherchez un hébergeur web associatif **abordable mais de qualité**, nous
 vous recommandons notre partenaire [NiHost](https://www.ni-host.com/?utm_source=installation&utm_medium=links&utm_campaign=AzuriomCom) !
 
