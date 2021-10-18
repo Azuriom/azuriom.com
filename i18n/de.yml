@@ -12,7 +12,7 @@ nav:
 
 footer:
   about: "Über uns"
-  aboutDescription: "Azuriom ist das nächste Generation-Spiel CMS, es ist kostenlos und Open-Source, und ist eine moderne, zuverlässige, schnelle und sichere Alternative zu bestehenden CMS, sodass Du das beste Web-Erlebnis für Deine Website auf Minecraft, Garrys Mod, Ark, Rost haben können und viele andere Spiele."
+  aboutDescription: "Azuriom ist das nächste Generation-Spiel CMS, es ist kostenlos und Open-Source, und ist eine moderne, zuverlässige, schnelle und sichere Alternative zu bestehenden CMS, sodass Du das beste Web-Erlebnis für Deine Website auf Minecraft, Garrys Mod, Ark, Rust und viele andere Spiele haben kannst."
   copyright: "Copyright &copy; 2019-{{ .year }} Azuriom - Alle Rechte vorbehalten. Geschaffen with&nbsp;{{ .love }} von Azuriom."
   partners: "Partner"
   links: "Links"
@@ -65,7 +65,7 @@ download:
   title: "Herunterladen"
   docs: "Es wird empfohlen, vor dem Herunterladen von Azuriom <a href=\"{{ .docs }}\" target=\"_blank\">unsere Dokumentation zu lesen</a>."
   support: 'Solltest du Hilfe benötigen oder eine Frage haben, kannst du unserem <a href="{{ .discord }}" target="_blank">Discord</a> Server beitreten.'
-  sources: 'Azuriom ist Open-Source, dessen Ressohrcen sind auf <a href="{{ .github }}" target="_blank">GitHub</a> verfügbar.'
+  sources: 'Azuriom ist Open-Source, dessen Ressourcen sind auf <a href="{{ .github }}" target="_blank">GitHub</a> verfügbar.'
 
 azlink:
   title: "AzLink"
