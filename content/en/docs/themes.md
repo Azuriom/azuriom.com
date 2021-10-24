@@ -13,7 +13,7 @@ the root of your website.
 
 {{< warn >}}
 When Azuriom is installed locally for theme development,
-it's highly recommended to activate the debug to simplify development.
+it's highly recommended enabling debug to simplify development.
 This can be done by simply editing these 2 lines in the `.env` file:
 ```
 APP_ENV=local

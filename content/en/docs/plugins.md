@@ -18,7 +18,7 @@ Before creating a plugin, it is recommended that you read the
 
 {{< warn >}}
 When Azuriom is installed locally for plugin development,
-it's highly recommended to enalble the debug to simplify development.
+it's highly recommended enabling debug to simplify development.
 This can be done by simply editing these 2 lines in the `.env` file:
 ```
 APP_ENV=local

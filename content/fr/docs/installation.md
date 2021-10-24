@@ -47,7 +47,8 @@ faire, des explications sont disponibles en bas de cette page.
 {{< info >}}
 Si vous préférez, vous pouvez aussi utiliser ce
 [script non-officiel d'installation automatique](https://github.com/AzuriomCommunity/Script-AutoInstall)
-qui installera tous les pré-requis automatiquement.
+qui installera tous les pré-requis automatiquement
+(veillez simplement à le lancer uniquement sur un VPS qui vient d'être installé pour éviter d'éventuels conflits).
 {{< /info >}}
 
 ## Hébergeurs
