@@ -68,13 +68,6 @@ status = 302
 
 [[redirects]]
 from = "/"
-to = "/de"
-conditions = { Country = ["de"] }
-force = true
-status = 302
-
-[[redirects]]
-from = "/"
 to = "/nl"
 conditions = { Country = ["nl"] }
 force = true
@@ -90,12 +83,6 @@ status = 302
 from = "/*"
 to = "/fr/:splat"
 conditions = { Country = ["fr"] }
-status = 302
-
-[[redirects]]
-from = "/*"
-to = "/de/:splat"
-conditions = { Country = ["de"] }
 status = 302
 
 [[redirects]]
