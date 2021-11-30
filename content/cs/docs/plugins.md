@@ -29,9 +29,9 @@ APP_DEBUG=true
 ### Struktura doplňku
 
 ```
-plugins/  <-- Složka obsahující různé nainstalované doplňky
+plugins/  <-- Složka obsahující všechny nainstalované doplňky
 |  example/  <-- ID vašeho doplňku
-|  |  plugin.json  <-- Hlavní soubor vašeho tématu obsahující různé informace
+|  |  plugin.json  <-- Hlavní soubor vašeho doplňku obsahující různé informace
 |  |  assets/  <-- Složka obsahující assety vašeho doplňku (css, js, obrázky, svg, atd)
 |  |  database/
 |  |  | migrations/ <-- Složka obsahující migrace vašeho doplňku
@@ -67,7 +67,7 @@ obsahuje různé informace o něm:
 
 Každý doplněk musí mít ID, které musí být unikátní a může obsahovat pouze
 čísla, malá písmena a pomlčky. Je doporučeno použít název jako základ pro
-tvorbu ID, takže pokud je například název `Ahoj světe`, ID může být
+tvorbu ID, takže pokud máte například název `Ahoj světe`, ID může být
 `ahoj-svete`. Název adresáře doplňku se také musí shodovat s jeho ID.
 
 {{< info >}}
