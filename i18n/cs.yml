@@ -1,0 +1,92 @@
+meta:
+  desc: "Azuriom je moderní, spolehlivé, rychlé a bezpečné herní CMS. Je to ideální volba pro váš web pro Minecraft, Garry's Mod, Rust, Ark, FiveM a spoustu dalších her."
+
+nav:
+  home: "Domů"
+  download: "Stáhnout"
+  extensions: "Rozšíření"
+  docs: "Dokumentace"
+  demo: "Demo"
+  demoMC: "Minecraft Demo"
+  demoSteam: "Steam Demo"
+
+footer:
+  about: "O nás"
+  aboutDescription: "Azuriom je herní CMS nové generace, je bezplatný a open-source a je moderní, spolehlivou a rychlou alternativou k existujícím CMS, takže můžete mít nejlepší zážitek z vašeho webu pro Minecraft, Garry's Mod, Ark, Rust a spoustu dalších her."
+  copyright: "Copyright &copy; 2019-{{ .year }} Azuriom - Všechna práva vybrazena. Vytvořeno s&nbsp;{{ .love }} Azuriomem."
+  partners: "Partneři"
+  links: "Odkazy"
+  supportUs: "Podpořte nás"
+
+home:
+  header:
+    title: "Azuriom | Herní web nové generace"
+    subtitle: "Herní web nové generace pro váš server, používán stovkami webů."
+    heading: "Herní CMS"
+    typed: "bezplatné a open source.|rychlé a bezpečné.|moderní a spolehlivé."
+    typedFallback: "bezplatné a open source, rychlé, bezpečné, moderní a spolehlivé."
+
+  about:
+    title: "Co je to Azuriom"
+    description1: "Azuriom je herní CMS <strong>nové generace</strong>, je <strong>bezplatné</strong> a <strong>open-source</strong> a je <strong>moderní, spolehlivou, rychlou a bezpečnou</strong> alternativou k již existujícím CMS, takže můžete mít <strong>nejlepší možný zážitek z webu</strong>."
+    description2: "Azuriom je ideální volba pro váš web pro Minecraft, Garry's Mod, Rust, FiveM, Ark a spoustu dalších her."
+    gamesTitle: "Podporované hry"
+    games: "Azuriom je <strong>Minecraft CMS</strong>, ale nejen to! Mimo Minecraftu také podporuje <strong>Garry's Mod, Ark, Rust, FiveM, CS:GO a Team Fortress 2</strong>!"
+
+  features:
+    modern:
+      title: "Moderní"
+      desc: "Postaveno na nejnovějších technologiích s pevnými vzorci."
+
+    reliable:
+      title: "Spolehlivé"
+      desc: "Naše testovacíí protokoly pomáhají zabránit chybám v produkčním použití."
+
+    fast:
+      title: "Rychlé"
+      desc: "Každá komponenta Azuriomu je optimalizovaná pro maximální bezkonkurenční výkon."
+
+    secure:
+      title: "Bezpečné"
+      desc: "Díky silné koncepci a aktuálním závislostem máme velmi dobrou bezpečnost."
+
+  desc1:
+    title: "Unikátní rozšíření"
+    description1: "Naše rozšíření, čímž myslíme naše témata a doplňky, jsou vytvořeny stejným způsobem, jako CMS, takže do něj po instalaci krásně zapadnou."
+    description2: "Pro vývojáře, kteří chtějí vydat svá vlastní rozšíření, je dostupná kompletní dokumentace a nástroje pro unikátní pracovní komfort."
+    description3: "Také je dostupný komunitní obchod pro zveřejňování vašich rozšíření. Každé rozšíření kontrolujeme a poté pravidelně jeho sledujeme aktualizace pro udržení čistého obchodu."
+
+  desc2:
+    title: "Aktivní podpora"
+    description1: "Máme aktivní podporu na Discordu a na GitHubu a protože je Azuriom open-source, může do něj kdokoli přispívat na GitHubu!"
+    description2: "Azuriom je open-source, takže do něj může kdokoli přispívat a tím zlepšovat projekt."
+
+download:
+  title: "Stáhnout"
+  docs: "Před stažením Azuriomu je doporučeno si <a href=\"{{ .docs }}\" target=\"_blank\">přečíst naši dokumentaci</a>."
+  support: 'Pokud potřebujete pomoct nebo máte otázku, můžete se připojit na náš <a href="{{ .discord }}" target="_blank">Discord</a> server.'
+  sources: 'Azuriom je open-source a jeho zdroje jsou dostupné na <a href="{{ .github }}" target="_blank">GitHubu</a>.'
+
+azlink:
+  title: "AzLink"
+  info: "AzLink je plugin vytvořený pro Azuriom pro jednoduché, rychlé a bezpečné propojení vašeho serveru a webu."
+  download: "Stáhnout"
+  supported: "AzLink podporuje Bukkit (a další servery založené na Bukkitu jako Spigot, Glowstone, Cauldron a Mohist), BungeeCord, Sponge a Velocity. Pokud používáte Minecraft 1.7.10, musíte si stáhnout starší verzi."
+  sources: 'AzLink je open-source a jeho zdroje jsou dostupné na <a href="{{ .github }}" target="_blank">GitHubu</a>.'
+
+support:
+  title: "Podpořte nás"
+  description1: "Tvorba tohoto projektu je časově náročná a váš příspěvek nám pomůže pracovat a zlepšovat tento projekt."
+  description2: "Váš příspěvek také pomůže pokrýt finanční náklady tohoto projektu: musíme platit doménu, servery (web, demo), grafické designéry, ..."
+  description3: "Také nás můžete podpořit kliknutím na hvězdičku u našeho GitHub repozitáře, je to zdarma a stačí vám GitHub účet."
+  star: "Dát hvězdičku"
+  donate: "Přispět"
+
+docs:
+  index: "Domů"
+
+errors:
+  title: "Chyba"
+  notFound:
+    title: "Nenalezeno"
+    info: "Stránka, kterou hledáte, nebyla nalezena."
