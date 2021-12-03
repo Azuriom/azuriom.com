@@ -33,3 +33,8 @@ languages:
     contentDir: content/de
     params:
       code: de_DE
+  cs:
+    languageName: Czech
+    contentDir: content/cs
+    params:
+      code: cs_CZ
