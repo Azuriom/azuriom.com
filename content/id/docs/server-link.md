@@ -30,43 +30,43 @@ dan isi semua informasi yang diperlukan _(port biasanya dari Minecraft adalah `2
 
 ### Terhubung dengan Rcon
 
-To be able to link your server with your website under Azuriom by Rcon, 
-You must:
+Untuk bisa menghubungkan server anda dengan website anda dibawah Azuriom dengan Rcon, 
+Anda harus:
 
-1. Go to the `server.properties` file of your server
+1. Pergi ke file `server.properties` di server anda
 
-1. Configure this file as follows:
-    * Set `enable-rcon` to `true`.
-    * Put `rcon.password` with `your-password`.
-    * Set `rcon.port` with `your-port` _(default 25575)_
-    * Backup and restart your server
+1. Konfigurasikan file ini sebagai berikut:
+    * Ganti `enable-rcon` menjadi `true`.
+    * Masukkan `rcon.password` dengan `password-anda`.
+    * Ganti `rcon.port` dengan `port-anda` _(bawaan 25575)_
+    * Backup dan restart server anda
    
-1. Go to your site, add a new server with the link type "Rcon",
-and fill in the requested information. _(Default Rcon port is 25575)_.
+1. Pergi ke website, tambahkan server baru dengan tipe menghubung "Rcon",
+dan masukkan ke informasi yang diminta. _(Rcon port bawaan adalah 25575)_.
 
-### Link by Plugin
+### Terhubung dengan Plugin
 
-#### What is AzLink?
+#### Apa itu AzLink?
 
-AzLink is a site-to-server link plugin specially designed for and by Azuriom. 
-to allow you to link your server to your site simply, quickly and securely.
+AzLink adalah sebuah plugin website-ke-server yang dibuat untuk dan Azuriom. 
+untuk memperbolehkan anda untuk menghubungkan server anda ke website anda dengan mudah, cepat dan aman.
 
-AzLink currently supports Bukkit, BungeeCord, Sponge and Velocity in the same plugin.
-A legacy version is available for Bukkit 1.7.10.
+AzLink sementara ini mendukung Bukkit, BungeeCord, Sponge dan Velocity di plugin yang sama.
+Sebuah versi legacy tersedia untuk Bukkit 1.7.10.
 
-#### Installation
+#### Pengunduhan
 
-1. Download AzLink from [our site](https://azuriom.com/azlink)
+1. Unduh AzLink dari [website kami](https://azuriom.com/azlink)
 
-1. Install it on the server in the `plugins/` folder (or `mods/` with Sponge)
-and restart the server.
+1. Unduhkan ke server di folder `plugins/` (atau `mods/` dengan Sponge)
+dan restart server.
 
-1. Go to your site and add a new server with the link type "AzLink", 
-follow the link steps and fill in the requested information.
+1. Pergi ke website anda dan tambahkan server baru dengan menghubung tipe "AzLink", 
+ikuti langkah menghubungkan dan masukkan data yang diminta.
 
-## Steam Games
+## Permainan Steam
 
-### Introduction
+### Perkenalan
 
 This list includes the servers of the following games: Ark, CS:GO, Garry's Mod & Team fortress 2.
 You can link your server with your site in two ways in this case:
