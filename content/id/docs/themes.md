@@ -145,29 +145,29 @@ Untuk mempunyai tautan untuk sebuah aset dalam sebuah tema anda bisa menggunakan
 
 #### Pengguna Saat ini
 
-Pengguna saat ini bisa diambil menggunakan fungsi `auth()->user()`.
+Pengguna saat ini bisa mengembalikan menggunakan fungsi `auth()->user()`.
 Untuk detail lebih lanjut dalam autentikasi, anda bisa membaca
 [Dokumentasi Laravel](https://laravel.com/docs/authentication).
 
-#### Functions
+#### Fungsi
 
-You can retrieve a certain number of parameters from the website via the functions
-dedicated:
+Anda bisa mengembalikan sebuah jumlah parameter dari website menggunakan fungsi
+dedikasi:
 
-|    Fonction      |               Description                 |
+|      Fungsi      |               Deskripsi                   |
 | ---------------- | ----------------------------------------- |
-| `site_name()`    | Retrieves the site name                   |
-| `site_logo()`    | Allows you to have the website logo link  |
-| `favicon()`      | Allows you to have the favicon link       |
-| `format_date()`  | Displays a date formatted with the current language. This function takes an instance of `Carbon\Carbon` as a parameter |
-| `money_name()`   | Returns the name of the website's currency   |
-| `format_money()` | Returns an amount formatted with the website currency |
+| `site_name()`    | Memunculkan nama website                  |
+| `site_logo()`    | Memperbolehkan anda mendapatkan tautan logo website  |
+| `favicon()`      | Memperbolehkan anda untuk mendapatkan tautan favicon |
+| `format_date()`  | Memperlihatkan tanggal yang diformat dengan bahasa saat itu. Fungsi mengambil contoh dari `Carbon\Carbon` sebagai parameter |
+| `money_name()`   | Memberikan nama dari mata uang website    |
+| `format_money()` | Memberikan jumlah diformst dengan mata uang website  |
 
-#### Display the players connected to the server
+#### Menunjukan pemain yang terhubung dengan server
 
-To display the connected players, just check the `$server` variable is not null,
-and the server is online, and if it is, use `$server->getOnlinePlayers()` to
-retrieve the online players count.
+Untuk memperlihatkan pemain yang terhubung, hanya periksa dengan variabel `$server` bukan null,
+dan servernya online, dan jika itu benar, gunakan `$server->getOnlinePlayers()` untuk
+memberikan jumlah pemain yang online.
 
 ```blade
 @if($server && $server->isOnline())
@@ -177,32 +177,32 @@ retrieve the online players count.
 @endif
 ```
 
-#### Translations
+#### Terjemahan
 
-A theme can, if it needs it, load translations.
+Sebuah tema bisa, jika diperlukan, memuat terjemahan.
 
-To do so, just create a `messages.php` file in the `lang/<language>` directory (ex: `lang/en`).
-of a theme, you can then display a translation via the
-trans: `{{ trans('theme::messages.hello') }}` or via the `@lang` directive: 
+Untuk melakukannya, hanya buat sebuah file `messages.php` di dalam direktori `lang/<language>` (contohnya: `lang/en`).
+dari sebuah tema, anda akan bisa menampilkan sebuah terjemahan melalui
+trans: `{{ trans('theme::messages.hello') }}` atau melalui `@lang`: 
 `@lang('theme::messages.hello')`.
-You can also use `trans_choice` for a translation with
-numbers, and `trans_bool` to translate a boolean (will return in English `Yes`).
+Anda juga bisa menggunakan `trans_choice` untuk terjemahan dengan
+angka, dan `trans_bool` untuk menerjemahkan sebuah boolean (akan muncul dalam Inggris `Yes`).
 /`No`.
 
-For more details on translations, you can refer to the
-[Laravel documentation](https://laravel.com/docs/localization).
+Untuk detail lebih lanjut mengenai terjemahan, anda bisa membaca
+[Dokumentasi Laravel](https://laravel.com/docs/localization).
 
 
-### Configuration
+### Konfigurasi
 
-You can add a configuration in a theme, to do so you just have
-to create at the root of a theme:
-* A `config/config.blade.php` view containing the form for the configuration.
-* A `config/rules.php` file containing the different validation rules for
-the configuration of a theme.
-* A `config.json` file where the theme configuration will be stored, and containing the default values. 
+Anda bisa menambahkan konfigurasi di sebuah tema, untuk melakukannya anda hanya harus
+membuat sebuah root untuk sebuah tema:
+* Sebuah view `config/config.blade.php` berisi forum untuk konfigurasi.
+* Sebuah file `config/rules.php` berisi validasi peraturan yang berbeda untuk
+mengkonfigurasi tema.
+* Sebuah file `config.json` dimana konfigurasi tema akan disimpan, dan berisi tentang nilai yang sudah dipilih. 
 
-##### Example
+##### Contoh
 
 config.blade.php
 ```html
