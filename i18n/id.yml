@@ -20,18 +20,18 @@ footer:
 
 home:
   header:
-    title: "Azuriom | The next-generation gaming website"
-    subtitle: "The next generation of gaming website for your server, used by hundreds of websites."
-    heading: "A game CMS"
-    typed: "free and open source.|fast and secure.|modern and reliable."
-    typedFallback: "free and open source, fast, secure, modern and reliable."
+    title: "Azuriom | Website game generasi-selanjutnya"
+    subtitle: "Website game generasi selanjutnya untuk server anda, digunakan oleh ribuan website."
+    heading: "Sebuah CMS Game"
+    typed: "gratis dan open source.|cepat dan aman.|modern dan dapat diandalkan."
+    typedFallback: "gratis dan open source, cepat, aman, modern dan dapat diandalkan."
 
   about:
-    title: "What is Azuriom"
-    description1: "Azuriom is the <strong>next generation</strong> game CMS, it's <strong>free</strong> and <strong>open-source</strong>, and is a <strong>modern, reliable, fast and secure</strong> alternative to existing CMS so you can have the <strong>best web experience possible</strong>."
-    description2: "Azuriom is the ideal choice for your website on Minecraft, Garry's Mod, Rust, FiveM, Ark and many others games."
-    gamesTitle: "Supported games"
-    games: "Azuriom is a <strong>Minecraft CMS</strong>, but not only! In addition to Minecraft, it also supports <strong>Garry's Mod, Ark, Rust, FiveM, CS:GO and Team Fortress 2</strong>!"
+    title: "Apa itu Azuriom"
+    description1: "Azuriom merupakan game CMS <strong>generasi selanjutnya</strong>, ini <strong>gratis</strong> dan <strong>open-source</strong>, and is a <strong>modern, reliable, fast and secure</strong> alternative to existing CMS so you can have the <strong>best web experience possible</strong>."
+    description2: "Azuriom merupakan pilihan terbaik untuk website Minecraft, Garry's Mod, Rust, FiveM, Ark dan masih banyak lagi."
+    gamesTitle: "Permainan yang didukung"
+    games: "Azuriom merupakan <strong>CMS Minecraft</strong>, tapi bukanbut not only! In addition to Minecraft, it also supports <strong>Garry's Mod, Ark, Rust, FiveM, CS:GO and Team Fortress 2</strong>!"
 
   features:
     modern:
