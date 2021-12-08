@@ -135,19 +135,19 @@ Contohnya, untuk plugin vote, ini akan memberikan `views/plugins/vote/index.blad
 
 ### Metode
 
-#### Assets
+#### Aset
 
-To have the link to an asset in a theme you can use the function
+Untuk mempunyai tautan untuk sebuah aset dalam sebuah tema anda bisa menggunakan
 `theme_asset`: 
 ```html
 <link rel="stylesheet" href="{{ theme_asset('css/style.css') }}">
 ```
 
-#### Current user
+#### Pengguna Saat ini
 
-The current user can be retrieved using the `auth()->user()` function.
-For more details on authentication, you can refer to the
-[Laravel documentation](https://laravel.com/docs/authentication).
+Pengguna saat ini bisa diambil menggunakan fungsi `auth()->user()`.
+Untuk detail lebih lanjut dalam autentikasi, anda bisa membaca
+[Dokumentasi Laravel](https://laravel.com/docs/authentication).
 
 #### Functions
 
