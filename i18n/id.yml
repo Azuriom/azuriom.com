@@ -3,7 +3,7 @@ meta:
 
 nav:
   home: "Home"
-  download: "Install"
+  download: "Pengunduhan"
   extensions: "Tambahan"
   docs: "Dokumentasi"
   demo: "Demo"
@@ -52,7 +52,7 @@ home:
 
   desc1:
     title: "Tambahan yang Unik"
-    description1: "Tambahan kami, yaitu Themes dan Plugin kami dibuat dalam cara yang sama dengan CMS sehingga ini akan menjadi satu dengan Tambahan setelah diinstal."
+    description1: "Tambahan kami, yaitu Themes dan Plugin kami dibuat dalam cara yang sama dengan CMS sehingga ini akan menjadi satu dengan Tambahan setelah diunduh."
     description2: "Untuk para Pengembang yang ingin membuat Tambahan, alat dan dokumentasi yang lengkap sudah tersedia untuk pengembangan yang nyaman."
     description3: "Sebuah pasar Komunitas juga tersedia untuk mengirim Tambahan anda. Kami akan memeriksa setiap Tambahan, dan nanti kami akan terus mengikut pembaruan yang diajukan untuk membuat pasar tetap bersih."
 
@@ -79,8 +79,8 @@ support:
   description1: "Membuat proyek ini memakan waktu, dan donasi anda akan sangat membantu kami untuk bekerja dan meningkatkan proyek ini."
   description2: "Donasi anda juga akan membantu menutupi biaya finansial untuk proyek ini: kami butuh untuk membayar domain, menyewa server (website, demo), desainer grafis, ..."
   description3: "Anda juga membantu kami dengan memberikan bintang di repo GitHub kami, ini gratis dan hanya membutuhkan akun GitHub saja."
-  star: "Star the project"
-  donate: "Donate"
+  star: "Berikan bintang untuk Proyek kami"
+  donate: "Donasi"
 
 docs:
   index: "Home"
