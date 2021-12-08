@@ -68,36 +68,36 @@ ikuti langkah menghubungkan dan masukkan data yang diminta.
 
 ### Perkenalan
 
-This list includes the servers of the following games: Ark, CS:GO, Garry's Mod & Team fortress 2.
-You can link your server with your site in two ways in this case:
+Daftar ini termasuk server dari permainan sebagai berikut: Ark, CS:GO, Garry's Mod & Team fortress 2.
+Anda bisa menghubungkan server anda dengan website anda dengan dua cara dalam kasus ini: 
 
-* By Query - it just allows you to get 
-the players connected to your server. _(does not allow executing commands)_
+* Dengan Query - Ini hanya memperbolehkan anda untuk mendapatkan
+para pemaij yang terhubung ke server anda. _(tidak boleh mengeksekusi perintah)_
 
-* By Rcon - it allows you to retrieve the information 
-of your server and execute commands.
+* Dengan Rcon - Ini memperbolehkan anda untuk mendapatkan informasi
+dari server anda dan mengeksekusi perintah.
 
-You can check here for default ports:
+Anda bisa memeriksan port bawaan:
 
-|    Game     | Port  | Query | RCON  |
+|    Permainan     | Port  | Query | RCON  |
 | ----------- | ----- | ----- | ----- |
 | Garry's Mod | 27015 | 27015 | 27015 |
 |     ARK     | 7777  | 27015 | 27020 |
 |   CS:GO     | 27015 | 27015 | 27015 |
 |    TF2      | 27015 | 27015 | 27015 |
 
-### Link By Query
+### Terhubung dengan Query
 
-To be able to link your server with a site under Azuriom by query, 
-you just have to add a new server with "Source Query" as the link type,
-and fill in the requested information.
+Untuk bisa menghubungkan server anda dengan website dibawah Azuriom oleh query
+anda hanya perlu untuk menambahkan server baru dengan "Source Query" sebagai tipe penghubung, 
+dan masukkan sesuai dengan informasi yang diminta
 
-### Link by Rcon
+### Terhubung dengan Rcon
 
-To be able to link your server with your website under Azuriom by Rcon, 
-You must:
+Untuk bisa menghubungkan server anda dengan website anda dibawah Azuriom dengan Rcon,
+Anda harus:
 
-1. Go to the file where the Rcon information of your server can be found.
+1. Pergi ke file dimana informasi Rcon dari server anda bisa ditemukan.
    
-1. Go to your site, add a new server with the link type "Source Rcon",
-and fill in the requested information.
+1. Pergi ke website anfa, tambahkan server baru dengan tipe penghubung "Source Rcon", 
+dan masukkan sesuai dengan informasi yang diminta
