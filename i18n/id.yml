@@ -51,34 +51,34 @@ home:
       desc: "Dengan konsep yang kuat, dan terkini, keamanan menjadi kuat."
 
   desc1:
-    title: "Tambahan Unik"
+    title: "Tambahan yang Unik"
     description1: "Tambahan kami, yaitu Themes dan Plugin kami dibuat dalam cara yang sama dengan CMS sehingga ini akan menjadi satu dengan Tambahan setelah diinstal."
-    description2: "For developers who wish to carry out their extensions, tools and complete documentation are available for a unique working comfort."
-    description3: "A Community market is also available to post your extensions. We check each extension, then we regularly follow the updates proposed on them in order to keep a clean market."
+    description2: "Untuk para Pengembang yang ingin membuat Tambahan, alat dan dokumentasi yang lengkap sudah tersedia untuk pengembangan yang nyaman."
+    description3: "Sebuah pasar Komunitas juga tersedia untuk mengirim Tambahan anda. Kami akan memeriksa setiap Tambahan, dan nanti kami akan terus mengikut pembaruan yang diajukan untuk membuat pasar tetap bersih."
 
   desc2:
-    title: "Active support"
-    description1: "We have a active support on Discord and on GitHub and since Azuriom is open-source, everyone can contribute to the project on GitHub !"
-    description2: "And Azuriom is open-source, so anyone can contribute and improve the project."
+    title: "Bantuan yang Aktif"
+    description1: "Kami memiliki Bantuan yang aktif di Discord dan di Github dan karena Azuriom adalah open-source, semua orang dapat berkontribusi ke proyek kami di Github!"
+    description2: "Dan Azuriom adalah open-source, jadi semua orang bisa berkontribusi dan meningkatkan proyek ini."
 
 download:
-  title: "Download"
-  docs: "Before downloading Azuriom, it's recommended to <a href=\"{{ .docs }}\" target=\"_blank\">read our documentation</a>."
-  support: 'If you need help or you have a question, you can join our <a href="{{ .discord }}" target="_blank">Discord</a> server.'
-  sources: 'Azuriom is open-source and the sources are available on <a href="{{ .github }}" target="_blank">GitHub</a>.'
+  title: "Pengunduhan"
+  docs: "Sebelum mengunduh Azuriom, Sangat di sarankan untuk <a href=\"{{ .docs }}\" target=\"_blank\">membaca dokumentasi kami</a>."
+  support: 'Jika anda membutuhkan bantuan atau anda memiliki pertanyaan, anda bisa gabung ke server <a href="{{ .discord }}" target="_blank">Discord</a> kami.'
+  sources: 'Azuriom adalah open-source dan semua sumbernya tersedia di <a href="{{ .github }}" target="_blank">GitHub</a>.'
 
 azlink:
   title: "AzLink"
-  info: "AzLink is a plugin made for Azuriom to link your server to your Azuriom website in a easy, fast and secure way."
-  download: "Download"
-  supported: "AzLink support Bukkit (and other Bukkit-based servers like Spigot, Glowstone, Cauldron and Mohist), BungeeCord, Sponge and Velocity in the same plugin. If you use Minecraft 1.7.10 you need to download the legacy version."
-  sources: 'AzLink is open-source and the sources are available on <a href="{{ .github }}" target="_blank">GitHub</a>.'
+  info: "AzLink sebuah plugin dibuat oleh Azuriom untuk menghubungkan server anda ke website Azuriom dengan cara yang mudah, cepat dan aman."
+  download: "Pengunduhan"
+  supported: "AzLink mendukung Bukkit (dan server Bukkit lainnya seperti Spigot, Glowstone, Cauldron dan Mohist), BungeeCord, Sponge dan Velocity dalam plugin yang sama. Jika anda menggunakan Minecraft 1.7.10 anda harus mengunduh versi legacy."
+  sources: 'AzLink adalah open-source dan semua sumbernya tersedia di <a href="{{ .github }}" target="_blank">GitHub</a>.'
 
 support:
-  title: "Support us"
-  description1: "Making this project is time consuming, and your donation will help us working and improving this project."
-  description2: "Your donation will also help to cover the financial cost of this project: we need to pay the domain, renting servers (website, demo), graphic designer, ..."
-  description3: "You can also support us by starring the GitHub repository, it's free and you just need a GitHub account."
+  title: "Dukung Kami"
+  description1: "Membuat proyek ini memakan waktu, dan donasi anda akan sangat membantu kami untuk bekerja dan meningkatkan proyek ini."
+  description2: "Donasi anda juga akan membantu menutupi biaya finansial untuk proyek ini: kami butuh untuk membayar domain, menyewa server (website, demo), desainer grafis, ..."
+  description3: "Anda juga membantu kami dengan memberikan bintang di repo GitHub kami, ini gratis dan hanya membutuhkan akun GitHub saja."
   star: "Star the project"
   donate: "Donate"
 
@@ -88,5 +88,5 @@ docs:
 errors:
   title: "Error"
   notFound:
-    title: "Not found"
-    info: "The page you are looking for could not be found."
+    title: "Tidak ditemukan"
+    info: "Halaman yang anda cari tidak dapat di temukan."
