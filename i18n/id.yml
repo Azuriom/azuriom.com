@@ -1,22 +1,22 @@
 meta:
-  desc: "Azuriom is a modern, reliable, fast and secure gaming CMS. It's the ideal choice for your website on Minecraft, Garry's Mod, Rust, Ark, FiveM and many others games."
+  desc: "Azuriom merupakan CMS Gaming yang modern, dapat diandalkan, cepat dan aman. Ini merupakan pilihan yang tepat untuk membuat website tentang Minecraft, Garry's Mod, Rust, Ark, FiveM dan masih banyak lagi."
 
 nav:
   home: "Home"
-  download: "Download"
-  extensions: "Extensions"
-  docs: "Documentation"
+  download: "Install"
+  extensions: "Tambahan"
+  docs: "Dokumentasi"
   demo: "Demo"
-  demoMC: "Minecraft Demo"
-  demoSteam: "Steam Demo"
+  demoMC: "Demo Minecraft"
+  demoSteam: "Demo Steam"
 
 footer:
-  about: "About us"
-  aboutDescription: "Azuriom is the next generation game CMS, it's free and open-source, and is a modern, reliable, fast and secure alternative to existing CMS so you can have the best web experience possible for your website on Minecraft, Garry's Mod, Ark, Rust and many other games."
-  copyright: "Copyright &copy; 2019-{{ .year }} Azuriom - All rights reserved. Made with&nbsp;{{ .love }} by Azuriom."
-  partners: "Partners"
-  links: "Links"
-  supportUs: "Support us"
+  about: "Tentang Kami"
+  aboutDescription: "Azuriom merupakan CMS Game generasi selanjutnya, Ini gratis dan open-source, dan modern, dapat diandalkan, cepat dan aman. Sebuah Alternatif untuk CMS yang sudah ada sehingga anda mendapatkan pengalaman yang terbaik untuk website anda tentang Minecraft, Garry's Mod, Ark, Rust dan masih banyak lagi."
+  copyright: "Copyright &copy; 2019-{{ .year }} Azuriom - All rights reserved. Di buat dengan &nbsp;{{ .love }} oleh Azuriom."
+  partners: "Mitra"
+  links: "Tautan"
+  supportUs: "Dukung Kami"
 
 home:
   header:
