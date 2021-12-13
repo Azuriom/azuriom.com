@@ -71,23 +71,23 @@ membuat ID, sebagai contoh jika namanya adalah `Halo Dunia`, maka ID nya akan me
 `halo-dunia`. Juga, sebuah direktori plugin harus memiliki nama yang sama dengan ID. 
 
 {{< info >}}
-To create a plugin you can use the following command that will
-automatically generate the plugin's folder and many files by
-default:
+Untuk membuat sebuah plugin anda bisa menggunakan perintah sebagai berikut yang akan 
+secara otomatis membuat folder plugin dan file lainnya dengan
+bawaan:
 ```
-php artisan plugin:create <plugin name>
+php artisan plugin:create <nama plugin>
 ```
 {{< /info >}}
 
 #### Dependencies
 
-The `dependencies` section allows you to specify the plugins (using their id) that must
-be installed in order to use the plugin. A `?` after the plugin name means that the plugin
-is optional, i.e., it does not need to be installed, but when it is, the version must match.
-It is also possible to specify a version of Azuriom using the value `azuriom`.
+Bagian `dependencies` memperbolehkan anda untuk menentukan sebuah plugin (menggunakan ID plugin mereka) yang harus
+di unduh supaya dapat menggunakan plugin. `?` setelah di nama plugin artinya plugin tersebut
+adalah sebuah pilihan, atau sebagainya, ini tidak harus di unduh, tapi saat diperlukan, versinya harus sama.
+Ini juga dapat menentukan versi dari Azuriom menggunakan nilai `azuriom`.
 
-For example, this plugin needs Azuriom `0.4.0` or higher, the Shop plugin version `0.1.0` or
-higher. Also, when the Vote plugin is installed, it must be in version `0.2.0` or higher:
+Sebagai contoh, plugin ini membutuhkan `0.4.0` atau diatasnya, Versi Plugin Shop adalah `0.1.0` atau
+diataanya. Juga, saat plugin Vote di unduh, Plugin tersebut harus pada versi `0.2.0` atau lebih tinggi:
 ```json
 "dependencies": {
     "azuriom": "^0.4.0",
@@ -98,79 +98,79 @@ higher. Also, when the Vote plugin is installed, it must be in version `0.2.0` o
 
 ### Routes
 
-Routes allow you to associate a URL with a particular action.
+Routes memperbolehkan anda untuk menghubungkan sebuah URL dengan aksi tertentu atau khusus.
 
-They are stored in the `routes' directory at the root of the plugin.
+Mereka disimpan di direktori `routes' di root plugin.
 
-For more information on how routes work you can read the
-[Laravel documentation](https://laravel.com/docs/routing).
+Untuk informasi lebih lanjut tentang bagaimana routes bekerja anda bisa baca di
+[Dokumentasi Laravel](https://laravel.com/docs/routing).
 
-Example:
+Contoh:
 ```php
 Route::get('/support', 'SupportController@index')->name('index');
 ```
 
 {{< warn >}}
-Please be careful not to use routes with closures,
-as these are not compatible with some internal optimizations.
+Mohon diperhatikan untuk tidak menggunakan routes dengan penutupan,
+karena ini tidak kompatibel dengan beberapa optimasi internal.
 {{< /warn >}}
 
 #### Admin routes
  
-For a route to be in the admin panel, just place it in the file `routes/admin.php` of the plugin.
+Untuk route yang ada di panel admin, taruh saja di file `routes/admin.php` di plugin.
 
 ### Views
 
-The views are the visible part of a plugin, they are the content files HTML
-of the plugin to display a page.
+Views adalah bagian yang dapat dilihat dari sebuh plugin, mereka adalah file HTML
+dari plugin untuk memperlihatkan sebuah halaman. 
 
-Azuriom using [Laravel](https://laravel.com/), views can be made using the Blade.
-If you don't master Blade it is highly recommended reading
-[its documentation](https://laravel.com/docs/blade), especially since it is quite short.
+Azuriom menggunakan [Laravel](https://laravel.com/), views dapat dibuat menggunakan Blade.
+Jika anda tidak mengerti mengenai Blade ini sangat direkomendasikan untuk membaca
+[Dokumentasi nya](https://laravel.com/docs/blade), terutama saat itu lumayan pendek.
 
 {{< warn >}}
-It is highly recommended NOT to use PHP syntax.
-when you work with Blade, because Blade does not bring you the traditional
-no advantages and only disadvantages.
+Sangat disarankan untuk TIDAK menggunakan PHP.
+saat anda bekerja dengan Blade, karena Blade tidak memberikan anda cara yang tradisional
+tidak ada kelebihan dan hanya kekurangan saja.
 {{< /warn >}}
 
-To display a view you can use `view('<plugin id>::<name of the view>')`,
-of example `view('support::tickets.index')` to display the `tickets.index` view
-of the support plugin.
+Untuk memperlihatkan sebuah view anda bisa menggunakan `view('<plugin id>::<nama dari view>')`,
+atau contohnya `view('support::tickets.index')` untuk memperlihatkan view `tickets.index` 
+dari plugin support.
 
-To define the layout of the page, it is necessary that the view extends the view containing
-the layout, you can either use the default layout (or the theme layout if there is one)
-with `@extends('layouts.app')`, or create your own layout and extend it.
+Untuk menggunakan struktur dari halaman, sangat dibutuhkan bahwa view meng[extend] view yang menggunakan struktur/layout,
+anda bisa menggunakan struktur bawaan (atau struktur theme jika ada)
+dengan `@extends('layouts.app')`, atau membuat struktur anda sendiri dan [extend]kan.
 
-Then put all the main content into the `content` section,
-and the title of the page in the `title` section.
+Lalu masukkan konten utama ke bagian `content`,
+dan judul dari halaman tersebut di bagian `title`.
 
 ```html
 @extends('layouts.app')
 
-@section('title', 'Page name')
+@section('title', 'Nama halaman')
 
 @section('content')
     <div class="container content">
-        <h1>A title</h1>
+        <h1>Sebuah Judul</h1>
 
-        <p>A text</p>
+        <p>Sebuah Teks</p>
     </div>
 @endsection
 ```
 
-#### Assets
+#### Aset
 
-The assets (CSS, JS, images, etc) are located in the `assets/` folder and can
-be used with the `plugin_asset('<plugin id>', '<asset path>')` function.
+Aset (CSS, JS, Foto, etc) berlokasi di folder `assets/` dan bisa
+digunakan dengan fungsi `plugin_asset('<plugin id>', '<jalur aset>')`.
 
-Assets can be included in the page via a [Blade stack](https://laravel.com/docs/blade#stacks).
-in 2 different places on the page depending on the type of asset:
-* `styles` for CSS files (located in the `<head>`)
-* `scripts` for JS files (located in the `<head>`, don't forget to add the `defer` attribute
-  to the script, so they do not block the page rendering)
+Aset bisa di masukkan ke halaman menggunakan [Blade stack](https://laravel.com/docs/blade#stacks).
+dalam 2 tempat yang berbeda di halaman sesuai dengan tipe asetnya:
+* `styles` untuk file CSS  (berlokasi di `<head>`)
+* `scripts` untuk file JS  (berlokasi `<head>`, jangan lupa untuk menambahkan atribut `defer`
+  ke skriptny, jadi mereka tidak memblokir render halaman)
 
-Example:
+Contoh:
 ```html
 @push('scripts')
     <script src="{{ plugin_asset('vote', 'js/vote.js') }}" defer></script>
