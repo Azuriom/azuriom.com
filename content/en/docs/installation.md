@@ -90,6 +90,11 @@ You can also install it with [Docker](https://www.docker.com/) by following the 
    ```
    This can be done by modifying the crontab configuration with the `crontab -e` command.
 
+{{< warn >}}
+Once the installation is complete, to prevent any issues, make sure your website
+can't be accessed directly from the IP of the server (ex: http://0.0.0.0).
+{{< /warn >}}
+
 ## Web server configuration
 
 ### Apache2

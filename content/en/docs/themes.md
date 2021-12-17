@@ -154,7 +154,7 @@ For more details on authentication, you can refer to the
 You can retrieve a certain number of parameters from the website via the functions
 dedicated:
 
-|    Fonction      |               Description                 |
+|    Function      |               Description                 |
 | ---------------- | ----------------------------------------- |
 | `site_name()`    | Retrieves the site name                   |
 | `site_logo()`    | Allows you to have the website logo link  |

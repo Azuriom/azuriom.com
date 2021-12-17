@@ -121,6 +121,11 @@ Azuriom peut également être installé avec [Docker](https://www.docker.com/) e
    ```
    Cela peut être fait en modifiant la configuration de crontab avec la commande `crontab -e`.
 
+{{< warn >}}
+Une fois l'installation terminée, afin d'éviter tout problème, veillez à ce que
+votre site ne soit pas accessible directement depuis l'IP de la machine
+(ex: http://0.0.0.0).
+{{< /warn >}}
 
 ## Environnement de développement
 
