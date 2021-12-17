@@ -1,5 +1,5 @@
 meta:
-  desc: "Azuriom ist ein modernes, zuverlässiges, schnelles und sichere Gaming CMS. Es ist die ideale Wahl für Ihre Website über Minecraft, Garrys Mod, Rust, Ark, FIVEM und viele andere Spiele."
+  desc: "Azuriom ist ein modernes, zuverlässiges, schnelles und sichere Gaming CMS. Es ist die ideale Wahl für Deine Website über Minecraft, Garrys Mod, Rust, Ark, FIVEM und viele andere Spiele."
 
 nav:
   home: "Startseite"
@@ -13,7 +13,7 @@ nav:
 footer:
   about: "Über uns"
   aboutDescription: "Azuriom ist das nächste Generation-Spiel CMS, es ist kostenlos und Open-Source, und ist eine moderne, zuverlässige, schnelle und sichere Alternative zu bestehenden CMS, sodass Du das beste Web-Erlebnis für Deine Website auf Minecraft, Garrys Mod, Ark, Rost haben können und viele andere Spiele."
-  copyright: "Copyright &copy; 2019-{{ .year }} Azuriom - Alle Rechte vorbehalten. Geschaffen with&nbsp;{{ .love }} von Azuriom."
+  copyright: "Copyright &copy; 2019-{{ .year }} Azuriom - Alle Rechte vorbehalten. Geschaffen mit&nbsp;{{ .love }} von Azuriom."
   partners: "Partner"
   links: "Links"
   supportUs: "Unterstütze uns"
@@ -28,8 +28,8 @@ home:
 
   about:
     title: "Was ist Azuriom"
-    description1: "Azuriom ist die <strong>nächste Generation</strong> der Spiele CMS, es ist <strong>kostenfrei</strong> und <strong>Open-Source</strong>, ebenfalls ist es eine <strong>moderne, zuverlässige, schnellere und sichere</strong> Alternative zu bestehenden CMS, sodass Sie über das <strong>beste Weberlebnis</strong> verfügen können."
-    description2: "Azuriom ist die ideale Wahl für Ihre Website über Minecraft, Garrys Mod, Rust, FIVEM, Ark und viele andere Spiele."
+    description1: "Azuriom ist die <strong>nächste Generation</strong> der Spiele CMS, es ist <strong>kostenfrei</strong> und <strong>Open-Source</strong>, ebenfalls ist es eine <strong>moderne, zuverlässige, schnellere und sichere</strong> Alternative zu bestehenden CMS, sodass Du über das <strong>beste Weberlebnis</strong> verfügen können."
+    description2: "Azuriom ist die ideale Wahl für Deine Website über Minecraft, Garrys Mod, Rust, FIVEM, Ark und viele andere Spiele."
     gamesTitle: "Unterstützte Spiele"
     games: "Azuriom ist ein <strong>Minecraft CMS</strong>, jedoch nicht nur! Zusätzlich zu Minecraft, unterstützt es ebenfalls <strong>Garry's Mod, Ark, Rust, FiveM, CS:GO and Team Fortress 2</strong>!"
 
@@ -52,9 +52,9 @@ home:
 
   desc1:
     title: "Einzigartige Erweiterungen"
-    description1: "Unsere Erweiterungen, also unseren Themes und Plugins, werden auf die gleiche Weise wie das CMS erstellt, sodass es nach der Installation eins mit den Erweiterungen ist."
+    description1: "Unsere Erweiterungen, unsere Themes und Plugins werden auf die gleiche Weise wie das CMS erstellt, sodass es nach der Installation eins mit den Erweiterungen ist."
     descriptioh2: "Für Entwickler, die ihre Erweiterungen durchführen möchten, stehen Tools und eine komplette Dokumentation für einen einzigartigen Arbeitskomfort zur Verfügung."
-    description3: "Ein Community-Markt ist ebenfalls verfügbar, um Ihre Erweiterungen zu veröffentlichen. Wir überprüfen jede Erweiterung und verfolgen dann regelmäßig die vorgeschlagenen Aktualisierungen, um einen sauberen Markt zu gewährleisten."
+    description3: "Ein Community-Markt ist ebenfalls verfügbar, um Deine Erweiterungen zu veröffentlichen. Wir überprüfen jede Erweiterung und verfolgen dann regelmäßig die vorgeschlagenen Aktualisierungen, um einen sauberen Markt zu gewährleisten."
 
   desc2:
     title: "Aktive Unterstützung"
@@ -65,7 +65,7 @@ download:
   title: "Herunterladen"
   docs: "Es wird empfohlen, vor dem Herunterladen von Azuriom <a href=\"{{ .docs }}\" target=\"_blank\">unsere Dokumentation zu lesen</a>."
   support: 'Solltest du Hilfe benötigen oder eine Frage haben, kannst du unserem <a href="{{ .discord }}" target="_blank">Discord</a> Server beitreten.'
-  sources: 'Azuriom ist Open-Source, dessen Ressohrcen sind auf <a href="{{ .github }}" target="_blank">GitHub</a> verfügbar.'
+  sources: 'Azuriom ist Open-Source, dessen Ressourcen sind auf <a href="{{ .github }}" target="_blank">GitHub</a> verfügbar.'
 
 azlink:
   title: "AzLink"
