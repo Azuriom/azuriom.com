@@ -143,7 +143,7 @@ Ce qui donne par exemple :
 
 ### Vues
 
-Les vues sont la partie visible d'un plugin, ce sont les fichiers content l'HTML
+Les vues sont la partie visible d'un plugin, ce sont les fichiers contenant l'HTML
 du plugin pour afficher une page.
 
 Azuriom utilisant [Laravel](https://laravel.com/), les vues peuvent être faites en utilisant le moteur
