@@ -1,0 +1,163 @@
+---
+title: Azuriom 1.0
+---
+
+# Azuriom 1.0
+
+## Introduction
+
+Azuriom 1.0 est la nouvelle version majeure d'Azuriom, elle contient de nombreux changements et a pour objectif de permettre 
+à Azuriom de rester nouvelle génération.
+
+Cette mise à jour contient de nombreux changements internes, en particulier l'utilisation de Laravel 9
+([Laravel](https://laravel.com/) étant le framework PHP - la base - utilisé par Azuriom) et de Bootstrap 5
+([Bootstrap](https://getbootstrap.com/) étant la framework CSS utilisé par Azuriom).
+
+### PHP 8
+
+En particulier, l'utilisation de Laravel 9 fait que **PHP 8 est maintenant nécessaire pour utiliser Azuriom**.
+Nous tenons également à souligner le fait que **PHP 7.4 n'est plus supporté par PHP** depuis novembre 2021 et ne recevra
+**plus de mises à jour de sécurité** à partir de novembre 2022 (voir le [site de PHP](https://www.php.net/supported-versions.php)).
+Pour cela, nous vous recommandons de mettre à jour dès que possible vos sites utilisant PHP (qu'ils utilisent Azuriom ou non).
+
+### Extensions
+
+Les différents changements internes font que les extensions (thèmes et plugins) vont devoir être mises à jour pour supporter
+Azuriom v1.0. De même les extensions compatibles avec Azuriom v1.0 ne sont pas compatibles avec les versions antérieures
+d'Azuriom.
+
+La structure du design de base du CMS et des plugins a également été entièrement revu, afin de faciliter le développement des thèmes ainsi
+que la cohérence générale entre les plugins.
+
+### Refonte du système de connexion
+
+Le système de connexion à Azuriom pour Minecraft a aussi été revu, pour les serveurs Minecraft: Java Edition qui n'acceptent pas les
+versions non-officiels du jeu (versions dites « cracks ») ainsi que pour les serveurs Minecraft: Bedrock Edition, il
+est maintenant possible de se connecter directement via son compte Microsoft.
+
+Pour les serveurs Minecraft: Java Edition acceptant les versions non-officielles, il est également possible d'automatiser
+la création d'un compte sur le site en utilisant AzLink et le plugin [AuthMe reloaded](https://www.spigotmc.org/resources/authmereloaded.6269/).
+
+Ces différents nouveaux systèmes permettent de simplifier la connexion sur le site tout en éliminant le risque d'usurpation d'identité.
+
+Enfin, pour les sites utilisant la connexion Steam, il est possible d'ajouter une adresse e-mail afin de pouvoir reçevoir certaines
+alertes par mail (par exemple lors d'une réponse sur le plugin support ou lors d'un achat sur la boutique). Cette fonctionalité
+est entièrement optionelle.
+
+## Mettre à jour
+
+Pour le moment Azuriom v1.0 est toujours en développement, nous vous déconseillons **fortement** de l'utiliser sur un
+site en production ou de mettre à jour un site existant. Cependant, vous pouvez tester créer un nouveau site pour tester cette version en
+la téléchargeant [ici](https://azuriom.s3.fr-par.scw.cloud/dev/Azuriom-1.0.0-beta1.zip).
+
+N'hésitez pas à nous signaler tout bug ou problème sur GitHub ou sur notre [serveur Discord](https://azuriom.com/discord).
+
+## Adaptation d'un thème
+
+Azuriom utilisant maintenant Bootstrap 5, les thèmes vont devoir être adaptés. Nous vous conseillons de regarder le [guide
+de migration vers Bootstrap 5](https://getbootstrap.com/docs/5.1/migration/).
+
+De plus, afin d'améliorer la compatibilité future, nous conseillons également aux thèmes de modifier au minimum l'HTML du CMS et des plugins,
+mais d'utiliser au maximum du CSS. Cela évite les problèmes de compatibilité future en cas de mise à jour s'accompagnant d'une modification
+de l'HTML ou lors de l'ajout de nouveaux plugins.
+
+{{< warn >}}
+Dû à des nombreux problèmes de compatibilité et de thèmes non mis à jour, les thèmes sur le market seront contraint de respecter
+cette règle. Il est bien sûr autorisé de modifier la page d'accueil ou le layout, ainsi que quelques pages supplémentaires,
+mais il ne sera pas autorisé de modifier toutes les pages et/ou tous les plugins.
+{{< /warn >}}
+
+Enfin, de nombreuses traductions ont été améliorées et vont devoir être modifiées dans les thèmes.
+
+### Réseaux sociaux
+
+Azuriom dispose maintenant d'une configuration dédiée pour ajouter des liens vers les réseaux sociaux directement depuis
+les paramètres. Si vous aviez une configuration équivalent il est fortement recommandé d'utiliser le système fournit par le CMS
+à la place.
+Au niveau du code, vous pouvez obtenir les différents liens avec la fonction `social_links()` ce qui donne par exemple :
+```html
+@foreach(social_links() as $link)
+    <a href="{{ $link->value }}" title="{{ $link->title }}" target="_blank" rel="noopener noreferrer" class="btn">
+        <i class="{{ $link->icon }} fa-2x" style="color: {{ $link->color }}"></i>
+    </a>
+@endforeach
+```
+
+## Adaptation d'un plugin
+
+Azuriom utilisant maintenant Bootstrap 5, les plugins vont devoir être adaptés. Nous vous conseillons de regarder le [guide
+de migration vers Bootstrap 5](https://getbootstrap.com/docs/5.1/migration/).
+
+De plus Azuriom utilise maintenant Laravel 9 et PHP 8, nous vous conseillons de regarder [le guide de migration vers
+Laravel 9](https://laravel.com/docs/9.x/upgrade).
+
+Bien qu'entièrement optionnel, vous pouvez aussi en profiter pour utiliser
+les [nouvelles fonctionnalités introduites dans PHP 8.0](https://www.php.net/releases/8.0/en.php).
+
+{{< warn >}}
+Pour qu'un plugin puise être chargé avec Azuriom v1.0, il est **nécessaire** d'ajouter `"azuriom_api": "1.0.0",` dans le fichier
+`plugin.json` :
+```json
+{
+  // ...
+  "authors": [
+    // ...
+  ],
+  "azuriom_api": "1.0.0",
+  "providers": [
+    // ...
+  ]
+}
+```
+{{< /warn >}}
+
+### Service providers
+
+Il est maintenant nécessaire de spécifier explicitement les appels à la fonction `trans` dans les méthodes `routeDescriptions()`,
+`userNavigation()` et `adminNavigation()`
+
+Cela donne par exemple les modifications suivantes :
+```diff
+    protected function routeDescriptions()
+    {
+        return [
+-           'shop.home' => 'shop::messages.title',
++           'shop.home' => trans('shop::messages.title'),
+        ];
+    }
+
+    // ...
+
+    protected function adminNavigation()
+    {
+            return [
+            'shop' => [
+-               'name' => 'shop::admin.nav.title',
++               'name' => trans('shop::admin.nav.title'),
+                // ...
+                'items' => [
+-                   'shop.admin.packages.index' => 'shop::admin.nav.packages',
++                   'shop.admin.packages.index' => trans('shop::admin.nav.packages'),
+                    // ...
+                ],
+            ],
+        ];
+    }
+
+    // ...
+
+    protected function userNavigation()
+    {
+        return [
+            'shop' => [
+                'route' => 'shop.profile',
+-               'name' => 'shop::messages.profile.payments',
++               'name' => trans('shop::messages.profile.payments'),
+            ],
+        ];
+    }
+```
+
+Les appels à ces méthodes sont maintenant lazy, c'est-à-dire que la méthode ne sera appelée que lors que nécessaire.
+
+Enfin, les méthodes dépréciées dans les anciennes versions d'Azuriom ont toutes été retirées.
