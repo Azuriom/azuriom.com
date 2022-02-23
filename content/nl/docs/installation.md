@@ -90,6 +90,11 @@ Je kunt het ook installeren met [Docker](https://www.docker.com/) door de vermel
    ```
    Dit kan gedaan worden door de crontab-configuratie te wijzigen met de `crontab -e` commando.
 
+{{< warn >}}
+Zodra de installatie is voltooid en problemen te volkomen, moet u ervoor zorgen dat uw website
+niet rechtstreeks toegankelijk is vanaf het IP-adress van de server (bijvoorbeeld: http://0.0.0.0).
+{{< /warn >}}
+
 ## Webserver configuratie
 
 ### Apache2

@@ -9,6 +9,7 @@ nav:
   demo: "Demo"
   demoMC: "Minecraft Demo"
   demoSteam: "Steam Demo"
+  login: Inloggen
 
 footer:
   about: "Over ons"
