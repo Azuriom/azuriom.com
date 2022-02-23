@@ -28,7 +28,7 @@ Om uw server te kunnen koppelen met een site op Azuriom door te pingen,
 Hoef je alleen maar een nieuwe server toe te voegen met "Ping" als het linktype,
 en vul de gevraagde informatie in _(de standaard poort van Minecraft is `25565`)_.
 
-### link Door Rcon
+### Link Door Rcon
 
 Om uw server te kunnen koppelen met uw website op Azuriom door Rcon,
 Moet je:
@@ -44,7 +44,7 @@ Moet je:
 1. Ga naar je site en voeg een nieuwe server toe met het linktype "Rcon",
 en vul de gevraagde gegevens in. _(Standaard Rcon-poort is 25575)_.
 
-### Plug-in link
+### Link door Plug-in
 
 #### Wat is AzLink?
 

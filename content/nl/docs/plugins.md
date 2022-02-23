@@ -79,6 +79,23 @@ php artisan plugin:create <plugin name>
 ```
 {{< /info >}}
 
+#### Afhankelijkheden
+
+In het gedeelte 'afhankelijkheden' kunt u de plug-ins specificeren (met hun ID) die moeten
+worden geïnstalleerd om the plug-ins te gebruiken. Een `?` achter de naam van de plug-in betekent dat de plug-in
+optioneel is, d.w.z. het hoeft niet te worden geïnstalleerd, maar als dit het geval is, moet de versie overeenkomen.
+Het is ook mogelijk om een versie van Azuriom op te geven met de waarde `azuriom`.
+
+Deze plug-in heeft bijvoorbeeld Azuriom `0.4.0` of hoger nodig, de Shop plug-in versie `0.1.0` of
+hoger. Wanneer de Vote plug-in is geïnstalleerd, moet deze ook in versie `0.2.0` of hoger zijn:
+```json
+"dependencies": {
+    "azuriom": "^0.4.0",
+    "shop": "^0.1.0",
+    "vote?": "^0.2.0"
+}
+```
+
 ### Routes
 
 Met routes kunt u een URL aan een bepaalde actie koppelen.
