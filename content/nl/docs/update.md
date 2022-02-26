@@ -57,6 +57,9 @@ Voel je vrij om een bug of probleem te melden op Github of op onze [Discord-serv
 Aangezien Azuriom nu Bootstrap 5 gebruikt, zullen de thema's moeten worden aangepast.
 We raden je aan om te kijken naar de [Bootstrap 5 migratiegids](https://getbootstrap.com/docs/5.1/migration/).
 
+Een opmerkelijke verandering in het gebruik van Bootstrap 5 is dat jQuery niet langer wordt meegeleverd met Azuriom.
+Het wordt ook niet aanbevolen om te gebruiken.
+
 Om toekomstige compatibiliteit te verbeteren, adviseren we ook thema's om de HTML van het CMS en plug-ins aan te passen zoals:
 zo min mogelijk, maar om zoveel mogelijk CSS te gebruiken. Dit voorkomt toekomstige compatiliteitsproblemen in het geval van een update.
 Bij een wijziging van de HTML of wanneer van de HTML bij het toevoegen van nieuwe plug-ins.
@@ -69,6 +72,18 @@ om alle pagina's en/of plug-ins te wijzigen.
 
 Tot slot zijn veel vertalingen verbeterd en zullen de thema's aangepast moeten worden.
 
+{{< warn >}}
+Om een thema te laden met Azuriom v1.0, is het **vereist** om `"azuriom_api": "1.0.0",` toe te voegen in de `theme.json`:
+```json
+{
+  "authors": [
+    "..."
+  ],
+  "azuriom_api": "1.0.0"
+}
+```
+{{< /warn >}}
+
 ### Sociale netwerken
 
 Azuriom heeft nu een speciale configuratie om rechtstreeks vanuit de instellingen links naar sociale netwerken toe te voegen.
@@ -80,6 +95,65 @@ Je kunt de verschillende links met de functie `social_links()` als volgt verkrij
         <i class="{{ $link->icon }} fa-2x" style="color: {{ $link->color }}"></i>
     </a>
 @endforeach
+```
+
+### Startpagina servers
+
+Het is nu mogelijk om servers op de startpagina weer te geven, wat vooral handig is voor Steam-spellen.
+De servers zijn beschikbaar met de variabele `$server`, die bijvoorbeeld geeft:
+```html
+@if(! $servers->isEmpty())
+    <h2 class="text-center">
+        {{ trans('messages.servers') }}
+    </h2>
+
+    <div class="row justify-content-center mb-4">
+        @foreach($servers as $server)
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5>{{ $server->name }}</h5>
+
+                        <p>
+                            @if($server->isOnline())
+                                {{ trans_choice('messages.server.total', $server->getOnlinePlayers(), [
+                                    'max' => $server->getMaxPlayers(),
+                                ]) }}
+                            @else
+                                <span class="badge bg-danger text-white">
+                                    {{ trans('messages.server.offline') }}
+                                </span>
+                            @endif
+                        </p>
+
+                        @if($server->joinUrl())
+                            <a href="{{ $server->joinUrl() }}" class="btn btn-primary">
+                                {{ trans('messages.server.join') }}
+                            </a>
+                        @else
+                            <p class="card-text">{{ $server->fullAddress() }}</p>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
+@endif
+```
+
+### Servers connect URL
+
+Er is een optie toegevoegd om een link naar de server weer te geven in plaats van het adres.
+Dit is vooral handig voor servers voor spellen met ondersteuning voor een URL om rechtstreeks verbinding te maken.
+We raden aan om al het gebruik van het serveradres te vervangen door iets zoals dit:
+```html
+@if($server->joinUrl())
+    <a href="{{ $server->joinUrl() }}" class="btn btn-primary">
+        {{ trans('messages.server.join') }}
+    </a>
+@else
+    {{ $server->fullAddress() }}
+@endif
 ```
 
 ## Een plug-in aanpassen
@@ -97,13 +171,12 @@ U kunt ook van de gelegenheid gebruik maken om de [nieuwe functies geïntroducee
 Om een plug-in te laden met Azuriom v1.0, is het **vereist** om `"azuriom_api": "1.0.0",` toe te voegen in de `plugin.json`:
 ```json
 {
-  // ...
   "authors": [
-    // ...
+    "..."
   ],
   "azuriom_api": "1.0.0",
   "providers": [
-    // ...
+    "..."
   ]
 }
 ```
