@@ -57,6 +57,9 @@ N'hésitez pas à nous signaler tout bug ou problème sur GitHub ou sur notre [s
 Azuriom utilisant maintenant Bootstrap 5, les thèmes vont devoir être adaptés. Nous vous conseillons de regarder le [guide
 de migration vers Bootstrap 5](https://getbootstrap.com/docs/5.1/migration/).
 
+Un changement notable de l'utilisation de Bootstrap 5 est que jQuery n'est plus inclus avec Azuriom. Il est également
+déconseillé de l'utiliser.
+
 De plus, afin d'améliorer la compatibilité future, nous conseillons également aux thèmes de modifier au minimum l'HTML du CMS et des plugins,
 mais d'utiliser au maximum du CSS. Cela évite les problèmes de compatibilité future en cas de mise à jour s'accompagnant d'une modification
 de l'HTML ou lors de l'ajout de nouveaux plugins.
@@ -67,7 +70,33 @@ cette règle. Il est bien sûr autorisé de modifier la page d'accueil ou le lay
 mais il ne sera pas autorisé de modifier toutes les pages et/ou tous les plugins.
 {{< /warn >}}
 
+Un message d'accueil configurable depuis le panel admin a également été ajouté et il est recommandé le d'ajouter dans le
+fichier `home.blade.php` via la variable `$message`, par exemple :
+```html
+<div class="card">
+    <div class="card-body">
+        {{ $message }}
+    </div>
+</div>
+```
+
 Enfin, de nombreuses traductions ont été améliorées et vont devoir être modifiées dans les thèmes.
+
+{{< warn >}}
+Pour qu'un thème puise être chargé avec Azuriom v1.0, il est **nécessaire** d'ajouter `"azuriom_api": "1.0.0",` dans le fichier
+`theme.json` :
+```json
+{
+  "authors": [
+    "..."
+  ],
+  "azuriom_api": "1.0.0",
+  "providers": [
+    "..."
+  ]
+}
+```
+{{< /warn >}}
 
 ### Réseaux sociaux
 
@@ -81,6 +110,69 @@ Au niveau du code, vous pouvez obtenir les différents liens avec la fonction `s
         <i class="{{ $link->icon }} fa-2x" style="color: {{ $link->color }}"></i>
     </a>
 @endforeach
+```
+
+### Serveurs sur la page d'accueil
+
+Il est maintenant possible d'afficher des serveurs sur la page d'accueil du site, ce
+qui notamment très pratique pour les jeux Steam.
+Les serveurs sont disponibles avec la variable `$servers`, ce qui donne par exemple
+
+```html
+@if(! $servers->isEmpty())
+    <h2 class="text-center">
+        {{ trans('messages.servers') }}
+    </h2>
+    
+    <div class="row justify-content-center mb-4">
+        @foreach($servers as $server)
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5>{{ $server->name }}</h5>
+    
+                        <p>
+                            @if($server->isOnline())
+                                {{ trans_choice('messages.server.total', $server->getOnlinePlayers(), [
+                                    'max' => $server->getMaxPlayers(),
+                                ]) }}
+                            @else
+                                <span class="badge bg-danger text-white">
+                                    {{ trans('messages.server.offline') }}
+                                </span>
+                            @endif
+                        </p>
+    
+                        @if($server->joinUrl())
+                            <a href="{{ $server->joinUrl() }}" class="btn btn-primary">
+                                {{ trans('messages.server.join') }}
+                            </a>
+                        @else
+                            <p class="card-text">{{ $server->fullAddress() }}</p>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
+@endif
+```
+
+### URL pour rejoindre les serveurs
+
+Une option a été ajoutée pour afficher un lien permettant de rejoindre le serveur
+à la place de l'adresse. C'est particulièrement utile pour les serveurs utilisant un
+launcher ou pour les serveurs de certains jeux qui permettent d'avoir une URL pour
+se connecter directement. Nous recommandons de remplacer tous les affichages de l'adresse du serveur
+par quelque chose comme ça :
+```html
+@if($server->joinUrl())
+    <a href="{{ $server->joinUrl() }}" class="btn btn-primary">
+        {{ trans('messages.server.join') }}
+    </a>
+@else
+    {{ $server->fullAddress() }}
+@endif
 ```
 
 ## Adaptation d'un plugin
@@ -99,13 +191,12 @@ Pour qu'un plugin puise être chargé avec Azuriom v1.0, il est **nécessaire** 
 `plugin.json` :
 ```json
 {
-  // ...
   "authors": [
-    // ...
+    "..."
   ],
   "azuriom_api": "1.0.0",
   "providers": [
-    // ...
+    "..."
   ]
 }
 ```

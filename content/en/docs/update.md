@@ -56,6 +56,9 @@ Feel free to report any bug or problem on GitHub or on our [Discord server](http
 As Azuriom is now using Bootstrap 5, the themes will have to be adapted. We advise you to look at the
 [Bootstrap 5 migration guide](https://getbootstrap.com/docs/5.1/migration/).
 
+One notable change in using Bootstrap 5 is that jQuery is no longer included with Azuriom.
+It is also not recommended using it.
+
 Also, in order to improve future compatibility, we also advise themes to modify the HTML of the CMS and plugins as
 little as possible, but to use CSS as much as possible. This avoids future compatibility problems in case of an update
 with a modification of the HTML or when of the HTML or when adding new plugins.
@@ -68,6 +71,18 @@ to change all pages and/or plugins.
 
 Finally, many translations have been improved and will need to be changed in the themes.
 
+{{< warn >}}
+In order for a theme to be loaded with Azuriom v1.0, it is **required** to add `"azuriom_api": "1.0.0",` in the `theme.json`:
+```json
+{
+  "authors": [
+    "..."
+  ],
+  "azuriom_api": "1.0.0"
+}
+```
+{{< /warn >}}
+
 ### Social networks
 
 Azuriom now has a dedicated configuration to add links to social networks directly from the settings. If you had an
@@ -79,6 +94,66 @@ You can get the different links with the function `social_links()` like this:
         <i class="{{ $link->icon }} fa-2x" style="color: {{ $link->color }}"></i>
     </a>
 @endforeach
+```
+
+### Home servers
+
+It is now possible to display servers on the home page, which is especially useful for
+Steam games.
+The servers are available with the variable `$servers`, which gives for example:
+```html
+@if(! $servers->isEmpty())
+    <h2 class="text-center">
+        {{ trans('messages.servers') }}
+    </h2>
+
+    <div class="row justify-content-center mb-4">
+        @foreach($servers as $server)
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5>{{ $server->name }}</h5>
+    
+                        <p>
+                            @if($server->isOnline())
+                                {{ trans_choice('messages.server.total', $server->getOnlinePlayers(), [
+                                    'max' => $server->getMaxPlayers(),
+                                ]) }}
+                            @else
+                                <span class="badge bg-danger text-white">
+                                    {{ trans('messages.server.offline') }}
+                                </span>
+                            @endif
+                        </p>
+    
+                        @if($server->joinUrl())
+                            <a href="{{ $server->joinUrl() }}" class="btn btn-primary">
+                                {{ trans('messages.server.join') }}
+                            </a>
+                        @else
+                            <p class="card-text">{{ $server->fullAddress() }}</p>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
+@endif
+```
+
+### Servers join URL
+
+An option has been added to display a link to the server instead of the address.
+This is especially useful for servers for games with support for a URL to connect directly.
+We recommend replacing all uses of the server address with something like this:
+```html
+@if($server->joinUrl())
+    <a href="{{ $server->joinUrl() }}" class="btn btn-primary">
+        {{ trans('messages.server.join') }}
+    </a>
+@else
+    {{ $server->fullAddress() }}
+@endif
 ```
 
 ## Adapting a plugin
@@ -96,13 +171,12 @@ You can also take the opportunity to use the [new features introduced in PHP 8.0
 In order for a plugin to be loaded with Azuriom v1.0, it is **required** to add `"azuriom_api": "1.0.0",` in the `plugin.json`:
 ```json
 {
-  // ...
   "authors": [
-    // ...
+    "..."
   ],
   "azuriom_api": "1.0.0",
   "providers": [
-    // ...
+    "..."
   ]
 }
 ```
