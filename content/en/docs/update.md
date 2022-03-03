@@ -47,7 +47,7 @@ This feature is entirely optional.
 
 Currently, Azuriom v1.0 is still under development, we strongly advise you not to use it in production or to update an
 existing site. However, you can create a new site to test this version by downloading it
-[here](https://azuriom.s3.fr-par.scw.cloud/dev/Azuriom-1.0.0-beta1.zip).
+[here](https://azuriom.s3.fr-par.scw.cloud/dev/Azuriom-1.0.0-beta2.zip).
 
 Feel free to report any bug or problem on GitHub or on our [Discord server](https://azuriom.com/discord).
 

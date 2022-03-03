@@ -48,7 +48,7 @@ est entièrement optionelle.
 
 Pour le moment Azuriom v1.0 est toujours en développement, nous vous déconseillons **fortement** de l'utiliser sur un
 site en production ou de mettre à jour un site existant. Cependant, vous pouvez tester créer un nouveau site pour tester cette version en
-la téléchargeant [ici](https://azuriom.s3.fr-par.scw.cloud/dev/Azuriom-1.0.0-beta1.zip).
+la téléchargeant [ici](https://azuriom.s3.fr-par.scw.cloud/dev/Azuriom-1.0.0-beta2.zip).
 
 N'hésitez pas à nous signaler tout bug ou problème sur GitHub ou sur notre [serveur Discord](https://azuriom.com/discord).
 
