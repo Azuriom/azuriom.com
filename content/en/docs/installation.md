@@ -10,7 +10,7 @@ weight: 1
 To work, Azuriom simply requires a **web server with PHP** having at least **100 MB**
 of disk space and the following requirements:
 
-- PHP 7.3 or higher
+- PHP 8.0 or higher
 - URL Rewrite
 - Write/Read permissions on `storage/` and `bootstrap/cache/`.
 - BCMath PHP Extension

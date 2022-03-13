@@ -10,7 +10,7 @@ weight: 1
 Pro práci Azuriom jednoduše vyžaduje **webový server s PHP** a alespoň **100 MB**
 místa na disku a následující požadavky:
 
-- PHP 7.3 nebo vyšší
+- PHP 8.0 nebo vyšší
 - Přepisování URL
 - Oprávnění číst/psát na `storage/` a `bootstrap/cache/`.
 - PHP rozšíření BCMath

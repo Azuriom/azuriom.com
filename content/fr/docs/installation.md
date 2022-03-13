@@ -10,7 +10,7 @@ weight: 1
 Pour fonctionner, Azuriom nécessite simplement un **serveur web avec PHP** disposant d'au moins **100 MO**
 d'espace disque ainsi que des prérequis suivants :
 
-- PHP 7.3 ou plus récent
+- PHP 8.0 ou plus récent
 - Réécriture d'URL
 - Extension PHP BCMath
 - Extension PHP Ctype

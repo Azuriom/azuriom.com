@@ -46,11 +46,11 @@ est entièrement optionelle.
 
 ## Mettre à jour
 
-Pour le moment Azuriom v1.0 est toujours en développement, nous vous déconseillons **fortement** de l'utiliser sur un
-site en production ou de mettre à jour un site existant. Cependant, vous pouvez tester créer un nouveau site pour tester cette version en
-la téléchargeant [ici](https://azuriom.s3.fr-par.scw.cloud/dev/Azuriom-1.0.0-beta2.zip).
+Pour le moment, seuls les nouveaux sites utilisant Azuriom peuvent utiliser Azuriom
+v1.0. 
 
-N'hésitez pas à nous signaler tout bug ou problème sur GitHub ou sur notre [serveur Discord](https://azuriom.com/discord).
+Pour les sites existants, il sera possible de mettre à jour sans réinstaller et sans
+perdre de données dans les jours à venir.
 
 ## Adaptation d'un thème
 
