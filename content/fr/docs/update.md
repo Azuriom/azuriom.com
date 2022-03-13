@@ -11,7 +11,7 @@ Azuriom 1.0 est la nouvelle version majeure d'Azuriom, elle contient de nombreux
 
 Cette mise à jour contient de nombreux changements internes, en particulier l'utilisation de Laravel 9
 ([Laravel](https://laravel.com/) étant le framework PHP - la base - utilisé par Azuriom) et de Bootstrap 5
-([Bootstrap](https://getbootstrap.com/) étant la framework CSS utilisé par Azuriom).
+([Bootstrap](https://getbootstrap.com/) étant le framework CSS utilisé par Azuriom).
 
 ### PHP 8
 
@@ -40,9 +40,9 @@ la création d'un compte sur le site en utilisant AzLink et le plugin [AuthMe re
 
 Ces différents nouveaux systèmes permettent de simplifier la connexion sur le site tout en éliminant le risque d'usurpation d'identité.
 
-Enfin, pour les sites utilisant la connexion Steam, il est possible d'ajouter une adresse e-mail afin de pouvoir reçevoir certaines
-alertes par mail (par exemple lors d'une réponse sur le plugin support ou lors d'un achat sur la boutique). Cette fonctionalité
-est entièrement optionelle.
+Enfin, pour les sites utilisant la connexion Steam, il est possible d'ajouter une adresse e-mail afin de pouvoir recevoir certaines
+alertes par mail (par exemple lors d'une réponse sur le plugin support ou lors d'un achat sur la boutique). Cette fonctionnalité
+est entièrement optionnelle.
 
 ## Mettre à jour
 
@@ -112,7 +112,7 @@ Il faut également remplacer le lien FontAwesome par celui de Bootstrap Icons :
 ### Réseaux sociaux
 
 Azuriom dispose maintenant d'une configuration dédiée pour ajouter des liens vers les réseaux sociaux directement depuis
-les paramètres. Si vous aviez une configuration équivalent il est fortement recommandé d'utiliser le système fournit par le CMS
+les paramètres. Si vous aviez une configuration équivalente il est fortement recommandé d'utiliser le système fournit par le CMS
 à la place.
 Au niveau du code, vous pouvez obtenir les différents liens avec la fonction `social_links()` ce qui donne par exemple :
 ```html

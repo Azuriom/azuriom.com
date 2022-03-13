@@ -56,6 +56,7 @@ bevat de verschillende informatie van een plug-in:
     "authors": [
         "Azuriom"
     ],
+    "azuriom_api": "1.0.0",
     "providers": [
         "\\Azuriom\\Plugin\\Example\\Providers\\ExampleServiceProvider",
         "\\Azuriom\\Plugin\\Example\\Providers\\RouteServiceProvider"
@@ -385,7 +386,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSupportTicketsTable extends Migration
+return new class extends Migration
 {
     /**
      * Voer de migraties uit.
@@ -416,7 +417,7 @@ class CreateSupportTicketsTable extends Migration
     {
         Schema::dropIfExists('support_tickets');
     }
-}
+};
 ```
 
 ### Vertalingen
@@ -471,7 +472,7 @@ stuur terug de verschillende routes in `routeDescriptions()` methode met het for
     protected function routeDescriptions()
     {
         return [
-            'support.tickets.index' => 'support::messages.title',
+            'support.tickets.index' => trans('support::messages.title'),
         ];
     }
 ```
@@ -503,8 +504,8 @@ en het retourneren van de verschillende routes in de `adminNavigation()` methode
     {
         return [
             'support' => [
-                'name' => 'support::admin.title', // Vertaling van de naam van het tabblad
-                'icon' => 'fas fa-question', // FontAwesome icoon
+                'name' => trans('support::admin.title'), // Vertaling van de naam van het tabblad
+                'icon' => 'bi bi-joystick', // Bootstrap Icons icoon
                 'route' => 'support.admin.tickets.index', // Pagina's route
                 'permission' => 'support.tickets', // (Optioneel) Toestemming vereist om deze pagina te bekijken
             ],

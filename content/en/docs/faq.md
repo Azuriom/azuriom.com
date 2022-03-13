@@ -112,9 +112,9 @@ Once done, delete the `bootstrap/cache/config.php` file if it exists.
 
 ### Installing another website on Apache2
 
-If you wish to install another site (ex: Pterodactyl panel, etc)
+If you wish to install another site (ex: Pterodactyl panel, etc.)
 on the same web server as the one on which Azuriom is installed, it's recommended
-to install it on a sub-domain (ex: panel.your-website.com).
+to install it on a subdomain (ex: panel.your-website.com).
 
 In case it's not possible, you can configure Apache to
 run them on the same domain, by adding an `.htaccess` file to the directory

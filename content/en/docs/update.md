@@ -23,7 +23,7 @@ For this reason, we recommend that you update your sites using PHP (whether they
 ### Extensions
 
 Due to various internal changes, extensions (themes and plugins) will have to be updated to support Azuriom v1.0.
-Also extensions compatible with Azuriom v1.0 are not compatible with previous versions of Azuriom.
+Also, extensions compatible with Azuriom v1.0 are not compatible with previous versions of Azuriom.
 
 The layout of the basic design of the CMS and plugins has also been completely revised, in order to simplify the development
 of themes as well as the general coherence between the plugins.
@@ -171,7 +171,7 @@ We recommend replacing all uses of the server address with something like this:
 Since Azuriom is now using Bootstrap 5, the plugins will have to be adapted. We advise you to look at the
 [Bootstrap 5 migration guide](https://getbootstrap.com/docs/5.1/migration/).
 
-Also Azuriom is now using Laravel 9 and PHP 8, we advise you to have a look at the
+Also, Azuriom is now using Laravel 9 and PHP 8, we advise you to have a look at the
 [Laravel 9 migration guide](https://laravel.com/docs/9.x/upgrade).
 
 You can also take the opportunity to use the [new features introduced in PHP 8.0](https://www.php.net/releases/8.0/en.php)

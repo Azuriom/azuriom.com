@@ -56,6 +56,7 @@ obsahuje různé informace o něm:
     "authors": [
         "Azuriom"
     ],
+    "azuriom_api": "1.0.0",
     "providers": [
         "\\Azuriom\\Plugin\\Example\\Providers\\ExampleServiceProvider",
         "\\Azuriom\\ Plugin\\Example\\Providers\\RouteServiceProvider"
@@ -351,7 +352,7 @@ Další informace o migracích lze nalézt v
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-class CreateSupportTicketsTable extends Migration
+return new class extends Migration
 {
     /**
      * Spustit migrace.
@@ -380,7 +381,7 @@ class CreateSupportTicketsTable extends Migration
     {
         Schema::dropIfExists('support_tickets');
     }
-}
+};
 ```
 
 ### Překlady
@@ -433,7 +434,7 @@ různé cesty v metodě `routeDescriptions()` s formátem
     protected function routeDescriptions()
     {
         return [
-            'support.tickets.index' => 'support::messages.title',
+            'support.tickets.index' => trans('support::messages.title'),
         ];
     }
 ```
@@ -463,8 +464,8 @@ a vrácením různých cest v metodě `adminNavigation()`.
     {
         return [
             'support' => [
-                'name' => 'support::admin.title', // Překlad názvu karty
-                'icon' => 'fas fa-question', // FontAwesome ikona
+                'name' => trans('support::admin.title'), // Překlad názvu karty
+                'icon' => 'bi bi-joystick', // Bootstrap Icons ikona
                 'route' => 'support.admin.tickets.index', // Cesta ke stránce
                 'permission' => 'support.tickets', // (Volitelné) Oprávnění vyžadované k zobrazení této stránky
             ],

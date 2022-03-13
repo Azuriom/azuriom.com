@@ -27,7 +27,7 @@ du SASS et optimiser les fichiers JavaScript, vous pouvez utiliser ce
 {{< /info >}}
 
 {{< warn >}}
-Lorsqu'Azuriom est installé en local pour du développement de thème,
+Lorsque Azuriom est installé en local pour du développement de thème,
 il est très fortement recommandé d'activer le debug afin de simplifier le développement.
 Cela peut se faire très simplement en modifiant ces 2 lignes dans le fichier `.env` à la
 racine du site :
@@ -64,7 +64,8 @@ le seul élément indispensable pour un thème et il se présente sous cette for
     "url" : "https://azuriom.com",
     "authors": [
         "Azuriom"
-    ]
+    ],
+    "azuriom_api": "1.0.0"
 }
 ```
 
@@ -78,7 +79,7 @@ le nom pour créer l'id, par exemple si le nom est `Hello World`, l'id pourra ê
 
 ### Vues
 
-Les vues sont le coeur de d'un thème, ce sont les fichiers contenant l'HTML de
+Les vues sont le cœur de d'un thème, ce sont les fichiers contenant l'HTML de
 d'un thème pour afficher les différentes parties du site.
 
 Azuriom utilisant [Laravel](https://laravel.com/), les vues peuvent être faites en utilisant le moteur
@@ -91,22 +92,15 @@ traditionnelle lorsque vous travaillez avec Blade, en effet celle-ci n'apporte
 aucun avantage et seulement des inconvénients.
 {{< /warn >}}
 
-Côté CSS, il est recommandé d'utiliser framework par défaut du cms qui est [Bootstrap 4](https://getbootstrap.com/), 
+Côté CSS, il est recommandé d'utiliser framework par défaut du cms qui est [Bootstrap 5](https://getbootstrap.com/), 
 cela permettra de réaliser plus facilement un thème et sera compatible avec les nouveaux plugins 
 ce qui vous évitera de faire des mises à jour constamment.
 Mais si vous préférez, vous pouvez utiliser un autre framework CSS.
 
 Côté Javascript, la seule dépendance nécessaire est [Axios](https://github.com/axios/axios).
 
-{{< warn >}}
-Bien que jQuery peut être ajouté et utilisé sans problèmes, il est recommandé
-de ne pas l'utiliser afin qu'il puisse être retiré facilement lors de la sortie de
-Bootstrap 5. De façon générale, [jQuery n'est plus nécessaire aujourd'hui et peut
-être retiré facilement](http://youmightnotneedjquery.com/).
-{{< /warn >}}
-
 {{< info >}}
-Si jamais une vue n'est pas présente dans le thème mais est présente de
+Si jamais une vue n'est pas présente dans le thème, mais est présente de
 base dans le CMS ou dans un plugin, celle-ci sera automatiquement utilisée.
 {{< /info >}}
 
@@ -133,7 +127,7 @@ Pour changer les vues d'un plugin, il suffit de créer un dossier `plugins` dans
 le dossier `views` du thème et de créer un dossier pour chaque plugin (en utilisant
 l'id du plugin et non le nom du plugin), puis d'y ajouter les vues du plugin.
 
-Par exemple pour le plugin vote, ca donnera `views/plugins/vote/index.blade.php`.
+Par exemple pour le plugin vote, cela donnera `views/plugins/vote/index.blade.php`.
 
 ### Méthodes
 
@@ -198,10 +192,10 @@ Pour plus de détails sur les traductions, vous pouvez vous référer à la
 
 Vous pouvez ajouter une configuration dans un thème, pour cela il vous suffit
 de créer à la racine du thème :
-* Une vue `config/config.blade.php` contenant le form pour la configuration
+* Une vue `config/config.blade.php` contenant l'élément `<form>` pour la configuration
 * Un fichier `config/rules.php` contenant les différentes règles de validation pour
 la configuration d'un thème.
-* Un fichier `config.json` où sera stocké la configuration du thème, et contenant les valeurs par défaut 
+* Un fichier `config.json` où sera stocké la configuration du thème et contenant les valeurs par défaut 
 
 ##### Exemple
 
@@ -219,7 +213,9 @@ config.blade.php
         @enderror
     </div>
 
-    <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> {{ trans('messages.actions.save') }}</button>
+    <button type="submit" class="btn btn-primary">
+        <i class="bi bi-save"></i> {{ trans('messages.actions.save') }}
+    </button>
 </form>
 ```
 

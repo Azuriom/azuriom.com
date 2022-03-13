@@ -63,7 +63,8 @@ het enige essentiële element voor een thema, het ziet er zo uit:
     "url": "https://azuriom.com",
     "authors": [
         "Azuriom"
-    ]
+    ],
+    "azuriom_api": "1.0.0"
 }
 ```
 
@@ -89,19 +90,12 @@ Wanneer je met Blade werkt, want Blade brengt
 geen voordelen maar alleen nadelen.
 {{< /warn >}}
 
-Aan de CSS-kant wordt aanbevolen om het standaardframework van de CMS te gebruiken, namelijk [Bootstrap 4](https://getbootstrap.com), 
+Aan de CSS-kant wordt aanbevolen om het standaardframework van de CMS te gebruiken, namelijk [Bootstrap 5](https://getbootstrap.com), 
 dit maakt het gemakkelijker om een thema te realiseren en is compatibel met de nieuwe plug-ins,
 zodat u niet constant updates hoeft uit te voeren.
 Maar als u wilt, kunt u een ander CSS-framework gebruiken.
 
 In Javascript is de enige vereiste afhankelijkheid: [Axios](https://github.com/axios/axios).
-
-{{< warn >}}
-Hoewel jQuery zonder problemen kan worden toegevoegd en gebruikt, is het:
-aanbevolen om het niet te gebruiken, zodat het gemakkelijk kan worden verwijderd wanneer
-Bootstrap 5 uitkomt. In het algemeen [jQuery is vandaag niet meer nodig en kan worden
-verwijderd](http://youmightnotneedjquery.com/).
-{{< /warn >}}
 
 {{< info >}}
 Als een view niet aanwezig is in het thema, maar wel in het CMS of in een plug-in,
@@ -216,7 +210,9 @@ config.blade.php
         @enderror
     </div>
 
-    <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> {{ trans('messages.actions.save') }}</button>
+    <button type="submit" class="btn btn-primary">
+        <i class="bi bi-save"></i> {{ trans('messages.actions.save') }}
+    </button>
 </form>
 ```
 

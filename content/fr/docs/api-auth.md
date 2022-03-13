@@ -87,7 +87,7 @@ Une fois ceci fait, il suffit d'importer les classes `AzAuthenticator` et
 `AuthenticationException` qui sont dans le package `com.azuriom.auth` et AzAuth sera
 intégré à votre launcher.
 
-Les catch d'une `AuthenticationException` doivent également être adaptés,
+Les catchs d'une `AuthenticationException` doivent également être adaptés
 et les usages de `e.getErrorModel().getErrorMessage()` peuvent être simplement 
 remplacés par `e.getMessage()`.
 
@@ -95,7 +95,7 @@ remplacés par `e.getMessage()`.
 
 AzAuth a été conçu avec comme seule dépendance [Gson](https://github.com/google/gson), vous pouvez donc parfaitement l'utiliser si vous n'utilisez pas
 OpenLauncherLib, vous pouvez simplement utiliser `AzAuthenticator#authenticate(String username, String password)` et cela va
-vous donner directement un `User` contenant le pseudo, l'uuid, le grade, l'access token et pleins d'autres données utiles.
+vous donner directement un `User` contenant le pseudo, l'UUID, le grade, le token d'accès et d'autres données utiles.
 
 ## Utilisation de AzAuth (NodeJs)
 
@@ -125,7 +125,7 @@ async function login(email, password) {
 
 ## Utilisation hors Java
 
-L'auth API peut être utilisée dans n'importe quel language sans utiliser de librairie
+L'auth API peut être utilisée dans n'importe quel langage sans utiliser de librairie
 spécifique, il suffit juste de faire des requêtes HTTP aux différents endpoints.
 
 L'ensemble de l'API utilise du JSON et l'URL de base de l'API est `/api/auth`.
@@ -213,7 +213,7 @@ Déconnecte l'utilisateur et rend invalide le token donné.
 ##### Requête
 |     Field    |               Description              |
 | ------------ | -------------------------------------- |
-| access_token | Token d'acccès unique de l'utilisateur |
+| access_token | Token d'accès unique de l'utilisateur |
 
 ##### Réponse
 
