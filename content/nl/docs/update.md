@@ -84,6 +84,16 @@ Om een thema te laden met Azuriom v1.0, is het **vereist** om `"azuriom_api": "1
 ```
 {{< /warn >}}
 
+### Pictogrammen
+
+FontAwesome 5 is vervangen door [Bootstrap Pictogrammen](https://icons.getbootstrap.com),
+dus u zou alle pictogrammen moeten vervangen.
+
+Het is ook vereist om de FontAwesome CSS te vervangen met die van Bootstrap:
+```diff
+   <link href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+```
+
 ### Sociale netwerken
 
 Azuriom heeft nu een speciale configuratie om rechtstreeks vanuit de instellingen links naar sociale netwerken toe te voegen.
@@ -181,6 +191,11 @@ Om een plug-in te laden met Azuriom v1.0, is het **vereist** om `"azuriom_api": 
 }
 ```
 {{< /warn >}}
+
+### Pictogrammen
+
+FontAwesome 5 is vervangen door [Bootstrap Pictogrammen](https://icons.getbootstrap.com),
+dus je zou alle FontAwesome-pictogrammen moeten vervangen.
 
 ### Dienstverleners
 
