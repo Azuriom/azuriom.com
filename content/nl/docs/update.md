@@ -46,11 +46,9 @@ Deze functie is volledig optioneel.
 
 ## Update
 
-Momenteel is Azuriom v1.0 nog in ontwikkeling, we raden u ten zeerste aan om het niet in productie te gebruiken of een update uit te voeren
-op een bestaande website. U kunt echter een nieuwe site maken om deze versie te testen door deze te downloaden van
-[hier](https://azuriom.s3.fr-par.scw.cloud/dev/Azuriom-1.0.0-beta2.zip).
+Momenteel kunnen alleen nieuwe websites Azuriom v1.0 gebruiken.
 
-Voel je vrij om een bug of probleem te melden op Github of op onze [Discord-server](https://azuriom.com/discord).
+Voor bestaande websites is het mogelijk om te upgraden zonder iets te verliezen in de komende dagen. Nog even geduld!
 
 ## Een thema aanpassen
 

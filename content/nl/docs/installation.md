@@ -10,7 +10,7 @@ weight: 1
 Om te werken, heeft Azuriom een **webserver met PHP** nodig met minimaal **100 MB**
 schijfruimte en de volgende vereisten:
 
-- PHP 7.3 of hoger
+- PHP 8.0 of hoger
 - URL herschrijven
 - Schrijf-/leesrechten op `storage/` en `bootstrap/cache/`. mappen.
 - BCMath PHP Extensie
