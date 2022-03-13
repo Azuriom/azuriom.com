@@ -83,6 +83,17 @@ In order for a theme to be loaded with Azuriom v1.0, it is **required** to add `
 ```
 {{< /warn >}}
 
+### Icons
+
+FontAwesome 5 was replaced by [Bootstrap Icons](https://icons.getbootstrap.com),
+so you would need to replace all icons.
+
+It also requires to replace the FontAwesome CSS by the Boostrap's one:
+```diff
+- <link href="{{ asset('vendor/fontawesome/css/all.min.css') }}" rel="stylesheet">
++ <link href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+```
+
 ### Social networks
 
 Azuriom now has a dedicated configuration to add links to social networks directly from the settings. If you had an
@@ -181,6 +192,11 @@ In order for a plugin to be loaded with Azuriom v1.0, it is **required** to add 
 }
 ```
 {{< /warn >}}
+
+### Icons
+
+FontAwesome 5 was replaced by [Bootstrap Icons](https://icons.getbootstrap.com),
+so you would need to replace all FontAwesome icons.
 
 ### Service providers
 

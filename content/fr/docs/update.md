@@ -54,7 +54,7 @@ N'hésitez pas à nous signaler tout bug ou problème sur GitHub ou sur notre [s
 
 ## Adaptation d'un thème
 
-Azuriom utilisant maintenant Bootstrap 5, les thèmes vont devoir être adaptés. Nous vous conseillons de regarder le [guide
+Pour les développeurs ayant créé leur thème, Azuriom utilisant maintenant Bootstrap 5, les thèmes vont devoir être adaptés. Nous vous conseillons de regarder le [guide
 de migration vers Bootstrap 5](https://getbootstrap.com/docs/5.1/migration/).
 
 Un changement notable de l'utilisation de Bootstrap 5 est que jQuery n'est plus inclus avec Azuriom. Il est également
@@ -97,6 +97,17 @@ Pour qu'un thème puise être chargé avec Azuriom v1.0, il est **nécessaire** 
 }
 ```
 {{< /warn >}}
+
+### Icônes
+
+FontAwesome 5 a été remplacé par [Bootstrap Icons](https://icons.getbootstrap.com),
+il faudra donc remplacer les noms de toutes les icônes en conséquence.
+
+Il faut également remplacer le lien FontAwesome par celui de Bootstrap Icons :
+```diff
+- <link href="{{ asset('vendor/fontawesome/css/all.min.css') }}" rel="stylesheet">
++ <link href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+```
 
 ### Réseaux sociaux
 
@@ -177,7 +188,7 @@ par quelque chose comme ça :
 
 ## Adaptation d'un plugin
 
-Azuriom utilisant maintenant Bootstrap 5, les plugins vont devoir être adaptés. Nous vous conseillons de regarder le [guide
+Pour les développeurs ayant créé leur plugin, Azuriom utilisant maintenant Bootstrap 5, les plugins vont devoir être adaptés. Nous vous conseillons de regarder le [guide
 de migration vers Bootstrap 5](https://getbootstrap.com/docs/5.1/migration/).
 
 De plus Azuriom utilise maintenant Laravel 9 et PHP 8, nous vous conseillons de regarder [le guide de migration vers
@@ -201,6 +212,11 @@ Pour qu'un plugin puise être chargé avec Azuriom v1.0, il est **nécessaire** 
 }
 ```
 {{< /warn >}}
+
+### Icônes
+
+FontAwesome 5 a été remplacé par [Bootstrap Icons](https://icons.getbootstrap.com),
+il faudra donc remplacer les noms de toutes les icônes en conséquence.
 
 ### Service providers
 

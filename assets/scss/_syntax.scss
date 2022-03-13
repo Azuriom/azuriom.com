@@ -68,11 +68,11 @@
 /* CommentPreproc */ .chroma .cp { color: #75715e }
 /* CommentPreprocFile */ .chroma .cpf { color: #75715e }
 /* Generic */ .chroma .g {  }
-/* GenericDeleted */ .chroma .gd {  }
+/* GenericDeleted */ .chroma .gd { color:#a00000; }
 /* GenericEmph */ .chroma .ge { font-style: italic }
 /* GenericError */ .chroma .gr {  }
 /* GenericHeading */ .chroma .gh {  }
-/* GenericInserted */ .chroma .gi {  }
+/* GenericInserted */ .chroma .gi { color: #00a000; }
 /* GenericOutput */ .chroma .go {  }
 /* GenericPrompt */ .chroma .gp {  }
 /* GenericStrong */ .chroma .gs { font-weight: bold }
