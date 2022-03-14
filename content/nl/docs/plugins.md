@@ -505,7 +505,7 @@ en het retourneren van de verschillende routes in de `adminNavigation()` methode
         return [
             'support' => [
                 'name' => trans('support::admin.title'), // Vertaling van de naam van het tabblad
-                'icon' => 'bi bi-joystick', // Bootstrap Icons icoon
+                'icon' => 'bi bi-joystick', // Bootstrap Icons pictogram
                 'route' => 'support.admin.tickets.index', // Pagina's route
                 'permission' => 'support.tickets', // (Optioneel) Toestemming vereist om deze pagina te bekijken
             ],
