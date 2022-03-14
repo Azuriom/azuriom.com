@@ -7,8 +7,8 @@ title: Plugins
 ## Introduction
 
 A plugin allows you to add new features to your site, to
-many plugins are available on our [Market](https://market.azuriom.com)
-but you can create one if you can't find one that matches your
+many plugins are available on our [Market](https://market.azuriom.com),
+and you can also create one if you can't find one that matches your
 needs.
 
 ## Creating a plugin
@@ -56,6 +56,7 @@ contains the different information of a plugin:
     "authors": [
         "Azuriom"
     ],
+    "azuriom_api": "1.0.0",
     "providers": [
         "\\Azuriom\\Plugin\\Example\\Providers\\ExampleServiceProvider",
         "\\Azuriom\\ Plugin\\Example\\Providers\\RouteServiceProvider"
@@ -161,7 +162,7 @@ and the title of the page in the `title` section.
 
 #### Assets
 
-The assets (CSS, JS, images, etc) are located in the `assets/` folder and can
+The assets (CSS, JS, images, etc.) are located in the `assets/` folder and can
 be used with the `plugin_asset('<plugin id>', '<asset path>')` function.
 
 Assets can be included in the page via a [Blade stack](https://laravel.com/docs/blade#stacks).
@@ -299,7 +300,7 @@ class Ticket extends Model
 ### Service Provider
 
 The service providers are the heart of a plugin, they are called at the initialization stage.
-of Laravel, and allow to save the different parts of a plugin (views, translations, middlewares, dependencies, etc).
+of Laravel, and allow to save the different parts of a plugin (views, translations, middlewares, dependencies, etc.).
 
 Service providers must be added to the `providers` part of the `plugins.json`:
 ```json
@@ -381,7 +382,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSupportTicketsTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -412,7 +413,7 @@ class CreateSupportTicketsTable extends Migration
     {
         Schema::dropIfExists('support_tickets');
     }
-}
+};
 ```
 
 ### Translations
@@ -468,7 +469,7 @@ the different routes in the `routeDescriptions()` method with the format
     protected function routeDescriptions()
     {
         return [
-            'support.tickets.index' => 'support::messages.title',
+            'support.tickets.index' => trans('support::messages.title'),
         ];
     }
 ```
@@ -500,8 +501,8 @@ and returning the different routes in the `adminNavigation()` method.
     {
         return [
             'support' => [
-                'name' => 'support::admin.title', // Translation of the tab name
-                'icon' => 'fas fa-question', // FontAwesome icon
+                'name' => trans('support::admin.title'), // Translation of the tab name
+                'icon' => 'bi bi-joystick', // Bootstrap Icons icon
                 'route' => 'support.admin.tickets.index', // Page's route
                 'permission' => 'support.tickets', // (Optional) Permission required to view this page
             ],

@@ -39,7 +39,7 @@ pour leur aide.
 
 ### Donateurs
 
-Les donateurs permettent de faire vivre le projet, un grand merci à eux, et en particulier à:
+Les donateurs permettent de faire vivre le projet, un grand merci à eux, et en particulier à :
 * [Akuyuma](https://toxyca.fr/)
 * micro_maniaque
 * [Skillz](https://www.evolved-network.com/)

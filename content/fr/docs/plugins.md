@@ -17,7 +17,7 @@ Avant de créer un plugin, il est recommandé de lire la
 [documentation de Laravel](https://laravel.com/docs/).
 
 {{< warn >}}
-Lorsqu'Azuriom est installé en local pour du développement de plugin,
+Lorsque Azuriom est installé en local pour du développement de plugin,
 il est très fortement recommandé d'activer le debug afin de simplifier le développement.
 Cela peut se faire très simplement en modifiant ces 2 lignes dans le fichier `.env` à la
 racine du site :
@@ -45,7 +45,7 @@ plugins/  <-- Dossier contenant les différents plugins installés
 
 ### Le fichier plugin.json
 
-Le fichier `plugin.json` est indispensable pour charger un plugin, et
+Le fichier `plugin.json` est indispensable pour charger un plugin et
 contient les différentes informations d'un plugin :
 ```json
 {
@@ -57,6 +57,7 @@ contient les différentes informations d'un plugin :
     "authors": [
         "Azuriom"
     ],
+    "azuriom_api": "1.0.0",
     "providers": [
         "\\Azuriom\\Plugin\\Exemple\\Providers\\ExempleServiceProvider",
         "\\Azuriom\\Plugin\\Exemple\\Providers\\RouteServiceProvider"
@@ -89,8 +90,8 @@ Un `?` après le nom du plugin signifie que le plugin est optionnel, c’est-à-
 celui-ci n’a pas besoin d’être installé, mais que lorsqu’il l’est, la version doit correspondre.
 Il est également possible de spécifier une version d’Azuriom en utilisant la valeur `azuriom`.
 
-Par exemple, ce plugin a besoin d’Azuriom `0.4.0` ou supérieur, du plugin Shop version`0.1.0`
-ou supérieur. Enfin, lorsque le plugin Vote est installé, celui-ci doit être en version `0.2.0` ou plus récent:
+Par exemple, ce plugin a besoin d’Azuriom `0.4.0` ou supérieur, du plugin `shop` version`0.1.0`
+ou supérieur. Enfin, lorsque le plugin Vote est installé, celui-ci doit être en version `0.2.0` ou plus récent :
 ```json
 "dependencies": {
     "azuriom": "^0.4.0",
@@ -105,7 +106,7 @@ Les routes permettent d'associer une URL à une action en particulier.
 
 Elles sont enregistrées dans le dossier `routes` à la racine du plugin.
 
-Pour plus d'informations sur le fonctionnement des routes vous pouvez lire la
+Pour plus d'informations sur le fonctionnement des routes, vous pouvez lire la
 [documentation de Laravel](https://laravel.com/docs/routing).
 
 Exemple :
@@ -164,7 +165,7 @@ Pour définir le layout de la page, il faut que la vue étende la vue contenant
 le layout, vous pouvez soit utiliser le layout par défaut (ou du thème s’il y en a)
 avec `@extends('layouts.app')`, soit créer votre propre layout et l'étendre.
 
-Ensuite il faudra mettre tout le contenu principal au sein de la section `content`,
+Ensuite, il faudra mettre tout le contenu principal au sein de la section `content`,
 et le titre de la page dans la section `title`.
 
 ```html
@@ -193,10 +194,10 @@ Les contrôleurs sont une partie centrale d'un plugin, ils se trouvent dans le d
 `src/Controllers` à la racine du plugin et c'est eux qui s'occupent
 de transformer une requête en la réponse qui sera renvoyée à l'utilisateur.
 
-Pour plus d'informations sur le fonctionnement des contrôleurs vous pouvez lire la
+Pour plus d'informations sur le fonctionnement des contrôleurs, vous pouvez lire la
 [documentation de Laravel](https://laravel.com/docs/controllers).
 
-Exemple :
+Exemple :
 ```php
 <?php
 
@@ -227,7 +228,7 @@ class TicketController extends Controller
 
 ### Modèles
 
-Les modèles représentent une entrée dans une table de la base de données, et permettent
+Les modèles représentent une entrée dans une table de la base de données et permettent
 d'interagir avec la base de données.
 
 Vous pouvez également définir dans un modèle les différentes relations de celui-ci,
@@ -371,7 +372,7 @@ Pour ajouter une libraire Composer, dans le dossier de votre plugin, exécutez l
 
 Puis ajoutez `require_once __DIR__.'/../../vendor/autoload.php';` à la méthode `register` du service provider de votre plugin.
 
-{{< warn >}}Verifiez que les librairies que vous ajoutez ne sont pas déjà incluses dans Azuriom afin d'éviter des conflits entre les versions et des erreurs.{{< /warn >}}
+{{< warn >}} Vérifiez que les librairies que vous ajoutez ne sont pas déjà incluses dans Azuriom afin d'éviter des conflits entre les versions et des erreurs.{{< /warn >}}
 
 ### Migrations
 
@@ -388,7 +389,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSupportTicketsTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -419,7 +420,7 @@ class CreateSupportTicketsTable extends Migration
     {
         Schema::dropIfExists('support_tickets');
     }
-}
+};
 ```
 
 ### Traductions
@@ -475,7 +476,7 @@ dans le provider du plugin et de retourner les différentes routes dans la méth
     protected function routeDescriptions()
     {
         return [
-            'support.tickets.index' => 'support::messages.title',
+            'support.tickets.index' => trans('support::messages.title'),
         ];
     }
 ```
@@ -508,8 +509,8 @@ la méthode `adminNavigation()` :
     {
         return [
             'support' => [
-                'name' => 'support::admin.title', // Traduction du nom de l'onglet
-                'icon' => 'fas fa-question', // Icône FontAwesome
+                'name' => trans('support::admin.title'), // Traduction du nom de l'onglet
+                'icon' => 'bi bi-joystick', // Icône Bootstrap Icons
                 'route' => 'support.admin.tickets.index', // Route de la page
                 'permission' => 'support.tickets', // (Optionnel) Permission nécessaire pour voir cet onglet
             ],

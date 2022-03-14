@@ -11,7 +11,7 @@ Sendmail is simpler to use and install, but the mails are more likely to be cons
 ## SMTP server
 
 Some shared web hosts provide an SMTP server that can be used directly.
-Otherwise it is possible to install an SMTP server yourself but this is very complex,
+Otherwise, it is possible to install an SMTP server yourself but this is very complex,
 and it is often easier to use a dedicated service such as :
 * [Mailgun](https://www.mailgun.com/): 0.80$ / 1000 mails
 * [Amazon SES](https://aws.amazon.com/ses/): 0.10$ / 1000 emails

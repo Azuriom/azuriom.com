@@ -10,7 +10,7 @@ weight: 1
 Pour fonctionner, Azuriom nécessite simplement un **serveur web avec PHP** disposant d'au moins **100 MO**
 d'espace disque ainsi que des prérequis suivants :
 
-- PHP 7.3 ou plus récent
+- PHP 8.0 ou plus récent
 - Réécriture d'URL
 - Extension PHP BCMath
 - Extension PHP Ctype
@@ -26,7 +26,7 @@ d'espace disque ainsi que des prérequis suivants :
 
 Il est également très fortement recommandé de posséder **une base de données MySQL/MariaDB ou PostgreSQL**.
 
-### Installation des pré-requis
+### Installation des prérequis
 
 Si vous utilisez un VPS ou un serveur dédié, il sera sûrement nécessaire d'installer
 vous-même un serveur web, PHP et MySQL, cela peut se faire par exemple avec les commandes suivantes :
@@ -41,13 +41,13 @@ apt update -y
 apt install -y php8.0 php8.0-fpm php8.0-mysql php8.0-pgsql php8.0-sqlite3 php8.0-bcmath php8.0-mbstring php8.0-xml php8.0-curl php8.0-zip php8.0-gd
 ```
 
-Une fois les pré-requis installés, vous devez configurer le serveur web. Pour ce
+Une fois les prérequis installés, vous devez configurer le serveur web. Pour ce
 faire, des explications sont disponibles en bas de cette page.
 
 {{< info >}}
 Si vous préférez, vous pouvez aussi utiliser ce
 [script non-officiel d'installation automatique](https://github.com/AzuriomCommunity/Script-AutoInstall)
-qui installera tous les pré-requis automatiquement
+qui installera tous les prérequis automatiquement
 (veillez simplement à le lancer uniquement sur un VPS qui vient d'être installé pour éviter d'éventuels conflits).
 {{< /info >}}
 
@@ -124,7 +124,7 @@ Azuriom peut également être installé avec [Docker](https://www.docker.com/) e
 {{< warn >}}
 Une fois l'installation terminée, afin d'éviter tout problème, veillez à ce que
 votre site ne soit pas accessible directement depuis l'IP de la machine
-(ex: http://0.0.0.0).
+(ex : http://0.0.0.0).
 {{< /warn >}}
 
 ## Environnement de développement
@@ -157,7 +157,7 @@ Pour cela, commencez par activer le mod "rewrite" avec la commande suivante :
 a2enmod rewrite
 ```
 
-Ensuite vous pouvez configurer le site pour autoriser la réécriture d'url.
+Ensuite vous pouvez configurer le site pour autoriser la réécriture d'URL.
 Il faut simplement modifier le fichier `/etc/apache2/sites-available/000-default.conf`
 et y ajouter les lignes suivantes entre les balises `<VirtualHost>` (en remplaçant
 `var/www/azuriom` par l'emplacement du site) :

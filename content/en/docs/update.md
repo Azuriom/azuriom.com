@@ -23,7 +23,7 @@ For this reason, we recommend that you update your sites using PHP (whether they
 ### Extensions
 
 Due to various internal changes, extensions (themes and plugins) will have to be updated to support Azuriom v1.0.
-Also extensions compatible with Azuriom v1.0 are not compatible with previous versions of Azuriom.
+Also, extensions compatible with Azuriom v1.0 are not compatible with previous versions of Azuriom.
 
 The layout of the basic design of the CMS and plugins has also been completely revised, in order to simplify the development
 of themes as well as the general coherence between the plugins.
@@ -45,11 +45,10 @@ This feature is entirely optional.
 
 ## Update
 
-Currently, Azuriom v1.0 is still under development, we strongly advise you not to use it in production or to update an
-existing site. However, you can create a new site to test this version by downloading it
-[here](https://azuriom.s3.fr-par.scw.cloud/dev/Azuriom-1.0.0-beta2.zip).
+Currently, only new websites can use Azuriom v1.0.
 
-Feel free to report any bug or problem on GitHub or on our [Discord server](https://azuriom.com/discord).
+For existing sites, it will be possible to upgrade without losing anything in
+the next few days, stay tuned!
 
 ## Adapting a theme
 
@@ -172,7 +171,7 @@ We recommend replacing all uses of the server address with something like this:
 Since Azuriom is now using Bootstrap 5, the plugins will have to be adapted. We advise you to look at the
 [Bootstrap 5 migration guide](https://getbootstrap.com/docs/5.1/migration/).
 
-Also Azuriom is now using Laravel 9 and PHP 8, we advise you to have a look at the
+Also, Azuriom is now using Laravel 9 and PHP 8, we advise you to have a look at the
 [Laravel 9 migration guide](https://laravel.com/docs/9.x/upgrade).
 
 You can also take the opportunity to use the [new features introduced in PHP 8.0](https://www.php.net/releases/8.0/en.php)

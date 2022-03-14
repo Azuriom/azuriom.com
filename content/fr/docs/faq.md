@@ -10,7 +10,7 @@ mais voilà les erreurs les plus courantes avec leurs solutions !
 
 ## Problèmes courants
 
-### La page d'accueil fonctionne mais les autres pages produisent une erreur 404
+### La page d'accueil fonctionne, mais les autres pages produisent une erreur 404
 
 La réécriture d'URL n'est pas activée, il vous suffit de l'activer (voir question suivante).
 
@@ -84,7 +84,7 @@ dans Page Rules -> Ajouter une règle, puis en mettant `votre-site.fr/api/*` dan
 * Niveau de sécurité : 'Moyen' ou 'Élevé'
 * Vérification de l'intégrité du navigateur : 'OFF'
 
-Si le problème persite, vérifiez également les règles du pare-feu.
+Si le problème persiste, vérifiez également les règles du pare-feu.
 
 Plus de détails sont disponibles sur le [site de Cloudflare](https://support.cloudflare.com/hc/en-us/articles/200504045-Using-Cloudflare-with-your-API).
 
