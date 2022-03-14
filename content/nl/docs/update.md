@@ -84,7 +84,7 @@ Om een thema te laden met Azuriom v1.0, is het **vereist** om `"azuriom_api": "1
 
 ### Pictogrammen
 
-FontAwesome 5 is vervangen door [Bootstrap Pictogrammen](https://icons.getbootstrap.com),
+FontAwesome 5 is vervangen door [Bootstrap Icons](https://icons.getbootstrap.com),
 dus u zou alle pictogrammen moeten vervangen.
 
 Het is ook vereist om de FontAwesome CSS te vervangen met die van Bootstrap:
@@ -192,7 +192,7 @@ Om een plug-in te laden met Azuriom v1.0, is het **vereist** om `"azuriom_api": 
 
 ### Pictogrammen
 
-FontAwesome 5 is vervangen door [Bootstrap Pictogrammen](https://icons.getbootstrap.com),
+FontAwesome 5 is vervangen door [Bootstrap Icons](https://icons.getbootstrap.com),
 dus je zou alle FontAwesome-pictogrammen moeten vervangen.
 
 ### Dienstverleners
