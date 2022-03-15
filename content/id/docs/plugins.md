@@ -179,20 +179,21 @@ Contoh:
 
 #### Admin view
 
-For a page to use the admin panel layout, just use the layout
-`admin.layouts.admin`, it is also recommended creating an admin folder
-in the `resources` folder and put the admin views in it.
+Untuk layout halaman panel admin, hanya gunakan layout
+`admin.layouts.admin`, disarankan untuk membuat folder admin
+di folder `resources` dan menaruh admin view di dalamnya
+
 
 ### Controllers
 
-Controllers are a central part of a plugin, they are located in the folder
-`src/Controllers` at the root of the plugin, and they take care of
-to transform a request into the answer that will be sent back to the user.
+Controllers merupakan bagian utama dari sebuah plugin, mereka terletak di folder
+`src/Controllers` di root sebuah plugin, dan mereka menangani
+untuk mengubah permintaan menjadi jawaban yang nantinya akan dikirimkan kembali ke pengguna.
 
-For more information on how the controllers work you can read the
-[Laravel documentation](https://laravel.com/docs/controllers).
+Untuk informasi lebih lanjut untuk cara penggunaan controllers anda bisa membacanya di
+[Dokumentasi Laravel](https://laravel.com/docs/controllers).
 
-example:
+Contoh:
 ```php
 <?php
 
@@ -204,16 +205,16 @@ use Azuriom\Plugin\Support\Models\Ticket;
 class TicketController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Memunculkan daftar dari sumbernya.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        // We're picking up all the tickets
+        // Kami akan mengambil semua tiket
         $tickets = Ticket::all();
 
-        // We're return a view, pass him the tickets...
+        // Kami kembalikan sebuah view, dan mengirim tiketnya...
         return view('support::tickets.index', [
             'tickets' => $tickets,
         ]);
@@ -223,14 +224,14 @@ class TicketController extends Controller
 
 ### Models
 
-Templates represent an entry in a database table, and allow you to interact with
-the database.
+Template melambangkan sebuah masukkan di tabel database, dan memperbolehkan anda untuk berinteraksi dengan
+database.
 
-You can also define in a model the different relationships of the model,
-For example, a `ticket` can have a `user` and a `category`, and have `comments`.
+Anda juga bisa menandakan sebuah model yang memiliki keterkaitan yang berbeda dari model lainnya,
+Contihnya, sebuah `ticket` bisa memiliki `user` dan `category`, dan juga memiliki `comments`.
 
-You can find more information about models (also called Eloquent on Laravel) in the
-[Laravel documentation](https://laravel.com/docs/eloquent).
+Untuk informasi lebuh lanjut mengenai Models atau biasanya di panggil Eloquent di Laravel) pada
+[Dokumentasi Laravel](https://laravel.com/docs/eloquent).
 
 ```php
 <?php
@@ -248,14 +249,14 @@ class Ticket extends Model
     use HasUser;
 
     /**
-     * The table prefix associated with the model.
+     * Awalan tabel yang menandakan model tersebut.
      *
      * @var string
      */
     protected $prefix = 'support_';
 
     /**
-     * The attributes that are mass assignable.
+     * Attribut yang bisa digunakan.
      *
      * @var array
      */
@@ -264,14 +265,14 @@ class Ticket extends Model
     ];
 
     /**
-     * The user key associated with this model.
+     * Kunci pengguna berkaitan dengan model ini.
      *
      * @var string
      */
     protected $userKey = 'author_id';
 
     /**
-     * Get the user who created this ticket.
+     * Mengambil pengguna yang membuat tiket tersebut.
      */
     public function author()
     {
@@ -279,7 +280,7 @@ class Ticket extends Model
     }
 
     /**
-     * Get the category of this ticket.
+     * Mendapatkan kategori dari tiket ini.
      */
     public function category()
     {
@@ -287,7 +288,7 @@ class Ticket extends Model
     }
 
     /**
-     * Get the comments of this ticket.
+     * Mendapatkan komentar dari tiket ini.
      */
     public function comments()
     {
@@ -298,10 +299,10 @@ class Ticket extends Model
 
 ### Service Provider
 
-The service providers are the heart of a plugin, they are called at the initialization stage.
-of Laravel, and allow to save the different parts of a plugin (views, translations, middlewares, dependencies, etc).
+Service Provider adalah jantung dari sebuah plugin, mereka digunakan saat dibagian inisialisasi.
+dari Laravel, dan memperbolehkan untuk menyimpan bagian berbeda dari sebuah plugin (views, translation, middleware, dependencies, dan sebagainya).
 
-Service providers must be added to the `providers` part of the `plugins.json`:
+Service provider harus ditambahkan di `providers` sebagai bagian dari `plugins.json`:
 ```json
 {
     "providers": [
@@ -310,8 +311,8 @@ Service providers must be added to the `providers` part of the `plugins.json`:
 }
 ```
 
-You can find more information about the services provided in the
-[Laravel documentation](https://laravel.com/docs/providers).
+Untuk informasi lebih lanjut mengenai Service Provider dapat di baca di
+[Dokumentasi Laravel](https://laravel.com/docs/providers).
 
 ```php
 <?php
@@ -323,7 +324,7 @@ use Azuriom\Extensions\Plugin\BasePluginServiceProvider;
 class SupportServiceProvider extends BasePluginServiceProvider
 {
     /**
-     * Register any plugin services.
+     * Mendaftarkan semua plugin.
      *
      * @return void
      */
@@ -335,7 +336,7 @@ class SupportServiceProvider extends BasePluginServiceProvider
     }
 
     /**
-     * Bootstrap any plugin services.
+     * Bootstrap semua plugin.
      *
      * @return void
      */
@@ -360,19 +361,19 @@ class SupportServiceProvider extends BasePluginServiceProvider
 
 ### Dependencies
 
-Within your plugin directory run your usual composer require command.
+Di direktori plugin anda ada sebuah komposer yang membutuhkan sebuah perintah.
 
-Then add `require_once __DIR__.'/../../vendor/autoload.php';` to the register method of the service provider of the plugin.
+Lalu tambahkan `require_once __DIR__.'/../../vendor/autoload.php';` untuk mendaftarkan metode dari service provider dari sebuah plugin.
 
-{{< warn >}}Make sure that the dependencies you require are not already provided by Azuriom to avoid versions conflicts and errors.{{< /warn >}}
+{{< warn >}}Pastikan bahwa dependencies yang anda masukkan belum disediakan oleh Azuriom untuk menghindari konflik antar versi dan error.{{< /warn >}}
 
 ### Migration
 
-Migrations allow you to create, modify or delete tables in the database.
-data, they can be found in the `database/migrations` folder.
+Migration memperbolehkan anda untuk membuat, mengubah dan menghapus tabel di database.
+data, mereka bisa ditemukan di folder `database/migrations`.
 
-You can find more information about migrations in the
-[Laravel documentation](https://laravel.com/docs/migrations).
+Untuk informasi lanjut mengenai migration ada di
+[Dokumentasi Laravel](https://laravel.com/docs/migrations).
 
 ```php
 <?php
@@ -384,7 +385,7 @@ use Illuminate\Support\Facades\Schema;
 class CreateSupportTicketsTable extends Migration
 {
     /**
-     * Run the migrations.
+     * Jalankan migrasinya.
      *
      * @return void
      */
@@ -404,7 +405,7 @@ class CreateSupportTicketsTable extends Migration
     }
 
     /**
-     * Reverse the migrations.
+     * Membalik migrasinya.
      *
      * @return void
      */
@@ -417,23 +418,23 @@ class CreateSupportTicketsTable extends Migration
 
 ### Translations
 
-Translations allow you to translate a plugin (amazing), they are found at
-in the `resources/lang` directory at the root of a plugin, in the 
-language folder (`en`, `fr`, etc...).
+Terjemahan memperbolehkan anda untuk meberjemahkan sebuah plugin (luar biasa), mereka dapat ditemukan di
+dalam direktori `resources/lang` diroot plugin tersebut, pada folder
+bahasa (`en`, `fr`, dan sebagainya...).
 
-You can find more information on translations in the
-[Laravel documentation](https://laravel.com/docs/localization).
+Untuk informasi lanjut mengenai translation ada di
+[Dokumentasi Laravel](https://laravel.com/docs/localization).
 
-To retrieve a translation you can use the
-`trans('<plugin id>::<filename>.<message>')`, for example
-`trans('support::messages.tickets.home')` to display the `tickets.home` message,
-in the `messages.php` file of the support plugin:
+Untuk mengambil sebuah terjemahan anda bisa menggunakan
+`trans('<plugin id>::<filename>.<message>')`, contohnya
+`trans('support::messages.tickets.home')` untuk menampilkan pesan `tickets.home`,
+di file `messages.php` dari plugin support:
 ```php
 <?php
 
 return [
   'tickets' => [
-    'home' => 'Your tickets',
+    'home' => 'Tiket anda',
   ],
 ];
 ```
@@ -442,14 +443,14 @@ return [
 
 #### Utilisateurs
 
-It is recommended to register the main routes of your plugin so that they can be
-easily added in the navigation bar. To do this, simply call the
-`$thiS->registerRouteDescriptions()` method in the plugin provider and return
-the different routes in the `routeDescriptions()` method with the format 
+Disarankan untuk mendaftarkan rute utama dari plugin anda jadi mereka dapat
+secara mudah ditambahkan ke kolom navigasi. Untuk melakukan ini, gunakan saja
+`$thiS->registerRouteDescriptions()` metode ini ke provider plugin dan kembalikan
+ke rute berveda di `routeDescriptions()` metode dengan format
 `[<route> => <description>]`:
 ```php
     /**
-     * Bootstrap any plugin services.
+     * Bootstrap semua plugin.
      *
      * @return void
      */
@@ -461,7 +462,7 @@ the different routes in the `routeDescriptions()` method with the format
     }
 
     /**
-     * Returns the routes that should be able to be added to the navbar.
+     * Mengembalikan rute yang harusnya ditambahkan di navbar.
      *
      * @return array
      */
@@ -475,12 +476,12 @@ the different routes in the `routeDescriptions()` method with the format
 
 ### Admin
 
-To make your plugin's admin pages appear in the navbar of the admin panel,
-you can register them by calling the method `$this->registerAdminNavigation()`
-and returning the different routes in the `adminNavigation()` method.
+Untuk membuat halaman admin plugin anda muncul di navbar pada panel admin,
+anda bisa mendaftarkan mereka dengan menggunakan `$this->registerAdminNavigation()`
+dan mengembalikan rute berbeda di `adminNavigation()`.
 ```php
     /**
-     * Bootstrap any plugin services.
+     * Bootstrap semua plugin.
      *
      * @return void
      */
@@ -492,7 +493,7 @@ and returning the different routes in the `adminNavigation()` method.
     }
 
     /**
-     * Return the admin navigations routes to register in the dashboard.
+     * Mengembalikan rute navigasi admin untuk didaftarkan di dashboard.
      *
      * @return array
      */
@@ -500,10 +501,10 @@ and returning the different routes in the `adminNavigation()` method.
     {
         return [
             'support' => [
-                'name' => 'support::admin.title', // Translation of the tab name
-                'icon' => 'fas fa-question', // FontAwesome icon
-                'route' => 'support.admin.tickets.index', // Page's route
-                'permission' => 'support.tickets', // (Optional) Permission required to view this page
+                'name' => 'support::admin.title', // Terjemahan nama tab
+                'icon' => 'fas fa-question', // Ikon FontAwesome
+                'route' => 'support.admin.tickets.index', // Rute halaman
+                'permission' => 'support.tickets', // (Pilihan) Ijin diperlukan untuk melihat halaman ini
             ],
         ];
     }
