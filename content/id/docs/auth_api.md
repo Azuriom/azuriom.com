@@ -8,15 +8,15 @@ AzAuth adalah sebuah api yang memperbolehkan anda untuk mengautentikasi pengguna
 
 ## Download
 
-AzAuth sources are available on [GitHub](https://github.com/Azuriom/AzAuth)
-and the jar file can be downloaded [here](https://azuriom.s3.fr-par.scw.cloud/azauth-1.0-SNAPSHOT.jar).
+AzAuth tersedia di [GitHub](https://github.com/Azuriom/AzAuth)
+dan file jar dapat di download [disini](https://azuriom.s3.fr-par.scw.cloud/azauth-1.0-SNAPSHOT.jar).
 
-If you are using a dependency manager, you can add AzAuth as a
-dependency by the following way:
+Jika anda menggunakan dependency manager, anda bisa menambahkan AzAuth sebagai
+depedency sebagai berikut:
 
 ### Gradle
 
-in `build.gradle`:
+di `build.gradle`:
 
 ```groovy
 repositories {
@@ -31,7 +31,7 @@ dependencies {
 
 ### Maven
 
-in `pom.xml`:
+di `pom.xml`:
 ```xml
 <repositories>
     <repository>
@@ -52,23 +52,23 @@ in `pom.xml`:
 ```
 
 {{< warn >}}
-Regardless of how you use the client-side auth api, you must verify on
-the server that the access token returned by the client is valid by using
-the `verify` method.
+Kesampingkan bagaimana cara anda menggunakan auth api bagian pengguna, anda harus verifikasi di
+server yang mengakses token yang diberikan oleh pengguna valid dengan menggunakan
+metode `verify`.
 {{< /warn >}}
 
-## Use of AzAuth (Java)
+## Penggunaan dari AzAuth (Java)
 
-Before using AzAuth, please make sure that the API is activated by going to
-in the settings of your site, on your admin panel.
+Sebelum menggunakan AzAuth, mohon pastikan bahwa API telah aktif dengan pergi ke
+setelan dari laman anda, di panel admin anda.
 
-### Using with [OpenLauncherLib](https://github.com/Litarvan/OpenLauncherLib/) _(for minecraft launcher)_
+### Menggunakan dengan [OpenLauncherLib](https://github.com/Litarvan/OpenLauncherLib/) _(for minecraft launcher)_
 
-To begin, add AzAuth as a dependency to your project.
-Also, if you are using [OpenAuth](https://github.com/Litarvan/OpenAuth/), it is recommended that you remove it,
-although it does not cause any real problems, it is no longer used if you use AzAuth.
+Untuk mulai, tambahkan AzAuth sebagai sebuah dependency ke projek anda.
+Juga, jika anda menggunakan [OpenAuth](https://github.com/Litarvan/OpenAuth/), disarankan bahwa anda menghapusnya,
+meskipun ini tidak memberikan masalah serius, ini tidak lagi dipakai jika anda memakai AzAuth.
 
-You should have in the code of your launcher an `auth` method similar to the code below:
+Anda harus memiliki kode dari launcher anda sebuah metode `auth` yang sama dengan kode di bawah ini:
 ```java
 public static void auth(String username, String password) throws AuthenticationException {
     Authenticator authenticator = new Authenticator(Authenticator.MOJANG_AUTH_URL, AuthPoints.NORMAL_AUTH_POINTS);
@@ -76,16 +76,16 @@ public static void auth(String username, String password) throws AuthenticationE
     authInfos = new AuthInfos(response.getSelectedProfile().getName(), response.getAccessToken(), response.getSelectedProfile().getId());
 }
 ```
-You just have to replace it by the code below, to modify `<url>` by the URL of your Azuriom's website root.
+Anda hanya harus menggantinya dengan kode dibawah ini, untuk menngubah `<url>` dengan URL Azuriom laman root anda.
 ```java
 public static void auth(String username, String password) throws AuthenticationException, IOException {
     AzAuthenticator authenticator = new AzAuthenticator("<url>");
     authInfos = authenticator.authenticate(username, password, AuthInfos.class);
 }
 ```
-Once this is done, you just need to import the class `AzAuthenticator` &
-`AuthenticationException` from the `com.azuriom.auth` package and AzAuth will be integrated
-into your launcher.
+Setelah selesai melakukan ini, anda hanya harus mengimpor kelas `AzAuthenticator` &
+`AuthenticationException` dari paket `com.azuriom.auth` dan AzAuth akan langsung terintegrasi
+ke launcher anda.
 
 ### Usage without OpenLauncherLib
 
