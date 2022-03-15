@@ -99,5 +99,5 @@ Anda harus:
 
 1. Pergi ke file dimana informasi Rcon dari server anda bisa ditemukan.
    
-1. Pergi ke website anfa, tambahkan server baru dengan tipe penghubung "Source Rcon", 
+1. Pergi ke website anda, tambahkan server baru dengan tipe penghubung "Source Rcon", 
 dan masukkan sesuai dengan informasi yang diminta
