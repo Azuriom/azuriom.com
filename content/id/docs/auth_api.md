@@ -62,7 +62,7 @@ metode `verify`.
 Sebelum menggunakan AzAuth, mohon pastikan bahwa API telah aktif dengan pergi ke
 setelan dari laman anda, di panel admin anda.
 
-### Menggunakan dengan [OpenLauncherLib](https://github.com/Litarvan/OpenLauncherLib/) _(for minecraft launcher)_
+### Penggunaan dengan [OpenLauncherLib](https://github.com/Litarvan/OpenLauncherLib/) _(for minecraft launcher)_
 
 Untuk mulai, tambahkan AzAuth sebagai sebuah dependency ke projek anda.
 Juga, jika anda menggunakan [OpenAuth](https://github.com/Litarvan/OpenAuth/), disarankan bahwa anda menghapusnya,
@@ -87,32 +87,32 @@ Setelah selesai melakukan ini, anda hanya harus mengimpor kelas `AzAuthenticator
 `AuthenticationException` dari paket `com.azuriom.auth` dan AzAuth akan langsung terintegrasi
 ke launcher anda.
 
-### Usage without OpenLauncherLib
+### Penggunaan tanpa OpenLauncherLib
 
-AzAuth has been designed with [Gson](https://github.com/google/gson) as its only dependency, so you can use it perfectly well if you don't use
-OpenLauncherLib, you can simply use `AzAuthenticator#authenticate(String username, String password)` and that will 
-give you directly a `User` containing a username, uuid, rank, access token and lots of other useful data.
+AzAuth telah dibuat dengan [Gson](https://github.com/google/gson) untuk dependencynya, jadi anda bisa menggunakannya dengan sangat baik meskipun tidak menggunakan
+OpenLauncherLib, anda bisa memakai `AzAuthenticator#authenticate(String username, String password)` dan ini akan 
+memberikan anda sebuah `User` berisi username, uuid, rank, token akses dan banyak data yang berguna lainnya.
 
 
-## Usage with NodeJs
+## Penggunaan dengan NodeJs
 
-### Installation
+### Instalasi
 
-The source code is available on [GitHub](https://github.com/Azuriom/AzAuthJs)
-and the package can be installed with `npm install azuriom-auth`.
+Sumber kode tersedia di [GitHub](https://github.com/Azuriom/AzAuthJs)
+dan paket bisa install dengan `npm install azuriom-auth`.
 
-### Usage
+### Penggunaan
 
 ```js
 const AzuriomAuth = require('azuriom-auth');
 
 async function login(email, password) {
-  const authenticator = new Authenticator('<url of your website>');
+  const authenticator = new Authenticator('<laman url anda>');
 
   try {
     const user = await authenticator.auth(email, password);
 
-    console.log(`Logged in with ${user.email}`);
+    console.log(`Masuk dengan ${user.email}`);
   } catch (e) {
     console.log(e);
   }
@@ -122,22 +122,22 @@ async function login(email, password) {
 
 ### Endpoints
 
-#### Authentification
+#### Autentifikasi
 
 **POST** `/authenticate`
 
-Authenticate a user with their website credentials
+Otentikasi sebuah pengguna dengan kredensial laman mereka
 
-##### Request
-|   Field   |        Description         |
+##### Permintaan
+|   Field   |        Deskripsi         |
 | --------- | -------------------------- |
-|   email   | Username or e-mail address |
-| password  |           Password         |
+|   email   | Username atau alamat e-mail address |
+| kata sandi  |           Kata Sandi         |
 
-##### Response
+##### Tanggapan
 
-Returns the user with his various information, and the unique token
-which can be used to verify the connection or to disconnect.
+Memberikan ke pengguna dengan berbagai informasi, dan token unik
+yang dapat digunakan untuk memverifikasi sebuah koneksi atau putus jaringan.
 
 ```json
 {
@@ -156,19 +156,19 @@ which can be used to verify the connection or to disconnect.
 }
 ```
 
-#### Verification
+#### Verifikasi
 
 **POST** `/verify`
 
 ##### Request
-|     Field    |     Description     |
+|     Field    |     Deskripsi     |
 | ------------ | ------------------- |
-| access_token | Unique access token |
+| access_token | Token akses unik  |
 
-##### Réponse
+##### Tanggapan
 
-Returns the user with his various information, and the unique token
-which can be used to verify the connection or to disconnect.
+Memberikan pengguna dengan informasi berbagai, dan token unik
+yang bisa digunakan untuk verifikasi sebuah koneksi atau untuk memutuskan jaringan.
 
 ```json
 {
@@ -191,13 +191,13 @@ which can be used to verify the connection or to disconnect.
 
 **POST** `/logout`
 
-Logout the user and invalidates the access token.
+Mebgeluarkan pengguna dan membatalkan token akses.
 
 ##### Request
-|     Field    |     Description     |
+|     Field    |     Deskripsi     |
 | ------------ | ------------------- |
-| access_token | Unique access token |
+| access_token | Token akses unik  |
 
-##### Response
+##### Tanggapan
 
-Empty response, with `2xx` status code.
+Tanggapan kosong, dengan kode status `2xx`.
