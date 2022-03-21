@@ -170,5 +170,5 @@ This config must be placed in a site in `site-available` and not in the
 `nginx.conf`.
 
 Just remember to replace `example.com` with your domain, `/var/www/azuriom`
-with the location of the site (without removing the `/public` at the end of the line !)
+with the location of the site (without removing the `/public` at the end of the line!)
 and `php8.0` with your PHP version.
