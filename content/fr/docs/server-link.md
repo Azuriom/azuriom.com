@@ -11,38 +11,38 @@ weight: 2
 
 Certaines fonctionnalités comme afficher les joueurs en
 ligne ou exécuter des commandes nécessitent de relier votre serveur à votre
-site web, sur Azuriom cela peut être fait de 3 façons différentes :
+site web. Avec Azuriom, cela peut être fait de 3 façons différentes :
 
 * Par Ping - **C'est la solution la plus simple, mais aussi la plus limitée** :
-elle permet juste de récupérer les joueurs connectés au serveur
+elle permet simplement de récupérer les joueurs connectés au serveur
 _(ne permet pas d'exécuter de commandes)_.
 
-* Par Rcon - **C'est la solution intermédiaire**, elle permet de récupérer les informations 
+* Par RCON - **C'est la solution intermédiaire**, elle permet de récupérer les informations 
 de du serveur et d'y exécuter des commandes.
 
-* Par Plugin - **C'est la meilleure solution**, elle permet d'avoir les fonctionnalités du Rcon
+* Par Plugin - **C'est la meilleure solution**, elle permet d'avoir les fonctionnalités du RCON
 tout en ajoutant des fonctionnalités plus poussées _(exemple : un système de statistiques avancées)_.
 
 ### Liaison par Ping
 
-Pour pouvoir lier un serveur avec un site sous Azuriom par ping, 
-il faut juste ajouter un nouveau serveur avec comme type de liaison "Ping"
-et remplir les informations demandées _(le port par défaut de Minecraft est `25565`)_.
+Pour lier un serveur Minecraft avec un site sous Azuriom par ping, 
+il suffit d'ajouter un nouveau serveur via l'interface d'administration en spécifiant le type de liaison "Ping"
+et de remplir les informations demandées _(le port par défaut de Minecraft est `25565`)_.
 
 ### Liaison par Rcon
 
-Pour pouvoir lier un serveur avec un site sous Azuriom par Rcon, il faut :
+Pour lier un serveur Minecraft avec un site sous Azuriom par RCON, il faut :
 
 1. Vous rendre dans le fichier `server.properties` de votre serveur
 
-1. Configurer ce fichier de la façon suivante :
+1. Modifier certains paramètres de cette façon :
     * Mettre `enable-rcon` en `true`
     * Mettre `rcon.password` avec `votre-mot-de-passe`
     * Mettre `rcon.port` avec `votre-port` _(par défaut `25575`)_
-    * Sauvegarder et redémarrer votre serveur
+    * Sauvegarder le fichier et redémarrer votre serveur
    
-1. Vous rendre sur votre site et ajouter un nouveau serveur avec comme type de liaison "Rcon"
-et remplir les informations demandées _(le port Rcon par défaut est `25575`)_.
+1. Vous rendre sur l'interface d'administration de votre site et d'y ajouter un nouveau serveur en spécifiant le type de liaison "RCON"
+et de remplir les informations demandées _(le port Rcon par défaut est `25575`)_.
 
 ### Liaison par plugin (AzLink)
 
@@ -62,23 +62,23 @@ Une version legacy est disponible pour les serveurs utilisant Bukkit 1.7.10.
 1. Installer AzLink sur le serveur en le mettant dans le dossier `plugins/`
 (ou `mods/` pour Sponge) et redémarrer le serveur.
 
-1. Aller sur le site et ajouter un nouveau serveur avec comme type de liaison "AzLink", 
-suivre les étapes de liaison et remplir les informations demandées.
+1. Se rendre sur l'interface d'administration de votre site et y ajouter un nouveau serveur en spécifiant le type de liaison "AzLink", 
+suivre les étapes de liaison en remplissant les informations demandées.
 
 ## Jeux Steam
 
 ### Introduction
 
-Cette liste comprend les serveurs sous les jeux suivants : Ark, CS:GO, Garry's Mod & Team fortress 2.
+Cette liste comprend les serveurs des jeux suivants : Ark, CS:GO, Garry's Mod & Team Fortress 2.
 Dans ce cas, vous pouvez relier votre serveur à votre site de deux façons :
 
-* Par Query - elle permet juste de récupérer les joueurs connectés au serveur
+* Par Query - elle permet seulement de récupérer les joueurs connectés au serveur
 _(ne permet pas d'exécuter de commandes)_.
 
-* Par Rcon - elle permet de récupérer les informations 
-de du serveur et d'y exécuter des commandes.
+* Par RCON - elle permet de récupérer les informations 
+du serveur et d'y exécuter des commandes.
 
-Vous pouvez vérifier ici les ports par défaut :
+Vous pouvez vérifier ici les ports par défaut de chaque serveur de jeu :
 
 |    Jeu      | Port  | Query | RCON  |
 | ----------- | ----- | ----- | ----- |
@@ -89,16 +89,17 @@ Vous pouvez vérifier ici les ports par défaut :
 
 ### Liaison par Query
 
-Pour pouvoir lier un serveur avec un site sous Azuriom par Query, 
-il faut juste ajouter un nouveau serveur avec comme type de liaison "Source Query"
-et remplir les informations demandées.
+Pour lier un serveur avec un site Azuriom par Query, 
+il suffit d'ajouter un nouveau serveur en spécifiant le type de liaison "Source Query"
+et de remplir les informations demandées.
 
-### Liaison par Rcon
+### Liaison par RCON
 
-Pour pouvoir relier votre serveur à votre site web sous Azuriom par Rcon, 
-Vous devez :
+Pour relier votre serveur à votre site web Azuriom par le protocole RCON, vous devez :
 
-1. Aller dans le fichier où se trouvent les informations Rcon de votre serveur.
+1. Ouvrir le fichier où se trouvent les informations RCON de votre serveur.
    
-1. Aller sur votre site et ajouter un nouveau serveur avec comme type de liaison "Source Rcon"
+1. Activer le protocole RCON, définir un mot de passe et un port.
+
+1. Se rendre sur l'interface d'administration de votre site et y ajouter un nouveau serveur en spécifiant le type de liaison "Source Rcon"
 et remplir les informations demandées.
