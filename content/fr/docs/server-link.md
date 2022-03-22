@@ -18,7 +18,7 @@ elle permet simplement de récupérer les joueurs connectés au serveur
 _(ne permet pas d'exécuter de commandes)_.
 
 * Par RCON - **C'est la solution intermédiaire**, elle permet de récupérer les informations 
-de du serveur et d'y exécuter des commandes.
+du serveur et d'y exécuter des commandes.
 
 * Par Plugin - **C'est la meilleure solution**, elle permet d'avoir les fonctionnalités du RCON
 tout en ajoutant des fonctionnalités plus poussées _(exemple : un système de statistiques avancées)_.

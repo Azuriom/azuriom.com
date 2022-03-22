@@ -1,5 +1,5 @@
 ---
 title: Téléchargement
-description: Azuriom est un projet entièrement open-source qui peut être téléchargé gratuitement. De plus, le code source est disponible sur GitHub.
+description: "Azuriom est un projet collaboratif ouvert à tous qui peut être inspecté et téléchargé librement : n'importe qui peut inspecter et contribuer au code source d'Azuriom sur GitHub."
 layout: download
 ---
