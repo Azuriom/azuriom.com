@@ -53,13 +53,13 @@ home:
 
   desc1:
     title: "Unique extensions"
-    description1: "Our extensions, that is our themes and plugins are made in the same way as the CMS so that it is one with the extensions once they are installed."
+    description1: "Our extensions, i.e. our themes and plugins are made in the same way as the CMS so that it becomes one with the extensions once they are installed."
     description2: "For developers who wish to carry out their extensions, tools and complete documentation are available for a unique working comfort."
     description3: "A Community market is also available to post your extensions. We check each extension, then we regularly follow the updates proposed on them in order to keep a clean market."
 
   desc2:
     title: "Active support"
-    description1: "We have a active support on Discord and on GitHub and since Azuriom is open-source, everyone can contribute to the project on GitHub !"
+    description1: "We have a active support on Discord and on GitHub and since Azuriom is open-source, everyone can contribute to the project on GitHub!"
     description2: "And Azuriom is open-source, so anyone can contribute and improve the project."
 
 download:
