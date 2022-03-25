@@ -29,7 +29,7 @@ Il est également très fortement recommandé de posséder **une base de donnée
 ### Installation des prérequis
 
 Si vous utilisez un VPS ou un serveur dédié, il sera sûrement nécessaire d'installer
-vous-même un serveur web, PHP et MySQL, cela peut se faire par exemple sous Ubuntu avec les commandes suivantes :
+vous-même un serveur web, PHP et MySQL, cela peut se faire par exemple sous Debian ou Ubuntu avec les commandes suivantes :
 ```
 apt update -y && apt upgrade -y
 

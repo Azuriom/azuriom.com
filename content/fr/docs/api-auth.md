@@ -10,7 +10,7 @@ AzAuth est une api qui permet d'authentifier les utilisateurs d'un site sous Azu
 ## Téléchargement
 
 Les sources d'AzAuth sont disponibles sur [GitHub](https://github.com/Azuriom/AzAuth)
-et le fichier "jar" peut être téléchargé [ici](https://azuriom.s3.fr-par.scw.cloud/azauth-1.0-SNAPSHOT.jar).
+et le fichier "jar" peut être téléchargé [ici](https://oss.sonatype.org/content/repositories/snapshots/com/azuriom/azauth/0.1.0-SNAPSHOT/azauth-0.1.0-20220325.212942-2.jar).
 
 Si vous utilisez un gestionnaire de dépendances, vous pouvez ajouter AzAuth comme
 dépendance de la façon suivante :
@@ -25,7 +25,7 @@ repositories {
 ```
 ```groovy
 dependencies {
-    implementation 'com.azuriom:azauth:1.0-SNAPSHOT'
+    implementation 'com.azuriom:azauth:0.1.0-SNAPSHOT'
 }
 ```
 
@@ -45,7 +45,7 @@ Dans le `pom.xml`:
     <dependency>
         <groupId>com.azuriom</groupId>
         <artifactId>azauth</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>0.1.0-SNAPSHOT</version>
         <scope>compile</scope>
     </dependency>
 </dependencies>
