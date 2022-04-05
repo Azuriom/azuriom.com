@@ -381,7 +381,7 @@ de données, elles se trouvent dans le dossier `database/migrations`.
 
 Vous pouvez utiliser la commande suivante qui va générer automatiquement le fichier de migration :
 ```
-php artisan make:migration <nom de migration> --path plugins/<nom du plugin>/database/migrations 
+php artisan make:migration <nom de migration> --path plugins/<id du plugin>/database/migrations 
 ```
 
 Pour plus d'informations sur les migrations, nous vous conseillons de vous rendre sur la
