@@ -379,7 +379,12 @@ Puis ajoutez `require_once __DIR__.'/../../vendor/autoload.php';` à la méthode
 Les migrations permettent de créer, modifier ou supprimer des tables dans la base
 de données, elles se trouvent dans le dossier `database/migrations`.
 
-Vous pouvez trouver plus d'informations sur les migrations dans la
+Vous pouvez utiliser la commande suivante qui va générer automatiquement le fichier de migration :
+```
+php artisan make:migration <nom de migration> --path plugins/<id du plugin>/database/migrations 
+```
+
+Pour plus d'informations sur les migrations, nous vous conseillons de vous rendre sur la
 [documentation de Laravel](https://laravel.com/docs/migrations).
 
 ```php
