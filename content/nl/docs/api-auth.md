@@ -9,7 +9,7 @@ AzAuth is een API waarmee u gebruikers van een website onder Azuriom op elk plat
 ## Download
 
 AzAuth-bronnen zijn beschikbaar op [GitHub](https://github.com/Azuriom/AzAuth)
-en het jar-bestand kan worden gedownload [hier](https://oss.sonatype.org/content/repositories/snapshots/com/azuriom/azauth/0.1.0-SNAPSHOT/azauth-0.1.0-20220325.212942-2.jar).
+en het jar-bestand kan worden gedownload [hier](https://oss.sonatype.org/content/repositories/snapshots/com/azuriom/azauth/0.1.0-SNAPSHOT/azauth-0.1.0-20220420.160910-3.jar).
 
 Als u een afhankelijkheidsmanager gebruikt, kunt u AzAuth toevoegen als
 afhankelijkheid op de volgende manier:

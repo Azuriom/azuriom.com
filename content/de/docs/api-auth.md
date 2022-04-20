@@ -10,7 +10,7 @@ auf jeder Plattform authentifizieren kannst.
 ## Download
 
 AzAuth-Quellen sind auf [GitHub](https://github.com/Azuriom/AzAuth) verfügbar,
-die JAR-Datei kann [hier](https://oss.sonatype.org/content/repositories/snapshots/com/azuriom/azauth/0.1.0-SNAPSHOT/azauth-0.1.0-20220325.212942-2.jar)
+die JAR-Datei kann [hier](https://oss.sonatype.org/content/repositories/snapshots/com/azuriom/azauth/0.1.0-SNAPSHOT/azauth-0.1.0-20220420.160910-3.jar)
 heruntergeladen werden.
 
 Wenn Du einen Abhängigkeitsmanager verwendest,
