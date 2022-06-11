@@ -1,5 +1,5 @@
 meta:
-  desc: "Azuriom ist ein modernes, zuverlässiges, schnelles und sichere Gaming CMS. Es ist die ideale Wahl für Deine Website über Minecraft, Garrys Mod, Rust, Ark, FIVEM und viele andere Spiele."
+  desc: "Azuriom ist ein modernes, zuverlässiges, schnelles und sicheres CMS für Spiele. Es ist die ideale Wahl für deine Website zu Minecraft, Garry's Mod, Rust, Ark, FiveM und vielen anderen Spielen."
 
 nav:
   home: "Startseite"
@@ -7,80 +7,80 @@ nav:
   extensions: "Erweiterungen"
   docs: "Dokumentation"
   demo: "Demo"
-  demoMC: "Minecraft Demo"
-  demoSteam: "Steam Demo"
-  login: "Einloggen"
+  demoMC: "Minecraft-Demo"
+  demoSteam: "Steam-Demo"
+  login: Einloggen
 
 footer:
   about: "Über uns"
-  aboutDescription: "Azuriom ist das nächste Generation-Spiel CMS, es ist kostenlos und Open-Source, und ist eine moderne, zuverlässige, schnelle und sichere Alternative zu bestehenden CMS, sodass Du das beste Web-Erlebnis für Deine Website auf Minecraft, Garrys Mod, Ark, Rust und viele andere Spiele haben kannst."
-  copyright: "Copyright &copy; 2019-{{ .year }} Azuriom - Alle Rechte vorbehalten. Geschaffen mit&nbsp;{{ .love }} von Azuriom."
+  aboutDescription: "Azuriom ist das Spiele-CMS der nächsten Generation. Es ist kostenlos und Open-Source und ist eine moderne, zuverlässige, schnelle und sichere Alternative zu bestehenden CMS, damit du die bestmögliche Web-Erfahrung für deine Website in Minecraft, Garry's Mod, Ark, Rust und vielen anderen Spielen haben kannst."
+  copyright: "Copyright &copy; 2019-{{ .year }} Azuriom - Alle Rechte vorbehalten. Gemacht mit&nbsp;{{ .love }} by Azuriom."
   partners: "Partner"
   links: "Links"
   supportUs: "Unterstütze uns"
 
 home:
   header:
-    title: "Azuriom | Die Gaming-Website der nächsten Generation"
-    subtitle: "Die Gaming-Website der nächsten Generation für Deinen Server, die von Hunderten von Websites verwendet wird."
-    heading: "Ein Spiele CMS"
-    typed: "kostenfrei und Open-Source.|schnell und sicher.|modern und zuverlässig."
-    typedFallback: "kostenfrei und quelloffen, schnell, sicher, modern und zuverlässig."
+    title: "Azuriom | Die Spiele-Website der nächsten Generation"
+    subtitle: "Die nächste Generation von Spiele-Websites für deinen Server, die von Hunderten von Websites genutzt wird."
+    heading: "Ein Spiele-CMS"
+    typed: "kostenlos und Open-Source.|schnell und sicher.|modern und zuverlässig."
+    typedFallback: "kostenlos und Open-Source, schnell, sicher, modern und zuverlässig."
 
   about:
     title: "Was ist Azuriom"
-    description1: "Azuriom ist die <strong>nächste Generation</strong> der Spiele CMS, es ist <strong>kostenfrei</strong> und <strong>Open-Source</strong>, ebenfalls ist es eine <strong>moderne, zuverlässige, schnellere und sichere</strong> Alternative zu bestehenden CMS, sodass Du über das <strong>beste Weberlebnis</strong> verfügen können."
-    description2: "Azuriom ist die ideale Wahl für Deine Website über Minecraft, Garrys Mod, Rust, FIVEM, Ark und viele andere Spiele."
+    description1: "Azuriom ist das Spiele-CMS der <strong>nächsten Generation</strong>. Es ist <strong>kostenlos</strong> und <strong>Open-Source</strong> und stellt eine <strong>moderne, zuverlässige, schnelle und sichere</strong> Alternative zu bestehenden CMS dar, damit du das <strong>bestmögliche Web-Erlebnis</strong> haben kannst."
+    description2: "Azuriom ist die ideale Wahl für deine Website zu Minecraft, Garry's Mod, Rust, FiveM, Ark und vielen anderen Spielen."
     gamesTitle: "Unterstützte Spiele"
-    games: "Azuriom ist ein <strong>Minecraft CMS</strong>, jedoch nicht nur! Zusätzlich zu Minecraft, unterstützt es ebenfalls <strong>Garry's Mod, Ark, Rust, FiveM, CS:GO and Team Fortress 2</strong>!"
+    games: "Azuriom ist ein <strong>Minecraft-CMS</strong>, aber nicht nur! Neben Minecraft unterstützt es auch <strong>Garry's Mod, Ark, Rust, FiveM, CS:GO und Team Fortress 2</strong>!"
 
   features:
     modern:
       title: "Modern"
-      desc: "Geschaffen mit den neuesten Technologien, mit soliden Mustern."
+      desc: "Hergestellt mit den neuesten Technologien, mit soliden Mustern."
 
     reliable:
       title: "Zuverlässig"
-      desc: "Unsere Prüfprotokolle helfen, Fehler in der Produktion zu vermeiden."
+      desc: "Unsere Prüfprotokolle tragen dazu bei, Fehler in der Produktion zu vermeiden."
 
     fast:
       title: "Schnell"
-      desc: "Jede Komponente von Azuriom ist auf das Maximum für unübertroffene Leistung optimiert."
+      desc: "Jede Komponente von Azuriom wurde für eine unübertroffene Leistung optimiert."
 
     secure:
       title: "Sicher"
-      desc: "Mit seinem starken Konzept und den aktuellen Abhängigkeiten ist die Sicherheit stark."
+      desc: "Mit seinem starken Konzept und den aktuellen Abhängigkeiten ist die Sicherheit hoch."
 
   desc1:
     title: "Einzigartige Erweiterungen"
-    description1: "Unsere Erweiterungen, unsere Themes und Plugins werden auf die gleiche Weise wie das CMS erstellt, sodass es nach der Installation eins mit den Erweiterungen ist."
-    descriptioh2: "Für Entwickler, die ihre Erweiterungen durchführen möchten, stehen Tools und eine komplette Dokumentation für einen einzigartigen Arbeitskomfort zur Verfügung."
-    description3: "Ein Community-Markt ist ebenfalls verfügbar, um Deine Erweiterungen zu veröffentlichen. Wir überprüfen jede Erweiterung und verfolgen dann regelmäßig die vorgeschlagenen Aktualisierungen, um einen sauberen Markt zu gewährleisten."
+    description1: "Unsere Erweiterungen, d.h. unsere Themes und Plugins, werden auf die gleiche Weise entwickelt wie das CMS, sodass es mit den Erweiterungen eins wird, sobald sie installiert sind."
+    description2: "Für Entwickler, die ihre Erweiterungen durchführen möchten, stehen Werkzeuge und eine vollständige Dokumentation für einen einzigartigen Arbeitskomfort zur Verfügung."
+    description3: "Es gibt auch einen Community-Markt, wo du deine Erweiterungen veröffentlichen kannst. Wir überprüfen jede Erweiterung und verfolgen regelmäßig die vorgeschlagenen Aktualisierungen, um einen sauberen Markt zu gewährleisten."
 
   desc2:
     title: "Aktive Unterstützung"
-    description1: "Wir haben eine aktive Unterstützung auf Discord und auf GitHub und da Azuriom Open Source ist, kann jeder auf GitHub zum Projekt beitragen!"
-    description2: "Und Azuriom ist Open Source, sodass jeder einen Beitrag leisten und das Projekt verbessern kann."
+    description1: "Wir haben einen aktiven Support auf Discord und auf GitHub und da Azuriom Open-Source ist, kann jeder auf GitHub zum Projekt beitragen!"
+    description2: "Und Azuriom ist Open-Source, d.h. jeder kann zum Projekt beitragen und es verbessern."
 
 download:
   title: "Herunterladen"
-  docs: "Es wird empfohlen, vor dem Herunterladen von Azuriom <a href=\"{{ .docs }}\" target=\"_blank\">unsere Dokumentation zu lesen</a>."
-  support: 'Solltest du Hilfe benötigen oder eine Frage haben, kannst du unserem <a href="{{ .discord }}" target="_blank">Discord</a> Server beitreten.'
-  sources: 'Azuriom ist Open-Source, dessen Ressourcen sind auf <a href="{{ .github }}" target="_blank">GitHub</a> verfügbar.'
+  docs: "Bevor du Azuriom herunterlädst, empfehlen wir dir, <a href=\"{{ .docs }}\" target=\"_blank\">unsere Dokumentation zu lesen</a>."
+  support: 'Wenn du Hilfe benötigst oder eine Frage hast, kannst du unserem <a href="{{ .discord }}" target="_blank">Discord-Server</a> beitreten.'
+  sources: 'Azuriom ist Open-Source und die Quellen sind auf <a href="{{ .github }}" target="_blank">GitHub</a> verfügbar.'
 
 azlink:
   title: "AzLink"
-  info: "AzLink ist ein Plugin für Azuriom, um Deinen Server auf einfache, schnelle und sichere Weise mit Deiner Azuriom-Website zu verknüpfen."
+  info: "AzLink ist ein Plugin, das für Azuriom entwickelt wurde, um deinen Server einfach, schnell und sicher mit deiner Azuriom-Website zu verknüpfen."
   download: "Herunterladen"
-  supported: "AzLink unterstützt Bukkit (und andere Bukkit-basierte Server wie Spigot, Glowstone, Cauldron und Mohist), BungeeCord, Sponge und Velocity im selben Plugin. Wenn Du Minecraft 1.7.10 verwendest, musst Du die Legacy-Version herunterladen."
-  sources: 'AzLink ist Open-Source, die Quellen sind auf <a href="{{ .github }}" target="_blank">GitHub</a> verfügbar.'
+  supported: "AzLink unterstützt Bukkit (und andere Bukkit-basierte Server wie Spigot, Glowstone, Cauldron und Mohist), BungeeCord, Sponge und Velocity in demselben Plugin. Wenn du Minecraft 1.7.10 benutzt, musst du die ältere Version herunterladen."
+  sources: 'AzLink ist Open-Source und die Quellen sind auf <a href="{{ .github }}" target="_blank">GitHub</a> verfügbar.'
 
 support:
   title: "Unterstütze uns"
-  description1: "Die Durchführung dieses Projekts ist zeitaufwändig und Deine Spende hilft uns bei der Arbeit und Verbesserung dieses Projekts."
-  description2: "Deine Spende hilft auch, die finanziellen Kosten dieses Projekts zu decken: Wir müssen die Domain bezahlen, Server mieten (Website, Demo), Grafikdesigner, ..."
-  description3: "Du kannst uns auch unterstützen, indem du das GitHub-Repository startest, es ist kostenlos und du brauchst nur einen GitHub-Account."
-  star: "Gebe dem Projekt einen Stern"
+  description1: "Die Durchführung dieses Projekts ist zeitaufwendig und deine Spende hilft uns bei der Arbeit und Verbesserung dieses Projekts."
+  description2: "Deine Spende hilft auch, die finanziellen Kosten für dieses Projekt zu decken: Wir müssen die Domain, die Servermiete (Website, Demo), den Grafiker, ... bezahlen."
+  description3: "Du kannst uns auch unterstützen, indem du das GitHub-Repository mit einem Stern markierst. Es ist kostenlos und du benötigst lediglich ein GitHub-Konto."
+  star: "Gib dem Projekt einen Stern"
   donate: "Spenden"
 
 docs:
@@ -90,4 +90,4 @@ errors:
   title: "Fehler"
   notFound:
     title: "Nicht gefunden"
-    info: "Die Seite, nach der du suchst, existiert nicht"
+    info: "Die Seite, die du suchst, konnte nicht gefunden werden."
