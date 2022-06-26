@@ -18,8 +18,8 @@ Avant de créer un plugin, il est recommandé de lire la
 
 {{< warn >}}
 Lorsque Azuriom est installé en local pour du développement de plugin,
-il est très fortement recommandé d'activer le debug afin de simplifier le développement.
-Cela peut se faire très simplement en modifiant ces 2 lignes dans le fichier `.env` à la
+il est très fortement recommandé d'activer le débogage afin de simplifier le développement.
+Cela peut se faire très simplement en modifiant ces 2 lignes dans le fichier d'environnement `.env` à la
 racine du site :
 ```
 APP_ENV=local
@@ -31,8 +31,8 @@ APP_DEBUG=true
 
 ```
 plugins/  <-- Dossier contenant les différents plugins installés
-|  example/  <-- Id de votre plugin
-|  |  plugin.json  <-- Le fichier principal de votre thème contenant les différentes informations
+|  example/  <-- Identifiant unique de votre plugin
+|  |  plugin.json  <-- Le fichier principal de votre thème contenant différentes informations
 |  |  assets/  <-- Le dossier contenant les assets de votre plugin (css, js, images, svg, etc)
 |  |  database/
 |  |  |  migrations/ <-- Le dossier contenant les migrations de votre plugin
@@ -46,7 +46,7 @@ plugins/  <-- Dossier contenant les différents plugins installés
 ### Le fichier plugin.json
 
 Le fichier `plugin.json` est indispensable pour charger un plugin et
-contient les différentes informations d'un plugin :
+contient quelques métadonnées concernant votre plugin :
 ```json
 {
     "id": "exemple",
@@ -66,25 +66,25 @@ contient les différentes informations d'un plugin :
 ```
 
 {{< info >}}
-Pour créer un plugin vous pouvez utiliser la commande suivante qui va
-générer automatiquement le dossier du plugin ainsi que de nombreux fichiers par
-défaut :
+Pour créer un plugin, vous pouvez utiliser la commande suivante qui va
+générer automatiquement le dossier du plugin ainsi que l'arborescence de fichiers
+par défaut :
 ```
 php artisan plugin:create <nom du plugin>
 ```
 {{< /info >}}
 
-#### ID du plugin
+#### Identifiant du plugin
 
-Chaque plugin doit posséder un id, qui doit être unique et qui doit contenir seulement
+Chaque plugin doit posséder un `ID`, qui doit être unique et qui doit contenir seulement
 des chiffres, des lettres minuscules et des tirets. Il est recommandé de se baser pour
-le nom pour créer l'id, par exemple si le nom est `Hello World`, l'id pourra être
-`hello-world`.
-Également le dossier du plugin doit avoir le même nom que son id.
+le nom pour créer l'identifiant. Par exemple, si le nom de votre plugin est `Hello World`,
+un identifiant judicieux pourrait être `hello-world`.
+De plus, le nom du dossier contenant un plugin doit être identique à son identfiant.
 
 #### Dépendances
 
-La partie `dependencies` permet de spécifier les plugins (en utilisant leur id)
+La partie `dependencies` permet de spécifier les plugins (en utilisant leur ID)
 qui doivent être installés pour pouvoir utiliser le plugin.
 Un `?` après le nom du plugin signifie que le plugin est optionnel, c’est-à-dire que
 celui-ci n’a pas besoin d’être installé, mais que lorsqu’il l’est, la version doit correspondre.
@@ -139,15 +139,15 @@ Ce qui donne par exemple :
 
 #### Routes admin
  
- Pour qu'une route soit dans le panel admin, il suffit de la placer dans le fichier
+ Pour qu'une route soit accessible depuis l'interface d'administration, il suffit de la placer dans le fichier
  `routes/admin.php` du plugin.
 
 ### Vues
 
-Les vues sont la partie visible d'un plugin, ce sont les fichiers contenant l'HTML
-du plugin pour afficher une page.
+Les vues sont la partie visible d'un plugin, ce sont les fichiers contenant le balisage
+HTML du plugin pour effectuer le rendu d'une page.
 
-Azuriom utilisant [Laravel](https://laravel.com/), les vues peuvent être faites en utilisant le moteur
+Azuriom utilisant [Laravel](https://laravel.com/), les vues peuvent être conçues en utilisant le moteur
 de template Blade. Si vous ne maitrisez pas Blade il est très vivement recommandé
 de lire [sa documentation](https://laravel.com/docs/blade), d'autant plus que celle-ci est assez courte.
 
@@ -161,7 +161,7 @@ Pour afficher une vue vous pouvez utiliser `view('<id du plugin>::<nom de la vue
 par exemple `view('support::tickets.index')` pour afficher la vue `tickets.index`
 du plugin support.
 
-Pour définir le layout de la page, il faut que la vue étende la vue contenant
+Pour définir l'agencement (layout) de la page, il faut que la vue étende la vue contenant
 le layout, vous pouvez soit utiliser le layout par défaut (ou du thème s’il y en a)
 avec `@extends('layouts.app')`, soit créer votre propre layout et l'étendre.
 
@@ -184,9 +184,9 @@ et le titre de la page dans la section `title`.
 
 #### Vue admin
 
-Pour qu'une page utilise le layout du panel admin il suffit d'utiliser le layout
-`admin.layouts.admin`, il est également recommandé de créer un dossier admin
-dans le dossier `resources` et d'y placer les vues admin dedans.
+Pour qu'une page utilise le layout de l'interface d'administration, il suffit d'utiliser
+le layout `admin.layouts.admin`, il est également recommandé de créer un dossier
+admin dans le dossier `resources` et d'y placer les vues admin dedans.
 
 ### Contrôleurs
 
@@ -379,7 +379,12 @@ Puis ajoutez `require_once __DIR__.'/../../vendor/autoload.php';` à la méthode
 Les migrations permettent de créer, modifier ou supprimer des tables dans la base
 de données, elles se trouvent dans le dossier `database/migrations`.
 
-Vous pouvez trouver plus d'informations sur les migrations dans la
+Vous pouvez utiliser la commande suivante qui va générer automatiquement le fichier de migration :
+```
+php artisan make:migration <nom de migration> --path plugins/<id du plugin>/database/migrations 
+```
+
+Pour plus d'informations sur les migrations, nous vous conseillons de vous rendre sur la
 [documentation de Laravel](https://laravel.com/docs/migrations).
 
 ```php

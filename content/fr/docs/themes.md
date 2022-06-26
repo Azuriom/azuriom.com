@@ -28,8 +28,8 @@ du SASS et optimiser les fichiers JavaScript, vous pouvez utiliser ce
 
 {{< warn >}}
 Lorsque Azuriom est installé en local pour du développement de thème,
-il est très fortement recommandé d'activer le debug afin de simplifier le développement.
-Cela peut se faire très simplement en modifiant ces 2 lignes dans le fichier `.env` à la
+il est très fortement recommandé d'activer le débogage afin de simplifier le développement.
+Cela peut se faire très simplement en modifiant ces 2 paramètres dans le fichier d'environnement `.env` à la
 racine du site :
 ```
 APP_ENV=local
@@ -41,7 +41,7 @@ APP_DEBUG=true
 
 ```
 themes/  <-- Dossier contenant tous les thèmes installés
-|  example/  <-- Id de votre thème
+|  example/  <-- Identifiant de votre thème
 |  |  theme.json  <-- Le fichier principal de votre thème contenant les différentes informations
 |  |  assets/  <-- Le dossier contenant les assets de votre thème (css, js, images, svg, etc)
 |  |  views/  <-- Le dossier contenant les vues de votre thème
@@ -79,7 +79,7 @@ le nom pour créer l'id, par exemple si le nom est `Hello World`, l'id pourra ê
 
 ### Vues
 
-Les vues sont le cœur de d'un thème, ce sont les fichiers contenant l'HTML de
+Les vues sont le cœur de d'un thème, ce sont les fichiers contenant l'HTML
 d'un thème pour afficher les différentes parties du site.
 
 Azuriom utilisant [Laravel](https://laravel.com/), les vues peuvent être faites en utilisant le moteur

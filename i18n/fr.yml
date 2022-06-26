@@ -12,7 +12,7 @@ nav:
   login: Connexion
 
 footer:
-  about: "About us"
+  about: "À propos de nous"
   aboutDescription: "Azuriom est un CMS de jeux dernière génération, gratuit et open-source, qui débuté en août 2019 avec pour objectif d'être une alternative moderne, fiable, rapide et sécurisée par rapport aux CMS existants afin de vous proposer la meilleure expérience web possible pour votre serveur Minecraft, Garry's Mod, Rust, Ark, FiveM et bien d'autres."
   copyright: "Copyright &copy; 2019-{{ .year }} Azuriom - Tous droits réservés. Fait avec&nbsp;{{ .love }} par Azuriom."
   partners: "Partenaires"
@@ -32,7 +32,7 @@ home:
     description1: "Azuriom est un CMS de jeux <strong>dernière génération</strong>, <strong>gratuit</strong> et <strong>open-source</strong>, qui a pour objectif d'être une alternative <strong>moderne, fiable, rapide et sécurisée</strong> par rapport aux CMS existants afin de vous proposer la <strong>meilleure expérience web possible</strong> pour votre serveur."
     description2: "Azuriom est donc la solution idéale pour votre site sur Minecraft, Garry's Mod, Rust, Ark, FiveM et bien d'autres jeux."
     gamesTitle: "Jeux supportés"
-    games: "Azuriom est un CMS Minecraft, mais pas seulement ! En effet en plus de Minecraft, Azuriom supporte parfaitement Garry's Mod, Ark, Rust, FiveM, CS:GO et Team Fortress 2 !"
+    games: "Azuriom est un CMS Minecraft, mais pas seulement ! En plus de Minecraft, Azuriom supporte parfaitement Garry's Mod, Ark, Rust, FiveM, CS:GO et Team Fortress 2 !"
 
   features:
     modern:
@@ -53,19 +53,19 @@ home:
 
   desc1:
     title: "Des extensions uniques"
-    description1: "Nos extensions, c'est à dire nos thèmes et nos plugins sont réalisés de la même façon que le CMS afin qu'il fasse qu'un avec celles-ci une fois installés."
+    description1: "Nos extensions, c'est-à-dire nos thèmes et nos plugins sont réalisés de la même façon que le CMS afin qu'il ne fasse qu'un avec celles-ci une fois installées."
     description2: "Pour les développeurs qui souhaitent réaliser leurs extensions, des outils ainsi qu'une documentation complète sont mis à dispositions pour un confort de travail unique."
-    description3: "Un market communautaire est également disponible afin d'y poster vos extensions. Nous vérifions chaque extension, puis nous suivons régulièrement les mises à jour proposées sur ces dernières afin de garder un market propre."
+    description3: "De nombreuses extensions communautaires sont disponibles et vous pouvez aussi publier les vôtres. Nous vérifions chaque extension, puis nous suivons régulièrement les mises à jour proposées sur ces dernières afin de garder un écosystème optimal."
 
   desc2:
     title: "Support actif"
-    description1: "Nous proposons un support actif et à l'écoute que ce soit par GitHub ou sur notre serveur Discord."
+    description1: "Nous proposons un support actif et à l'écoute, que ce soit par GitHub ou sur notre serveur Discord."
     description2: "Comme Azuriom est entièrement open-source, n'importe qui peut y contribuer pour l'améliorer, en plus des nombreuses mises à jour proposées par notre équipe."
 
 download:
   title: "Téléchargement"
   docs: "Avant de télécharger Azuriom, il est conseillé de <a href=\"{{ .docs }}\" target=\"_blank\">lire notre documentation</a> pour éviter d'être perdu lors de l'installation par exemple."
-  support: "Si vous avez des question, vous pouvez les poser sur le support de notre <a href=\"{{ .discord }}\" target=\"_blank\">serveur Discord</a>."
+  support: "Si vous avez des questions, vous pouvez les poser dans le salon support de notre <a href=\"{{ .discord }}\" target=\"_blank\">serveur Discord</a>."
   sources: "Azuriom est un projet entièrement open-source et le code source est disponible sur <a href=\"{{ .github }}\" target=\"_blank\">GitHub</a>."
 
 azlink:
@@ -77,10 +77,10 @@ azlink:
 
 support:
   title: "Nous soutenir"
-  description1: "Développer Azuriom nous prend beaucoup de temps et c'est donc grâce à vous soutiens que ce projet peut continuer de façon totalement gratuite et open-source pour tous !"
-  description2: "Actuellement il existe deux façons principales pour nous soutenir: la première est de mettre une star sur le projet GitHub, cela ne vous coûte strictement rien et nécessite seulement un compte GitHub qui peut être créé en quelques minutes."
-  description3: "La deuxième façon de nous soutenir est de nous faire un don, cela nous aide à couvrir les frais financiers d'Azuriom, car même si celui-ci est gratuit, il a quand même un cout (hébergeurs, domaines, etc)."
-  star: "Star le projet"
+  description1: "Développer Azuriom nous prend beaucoup de temps et c'est donc grâce à votre soutien que ce projet peut continuer de façon totalement gratuite et open-source pour tous !"
+  description2: "Actuellement il existe deux façons principales pour nous soutenir : la première est de mettre une \"étoile\" sur le projet GitHub, cela ne vous coûte strictement rien et nécessite seulement un compte GitHub qui peut être créé en quelques minutes."
+  description3: "La deuxième façon de nous soutenir est de nous faire un don. Même si Azuriom est gratuit, fournir une application de qualité à la communauté a un coût (maintenance, hébergeurs, domaines...)."
+  star: "\"Star\" le projet"
   donate: "Faire un don"
 
 docs:

@@ -376,6 +376,11 @@ Zorg ervoor dat de vereiste benodigdheden niet al door Azuriom worden geleverd o
 Met migraties kunt u tabellen in de database maken, wijzigen of verwijderen.
 Gegevens, zijn te vinden in de map `database/migrations`.
 
+U kunt de volgende opdracht gebruiken om het migratiebestand automatisch te genereren:
+```
+php artisan make:migration <migration name> --path plugins/<plugin id>/database/migrations 
+```
+
 Meer informatie over migraties vindt u in de
 [Laravel documentatie](https://laravel.com/docs/migrations).
 

@@ -10,7 +10,7 @@ AzAuth est une api qui permet d'authentifier les utilisateurs d'un site sous Azu
 ## Téléchargement
 
 Les sources d'AzAuth sont disponibles sur [GitHub](https://github.com/Azuriom/AzAuth)
-et le jar peut être téléchargé [ici](https://azuriom.s3.fr-par.scw.cloud/azauth-1.0-SNAPSHOT.jar).
+et le fichier "jar" peut être téléchargé [ici](https://oss.sonatype.org/content/repositories/snapshots/com/azuriom/azauth/0.1.0-SNAPSHOT/azauth-0.1.0-20220420.160910-3.jar).
 
 Si vous utilisez un gestionnaire de dépendances, vous pouvez ajouter AzAuth comme
 dépendance de la façon suivante :
@@ -25,7 +25,7 @@ repositories {
 ```
 ```groovy
 dependencies {
-    implementation 'com.azuriom:azauth:1.0-SNAPSHOT'
+    implementation 'com.azuriom:azauth:0.1.0-SNAPSHOT'
 }
 ```
 
@@ -45,21 +45,21 @@ Dans le `pom.xml`:
     <dependency>
         <groupId>com.azuriom</groupId>
         <artifactId>azauth</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>0.1.0-SNAPSHOT</version>
         <scope>compile</scope>
     </dependency>
 </dependencies>
 ```
 
 {{< warn >}}
-Quelle que soit la façon dont vous utilisez l'auth api coté client, vous
+Quelle que soit la façon dont vous utilisez l'auth API coté client, vous
 devez impérativement vérifier coté serveur que le token d'accès renvoyé par le client
 est bien valide en utilisant la méthode `verify`.
 {{< /warn >}}
 
 ## Utilisation de AzAuth (Java)
 
-Avant d'utiliser AzAuth, veuillez vérifier que l'api est bien activée en allant
+Avant d'utiliser AzAuth, veuillez vérifier que l'API est bien activée en allant
 dans les réglages de votre site, sur votre panel admin.
 
 ### Utilisation avec [OpenLauncherLib](https://github.com/Litarvan/OpenLauncherLib/) _(pour launcher minecraft)_
@@ -126,7 +126,7 @@ async function login(email, password) {
 ## Utilisation hors Java
 
 L'auth API peut être utilisée dans n'importe quel langage sans utiliser de librairie
-spécifique, il suffit juste de faire des requêtes HTTP aux différents endpoints.
+spécifique, il suffit juste de faire des requêtes HTTP aux différents points de terminaison (endpoints).
 
 L'ensemble de l'API utilise du JSON et l'URL de base de l'API est `/api/auth`.
 
@@ -144,14 +144,14 @@ ou invalides. En cas d'une autre erreur, le code associé pourra être retourné
 Permet d'authentifier un utilisateur grâce à ses identifiants du site.
 
 ##### Requête
-|   Field   |            Description            |
+|   Champ   |            Description            |
 | --------- | --------------------------------- |
-|   email   | E-Mail ou Pseudo de l'utilisateur |
+|   email   | E-Mail ou pseudo de l'utilisateur |
 | password  |   Mot de passe de l'utilisateur   |
 
 ##### Réponse
 
-Retourne l'utilisateur avec ses différentes informations ainsi que le token unique
+Retourne l'utilisateur avec ses différentes informations ainsi que le jeton (token) unique
 qui pourra être utilisé pour vérifier la connexion ou pour la déconnexion.
 
 Exemple de réponse :
@@ -177,13 +177,13 @@ Exemple de réponse :
 **POST** `/verify`
 
 ##### Requête
-|     Field    |               Description              |
+|     Champ    |               Description              |
 | ------------ | -------------------------------------- |
 | access_token | Token d'accès unique de l'utilisateur |
 
 ##### Réponse
 
-Retourne l'utilisateur avec ses différentes informations ainsi que le token unique
+Retourne l'utilisateur avec ses différentes informations ainsi que le jeton (token) unique
 qui pourra être utilisé pour la déconnexion.
 
 Exemple de réponse :
@@ -208,13 +208,13 @@ Exemple de réponse :
 
 **POST** `/logout`
 
-Déconnecte l'utilisateur et rend invalide le token donné.
+Déconnecte l'utilisateur et rend invalide le jeton (token) fourni.
 
 ##### Requête
-|     Field    |               Description              |
+|     Champ    |               Description              |
 | ------------ | -------------------------------------- |
 | access_token | Token d'accès unique de l'utilisateur |
 
 ##### Réponse
 
-En cas de succès réponse vide, avec un code `2xx`.
+En cas de succès, une réponse vide avec un code de statut `2xx` est apportée.

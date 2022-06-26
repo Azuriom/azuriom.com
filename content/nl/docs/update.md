@@ -100,7 +100,7 @@ Je kunt de verschillende links met de functie `social_links()` als volgt verkrij
 ```html
 @foreach(social_links() as $link)
     <a href="{{ $link->value }}" title="{{ $link->title }}" target="_blank" rel="noopener noreferrer" class="btn">
-        <i class="{{ $link->icon }} fa-2x" style="color: {{ $link->color }}"></i>
+        <i class="{{ $link->icon }} fs-2" style="color: {{ $link->color }}"></i>
     </a>
 @endforeach
 ```

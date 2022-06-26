@@ -14,7 +14,7 @@ layout: single
 alternative to existing CMS, so you can have the **best web experience possible**.
 
 Azuriom also has an **advanced** extension system, so you can fully **customize** your website with the extensions on our market,
-like **moderns** and **responsive themes** or **plugins** likes **shop**, **forum** and more !
+like **moderns** and **responsive themes** or **plugins** likes **shop**, **forum** and more!
 
 You can find in this documentation all the information about
 Azuriom!

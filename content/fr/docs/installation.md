@@ -8,7 +8,7 @@ weight: 1
 ## Prérequis
 
 Pour fonctionner, Azuriom nécessite simplement un **serveur web avec PHP** disposant d'au moins **100 MO**
-d'espace disque ainsi que des prérequis suivants :
+d'espace disque libre ainsi que des prérequis suivants :
 
 - PHP 8.0 ou plus récent
 - Réécriture d'URL
@@ -29,7 +29,7 @@ Il est également très fortement recommandé de posséder **une base de donnée
 ### Installation des prérequis
 
 Si vous utilisez un VPS ou un serveur dédié, il sera sûrement nécessaire d'installer
-vous-même un serveur web, PHP et MySQL, cela peut se faire par exemple avec les commandes suivantes :
+vous-même un serveur web, PHP et MySQL, cela peut se faire par exemple sous Debian ou Ubuntu avec les commandes suivantes :
 ```
 apt update -y && apt upgrade -y
 
@@ -45,7 +45,7 @@ Une fois les prérequis installés, vous devez configurer le serveur web. Pour c
 faire, des explications sont disponibles en bas de cette page.
 
 {{< info >}}
-Si vous préférez, vous pouvez aussi utiliser ce
+Si vous le préférez, vous pouvez également utiliser ce
 [script non-officiel d'installation automatique](https://github.com/AzuriomCommunity/Script-AutoInstall)
 qui installera tous les prérequis automatiquement
 (veillez simplement à le lancer uniquement sur un VPS qui vient d'être installé pour éviter d'éventuels conflits).
@@ -85,11 +85,11 @@ _(hors domaines & TeamSpeak)_.
 
 ## Installation
 
-Azuriom propose un installateur automatique pour installer Azuriom facilement en suivant ces quelques étapes :
-
 {{< info >}}
-Azuriom peut également être installé avec [Docker](https://www.docker.com/) en suivant les étapes listées [ici](https://github.com/Azuriom/Azuriom/blob/master/docker/INSTALL.md).
+Azuriom peut être installé avec [Docker](https://www.docker.com/) en suivant les étapes listées [ici](https://github.com/Azuriom/Azuriom/blob/master/docker/INSTALL.md).
 {{< /info >}}
+
+Azuriom propose un installateur automatique pour installer Azuriom facilement en suivant ces quelques étapes :
 
 1. Télécharger la dernière version de l'installateur d'Azuriom sur [notre site](https://azuriom.com/download).
 
@@ -111,10 +111,10 @@ Azuriom peut également être installé avec [Docker](https://www.docker.com/) e
 
 1. Se rendre sur votre site et suivre les étapes de l'installation.
 
-1. (Optionnel) Mettre en place le scheduler :
-   Certaines fonctionnalités ont besoin que le scheduler soit mis en place, pour cela vous
+1. (Optionnel) Mettre en place le planificateur de tâches :
+   Certaines fonctionnalités ont besoin que le planificateur de tâches soit mis en place. Pour cela, vous
    devez configurer votre serveur pour que la commande `php artisan schedule:run`
-   soit exécutée toutes les minutes, par exemple en ajoutant cette entrée Cron
+   soit exécutée toutes les minutes, par exemple en ajoutant cette entrée CRON
    (n'oubliez pas de remplacer `/var/www/azuriom` par l'emplacement du site) :
    ```
    * * * * * cd /var/www/azuriom && php artisan schedule:run >> /dev/null 2>&1
@@ -123,16 +123,16 @@ Azuriom peut également être installé avec [Docker](https://www.docker.com/) e
 
 {{< warn >}}
 Une fois l'installation terminée, afin d'éviter tout problème, veillez à ce que
-votre site ne soit pas accessible directement depuis l'IP de la machine
+votre site ne soit pas accessible directement depuis l'adresse IP de la machine
 (ex : http://0.0.0.0).
 {{< /warn >}}
 
 ## Environnement de développement
 
-Si jamais Azuriom est installé en local pour du développement (par exemple pour
-faire des thèmes/plugins), il est très fortement recommandé d'activer le debug
+Si vous installez Azuriom localement pour du développement (par exemple pour
+faire des thèmes/plugins), il est très fortement recommandé d'activer le débogage
 afin de simplifier le développement.
-Cela peut se faire très simplement en modifiant ces 2 lignes dans le `.env` à la
+Cela peut se faire très simplement en modifiant ces 2 lignes dans le fichier d'environnement `.env` à la
 racine du site :
 ```
 APP_ENV=local
@@ -142,17 +142,17 @@ APP_DEBUG=true
 Il est également recommandé de désactiver RocketBooster lors du développement.
 
 {{< warn >}}
-Si jamais un est accessible publiquement, il est très fortement
-déconseillé d'activer le debug et de configurer l'environnement de développement.
+Si votre site est accessible publiquement, il est très fortement
+déconseillé d'activer le débogage et de configurer l'environnement de développement.
 {{< /warn >}}
 
 ## Configuration du serveur web
 
-### Apache2
+### Apache2 (HTTPD)
 
 Si vous utilisez Apache2, il peut être nécessaire d'activer la réécriture d'URL.
 
-Pour cela, commencez par activer le mod "rewrite" avec la commande suivante :
+Pour cela, commencez par activer le module "rewrite" avec la commande suivante :
 ```
 a2enmod rewrite
 ```
@@ -169,15 +169,15 @@ et y ajouter les lignes suivantes entre les balises `<VirtualHost>` (en remplaç
 </Directory>
 ```
 
-Pour finir, il faut juste redémarrer Apache2 :
+Pour finir, appliquez les changements en redémarrant Apache2 :
 ```
 service apache2 restart
 ```
 
-### Nginx
+### NGINX
 
-Si vous déployez Azuriom sur un serveur qui utilise Nginx, vous pouvez utiliser
-la configuration Nginx suivante pour que la réécriture d'URL soit considérée comme activée :
+Si vous déployez Azuriom sur un serveur qui utilise NGINX, vous pouvez utiliser
+la configuration NGINX suivante pour que la réécriture d'URL soit considérée comme activée :
 
 ```
 server {
@@ -216,8 +216,8 @@ server {
 }
 ```
 
-Cette config doit être placée dans un site dans `site-available` et non dans le
-`nginx.conf`.
+Sous Ubuntu, cette configuration doit être placée dans un ficher du dossier `/etc/nginx/sites-available` et non dans le
+fichier de configuration principal `nginx.conf`.
 
 Pensez également à remplacer `example.com` par votre domaine, `/var/www/azuriom`
 par l'emplacement du site (sans enlever le `/public` de la ligne !) et `php8.0`
