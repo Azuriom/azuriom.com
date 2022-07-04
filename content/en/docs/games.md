@@ -1,14 +1,18 @@
 ---
-title: Add a new Game
+title: Games
 ---
+
+# Games
 
 ## Requirements
 
-- An access to a terminal to run commands like `php -v`
+- An access to a terminal to run commands like `php -v` and be somewhat familiar with programming
 
-If you have Azuriom installed you can skip to the next step.
+If you have Azuriom installed you can skip to the Setup step.
 
-If you never installed Azuriom, you need to install it. During installation it will ask you to choose a game, you will select `Custom game`.
+If you never installed Azuriom, you need to install it. During installation it will ask you to choose a game.
+
+You will navigate to the link `/install/game/custom`. With that in mind you can now follow the installation instruction
 
 Once Azuriom is installed you will issue your first command in the terminal : 
 
@@ -31,7 +35,7 @@ Under `use Azuriom\Extensions\Plugin\BasePluginServiceProvider;` paste `use Illu
 
 Now locate the `boot` method and under `$this->registerUserNavigation();` add `$this->setupDatabaseConnection();`
 
-You can now paste the function just under the `}` of the boot method:
+You can now paste the function bellow just under the `}` of the boot method:
 
 ```php
     protected function setupDatabaseConnection()
@@ -59,7 +63,7 @@ You can now paste the function just under the `}` of the boot method:
     }
 ```
 
-We will now create our first model using our game database connection. Go to `plugins/mynewgame/src/Models`, create a new file `Character.php` and paste:
+Now you can create your first model using your game database connection. Go to `plugins/mynewgame/src/Models`, create a new file `Character.php` and paste:
 
 ```php
 <?php
@@ -103,6 +107,6 @@ Go to `plugins/mynewgame/src/Games/MyNewGameServerBridge.php` and have a look at
 
 To have real world exemple you can have a look at :
 - [Dofus Game](https://github.com/Javdu10/Game-Dofus129/blob/main/src/Game/DofusServerBridge.php) which uses an SSL connection to send commands to the game server 
-- [Flyff Game](https://github.com/AzuriomCommunity/Game-Flyff/blob/master/src/Games/FlyffServerBridge.php) which uses a custom encoding and protection with a password.
+- [Flyff Game](https://github.com/AzuriomCommunity/Game-Flyff/blob/master/src/Games/FlyffServerBridge.php) which uses a custom encoding and protection with a password. (It also send items to database as fallback mechanisms)
 
 Within the `sendCommands()` method, you should handle if a player is connected in-game or not and take the proper actions like [here in the flyff game](https://github.com/AzuriomCommunity/Game-Flyff/blob/master/src/Games/FlyffServerBridge.php#L75)
