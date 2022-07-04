@@ -2,7 +2,7 @@
 title: Games
 ---
 
-# Games
+# Link Azuriom and your own game server
 
 ## Requirements
 
