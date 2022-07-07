@@ -13,7 +13,7 @@ but here are the most common mistakes with their solutions!
 The URL rewriting is not activated, you just have to activate it (see next question).
 
 ## Apache2 URL rewrite
-You need to modify the `/etc/apache2/sites-available/000-default.conf` file and add these lines between the `<VirtualHost>` tags:
+Edit your Apache2 configuration (by default in `/etc/apache2/sites-available/000-default.conf`) and add these lines between the `<VirtualHost>` tags:
 ```
 <Directory "/var/www/html">
   AllowOverride All
@@ -57,10 +57,18 @@ the location of the `cacert.pem` file):
    ```
 1) Restart PHP
 
+## Images are not displayed
+
+If the images uploaded in the admin panel are in the images list, but they are not
+loading, you can try doing the following:
+* Delete, if it exists, the `public/storage` folder (but not the `storage` folder!)
+* Then do the `php artisan storage:link` command at the root of the website.
+    * If you can't run commands, you can instead go to the URL `/admin/settings/storage/link` on your website.
+
 ## The file has not been uploaded when uploading an image
 
 This problem occurs when you upload an image with a weight greater than the
-maximum allowed by PHP (default 2mo).
+maximum allowed by PHP (default 2 MB).
 
 You can change the maximum size allowed when uploading in the configuration
 of PHP (in `php.ini`) by changing the following values:
@@ -68,6 +76,12 @@ of PHP (in `php.ini`) by changing the following values:
 upload_max_filesize = 10M
 post_max_size = 10M
 ```
+
+{{< warn >}}
+It is strongly advised to not change this limit, as heavy images can increase the
+loading time of your website and impact search engine optimization. Instead,
+it is recommended to reduce the size of the image (ideally below 1 MB).
+{{< /warn >}}
 
 ## Problem with AzLink or payment gateways with Cloudflare
 
@@ -112,14 +126,6 @@ You can change the database credentials by editing
 the `.env` file at the root of the site (it may be necessary to activate the hidden
 files so see it)
 Once done, delete the `bootstrap/cache/config.php` file if it exists.
-
-## Images are not displayed
-
-If the images uploaded in the admin panel are in the images list, but they are not
-loading, you can try doing the following:
-* Delete the `public/storage` folder (but not the `storage` folder!)
-* Then do the `php artisan storage:link` command at the root of the website.
-  * If you can't run commands, you can instead go to the URL `/admin/settings/storage/link` on your website.
 
 ## Installing another website on Apache2
 

@@ -13,14 +13,14 @@ mais les erreurs les plus fréquentes et leurs solutions vous sont présentées 
 La réécriture d'URL n'est pas activée, il vous suffit de l'activer (voir question suivante).
 
 ## Réécriture d'URL avec Apache2
-Il faut modifier le fichier `/etc/apache2/sites-available/000-default.conf` et rajouter ces lignes entre les balises `<VirtualHost>`:
+Modifiez votre configuration Apache2 (par défaut dans `/etc/apache2/sites-available/000-default.conf`) et rajoutez ces lignes entre les balises `<VirtualHost>`:
 ```
 <Directory "/var/www/html">
   AllowOverride All
 </Directory>
 ```
 
-Puis redémarrer Apache2 pour appliquer les changements :
+Puis redémarrez Apache2 pour appliquer les changements :
 ```
 service apache2 restart
 ```
@@ -57,10 +57,19 @@ l'emplacement du fichier `cacert.pem`:
    ```
 1) Redémarrer PHP (FPM)
 
+## Les images ne s'affichent pas
+
+Si les images téléchargées depuis le panel admin sont bien dans la liste des images,
+mais qu'elles ne s'affichent pas, vous pouvez essayer de faire les manipulations suivantes :
+* Supprimer, s'il existe, le dossier `public/storage` (et non le dossier `storage`!)
+* Puis faire la commande `php artisan storage:link` à la racine du site.
+    * Si vous ne pouvez pas exécuter de commandes,
+      vous pouvez à la place aller sur l'URL `/admin/settings/storage/link` de votre site.
+
 ## Le fichier n'a pas été téléchargé lors de l'upload d'une image
 
 Ce problème survient lorsque vous téléchargez une image dont le poids dépasse le
-maximum autorisé par PHP (par défaut 2 mo).
+maximum autorisé par PHP (par défaut 2 MO).
 
 Vous pouvez modifier la taille maximum autorisée lors de l'upload dans la configuration
 de PHP (dans le `php.ini`) en modifiant les valeurs suivantes :
@@ -68,6 +77,13 @@ de PHP (dans le `php.ini`) en modifiant les valeurs suivantes :
 upload_max_filesize = 10M
 post_max_size = 10M
 ```
+
+{{< warn >}}
+Il est fortement déconseillé d'augmenter cette limite, car des images trop lourdes peuvent
+augmenter le temps de chargement de votre site et impacter le
+référencement dans les moteurs de recherche. À la place, il est recommandé de réduire
+la taille de l'image (idéalement en dessous de 1 MO).
+{{< /warn >}}
 
 ## Problème avec AzLink ou les moyens de paiements en utilisant Cloudflare
 
@@ -113,15 +129,6 @@ Vous pouvez changer les informations de connexion à la base de données en modi
 le fichier d'environnement `.env` à la racine du site. Si celui-ci ne s'affiche pas, il peut être nécessaire
 d'activer l'affichage des fichiers "cachés".
 Une fois fait, supprimez le fichier `bootstrap/cache/config.php` s'il existe.
-
-## Les images ne s'affichent pas
-
-Si les images téléchargées depuis le panel admin sont bien dans la liste des images,
-mais qu'elles ne s'affichent pas, vous pouvez essayer de faire les manipulations suivantes :
-* Supprimer le dossier `public/storage` (et non le dossier `storage`!)
-* Puis faire la commande `php artisan storage:link` à la racine du site.
-  * Si vous ne pouvez pas exécuter de commandes,
-  vous pouvez à la place aller sur l'URL `/admin/settings/storage/link` de votre site.
 
 ## Installer un autre site avec Apache2
 
