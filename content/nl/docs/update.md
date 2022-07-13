@@ -48,7 +48,7 @@ Deze functie is volledig optioneel.
 
 Momenteel kunnen alleen nieuwe websites Azuriom v1.0 gebruiken.
 
-Voor bestaande websites is het mogelijk om te upgraden zonder iets te verliezen in de komende dagen. Nog even geduld!
+Voor bestaande websites is het mogelijk om te upgraden zonder iets te verliezen in de komende weken. Nog even geduld!
 
 ## Een thema aanpassen
 

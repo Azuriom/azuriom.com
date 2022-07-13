@@ -50,7 +50,7 @@ Pour le moment, seuls les nouveaux sites utilisant Azuriom peuvent utiliser Azur
 v1.0. 
 
 Pour les sites existants, il sera possible de mettre à jour sans réinstaller et sans
-perdre de données dans les jours à venir.
+perdre de données dans les semaines à venir.
 
 ## Adaptation d'un thème
 
