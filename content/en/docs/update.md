@@ -48,7 +48,7 @@ This feature is entirely optional.
 Currently, only new websites can use Azuriom v1.0.
 
 For existing sites, it will be possible to upgrade without losing anything in
-the next few days, stay tuned!
+the next few weeks, stay tuned!
 
 ## Adapting a theme
 
