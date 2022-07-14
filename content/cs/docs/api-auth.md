@@ -9,7 +9,7 @@ AzAuth je API umožňující přihlašování uživatelů na Azuriom webu na vš
 ## Stažení
 
 Zdroje AzAuth jsou dostupné na [GitHubu](https://github.com/Azuriom/AzAuth)
-a jar soubor může být stažen [odsud](https://oss.sonatype.org/content/repositories/snapshots/com/azuriom/azauth/0.1.0-SNAPSHOT/azauth-0.1.0-20220325.212942-2.jar).
+a jar soubor může být stažen [odsud](https://oss.sonatype.org/content/repositories/snapshots/com/azuriom/azauth/0.1.0-SNAPSHOT/azauth-0.1.0-20220420.160910-3.jar).
 
 Pokud používáte správce závislostí, můžete přidat AzAuth jako
 závislost následujícím způsobem:
