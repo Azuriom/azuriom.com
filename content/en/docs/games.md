@@ -92,7 +92,7 @@ public function index()
 }
 ```
 
-Now to show the characters in your admin menu edit `plugins/mynewgame/ressources/views/admin/index.blade.php` and replace
+Now to show the characters in your admin menu edit `plugins/mynewgame/resources/views/admin/index.blade.php` and replace
 `<p>This is the admin page of your plugin</p>` by:
 
 ```php
