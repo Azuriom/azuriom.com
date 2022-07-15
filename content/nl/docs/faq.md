@@ -13,7 +13,7 @@ maar hier zijn de meest voorkomende fouten met hun oplossingen!
 Het herschrijven van URLs is niet geactiveerd, u hoeft het alleen maar te activeren (zie volgende vraag)
 
 ## Apache2 URL herschrijven
-U moet het bestand `/etc/apache2/sites-available/000-default.conf` wijzigen en deze regels tussen de `<VirtualHost>`-tags toevoegen:
+Bewerk uw Apache2-configuratie (standaard in `/etc/apache2/sites-available/000-default.conf`) en voeg deze regels toe tussen de `<VirtualHost>`-tags:
 ```
 <Directory "/var/www/html">
   AllowOverride All
@@ -57,10 +57,18 @@ de locatie van het bestand `cacert.pem`):
    ```
 1) Herstart PHP
 
+## Afbeeldingen worden niet weergegeven
+
+Als de afbeeldingen die zijn geüpload in het beheerderspaneel in de lijst met afbeeldingen staan, maar dan niet
+laden, kunt u het volgende proberen:
+* Verwijder, indien aanwezig, de map `public/storage` (maar niet de map `storage`!)
+* Voer vervolgens het commando `php artisan storage:link` uit in de root van de website.
+  * Als u geen opdrachten kunt uitvoeren, kunt u in plaats daarvan naar de URL `/admin/settings/storage/link` op uw website gaan.
+
 ## Het bestand is niet geüpload bij het uploaden van een afbeelding
 
 Dit probleem doet zich voor wanneer u een afbeelding upload met een grotere bestandsgrootte
-dan de maximum toegestane bestandsgrootte door PHP (standaard 2MB)
+dan de maximum toegestane bestandsgrootte door PHP (standaard 2 MB)
 
 U kunt de maximaal toegestane grootte wijzigen bij het uploaden in de configuratie
 van PHP (in `php.ini`) door de volgende waarden te wijzigen:
@@ -68,6 +76,12 @@ van PHP (in `php.ini`) door de volgende waarden te wijzigen:
 upload_max_filesize = 10M
 post_max_size = 10M
 ```
+
+{{< warn >}}
+Het wordt sterk aangeraden om deze limiet niet te wijzigen, omdat grote afbeeldingen
+de laadtijd van uw website en op zoekmachineoptimalisatie impact heeft.
+In plaats daarvan, wordt het aanbevolen om de grootte van de afbeelding te verkleinen (idealiter minder dan 1 MB).
+{{< /warn >}}
 
 ## Probleem met AzLink en betalingsdiensten met Cloudflare
 
@@ -110,14 +124,6 @@ op `/api/atom`.
 U kunt de database gegevens wijzigen door het `.env` bestand te bewerken
 in de hoofdmap van uw website (het kan nodig zijn om geheime bestanden zichbaar te maken)
 Als je klaar bent, verwijder je het bestand `bootstrap/cache/config.php` als het bestaat.
-
-## Afbeeldingen worden niet weergegeven
-
-Als de afbeeldingen die zijn geüpload in het beheerderspaneel in de lijst met afbeeldingen
-staan, maar ze niet laden, kunt u het volgende proberen:
-* Verwijder de map `public/storage` (maar niet de map `storage`!)
-* Voer vervolgens het commando `php artisan storage:link` uit in de root van de website.
-  * Als u geen opdrachten kunt uitvoeren, kunt u in plaats daarvan naar de URL `/admin/settings/storage/link` op uw website gaan.
 
 ## Een andere website installeren op Apache2
 
