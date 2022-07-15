@@ -102,6 +102,36 @@ If a view is not present in the theme but is in the CMS or in a plugin,
 it will be automatically used.
 {{< /info >}}
 
+#### Custom code/widget for your theme
+In a view you can do any new "compoment", "widget" or custom change you want.
+For example, let's see how to create a "Latest donor widget" (you'll need the shop plugin) :
+
+Find in your theme, where you want to put the widget.
+Then paste this code :
+
+```php
+@php
+    $latestPayment = \Azuriom\Plugin\Shop\Models\Payment::with('user')->latest()->first();
+@endphp
+
+<div class="card">
+    <div class="card-header">
+        Latest donor
+    </div>
+    <div class="card-body">
+        @if($latestPayment)
+            <img src="{{$latestPayment->user->getAvatar()}}"> {{$latestPayment->user->name}}
+        @else
+            <p>No donations yet.</p>
+        @endif
+    </div>
+</div>
+```
+{{< warn >}}
+You can use any ["Model"](https://laravel.com/docs/eloquent/latest) that is present in the CMS or the plugins. Make sure to not forget the `\` before `Azuriom`
+For example for the Vote model, it would be `\Azuriom\Plugin\Vote\Models\Vote`
+{{< /warn >}}
+
 #### Layout
 
 The layout is the structure of all the pages of a theme. It contains

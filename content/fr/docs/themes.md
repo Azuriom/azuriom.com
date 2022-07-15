@@ -104,6 +104,35 @@ Si jamais une vue n'est pas présente dans le thème, mais est présente de
 base dans le CMS ou dans un plugin, celle-ci sera automatiquement utilisée.
 {{< /info >}}
 
+#### Des widgets/composants personnalisés pour votre thème
+Dans une vue de votre thème, vous pouvez utiliser des widgets/composants personnalisés.
+Par exemple, regardons comment créer un widget qui affiche le dernier donateur du site. (vous aurez besoin du plugin shop)
+
+Trouvez l'endroit où vous souhaitez afficher le widget dans votre thème, puis coller ce code :
+
+```php
+@php
+    $latestPayment = \Azuriom\Plugin\Shop\Models\Payment::with('user')->latest()->first();
+@endphp
+
+<div class="card">
+    <div class="card-header">
+        Latest donor
+    </div>
+    <div class="card-body">
+        @if($latestPayment)
+            <img src="{{$latestPayment->user->getAvatar()}}"> {{$latestPayment->user->name}}
+        @else
+            <p>No donations yet.</p>
+        @endif
+    </div>
+</div>
+```
+{{< warn >}}
+Vous pouvez utilisez n'importe quel ["Model"](https://laravel.com/docs/eloquent/latest) qui est present dans le CMS ou les plugins. Faites attention de ne pas oublier le `\` avant `Azuriom`
+Par exemple pour le model Vote, cela devient : `\Azuriom\Plugin\Vote\Models\Vote`
+{{< /warn >}}
+
 #### Layout
 
 Le layout est la structure de l'ensemble des pages d'un thème. Il contient
