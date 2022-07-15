@@ -102,6 +102,38 @@ Als een view niet aanwezig is in het thema, maar wel in het CMS of in een plug-i
 zal het automatisch gebruikt worden.
 {{< /info >}}
 
+#### Aangepaste code/widget voor uw thema
+
+In een weergave kunt u elke nieuwe "component", "widget" of aangepaste wijziging doorvoeren die u maar wilt.
+Later we bijvoorbeeld eens kijken hoe u een "Nieuwste donatie widget" kunt maken (u hebt de winkel plug-in nodig):
+
+Zoek in je thema waar je de widget wilt plaatsen.
+Plan dan deze code:
+
+```php
+@php
+    $latestPayment = \Azuriom\Plugin\Shop\Models\Payment::with('user')->latest()->first();
+@endphp
+
+<div class="card">
+    <div class="card-header">
+        Laatste donatie
+    </div>
+    <div class="card-body">
+        @if($latestPayment)
+            <img src="{{$latestPayment->user->getAvatar()}}"> {{$latestPayment->user->name}}
+        @else
+            <p>Nog geen donaties.</p>
+        @endif
+    </div>
+</div>
+```
+
+{{< warn >}}
+U kunt elk ["Model"](https://laravel.com/docs/eloquent/latest) gebruiken dat aanwezig is in het CMS of de plug-ins. Zorg ervoor dat u
+de `\` voor `Azuriom` niet vergeet. Voor het vote-model is dit bijvoorbeeld `\Azuriom\Plugin\Vote\Models\Vote`
+{{< /warn >}}
+
 #### Lay-out
 
 De lay-out is de structuur van alle pagina's van een thema. Het bevat
