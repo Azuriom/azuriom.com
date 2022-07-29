@@ -46,11 +46,26 @@ est entièrement optionnelle.
 
 ## Mettre à jour
 
-Pour le moment, seuls les nouveaux sites utilisant Azuriom peuvent utiliser Azuriom
-v1.0. 
+La migration est disponible pour les sites utilisant une ancienne version d'Azuriom.
+Pour cela, il faut d'abord que le site soit en version 0.6.0, puis dans l'onglet mise à jour du panel admin,
+il est possible de mettre à jour vers Azuriom v1.0!
 
-Pour les sites existants, il sera possible de mettre à jour sans réinstaller et sans
-perdre de données dans les jours à venir.
+Avant de mise à jour, quelques points importants :
+* Faites une sauvegarde de votre site (fichiers et base de données)
+* Vérifiez que les extensions ont été mises à jour pour la v1.0
+* Assurez d'avoir PHP 8.0 ou supérieur
+* Vérifiez que le site possède bien les permissions nécessaires sur les fichiers
+
+Juste avant de faire la mise à jour, il est nécessaire de désactiver toutes les extensions. Celles-ci pourront
+être réactivées dès que la mise à jour sera terminée.
+
+{{< warn >}}
+La migration va supprimer l'ensemble des données du plugin vote. Les autres plugins
+ne sont pas affectés.
+{{< /warn >}}
+
+Une fois la mise à jour terminée, vous pouvez mettre à jour vos extensions afin de
+pouvoir les utiliser à nouveau.
 
 ## Adaptation d'un thème
 

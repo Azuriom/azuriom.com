@@ -13,7 +13,7 @@ nav:
 
 footer:
   about: "À propos de nous"
-  aboutDescription: "Azuriom est un CMS de jeux dernière génération, gratuit et open-source, qui débuté en août 2019 avec pour objectif d'être une alternative moderne, fiable, rapide et sécurisée par rapport aux CMS existants afin de vous proposer la meilleure expérience web possible pour votre serveur Minecraft, Garry's Mod, Rust, Ark, FiveM et bien d'autres."
+  aboutDescription: "Azuriom est un CMS de jeux dernière génération, gratuit et open-source, qui débuté en août 2019 avec pour objectif d'être une alternative moderne, fiable, rapide et sécurisée par rapport aux CMS existants afin de vous proposer la meilleure expérience web possible pour votre serveur Minecraft, Garry's Mod, Rust, Ark, FiveM et bien d'autres. Vous pouvez même ajouter votre propre jeu à travers une extension."
   copyright: "Copyright &copy; 2019-{{ .year }} Azuriom - Tous droits réservés. Fait avec&nbsp;{{ .love }} par Azuriom."
   partners: "Partenaires"
   links: "Liens"
@@ -72,7 +72,7 @@ azlink:
   title: "AzLink"
   info: "AzLink est un plugin de liaison site-serveur spécialement conçu pour Azuriom afin de vous permettre de lier votre serveur à votre site de façon simple, rapide et sécurisée."
   download: "Téléchargement"
-  supported: "AzLink supporte Bukkit (et ses dérivés comme Spigot, Glowstone, Cauldron et Mohist), BungeeCord, Sponge et Velocity dans le même plugin. Si vous utilisez Minecraft 1.7.10 vous devez télécharger la version legacy."
+  supported: "AzLink supporte Bukkit (et ses dérivés comme Spigot, Glowstone et Cauldron), BungeeCord, Sponge et Velocity dans le même plugin. Si vous utilisez Minecraft 1.7.10 vous devez télécharger la version legacy."
   sources: "AzLink est open-source et le code source est disponible sur <a href=\"{{ .github }}\" target=\"_blank\">GitHub</a>."
 
 support:

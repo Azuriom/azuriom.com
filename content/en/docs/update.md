@@ -45,10 +45,25 @@ This feature is entirely optional.
 
 ## Update
 
-Currently, only new websites can use Azuriom v1.0.
+The migration is available for websites running on an older version of Azuriom.
+The website be in version 0.6.0, then in the update tab of the admin dashboard,
+you can update to Azuriom v1.0!
 
-For existing sites, it will be possible to upgrade without losing anything in
-the next few days, stay tuned!
+Before upgrading, a few important points:
+* Make a backup of your website (files and database)
+* Make sure that all extensions have been updated to v1.0
+* Make sure you have PHP 8.0 or higher
+* Check that the website has the necessary permissions on the files
+
+Just before upgrading, it is necessary to disable all extensions. These can be
+reactivated as soon as the update is completed.
+
+{{< warn >}}
+The migration will delete all the data of the vote plugin. The other plugins
+are not affected.
+{{< /warn >}}
+
+Once the update is complete, you can update your extensions.
 
 ## Adapting a theme
 
