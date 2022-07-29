@@ -46,9 +46,25 @@ Deze functie is volledig optioneel.
 
 ## Update
 
-Momenteel kunnen alleen nieuwe websites Azuriom v1.0 gebruiken.
+De migratie is beschikbaar voor websites die op een oudere versie van Azuriom draaien.
+De website moet in versie 0.6.0 zijn, dan kun je in het update-tabblad van het beheerders-dashboard,
+updaten naar Azuriom v1.0!
 
-Voor bestaande websites is het mogelijk om te upgraden zonder iets te verliezen in de komende dagen. Nog even geduld!
+Voordat u gaat upgraden, een paar belangrijke punten:
+* Maak een backup van je website (bestanden en database)
+* Zorg ervoor dat alle extensies zijn bijgewerkt naar v1.0
+* Zorg ervoor dat je PHP 8.0 of hoger hebt.
+* Controleer of de website de nodige rechten heeft voor de bestanden.
+
+Vlak voor het upgraden is het noodzakelijk om alle extensies uit te schakelen. Deze kunnen
+opnieuw geactiveerd worden zodra de update is voltooid.
+
+{{ < warn >}}
+De migratie verwijdert alle gegevens van de Vote plug-in. De andere
+plug-ins worden niet beïnvloed.
+{{ < /warn >}}
+
+Zodra de update is voltooid, kunt u uw extensies bijwerken.
 
 ## Een thema aanpassen
 
