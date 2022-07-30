@@ -79,12 +79,12 @@ of your server and execute commands.
 
 You can check here for default ports:
 
-|    Game     | Port  | Query | RCON  |
-| ----------- | ----- | ----- | ----- |
+| Game        | Port  | Query | RCON  |
+|-------------|-------|-------|-------|
 | Garry's Mod | 27015 | 27015 | 27015 |
-|     ARK     | 7777  | 27015 | 27020 |
-|   CS:GO     | 27015 | 27015 | 27015 |
-|    TF2      | 27015 | 27015 | 27015 |
+| ARK         | 7777  | 27015 | 27020 |
+| CS:GO       | 27015 | 27015 | 27015 |
+| TF2         | 27015 | 27015 | 27015 |
 
 ### Link By Query
 

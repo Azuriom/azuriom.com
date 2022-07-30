@@ -80,12 +80,12 @@ du serveur et d'y exécuter des commandes.
 
 Vous pouvez vérifier ici les ports par défaut de chaque serveur de jeu :
 
-|    Jeu      | Port  | Query | RCON  |
-| ----------- | ----- | ----- | ----- |
+| Jeu         | Port  | Query | RCON  |
+|-------------|-------|-------|-------|
 | Garry's Mod | 27015 | 27015 | 27015 |
-|     ARK     | 7777  | 27015 | 27020 |
-|   CS:GO     | 27015 | 27015 | 27015 |
-|    TF2      | 27015 | 27015 | 27015 |
+| ARK         | 7777  | 27015 | 27020 |
+| CS:GO       | 27015 | 27015 | 27015 |
+| TF2         | 27015 | 27015 | 27015 |
 
 ### Liaison par Query
 

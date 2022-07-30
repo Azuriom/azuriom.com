@@ -148,14 +148,14 @@ For more details on authentication, you can refer to the
 You can retrieve a certain number of parameters from the website via the functions
 dedicated:
 
-|    Function      |               Description                 |
-| ---------------- | ----------------------------------------- |
-| `site_name()`    | Retrieves the site name                   |
-| `site_logo()`    | Allows you to have the website logo link  |
-| `favicon()`      | Allows you to have the favicon link       |
+| Function         | Description                                                                                                            |
+|------------------|------------------------------------------------------------------------------------------------------------------------|
+| `site_name()`    | Retrieves the site name                                                                                                |
+| `site_logo()`    | Allows you to have the website logo link                                                                               |
+| `favicon()`      | Allows you to have the favicon link                                                                                    |
 | `format_date()`  | Displays a date formatted with the current language. This function takes an instance of `Carbon\Carbon` as a parameter |
-| `money_name()`   | Returns the name of the website's currency   |
-| `format_money()` | Returns an amount formatted with the website currency |
+| `money_name()`   | Returns the name of the website's currency                                                                             |
+| `format_money()` | Returns an amount formatted with the website currency                                                                  |
 
 #### Display the players connected to the server
 

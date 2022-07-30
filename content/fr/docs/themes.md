@@ -150,14 +150,14 @@ Pour plus de détails sur l'authentification, vous pouvez vous référer à la
 Vous pouvez récupérer un certain nombre de paramètres du site via des fonctions
 dédiées :
 
-|    Fonction      |             Description                |
-| ---------------- | -------------------------------------- |
-| `site_name()`    | Permet de récupérer le nom du site     |
-| `site_logo()`    | Permet d'avoir le lien du logo du site |
-| `favicon()`      | Permet d'avoir le lien de la favicon   |
+| Fonction         | Description                                                                                                          |
+|------------------|----------------------------------------------------------------------------------------------------------------------|
+| `site_name()`    | Permet de récupérer le nom du site                                                                                   |
+| `site_logo()`    | Permet d'avoir le lien du logo du site                                                                               |
+| `favicon()`      | Permet d'avoir le lien de la favicon                                                                                 |
 | `format_date()`  | Affiche une date formatée avec la langue actuelle. Cette fonction prend en paramètre une instance de `Carbon\Carbon` |
-| `money_name()`   | Retourne le nom de la monnaie du site  |
-| `format_money()` | Retourne un montant formaté avec la monnaie du site |
+| `money_name()`   | Retourne le nom de la monnaie du site                                                                                |
+| `format_money()` | Retourne un montant formaté avec la monnaie du site                                                                  |
 
 #### Affichage des joueurs connectés sur le serveur
 
