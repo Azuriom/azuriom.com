@@ -79,12 +79,12 @@ van uw server en opdrachten uit te voeren.
 
 U kunt hier controleren op standaard poorten:
 
-|    Spel     | Poort | Query | RCON  |
-| ----------- | ----- | ----- | ----- |
+| Spel        | Poort | Query | RCON  |
+|-------------|-------|-------|-------|
 | Garry's Mod | 27015 | 27015 | 27015 |
-|     ARK     | 7777  | 27015 | 27020 |
-|   CS:GO     | 27015 | 27015 | 27015 |
-|    TF2      | 27015 | 27015 | 27015 |
+| ARK         | 7777  | 27015 | 27020 |
+| CS:GO       | 27015 | 27015 | 27015 |
+| TF2         | 27015 | 27015 | 27015 |
 
 ### Link Door Query
 

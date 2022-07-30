@@ -179,14 +179,14 @@ Voor meer details over authenticatie, kunt u de
 
 U kunt via de functies een bepaald aantal parameters van de website ophalen zoals:
 
-|    Fonction      |               Description                           |
-| ---------------- | --------------------------------------------------- |
-| `site_name()`    | Haalt de sitenaam op                                |
-| `site_logo()`    | Hiermee kunt u de link naar de website-logo ophalen |
-| `favicon()`      | Hiermee kunt u de favicon-link ophalen              |
+| Functie          | Beschrijving                                                                                                                      |
+|------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| `site_name()`    | Haalt de sitenaam op                                                                                                              |
+| `site_logo()`    | Hiermee kunt u de link naar de website-logo ophalen                                                                               |
+| `favicon()`      | Hiermee kunt u de favicon-link ophalen                                                                                            |
 | `format_date()`  | Geeft een datum weer die is opgemaakt met de huidige taal. Deze functie neemt een instantie van `Carbon\Carbon` aan als parameter |
-| `money_name()`   | Retourneert de naam van de valuta van de website   |
-| `format_money()` | Retourneert een bedrag dat is opgemaakt met de valuta van de website |
+| `money_name()`   | Retourneert de naam van de valuta van de website                                                                                  |
+| `format_money()` | Retourneert een bedrag dat is opgemaakt met de valuta van de website                                                              |
 
 #### Geef de spelers weer die op de server zijn
 

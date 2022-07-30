@@ -6,6 +6,12 @@ title: Auth-API
 
 AzAuth is een API waarmee u gebruikers van een website onder Azuriom op elk platform kunt authenticeren.
 
+{{< warn >}}
+Ongeacht hoe u de client-side auth-api gebruikt, u moet zich verifiëren op
+de server waarop het toegangstoken door de client is geretourneerd
+en geldig is door gebruik te maken van de `verificatie`-methode.
+{{< /warn> }}
+
 ## Download
 
 AzAuth-bronnen zijn beschikbaar op [GitHub](https://github.com/Azuriom/AzAuth)
@@ -16,51 +22,43 @@ afhankelijkheid op de volgende manier:
 
 ### Gradle
 
-in `build.gradle`:
+in de `build.gradle`:
 
 ```groovy
 repositories {
-    maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+    mavenCentral()
 }
-```
-```groovy
+
 dependencies {
-    implementation 'com.azuriom:azauth:0.1.0-SNAPSHOT'
+    implementation 'com.azuriom:azauth:1.0.0'
 }
 ```
 
 ### Maven
 
-in `pom.xml`:
-```xml
-<repositories>
-    <repository>
-        <id>sonatype-repo</id>
-        <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-    </repository>
-</repositories>
-```
+In de `pom.xml`:
 ```xml
 <dependencies>
     <dependency>
         <groupId>com.azuriom</groupId>
         <artifactId>azauth</artifactId>
-        <version>0.1.0-SNAPSHOT</version>
+        <version>1.0.0</version>
         <scope>compile</scope>
     </dependency>
 </dependencies>
 ```
 
-{{< warn >}}
-Ongeacht hoe u de client-side auth-api gebruikt, u moet zich verifiëren op
-de server waarop het toegangstoken door de client is geretourneerd
-en geldig is door gebruik te maken van de `verificatie`-methode.
-{{< /warn >}}
-
-## Gebruik van AzAuth (Java)
+## AzAuth gebruik (Java)
 
 Voordat u AzAuth gebruikt, moet u ervoor zorgen dat de API is geactiveerd door naar:
 de instellingen van uw site te gaan, in uw beheerders paneel.
+
+### Gebruik zonder OpenLauncherLib
+
+AzAuth is ontworpen met [Gson](https://github.com/google/gson) als enige afhankelijkheid, dus je kunt het perfect gebruiken als je OpenLauncherLib niet gebruikt,
+Je kunt gewoon `AuthClient#authenticate(String gebruikersnaam, String wachtwoord, Supplier<String> codeSupplier)` gebruiken en dat geeft
+je direct een `Gebruiker` met daaring een gebruikersnaam, uuid, rang, toegangstoken en tal van andere nuttige gegevens. De `codeSupplier`
+wordt aangeroepen als de gebruiker 2FA heeft ingeschakeld en de gebruikerscode moet worden teruggestuurd naar de leverancier.
 
 ### Gebruiken met [OpenLauncherLib](https://github.com/Litarvan/OpenLauncherLib/) _(voor minecraft launcher)_
 
@@ -77,46 +75,60 @@ public static void auth(String username, String password) throws AuthenticationE
     authInfos = new AuthInfos(response.getSelectedProfile().getName(), response.getAccessToken(), response.getSelectedProfile().getId());
 }
 ```
+
 Je hoeft het alleen maar te vervangen door de onderstaande code, om `<url>` te wijzigen, moet je de URL van de hoofdmap van je Azuriom website gebruiken.
 ```java
-public static void auth(String username, String password) throws AuthenticationException, IOException {
-    AzAuthenticator authenticator = new AzAuthenticator("<url>");
-    authInfos = authenticator.authenticate(username, password, AuthInfos.class);
+public static void auth(String username, String password) throws AuthException {
+    AuthClient authenticator = new AuthClient("<url>");
+
+    AuthInfos = authenticator.login(username, password, () -> {
+        String code = null;
+
+        while (code == null || code.isEmpty()) {
+            // De bovenliggende component voor het dialoogvenster. U moet de code vervangen
+            // hieronder met een exemplaar van je launcher frame/panel/etc
+            Container parentComponent = LauncherFrame.getInstance().getLauncherPanel();
+            parentComponent.setVisible(true);
+
+            code = JOptionPane.showInputDialog(parentComponent, "Enter your 2FA code", "2FA", JOptionPane.PLAIN_MESSAGE);
+        }
+
+        return code;
+    }, AuthInfos.class);
 }
 ```
-Zodra dit is gebeurd, hoeft u alleen maar de klasse `AzAuthenticator` & `AuthenticationException`
-uit het `com.azuriom.auth`-pakket en AzAuth wordt geïntegreerd in uw opstartprogramma.
 
-### Gebruik zonder OpenLauncherLib
-
-AzAuth is ontworpen met [Gson](https://github.com/google/gson) als enige afhankelijkheid,
-dus je kunt het perfect gebruiken als je het niet gebruikt met OpenLauncherLib,
-u kunt eenvoudig `AzAuthenticator#authenticate(String gebruikersnaam, String wachtwoord)` gebruiken
-en dat geeft je direct een `Gebruiker` met daarin een gebruikersnaam, UUID, rang, toegangstoken en
-tal van andere nuttige gegevens.
-
-## Gebruik met NodeJS
+## Gebruik met JavaScript
 
 ### Installatie
 
 De broncode is beschikbaar op [GitHub](https://github.com/Azuriom/AzAuthJs)
-en het pakket kan worden geïnstalleerd met `npm install azuriom-auth`.
+en het pakket kan worden geïnstalleerd met [npm](https://www.npmjs.com/):
+```
+npm install azuriom-auth
+```
 
-### Gebruik
+### Voorbeeld
 
 ```js
-const AzuriomAuth = require('azuriom-auth');
+import { AuthClient } from 'azuriom-auth'
 
 async function login(email, password) {
-  const authenticator = new Authenticator('<url van uw website>');
+    const client = new AuthClient('<url van je website>')
 
-  try {
-    const user = await authenticator.auth(email, password);
+    let result = await client.login(email, password)
 
-    console.log(`ingelogd met ${user.email}`);
-  } catch (e) {
-    console.log(e);
-  }
+    if (result.status === 'pending' && result.requires2fa) {
+        const twoFactorCode = '' // BELANGRIJK: Vervang door de tijdelijke gebruikerscode van 2FA
+
+        result = await client.login(email, password, twoFactorCode)
+    }
+
+    if (result.status !== 'success') {
+        throw 'Unexpected result: ' + JSON.stringify(result)
+    }
+
+    return result
 }
 ```
 
@@ -130,10 +142,11 @@ async function login(email, password) {
 Verifieer een gebruiker met hun website-inloggegevens
 
 ##### Verzoek
-|    Veld    |          Beschrijving         |
-| ---------- | ----------------------------- |
-|   e-mail   | Gebruikersnaam of e-mailadres |
-| wachtwoord |           wachtwoord          |
+| Veld       | Beschrijving                                                                                               |
+|------------|------------------------------------------------------------------------------------------------------------|
+| E-mail     | Gebruikersnaam of e-mailadres                                                                              |
+| wachtwoord | wachtwoord                                                                                                 |
+| code       | 2FA-code, mag alleen worden opgenomen als het antwoord `status` `in behandeling` is en de `reden` `2fa` is |
 
 ##### Antwoord
 
@@ -162,8 +175,8 @@ die kan worden gebruikt om de verbinding te verifiëren of om de verbinding te v
 **POST** `/verify`
 
 ##### Verzoek
-|      Veld     |     Beschrijving    |
-| ------------- | ------------------- |
+| Veld          | Beschrijving        |
+|---------------|---------------------|
 | toegangstoken | Uniek toegangstoken |
 
 ##### Antwoord
@@ -171,6 +184,7 @@ die kan worden gebruikt om de verbinding te verifiëren of om de verbinding te v
 Retourneert de gebruiker met verschillende informatie en het unieke token
 die kan worden gebruikt om de verbinding te verifiëren of om de verbinding te verbreken.
 
+Voorbeeld van successreactie (HTTP `2xx`):
 ```json
 {
     "id": 1,
@@ -188,6 +202,15 @@ die kan worden gebruikt om de verbinding te verifiëren of om de verbinding te v
 }
 ```
 
+Voorbeeld van foutreactie (HTTP `4xx`):
+```json
+{
+    "status": "fout",
+    "reason": "ongeldige-inloggegevens",
+    "message": "Ongeldige inloggegevens"
+}
+```
+
 #### Uitloggen
 
 **POST** `/logout`
@@ -195,8 +218,8 @@ die kan worden gebruikt om de verbinding te verifiëren of om de verbinding te v
 Meld de gebruiker af en maakt het toegangstoken ongeldig.
 
 ##### Verzoek
-|      Veld     |     Beschrijving    |
-| ------------- | ------------------- |
+| Veld          | Beschrijving        |
+|---------------|---------------------|
 | toegangstoken | Uniek toegangstoken |
 
 ##### Antwoord
