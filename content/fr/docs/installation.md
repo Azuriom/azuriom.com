@@ -26,31 +26,6 @@ d'espace disque libre ainsi que des prérequis suivants :
 
 Il est également très fortement recommandé de posséder **une base de données MySQL/MariaDB ou PostgreSQL**.
 
-### Installation des prérequis
-
-Si vous utilisez un VPS ou un serveur dédié, il sera sûrement nécessaire d'installer
-vous-même un serveur web, PHP et MySQL, cela peut se faire par exemple sous Debian ou Ubuntu avec les commandes suivantes :
-```
-apt update -y && apt upgrade -y
-
-apt install -y nginx zip curl lsb-release apt-transport-https ca-certificates
-
-wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
-echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list
-apt update -y
-apt install -y php8.0 php8.0-fpm php8.0-mysql php8.0-pgsql php8.0-sqlite3 php8.0-bcmath php8.0-mbstring php8.0-xml php8.0-curl php8.0-zip php8.0-gd
-```
-
-Une fois les prérequis installés, vous devez configurer le serveur web. Pour ce
-faire, des explications sont disponibles en bas de cette page.
-
-{{< info >}}
-Si vous le préférez, vous pouvez également utiliser ce
-[script non-officiel d'installation automatique](https://github.com/AzuriomCommunity/Script-AutoInstall)
-qui installera tous les prérequis automatiquement
-(veillez simplement à le lancer uniquement sur un VPS qui vient d'être installé pour éviter d'éventuels conflits).
-{{< /info >}}
-
 ## Hébergeurs
 
 Azuriom peut être installé sur n'importe quel VPS ou serveur dédié ainsi que sur
@@ -81,6 +56,47 @@ vous recommandons notre partenaire [NiHost](https://www.ni-host.com/?utm_source=
 
 Le code `AZURIOM` vous permet d'avoir une **réduction de 10% sur vos services**
 _(hors domaines & TeamSpeak)_.
+{{< /info >}}
+
+## Installation des prérequis sur un serveur Linux
+
+Dans le cas d'un hébergement web, les prérequis ci-dessus seront certainement déjà
+installés, et vous pouvez directement passer à l'installation d'Azuriom.
+
+Si vous utilisez un VPS ou un serveur dédié, il sera sûrement nécessaire d'installer
+vous-même un serveur web, PHP et MySQL, cela peut se faire par exemple sous Debian ou Ubuntu avec les commandes suivantes :
+```
+apt update -y && apt upgrade -y
+
+apt install -y nginx mariadb-server zip curl lsb-release apt-transport-https ca-certificates
+
+wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list
+apt update -y
+apt install -y php8.1 php8.1-fpm php8.1-mysql php8.1-pgsql php8.1-sqlite3 php8.1-bcmath php8.1-mbstring php8.1-xml php8.1-curl php8.1-zip php8.1-gd
+```
+
+MySQL (MariaDB) étant maintenant installé, vous pouvez créer une base de données et un utilisateur
+avec les commandes suivantes (**pensez à remplacer `<password>` par un mot de passe sécurisé !**)
+```
+mysql -u root
+CREATE USER 'azuriom'@'127.0.0.1' IDENTIFIED BY '<password>';
+CREATE DATABASE azuriom;
+GRANT ALL PRIVILEGES ON azuriom.* TO 'azuriom'@'127.0.0.1' WITH GRANT OPTION;
+exit
+```
+
+Lors de l'installation, la base de données et l'utilisateur de la base de données
+seront `azuriom` et le mot de passe celui qui remplace `<password>` dans la commande ci-dessus.
+
+Une fois les prérequis installés, vous devez configurer le serveur web. Pour ce
+faire, des explications sont disponibles en bas de cette page.
+
+{{< info >}}
+Si vous le préférez, vous pouvez également utiliser ce
+[script non-officiel d'installation automatique](https://github.com/AzuriomCommunity/Script-AutoInstall)
+qui installera tous les prérequis automatiquement
+(veillez simplement à le lancer uniquement sur un VPS qui vient d'être installé pour éviter d'éventuels conflits).
 {{< /info >}}
 
 ## Installation
@@ -139,7 +155,8 @@ APP_ENV=local
 APP_DEBUG=true
 ```
 
-Il est également recommandé de désactiver RocketBooster lors du développement.
+Il est également recommandé de désactiver RocketBooster (dans le panel admin : Paramètres puis
+Performances) lors du développement.
 
 {{< warn >}}
 Si votre site est accessible publiquement, il est très fortement
@@ -148,7 +165,7 @@ déconseillé d'activer le débogage et de configurer l'environnement de dévelo
 
 ## Configuration du serveur web
 
-### Apache2 (HTTPD)
+### Apache2
 
 Si vous utilisez Apache2, il peut être nécessaire d'activer la réécriture d'URL.
 
@@ -158,9 +175,9 @@ a2enmod rewrite
 ```
 
 Ensuite vous pouvez configurer le site pour autoriser la réécriture d'URL.
-Il faut simplement modifier le fichier `/etc/apache2/sites-available/000-default.conf`
-et y ajouter les lignes suivantes entre les balises `<VirtualHost>` (en remplaçant
-`var/www/azuriom` par l'emplacement du site) :
+Il faut simplement modifier le fichier de configuration d'Apache2 (par défaut 
+`/etc/apache2/sites-available/000-default.conf`) et y ajouter les lignes suivantes
+entre les balises `<VirtualHost>` (en remplaçant `var/www/azuriom` par l'emplacement du site) :
 ```
 <Directory "/var/www/azuriom">
     Options FollowSymLinks
@@ -204,7 +221,7 @@ server {
     error_page 404 /index.php;
 
     location ~ \.php$ {
-        fastcgi_pass unix:/var/run/php/php8.0-fpm.sock;
+        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
         fastcgi_index index.php;
         fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
         include fastcgi_params;
@@ -216,9 +233,14 @@ server {
 }
 ```
 
-Sous Ubuntu, cette configuration doit être placée dans un ficher du dossier `/etc/nginx/sites-available` et non dans le
+Cette configuration doit être placée dans un fichier du dossier `/etc/nginx/sites-available` et non dans le
 fichier de configuration principal `nginx.conf`.
 
 Pensez également à remplacer `example.com` par votre domaine, `/var/www/azuriom`
-par l'emplacement du site (sans enlever le `/public` de la ligne !) et `php8.0`
+par l'emplacement du site (sans enlever le `/public` de la ligne) et `php8.1`
 par votre version de PHP.
+
+Pour finir, appliquez les changements en redémarrant NGINX :
+```
+service nginx restart
+```
