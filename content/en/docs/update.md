@@ -46,7 +46,7 @@ This feature is entirely optional.
 ## Update
 
 The migration is available for websites running on an older version of Azuriom.
-The website be in version 0.6.0, then in the update tab of the admin dashboard,
+The website must be in version 0.6.0, then in the update tab of the admin dashboard,
 you can update to Azuriom v1.0!
 
 Before upgrading, a few important points:
