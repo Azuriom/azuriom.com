@@ -13,7 +13,7 @@ nav:
 
 footer:
   about: "À propos de nous"
-  aboutDescription: "Azuriom est un CMS de jeux dernière génération, gratuit et open-source, qui débuté en août 2019 avec pour objectif d'être une alternative moderne, fiable, rapide et sécurisée par rapport aux CMS existants afin de vous proposer la meilleure expérience web possible pour votre serveur Minecraft, Garry's Mod, Rust, Ark, FiveM et bien d'autres. Vous pouvez même ajouter votre propre jeu à travers une extension."
+  aboutDescription: "Azuriom est un CMS de jeux dernière génération, gratuit et open-source, qui débuté en août 2019 avec pour objectif d'être une alternative moderne, fiable, rapide et sécurisée par rapport aux CMS existants afin de vous proposer la meilleure expérience web possible pour votre serveur Minecraft, Garry's Mod, Rust, Ark, FiveM et bien d'autres..."
   copyright: "Copyright &copy; 2019-{{ .year }} Azuriom - Tous droits réservés. Fait avec&nbsp;{{ .love }} par Azuriom."
   partners: "Partenaires"
   links: "Liens"
@@ -32,7 +32,7 @@ home:
     description1: "Azuriom est un CMS de jeux <strong>dernière génération</strong>, <strong>gratuit</strong> et <strong>open-source</strong>, qui a pour objectif d'être une alternative <strong>moderne, fiable, rapide et sécurisée</strong> par rapport aux CMS existants afin de vous proposer la <strong>meilleure expérience web possible</strong> pour votre serveur."
     description2: "Azuriom est donc la solution idéale pour votre site sur Minecraft, Garry's Mod, Rust, Ark, FiveM et bien d'autres jeux."
     gamesTitle: "Jeux supportés"
-    games: "Azuriom est un CMS Minecraft, mais pas seulement ! En plus de Minecraft, Azuriom supporte parfaitement Garry's Mod, Ark, Rust, FiveM, CS:GO et Team Fortress 2 !"
+    games: "Azuriom est un CMS Minecraft, mais pas seulement ! En plus de Minecraft, Azuriom supporte parfaitement Garry's Mod, Ark, Rust, FiveM, CS:GO et Team Fortress 2 ! Vous pouvez même ajouter de nouveaux jeux via une extension."
 
   features:
     modern:
