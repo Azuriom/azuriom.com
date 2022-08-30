@@ -1,10 +1,11 @@
+import * as bootstrap from 'bootstrap'
 import Cookies from 'js-cookie'
 import Typed from 'typed.js';
 
-window.bootstrap = require('bootstrap');
+window.bootstrap = bootstrap;
 
-document.querySelectorAll('.locale-selector [data-locale]').forEach(function (el) {
-   el.addEventListener('click', function () {
+document.querySelectorAll('.locale-selector [data-locale]').forEach((el) => {
+   el.addEventListener('click', () => {
        Cookies.set('nf_country', el.dataset['locale'], {
            expires: 30,
            domain: 'azuriom.com',
@@ -14,18 +15,15 @@ document.querySelectorAll('.locale-selector [data-locale]').forEach(function (el
    });
 });
 
-document.querySelectorAll('.azuriom-last-version').forEach(function (el) {
+document.querySelectorAll('.azuriom-last-version').forEach((el) => {
     fetch('https://api.github.com/repos/Azuriom/Azuriom/releases/latest')
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (json) {
-            const version = json['tag_name'].replace('v', '');
-            el.innerHTML = `Azuriom v${version}`;
+        .then(response => response.json())
+        .then(json => {
+            el.innerHTML = `Azuriom v${json['tag_name'].replace('v', '')}`;
         });
 });
 
-document.querySelectorAll('[data-typed]').forEach(function (el) {
+document.querySelectorAll('[data-typed]').forEach((el) => {
     el.innerText = '';
 
     new Typed(el, {

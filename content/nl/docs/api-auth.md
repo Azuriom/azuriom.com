@@ -10,7 +10,7 @@ AzAuth is een API waarmee u gebruikers van een website onder Azuriom op elk plat
 Ongeacht hoe u de client-side auth-api gebruikt, u moet zich verifiëren op
 de server waarop het toegangstoken door de client is geretourneerd
 en geldig is door gebruik te maken van de `verificatie`-methode.
-{{< /warn>}}
+{{< /warn >}}
 
 ## Download
 

@@ -90,7 +90,6 @@ Cloudflare kan voorkomen dat AzLink of sommige betalingsdiensten correct werken.
 Om dit probleem op te lossen, kunt u Cloudflare op de API uitschakelen door naar Paginaregels te gaan
 -> Voeg een regel toe, voeg dan `/api/*` toe als de URL en de volgende acties:
 * Cache Level: 'Bypass'
-* Always Online: 'OFF'
 * Security Level: 'Medium' or 'High'
 * Browser Integrity Check: 'OFF' 
 

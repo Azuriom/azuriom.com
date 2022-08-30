@@ -94,7 +94,6 @@ Pour corriger ce problème vous pouvez désactiver Cloudflare sur l’API, en al
 dans l'onglet Page Rules -> Ajouter une règle, puis en mettant `votre-site.fr/api/*` dans l’URL
 (en remplaçant `votre-site.fr` par l'URL de votre site) et les actions suivantes :
 * Niveau de cache : 'Ignorer'
-* Always Online : 'OFF'
 * Niveau de sécurité : 'Moyen' ou 'Élevé'
 * Vérification de l'intégrité du navigateur : 'OFF'
 
