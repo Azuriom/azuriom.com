@@ -5,7 +5,7 @@
 
         <h2 class="title-divider">{{ i18n "download.title" }}</h2>
 
-        <p>{{ i18n "download.docs" (dict "docs" (absURL "docs")) | safeHTML }}</p>
+        <p>{{ i18n "download.docs" (dict "docs" (absLangURL "docs")) | safeHTML }}</p>
 
         <p>{{ i18n "download.support" (dict "discord" (absURL "discord")) | safeHTML }}</p>
 
