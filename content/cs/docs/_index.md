@@ -20,7 +20,7 @@ V této dokumentaci naleznete všechny informace o
 Azuriomu!
 
 Pokud potřebujete pomoc nebo máte nějaké otázky, můžete se připojit na
-náš [Discord server](/discord).
+náš [Discord server](https://azuriom.com/discord).
 
 ## Poděkování
 

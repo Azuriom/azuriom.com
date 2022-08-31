@@ -20,7 +20,7 @@ You can find in this documentation all the information about
 Azuriom!
 
 If you need help or have any questions you can join
-our [Discord Server](/discord).
+our [Discord Server](https://azuriom.com/discord).
 
 ## Credits
 

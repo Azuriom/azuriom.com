@@ -24,7 +24,7 @@ Azuriom, allant de l'installation à la création de plugins/thèmes en passant
 par la liaison serveur-site.
 
 Si vous avez besoin d'aide ou vous avez des questions vous pouvez rejoindre
-notre [serveur Discord](/discord).
+notre [serveur Discord](https://azuriom.com/discord).
 
 ## Crédits
 

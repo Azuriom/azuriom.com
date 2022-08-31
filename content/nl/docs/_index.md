@@ -23,7 +23,7 @@ In deze documentatie vindt u alle informatie over:
 Azuriom
 
 Als u hulp nodig hebt of vragen heeft, kunt u meedoen op
-onze [Discord-server](/discord).
+onze [Discord-server](https://azuriom.com/discord).
 
 ## Credits
 

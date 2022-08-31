@@ -14,7 +14,7 @@ Azuriom verfügt auch über ein **fortschrittliches** Erweiterungssystem, sodass
 
 In dieser Dokumentation finden Sie alle Informationen zu Azuriom!
 
-Solltest du Hilfe benötigen oder eine Frage haben, kannst du unserem [Discord Server](/discord) beitreten.
+Solltest du Hilfe benötigen oder eine Frage haben, kannst du unserem [Discord Server](https://azuriom.com/discord) beitreten.
 
 ## Mitwirkende
 
