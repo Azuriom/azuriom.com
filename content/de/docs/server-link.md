@@ -57,7 +57,7 @@ Für Bukkit 1.7.10 ist eine Legacy-Version verfügbar.
 
 #### Installation
 
-1. Lade AzLink von [unserer Site](https://azuriom.com/azlink) herunter
+1. Lade AzLink von [unserer Site]({{< ref "/azlink" >}}) herunter
 
 1. Installiere es im `plugins/` Ordner (oder `mods/` bei Sponge)
 und starte den Server neu.

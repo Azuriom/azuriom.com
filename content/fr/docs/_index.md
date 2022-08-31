@@ -9,7 +9,7 @@ layout: single
 
 ## Introduction
 
-[Azuriom](https://azuriom.com/) est un CMS de jeux **dernière génération**,
+[Azuriom]({{< ref "/" >}}) est un CMS de jeux **dernière génération**,
 **gratuit** et **open source**, qui a pour objectif d'être une alternative
 **moderne**, **fiable**, **rapide** et **sécurisée** par rapport aux CMS existants
 afin de vous proposer la **meilleure expérience web possible** pour votre serveur.
@@ -24,7 +24,7 @@ Azuriom, allant de l'installation à la création de plugins/thèmes en passant
 par la liaison serveur-site.
 
 Si vous avez besoin d'aide ou vous avez des questions vous pouvez rejoindre
-notre [serveur Discord](https://azuriom.com/discord).
+notre [serveur Discord](/discord).
 
 ## Crédits
 

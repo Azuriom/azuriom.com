@@ -57,7 +57,7 @@ Une version legacy est disponible pour les serveurs utilisant Bukkit 1.7.10.
 
 #### Installation
 
-1. Télécharger AzLink sur [notre site](https://azuriom.com/azlink)
+1. Télécharger AzLink sur [notre site]({{< ref "/azlink" >}})
 
 1. Installer AzLink sur le serveur en le mettant dans le dossier `plugins/`
 (ou `mods/` pour Sponge) et redémarrer le serveur.

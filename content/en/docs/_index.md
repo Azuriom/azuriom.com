@@ -9,7 +9,7 @@ layout: single
 
 ## Introduction
 
-[Azuriom](https://azuriom.com/) is the **next generation** game CMS,
+[Azuriom]({{< ref "/" >}}) is the **next generation** game CMS,
  it's **free** and **open-source**, and is a **modern**, **reliable**, **fast and secure**
 alternative to existing CMS, so you can have the **best web experience possible**.
 
@@ -20,7 +20,7 @@ You can find in this documentation all the information about
 Azuriom!
 
 If you need help or have any questions you can join
-our [Discord Server](https://azuriom.com/discord).
+our [Discord Server](/discord).
 
 ## Credits
 

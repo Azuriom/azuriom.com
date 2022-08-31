@@ -8,13 +8,13 @@ layout: single
 
 ## Einführung
 
-[Azuriom](https://azuriom.com/) ist das Spiele-CMS der **nächsten Generation**, es ist **kostenlos**, **quelloffen** und eine **moderne**, **zuverlässige**, **schnelle** und **sichere** Alternative zu bestehenden CMS, damit Sie das **bestmögliche Web-Erlebnis** haben.
+[Azuriom]({{< ref "/" >}}) ist das Spiele-CMS der **nächsten Generation**, es ist **kostenlos**, **quelloffen** und eine **moderne**, **zuverlässige**, **schnelle** und **sichere** Alternative zu bestehenden CMS, damit Sie das **bestmögliche Web-Erlebnis** haben.
 
 Azuriom verfügt auch über ein **fortschrittliches** Erweiterungssystem, sodass Sie Ihre Website mit den Erweiterungen auf unserem Markt, wie **modernen** und **responsiven** Themen oder **Plugins** wie **Shop**, **Forum** und mehr, vollständig **anpassen** können!
 
 In dieser Dokumentation finden Sie alle Informationen zu Azuriom!
 
-Solltest du Hilfe benötigen oder eine Frage haben, kannst du unserem [Discord Server](https://azuriom.com/discord) beitreten.
+Solltest du Hilfe benötigen oder eine Frage haben, kannst du unserem [Discord Server](/discord) beitreten.
 
 ## Mitwirkende
 

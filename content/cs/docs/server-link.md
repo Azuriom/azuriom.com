@@ -56,7 +56,7 @@ Je také dostupná stará verze pro Bukkit 1.7.10.
 
 #### Instalace
 
-1. Stáhněte si AzLink z [našeho webu](https://azuriom.com/azlink)
+1. Stáhněte si AzLink z [našeho webu]({{< ref "/azlink" >}})
 
 1. Nainstalujte jej na server do složky `plugins/` (nebo `mods/` pokud používáte Sponge)
 a restartujte server.
