@@ -38,3 +38,8 @@ languages:
     contentDir: content/cs
     params:
       code: cs_CZ
+  cn:
+    languageName: 简体中文
+    contentDir: content/cn
+    params:
+      code: zh_CN
