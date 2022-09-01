@@ -1,39 +1,39 @@
 ---
-title: Installation
+title: 安装
 weight: 1
 ---
 
-# Installation
+# 安装
 
-## Requirements
+## 环境要求
 
-To work, Azuriom simply requires a **web server with PHP** having at least **100 MB**
-of disk space and the following requirements:
+要使 Azuriom 正常工作, 你至少需要一个**带有 PHP 的 Web 服务器** 并且拥有至少 **100 MB**
+的硬盘存储以及以下要求:
 
-- PHP 8.0 or higher
-- URL Rewrite
-- Write/Read permissions on `storage/` and `bootstrap/cache/`.
-- BCMath PHP Extension
-- Ctype PHP Extension
-- JSON PHP Extension
-- Mbstring PHP Extension
-- OpenSSL PHP Extension
-- PDO PHP Extension
-- Tokenizer PHP Extension
-- XML PHP Extension
-- XMLWriter PHP Extension
-- cURL PHP Extension
-- Zip PHP Extension
+- PHP 8.0 或更高
+- 启用 URL 重写
+- 对 `storage/` 和 `bootstrap/cache/` 目录的读写权限.
+- BCMath PHP 拓展
+- Ctype PHP 拓展
+- JSON PHP 拓展
+- Mbstring PHP 拓展
+- OpenSSL PHP 拓展
+- PDO PHP 拓展
+- Tokenizer PHP 拓展
+- XML PHP 拓展
+- XMLWriter PHP 拓展
+- cURL PHP 拓展
+- Zip PHP 拓展
 
-It's also highly recommended having a **MySQL/MariaDB or PostgreSQL database**.
+我们还强烈建议你有一个 **MySQL/MariaDB 或 PostgreSQL 数据库**.
 
-## Requirements installation on a Linux based server
+## 在基于 Linux 的服务器上的安装要求
 
-On a shared web hosting, there requirements will most likely already be installed,
-and you can continue directly to the Azuriom installation.
+在共享的虚拟主机上, 很可能已经安装了这些依赖.
+你可以直接安装 Azuriom
 
-If you are using a VPS or a dedicated server, it will probably be necessary to install yourself a web server, PHP and MySQL.
-This can be done for example under Debian or Ubuntu with the following commands
+如果你使用的是VPS或专用服务器，可能需要自己安装一个 Web 服务器, PHP 和 MySQL.
+例如，在 Debian 或 Ubuntu 下可以通过以下命令完成环境的安装
 
 ```
 apt update -y && apt upgrade -y
@@ -46,86 +46,82 @@ apt update -y
 apt install -y php8.1 php8.1-fpm php8.1-mysql php8.1-pgsql php8.1-sqlite3 php8.1-bcmath php8.1-mbstring php8.1-xml php8.1-curl php8.1-zip php8.1-gd
 ```
 
-MySQL (MariaDB) is now installed, and you can create a database and a user with the
-following commands (**remember to replace `<password>` with a secure password!**):
+MySQL (MariaDB) 现在已经安装了, 随后你可以使用以下命令创建数据库和密码 (**`密码` 请使用你自己的密码替换!!**):
 ```
 mysql -u root
-CREATE USER 'azuriom'@'127.0.0.1' IDENTIFIED BY '<password>';
+CREATE USER 'azuriom'@'127.0.0.1' IDENTIFIED BY '密码';
 CREATE DATABASE azuriom;
 GRANT ALL PRIVILEGES ON azuriom.* TO 'azuriom'@'127.0.0.1' WITH GRANT OPTION;
 exit
 ```
 
-During installation, the database and database user will be `azuriom` and the password will be the one that replaces `<password>`
-in the command above.
+经过以上一番操作, 将会创建一个名为 `azuriom` 的数据库且密码为 `密码`  
 
-Once the requirements are installed, you must configure the web server. Explanations are available at the bottom of this
-page.
+这些要求安装后, 你需要配置 Web 服务器. 本页底部有解释.  
 
 {{< info >}}
-If you prefer, you can also use this unofficial
-[auto-install script](https://github.com/AzuriomCommunity/Script-AutoInstall)
-which will install all the prerequisites automatically.
+如果你懒你还可以用
+[一键安装脚本](https://github.com/AzuriomCommunity/Script-AutoInstall)
+自动安装所有所需的环境.
 {{< /info >}}
 
-## Installation
+## 安装
 
-Azuriom offers an automatic installer to install Azuriom easily by following these few steps:
+Azuriom 提供了一个自动安装程序，只要按照以下几个步骤即可轻松安装:
 
 {{< info >}}
-You can also install it with [Docker](https://www.docker.com/) by following the steps listed [here](https://github.com/Azuriom/Azuriom/blob/master/docker/INSTALL.md).
+Azuriom 还可以部署到 [Docker](https://www.docker.com/) 中, 在[此处](https://github.com/Azuriom/Azuriom/blob/master/docker/INSTALL.md)查看相关步骤(英文).
 {{< /info >}}
 
-1. Download the latest version of the Azuriom installer on [our website](https://azuriom.com/download).
+1. 在[我们的网站](https://azuriom.com/download)下载最新版本的 Azuriom 安装程序.
 
-1. Extract the archive at the root of your website.
+1. 解压到你的网站根目录.
 
-1. Set write/read permissions to the root of your web server:
+1. 为你的网站根目录设置 读/写 权限:
    ```
    chmod -R 755 /var/www/azuriom
    ```
-   (just replace `/var/www/azuriom` with the site location)
+   (将 `/var/www/azuriom` 替代为你实际的网站目录)
 
-   If the current user is not the web server user, it may be necessary to change the owner of the files:
+   如果当前用户不是Web服务器用户, 可能需要改变文件的所有者:
     ```
     chown -R www-data:www-data /var/www/azuriom
     ```
-   (replace `/var/www/azuriom` with the site location and `www-data`
-   with the web server user)
+   (将 `/var/www/azuriom` 替代为你实际的网站目录, `www-data` 替代为你实际的用户名)
 
-1. Go to on your website and follow the steps of installation.
+1. 进入你的网站并按照其中的步骤进行安装.
 
-1. (Optional) Setup the scheduler:
+1. (可选) 添加计划任务:
 
-   Some features need the scheduler to be set up, for this you need to configure your server to run the
-   command `php artisan schedule:run` every minute, for example by adding this Cron entry (don't forget to
-   replace `/var/www/azuriom`
-   with the location of the site):
+   一些功能需要计划任务实现, 所以你需要添加一个计划任务
+   以每分钟执行一次 `php artisan schedule:run`, 例如通过添加这个 Cron 条目 (别忘了
+   替换 `/var/www/azuriom`
+   为你实际的网站目录):
    ```
    * * * * * cd /var/www/azuriom && php artisan schedule:run >> /dev/null 2>&1
    ```
-   This can be done by modifying the crontab configuration with the `crontab -e` command.
+   可以使用命令 `crontab -e` 完成此修改.
 
 {{< warn >}}
-Once the installation is complete, to prevent any issues, make sure your website
-can't be accessed directly from the IP of the server (ex: http://0.0.0.0).
+一旦安装完成, 为防止出现任何问题, 确保你的网站
+不能直接使用服务器的 IP 访问. (例如: http://0.0.0.0).
 {{< /warn >}}
 
-## Web server configuration
+## Web 服务器配置
 
 ### Apache2
 
-If you are using Apache2, it may be necessary to enable URL rewriting.
+如果你使用 Apache2, 可能需要启用 URL 重写.
 
-To do this, first enable the "rewrite" mod:
+要这么做, 请先启用 "rewrite" 模块:
 
 ```
 a2enmod rewrite
 ```
 
-Then you need to modify the Apache2 configuration (by default in the `/etc/apache2/sites-available/000-default.conf` file)
-and add the following lines between the `<VirtualHost>` tags (replacing `var/www/azuriom` by site location)
-to allow URL rewrite:
+然后你需要修改 Apache2 配置文件 (一般在 `/etc/apache2/sites-available/000-default.conf`)
+并在 `<VirtualHost>` 标签之间添加以下内容 (替换 `var/www/azuriom` 为你实际的网站目录)
+以启用 URL 重写:
 
 ```
 <Directory "/var/www/azuriom">
@@ -135,7 +131,7 @@ to allow URL rewrite:
 </Directory>
 ```
 
-Finally, you just need to restart Apache2:
+最后, 你只需要重启 Apache2:
 
 ```
 service apache2 restart
@@ -143,7 +139,7 @@ service apache2 restart
 
 ## Nginx
 
-If you are deploying Azuriom on a server that uses Nginx, you can use the following configuration:
+如果你在使用 Nginx 的服务器上部署 Azuriom, 你可以使用以下配置:
 
 ```
 server {
@@ -182,14 +178,13 @@ server {
 }
 ```
 
-This configuration must be placed in a site in `site-available` and not in the
-`nginx.conf`.
+这个配置必须放在网站的 `site-available` 中, 而不是放在 `nginx.conf` 中.
 
-Just remember to replace `example.com` with your domain, `/var/www/azuriom`
-with the location of the site (without removing the `/public` at the end of the line!)
-and `php8.1` with your PHP version.
+记得替换 `example.com` 为你的实际域名, `/var/www/azuriom`
+为你实际的网站目录 (不要移除后面的 `/public`!)
+ `php8.1` 为你的 PHP 版本.
 
-Finally, you can restart NGINX:
+最后, 重启 NGINX:
 
 ```
 service nginx restart

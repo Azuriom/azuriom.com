@@ -6,7 +6,8 @@ layout: single
 ---
 
 {{< warn >}}
-中文文档仍在施工中, 如果您有兴趣参与我们的翻译, 请在 [GitHub](https://github.com/Azuriom/azuriom.com) 上提交 Pull Request.
+Azuriom 文档的中文版本仍在翻译中, 目前仅提供已翻译的内容, 其他内容请参阅 [英语版本]({{< ref "en/docs" >}})
+如果您有兴趣为我们贡献翻译, 请在 [GitHub](https://github.com/Azuriom/azuriom.com) 上提交 Pull Request.
 {{< /warn >}}
 
 # 首页
