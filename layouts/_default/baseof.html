@@ -33,11 +33,7 @@
 
   <!-- Locales -->
   {{- range .AllTranslations }}
-  {{ $locale := .Language.Lang -}}
-  {{ if eq (len $locale) 5 }}
-    {{- $locale = print (substr $locale 0 2) (substr $locale 2 5 | upper) -}}
-  {{ end -}}
-  <link rel="alternate" hreflang="{{ $locale }}" href="{{ partial "permalink.html" . }}">
+  <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ partial "permalink.html" . }}">
   {{- end }}
   <link rel="alternate" hreflang="x-default" href="{{ replace (replace .Permalink ".html" "") (printf "/%s" .Site.Language.Lang) "" }}">
 

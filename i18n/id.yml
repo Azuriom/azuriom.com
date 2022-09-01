@@ -83,7 +83,7 @@ support:
   donate: "Donasi"
 
 docs:
-  index: "Laman"
+  index: "Beranda"
 
 errors:
   title: "Error"
