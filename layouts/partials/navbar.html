@@ -39,7 +39,7 @@
                         {{ i18n "nav.demo" }}
                     </a>
 
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="demoDropdown">
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="demoDropdown">
                         <a class="dropdown-item" href="https://demo.azuriom.com/" target="_blank" rel="noopener noreferrer">
                             {{ i18n "nav.demoMC" }}
                         </a>
@@ -81,7 +81,7 @@
                         <img src="{{ $flag | absURL }}" class="svg country" alt="{{ .Site.Language.LanguageName }}">
                     </a>
 
-                    <div class="dropdown-menu dropdown-menu-right locale-selector" aria-labelledby="langDropdown">
+                    <div class="dropdown-menu dropdown-menu-end locale-selector" aria-labelledby="langDropdown">
                         {{ range .AllTranslations }}
                         <a class="dropdown-item" data-locale="{{ .Language.Lang }}" href="{{ partial "permalink.html" . }}">
                             {{ $flag := printf "assets/svg/country/%s.svg" (substr (.Param "code" | lower) 3) -}}
