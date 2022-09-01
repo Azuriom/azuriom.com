@@ -56,6 +56,7 @@ berisi informasi berbeda dari sebuah plugin:
     "authors": [
         "Azuriom"
     ],
+    "azuriom_api": "1.0.0",
     "providers": [
         "\\Azuriom\\Plugin\\Example\\Providers\\ExampleServiceProvider",
         "\\Azuriom\\ Plugin\\Example\\Providers\\RouteServiceProvider"
@@ -382,7 +383,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSupportTicketsTable extends Migration
+return new class extends Migration
 {
     /**
      * Jalankan migrasinya.
@@ -413,7 +414,7 @@ class CreateSupportTicketsTable extends Migration
     {
         Schema::dropIfExists('support_tickets');
     }
-}
+};
 ```
 
 ### Translations
@@ -469,7 +470,7 @@ ke rute berveda di `routeDescriptions()` metode dengan format
     protected function routeDescriptions()
     {
         return [
-            'support.tickets.index' => 'support::messages.title',
+            'support.tickets.index' => trans('support::messages.title'),
         ];
     }
 ```
@@ -501,8 +502,8 @@ dan mengembalikan rute berbeda di `adminNavigation()`.
     {
         return [
             'support' => [
-                'name' => 'support::admin.title', // Terjemahan nama tab
-                'icon' => 'fas fa-question', // Ikon FontAwesome
+                'name' => trans('support::admin.title'), // Terjemahan nama tab
+                'icon' => 'bi bi-joystick', // Ikon Bootstrap Icon
                 'route' => 'support.admin.tickets.index', // Rute halaman
                 'permission' => 'support.tickets', // (Pilihan) Ijin diperlukan untuk melihat halaman ini
             ],

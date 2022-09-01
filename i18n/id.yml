@@ -2,7 +2,7 @@ meta:
   desc: "Azuriom merupakan CMS Gaming yang modern, dapat diandalkan, cepat dan aman. Ini merupakan pilihan yang tepat untuk membuat website tentang Minecraft, Garry's Mod, Rust, Ark, FiveM dan masih banyak lagi."
 
 nav:
-  home: "Home"
+  home: "Beranda"
   download: "Pengunduhan"
   extensions: "Tambahan"
   docs: "Dokumentasi"
@@ -71,7 +71,7 @@ azlink:
   title: "AzLink"
   info: "AzLink sebuah plugin dibuat oleh Azuriom untuk menghubungkan server anda ke website Azuriom dengan cara yang mudah, cepat dan aman."
   download: "Pengunduhan"
-  supported: "AzLink mendukung Bukkit (dan server Bukkit lainnya seperti Spigot, Glowstone, Cauldron dan Mohist), BungeeCord, Sponge dan Velocity dalam plugin yang sama. Jika anda menggunakan Minecraft 1.7.10 anda harus mengunduh versi legacy."
+  supported: "AzLink mendukung Bukkit (dan server Bukkit lainnya seperti Spigot, Glowstone dan Cauldron), BungeeCord, Sponge dan Velocity dalam plugin yang sama. Jika anda menggunakan Minecraft 1.7.10 anda harus mengunduh versi legacy."
   sources: 'AzLink adalah open-source dan semua sumbernya tersedia di <a href="{{ .github }}" target="_blank">GitHub</a>.'
 
 support:
@@ -83,7 +83,7 @@ support:
   donate: "Donasi"
 
 docs:
-  index: "Home"
+  index: "Laman"
 
 errors:
   title: "Error"

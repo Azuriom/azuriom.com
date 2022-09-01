@@ -9,7 +9,7 @@ AzAuth adalah sebuah api yang memperbolehkan anda untuk mengautentikasi pengguna
 ## Download
 
 AzAuth tersedia di [GitHub](https://github.com/Azuriom/AzAuth)
-dan file jar dapat di download [disini](https://azuriom.s3.fr-par.scw.cloud/azauth-1.0-SNAPSHOT.jar).
+dan file jar dapat di download [disini](https://github.com/Azuriom/AzAuth/releases/download/v1.0.0/azauth-1.0.0.jar).
 
 Jika anda menggunakan dependency manager, anda bisa menambahkan AzAuth sebagai
 depedency sebagai berikut:
@@ -20,12 +20,10 @@ di `build.gradle`:
 
 ```groovy
 repositories {
-    maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
-}
-```
-```groovy
+    mavenCentral()
+} 
 dependencies {
-    implementation 'com.azuriom:azauth:1.0-SNAPSHOT'
+    implementation 'com.azuriom:azauth:1.0.0'
 }
 ```
 
@@ -33,19 +31,11 @@ dependencies {
 
 di `pom.xml`:
 ```xml
-<repositories>
-    <repository>
-        <id>sonatype-repo</id>
-        <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-    </repository>
-</repositories>
-```
-```xml
 <dependencies>
     <dependency>
         <groupId>com.azuriom</groupId>
         <artifactId>azauth</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.0</version>
         <scope>compile</scope>
     </dependency>
 </dependencies>

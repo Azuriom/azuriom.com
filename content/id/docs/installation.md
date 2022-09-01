@@ -10,7 +10,7 @@ weight: 1
 Untuk bekerja, Azuriom membutuhkan sebuah **server web dengan PHP** yang mempunyai setidaknya **100 MB**
 untuk disk space dan persyaratan sebagai berikut:
 
-- PHP 7.3 atau yang lebih tinggi
+- PHP 8.0 atau yang lebih tinggi
 - URL Rewrite
 - Izin Write/Read di `storage/` dan `bootstrap/cache/`.
 - Ekstensi BCMath PHP

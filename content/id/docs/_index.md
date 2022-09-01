@@ -1,11 +1,11 @@
 ---
-title: Home
+title: Beranda
 description: Dokumentasi Azuriom berisi tentang informasi berguna mengenai Azuriom, untuk pengunduhan, gunakan atau pengembangan Tambahan.
 weight: 0
-layout: sendiri
+layout: single
 ---
 
-# Laman
+# Beranda
 
 ## Perkenalan
 

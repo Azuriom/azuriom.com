@@ -63,7 +63,8 @@ salah satu elemen yang penting untuk sebuah tema, dan itu terlihat seperti ini:
     "url": "https://azuriom.com",
     "authors": [
         "Azuriom"
-    ]
+    ],
+    "azuriom_api": "1.0.0"
 }
 ```
 
@@ -95,13 +96,6 @@ jadi anda tidak perlu melakukan pembaruan yang sering.
 Tapi jika anda ingin menggunakan CSS Framework yang lain.
 
 Di Javascript, dependency yang diperlukan hanyalah [Axios](https://github.com/axios/axios).
-
-{{< warn >}}
-Meskipun jQuery juga dapat ditambahkan dan digunakan tanpa masalah, ini
-disarankan untuk tidak menggunakannya, jadi itu akan secara mudah di hapus dengan Bootstrap 5 di
-rilis. Umumnya [jQuery tidak lagi diperlukan hari ini dan bisa dihapus
-secara mudah](http://youmightnotneedjquery.com/).
-{{< /warn >}}
 
 {{< info >}}
 Jika sebuah view tidak ada di sebuah tema tapi ada di CMS atau di plugin, 
@@ -218,7 +212,9 @@ config.blade.php
         @enderror
     </div>
 
-    <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> {{ trans('messages.actions.save') }}</button>
+    <button type="submit" class="btn btn-primary">
+        <i class="fas fa-save"></i> {{ trans('messages.actions.save') }}
+    </button>
 </form>
 ```
 

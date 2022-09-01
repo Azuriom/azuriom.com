@@ -38,3 +38,8 @@ languages:
     contentDir: content/cs
     params:
       code: cs_CZ
+  id:
+    languageName: Bahasa Indonesia
+    contentDir: content/id
+    params:
+      code: id_ID
