@@ -5,6 +5,10 @@ weight: 0
 layout: single
 ---
 
+{{< warn >}}
+中文文档仍在施工中, 如果您有兴趣参与我们的翻译, 请在 [GitHub](https://github.com/Azuriom/azuriom.com) 上提交 Pull Request.
+{{< /warn >}}
+
 # 首页
 
 ## 介绍
