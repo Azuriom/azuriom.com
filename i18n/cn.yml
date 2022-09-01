@@ -84,7 +84,7 @@ support:
   donate: "捐赠"
 
 docs:
-  index: "主页"
+  index: "首页"
 
 errors:
   title: "错误"
