@@ -19,6 +19,7 @@ Sendmail 更容易使用和安装, 但其发送的邮件也更容易被认定为
 * [QQ邮箱](https://mail.qq.com/): 个人用户免费
 * [网易邮箱](https://mail.163.com/): 个人用户免费
 * [企业微信邮箱|腾讯企业邮](https://work.weixin.qq.com/mail/): 提供免费版和专业版
+
 或者使用云服务商提供的专业邮件服务:
 * [阿里云](https://www.aliyun.com/product/directmail)
 * [腾讯云](https://cloud.tencent.com/product/ses)
