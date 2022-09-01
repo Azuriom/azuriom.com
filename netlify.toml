@@ -63,8 +63,8 @@ to = "/nl/404.html"
 status = 404
 
 [[redirects]]
-from = "/cn/*"
-to = "/cn/404.html"
+from = "/zh-cn/*"
+to = "/zh-cn/404.html"
 status = 404
 
 [[redirects]]
@@ -78,6 +78,13 @@ status = 302
 
 [[redirects]]
 from = "/"
+to = "/cs"
+conditions = { Country = ["cz"] }
+force = true
+status = 302
+
+[[redirects]]
+from = "/"
 to = "/nl"
 conditions = { Country = ["nl"] }
 force = true
@@ -85,7 +92,7 @@ status = 302
 
 [[redirects]]
 from = "/"
-to = "/cn"
+to = "/zh-cn"
 conditions = { Country = ["cn"] }
 force = true
 status = 302
@@ -110,7 +117,7 @@ status = 302
 
 [[redirects]]
 from = "/*"
-to = "/cn/:splat"
+to = "/zh-cn/:splat"
 conditions = { Country = ["cn"] }
 status = 302
 
