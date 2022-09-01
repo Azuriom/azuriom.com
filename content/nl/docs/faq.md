@@ -3,19 +3,17 @@ title: FAQ
 weight: 3
 ---
 
-# Foutoplossing:
+# Veelgestelde vragen:
 
 Er kunnen fouten optreden, dit komt niet noodzakelijk door het CMS,
 maar hier zijn de meest voorkomende fouten met hun oplossingen!
 
-## Veel voorkomende problemen
-
-### De startpagina werkt, maar de andere pagina's produceren een 404-fout.
+## De startpagina werkt, maar de andere pagina's produceren een 404-fout.
 
 Het herschrijven van URLs is niet geactiveerd, u hoeft het alleen maar te activeren (zie volgende vraag)
 
-### Apache2 URL herschrijven
-U moet het bestand `/etc/apache2/sites-available/000-default.conf` wijzigen en deze regels tussen de `<VirtualHost>`-tags toevoegen:
+## Apache2 URL herschrijven
+Bewerk uw Apache2-configuratie (standaard in `/etc/apache2/sites-available/000-default.conf`) en voeg deze regels toe tussen de `<VirtualHost>`-tags:
 ```
 <Directory "/var/www/html">
   AllowOverride All
@@ -27,7 +25,7 @@ Start Apache2 vervolgens opnieuw met de volgende commando:
 service apache2 restart
 ```
 
-### Nginx URL herschrijven
+## Nginx URL herschrijven
 U moet de configuratie van uw site bewerken (in `/etc/nginx/sites-available/`) en `/public` toevoegen aan het einde van de
 regel die `root` bevat, als volgt:
 ```
@@ -40,13 +38,13 @@ service nginx restart
 ```
 
 
-### Fout 500 tijdens registratie
+## Fout 500 tijdens registratie
 
 Als het account ondanks de fout correct is aangemaakt, kan dit probleem optreden als:
 het verzenden van e-mails niet correct geconfigureerd is, voor dit controleer
 de configuratie van het verzenden van e-mails op het beheerders paneel van uw site.
 
-### cURL-fout 60
+## cURL-fout 60
 
 Als u deze fout krijgt:
 `curl: (60) SSL Certificate: Unable to get local issuer certificate`,
@@ -59,10 +57,18 @@ de locatie van het bestand `cacert.pem`):
    ```
 1) Herstart PHP
 
-### Het bestand is niet geüpload bij het uploaden van een afbeelding
+## Afbeeldingen worden niet weergegeven
+
+Als de afbeeldingen die zijn geüpload in het beheerderspaneel in de lijst met afbeeldingen staan, maar dan niet
+laden, kunt u het volgende proberen:
+* Verwijder, indien aanwezig, de map `public/storage` (maar niet de map `storage`!)
+* Voer vervolgens het commando `php artisan storage:link` uit in de root van de website.
+  * Als u geen opdrachten kunt uitvoeren, kunt u in plaats daarvan naar de URL `/admin/settings/storage/link` op uw website gaan.
+
+## Het bestand is niet geüpload bij het uploaden van een afbeelding
 
 Dit probleem doet zich voor wanneer u een afbeelding upload met een grotere bestandsgrootte
-dan de maximum toegestane bestandsgrootte door PHP (standaard 2MB)
+dan de maximum toegestane bestandsgrootte door PHP (standaard 2 MB)
 
 U kunt de maximaal toegestane grootte wijzigen bij het uploaden in de configuratie
 van PHP (in `php.ini`) door de volgende waarden te wijzigen:
@@ -71,14 +77,19 @@ upload_max_filesize = 10M
 post_max_size = 10M
 ```
 
-### Probleem met AzLink en betalingsdiensten met Cloudflare
+{{< warn >}}
+Het wordt sterk aangeraden om deze limiet niet te wijzigen, omdat grote afbeeldingen
+de laadtijd van uw website en op zoekmachineoptimalisatie impact heeft.
+In plaats daarvan, wordt het aanbevolen om de grootte van de afbeelding te verkleinen (idealiter minder dan 1 MB).
+{{< /warn >}}
+
+## Probleem met AzLink en betalingsdiensten met Cloudflare
 
 Cloudflare kan voorkomen dat AzLink of sommige betalingsdiensten correct werken.
 
 Om dit probleem op te lossen, kunt u Cloudflare op de API uitschakelen door naar Paginaregels te gaan
 -> Voeg een regel toe, voeg dan `/api/*` toe als de URL en de volgende acties:
 * Cache Level: 'Bypass'
-* Always Online: 'OFF'
 * Security Level: 'Medium' or 'High'
 * Browser Integrity Check: 'OFF' 
 
@@ -86,7 +97,7 @@ Als het probleem zich blijft voordoen, controleert u ook de firewall regels.
 
 Meer details zijn beschikbaar op de [Cloudflare website](https://support.cloudflare.com/hc/en-us/articles/200504045-Using-Cloudflare-with-your-API).
 
-### Forceer HTTPS op Apache2
+## Forceer HTTPS op Apache2
 
 Voeg deze regels **net na** `RewriteEngine On` toe in de `.htaccess` in de hoofdmap van je website.
 ```
@@ -94,7 +105,7 @@ RewriteCond %{HTTPS} off
 RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
 ```
 
-### Stemmen laden oneindig
+## Stemmen laden oneindig
 
 U kunt ipv4/ipv6-compatibiliteit inschakelen in de instellingen van de stem plug-in
 om dit probleem op te lossen.
@@ -102,13 +113,18 @@ om dit probleem op te lossen.
 Als je Cloudflare gebruikt, overweeg dan ook om de volgende plug-in te installeren
 [Cloudflare ondersteuning](https://market.azuriom.com/resources/12).
 
-### Wijzig de database referenties
+## Ontvang een RSS of Atom-feed voor het nieuws
+
+Een RSS-feed voor het nieuws is beschikbaar op de URL `/api/rss` en een Atom-feed
+op `/api/atom`.
+
+## Wijzig de database referenties
 
 U kunt de database gegevens wijzigen door het `.env` bestand te bewerken
 in de hoofdmap van uw website (het kan nodig zijn om geheime bestanden zichbaar te maken)
 Als je klaar bent, verwijder je het bestand `bootstrap/cache/config.php` als het bestaat.
 
-### Een andere website installeren op Apache2
+## Een andere website installeren op Apache2
 
 Als u een andere site wilt installeren (bijv. Pterodactyl-paneel, enz.)
 op dezelfde webserver als waarop Azuriom is geïnstalleerd,
@@ -122,4 +138,4 @@ van de andere website (bijv. /panel) met de volgende inhoud:
     RewriteEngine On
     RewriteRule ^ - [L]
 </IfModule>
-``` 
+```

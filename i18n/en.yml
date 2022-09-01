@@ -9,6 +9,7 @@ nav:
   demo: "Demo"
   demoMC: "Minecraft Demo"
   demoSteam: "Steam Demo"
+  login: Login
 
 footer:
   about: "About us"
@@ -31,7 +32,7 @@ home:
     description1: "Azuriom is the <strong>next generation</strong> game CMS, it's <strong>free</strong> and <strong>open-source</strong>, and is a <strong>modern, reliable, fast and secure</strong> alternative to existing CMS so you can have the <strong>best web experience possible</strong>."
     description2: "Azuriom is the ideal choice for your website on Minecraft, Garry's Mod, Rust, FiveM, Ark and many others games."
     gamesTitle: "Supported games"
-    games: "Azuriom is a <strong>Minecraft CMS</strong>, but not only! In addition to Minecraft, it also supports <strong>Garry's Mod, Ark, Rust, FiveM, CS:GO and Team Fortress 2</strong>!"
+    games: "Azuriom is a <strong>Minecraft CMS</strong>, but not only! In addition to Minecraft, it also supports <strong>Garry's Mod, Ark, Rust, FiveM, CS:GO, Team Fortress 2</strong>! You can even add support for your own games through an extension."
 
   features:
     modern:
@@ -52,13 +53,13 @@ home:
 
   desc1:
     title: "Unique extensions"
-    description1: "Our extensions, that is our themes and plugins are made in the same way as the CMS so that it is one with the extensions once they are installed."
-    description2: "For developers who wish to carry out their extensions, tools and complete documentation are available for a unique working comfort."
-    description3: "A Community market is also available to post your extensions. We check each extension, then we regularly follow the updates proposed on them in order to keep a clean market."
+    description1: "Our extensions, i.e. our themes and plugins are made in the same way as the CMS so that it becomes one with the extensions once they are installed."
+    description2: "For developers who wish to carry out their extensions, tools and complete documentation are available for unique working comfort."
+    description3: "A Community market is also available to post your extensions. We check each extension, then we regularly follow the updates proposed on them to keep a clean market."
 
   desc2:
     title: "Active support"
-    description1: "We have a active support on Discord and on GitHub and since Azuriom is open-source, everyone can contribute to the project on GitHub !"
+    description1: "We have active support on Discord and GitHub, and since Azuriom is open-source, everyone can contribute to the project on GitHub!"
     description2: "And Azuriom is open-source, so anyone can contribute and improve the project."
 
 download:
@@ -71,14 +72,14 @@ azlink:
   title: "AzLink"
   info: "AzLink is a plugin made for Azuriom to link your server to your Azuriom website in a easy, fast and secure way."
   download: "Download"
-  supported: "AzLink support Bukkit (and other Bukkit-based servers like Spigot, Glowstone, Cauldron and Mohist), BungeeCord, Sponge and Velocity in the same plugin. If you use Minecraft 1.7.10 you need to download the legacy version."
+  supported: "AzLink support Bukkit (and other Bukkit-based servers like Spigot, Glowstone and Cauldron), BungeeCord, Sponge and Velocity in the same plugin. If you use Minecraft 1.7.10 you need to download the legacy version."
   sources: 'AzLink is open-source and the sources are available on <a href="{{ .github }}" target="_blank">GitHub</a>.'
 
 support:
   title: "Support us"
-  description1: "Making this project is time consuming, and your donation will help us working and improving this project."
-  description2: "Your donation will also help to cover the financial cost of this project: we need to pay the domain, renting servers (website, demo), graphic designer, ..."
-  description3: "You can also support us by starring the GitHub repository, it's free and you just need a GitHub account."
+  description1: "Making this project is time-consuming, and your donation will help us work and improve this project."
+  description2: "Your donation will also help to cover the financial cost of this project: we need to pay the domain, rent servers (website, demo), graphic designer, ..."
+  description3: "You can also support us by starring the GitHub repository, it's free, and you simply need a GitHub account."
   star: "Star the project"
   donate: "Donate"
 

@@ -55,6 +55,7 @@ und enthält die verschiedenen Informationen eines Plugins:
     "authors": [
         "Azuriom"
     ],
+    "azuriom_api": "1.0.0",
     "providers": [
         "\\Azuriom\\Plugin\\Example\\Providers\\ExampleServiceProvider",
         "\\Azuriom\\ Plugin\\Example\\Providers\\RouteServiceProvider"
@@ -365,7 +366,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSupportTicketsTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -396,7 +397,7 @@ class CreateSupportTicketsTable extends Migration
     {
         Schema::dropIfExists('support_tickets');
     }
-}
+};
 ```
 
 ### Übersetzungen
@@ -451,7 +452,7 @@ auf und gebe die verschiedenen Routen in der Methode `routeDescriptions()` im Fo
     protected function routeDescriptions()
     {
         return [
-            'support.tickets.index' => 'support::messages.title',
+            'support.tickets.index' => trans('support::messages.title'),
         ];
     }
 ```
@@ -483,8 +484,8 @@ und die verschiedenen Routen in der Methode `adminNavigation()` zurückgibst.
     {
         return [
             'support' => [
-                'name' => 'support::admin.title', // Translation of the tab name
-                'icon' => 'fas fa-question', // FontAwesome icon
+                'name' => trans('support::admin.title'), // Translation of the tab name
+                'icon' => 'bi bi-joystick', // Bootstrap Icons icon
                 'route' => 'support.admin.tickets.index', // Page's route
                 'permission' => 'support.tickets', // (Optional) Permission required to view this page
             ],

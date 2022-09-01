@@ -63,7 +63,8 @@ což je jediný vyžadovaný prvek tématu, a vypadá takto:
     "url": "https://azuriom.com",
     "authors": [
         "Azuriom"
-    ]
+    ],
+    "azuriom_api": "1.0.0"
 }
 ```
 
@@ -89,19 +90,12 @@ při práci s Blade, protože Blade vám nepřináší
 tradiční žádné výhody a pouze nevýhody.
 {{< /warn >}}
 
-Na straně CSS je doporučeno použít výchozí framweork CMS, což je [Bootstrap 4](https://getbootstrap.com),
+Na straně CSS je doporučeno použít výchozí framweork CMS, což je [Bootstrap 5](https://getbootstrap.com),
 díky tomu bude jednodušší zrealizovat téma a bude kompatibilní s novými doplňky,
 takže nebudete muset dělat neustálé aktualizace.
 Ale pokud chcete, můžete samozřejmě použít jiný CSS framework.
 
 V JavaScriptu je jediná potřebná závislost [Axios](https://github.com/axios/axios).
-
-{{< warn >}}
-I když může být jQuery přidáno a bez problémů používáno, je doporučeno
-ho nepoužívat, takže může být jednoduše odebráno při vydání Bootstrapu 5.
-Obecně [již není jQuery nadále potřeba a může být jednoduše
-odebráno](http://youmightnotneedjquery.com/).
-{{< /warn >}}
 
 {{< info >}}
 Pokud se view nenachází v tématu ale je v CMS nebo v doplňku, 
@@ -217,7 +211,9 @@ config.blade.php
         @enderror
     </div>
 
-    <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> {{ trans('messages.actions.save') }}</button>
+    <button type="submit" class="btn btn-primary">
+        <i class="bi bi-save"></i> {{ trans('messages.actions.save') }}
+    </button>
 </form>
 ```
 

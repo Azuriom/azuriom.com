@@ -63,7 +63,8 @@ the only essential element for a theme, and it looks like this:
     "url": "https://azuriom.com",
     "authors": [
         "Azuriom"
-    ]
+    ],
+    "azuriom_api": "1.0.0"
 }
 ```
 
@@ -89,19 +90,12 @@ when you work with Blade, because Blade does not bring you the traditional
 no advantages and only disadvantages.
 {{< /warn >}}
 
-On the CSS side, it is recommended to use the default framework of the cms which is [Bootstrap 4](https://getbootstrap.com), 
+On the CSS side, it is recommended to use the default framework of the cms which is [Bootstrap 5](https://getbootstrap.com), 
 this will make it easier to realize a theme and will be compatible with the new plugins. 
 so you don't have to make constant updates.
 But if you prefer you can use another CSS framework.
 
 In Javascript, the only dependency needed is [Axios](https://github.com/axios/axios).
-
-{{< warn >}}
-Although jQuery can be added and used without any problems, it is
-recommended not to use it, so it can be easily removed when Bootstrap 5 is
-released. In general [jQuery is no longer needed today and can be removed
-easily](http://youmightnotneedjquery.com/).
-{{< /warn >}}
 
 {{< info >}}
 If a view is not present in the theme but is in the CMS or in a plugin, 
@@ -154,14 +148,14 @@ For more details on authentication, you can refer to the
 You can retrieve a certain number of parameters from the website via the functions
 dedicated:
 
-|    Fonction      |               Description                 |
-| ---------------- | ----------------------------------------- |
-| `site_name()`    | Retrieves the site name                   |
-| `site_logo()`    | Allows you to have the website logo link  |
-| `favicon()`      | Allows you to have the favicon link       |
+| Function         | Description                                                                                                            |
+|------------------|------------------------------------------------------------------------------------------------------------------------|
+| `site_name()`    | Retrieves the site name                                                                                                |
+| `site_logo()`    | Allows you to have the website logo link                                                                               |
+| `favicon()`      | Allows you to have the favicon link                                                                                    |
 | `format_date()`  | Displays a date formatted with the current language. This function takes an instance of `Carbon\Carbon` as a parameter |
-| `money_name()`   | Returns the name of the website's currency   |
-| `format_money()` | Returns an amount formatted with the website currency |
+| `money_name()`   | Returns the name of the website's currency                                                                             |
+| `format_money()` | Returns an amount formatted with the website currency                                                                  |
 
 #### Display the players connected to the server
 
@@ -218,7 +212,9 @@ config.blade.php
         @enderror
     </div>
 
-    <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> {{ trans('messages.actions.save') }}</button>
+    <button type="submit" class="btn btn-primary">
+        <i class="bi bi-save"></i> {{ trans('messages.actions.save') }}
+    </button>
 </form>
 ```
 

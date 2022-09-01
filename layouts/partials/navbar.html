@@ -53,6 +53,12 @@
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ms-auto flex-row">
+                <li class="nav-item me-3">
+                    <a href="https://market.azuriom.com/profile" title="{{ i18n "nav.login" }}" class="nav-link ps-0 ps-lg-3 pe-3">
+                        {{ partial "icon.html" "person-circle" }}
+                    </a>
+                </li>
+
                 <li class="nav-item">
                     <a href="https://github.com/Azuriom" target="_blank" rel="noopener noreferrer" title="GitHub" class="nav-link ps-0 ps-lg-3 pe-3">
                         {{ partial "icon.html" "github" }}
@@ -71,13 +77,15 @@
 
                 <li class="nav-item dropdown">
                     <a id="langDropdown" class="nav-link dropdown-toggle px-3" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="{{ printf "assets/svg/country/%s.svg" .Site.Language.Lang | absURL }}" class="svg country" alt="{{ .Site.Language.LanguageName }}">
+                        {{ $flag := printf "assets/svg/country/%s.svg" (substr (.Param "code" | lower) 3) -}}
+                        <img src="{{ $flag | absURL }}" class="svg country" alt="{{ .Site.Language.LanguageName }}">
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-right locale-selector" aria-labelledby="langDropdown">
                         {{ range .AllTranslations }}
                         <a class="dropdown-item" data-locale="{{ .Language.Lang }}" href="{{ partial "permalink.html" . }}">
-                            <img src="{{ printf "assets/svg/country/%s.svg" .Language.Lang | absURL }}" class="svg" alt="{{ .Language.LanguageName }}">
+                            {{ $flag := printf "assets/svg/country/%s.svg" (substr (.Param "code" | lower) 3) -}}
+                            <img src="{{ $flag | absURL }}" class="svg" alt="{{ .Language.LanguageName }}">
                             {{ .Language.LanguageName }}
                         </a>
                         {{ end }}

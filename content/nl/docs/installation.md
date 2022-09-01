@@ -10,7 +10,7 @@ weight: 1
 Om te werken, heeft Azuriom een **webserver met PHP** nodig met minimaal **100 MB**
 schijfruimte en de volgende vereisten:
 
-- PHP 7.3 of hoger
+- PHP 8.0 of hoger
 - URL herschrijven
 - Schrijf-/leesrechten op `storage/` en `bootstrap/cache/`. mappen.
 - BCMath PHP Extensie
@@ -27,21 +27,37 @@ schijfruimte en de volgende vereisten:
 
 Het wordt ook sterk aanbevolen om een **MySQL/MariaDB- of PostgreSQL-database** te gebruiken.
 
-### Benodigdheden installatie
+### Benodigdheden voor installatie op een op Linux gebaseerde server
+
+Op en gedeelde webhost zullen er hoostwaarschijnlijk al benodigdheden geïnstalleerd zijn,
+en kunt u direct doorgaan naar de installatie van Azuriom.
 
 Als je een VPS of een dedicated server gebruikt, zal het waarschijnlijk nodig zijn
-om zelf een webserver, PHP en MySQL te installeren. Dit kan met de volgende commando's:
+om zelf een webserver, PHP en MySQL te installeren. Dit kan bijvoorbeeld onder Debian of Ubuntu met de volgende commando's:
 
 ```
 apt update -y && apt upgrade -y
 
-apt install -y nginx zip curl lsb-release apt-transport-https ca-certificates
+apt install -y nginx mariadb-server zip curl lsb-release apt-transport-https ca-certificates
 
 wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
 echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list
 apt update -y
-apt install -y php8.0 php8.0-fpm php8.0-mysql php8.0-pgsql php8.0-sqlite3 php8.0-bcmath php8.0-mbstring php8.0-xml php8.0-curl php8.0-zip php8.0-gd
+apt install -y php8.1 php8.1-fpm php8.1-mysql php8.1-pgsql php8.1-sqlite3 php8.1-bcmath php8.1-mbstring php8.1-xml php8.1-curl php8.1-zip php8.1-gd
 ```
+
+MySQL (MariaDB) is nu geïnstalleerd en u kunt een database en een gebruiker maken met de
+volgende commando's (**vergeet niet om `<password>` te vervangen met een veilig wachtwoord!**):
+```
+mysql -u root
+CREATE USER 'azuriom'@'127.0.0.1' IDENTIFIED BY '<password>';
+CREATE DATABASE azuriom;
+GRANT ALL PRIVILEGES ON azuriom.* TO 'azuriom'@'127.0.0.1' WITH GRANT OPTION;
+exit
+```
+
+Tijdens de installatie zijn de database en database gebruiker `azuriom` en het wachtwoord is degene die `<password>`
+vervangt in de opdracht hierboven.
 
 nadat de vereisten zijn geïnstalleerd, moet u de webserver configureren.
 Uitleg vindt u onderaan dit artikel.
@@ -90,6 +106,11 @@ Je kunt het ook installeren met [Docker](https://www.docker.com/) door de vermel
    ```
    Dit kan gedaan worden door de crontab-configuratie te wijzigen met de `crontab -e` commando.
 
+{{< warn >}}
+Zodra de installatie is voltooid en problemen te volkomen, moet u ervoor zorgen dat uw website
+niet rechtstreeks toegankelijk is vanaf het IP-adress van de server (bijvoorbeeld: http://0.0.0.0).
+{{< /warn >}}
+
 ## Webserver configuratie
 
 ### Apache2
@@ -102,9 +123,9 @@ Schakel hiervoor eerst de mod "herschrijven" in:
 a2enmod rewrite
 ```
 
-Vervolgens moet u het bestand `/etc/apache2/sites-available/000-default.conf` wijzigen
-en de volgende regels tussen de `<VirtualHost>`-tags te plaatsen.
-(vervang `var/www/azuriom` met de locatie van uw site) om het herschrijven van URLs toe te staan. 
+Vervolgens moet u de Apache2-configuratie wijzigen (standaard in het bestand `/etc/apache2/sites-available/000-default.conf`)
+en voeg de volgende regels toe tussen de `<VirtualHost>`-tags (waarbij `var/www/azuriom` wordt vervangen door de locatie van de site)
+om URL-herschrijving toe te staan:
 
 ```
 <Directory "/var/www/azuriom">
@@ -150,7 +171,7 @@ server {
     error_page 404 /index.php;
 
     location ~ \.php$ {
-        fastcgi_pass unix:/var/run/php/php8.0-fpm.sock;
+        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
         fastcgi_index index.php;
         fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
         include fastcgi_params;
@@ -167,4 +188,10 @@ en niet in het `nginx.conf` bestand.
 
 Vergeet niet om `example.com` te vervangen door uw domein,
 `/var/www/azuriom` met de locatie van uw site (zonder de `/public` aan het einde van de regel te verwijderen!)
-en `php8.0` met uw PHP-versie.
+en `php8.1` met uw PHP-versie.
+
+Ten slotte kunt u NGINX opnieuw opstarten:
+
+```
+service nginx restart
+```

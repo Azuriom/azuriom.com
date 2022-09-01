@@ -63,7 +63,8 @@ die das einzige wesentliche Element für ein Theme ist und so aussieht:
     "url": "https://azuriom.com",
     "authors": [
         "Azuriom"
-    ]
+    ],
+    "azuriom_api": "1.0.0"
 }
 ```
 
@@ -90,18 +91,11 @@ denn Blade bringt Dir keine Vorteile und nur Nachteile.
 {{< /warn >}}
 
 Auf der CSS-Seite wird empfohlen, das Standard-Framework des CMS zu verwenden,
-nämlich [Bootstrap 4](https://getbootstrap.com), dies erleichtert die Realisierung eines Themes und ist mit den neuen Plugins kompatibel.
+nämlich [Bootstrap 5](https://getbootstrap.com), dies erleichtert die Realisierung eines Themes und ist mit den neuen Plugins kompatibel.
 Du musst also keine ständigen Aktualisierungen vornehmen.
 Aber wenn Du es vorziehst, kannst Du ein anderes CSS-Framework verwenden.
 
 In Javascript ist [Axios](https://github.com/axios/axios) die einzige benötigte Abhängigkeit.
-
-{{< warn >}}
-
-Obwohl jQuery problemlos hinzugefügt und verwendet werden kann, wird empfohlen,
-es nicht zu verwenden, sodass es bei der Veröffentlichung von Bootstrap 5 leicht entfernt werden kann.
-Im Allgemeinen [wird jQuery heute nicht mehr benötigt und kann leicht entfernt werden](http://youmightnotneedjquery.com).
-{{< /warn >}}
 
 {{< info >}}
 Wenn eine Ansicht nicht im Theme,
@@ -213,7 +207,9 @@ config.blade.php
         @enderror
     </div>
 
-    <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> {{ trans('messages.actions.save') }}</button>
+    <button type="submit" class="btn btn-primary">
+        <i class="bi bi-save"></i> {{ trans('messages.actions.save') }}
+    </button>
 </form>
 ```
 

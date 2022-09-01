@@ -56,6 +56,7 @@ bevat de verschillende informatie van een plug-in:
     "authors": [
         "Azuriom"
     ],
+    "azuriom_api": "1.0.0",
     "providers": [
         "\\Azuriom\\Plugin\\Example\\Providers\\ExampleServiceProvider",
         "\\Azuriom\\Plugin\\Example\\Providers\\RouteServiceProvider"
@@ -78,6 +79,23 @@ genereerd:
 php artisan plugin:create <plugin name>
 ```
 {{< /info >}}
+
+#### Afhankelijkheden
+
+In het gedeelte 'afhankelijkheden' kunt u de plug-ins specificeren (met hun ID) die moeten
+worden geïnstalleerd om the plug-ins te gebruiken. Een `?` achter de naam van de plug-in betekent dat de plug-in
+optioneel is, d.w.z. het hoeft niet te worden geïnstalleerd, maar als dit het geval is, moet de versie overeenkomen.
+Het is ook mogelijk om een versie van Azuriom op te geven met de waarde `azuriom`.
+
+Deze plug-in heeft bijvoorbeeld Azuriom `0.4.0` of hoger nodig, de Shop plug-in versie `0.1.0` of
+hoger. Wanneer de Vote plug-in is geïnstalleerd, moet deze ook in versie `0.2.0` of hoger zijn:
+```json
+"dependencies": {
+    "azuriom": "^0.4.0",
+    "shop": "^0.1.0",
+    "vote?": "^0.2.0"
+}
+```
 
 ### Routes
 
@@ -358,6 +376,11 @@ Zorg ervoor dat de vereiste benodigdheden niet al door Azuriom worden geleverd o
 Met migraties kunt u tabellen in de database maken, wijzigen of verwijderen.
 Gegevens, zijn te vinden in de map `database/migrations`.
 
+U kunt de volgende opdracht gebruiken om het migratiebestand automatisch te genereren:
+```
+php artisan make:migration <migration name> --path plugins/<plugin id>/database/migrations 
+```
+
 Meer informatie over migraties vindt u in de
 [Laravel documentatie](https://laravel.com/docs/migrations).
 
@@ -368,7 +391,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSupportTicketsTable extends Migration
+return new class extends Migration
 {
     /**
      * Voer de migraties uit.
@@ -399,7 +422,7 @@ class CreateSupportTicketsTable extends Migration
     {
         Schema::dropIfExists('support_tickets');
     }
-}
+};
 ```
 
 ### Vertalingen
@@ -454,7 +477,7 @@ stuur terug de verschillende routes in `routeDescriptions()` methode met het for
     protected function routeDescriptions()
     {
         return [
-            'support.tickets.index' => 'support::messages.title',
+            'support.tickets.index' => trans('support::messages.title'),
         ];
     }
 ```
@@ -486,8 +509,8 @@ en het retourneren van de verschillende routes in de `adminNavigation()` methode
     {
         return [
             'support' => [
-                'name' => 'support::admin.title', // Vertaling van de naam van het tabblad
-                'icon' => 'fas fa-question', // FontAwesome icoon
+                'name' => trans('support::admin.title'), // Vertaling van de naam van het tabblad
+                'icon' => 'bi bi-joystick', // Bootstrap Icons pictogram
                 'route' => 'support.admin.tickets.index', // Pagina's route
                 'permission' => 'support.tickets', // (Optioneel) Toestemming vereist om deze pagina te bekijken
             ],

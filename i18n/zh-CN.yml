@@ -1,0 +1,93 @@
+meta:
+  desc: "Azuriom 是一个现代、可靠、快速和安全的游戏 CMS. 它是您在 Minecraft, Garry's Mod, Rust, Ark, FiveM 和其他许多游戏搭建网站的理想选择。"
+
+nav:
+  home: "主页"
+  download: "下载"
+  extensions: "拓展"
+  docs: "文档"
+  demo: "演示"
+  demoMC: "Minecraft 演示"
+  demoSteam: "Steam 演示"
+  login: "登录"
+
+footer:
+  about: "关于我们"
+  aboutDescription: "Azuriom 是新一代游戏 CMS，是一个免费的开放源码项目，是现有 CMS 的现代、可靠、快速和安全的替代品，因此你可以在 Minecraft、Garry's Mod、Ark、Rust 和许多其他游戏上为你的网站提供最好的网络体验。"
+  copyright: "Copyright &copy; 2019-{{ .year }} Azuriom - 保留所有权利. Azuriom 用&nbsp;{{ .love }} 创造."
+  partners: "合作伙伴"
+  links: "链接"
+  supportUs: "支持我们"
+
+home:
+  header:
+    title: "Azuriom | 新一代的游戏网站"
+    subtitle: "为您的服务器提供新一代的游戏网站，已经被数百个网站所使用。"
+    heading: "一个"
+    typed: "免费且开源的 CMS.|快速且安全的 CMS.|现代且可靠的 CMS."
+    typedFallback: "免费且开源；快速且安全；现代且可靠的 CMS。"
+
+  about:
+    title: "Azuriom 是什么？"
+    description1: "Azuriom 是<strong>新一代</strong>游戏 CMS，它是<strong>免费</strong>和<strong>开源</strong>的，并且是现有 CMS 的<strong>现代、可靠、快速和安全</strong>的替代品，因此你可以拥有<strong>超棒的互联网体验</strong>."
+    description2: "Azuriom 是您在 Minecraft, Garry's Mod, Rust, Ark, FiveM 和其他许多游戏搭建网站的理想选择。"
+    gamesTitle: "支持的游戏"
+    games: "Azuriom 是提供给 <strong>Minecraft</strong> 的 CMS，但是不止！除了 Minecraft, 它还支持 <strong>Garry's Mod, Ark, Rust, FiveM, CS:GO, Team Fortress 2(军团要塞2)</strong>! 您还可以通过拓展自行添加您所需要的游戏."
+
+  features:
+    modern:
+      title: "现代"
+      desc: "采用最新的技术开发，具有坚实的基础。"
+
+    reliable:
+      title: "可靠"
+      desc: "我们的测试协议有助于防止生产环境中出现的错误。"
+
+    fast:
+      title: "快速"
+      desc: "Azuriom 的每一个组件都经过最大限度的优化，以实现无与伦比的性能。"
+
+    secure:
+      title: "安全"
+      desc: "因为其强大的开发理念, 并且将所有依赖库保持最新版本, 为您提供最安全的体验."
+
+  desc1:
+    title: "独一无二的拓展"
+    description1: "我们的拓展(主题和插件)的开发方法与 CMS 相同，因此，一旦安装了拓展，它就与 CMS 融为一体。"
+    description2: "对于希望进行开发拓展的开发者来说，我们提供工具和完整的文档，以获得舒适的开发体验。"
+    description3: "我们拥有供您发布拓展的社区插件商店。每一个上传的拓展我们都会严格检查，并定期跟踪它们的更新，维持插件市场的纯净、安全。"
+
+  desc2:
+    title: "活跃的支持"
+    description1: "我们在 Discord 和 GitHub 上有积极的支持，并且 Azuriom 是开源的，每个人都可以在 GitHub 上为本项目做贡献!"
+    description2: "Azuriom 是开源的，任何人都可以贡献和改进该项目。"
+
+download:
+  title: "下载"
+  docs: "在下载 Azuriom 之前，建议 <a href=\"{{ .docs }}\" target=\"_blank\">阅读我们的文档</a>."
+  support: '如果你需要帮助，你可以加入我们的 <a href="{{ .discord }}" target="_blank">Discord</a> 服务器.'
+  sources: '前往 <a href="{{ .github }}" target="_blank">GitHub</a> 访问 Azuriom 的源码.'
+
+azlink:
+  title: "AzLink"
+  info: "AzLink 是 Azuriom 的附属插件，它可以方便、快捷、安全地把您的服务器与您的 Azuriom 站点连接在一起。"
+  download: "下载"
+  supported: "AzLink 支持 Bukkit (或其他以 Bukkit 基础的服务器核心，例如 Spigot, Glowstone 和 Cauldron), BungeeCord, Sponge 和 Velocity. 如果你使用 Minecraft 1.7.10 你需要下载 \"Legacy\" 版本"
+  sources: '前往 <a href="{{ .github }}" target="_blank">GitHub</a> 访问 Azlink 的源码.'
+
+support:
+  title: "支持我们"
+  description1: "制作这个项目非常耗时，您的捐款将有助于我们的工作和改进项目。"
+  description2: "您的捐款也将有助于支付这个项目的运营费用：我们需要支付域名、服务器租用（网站、演示站点）、图片设计费用等等"
+  description3: "你也可以通过在 GitHub 上 Star 我们的项目来支持我们，不花一分钱，您只需要注册一个 GitHub 账户。"
+  star: "Star 我们的项目"
+  donate: "捐赠"
+
+docs:
+  index: "首页"
+
+errors:
+  title: "错误"
+  notFound:
+    title: "页面未找到"
+    info: "未找到您所访问的页面."

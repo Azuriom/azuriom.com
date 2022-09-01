@@ -11,5 +11,6 @@
 /node_modules/
 
 # Hugo
+.hugo_build.lock
 /public/
 /resources/_gen/

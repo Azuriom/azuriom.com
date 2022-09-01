@@ -10,7 +10,7 @@ auf jeder Plattform authentifizieren kannst.
 ## Download
 
 AzAuth-Quellen sind auf [GitHub](https://github.com/Azuriom/AzAuth) verfügbar,
-die JAR-Datei kann [hier](https://azuriom.s3.fr-par.scw.cloud/azauth-1.0-SNAPSHOT.jar)
+die JAR-Datei kann [hier](https://oss.sonatype.org/content/repositories/snapshots/com/azuriom/azauth/0.1.0-SNAPSHOT/azauth-0.1.0-20220420.160910-3.jar)
 heruntergeladen werden.
 
 Wenn Du einen Abhängigkeitsmanager verwendest,
@@ -27,7 +27,7 @@ repositories {
 ```
 ```groovy
 dependencies {
-    implementation 'com.azuriom:azauth:1.0-SNAPSHOT'
+    implementation 'com.azuriom:azauth:0.1.0-SNAPSHOT'
 }
 ```
 
@@ -47,7 +47,7 @@ In `pom.xml`:
     <dependency>
         <groupId>com.azuriom</groupId>
         <artifactId>azauth</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>0.1.0-SNAPSHOT</version>
         <scope>compile</scope>
     </dependency>
 </dependencies>
