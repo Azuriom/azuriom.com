@@ -22,7 +22,7 @@ footer:
 home:
   header:
     title: "Azuriom | 新一代的游戏网站"
-    subtitle: "为您的服务器提供新一代的游戏网站，已经被数百个网站所使用。"
+    subtitle: "为您的服务器提供新一代的游戏网站，已成为数百用户的选择。"
     heading: "一个"
     typed: "免费且开源的 CMS.|快速且安全的 CMS.|现代且可靠的 CMS."
     typedFallback: "免费且开源；快速且安全；现代且可靠的 CMS。"
@@ -30,7 +30,7 @@ home:
   about:
     title: "Azuriom 是什么？"
     description1: "Azuriom 是<strong>新一代</strong>游戏 CMS，它是<strong>免费</strong>和<strong>开源</strong>的，并且是现有 CMS 的<strong>现代、可靠、快速和安全</strong>的替代品，因此你可以拥有<strong>超棒的互联网体验</strong>."
-    description2: "Azuriom 是您在 Minecraft, Garry's Mod, Rust, Ark, FiveM 和其他许多游戏搭建网站的理想选择。"
+    description2: "Azuriom 是您为 Minecraft, Garry's Mod, Rust, Ark, FiveM 和其他许多游戏搭建网站的理想选择。"
     gamesTitle: "支持的游戏"
     games: "Azuriom 是提供给 <strong>Minecraft</strong> 的 CMS，但是不止！除了 Minecraft, 它还支持 <strong>Garry's Mod, Ark, Rust, FiveM, CS:GO, Team Fortress 2(军团要塞2)</strong>! 您还可以通过拓展自行添加您所需要的游戏."
 
@@ -72,7 +72,7 @@ azlink:
   title: "AzLink"
   info: "AzLink 是 Azuriom 的附属插件，它可以方便、快捷、安全地把您的服务器与您的 Azuriom 站点连接在一起。"
   download: "下载"
-  supported: "AzLink 支持 Bukkit (或其他以 Bukkit 基础的服务器核心，例如 Spigot, Glowstone 和 Cauldron), BungeeCord, Sponge 和 Velocity. 如果你使用 Minecraft 1.7.10 你需要下载 \"Legacy\" 版本"
+  supported: "AzLink 支持 Bukkit (或其他基于 Bukkit 的服务器核心，例如 Spigot, Glowstone 和 Cauldron), BungeeCord, Sponge 和 Velocity. 如果你使用 Minecraft 1.7.10 你需要下载 \"Legacy\" 版本"
   sources: '前往 <a href="{{ .github }}" target="_blank">GitHub</a> 访问 Azlink 的源码.'
 
 support:
