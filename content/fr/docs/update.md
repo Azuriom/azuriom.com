@@ -50,7 +50,7 @@ La migration est disponible pour les sites utilisant une ancienne version d'Azur
 Pour cela, il faut d'abord que le site soit en version 0.6.0, puis dans l'onglet mise à jour du panel admin,
 il est possible de mettre à jour vers Azuriom v1.0!
 
-Avant de mise à jour, quelques points importants :
+Avant de mettre à jour, quelques points importants :
 * Faites une sauvegarde de votre site (fichiers et base de données)
 * Vérifiez que les extensions ont été mises à jour pour la v1.0
 * Assurez d'avoir PHP 8.0 ou supérieur
