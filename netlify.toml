@@ -3,7 +3,7 @@ command = "hugo --gc --minify"
 publish = "public"
 
 [build.environment]
-HUGO_VERSION = "0.87.0"
+HUGO_VERSION = "0.102.3"
 HUGO_UGLYURLS = "true"
 
 [context.deploy-preview]
@@ -36,6 +36,10 @@ to = "https://market.azuriom.com/api/download"
 [[redirects]]
 from = "/api/updates"
 to = "https://market.azuriom.com/api/updates"
+
+[[redirects]]
+from = "/install/assets/v0.2.4/img/:image"
+to = "https://cdn.jsdelivr.net/gh/Azuriom/Azuriom@1.0.1/public/assets/img/games/:image"
 
 [[redirects]]
 from = "/en/*"

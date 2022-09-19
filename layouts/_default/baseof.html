@@ -37,7 +37,7 @@
   {{- end }}
   <link rel="alternate" hreflang="x-default" href="{{ replace (replace .Permalink ".html" "") (printf "/%s" .Site.Language.Lang) "" }}">
 
-  {{- $js := resources.Get "js/app.js" | js.Build (dict "targetPath" "assets/js/app.js" "target" "es2015") -}}
+  {{- $js := resources.Get "js/app.ts" | js.Build (dict "targetPath" "assets/js/app.js") -}}
   {{- $style := resources.Get "scss/app.scss" | resources.ToCSS (dict "targetPath" "assets/css/app.css") -}}
   {{- if hugo.IsProduction -}}
     {{ $js = $js | resources.Minify | fingerprint "md5" }}

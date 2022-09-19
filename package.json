@@ -10,6 +10,7 @@
   "license": "MIT",
   "devDependencies": {
     "@popperjs/core": "^2.9.2",
+    "@types/js-cookie": "^3.0.2",
     "bootstrap": "^5.0.0",
     "bootstrap-icons": "^1.4.1",
     "js-cookie": "^3.0.0",
