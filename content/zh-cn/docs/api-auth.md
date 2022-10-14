@@ -13,7 +13,7 @@ AzAuth 是一个 API, 允许你在任何平台上对 Azuriom 下的网站用户�
 ## 下载
 
 AzAuth 的源码可以在 [GitHub](https://github.com/Azuriom/AzAuth)
-上找到, 你可以在 [这里](https://oss.sonatype.org/content/repositories/snapshots/com/azuriom/azauth/0.1.0-SNAPSHOT/azauth-0.1.0-20220420.160910-3.jar) 下载 AzAuth 的 Jar 文件.
+上找到, 你可以在 [这里](https://repo.maven.apache.org/maven2/com/azuriom/azauth/1.0.0/azauth-1.0.0.jar) 下载 AzAuth 的 Jar 文件.
 
 如果你正在使用依赖管理器, 你可以通过以下方式将 AzAuth 添加为依赖项:
 

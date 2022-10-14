@@ -9,7 +9,7 @@ AzAuth adalah sebuah api yang memperbolehkan anda untuk mengautentikasi pengguna
 ## Download
 
 AzAuth tersedia di [GitHub](https://github.com/Azuriom/AzAuth)
-dan file jar dapat di download [disini](https://github.com/Azuriom/AzAuth/releases/download/v1.0.0/azauth-1.0.0.jar).
+dan file jar dapat di download [disini](https://repo.maven.apache.org/maven2/com/azuriom/azauth/1.0.0/azauth-1.0.0.jar).
 
 Jika anda menggunakan dependency manager, anda bisa menambahkan AzAuth sebagai
 depedency sebagai berikut:
