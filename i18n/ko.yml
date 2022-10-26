@@ -1,0 +1,93 @@
+meta:
+  desc: "Azuriom 은 현대적이고, 신뢰할 수 있으며, 빠르고 안전한 게이밍 CMS입니다. Minecraft, Garry's Mod, Rust, Ark, FiveM 등과 같은 수많은 게임의 웹사이트를 위한 이상적인 선택입니다."
+
+nav:
+  home: "홈"
+  download: "다운로드"
+  extensions: "확장"
+  docs: "문서"
+  demo: "데모"
+  demoMC: "Minecraft 데모"
+  demoSteam: "Steam 데모"
+  login: 로그인
+
+footer:
+  about: "우리에 대해"
+  aboutDescription: "Azuriom 은 차세대 게임 CMS입니다. 무료인데다 오픈소스이며, 현대적이고, 신뢰할 수 있으며, 빠르고 안전해 이미 있는 CMS를 대체해서 Minecraft, Garry's Mod, Rust, Ark, FiveM 등과 같은 수많은 게임의 웹사이트를 위한 최상의 경험을 가질 수 있습니다."
+  copyright: "Copyright &copy; 2019-{{ .year }} Azuriom - All rights reserved. Made with&nbsp;{{ .love }} by Azuriom."
+  partners: "파트너"
+  links: "링크"
+  supportUs: "지원하기"
+
+home:
+  header:
+    title: "Azuriom | 차세대 게이밍 웹사이트"
+    subtitle: "수백개의 웹사이트가 사용하고 있는 당신의 서버를 위한 차세대 게이밍 웹사이트."
+    heading: "게임 CMS"
+    typed: "무료이고 오픈소스.|빠르고 안전한.|현대적이고 신뢰할 수 있는."
+    typedFallback: "무료이고 오픈소스, 빠르고, 안전한, 현대적이고 신뢰할 수 있는."
+
+  about:
+    title: "Azuriom 이란"
+    description1: "Azuriom 은 <strong>차세대</strong> 게임 CMS입니다, <strong>무료</strong> 이고 <strong>오픈소스</strong>이며, <strong>현대적이고, 신뢰할 수 있으며, 빠르고 안전해</strong> 이미 있는 CMS를 대체해 <strong>최상의 웹 경험</strong>을 가질 수 있습니다."
+    description2: "Azuriom 은 Minecraft, Garry's Mod, Rust, Ark, FiveM 등과 같은 수많은 게임의 웹사이트를 위한 이상적인 선택입니다."
+    gamesTitle: "지원되는 게임"
+    games: "Azuriom 은 <strong>Minecraft CMS</strong>입니다, 하지만! Minecraft 뿐만 아니라, <strong>Garry's Mod, Ark, Rust, FiveM, CS:GO, Team Fortress 2</strong>도 지원합니다! 확장 프로그램을 통해 자신의 게임에 대한 지원을 추가할 수도 있습니다."
+
+  features:
+    modern:
+      title: "현대적인"
+      desc: "최신 기술과 견고한 패턴으로 제작되었습니다."
+
+    reliable:
+      title: "신뢰할 수 있는"
+      desc: "우리의 테스트 프로토콜은 실사용 환경에서의 오류를 방지하는데 도움이 됩니다."
+
+    fast:
+      title: "빠른"
+      desc: "모든 Azuriom의 요소들은 타의 추종을 불허하는 최상의 성능을 위해 최적화되어 있습니다."
+
+    secure:
+      title: "안전한"
+      desc: "강력한 개념과 최신 종속성을 통해 보안이 강력합니다."
+
+  desc1:
+    title: "특별한 확장 기능"
+    description1: "확장 기능, 즉 테마 및 플러그인은 CMS와 동일한 방식으로 만들어져 설치할 경우 일체감을 줍니다."
+    description2: "자신만의 확장 기능을 만들고자 하는 개발자들은, 특징적인 작업 편의성을 위해 도구와 전체 문서를 확인해볼 수 있습니다."
+    description3: "커뮤니티 마켓에서도 확장 기능을 올릴 수 있습니다. 우리는 각 확장 기능을 확인한 다음, 깨끗한 마켓을 유지하기 위해 제안된 업데이트를 정기적으로 따릅니다."
+
+  desc2:
+    title: "활발한 지원"
+    description1: "우리는 GitHub와 Discord 에서 활발히 지원하고 있습니다, 그리고 Azuriom 이 오픈소스이니, 아무나 GitHub 에서 프로젝트에 기여할 수 있습니다!"
+    description2: "그리고 Azuriom 은 오픈소스입니다, 아무나 기여하고 프로젝트를 개선할 수 있습니다."
+
+download:
+  title: "다운로드"
+  docs: "Azuriom 을 다운로드하기 전에, <a href=\"{{ .docs }}\" target=\"_blank\">우리의 문서를 읽어보세요</a>."
+  support: '도움이 필요하거나 질문이 있다면, <a href="{{ .discord }}" target="_blank">Discord</a> 서버에 참여해보세요.'
+  sources: 'Azuriom 는 오픈소스이며 <a href="{{ .github }}" target="_blank">GitHub</a> 에 소스코드가 공개되어 있습니다.'
+
+azlink:
+  title: "AzLink"
+  info: "AzLink 는 당신의 웹사이트와 서버를 쉽고 빠르고 안전하게 연결하기 위해 만들어진 Azuriom 플러그인입니다."
+  download: "다운로드"
+  supported: "AzLink 는 플러그인 하나로 Bukkit (Spigot, Glowstone, Cauldron 같은 버킷 기반 서버 포함), BungeeCord, Sponge, Velocity 를 지원합니다. Minecraft 1.17.10을 사용하고 있다면 구버전을 다운로드해야 합니다."
+  sources: 'AzLink 는 오픈소스이며 <a href="{{ .github }}" target="_blank">GitHub</a> 에 소스코드가 공개되어 있습니다.'
+
+support:
+  title: "지원하기"
+  description1: "이 프로젝트를 만드는 것은 시간이 필요합니다, 당신의 후원이 우리가 작업을 하는데 도움이 되고 이 프로젝트를 발전시키는데 기여합니다."
+  description2: "당신의 후원은 이 프로젝트의 재정에 도움이 됩니다: 도메인을 구매하고 서버를 빌리고 (웹사이트, 데모), 그래픽 디자이너를 고용해야 합니다, ..."
+  description3: "GitHub 저장소에 별을 달아 지원할 수도 있습니다, 무료이고 GitHub 계정만 있으면 됩니다."
+  star: "프로젝트에 별 달기"
+  donate: "후원"
+
+docs:
+  index: "홈"
+
+errors:
+  title: "오류"
+  notFound:
+    title: "찾을 수 없음"
+    info: "원하는 페이지를 찾지 못했습니다."
