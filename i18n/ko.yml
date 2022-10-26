@@ -14,7 +14,7 @@ nav:
 footer:
   about: "우리에 대해"
   aboutDescription: "Azuriom 은 차세대 게임 CMS입니다. 무료인데다 오픈소스이며, 현대적이고, 믿을 수 있으며, 빠르고 안전해 이미 있는 CMS를 대체해서 Minecraft, Garry's Mod, Rust, Ark, FiveM 등과 같은 수많은 게임의 웹사이트를 위한 최상의 경험을 가질 수 있습니다."
-  copyright: "Copyright &copy; 2019-{{ .year }} Azuriom - All rights reserved. Azuriom 에서&nbsp;{{ .love }} 을 담아 만듭니다.."
+  copyright: "Copyright &copy; 2019-{{ .year }} Azuriom - All rights reserved. Azuriom 에서&nbsp;{{ .love }} 을 담아 만듭니다."
   partners: "파트너"
   links: "링크"
   supportUs: "지원하기"
