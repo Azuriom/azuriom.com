@@ -1,5 +1,5 @@
 meta:
-  desc: "Azuriom 은 현대적이고, 신뢰할 수 있으며, 빠르고 안전한 게이밍 CMS입니다. Minecraft, Garry's Mod, Rust, Ark, FiveM 등과 같은 수많은 게임의 웹사이트를 위한 이상적인 선택입니다."
+  desc: "Azuriom 은 현대적이고, 믿을 수 있으며, 빠르고 안전한 게이밍 CMS입니다. Minecraft, Garry's Mod, Rust, Ark, FiveM 등과 같은 수많은 게임의 웹사이트를 위한 이상적인 선택입니다."
 
 nav:
   home: "홈"
@@ -13,7 +13,7 @@ nav:
 
 footer:
   about: "우리에 대해"
-  aboutDescription: "Azuriom 은 차세대 게임 CMS입니다. 무료인데다 오픈소스이며, 현대적이고, 신뢰할 수 있으며, 빠르고 안전해 이미 있는 CMS를 대체해서 Minecraft, Garry's Mod, Rust, Ark, FiveM 등과 같은 수많은 게임의 웹사이트를 위한 최상의 경험을 가질 수 있습니다."
+  aboutDescription: "Azuriom 은 차세대 게임 CMS입니다. 무료인데다 오픈소스이며, 현대적이고, 믿을 수 있으며, 빠르고 안전해 이미 있는 CMS를 대체해서 Minecraft, Garry's Mod, Rust, Ark, FiveM 등과 같은 수많은 게임의 웹사이트를 위한 최상의 경험을 가질 수 있습니다."
   copyright: "Copyright &copy; 2019-{{ .year }} Azuriom - All rights reserved. Made with&nbsp;{{ .love }} by Azuriom."
   partners: "파트너"
   links: "링크"
@@ -24,12 +24,12 @@ home:
     title: "Azuriom | 차세대 게이밍 웹사이트"
     subtitle: "수백개의 웹사이트가 사용하고 있는 당신의 서버를 위한 차세대 게이밍 웹사이트."
     heading: "게임 CMS"
-    typed: "무료이고 오픈소스.|빠르고 안전한.|현대적이고 신뢰할 수 있는."
-    typedFallback: "무료이고 오픈소스, 빠르고, 안전한, 현대적이고 신뢰할 수 있는."
+    typed: "무료인데다 오픈소스.|빠르고 안전한.|현대적이고 믿을 수 있는."
+    typedFallback: "무료인데다 오픈소스, 빠르고, 안전한, 현대적이고 믿을 수 있는."
 
   about:
     title: "Azuriom 이란"
-    description1: "Azuriom 은 <strong>차세대</strong> 게임 CMS입니다, <strong>무료</strong> 이고 <strong>오픈소스</strong>이며, <strong>현대적이고, 신뢰할 수 있으며, 빠르고 안전해</strong> 이미 있는 CMS를 대체해 <strong>최상의 웹 경험</strong>을 가질 수 있습니다."
+    description1: "Azuriom 은 <strong>차세대</strong> 게임 CMS입니다, <strong>무료</strong> 이고 <strong>오픈소스</strong>이며, <strong>현대적이고, 믿을 수 있으며, 빠르고 안전해</strong> 이미 있는 CMS를 대체해 <strong>최상의 웹 경험</strong>을 가질 수 있습니다."
     description2: "Azuriom 은 Minecraft, Garry's Mod, Rust, Ark, FiveM 등과 같은 수많은 게임의 웹사이트를 위한 이상적인 선택입니다."
     gamesTitle: "지원되는 게임"
     games: "Azuriom 은 <strong>Minecraft CMS</strong>입니다, 하지만! Minecraft 뿐만 아니라, <strong>Garry's Mod, Ark, Rust, FiveM, CS:GO, Team Fortress 2</strong>도 지원합니다! 확장 프로그램을 통해 자신의 게임에 대한 지원을 추가할 수도 있습니다."
@@ -40,7 +40,7 @@ home:
       desc: "최신 기술과 견고한 패턴으로 제작되었습니다."
 
     reliable:
-      title: "신뢰할 수 있는"
+      title: "믿을 수 있는"
       desc: "우리의 테스트 프로토콜은 실사용 환경에서의 오류를 방지하는데 도움이 됩니다."
 
     fast:
