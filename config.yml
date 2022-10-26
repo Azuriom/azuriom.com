@@ -48,3 +48,8 @@ languages:
     contentDir: content/zh-cn
     params:
       code: zh_CN
+  ko:
+    languageName: 한국어
+    contentDir: content/ko
+    params:
+      code: ko-KR

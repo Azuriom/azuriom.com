@@ -77,6 +77,11 @@ to = "/zh-cn/404.html"
 status = 404
 
 [[redirects]]
+from = "/ko/*"
+to = "/ko/404.html"
+status = 404
+
+[[redirects]]
 from = "/"
 to = "/fr"
 # TODO use Language when possible,
@@ -115,6 +120,13 @@ status = 302
 
 [[redirects]]
 from = "/"
+to = "/ko"
+conditions = { Country = ["kr"] }
+force = true
+status = 302
+
+[[redirects]]
+from = "/"
 to = "/en"
 force = true
 status = 302
@@ -141,6 +153,12 @@ status = 302
 from = "/*"
 to = "/zh-cn/:splat"
 conditions = { Country = ["cn"] }
+status = 302
+
+[[redirects]]
+from = "/*"
+to = "/ko/:splat"
+conditions = { Country = ["kr"] }
 status = 302
 
 [[redirects]]
