@@ -1,4 +1,4 @@
-import * as Cookies from 'js-cookie'
+import Cookies from 'js-cookie'
 import Typed from 'typed.js'
 
 import 'bootstrap'
@@ -13,7 +13,7 @@ document.querySelectorAll<HTMLElement>('.locale-selector [data-locale]')
 
       Cookies.set('nf_country', locale, {
         expires: 30,
-        domain: 'azuriom.com',
+        domain: window.location.host,
         sameSite: 'Lax',
         secure: true,
       })
@@ -92,7 +92,7 @@ document.querySelectorAll('a[data-theme-value]')
       if (theme) {
         Cookies.set('theme', theme, {
           expires: 30,
-          domain: 'azuriom.com',
+          domain: window.location.host,
           sameSite: 'Lax',
           secure: true,
         })

@@ -3,6 +3,7 @@
     "assets/js/**/*"
   ],
   "compilerOptions": {
+    "esModuleInterop": true,
     "target": "es2016",
     "module": "commonjs",
     "strict": true,
