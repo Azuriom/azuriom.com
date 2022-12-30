@@ -1,5 +1,5 @@
 [build]
-command = "hugo --gc --minify"
+command = "hugo --gc"
 publish = "public"
 
 [build.environment]

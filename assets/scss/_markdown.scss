@@ -1,6 +1,6 @@
 .markdown-content {
     hr {
-        border-top: 0.3em solid #e1e4e8;
+        border-top: 0.3em solid var(--bs-tertiary-bg);
         margin: 24px 0;
     }
 
@@ -26,7 +26,7 @@
 
     h1,
     h2 {
-        border-bottom: 1px solid #eaecef;
+        border-bottom: 1px solid var(--bs-tertiary-bg);
         padding-bottom: .3em;
     }
 
@@ -56,14 +56,14 @@
     }
 
     img {
-        background: #fff;
+        background: var(--bs-tertiary-bg);
         box-sizing: content-box;
         max-width: 100%;
     }
 
     blockquote {
         color: #6a737d;
-        border-left: .25em solid #dfe2e5;
+        border-left: .25em solid var(--bs-tertiary-bg);
         padding-left: 1em;
     }
 
@@ -83,7 +83,7 @@
     }
 
     pre {
-        background: #f6f8fa;
+        background: var(--bs-tertiary-bg);
         border-radius: 3px;
         padding: 1rem;
     }
@@ -128,17 +128,17 @@
 
     table td,
     table th {
-        border: 1px solid #dfe2e5;
+        border: 1px solid var(--bs-tertiary-bg);
         padding: 6px 13px;
     }
 
     table tr {
-        background: #fff;
-        border-top: 1px solid #c6cbd1;
+        background: var(--bs-tertiary-bg);
+        border-top: 1px solid var(--bs-tertiary-bg);
     }
 
     table tr:nth-child(2n) {
-        background: #f6f8fa;
+        background: var(--bs-secondary-bg);
     }
 
     td,

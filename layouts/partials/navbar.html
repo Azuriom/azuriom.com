@@ -52,7 +52,7 @@
             </ul>
 
             <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ms-auto flex-row">
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item me-3">
                     <a href="https://market.azuriom.com/profile" title="{{ i18n "nav.login" }}" class="nav-link ps-0 ps-lg-3 pe-3">
                         {{ partial "icon.html" "person-circle" }}
@@ -73,6 +73,32 @@
                     <a href="https://twitter.com/{{ .Param "twitter" }}" target="_blank" rel="noopener noreferrer" title="Twitter" class="nav-link pe-3">
                         {{ partial "icon.html" "twitter" }}
                     </a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a id="themeDropdown" class="nav-link dropdown-toggle px-3" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="current-theme-icon" data-theme-value="light">
+                            {{ partial "icon.html" "sun" }}
+                        </span>
+                        <span class="current-theme-icon" data-theme-value="dark">
+                            {{ partial "icon.html" "moon-stars" }}
+                        </span>
+                        <span class="current-theme-icon active" data-theme-value="auto">
+                            {{ partial "icon.html" "circle-half" }}
+                        </span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-end locale-selector" aria-labelledby="langDropdown">
+                        <a class="dropdown-item" data-theme-value="light" href="#">
+                            {{ partial "icon.html" "sun" }} Light
+                        </a>
+                        <a class="dropdown-item" data-theme-value="dark" href="#">
+                            {{ partial "icon.html" "moon-stars" }} Dark
+                        </a>
+                        <a class="dropdown-item" data-theme-value="auto" href="#">
+                            {{ partial "icon.html" "circle-half" }} Auto
+                        </a>
+                    </div>
                 </li>
 
                 <li class="nav-item dropdown">

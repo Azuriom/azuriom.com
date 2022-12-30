@@ -28,10 +28,10 @@
 
     .hero-waves {
         position: absolute;
-        height: 110px;
         bottom: -1px;
         left: 0;
         right: 0;
+        color: var(--bs-body-bg);
     }
 
     .hero-wrapper {
@@ -70,6 +70,11 @@
     @media (max-width: 768px) {
         padding: 3rem 0;
     }
+}
+
+.section-waves,
+.section-waves-reversed {
+    color: rgba(var(--bs-secondary-bg-rgb), var(--bs-bg-opacity));
 }
 
 .section-waves-reversed {
