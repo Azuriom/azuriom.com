@@ -5,9 +5,9 @@ weight: 0
 layout: single
 ---
 
-# Home
+# Головна
 
-## Introduction
+## Вступ
 
 [Azuriom](https://azuriom.com/) - це ігрова CMS **нового покоління**,
 це **безкоштовна** і **з відкритим вихідним кодом**, а також є **сучасною**, **надійною**, **швидкою і безпечною**
@@ -22,7 +22,7 @@ Azuriom також має **розширену** систему розширен
 Якщо вам потрібна допомога або у вас виникли питання, ви можете приєднатися до
 до нашого [Серверу в Discord](https://azuriom.com/discord).
 
-## Credits
+## Заслуги
 
 Azuriom був створений [MrMicky](https://mrmicky.fr/) та [SkyWarZzeur](https://twitter.com/SkyWarZzeur) на PHP
 фреймворку [Laravel](https://laravel.com/).
@@ -31,7 +31,7 @@ Azuriom був створений [MrMicky](https://mrmicky.fr/) та [SkyWarZze
 нашому партнеру [NiHost](https://www.ni-host.com/?utm_source=home&utm_medium=links&utm_campaign=AzuriomCom) за довіру, і всім
 [Дописувачам Azuriom](https://github.com/Azuriom/Azuriom/graphs/contributors) за допомогу.
 
-### Donors
+### Донори
 
 Проект став можливим завдяки донорам, за що їм велика подяка:
 * [Akuyuma](https://toxyca.fr/)
