@@ -33,6 +33,11 @@ languages:
     contentDir: content/nl
     params:
       code: nl_NL
+  uk:
+    languageName: Українська
+    contentDir: content/uk
+    params:
+      code: uk_UA
   cs:
     languageName: Čeština
     contentDir: content/cs
@@ -48,8 +53,3 @@ languages:
     contentDir: content/zh-cn
     params:
       code: zh_CN
-  ua:
-    languageName: Українська
-    contentDir: content/ua
-    params:
-      code: uk_UA

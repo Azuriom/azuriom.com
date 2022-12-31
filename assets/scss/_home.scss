@@ -39,6 +39,12 @@
     }
 }
 
+@include color-mode(dark) {
+    .home-hero {
+        background: linear-gradient(-75deg, #022265 0, #003bb1 100%);
+    }
+}
+
 .home-button {
     padding: 0.75rem 1.25rem;
     transition: all 0.3s ease;
