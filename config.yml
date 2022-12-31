@@ -52,4 +52,4 @@ languages:
     languageName: Українська
     contentDir: content/ua
     params:
-      code: ua_UA
+      code: uk_UA
