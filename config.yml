@@ -33,6 +33,11 @@ languages:
     contentDir: content/nl
     params:
       code: nl_NL
+  uk:
+    languageName: Українська
+    contentDir: content/uk
+    params:
+      code: uk_UA
   cs:
     languageName: Čeština
     contentDir: content/cs
