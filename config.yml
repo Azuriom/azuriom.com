@@ -48,3 +48,8 @@ languages:
     contentDir: content/zh-cn
     params:
       code: zh_CN
+  ua:
+    languageName: Українська
+    contentDir: content/ua
+    params:
+      code: ua_UA
