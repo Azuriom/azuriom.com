@@ -35,6 +35,4 @@ Azuriom 由 [MrMicky](https://mrmicky.fr/) & [SkyWarZzeur](https://twitter.com/S
 ### 赞助者
 
 赞助者们让本项目从无到有，非常感谢他们，尤其要感谢:
-* [Akuyuma](https://toxyca.fr/)
-* micro_maniaque
-* [Skillz](https://www.evolved-network.com/)
+{{< donors >}}

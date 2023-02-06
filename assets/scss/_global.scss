@@ -18,7 +18,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: $blue;
+    background: var(--bs-primary);
     border: 3px solid transparent;
     border-radius: 5px;
 }
@@ -35,7 +35,7 @@ body {
         position: absolute;
         bottom: 0;
         left: 0;
-        background: $blue;
+        background: var(--bs-primary);
     }
 }
 
@@ -93,7 +93,7 @@ body {
 
     .copyright {
         padding-top: 1.5rem;
-        border-top: $blue solid 1px;
+        border-top: var(--bs-primary) solid 1px;
     }
 
     .bi-heart-fill {

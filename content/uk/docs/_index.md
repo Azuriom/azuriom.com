@@ -34,6 +34,4 @@ Azuriom був створений [MrMicky](https://mrmicky.fr/) та [SkyWarZze
 ### Донори
 
 Проект став можливим завдяки донорам, за що їм велика подяка:
-* [Akuyuma](https://toxyca.fr/)
-* micro_maniaque
-* [Skillz](https://www.evolved-network.com/)
+{{< donors >}}

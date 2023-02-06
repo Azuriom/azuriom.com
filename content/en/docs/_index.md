@@ -34,6 +34,4 @@ to our partner [NiHost](https://www.ni-host.com/?utm_source=home&utm_medium=link
 ### Donors
 
 Donors make the project possible, a big thanks to them, and in particular to:
-* [Akuyuma](https://toxyca.fr/)
-* micro_maniaque
-* [Skillz](https://www.evolved-network.com/)
+{{< donors >}}

@@ -33,7 +33,5 @@ juga untuk mitra kami [NiHost](https://www.ni-host.com/?utm_source=home&utm_medi
 
 ### Donor
 
-Donor membuat proyek ini menjadi nyata, terima kasih yang besar untuk mereka, lebih tepatnya untuk: 
-* [Akuyuma](https://toxyca.fr/)
-* micro_maniaque
-* [Skillz](https://www.evolved-network.com/)
+Donor membuat proyek ini menjadi nyata, terima kasih yang besar untuk mereka, lebih tepatnya untuk:
+{{< donors >}}
