@@ -56,7 +56,7 @@ Sebuah versi legacy tersedia untuk Bukkit 1.7.10.
 
 #### Pengunduhan
 
-1. Unduh AzLink dari [website kami](https://azuriom.com/azlink)
+1. Unduh AzLink dari [website kami]({{< url "/azlink" >}})
 
 1. Unduhkan ke server di folder `plugins/` (atau `mods/` dengan Sponge)
 dan restart server.

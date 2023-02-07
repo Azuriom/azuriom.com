@@ -73,7 +73,7 @@ Azuriom 提供了一个自动安装程序，只要按照以下几个步骤即可
 Azuriom 还可以部署到 [Docker](https://www.docker.com/) 中, 在[此处](https://github.com/Azuriom/Azuriom/blob/master/docker/INSTALL.md)查看相关步骤(英文).
 {{< /info >}}
 
-1. 在[我们的网站](https://azuriom.com/download)下载最新版本的 Azuriom 安装程序.
+1. 在[我们的网站]({{< url "/download" >}})下载最新版本的 Azuriom 安装程序.
 
 1. 解压到你的网站根目录.
 

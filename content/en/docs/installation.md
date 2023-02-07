@@ -76,7 +76,7 @@ Azuriom offers an automatic installer to install Azuriom easily by following the
 You can also install it with [Docker](https://www.docker.com/) by following the steps listed [here](https://github.com/Azuriom/Azuriom/blob/master/docker/INSTALL.md).
 {{< /info >}}
 
-1. Download the latest version of the Azuriom installer on [our website](https://azuriom.com/download).
+1. Download the latest version of the Azuriom installer on [our website]({{< url "/download" >}}).
 
 1. Extract the archive at the root of your website.
 

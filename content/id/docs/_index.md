@@ -9,7 +9,7 @@ layout: single
 
 ## Perkenalan
 
-[Azuriom](https://azuriom.com/) merupakan CMS game **generasi selanjutnya**,
+[Azuriom]({{< url "/" >}}) merupakan CMS game **generasi selanjutnya**,
  ini **gratis** dan **open-source**, dan ini **modern**, **dapat diandalkan**, **cepat dan aman**
 alternatif untuk CMS yang sudah ada, jadi anda bisa mendapatkan **pengalaman web yang terbaik**.
 

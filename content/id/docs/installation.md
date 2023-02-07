@@ -60,7 +60,7 @@ Azuriom menawarkan instal otomatis untuk Azuriom secara mudah dengan beberapa ca
 Anda juga bisa menginstal dengan [Docker](https://www.docker.com/) dengan mengikut cara yang ada by [disini](https://github.com/Azuriom/Azuriom/blob/master/docker/INSTALL.md).
 {{< /info >}}
 
-1. Instal versi terbaru dari Azuriom Installer di [website kami](https://azuriom.com/download).
+1. Instal versi terbaru dari Azuriom Installer di [website kami]({{< url "/download" >}}).
 
 1. Ekstrak arsip dari root website anda.
 
