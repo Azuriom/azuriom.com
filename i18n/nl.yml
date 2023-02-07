@@ -73,7 +73,7 @@ azlink:
   info: "AzLink is een plug-in gemaakt voor Azuriom om uw server op een gemakkelijke, snelle en veilige manier to koppelen aan uw Azuriom-website."
   download: "Download"
   supported: "AzLink ondersteunt Bukkit (en op Bukkit gebaseerde servers zoals Spigot, Glowstone en Cauldron), BungeeCord, Sponge en Velocity in dezelfde plug-in. Als u Minecraft 1.7.10 gebruikt, moet u de oude versie downloaden."
-  sources: 'AzLink is open-source en de bronnen zijn beschikbaar op <a href="{{ .minecraft }}" target="_blank">GitHub</a>.'
+  sources: 'AzLink is open-source en de bronnen zijn beschikbaar op <a href="{{ .github }}" target="_blank">GitHub</a>.'
 
 support:
   title: "Steun ons"
