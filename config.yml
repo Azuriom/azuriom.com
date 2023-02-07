@@ -33,8 +33,23 @@ languages:
     contentDir: content/nl
     params:
       code: nl_NL
+  uk:
+    languageName: Українська
+    contentDir: content/uk
+    params:
+      code: uk_UA
   cs:
     languageName: Čeština
     contentDir: content/cs
     params:
       code: cs_CZ
+  id:
+    languageName: Bahasa Indonesia
+    contentDir: content/id
+    params:
+      code: id_ID
+  zh-CN:
+    languageName: 简体中文
+    contentDir: content/zh-cn
+    params:
+      code: zh_CN

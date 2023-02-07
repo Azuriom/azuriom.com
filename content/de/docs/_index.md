@@ -26,6 +26,4 @@ an unseren Partnern für das Vertrauen in uns und an alle [Azuriom-Mitwirkenden]
 ### Spender
 
 Spenderinnen und Spender machen das Projekt möglich, ihnen gilt ein großer Dank und insbesondere:
-* [Akuyuma](https://toxyca.fr/)
-* micro_maniaque
-* [Skillz](https://www.evolved-network.com/)
+{{< donors >}}

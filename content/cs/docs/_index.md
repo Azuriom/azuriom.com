@@ -34,6 +34,4 @@ si také zaslouží všichni [přispěvatelé Azuriomu](https://github.com/Azuri
 ### Dárci
 
 Díky dárcům je tento projekt možný, mnohokrát jim děkujeme, a konkrétně:
-* [Akuyuma](https://toxyca.fr/)
-* micro_maniaque
-* [Skillz](https://www.evolved-network.com/)
+{{< donors >}}

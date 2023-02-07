@@ -9,7 +9,7 @@ AzAuth je API umožňující přihlašování uživatelů na Azuriom webu na vš
 ## Stažení
 
 Zdroje AzAuth jsou dostupné na [GitHubu](https://github.com/Azuriom/AzAuth)
-a jar soubor může být stažen [odsud](https://oss.sonatype.org/content/repositories/snapshots/com/azuriom/azauth/0.1.0-SNAPSHOT/azauth-0.1.0-20220420.160910-3.jar).
+a jar soubor může být stažen [odsud](https://repo.maven.apache.org/maven2/com/azuriom/azauth/1.0.0/azauth-1.0.0.jar).
 
 Pokud používáte správce závislostí, můžete přidat AzAuth jako
 závislost následujícím způsobem:
@@ -20,12 +20,12 @@ v `build.gradle`:
 
 ```groovy
 repositories {
-    maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+    mavenCentral()
 }
 ```
 ```groovy
 dependencies {
-    implementation 'com.azuriom:azauth:0.1.0-SNAPSHOT'
+    implementation 'com.azuriom:azauth:1.0.0'
 }
 ```
 
@@ -33,19 +33,11 @@ dependencies {
 
 v `pom.xml`:
 ```xml
-<repositories>
-    <repository>
-        <id>sonatype-repo</id>
-        <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-    </repository>
-</repositories>
-```
-```xml
 <dependencies>
     <dependency>
         <groupId>com.azuriom</groupId>
         <artifactId>azauth</artifactId>
-        <version>0.1.0-SNAPSHOT</version>
+        <version>1.0.0</version>
         <scope>compile</scope>
     </dependency>
 </dependencies>
