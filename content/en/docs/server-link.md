@@ -56,7 +56,7 @@ A legacy version is available for Bukkit 1.7.10.
 
 #### Installation
 
-1. Download AzLink from [our site]({{< ref "/azlink" >}})
+1. Download AzLink from [our site]({{< url "/azlink" >}})
 
 1. Install it on the server in the `plugins/` folder (or `mods/` with Sponge)
 and restart the server.

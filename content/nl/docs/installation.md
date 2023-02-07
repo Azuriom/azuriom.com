@@ -77,7 +77,7 @@ door deze paar stappen te volgen:
 Je kunt het ook installeren met [Docker](https://www.docker.com/) door de vermelde stappen te volgen [hier](https://github.com/Azuriom/Azuriom/blob/master/docker/INSTALL.md).
 {{< /info >}}
 
-1. Download de nieuwste versie van het Azuriom installatie programma op [onze website]({{< ref "/download" >}}).
+1. Download de nieuwste versie van het Azuriom installatie programma op [onze website]({{< url "/download" >}}).
 
 1. Pak het archief uit in de hoofdmap van uw website.
 
