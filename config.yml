@@ -57,4 +57,4 @@ languages:
     languageName: Brasil
     contentDir: content/pt-BR
     params:
-      code: pt-BR
+      code: pt_BR
