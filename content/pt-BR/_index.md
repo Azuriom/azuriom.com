@@ -1,3 +1,3 @@
 ---
-title: Página Inicial
+title: Home
 ---

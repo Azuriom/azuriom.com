@@ -1,11 +1,11 @@
 ---
-title: Página Inicial
+title: Home
 description: A documentação do Azuriom contém muitas informações úteis sobre o Azuriom, para instalação, uso ou desenvolvimento de extensões.
 weight: 0
 layout: single
 ---
 
-# Página Inicial
+# Home
 
 ## Introdução
 
