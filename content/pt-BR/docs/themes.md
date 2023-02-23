@@ -79,7 +79,7 @@ Do lado do CSS, é recomendável usar o framework padrão do cms que é [Bootstr
 Em Javascript, a única dependência necessária é [Axios](https://github.com/axios/axios).
 
 {{< info >}}
-Se uma visualização não estiver presente no tema, mas estiver no CMS ou em um plug-in, ela será usada automaticamente.
+Se uma visualização não estiver presente no tema, mas estiver no CMS ou em um plugin, ela será usada automaticamente.
 {{< /info >}}
 
 #### Layout
