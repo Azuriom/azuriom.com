@@ -19,7 +19,7 @@ Alguns recursos como exibir jogadores online ou executar comandos que exigem que
 
 ### Link por Ping
 
-Para poder ligar o seu servidor a um site na Azuriom por ping, basta adicionar um novo servidor com "Ping" como tipo de link, e preencher as informações solicitadas _(a porta padrão do Minecraft é `25565`) _.
+Para poder ligar o seu servidor a um site na Azuriom por ping, basta adicionar um novo servidor com "Ping" como tipo de link, e preencher as informações solicitadas _(a porta padrão do Minecraft é `25565`)_.
 
 ### Link por Rcon
 
