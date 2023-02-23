@@ -7,18 +7,14 @@ title: Auth API
 AzAuth é uma API que permite autenticar usuários de um site da Azuriom em qualquer plataforma.
 
 {{< warn >}}
-Independentemente de como você usa a API de autenticação do lado do cliente, você deve verificar em
-o servidor que o token de acesso retornado pelo cliente é válido usando
-o método `verify`.
+Independentemente de como você usa a API de autenticação do lado do cliente, você deve verificar no servidor se o token de acesso retornado pelo cliente é válido usando o método `verify`.
 {{< /warn >}}
 
 ## Download
 
-AzAuth sources are available on [GitHub](https://github.com/Azuriom/AzAuth)
-and the jar file can be downloaded [here](https://repo.maven.apache.org/maven2/com/azuriom/azauth/1.0.0/azauth-1.0.0.jar).
+AzAuth sources are available on [GitHub](https://github.com/Azuriom/AzAuth) and the jar file can be downloaded [here](https://repo.maven.apache.org/maven2/com/azuriom/azauth/1.0.0/azauth-1.0.0.jar).
 
-If you are using a dependency manager, you can add AzAuth as a
-dependency by the following way:
+If you are using a dependency manager, you can add AzAuth as a dependency by the following way:
 
 ### Gradle
 
@@ -50,21 +46,15 @@ In the `pom.xml`:
 
 ## AzAuth usage (Java)
 
-Before using AzAuth, please make sure that the API is activated by going to
-in the settings of your site, on your admin panel.
+Before using AzAuth, please make sure that the API is activated by going to in the settings of your site, on your admin panel.
 
 ### Usage without OpenLauncherLib
 
-AzAuth has been designed with [Gson](https://github.com/google/gson) as its only dependency, so you can use it perfectly well if you don't use
-OpenLauncherLib, you can simply use `AuthClient#authenticate(String username, String password, Supplier<String> codeSupplier)` and that will
-give you directly a `User` containing a username, uuid, rank, access token and lots of other useful data. The `codeSupplier`
-is called when the user has 2FA enabled, and the user code should be returned to the supplier.
+AzAuth has been designed with [Gson](https://github.com/google/gson) as its only dependency, so you can use it perfectly well if you don't use OpenLauncherLib, you can simply use `AuthClient#authenticate(String username, String password, Supplier<String> codeSupplier)` and that will give you directly a `User` containing a username, uuid, rank, access token and lots of other useful data. The `codeSupplier` is called when the user has 2FA enabled, and the user code should be returned to the supplier.
 
 ### Using with [OpenLauncherLib](https://github.com/Litarvan/OpenLauncherLib/) _(for minecraft launcher)_
 
-To begin, add AzAuth as a dependency to your project.
-Also, if you are using [OpenAuth](https://github.com/Litarvan/OpenAuth/), it is recommended that you remove it,
-although it does not cause any real problems, it is no longer used if you use AzAuth.
+To begin, add AzAuth as a dependency to your project. Also, if you are using [OpenAuth](https://github.com/Litarvan/OpenAuth/), it is recommended that you remove it, although it does not cause any real problems, it is no longer used if you use AzAuth.
 
 You should have in the code of your launcher an `auth` method similar to the code below:
 ```java
@@ -101,8 +91,7 @@ public static void auth(String username, String password) throws AuthException {
 
 ### Installation
 
-The source code is available on [GitHub](https://github.com/Azuriom/AzAuthJS)
-and the package can be installed with [npm](https://www.npmjs.com/):
+The source code is available on [GitHub](https://github.com/Azuriom/AzAuthJS) and the package can be installed with [npm](https://www.npmjs.com/):
 ```
 npm install azuriom-auth
 ```
@@ -149,8 +138,7 @@ Authenticate a user with their website credentials
 
 ##### Response
 
-Returns the user with his various information, and the unique token
-which can be used to verify the connection or to disconnect.
+Returns the user with his various information, and the unique token which can be used to verify the connection or to disconnect.
 
 ```json
 {
@@ -180,8 +168,7 @@ which can be used to verify the connection or to disconnect.
 
 ##### Réponse
 
-Returns the user with his various information, and the unique token
-which can be used to verify the connection or to disconnect.
+Returns the user with his various information, and the unique token which can be used to verify the connection or to disconnect.
 
 Success response example (HTTP `2xx`):
 ```json

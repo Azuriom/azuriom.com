@@ -6,20 +6,14 @@ title: Plugins
 
 ## Introduction
 
-A plugin allows you to add new features to your site, to
-many plugins are available on our [Market](https://market.azuriom.com),
-and you can also create one if you can't find one that matches your
-needs.
+A plugin allows you to add new features to your site, to many plugins are available on our [Market](https://market.azuriom.com), and you can also create one if you can't find one that matches your needs.
 
 ## Creating a plugin
 
-Before creating a plugin, it is recommended that you read the
-[Laravel documentation](https://laravel.com/docs/).
+Before creating a plugin, it is recommended that you read the [Laravel documentation](https://laravel.com/docs/).
 
 {{< warn >}}
-When Azuriom is installed locally for plugin development,
-it's highly recommended enabling debug to simplify development.
-This can be done by simply editing these 2 lines in the `.env` file:
+When Azuriom is installed locally for plugin development, it's highly recommended enabling debug to simplify development. This can be done by simply editing these 2 lines in the `.env` file:
 ```
 APP_ENV=local
 APP_DEBUG=true
@@ -44,8 +38,7 @@ plugins/  <-- Folder containing the different installed plugins
 
 ### The plugin.json file
 
-The `plugin.json` file is required to load a plugin, and
-contains the different information of a plugin:
+The `plugin.json` file is required to load a plugin, and contains the different information of a plugin:
 ```json
 {
     "id": "example",
@@ -66,15 +59,10 @@ contains the different information of a plugin:
 
 #### Plugin ID
 
-Each plugin must have an id, which must be unique and contain only numbers,
-lowercase letters and dashes. It is recommended to use the name as a basis for
-creating the id, for example if the name is `Hello World`, the id could be
-`hello-world`. Also, the plugin's directory must have the same name as its id. 
+Each plugin must have an id, which must be unique and contain only numbers, lowercase letters and dashes. It is recommended to use the name as a basis for creating the id, for example if the name is `Hello World`, the id could be `hello-world`. Also, the plugin's directory must have the same name as its id. 
 
 {{< info >}}
-To create a plugin you can use the following command that will
-automatically generate the plugin's folder and many files by
-default:
+To create a plugin you can use the following command that will automatically generate the plugin's folder and many files by default:
 ```
 php artisan plugin:create <plugin name>
 ```
@@ -82,13 +70,9 @@ php artisan plugin:create <plugin name>
 
 #### Dependencies
 
-The `dependencies` section allows you to specify the plugins (using their id) that must
-be installed in order to use the plugin. A `?` after the plugin name means that the plugin
-is optional, i.e., it does not need to be installed, but when it is, the version must match.
-It is also possible to specify a version of Azuriom using the value `azuriom`.
+The `dependencies` section allows you to specify the plugins (using their id) that must be installed in order to use the plugin. A `?` after the plugin name means that the plugin is optional, i.e., it does not need to be installed, but when it is, the version must match. It is also possible to specify a version of Azuriom using the value `azuriom`.
 
-For example, this plugin needs Azuriom `0.4.0` or higher, the Shop plugin version `0.1.0` or
-higher. Also, when the Vote plugin is installed, it must be in version `0.2.0` or higher:
+For example, this plugin needs Azuriom `0.4.0` or higher, the Shop plugin version `0.1.0` or higher. Also, when the Vote plugin is installed, it must be in version `0.2.0` or higher:
 ```json
 "dependencies": {
     "azuriom": "^0.4.0",
@@ -103,8 +87,7 @@ Routes allow you to associate a URL with a particular action.
 
 They are stored in the `routes' directory at the root of the plugin.
 
-For more information on how routes work you can read the
-[Laravel documentation](https://laravel.com/docs/routing).
+For more information on how routes work you can read the [Laravel documentation](https://laravel.com/docs/routing).
 
 Example:
 ```php
@@ -112,8 +95,7 @@ Route::get('/support', 'SupportController@index')->name('index');
 ```
 
 {{< warn >}}
-Please be careful not to use routes with closures,
-as these are not compatible with some internal optimizations.
+Please be careful not to use routes with closures, as these are not compatible with some internal optimizations.
 {{< /warn >}}
 
 #### Admin routes
@@ -122,29 +104,19 @@ For a route to be in the admin panel, just place it in the file `routes/admin.ph
 
 ### Views
 
-The views are the visible part of a plugin, they are the content files HTML
-of the plugin to display a page.
+The views are the visible part of a plugin, they are the content files HTML of the plugin to display a page.
 
-Azuriom using [Laravel](https://laravel.com/), views can be made using the Blade.
-If you don't master Blade it is highly recommended reading
-[its documentation](https://laravel.com/docs/blade), especially since it is quite short.
+Azuriom using [Laravel](https://laravel.com/), views can be made using the Blade. If you don't master Blade it is highly recommended reading [its documentation](https://laravel.com/docs/blade), especially since it is quite short.
 
 {{< warn >}}
-It is highly recommended NOT to use PHP syntax.
-when you work with Blade, because Blade does not bring you the traditional
-no advantages and only disadvantages.
+It is highly recommended NOT to use PHP syntax. when you work with Blade, because Blade does not bring you the traditional no advantages and only disadvantages.
 {{< /warn >}}
 
-To display a view you can use `view('<plugin id>::<name of the view>')`,
-of example `view('support::tickets.index')` to display the `tickets.index` view
-of the support plugin.
+To display a view you can use `view('<plugin id>::<name of the view>')`, of example `view('support::tickets.index')` to display the `tickets.index` view of the support plugin.
 
-To define the layout of the page, it is necessary that the view extends the view containing
-the layout, you can either use the default layout (or the theme layout if there is one)
-with `@extends('layouts.app')`, or create your own layout and extend it.
+To define the layout of the page, it is necessary that the view extends the view containing the layout, you can either use the default layout (or the theme layout if there is one) with `@extends('layouts.app')`, or create your own layout and extend it.
 
-Then put all the main content into the `content` section,
-and the title of the page in the `title` section.
+Then put all the main content into the `content` section, and the title of the page in the `title` section.
 
 ```html
 @extends('layouts.app')
@@ -162,14 +134,11 @@ and the title of the page in the `title` section.
 
 #### Assets
 
-The assets (CSS, JS, images, etc.) are located in the `assets/` folder and can
-be used with the `plugin_asset('<plugin id>', '<asset path>')` function.
+The assets (CSS, JS, images, etc.) are located in the `assets/` folder and can be used with the `plugin_asset('<plugin id>', '<asset path>')` function.
 
-Assets can be included in the page via a [Blade stack](https://laravel.com/docs/blade#stacks).
-in 2 different places on the page depending on the type of asset:
+Assets can be included in the page via a [Blade stack](https://laravel.com/docs/blade#stacks). in 2 different places on the page depending on the type of asset:
 * `styles` for CSS files (located in the `<head>`)
-* `scripts` for JS files (located in the `<head>`, don't forget to add the `defer` attribute
-  to the script, so they do not block the page rendering)
+* `scripts` for JS files (located in the `<head>`, don't forget to add the `defer` attribute to the script, so they do not block the page rendering)
 
 Example:
 ```html
@@ -180,18 +149,13 @@ Example:
 
 #### Admin view
 
-For a page to use the admin panel layout, just use the layout
-`admin.layouts.admin`, it is also recommended creating an admin folder
-in the `resources` folder and put the admin views in it.
+For a page to use the admin panel layout, just use the layout `admin.layouts.admin`, it is also recommended creating an admin folder in the `resources` folder and put the admin views in it.
 
 ### Controllers
 
-Controllers are a central part of a plugin, they are located in the folder
-`src/Controllers` at the root of the plugin, and they take care of
-to transform a request into the answer that will be sent back to the user.
+Controllers are a central part of a plugin, they are located in the folder `src/Controllers` at the root of the plugin, and they take care of to transform a request into the answer that will be sent back to the user.
 
-For more information on how the controllers work you can read the
-[Laravel documentation](https://laravel.com/docs/controllers).
+For more information on how the controllers work you can read the [Laravel documentation](https://laravel.com/docs/controllers).
 
 example:
 ```php
@@ -224,14 +188,11 @@ class TicketController extends Controller
 
 ### Models
 
-Templates represent an entry in a database table, and allow you to interact with
-the database.
+Templates represent an entry in a database table, and allow you to interact with the database.
 
-You can also define in a model the different relationships of the model,
-For example, a `ticket` can have a `user` and a `category`, and have `comments`.
+You can also define in a model the different relationships of the model, For example, a `ticket` can have a `user` and a `category`, and have `comments`.
 
-You can find more information about models (also called Eloquent on Laravel) in the
-[Laravel documentation](https://laravel.com/docs/eloquent).
+You can find more information about models (also called Eloquent on Laravel) in the [Laravel documentation](https://laravel.com/docs/eloquent).
 
 ```php
 <?php
@@ -299,8 +260,7 @@ class Ticket extends Model
 
 ### Service Provider
 
-The service providers are the heart of a plugin, they are called at the initialization stage.
-of Laravel, and allow to save the different parts of a plugin (views, translations, middlewares, dependencies, etc.).
+The service providers are the heart of a plugin, they are called at the initialization stage. Of Laravel, and allow to save the different parts of a plugin (views, translations, middlewares, dependencies, etc.).
 
 Service providers must be added to the `providers` part of the `plugins.json`:
 ```json
@@ -311,8 +271,7 @@ Service providers must be added to the `providers` part of the `plugins.json`:
 }
 ```
 
-You can find more information about the services provided in the
-[Laravel documentation](https://laravel.com/docs/providers).
+You can find more information about the services provided in the [Laravel documentation](https://laravel.com/docs/providers).
 
 ```php
 <?php
@@ -369,16 +328,14 @@ Then add `require_once __DIR__.'/../../vendor/autoload.php';` to the register me
 
 ### Migration
 
-Migrations allow you to create, modify or delete tables in the database.
-data, they can be found in the `database/migrations` folder.
+Migrations allow you to create, modify or delete tables in the database. data, they can be found in the `database/migrations` folder.
 
 You can use the following command to automatically generate the migration file:
 ```
 php artisan make:migration <migration name> --path plugins/<plugin id>/database/migrations 
 ```
 
-You can find more information about migrations in the
-[Laravel documentation](https://laravel.com/docs/migrations).
+You can find more information about migrations in the [Laravel documentation](https://laravel.com/docs/migrations).
 
 ```php
 <?php
@@ -423,17 +380,11 @@ return new class extends Migration
 
 ### Translations
 
-Translations allow you to translate a plugin (amazing), they are found at
-in the `resources/lang` directory at the root of a plugin, in the 
-language folder (`en`, `fr`, etc...).
+Translations allow you to translate a plugin (amazing), they are found at in the `resources/lang` directory at the root of a plugin, in the language folder (`en`, `fr`, etc...).
 
-You can find more information on translations in the
-[Laravel documentation](https://laravel.com/docs/localization).
+You can find more information on translations in the [Laravel documentation](https://laravel.com/docs/localization).
 
-To retrieve a translation you can use the
-`trans('<plugin id>::<filename>.<message>')`, for example
-`trans('support::messages.tickets.home')` to display the `tickets.home` message,
-in the `messages.php` file of the support plugin:
+To retrieve a translation you can use the `trans('<plugin id>::<filename>.<message>')`, for example `trans('support::messages.tickets.home')` to display the `tickets.home` message, in the `messages.php` file of the support plugin:
 ```php
 <?php
 
@@ -448,10 +399,7 @@ return [
 
 #### Utilisateurs
 
-It is recommended to register the main routes of your plugin so that they can be
-easily added in the navigation bar. To do this, simply call the
-`$thiS->registerRouteDescriptions()` method in the plugin provider and return
-the different routes in the `routeDescriptions()` method with the format 
+It is recommended to register the main routes of your plugin so that they can be easily added in the navigation bar. To do this, simply call the `$thiS->registerRouteDescriptions()` method in the plugin provider and return the different routes in the `routeDescriptions()` method with the format 
 `[<route> => <description>]`:
 ```php
     /**
@@ -481,9 +429,7 @@ the different routes in the `routeDescriptions()` method with the format
 
 ### Admin
 
-To make your plugin's admin pages appear in the navbar of the admin panel,
-you can register them by calling the method `$this->registerAdminNavigation()`
-and returning the different routes in the `adminNavigation()` method.
+To make your plugin's admin pages appear in the navbar of the admin panel, you can register them by calling the method `$this->registerAdminNavigation()` and returning the different routes in the `adminNavigation()` method.
 ```php
     /**
      * Bootstrap any plugin services.

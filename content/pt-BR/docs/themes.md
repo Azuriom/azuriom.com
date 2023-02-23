@@ -66,20 +66,20 @@ Cada tema deve ter um id, que deve ser único e conter apenas números, letras m
 
 ### Visualizações
 
-The views are the heart of a theme, they are the HTML content files of a theme for the different parts of the website.
+As visualizações são o coração de um tema, são os arquivos de conteúdo HTML de um tema para as diferentes partes do site.
 
-Azuriom using [Laravel](https://laravel.com/), views can be made using the of template Blade. If you don't master Blade it is highly recommended reading [its documentation](https://laravel.com/docs/blade), especially since it is quite short.
+Azuriom usando [Laravel](https://laravel.com/), as visualizações podem ser feitas usando o template Blade. Se você não domina o Blade, é altamente recomendável ler [sua documentação](https://laravel.com/docs/blade), especialmente porque é bastante curto.
 
 {{< warn >}}
-It is highly recommended NOT to use PHP syntax. When you work with Blade, because Blade does not bring you the traditional no advantages and only disadvantages.
+É altamente recomendável NÃO usar a sintaxe do PHP. Quando você trabalha com o Blade, porque o Blade não traz o tradicional sem vantagens e apenas desvantagens.
 {{< /warn >}}
 
-On the CSS side, it is recommended to use the default framework of the cms which is [Bootstrap 5](https://getbootstrap.com), this will make it easier to realize a theme and will be compatible with the new plugins. So you don't have to make constant updates. But if you prefer you can use another CSS framework.
+Do lado do CSS, é recomendável usar o framework padrão do cms que é [Bootstrap 5](https://getbootstrap.com), isso facilitará a realização de um tema e será compatível com os novos plugins. Então você não precisa fazer atualizações constantes. Mas se preferir pode usar outro framework CSS.
 
-In Javascript, the only dependency needed is [Axios](https://github.com/axios/axios).
+Em Javascript, a única dependência necessária é [Axios](https://github.com/axios/axios).
 
 {{< info >}}
-If a view is not present in the theme but is in the CMS or in a plugin, it will be automatically used.
+Se uma visualização não estiver presente no tema, mas estiver no CMS ou em um plug-in, ela será usada automaticamente.
 {{< /info >}}
 
 #### Layout

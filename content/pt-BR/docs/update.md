@@ -6,48 +6,33 @@ title: Azuriom 1.0
 
 ## Introduction
 
-Azuriom 1.0 is the new major version of Azuriom, it contains many changes and aims to keep
-Azuriom future-proof.
+Azuriom 1.0 is the new major version of Azuriom, it contains many changes and aims to keep Azuriom future-proof.
 
-This update contains many internal changes, in particular the update to Laravel 9 ([Laravel](https://laravel.com/) being
-the PHP framework - the base - used by Azuriom) and Bootstrap 5 ([Bootstrap](https://getbootstrap.com/) being the CSS
-framework used by Azuriom).
+This update contains many internal changes, in particular the update to Laravel 9 ([Laravel](https://laravel.com/) being the PHP framework - the base - used by Azuriom) and Bootstrap 5 ([Bootstrap](https://getbootstrap.com/) being the CSS framework used by Azuriom).
 
 ### PHP 8
 
-In particular, the use of Laravel 9 means that **PHP 8 is now required to use Azuriom**.
-We would also like note that **PHP 7.4 is no longer supported by PHP** since November 2021 and will **no longer receive
-security updates** as of November 2022 (see the [PHP website](https://www.php.net/supported-versions.php)).
-For this reason, we recommend that you update your sites using PHP (whether they use Azuriom or not) as soon as possible.
+In particular, the use of Laravel 9 means that **PHP 8 is now required to use Azuriom**. We would also like note that **PHP 7.4 is no longer supported by PHP** since November 2021 and will **no longer receive security updates** as of November 2022 (see the [PHP website](https://www.php.net/supported-versions.php)). For this reason, we recommend that you update your sites using PHP (whether they use Azuriom or not) as soon as possible.
 
 ### Extensions
 
-Due to various internal changes, extensions (themes and plugins) will have to be updated to support Azuriom v1.0.
-Also, extensions compatible with Azuriom v1.0 are not compatible with previous versions of Azuriom.
+Due to various internal changes, extensions (themes and plugins) will have to be updated to support Azuriom v1.0. Also, extensions compatible with Azuriom v1.0 are not compatible with previous versions of Azuriom.
 
-The layout of the basic design of the CMS and plugins has also been completely revised, in order to simplify the development
-of themes as well as the general coherence between the plugins.
+The layout of the basic design of the CMS and plugins has also been completely revised, in order to simplify the development of themes as well as the general coherence between the plugins.
 
 ### Redesign of the connection system
 
-The login system for Azuriom for Minecraft has also been redesigned, for Minecraft: Java Edition servers that do not
-accept unofficial/offline versions of the game as well as for Minecraft: Bedrock Edition servers, it is now possible to
-login directly via your Microsoft account.
+The login system for Azuriom for Minecraft has also been redesigned, for Minecraft: Java Edition servers that do not accept unofficial/offline versions of the game as well as for Minecraft: Bedrock Edition servers, it is now possible to login directly via your Microsoft account.
 
-For Minecraft: Java Edition servers that accept unofficial versions, it is also possible to automate the creation of an
-account on the website with AzLink and the plugin [AuthMe reloaded](https://www.spigotmc.org/resources/authmereloaded.6269/).
+For Minecraft: Java Edition servers that accept unofficial versions, it is also possible to automate the creation of an account on the website with AzLink and the plugin [AuthMe reloaded](https://www.spigotmc.org/resources/authmereloaded.6269/).
 
 These different new systems simplify the login on the site while eliminating the risk of users taking the wrong username.
 
-Finally, for sites using the Steam connection, it is possible to add an email address in order to receive certain
-alerts by email (for example when a response is received on the support plugin or when a purchase is made on the store). 
-This feature is entirely optional.
+Finally, for sites using the Steam connection, it is possible to add an email address in order to receive certain alerts by email (for example when a response is received on the support plugin or when a purchase is made on the store). This feature is entirely optional.
 
 ## Update
 
-The migration is available for websites running on an older version of Azuriom.
-The website must be in version 0.6.0, then in the update tab of the admin dashboard,
-you can update to Azuriom v1.0!
+The migration is available for websites running on an older version of Azuriom. The website must be in version 0.6.0, then in the update tab of the admin dashboard, you can update to Azuriom v1.0!
 
 Before upgrading, a few important points:
 * Make a backup of your website (files and database)
@@ -55,32 +40,24 @@ Before upgrading, a few important points:
 * Make sure you have PHP 8.0 or higher
 * Check that the website has the necessary permissions on the files
 
-Just before upgrading, it is necessary to disable all extensions. These can be
-reactivated as soon as the update is completed.
+Just before upgrading, it is necessary to disable all extensions. These can be reactivated as soon as the update is completed.
 
 {{< warn >}}
-The migration will delete all the data of the vote plugin. The other plugins
-are not affected.
+The migration will delete all the data of the vote plugin. The other plugins are not affected.
 {{< /warn >}}
 
 Once the update is complete, you can update your extensions.
 
 ## Adapting a theme
 
-As Azuriom is now using Bootstrap 5, the themes will have to be adapted. We advise you to look at the
-[Bootstrap 5 migration guide](https://getbootstrap.com/docs/5.1/migration/).
+As Azuriom is now using Bootstrap 5, the themes will have to be adapted. We advise you to look at the [Bootstrap 5 migration guide](https://getbootstrap.com/docs/5.1/migration/).
 
-One notable change in using Bootstrap 5 is that jQuery is no longer included with Azuriom.
-It is also not recommended using it.
+One notable change in using Bootstrap 5 is that jQuery is no longer included with Azuriom. It is also not recommended using it.
 
-Also, in order to improve future compatibility, we also advise themes to modify the HTML of the CMS and plugins as
-little as possible, but to use CSS as much as possible. This avoids future compatibility problems in case of an update
-with a modification of the HTML or when of the HTML or when adding new plugins.
+Also, in order to improve future compatibility, we also advise themes to modify the HTML of the CMS and plugins as little as possible, but to use CSS as much as possible. This avoids future compatibility problems in case of an update with a modification of the HTML or when of the HTML or when adding new plugins.
 
 {{< warn >}}
-Due to many compatibility issues and outdated themes, themes on the market will be forced to respect this rule.
-It is of course allowed to change the homepage or layout, as well as some additional pages, but it will not be allowed
-to change all pages and/or plugins.
+Due to many compatibility issues and outdated themes, themes on the market will be forced to respect this rule. It is of course allowed to change the homepage or layout, as well as some additional pages, but it will not be allowed to change all pages and/or plugins.
 {{< /warn >}}
 
 Finally, many translations have been improved and will need to be changed in the themes.
@@ -99,8 +76,7 @@ In order for a theme to be loaded with Azuriom v1.0, it is **required** to add `
 
 ### Icons
 
-FontAwesome 5 was replaced by [Bootstrap Icons](https://icons.getbootstrap.com),
-so you would need to replace all icons.
+FontAwesome 5 was replaced by [Bootstrap Icons](https://icons.getbootstrap.com), so you would need to replace all icons.
 
 It also requires to replace the FontAwesome CSS by the Boostrap's one:
 ```diff
@@ -110,9 +86,7 @@ It also requires to replace the FontAwesome CSS by the Boostrap's one:
 
 ### Social networks
 
-Azuriom now has a dedicated configuration to add links to social networks directly from the settings. If you had an
-equivalent configuration it is strongly recommended using the system provided by the CMS instead.
-You can get the different links with the function `social_links()` like this:
+Azuriom now has a dedicated configuration to add links to social networks directly from the settings. If you had an equivalent configuration it is strongly recommended using the system provided by the CMS instead. You can get the different links with the function `social_links()` like this:
 ```html
 @foreach(social_links() as $link)
     <a href="{{ $link->value }}" title="{{ $link->title }}" target="_blank" rel="noopener noreferrer" class="btn">
@@ -123,9 +97,7 @@ You can get the different links with the function `social_links()` like this:
 
 ### Home servers
 
-It is now possible to display servers on the home page, which is especially useful for
-Steam games.
-The servers are available with the variable `$servers`, which gives for example:
+It is now possible to display servers on the home page, which is especially useful for Steam games. The servers are available with the variable `$servers`, which gives for example:
 ```html
 @if(! $servers->isEmpty())
     <h2 class="text-center">
@@ -168,9 +140,7 @@ The servers are available with the variable `$servers`, which gives for example:
 
 ### Servers join URL
 
-An option has been added to display a link to the server instead of the address.
-This is especially useful for servers for games with support for a URL to connect directly.
-We recommend replacing all uses of the server address with something like this:
+An option has been added to display a link to the server instead of the address. This is especially useful for servers for games with support for a URL to connect directly. We recommend replacing all uses of the server address with something like this:
 ```html
 @if($server->joinUrl())
     <a href="{{ $server->joinUrl() }}" class="btn btn-primary">
@@ -183,14 +153,11 @@ We recommend replacing all uses of the server address with something like this:
 
 ## Adapting a plugin
 
-Since Azuriom is now using Bootstrap 5, the plugins will have to be adapted. We advise you to look at the
-[Bootstrap 5 migration guide](https://getbootstrap.com/docs/5.1/migration/).
+Since Azuriom is now using Bootstrap 5, the plugins will have to be adapted. We advise you to look at the [Bootstrap 5 migration guide](https://getbootstrap.com/docs/5.1/migration/).
 
-Also, Azuriom is now using Laravel 9 and PHP 8, we advise you to have a look at the
-[Laravel 9 migration guide](https://laravel.com/docs/9.x/upgrade).
+Also, Azuriom is now using Laravel 9 and PHP 8, we advise you to have a look at the [Laravel 9 migration guide](https://laravel.com/docs/9.x/upgrade).
 
-You can also take the opportunity to use the [new features introduced in PHP 8.0](https://www.php.net/releases/8.0/en.php)
-(but it's 100% optional).
+You can also take the opportunity to use the [new features introduced in PHP 8.0](https://www.php.net/releases/8.0/en.php) (but it's 100% optional).
 
 {{< warn >}}
 In order for a plugin to be loaded with Azuriom v1.0, it is **required** to add `"azuriom_api": "1.0.0",` in the `plugin.json`:
@@ -209,8 +176,7 @@ In order for a plugin to be loaded with Azuriom v1.0, it is **required** to add 
 
 ### Icons
 
-FontAwesome 5 was replaced by [Bootstrap Icons](https://icons.getbootstrap.com),
-so you would need to replace all FontAwesome icons.
+FontAwesome 5 was replaced by [Bootstrap Icons](https://icons.getbootstrap.com), so you would need to replace all FontAwesome icons.
 
 ### Service providers
 
