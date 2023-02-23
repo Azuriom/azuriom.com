@@ -57,7 +57,7 @@ Durante a instalação, o banco de dados e o usuário do banco de dados serão `
 Uma vez instalados os requisitos, você deve configurar o servidor web. As explicações estão disponíveis na parte inferior desta página.
 
 {{< info >}}
-Se preferir, você também pode usar este [script de instalação automática] não oficial (https://github.com/AzuriomCommunity/Script-AutoInstall) que instalará todos os pré-requisitos automaticamente.
+Se preferir, você também pode usar este [script de instalação automática](https://github.com/AzuriomCommunity/Script-AutoInstall) não oficial  que instalará todos os pré-requisitos automaticamente.
 {{< /info >}}
 
 ## Instalação
