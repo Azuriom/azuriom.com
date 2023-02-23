@@ -1,42 +1,42 @@
 ---
-title: Custom games
+title: Jogos Personalizados
 ---
 
-# Add support for a new game
+# Adicionar suporte para um novo jogo
 
-## Requirements
+## Requisitos
 
-- An access to a terminal to run commands like `php -v` and be somewhat familiar with programming
+- Um acesso a um terminal para executar comandos como `php -v` e estar um pouco familiarizado com a programação
 
-If you have Azuriom installed you can skip to the Setup step.
+Se você tiver o Azuriom instalado, pode pular para a etapa de configuração.
 
-If you never installed Azuriom, you need to install it. During installation it will ask you to choose a game.
+Se você nunca instalou Azuriom, você precisa instalá-lo. Durante a instalação, ele solicitará que você escolha um jogo.
 
-You will navigate to the URL `/install/game/custom`. With that in mind you can now follow the installation instruction.
+Você navegará até a URL `/install/game/custom`. Com isso em mente, agora você pode seguir as instruções de instalação.
 
-Once Azuriom is installed, you can run the following command in a terminal to create an admin user:
+Uma vez instalado o Azuriom, você pode executar o seguinte comando em um terminal para criar um usuário administrador:
 ```
 php artisan user:create --admin
 ```
 
-## Setup
+## Configurando
 
-You can run the following command to generate the project layout for your game, with `MyNewGame` the name of your game:
+Você pode executar o seguinte comando para gerar o layout do projeto para o seu jogo, com `MyNewGame` o nome do seu jogo:
 ```
 php artisan game:create MyNewGame
 ```
 
-## Connecting Azuriom to a game
+## Conectando Azuriom a um jogo
 
-### Using custom database
+### Usando banco de dados personalizado
 
-Go to `plugins/mynewgame/src/Providers/MyNewGameServiceProvider.php` and edit the file
+Vá para `plugins/mynewgame/src/Providers/MyNewGameServiceProvider.php` e edite o arquivo
 
-Under `use Azuriom\Extensions\Plugin\BasePluginServiceProvider;` paste `use Illuminate\Support\Facades\DB;`
+Em `use Azuriom\Extensions\Plugin\BasePluginServiceProvider;` cole `use Illuminate\Support\Facades\DB;`
 
-Now locate the `boot` method and under `$this->registerUserNavigation();` add `$this->setupDatabaseConnection();`
+Agora localize o método `boot` e em `$this->registerUserNavigation();` adicione `$this->setupDatabaseConnection();`
 
-You can now paste the function bellow just under the `}` of the boot method:
+Agora você pode colar a função abaixo logo abaixo do `}` do método de boot:
 
 ```php
 protected function setupDatabaseConnection()
@@ -63,7 +63,7 @@ protected function setupDatabaseConnection()
 }
 ```
 
-Now you can create your first model using your game database connection. Go to `plugins/mynewgame/src/Models`, create a new file `Character.php` and add the following code:
+Agora você pode criar seu primeiro modelo usando sua conexão de banco de dados do jogo. Vá para `plugins/mynewgame/src/Models`, crie um novo arquivo `Character.php` e adicione o seguinte código:
 
 ```php
 <?php
@@ -78,9 +78,9 @@ class Character extends Model
 }
 ```
 
-Now edit `plugins/mynewgame/src/Controllers/Admin/AdminController.php` and under `use Azuriom\Http\Controllers\Controller;`, add `use Azuriom\Plugin\MyNewGame\Models\Character;`
+Agora edite `plugins/mynewgame/src/Controllers/Admin/AdminController.php` e em `use Azuriom\Http\Controllers\Controller;`, adicione `use Azuriom\Plugin\MyNewGame\Models\Character;`
 
-Then replace function `index` by:
+Em seguida, substitua a função `index` por:
 
 ```php
 public function index()
@@ -90,8 +90,7 @@ public function index()
 }
 ```
 
-Now to show the characters in your admin menu edit `plugins/mynewgame/resources/views/admin/index.blade.php` and replace
-`<p>This is the admin page of your plugin</p>` by:
+Agora, para mostrar os caracteres em seu menu de administração, edite `plugins/mynewgame/resources/views/admin/index.blade.php` e substitua `<p>Esta é a página de administração do seu plugin</p>` por:
 
 ```php
 @foreach($characters as $character)
@@ -101,12 +100,12 @@ Now to show the characters in your admin menu edit `plugins/mynewgame/resources/
 {{ $characters->links() }}
 ```
 
-### Using Rcon/API and/or to execute commands
+### Usando Rcon/API e/ou para executar comandos
 
-Go to `plugins/mynewgame/src/Games/MyNewGameServerBridge.php` and have a look at the content.
+Vá para `plugins/mynewgame/src/Games/MyNewGameServerBridge.php` e dê uma olhada no conteúdo.
 
-To have real world exemple you can have a look at :
-- [Dofus Game](https://github.com/Javdu10/Game-Dofus129/blob/main/src/Game/DofusServerBridge.php) which uses an SSL connection to send commands to the game server
-- [Flyff Game](https://github.com/AzuriomCommunity/Game-Flyff/blob/master/src/Games/FlyffServerBridge.php) which uses a custom encoding and protection with a password. (It also sends items to database as fallback mechanisms).
+Para ter um exemplo do mundo real, você pode dar uma olhada em:
+- [Jogo Dofus](https://github.com/Javdu10/Game-Dofus129/blob/main/src/Game/DofusServerBridge.php) que usa uma conexão SSL para enviar comandos para o servidor do jogo
+- [Jogo Flyff](https://github.com/AzuriomCommunity/Game-Flyff/blob/master/src/Games/FlyffServerBridge.php) que usa uma codificação personalizada e proteção com uma senha. (Também envia itens para o banco de dados como mecanismos de fallback).
 
-Within the `sendCommands()` method, you should handle if a player is connected in-game or not and take the proper actions like [here in the flyff game](https://github.com/AzuriomCommunity/Game-Flyff/blob/v0.2.8/src/Games/FlyffServerBridge.php#L76).
+Dentro do método `sendCommands()`, você deve controlar se um jogador está conectado no jogo ou não e tomar as ações apropriadas como [aqui no jogo flyff](https://github.com/AzuriomCommunity/Game-Flyff/blob/v0.2.8/src/Games/FlyffServerBridge.php#L76).
