@@ -43,7 +43,7 @@ apt update -y
 apt install -y php8.1 php8.1-fpm php8.1-mysql php8.1-pgsql php8.1-sqlite3 php8.1-bcmath php8.1-mbstring php8.1-xml php8.1-curl php8.1-zip php8.1-gd
 ```
 
-O MySQL (MariaDB) agora está instalado e você pode criar um banco de dados e um usuário com os seguintes comandos (**lembre-se de substituir `<senha>` por uma senha segura!**):
+O MySQL (MariaDB) agora está instalado e você pode criar um banco de dados e um usuário com os seguintes comandos (**lembre-se de substituir `<password>` por um password seguro!**):
 ```
 mysql -u root
 CREATE USER 'azuriom'@'127.0.0.1' IDENTIFIED BY '<password>';
