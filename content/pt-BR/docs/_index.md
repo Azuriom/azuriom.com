@@ -21,7 +21,8 @@ Se precisar de ajuda ou tiver alguma dúvida, você pode se juntar ao nosso [Dis
 
 Azuriom foi criado por [MrMicky](https://mrmicky.fr/) e [SkyWarZzeur](https://twitter.com/SkyWarZzeur) com o framework PHP [Laravel](https://laravel.com/).
 
-Além disso, um grande obrigado a [Jav](https://www.linkedin.com/in/jean-alexandre-valentin-531236153/) por suas grandes contribuições, ao nosso parceiro [NiHost](https://www. ni-host.com/?utm_source=home&utm_medium=links&utm_campaign=AzuriomCom) por confiar em nós, e a todos os [colaboradores da Azuriom](https://github.com/Azuriom/Azuriom/graphs/contributors) pela ajuda.
+Além disso, um grande obrigado a [Jav](https://www.linkedin.com/in/jean-alexandre-valentin-531236153/) por suas grandes contribuições, ao nosso parceiro [NiHost](https://www.ni-host.com/?utm_source=home&utm_medium=links&utm_campaign=AzuriomCom) por confiar em nós, e a todos os [colaboradores da Azuriom](https://github.com/Azuriom/Azuriom/graphs/contributors) pela ajuda.
+
 ### Doadores
 
 Os doadores tornam o projeto possível, um grande obrigado a eles e, em particular, a:
