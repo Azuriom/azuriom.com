@@ -133,7 +133,7 @@ status = 302
 [[redirects]]
 from = "/"
 to = "/pt-BR"
-conditions = { Country = ["pt-BR"] }
+conditions = { Country = ["BR"] }
 force = true
 status = 302
 
@@ -181,11 +181,11 @@ status = 302
 
 [[redirects]]
 from = "/*"
-to = "/en/:splat"
+to = "/pt-BR/:splat"
+conditions = { Country = ["BR"] }
 status = 302
 
 [[redirects]]
 from = "/*"
-to = "/pt-BR/:splat"
-conditions = { Country = ["pt-BR"] }
+to = "/en/:splat"
 status = 302
