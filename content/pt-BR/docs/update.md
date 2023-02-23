@@ -4,7 +4,7 @@ title: Azuriom 1.0
 
 # Azuriom 1.0
 
-## Introduction
+## Introdução
 
 Azuriom 1.0 is the new major version of Azuriom, it contains many changes and aims to keep Azuriom future-proof.
 

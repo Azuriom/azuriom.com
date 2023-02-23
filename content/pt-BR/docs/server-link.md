@@ -1,83 +1,82 @@
 ---
-title: Server link
+title: Server Link
 weight: 2
 ---
 
-# Server link
+# Server Link
 
 ## Minecraft
 
-### Introduction
+### Introdução
 
-Some features such as displaying players online or execute commands that require you to link your server to your website, on Azuriom this can be done in 3 different ways:
+Alguns recursos como exibir jogadores online ou executar comandos que exigem que você conecte seu servidor ao seu site, no Azuriom isso pode ser feito de 3 maneiras diferentes:
 
-* By Ping - **This is the simplest, but also the most limited solution**, it just allows you to get the players connected to your server. _(does not allow executing commands)_
+* Por Ping - **Esta é a solução mais simples, mas também a mais limitada**, apenas permite que você conecte os jogadores ao seu servidor. _(não permite executar comandos)_
 
-* By Rcon - **This is the intermediate solution**, it allows you to retrieve the information of your server and execute commands.
+* Por Rcon - **Esta é a solução intermediária**, permite que você recupere as informações do seu servidor e execute comandos.
 
-* By Plugin - **This is the optimal solution**, it will allow you to have the functionality of the Rcon but with more advanced functionalities _(example: an advanced statistics system)_
+* Por Plugin - **Esta é a solução ótima/perfeita**, vai permitir-te ter a funcionalidade do Rcon mas com funcionalidades mais avançadas _(exemplo: um sistema de estatísticas avançado)_
 
-### Link By Ping
+### Link por Ping
 
-To be able to link your server with a site under Azuriom by ping, you just have to add a new server with "Ping" as the link type, and fill in the requested information _(the default port of Minecraft is `25565`)_.
+Para poder ligar o seu servidor a um site na Azuriom por ping, basta adicionar um novo servidor com "Ping" como tipo de link, e preencher as informações solicitadas _(a porta padrão do Minecraft é `25565`) _.
 
-### Link by Rcon
+### Link por Rcon
 
-To be able to link your server with your website under Azuriom by Rcon, You must:
+Para poder vincular o seu servidor ao seu site no Azuriom por Rcon, você deve:
+1. Acesse o arquivo `server.properties` do seu servidor
 
-1. Go to the `server.properties` file of your server
-
-1. Configure this file as follows:
-    * Set `enable-rcon` to `true`.
-    * Put `rcon.password` with `your-password`.
-    * Set `rcon.port` with `your-port` _(default 25575)_
-    * Backup and restart your server
+1. Configure este arquivo da seguinte forma:
+    * Defina `enable-rcon` como `true`.
+    * Coloque `rcon.password` com `your-password`.
+    * Defina `rcon.port` com `your-port` _(padrão 25575)_
+    * Faça backup e reinicie seu servidor
    
-1. Go to your site, add a new server with the link type "Rcon", and fill in the requested information. _(Default Rcon port is 25575)_.
+1. Acesse seu site, adicione um novo servidor com o tipo de link "Rcon" e preencha as informações solicitadas. _(A porta Rcon padrão é 25575)_.
 
-### Link by Plugin
+### Link por Plugin
 
-#### What is AzLink?
+#### O que é AzLink?
 
-AzLink is a site-to-server link plugin specially designed for and by Azuriom. To allow you to link your server to your site simply, quickly and securely.
+AzLink é um plugin de link de site para servidor especialmente projetado para e pela Azuriom. Para permitir que você conecte seu servidor ao seu site de forma simples, rápida e segura.
 
-AzLink currently supports Bukkit, BungeeCord, Sponge and Velocity in the same plugin. A legacy version is available for Bukkit 1.7.10.
+AzLink atualmente suporta Bukkit, BungeeCord, Sponge e Velocity no mesmo plugin. Uma versão legacy está disponível para o Bukkit 1.7.10.
 
-#### Installation
+#### Instalação
 
-1. Download AzLink from [our site]({{< url "/azlink" >}})
+1. Baixe o AzLink de [nosso site]({{< url "/azlink" >}})
 
-1. Install it on the server in the `plugins/` folder (or `mods/` with Sponge) and restart the server.
+1. Instale-o no servidor na pasta `plugins/` (ou `mods/` com Sponge) e reinicie o servidor.
 
-1. Go to your site and add a new server with the link type "AzLink", follow the link steps and fill in the requested information.
+1. Vá para o seu site e adicione um novo servidor com o tipo de link "AzLink", siga as etapas do link e preencha as informações solicitadas.
 
-## Steam Games
+## Jogos Steam
 
-### Introduction
+### Introdução
 
-This list includes the servers of the following games: Ark, CS:GO, Garry's Mod & Team fortress 2. You can link your server with your site in two ways in this case:
+Esta lista inclui os servidores dos seguintes jogos: Ark, CS:GO, Garry's Mod & Team Fortress 2... Neste caso, você pode vincular seu servidor ao seu site de duas maneiras:
 
-* By Query - it just allows you to get the players connected to your server. _(does not allow executing commands)_
+* Por Query - Apenas permite que você obtenha os jogadores conectados ao seu servidor. _(não permite executar comandos)_
 
-* By Rcon - it allows you to retrieve the information of your server and execute commands.
+* Por Rcon - Permite recuperar as informações do seu servidor e executar comandos.
 
-You can check here for default ports:
+Você pode verificar aqui as portas padrão:
 
-| Game        | Port  | Query | RCON  |
+| Jogo        | Porta  | Query | RCON  |
 |-------------|-------|-------|-------|
 | Garry's Mod | 27015 | 27015 | 27015 |
 | ARK         | 7777  | 27015 | 27020 |
 | CS:GO       | 27015 | 27015 | 27015 |
 | TF2         | 27015 | 27015 | 27015 |
 
-### Link By Query
+### Link por Query
 
-To be able to link your server with a site under Azuriom by query,  you just have to add a new server with "Source Query" as the link type, and fill in the requested information.
+Para poder linkar seu servidor a um site da Azuriom por query, basta adicionar um novo servidor com "Source Query" como tipo de ligação, e preencher a informação solicitada.
 
-### Link by Rcon
+### Link por Rcon
 
-To be able to link your server with your website under Azuriom by Rcon, You must:
+Para poder vincular o seu servidor ao seu site no Azuriom por Rcon, você deve:
 
-1. Go to the file where the Rcon information of your server can be found.
+1. Acesse o arquivo onde se encontram as informações Rcon do seu servidor.
    
-1. Go to your site, add a new server with the link type "Source Rcon", and fill in the requested information.
+1. Acesse seu site, adicione um novo servidor com o tipo de link "Source Rcon" e preencha as informações solicitadas.
