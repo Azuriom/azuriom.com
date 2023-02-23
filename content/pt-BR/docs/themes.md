@@ -1,42 +1,35 @@
 ---
-title: Themes
+title: Temas
 ---
 
-# Themes
+# Temas
 
-## Introduction
+## Introdução
 
-A theme allows you to fully customize the look and feel of a website using Azuriom.
+Um tema permite que você personalize totalmente a aparência de um site usando o Azuriom.
 
-To install a theme, just put it in the `resources/themes/` folder at
-the root of your website.
+Para instalar um tema, basta colocá-lo na pasta `resources/themes/` na root do seu site.
 
 {{< warn >}}
-When Azuriom is installed locally for theme development,
-it's highly recommended enabling debug to simplify development.
-This can be done by simply editing these 2 lines in the `.env` file:
+Quando o Azuriom é instalado localmente para o desenvolvimento do tema, é altamente recomendável habilitar a depuração para simplificar o desenvolvimento. Isso pode ser feito simplesmente editando essas 2 linhas no arquivo `.env`:
 ```
 APP_ENV=local
 APP_DEBUG=true
 ```
 {{< /warn >}}
 
-## Creating a theme
+## Criando um tema
 
-To quickly create a theme you can use the following command that will
-automatically generate the theme directory and the `theme.json` file:
+Para criar um tema rapidamente você pode usar o seguinte comando que irá gerar automaticamente o diretório do tema e o arquivo `theme.json`:
 ```
 php artisan theme:create <theme name>
 ```
 
 {{< info >}}
-To create themes with a more advanced setup with webpack to compile
-SASS files and optimize the JavaScript files, you can use this
-[unofficial boilerplate](https://github.com/nolway/azuriom-theme-boilerplate)
-(you also need to install [Node.js](https://nodejs.org) with NPM)
+Para criar temas com uma configuração mais avançada com webpack para compilar arquivos SASS e otimizar os arquivos JavaScript, você pode usar este [boilerplate não oficial](https://github.com/nolway/azuriom-theme-boilerplate) (você também precisa instalar [Node.js](https://nodejs.org) com NPM)
 {{< /info >}}
 
-### Structure
+### Estrutura
 
 ```
 themes/ <-- Folder containing all installed themes
@@ -50,10 +43,9 @@ themes/ <-- Folder containing all installed themes
 | | config.json
 ```
 
-### The theme.json file
+### O arquivo theme.json
 
-All themes need to have a `theme.json` file at their root, that is
-the only essential element for a theme, and it looks like this:
+Todos os temas precisam ter um arquivo `theme.json` em sua root, que é o único elemento essencial para um tema, e fica assim:
 ```json
 {
     "id": "example",
@@ -68,100 +60,73 @@ the only essential element for a theme, and it looks like this:
 }
 ```
 
-#### Theme ID
+#### ID do Tema
 
-Each theme must have an id, which must be unique and contain only numbers,
-lowercase letters and dashes. It is recommended to use the name as a basis for
-creating the id, for example if the name is `Hello World`, the id could be
-`hello-world`. Also, the theme's directory must have the same name as its id. 
+Cada tema deve ter um id, que deve ser único e conter apenas números, letras minúsculas e hífens. Recomenda-se usar o nome como base para a criação do id, por exemplo, se o nome for `Hello World`, o id pode ser `hello-world`. Além disso, o diretório do tema deve ter o mesmo nome de seu id.
 
-### Views
+### Visualizações
 
-The views are the heart of a theme, they are the HTML content files of
-a theme for the different parts of the website.
+The views are the heart of a theme, they are the HTML content files of a theme for the different parts of the website.
 
-Azuriom using [Laravel](https://laravel.com/), views can be made using the
-of template Blade. If you don't master Blade it is highly recommended reading
-[its documentation](https://laravel.com/docs/blade), especially since it is quite short.
+Azuriom using [Laravel](https://laravel.com/), views can be made using the of template Blade. If you don't master Blade it is highly recommended reading [its documentation](https://laravel.com/docs/blade), especially since it is quite short.
 
 {{< warn >}}
-It is highly recommended NOT to use PHP syntax.
-when you work with Blade, because Blade does not bring you the traditional
-no advantages and only disadvantages.
+It is highly recommended NOT to use PHP syntax. When you work with Blade, because Blade does not bring you the traditional no advantages and only disadvantages.
 {{< /warn >}}
 
-On the CSS side, it is recommended to use the default framework of the cms which is [Bootstrap 5](https://getbootstrap.com), 
-this will make it easier to realize a theme and will be compatible with the new plugins. 
-so you don't have to make constant updates.
-But if you prefer you can use another CSS framework.
+On the CSS side, it is recommended to use the default framework of the cms which is [Bootstrap 5](https://getbootstrap.com), this will make it easier to realize a theme and will be compatible with the new plugins. So you don't have to make constant updates. But if you prefer you can use another CSS framework.
 
 In Javascript, the only dependency needed is [Axios](https://github.com/axios/axios).
 
 {{< info >}}
-If a view is not present in the theme but is in the CMS or in a plugin, 
-it will be automatically used.
+If a view is not present in the theme but is in the CMS or in a plugin, it will be automatically used.
 {{< /info >}}
 
 #### Layout
 
-The layout is the structure of all the pages of a theme. It contains
-indeed the metas, assets of a theme, header, footer etc...
+O layout é a estrutura de todas as páginas de um tema. Ele contém de fato as metas, assets de um tema, cabeçalho, rodapé etc...
 
-To display the content of the current page you can use
-`@yield('content')`, and to display the title of the current page you can
-use `@yield('title')`.
+Para exibir o conteúdo da página atual, você pode usar `@yield('content')`, e para exibir o título da página atual, você pode usar `@yield('title')`.
 
-You can also integrate different elements with
-`@include('<name of the view>')`, for example `@include('element.navbar')` for
-include the navbar.
+Você também pode integrar diferentes elementos com `@include('<nome da visão>')`, por exemplo `@include('element.navbar')` para incluir a barra de navegação.
 
-To define the layout of the page, the view must extend the view containing
-the layout, you can either use the default layout with
-`@extends('layouts.app')`, or create your own layout and extend it.
+Para definir o layout da página, a visualização deve estender a visualização que contém o layout, você pode usar o layout padrão com `@extends('layouts.app')`, ou criar seu próprio layout e estendê-lo.
 
 #### Plugin views
 
-To change the views of a plugin, simply create a `plugins` directory in
-the `views` folder of the theme and create a folder for each plugin (using
-the plugin id and not the plugin name), then add the plugin views.
+Para alterar as visualizações de um plugin, basta criar um diretório `plugins` na pasta `views` do tema e criar uma pasta para cada plugin (usando o id do plugin e não o nome do plugin), então adicione as views do plugin.
 
-For example, for the vote plugin, this will give `views/plugins/vote/index.blade.php`.
+Por exemplo, para o plugin vote, isso dará `views/plugins/vote/index.blade.php`.
 
 ### Methods
 
 #### Assets
 
-To have the link to an asset in a theme you can use the function
-`theme_asset`: 
+Para ter o link para um asset em um tema, você pode usar a função `theme_asset`:
 ```html
 <link rel="stylesheet" href="{{ theme_asset('css/style.css') }}">
 ```
 
-#### Current user
+#### Usuário atual
 
-The current user can be retrieved using the `auth()->user()` function.
-For more details on authentication, you can refer to the
-[Laravel documentation](https://laravel.com/docs/authentication).
+O usuário atual pode ser recuperado usando a função `auth()->user()`. Para mais detalhes sobre autenticação, você pode consultar a [documentação do Laravel](https://laravel.com/docs/authentication).
 
-#### Functions
+#### Funções
 
-You can retrieve a certain number of parameters from the website via the functions
-dedicated:
+Você pode recuperar um certo número de parâmetros do site através das funções dedicadas:
 
-| Function         | Description                                                                                                            |
-|------------------|------------------------------------------------------------------------------------------------------------------------|
-| `site_name()`    | Retrieves the site name                                                                                                |
-| `site_logo()`    | Allows you to have the website logo link                                                                               |
-| `favicon()`      | Allows you to have the favicon link                                                                                    |
-| `format_date()`  | Displays a date formatted with the current language. This function takes an instance of `Carbon\Carbon` as a parameter |
-| `money_name()`   | Returns the name of the website's currency                                                                             |
-| `format_money()` | Returns an amount formatted with the website currency                                                                  |
+| Função         	| Descrição                                                                                                            	 |
+|-------------------|------------------------------------------------------------------------------------------------------------------------|
+| `site_name()`    	| Recupera o nome do site                                                                                              	 |
+| `site_logo()`    	| Permite que você tenha o link do logotipo do site                                                                      |
+| `favicon()`      	| Permite que você tenha o link do favicon                                                                               |
+| `format_date()`  	| Exibe uma data formatada com o idioma atual. Esta função usa uma instância de `Carbon\Carbon` como parâmetro 			 |
+| `money_name()`   	| Retorna o nome da moeda do site                                                                           			 |
+| `format_money()` 	| Retorna um valor formatado com a moeda do site                                                                  		 |
 
-#### Display the players connected to the server
+#### Mostrar os jogadores conectados ao servidor
 
-To display the connected players, just check the `$server` variable is not null,
-and the server is online, and if it is, use `$server->getOnlinePlayers()` to
-retrieve the online players count.
+Para exibir os jogadores conectados, basta verificar se a variável `$server` não é nula, e se o servidor está online, e se estiver, use `$server->getOnlinePlayers()` para recuperar a contagem de jogadores online.
 
 ```blade
 @if($server && $server->isOnline())
@@ -171,32 +136,22 @@ retrieve the online players count.
 @endif
 ```
 
-#### Translations
+#### Traduções
 
-A theme can, if it needs it, load translations.
+Um tema pode, se precisar, carregar traduções.
 
-To do so, just create a `messages.php` file in the `lang/<language>` directory (ex: `lang/en`).
-of a theme, you can then display a translation via the
-trans: `{{ trans('theme::messages.hello') }}` or via the `@lang` directive: 
-`@lang('theme::messages.hello')`.
-You can also use `trans_choice` for a translation with
-numbers, and `trans_bool` to translate a boolean (will return in English `Yes`).
-/`No`.
+Para isso, basta criar um arquivo `messages.php` no diretório `lang/<idioma>` (ex: `lang/en`). De um tema, você pode exibir uma tradução via trans: `{{ trans('theme::messages.hello') }}` ou via diretiva `@lang`: `@lang('theme::messages. olá')`. Você também pode usar `trans_choice` para uma tradução com números, e `trans_bool` para traduzir um booleano (retornará em inglês `Yes`)./`No`.
 
-For more details on translations, you can refer to the
-[Laravel documentation](https://laravel.com/docs/localization).
+Para mais detalhes sobre traduções, você pode consultar a [documentação do Laravel](https://laravel.com/docs/localization).
 
+### Configuração
 
-### Configuration
+Você pode adicionar uma configuração em um tema, para isso basta criar na raiz de um tema:
+* Uma visualização `config/config.blade.php` contendo o formulário para a configuração.
+* Um arquivo `config/rules.php` contendo as diferentes regras de validação para a configuração de um tema.
+* Um arquivo `config.json` onde será armazenada a configuração do tema, contendo os valores padrão.
 
-You can add a configuration in a theme, to do so you just have
-to create at the root of a theme:
-* A `config/config.blade.php` view containing the form for the configuration.
-* A `config/rules.php` file containing the different validation rules for
-the configuration of a theme.
-* A `config.json` file where the theme configuration will be stored, and containing the default values. 
-
-##### Example
+##### Exemplo
 
 config.blade.php
 ```html

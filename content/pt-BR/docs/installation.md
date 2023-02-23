@@ -1,9 +1,9 @@
 ---
-title: Installation
+title: Instalação
 weight: 1
 ---
 
-# Installation
+# Instalação
 
 ## Requirements
 
