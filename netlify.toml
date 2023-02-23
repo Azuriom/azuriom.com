@@ -82,8 +82,8 @@ to = "/zh-cn/404.html"
 status = 404
 
 [[redirects]]
-from = "/pt-BR/*"
-to = "/pt-BR/404.html"
+from = "/pt-br/*"
+to = "/pt-br/404.html"
 status = 404
 
 [[redirects]]
@@ -132,7 +132,7 @@ status = 302
 
 [[redirects]]
 from = "/"
-to = "/pt-BR"
+to = "/pt-br"
 conditions = { Country = ["BR"] }
 force = true
 status = 302
@@ -181,7 +181,7 @@ status = 302
 
 [[redirects]]
 from = "/*"
-to = "/pt-BR/:splat"
+to = "/pt-br/:splat"
 conditions = { Country = ["BR"] }
 status = 302
 
