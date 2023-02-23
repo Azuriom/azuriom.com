@@ -53,8 +53,8 @@ languages:
     contentDir: content/zh-cn
     params:
       code: zh_CN
-   pt-BR:
-    languageName: Português (Brasileito)
+  pt-BR:
+    languageName: Brasil
     contentDir: content/pt-BR
     params:
-      code: pt_BR
+      code: pt-BR
