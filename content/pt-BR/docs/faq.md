@@ -35,7 +35,6 @@ Then restart Nginx with
 service nginx restart
 ```
 
-
 ## Error 500 during registration
 
 If the account is created correctly despite the error, this problem can occur if the sending of e-mails is not correctly configured, for this check the configuration of the sending of emails on the admin panel of your site.

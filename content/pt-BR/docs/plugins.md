@@ -6,21 +6,21 @@ title: Plugins
 
 ## Introdução
 
-A plugin allows you to add new features to your site, to many plugins are available on our [Market](https://market.azuriom.com), and you can also create one if you can't find one that matches your needs.
+Um plugin permite que você adicione novos recursos ao seu site, muitos plugins estão disponíveis em nosso [Mercado](https://market.azuriom.com), e você também pode criar um caso não encontre um que corresponda ao seu precisa.
 
-## Creating a plugin
+## Criando um plugin
 
-Before creating a plugin, it is recommended that you read the [Laravel documentation](https://laravel.com/docs/).
+Antes de criar um plugin, é recomendado que você leia a [documentação do Laravel](https://laravel.com/docs/).
 
 {{< warn >}}
-When Azuriom is installed locally for plugin development, it's highly recommended enabling debug to simplify development. This can be done by simply editing these 2 lines in the `.env` file:
+Quando Azuriom é instalado localmente para desenvolvimento de plugin, é altamente recomendável ativar a depuração para simplificar o desenvolvimento. Isso pode ser feito simplesmente editando essas 2 linhas no arquivo `.env`:
 ```
 APP_ENV=local
 APP_DEBUG=true
 ```
 {{< /warn >}}
 
-### Structuring a plugin
+### Estruturando um plugin
 
 ```
 plugins/  <-- Folder containing the different installed plugins
@@ -36,9 +36,9 @@ plugins/  <-- Folder containing the different installed plugins
 |  |  src/ <-- The folder containing the sources of your plugin
 ```
 
-### The plugin.json file
+### O arquivo plugin.json
 
-The `plugin.json` file is required to load a plugin, and contains the different information of a plugin:
+O arquivo `plugin.json` é necessário para carregar um plugin e contém as diferentes informações de um plugin:
 ```json
 {
     "id": "example",
@@ -59,20 +59,20 @@ The `plugin.json` file is required to load a plugin, and contains the different 
 
 #### Plugin ID
 
-Each plugin must have an id, which must be unique and contain only numbers, lowercase letters and dashes. It is recommended to use the name as a basis for creating the id, for example if the name is `Hello World`, the id could be `hello-world`. Also, the plugin's directory must have the same name as its id. 
+Cada plugin deve ter um id, que deve ser único e conter apenas números, letras minúsculas e hífens. Recomenda-se usar o nome como base para a criação do id, por exemplo, se o nome for `Hello World`, o id pode ser `hello-world`. Além disso, o diretório do plugin deve ter o mesmo nome de seu id.
 
 {{< info >}}
-To create a plugin you can use the following command that will automatically generate the plugin's folder and many files by default:
+Para criar um plugin você pode usar o seguinte comando que irá gerar automaticamente a pasta do plugin e muitos arquivos por padrão:
 ```
 php artisan plugin:create <plugin name>
 ```
 {{< /info >}}
 
-#### Dependencies
+#### Dependências
 
-The `dependencies` section allows you to specify the plugins (using their id) that must be installed in order to use the plugin. A `?` after the plugin name means that the plugin is optional, i.e., it does not need to be installed, but when it is, the version must match. It is also possible to specify a version of Azuriom using the value `azuriom`.
+A seção `dependencies` permite que você especifique os plugins (usando seu id) que devem ser instalados para usar o plugin. Um `?` após o nome do plugin significa que o plugin é opcional, ou seja, não precisa ser instalado, mas quando for, a versão deve corresponder. Também é possível especificar uma versão do Azuriom usando o valor `azuriom`.
 
-For example, this plugin needs Azuriom `0.4.0` or higher, the Shop plugin version `0.1.0` or higher. Also, when the Vote plugin is installed, it must be in version `0.2.0` or higher:
+Por exemplo, este plugin precisa do Azuriom `0.4.0` ou superior, da versão do plugin Shop `0.1.0` ou superior. Além disso, quando o plugin Vote estiver instalado, ele deve estar na versão `0.2.0` ou superior:
 ```json
 "dependencies": {
     "azuriom": "^0.4.0",
@@ -83,33 +83,33 @@ For example, this plugin needs Azuriom `0.4.0` or higher, the Shop plugin versio
 
 ### Routes
 
-Routes allow you to associate a URL with a particular action.
+As routes permitem que você associe uma URL a uma ação específica.
 
-They are stored in the `routes' directory at the root of the plugin.
+Eles são armazenados no diretório `routes' na raiz do plugin.
 
-For more information on how routes work you can read the [Laravel documentation](https://laravel.com/docs/routing).
+Para obter mais informações sobre como as routes funcionam, você pode ler a [documentação do Laravel](https://laravel.com/docs/routing).
 
-Example:
+Exemplo:
 ```php
 Route::get('/support', 'SupportController@index')->name('index');
 ```
 
 {{< warn >}}
-Please be careful not to use routes with closures, as these are not compatible with some internal optimizations.
+Tenha cuidado para não usar rotas com fechamentos, pois elas não são compatíveis com algumas otimizações internas.
 {{< /warn >}}
 
 #### Admin routes
  
-For a route to be in the admin panel, just place it in the file `routes/admin.php` of the plugin.
+Para uma route estar no painel de administração, basta colocá-la no arquivo `routes/admin.php` do plugin.
 
 ### Views
 
-The views are the visible part of a plugin, they are the content files HTML of the plugin to display a page.
+As views são a parte visível de um plugin, são os arquivos de conteúdo HTML do plugin para exibir uma página.
 
-Azuriom using [Laravel](https://laravel.com/), views can be made using the Blade. If you don't master Blade it is highly recommended reading [its documentation](https://laravel.com/docs/blade), especially since it is quite short.
+Azuriom usando [Laravel](https://laravel.com/), as views podem ser feitas usando o Blade. Se você não domina o Blade, é altamente recomendável ler [sua documentação](https://laravel.com/docs/blade), especialmente porque é bastante curto.
 
 {{< warn >}}
-It is highly recommended NOT to use PHP syntax. when you work with Blade, because Blade does not bring you the traditional no advantages and only disadvantages.
+É altamente recomendável NÃO usar a sintaxe do PHP. quando você trabalha com o Blade, porque o Blade não traz o tradicional sem vantagens e apenas desvantagens.
 {{< /warn >}}
 
 To display a view you can use `view('<plugin id>::<name of the view>')`, of example `view('support::tickets.index')` to display the `tickets.index` view of the support plugin.
@@ -147,7 +147,7 @@ Example:
 @endpush
 ```
 
-#### Admin view
+#### Admin View
 
 For a page to use the admin panel layout, just use the layout `admin.layouts.admin`, it is also recommended creating an admin folder in the `resources` folder and put the admin views in it.
 

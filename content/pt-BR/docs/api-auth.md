@@ -12,13 +12,13 @@ Independentemente de como você usa a API de autenticação do lado do cliente, 
 
 ## Download
 
-AzAuth sources are available on [GitHub](https://github.com/Azuriom/AzAuth) and the jar file can be downloaded [here](https://repo.maven.apache.org/maven2/com/azuriom/azauth/1.0.0/azauth-1.0.0.jar).
+O código fonte do AzAuth estão disponíveis no [GitHub](https://github.com/Azuriom/AzAuth) e o arquivo jar pode ser baixado [aqui](https://repo.maven.apache.org/maven2/com/azuriom/azauth/1.0.0/azauth-1.0.0.jar).
 
-If you are using a dependency manager, you can add AzAuth as a dependency by the following way:
+Se você estiver usando um gerenciador de dependências, poderá adicionar o AzAuth como uma dependência da seguinte maneira:
 
 ### Gradle
 
-In the `build.gradle`:
+No `build.gradle`:
 
 ```groovy
 repositories {
@@ -32,7 +32,7 @@ dependencies {
 
 ### Maven
 
-In the `pom.xml`:
+No `pom.xml`:
 ```xml
 <dependencies>
     <dependency>
@@ -46,17 +46,17 @@ In the `pom.xml`:
 
 ## AzAuth usage (Java)
 
-Before using AzAuth, please make sure that the API is activated by going to in the settings of your site, on your admin panel.
+Antes de usar o AzAuth, verifique se a API está ativada acessando as configurações do seu site, no painel de administração.
 
-### Usage without OpenLauncherLib
+### Uso sem OpenLauncherLib
 
-AzAuth has been designed with [Gson](https://github.com/google/gson) as its only dependency, so you can use it perfectly well if you don't use OpenLauncherLib, you can simply use `AuthClient#authenticate(String username, String password, Supplier<String> codeSupplier)` and that will give you directly a `User` containing a username, uuid, rank, access token and lots of other useful data. The `codeSupplier` is called when the user has 2FA enabled, and the user code should be returned to the supplier.
+AzAuth foi projetado com [Gson](https://github.com/google/gson) como sua única dependência, então você pode usá-lo perfeitamente bem se você não usar OpenLauncherLib, você pode simplesmente usar `AuthClient#authenticate(String username, String password, Supplier<String> codeSupplier)` e isso lhe dará diretamente um `User` contendo um username, uuid, rank, access token e muitos outros dados úteis. O `codeSupplier` é chamado quando o usuário possui 2FA habilitado, e o código do usuário deve ser devolvido ao fornecedor.
 
-### Using with [OpenLauncherLib](https://github.com/Litarvan/OpenLauncherLib/) _(for minecraft launcher)_
+### Usando com [OpenLauncherLib](https://github.com/Litarvan/OpenLauncherLib/) _(para minecraft launcher)_
 
-To begin, add AzAuth as a dependency to your project. Also, if you are using [OpenAuth](https://github.com/Litarvan/OpenAuth/), it is recommended that you remove it, although it does not cause any real problems, it is no longer used if you use AzAuth.
+Para começar, adicione o AzAuth como uma dependência ao seu projeto. Além disso, se você estiver usando [OpenAuth](https://github.com/Litarvan/OpenAuth/), é recomendável removê-lo, embora não cause nenhum problema real, não é mais usado se você usar o AzAuth.
 
-You should have in the code of your launcher an `auth` method similar to the code below:
+Você deve ter no código do seu launcher um método `auth` similar ao código abaixo:
 ```java
 public static void auth(String username, String password) throws AuthenticationException {
     Authenticator authenticator = new Authenticator(Authenticator.MOJANG_AUTH_URL, AuthPoints.NORMAL_AUTH_POINTS);
@@ -65,7 +65,7 @@ public static void auth(String username, String password) throws AuthenticationE
 }
 ```
 
-You just have to replace it by the code below, to modify `<url>` by the URL of your Azuriom's website root.
+Basta substituí-lo pelo código abaixo, para modificar `<url>` pela URL do root do seu site Azuriom.
 ```java
 public static void auth(String username, String password) throws AuthException {
     AuthClient authenticator = new AuthClient("<url>");
@@ -87,16 +87,16 @@ public static void auth(String username, String password) throws AuthException {
 }
 ```
 
-## Usage with JavaScript
+## Uso com JavaScript
 
-### Installation
+### Instalação
 
-The source code is available on [GitHub](https://github.com/Azuriom/AzAuthJS) and the package can be installed with [npm](https://www.npmjs.com/):
+O código fonte está disponível no [GitHub](https://github.com/Azuriom/AzAuthJS) e o pacote pode ser instalado com [npm](https://www.npmjs.com/):
 ```
 npm install azuriom-auth
 ```
 
-### Example
+### Exemplo
 
 ```js
 import { AuthClient } from 'azuriom-auth'
@@ -127,7 +127,7 @@ async function login(email, password) {
 
 **POST** `/authenticate`
 
-Authenticate a user with their website credentials
+Autenticar um usuário com as credenciais do site
 
 ##### Request
 | Field    | Description                                                                                       |
@@ -138,7 +138,7 @@ Authenticate a user with their website credentials
 
 ##### Response
 
-Returns the user with his various information, and the unique token which can be used to verify the connection or to disconnect.
+Retorna o usuário com suas diversas informações, e o token único que pode ser usado para verificar a conexão ou desconectar.
 
 ```json
 {
@@ -166,11 +166,11 @@ Returns the user with his various information, and the unique token which can be
 |--------------|---------------------|
 | access_token | Unique access token |
 
-##### Réponse
+##### Response
 
-Returns the user with his various information, and the unique token which can be used to verify the connection or to disconnect.
+Retorna o usuário com suas diversas informações, e o token único que pode ser usado para verificar a conexão ou desconectar.
 
-Success response example (HTTP `2xx`):
+Exemplo de response de sucesso (HTTP `2xx`):
 ```json
 {
     "id": 1,
@@ -188,7 +188,7 @@ Success response example (HTTP `2xx`):
 }
 ```
 
-Error response example (HTTP `4xx`):
+Exemplo de response de erro (HTTP `4xx`):
 ```json
 {
     "status": "error",
@@ -201,7 +201,7 @@ Error response example (HTTP `4xx`):
 
 **POST** `/logout`
 
-Logout the user and invalidates the access token.
+Faça logout do usuário e invalide o token de acesso.
 
 ##### Request
 | Field        | Description         |
@@ -210,4 +210,4 @@ Logout the user and invalidates the access token.
 
 ##### Response
 
-Empty response, with `2xx` status code.
+Response vazia, com código de status `2xx`.
