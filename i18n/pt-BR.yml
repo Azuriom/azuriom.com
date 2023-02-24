@@ -79,7 +79,7 @@ support:
   title: "Apoie-nos"  
   description1: "Fazer este projeto é demorado, e sua doação nos ajudará a trabalhar e melhorar este projeto."
   description2: "Sua doação também ajudará a cobrir o custo financeiro deste projeto: precisamos pagar o domínio, alugar servidores (site, demo), designer gráfico, ..."
-  description3: "Você também pode nos apoiar clicando no <strong>Star</strong> o repositório GitHub, é grátis e você só precisa de uma conta GitHub."
+  description3: "Você também pode nos apoiar clicando no Star o repositório GitHub, é grátis e você só precisa de uma conta GitHub."
   star: "Star no projeto"
   donate: "Doar"
 
