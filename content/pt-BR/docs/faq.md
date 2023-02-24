@@ -5,112 +5,111 @@ weight: 3
 
 # FAQ
 
-Errors may occur, it is not necessarily from the CMS, but here are the most common mistakes with their solutions!
+Podem ocorrer erros, não necessariamente do CMS, mas aqui estão os erros mais comuns com suas soluções!
 
-## The home page works, but the other pages produce a 404 error
+## A página inicial funciona, mas as outras páginas apresentam um erro 404
 
-The URL rewriting is not activated, you just have to activate it (see next question).
+URL rewriting não está ativado, basta ativá-la (veja a próxima pergunta).
 
 ## Apache2 URL rewrite
-Edit your Apache2 configuration (by default in `/etc/apache2/sites-available/000-default.conf`) and add these lines between the `<VirtualHost>` tags:
+Edite sua configuração do Apache2 (por padrão em `/etc/apache2/sites-available/000-default.conf`) e adicione estas linhas entre as tags `<VirtualHost>`:
 ```
 <Directory "/var/www/html">
   AllowOverride All
 </Directory>
 ```
 
-Then restart Apache2 with
+Em seguida, reinicie o Apache2 com
 ```
 service apache2 restart
 ```
 
 ## Nginx URL rewrite
-You have to edit the configuration of your site (in `/etc/nginx/sites-available/`) and add `/public` at the end of the line containing `root`, like this :
+Você tem que editar a configuração do seu site (em `/etc/nginx/sites-available/`) e adicionar `/public` no final da linha que contém `root`, assim:
 ```
 root /var/www/html/public;
 ```
 
-Then restart Nginx with
+Em seguida, reinicie o Nginx com
 ```
 service nginx restart
 ```
 
-## Error 500 during registration
+## Erro 500 durante o registro
 
-If the account is created correctly despite the error, this problem can occur if the sending of e-mails is not correctly configured, for this check the configuration of the sending of emails on the admin panel of your site.
+Se a conta for criada corretamente apesar do erro, esse problema pode ocorrer caso o envio de e-mails não esteja configurado corretamente, para isso verifique a configuração do envio de e-mails no painel admin do seu site.
 
-## cURL error 60
+## cURL erro 60
 
-If you get this error: `curl: (60) SSL certificate: unable to get local issuer certificate`, just  follow these steps:
-1) Download the latest `cacert.pem` on https://curl.haxx.se/ca/cacert.pem
-1) Add this line in the php.ini (replace `/path/to/cacert.pem` by
-the location of the `cacert.pem` file):
+Se você receber este erro: `curl: (60) certificado SSL: incapaz de obter o certificado do emissor local`, basta seguir estas etapas:
+1) Baixe o último `cacert.pem` em https://curl.haxx.se/ca/cacert.pem
+1) Adicione esta linha no php.ini (substitua `/path/to/cacert.pem` por a localização do arquivo `cacert.pem`):
    ```
    curl.cainfo="/path/to/cacert.pem""
    ```
-1) Restart PHP
+1) Reinicie o PHP
 
-## Images are not displayed
+## As imagens não são exibidas
 
-If the images uploaded in the admin panel are in the images list, but they are not loading, you can try doing the following:
-* Delete, if it exists, the `public/storage` folder (but not the `storage` folder!)
-* Then do the `php artisan storage:link` command at the root of the website.
-    * If you can't run commands, you can instead go to the URL `/admin/settings/storage/link` on your website.
+Se as imagens carregadas no painel de administração estiverem na lista de imagens, mas não estiverem carregando, você pode tentar fazer o seguinte:
+* Exclua, se existir, a pasta `public/storage` (mas não a pasta `storage`!)
+* Em seguida, execute o comando `php artisan storage:link` na root do site.
+	* Se você não pode executar comandos, você pode ir para a URL `/admin/settings/storage/link` em seu site.
 
-## The file has not been uploaded when uploading an image
+## O arquivo não foi carregado ao carregar uma imagem
 
-This problem occurs when you upload an image with a weight greater than the maximum allowed by PHP (default 2 MB).
+Esse problema ocorre quando você carrega uma imagem com peso maior que o máximo permitido pelo PHP (padrão 2 MB).
 
-You can change the maximum size allowed when uploading in the configuration of PHP (in `php.ini`) by changing the following values:
+Você pode alterar o tamanho máximo permitido ao fazer upload na configuração do PHP (em `php.ini`) alterando os seguintes valores:
 ```
 upload_max_filesize = 10M
 post_max_size = 10M
 ```
 
 {{< warn >}}
-It is strongly advised to not change this limit, as heavy images can increase the loading time of your website and impact search engine optimization. Instead, it is recommended to reduce the size of the image (ideally below 1 MB).
+É altamente recomendável não alterar esse limite, pois imagens pesadas podem aumentar o tempo de carregamento do seu site e afetar a otimização do mecanismo de pesquisa. Em vez disso, é recomendável reduzir o tamanho da imagem (idealmente abaixo de 1 MB).
 {{< /warn >}}
 
-## Problem with AzLink or payment gateways with Cloudflare
+## Problema com AzLink ou gateways de pagamento com Cloudflare
 
-Cloudflare can prevent AzLink or some payment gateways from working correctly.
+A Cloudflare pode impedir que o AzLink ou alguns gateways de pagamento funcionem corretamente.
 
-To fix this issue, you can disable Cloudflare on the API, by going to Page Rules -> Add a rule, then add `/api/*` as the URL and these actions:
+Para corrigir esse problema, você pode desativar o Cloudflare na API, acessando Page Rules -> Add a rule e, em seguida, adicionar `/api/*` como URL e estas ações:
 * Cache Level: 'Bypass'
 * Security Level: 'Medium' or 'High'
 * Browser Integrity Check: 'OFF' 
 
-If the problem persists, check the firewall rules as well.
+Se o problema persistir, verifique também as regras do firewall.
 
-More details are available on the [Cloudflare website](https://support.cloudflare.com/hc/en-us/articles/200504045-Using-Cloudflare-with-your-API).
+Mais detalhes estão disponíveis no [site da Cloudflare](https://support.cloudflare.com/hc/en-us/articles/200504045-Using-Cloudflare-with-your-API).
 
-## Force HTTPS on Apache2
+## Forçar HTTPS no Apache2
 
-Add these lines **juste after** `RewriteEngine On` in the `.htaccess` at the root of your website:
+Adicione estas linhas **logo após** `RewriteEngine On` no `.htaccess` na raiz do seu site:
 ```
 RewriteCond %{HTTPS} off
 RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
 ```
 
-## Votes load indefinitely
+## Votos carregam indefinidamente
 
-You can enable ipv4/ipv6 compatibility in the vote plugin settings to solve this issue.
+Você pode habilitar a compatibilidade ipv4/ipv6 nas configurações do plugin de votação para resolver esse problema.
 
-If you use Cloudflare, also consider installing the plugin [Cloudflare Support](https://market.azuriom.com/resources/12).
+Se você usa Cloudflare, considere também instalar o plugin [Cloudflare Support](https://market.azuriom.com/resources/12).
 
-## Get an RSS or Atom feed for the news
+## Obtenha um feed RSS ou Atom para as notícias
 
-An RSS feed for the news is available at the URL `/api/rss` and an Atom feed on `/api/atom`.
+Um feed RSS para as notícias está disponível na URL `/api/rss` e um feed Atom em `/api/atom`.
 
-## Change the database credentials
+## Altere as credenciais do banco de dados
 
-You can change the database credentials by editing the `.env` file at the root of the site (it may be necessary to activate the hidden files so see it) Once done, delete the `bootstrap/cache/config.php` file if it exists.
+Você pode alterar as credenciais do banco de dados editando o arquivo `.env` no root do site (pode ser necessário ativar os arquivos ocultos, então veja). Feito isso, exclua o arquivo `bootstrap/cache/config.php` se isso existe.
 
-## Installing another website on Apache2
+## Instalando outro site no Apache2
 
-If you wish to install another site (ex: Pterodactyl panel, etc.) on the same web server as the one on which Azuriom is installed, it's recommended to install it on a subdomain (ex: panel.your-website.com).
+Se pretender instalar outro site (ex: painel Pterodactyl, etc.) no mesmo servidor web onde está instalado o Azuriom, é recomendável instalá-lo num subdomínio (ex: panel.seu-site.com).
 
-In case it's not possible, you can configure Apache to run them on the same domain, by adding an `.htaccess` file to the directory of the other website (ex: /panel) with the following content :
+Caso não seja possível, você pode configurar o Apache para executá-los no mesmo domínio, adicionando um arquivo `.htaccess` ao diretório do outro site (ex: /panel) com o seguinte conteúdo:
 ```
 <IfModule mod_rewrite.c>
     RewriteEngine On
