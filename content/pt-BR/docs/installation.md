@@ -12,17 +12,17 @@ Para funcionar, Azuriom simplesmente requer um **Servidor Web com PHP** com pelo
 - PHP 8.0 ou superior
 - URL Rewrite
 - Permissões de Gravação/Leitura em `storage/` e `bootstrap/cache/`.
-- BCMath PHP Extensão
-- Ctype PHP Extensão
-- JSON PHP Extensão
-- Mbstring PHP Extensão
-- OpenSSL PHP Extensão
-- PDO PHP Extensão
-- Tokenizer PHP Extensão
-- XML PHP Extensão
-- XMLWriter PHP Extensão
-- cURL PHP Extensão
-- Zip PHP Extensão
+- Extensão PHP BCMath
+- Extensão PHP Ctype
+- Extensão PHP JSON
+- Extensão PHP Mbstring
+- Extensão PHP OpenSSL
+- Extensão PHP PDO
+- Extensão PHP Tokenizer
+- Extensão PHP XML
+- Extensão PHP XMLWriter
+- Extensão PHP cURL
+- Extensão PHP Zip
 
 Também é altamente recomendável ter um banco de dados **MySQL/MariaDB ou PostgreSQL**.
 
@@ -98,7 +98,7 @@ Você também pode instalá-lo com [Docker](https://www.docker.com/) seguindo as
 Uma vez concluída a instalação, para evitar problemas, certifique-se de que seu site não pode ser acessado diretamente do IP do servidor (ex: http://0.0.0.0).
 {{< /warn >}}
 
-## Configuração do Servidor Web
+## Configuração do servidor web
 
 ### Apache2
 

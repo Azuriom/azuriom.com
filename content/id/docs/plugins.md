@@ -101,7 +101,7 @@ diataanya. Juga, saat plugin Vote di unduh, Plugin tersebut harus pada versi `0.
 
 Routes memperbolehkan anda untuk menghubungkan sebuah URL dengan aksi tertentu atau khusus.
 
-Mereka disimpan di direktori `routes' di root plugin.
+Mereka disimpan di direktori `routes` di root plugin.
 
 Untuk informasi lebih lanjut tentang bagaimana routes bekerja anda bisa baca di
 [Dokumentasi Laravel](https://laravel.com/docs/routing).

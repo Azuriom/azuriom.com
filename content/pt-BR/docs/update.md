@@ -6,64 +6,64 @@ title: Azuriom 1.0
 
 ## Introdução
 
-Azuriom 1.0 is the new major version of Azuriom, it contains many changes and aims to keep Azuriom future-proof.
+Azuriom 1.0 é a nova versão principal do Azuriom, contém muitas mudanças e visa manter o Azuriom à prova de futuro.
 
-This update contains many internal changes, in particular the update to Laravel 9 ([Laravel](https://laravel.com/) being the PHP framework - the base - used by Azuriom) and Bootstrap 5 ([Bootstrap](https://getbootstrap.com/) being the CSS framework used by Azuriom).
+Esta atualização contém muitas alterações internas, em particular a atualização para Laravel 9 ([Laravel](https://laravel.com/) sendo o PHP framework - a base - usado pela Azuriom) e Bootstrap 5 ([Bootstrap](https://getbootstrap.com/) sendo o CSS framework usado pela Azuriom).
 
 ### PHP 8
 
-In particular, the use of Laravel 9 means that **PHP 8 is now required to use Azuriom**. We would also like note that **PHP 7.4 is no longer supported by PHP** since November 2021 and will **no longer receive security updates** as of November 2022 (see the [PHP website](https://www.php.net/supported-versions.php)). For this reason, we recommend that you update your sites using PHP (whether they use Azuriom or not) as soon as possible.
+Em particular, o uso do Laravel 9 significa que **PHP 8 agora é necessário para usar o Azuriom**. Também gostaríamos de observar que **o PHP 7.4 não é mais suportado pelo PHP** desde novembro de 2021 e **não receberá mais atualizações de segurança** a partir de novembro de 2022 (consulte o [site do PHP](https://www.php.net/supported-versions.php)). Por este motivo, recomendamos que atualize os seus sites utilizando PHP (quer utilizem Azuriom ou não) o mais rapidamente possível.
 
-### Extensions
+### Extensões
 
-Due to various internal changes, extensions (themes and plugins) will have to be updated to support Azuriom v1.0. Also, extensions compatible with Azuriom v1.0 are not compatible with previous versions of Azuriom.
+Devido a várias mudanças internas, as extensões (temas e plugins) terão que ser atualizadas para suportar o Azuriom v1.0. Além disso, extensões compatíveis com Azuriom v1.0 não são compatíveis com versões anteriores de Azuriom.
 
-The layout of the basic design of the CMS and plugins has also been completely revised, in order to simplify the development of themes as well as the general coherence between the plugins.
+O layout do design básico do CMS e plugins também foi completamente revisado, a fim de simplificar o desenvolvimento de temas, bem como a coerência geral entre os plugins.
 
-### Redesign of the connection system
+### Redesenho do sistema de conexão
 
-The login system for Azuriom for Minecraft has also been redesigned, for Minecraft: Java Edition servers that do not accept unofficial/offline versions of the game as well as for Minecraft: Bedrock Edition servers, it is now possible to login directly via your Microsoft account.
+O sistema de login para Azuriom para Minecraft também foi redesenhado, para servidores Minecraft: Java Edition que não aceitam versões não oficiais/offline do jogo, bem como para servidores Minecraft: Bedrock Edition, agora é possível fazer login diretamente através de sua conta Microsoft.
 
-For Minecraft: Java Edition servers that accept unofficial versions, it is also possible to automate the creation of an account on the website with AzLink and the plugin [AuthMe reloaded](https://www.spigotmc.org/resources/authmereloaded.6269/).
+Para servidores Minecraft: Java Edition que aceitam versões não oficiais, também é possível automatizar a criação de uma conta no site com AzLink e o plugin [AuthMe reloaded](https://www.spigotmc.org/resources/authmereloaded.6269/).
 
-These different new systems simplify the login on the site while eliminating the risk of users taking the wrong username.
+Esses diferentes novos sistemas simplificam o login no site, eliminando o risco de usuários usarem o nome de usuário errado.
 
-Finally, for sites using the Steam connection, it is possible to add an email address in order to receive certain alerts by email (for example when a response is received on the support plugin or when a purchase is made on the store). This feature is entirely optional.
+Finalmente, para sites que utilizam a conexão Steam, é possível adicionar um endereço de e-mail para receber determinados alertas por e-mail (por exemplo, quando uma resposta é recebida no plugin de suporte ou quando uma compra é feita na loja). Esse recurso é totalmente opcional.
 
-## Update
+## Atualizar
 
-The migration is available for websites running on an older version of Azuriom. The website must be in version 0.6.0, then in the update tab of the admin dashboard, you can update to Azuriom v1.0!
+A migração está disponível para sites executados em uma versão mais antiga do Azuriom. O site deve estar na versão 0.6.0, então na guia de atualização do painel de administração, você pode atualizar para o Azuriom v1.0!
 
-Before upgrading, a few important points:
-* Make a backup of your website (files and database)
-* Make sure that all extensions have been updated to v1.0
-* Make sure you have PHP 8.0 or higher
-* Check that the website has the necessary permissions on the files
+Antes de atualizar, alguns pontos importantes:
+* Faça um backup do seu site (arquivos e banco de dados)
+* Certifique-se de que todas as extensões foram atualizadas para v1.0
+* Certifique-se de ter o PHP 8.0 ou superior
+* Verifique se o site tem as permissões necessárias nos arquivos
 
-Just before upgrading, it is necessary to disable all extensions. These can be reactivated as soon as the update is completed.
+Antes de atualizar, é necessário desativar todas as extensões. Estes podem ser reativados assim que a atualização for concluída.
 
 {{< warn >}}
-The migration will delete all the data of the vote plugin. The other plugins are not affected.
+A migração excluirá todos os dados do plugin vote. Os outros plugins não são afetados.
 {{< /warn >}}
 
-Once the update is complete, you can update your extensions.
+Quando a atualização estiver concluída, você poderá atualizar suas extensões.
 
-## Adapting a theme
+## Adaptando um tema
 
-As Azuriom is now using Bootstrap 5, the themes will have to be adapted. We advise you to look at the [Bootstrap 5 migration guide](https://getbootstrap.com/docs/5.1/migration/).
+Como a Azuriom está agora a utilizar o Bootstrap 5, os temas terão de ser adaptados. Recomendamos que você consulte o [guia de migração do Bootstrap 5](https://getbootstrap.com/docs/5.1/migration/).
 
-One notable change in using Bootstrap 5 is that jQuery is no longer included with Azuriom. It is also not recommended using it.
+Uma mudança notável no uso do Bootstrap 5 é que o jQuery não está mais incluído no Azuriom. Também não é recomendado usá-lo.
 
-Also, in order to improve future compatibility, we also advise themes to modify the HTML of the CMS and plugins as little as possible, but to use CSS as much as possible. This avoids future compatibility problems in case of an update with a modification of the HTML or when of the HTML or when adding new plugins.
+Além disso, para melhorar a compatibilidade futura, também aconselhamos os temas a modificar o HTML do CMS e os plugins o mínimo possível, mas usar CSS o máximo possível. Isso evita futuros problemas de compatibilidade no caso de uma atualização com modificação do HTML ou quando do HTML ou ao adicionar novos plugins.
 
 {{< warn >}}
-Due to many compatibility issues and outdated themes, themes on the market will be forced to respect this rule. It is of course allowed to change the homepage or layout, as well as some additional pages, but it will not be allowed to change all pages and/or plugins.
+Devido a muitos problemas de compatibilidade e temas desatualizados, os temas no mercado serão forçados a respeitar esta regra. É claro que é permitido alterar a página inicial ou o layout, bem como algumas páginas adicionais, mas não será permitido alterar todas as páginas e/ou plugins.
 {{< /warn >}}
 
-Finally, many translations have been improved and will need to be changed in the themes.
+Por fim, muitas traduções foram aprimoradas e precisarão ser alteradas nos temas.
 
 {{< warn >}}
-In order for a theme to be loaded with Azuriom v1.0, it is **required** to add `"azuriom_api": "1.0.0",` in the `theme.json`:
+Para que um tema seja carregado com o Azuriom v1.0, é **obrigatório** adicionar `"azuriom_api": "1.0.0",` no `theme.json`:
 ```json
 {
   "authors": [
@@ -74,19 +74,19 @@ In order for a theme to be loaded with Azuriom v1.0, it is **required** to add `
 ```
 {{< /warn >}}
 
-### Icons
+### Ícones
 
-FontAwesome 5 was replaced by [Bootstrap Icons](https://icons.getbootstrap.com), so you would need to replace all icons.
+FontAwesome 5 foi substituído por [Bootstrap Icons](https://icons.getbootstrap.com), então você precisaria substituir todos os ícones.
 
-It also requires to replace the FontAwesome CSS by the Boostrap's one:
+Também requer a substituição do FontAwesome CSS pelo do Boostrap:
 ```diff
 - <link href="{{ asset('vendor/fontawesome/css/all.min.css') }}" rel="stylesheet">
 + <link href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
 ```
 
-### Social networks
+### Redes sociais
 
-Azuriom now has a dedicated configuration to add links to social networks directly from the settings. If you had an equivalent configuration it is strongly recommended using the system provided by the CMS instead. You can get the different links with the function `social_links()` like this:
+Azuriom agora tem uma configuração dedicada para adicionar links para redes sociais diretamente das configurações. Se você tiver uma configuração equivalente, é altamente recomendável usar o sistema fornecido pelo CMS. Você pode obter os diferentes links com a função `social_links()` assim:
 ```html
 @foreach(social_links() as $link)
     <a href="{{ $link->value }}" title="{{ $link->title }}" target="_blank" rel="noopener noreferrer" class="btn">
@@ -95,9 +95,9 @@ Azuriom now has a dedicated configuration to add links to social networks direct
 @endforeach
 ```
 
-### Home servers
+### Servidores na página inicial
 
-It is now possible to display servers on the home page, which is especially useful for Steam games. The servers are available with the variable `$servers`, which gives for example:
+Agora é possível exibir servidores na página inicial, o que é especialmente útil para jogos Steam. Os servidores estão disponíveis com a variável `$servers`, que dá por exemplo:
 ```html
 @if(! $servers->isEmpty())
     <h2 class="text-center">
@@ -138,9 +138,9 @@ It is now possible to display servers on the home page, which is especially usef
 @endif
 ```
 
-### Servers join URL
+### Conectar nos servidores por URL
 
-An option has been added to display a link to the server instead of the address. This is especially useful for servers for games with support for a URL to connect directly. We recommend replacing all uses of the server address with something like this:
+Uma opção foi adicionada para exibir um link para o servidor em vez do endereço. Isso é especialmente útil para servidores de jogos com suporte para uma URL para conexão direta. Recomendamos substituir todos os usos do endereço do servidor por algo como isto:
 ```html
 @if($server->joinUrl())
     <a href="{{ $server->joinUrl() }}" class="btn btn-primary">
@@ -151,16 +151,16 @@ An option has been added to display a link to the server instead of the address.
 @endif
 ```
 
-## Adapting a plugin
+## Adaptando um plugin
 
-Since Azuriom is now using Bootstrap 5, the plugins will have to be adapted. We advise you to look at the [Bootstrap 5 migration guide](https://getbootstrap.com/docs/5.1/migration/).
+Uma vez que a Azuriom está agora a utilizar o Bootstrap 5, os plugins terão de ser adaptados. Recomendamos que você consulte o [guia de migração do Bootstrap 5](https://getbootstrap.com/docs/5.1/migration/).
 
-Also, Azuriom is now using Laravel 9 and PHP 8, we advise you to have a look at the [Laravel 9 migration guide](https://laravel.com/docs/9.x/upgrade).
+Além disso, Azuriom agora está usando Laravel 9 e PHP 8, aconselhamos que você dê uma olhada no [Guia de migração Laravel 9](https://laravel.com/docs/9.x/upgrade).
 
-You can also take the opportunity to use the [new features introduced in PHP 8.0](https://www.php.net/releases/8.0/en.php) (but it's 100% optional).
+Você também pode aproveitar para usar os [novos recursos introduzidos no PHP 8.0](https://www.php.net/releases/8.0/en.php) (mas é 100% opcional).
 
 {{< warn >}}
-In order for a plugin to be loaded with Azuriom v1.0, it is **required** to add `"azuriom_api": "1.0.0",` in the `plugin.json`:
+Para que um plugin seja carregado com o Azuriom v1.0, é **obrigatório** adicionar `"azuriom_api": "1.0.0",` no `plugin.json`:
 ```json
 {
   "authors": [
@@ -174,15 +174,15 @@ In order for a plugin to be loaded with Azuriom v1.0, it is **required** to add 
 ```
 {{< /warn >}}
 
-### Icons
+### Ícones
 
-FontAwesome 5 was replaced by [Bootstrap Icons](https://icons.getbootstrap.com), so you would need to replace all FontAwesome icons.
+FontAwesome 5 foi substituído por [Bootstrap Icons](https://icons.getbootstrap.com), então você precisaria substituir todos os ícones FontAwesome.
 
-### Service providers
+### Provedores de serviço
 
-It is now required to explicitly specify calls to the `trans` function in the `routeDescriptions()`, `userNavigation()` and `adminNavigation()` methods.
+Agora é necessário especificar explicitamente chamadas para a função `trans` nos métodos `routeDescriptions()`, `userNavigation()` e `adminNavigation()`.
 
-This results in the following modifications:
+Isso resulta nas seguintes modificações:
 ```diff
     protected function routeDescriptions()
     {
@@ -224,6 +224,6 @@ This results in the following modifications:
     }
 ```
 
-Calls to these methods are now lazy, i.e. the method will only be called when necessary.
+As chamadas para esses métodos agora são preguiçosas, ou seja, o método só será chamado quando necessário.
 
-Finally, the methods deprecated in older versions of Azuriom have all been removed.
+Finalmente, os métodos obsoletos em versões mais antigas do Azuriom foram todos removidos.

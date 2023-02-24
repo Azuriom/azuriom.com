@@ -101,7 +101,7 @@ higher. Also, when the Vote plugin is installed, it must be in version `0.2.0` o
 
 Routes allow you to associate a URL with a particular action.
 
-They are stored in the `routes' directory at the root of the plugin.
+They are stored in the `routes` directory at the root of the plugin.
 
 For more information on how routes work you can read the
 [Laravel documentation](https://laravel.com/docs/routing).

@@ -85,7 +85,7 @@ Por exemplo, este plugin precisa do Azuriom `0.4.0` ou superior, da versão do p
 
 As routes permitem que você associe uma URL a uma ação específica.
 
-Eles são armazenados no diretório `routes' na raiz do plugin.
+Eles são armazenados no diretório `routes` na raiz do plugin.
 
 Para obter mais informações sobre como as routes funcionam, você pode ler a [documentação do Laravel](https://laravel.com/docs/routing).
 
@@ -112,11 +112,11 @@ Azuriom usando [Laravel](https://laravel.com/), as views podem ser feitas usando
 É altamente recomendável NÃO usar a sintaxe do PHP. quando você trabalha com o Blade, porque o Blade não traz o tradicional sem vantagens e apenas desvantagens.
 {{< /warn >}}
 
-To display a view you can use `view('<plugin id>::<name of the view>')`, of example `view('support::tickets.index')` to display the `tickets.index` view of the support plugin.
+Para exibir uma view, você pode usar `view('<plugin id>::<nome da visualização>')`, por exemplo `view('support::tickets.index')` para exibir o `tickets.index` visualização do plug-in de suporte.
 
-To define the layout of the page, it is necessary that the view extends the view containing the layout, you can either use the default layout (or the theme layout if there is one) with `@extends('layouts.app')`, or create your own layout and extend it.
+Para definir o layout da página, é necessário que a view estenda a view que contém o layout, você pode usar o layout padrão (ou o layout do tema se houver) com `@extends('layouts.app')`, ou crie seu próprio layout e estenda-o.
 
-Then put all the main content into the `content` section, and the title of the page in the `title` section.
+Em seguida, coloque todo o conteúdo principal na seção `content` e o título da página na seção `title`.
 
 ```html
 @extends('layouts.app')
@@ -134,30 +134,30 @@ Then put all the main content into the `content` section, and the title of the p
 
 #### Assets
 
-The assets (CSS, JS, images, etc.) are located in the `assets/` folder and can be used with the `plugin_asset('<plugin id>', '<asset path>')` function.
+Os assets (CSS, JS, images, etc.) estão localizados na pasta `assets/` e podem ser usados ​​com a função `plugin_asset('<plugin id>', '<asset path>')`.
 
-Assets can be included in the page via a [Blade stack](https://laravel.com/docs/blade#stacks). in 2 different places on the page depending on the type of asset:
-* `styles` for CSS files (located in the `<head>`)
-* `scripts` for JS files (located in the `<head>`, don't forget to add the `defer` attribute to the script, so they do not block the page rendering)
+Os assets podem ser incluídos na página por meio de uma [Blade stack](https://laravel.com/docs/blade#stacks) em 2 lugares diferentes na página, dependendo do tipo de ativo:
+* `styles` para arquivos CSS (localizados no `<head>`)
+* `scripts` para arquivos JS (localizados no `<head>`, não esqueça de adicionar o atributo `defer` ao script, para que não bloqueiem a renderização da página)
 
-Example:
+Exemplo:
 ```html
 @push('scripts')
     <script src="{{ plugin_asset('vote', 'js/vote.js') }}" defer></script>
 @endpush
 ```
 
-#### Admin View
+#### Admin view
 
-For a page to use the admin panel layout, just use the layout `admin.layouts.admin`, it is also recommended creating an admin folder in the `resources` folder and put the admin views in it.
+Para uma página usar o layout do painel de administração, basta usar o layout `admin.layouts.admin`, também é recomendável criar uma pasta admin na pasta `resources` e colocar as visualizações do administrador nela.
 
 ### Controllers
 
-Controllers are a central part of a plugin, they are located in the folder `src/Controllers` at the root of the plugin, and they take care of to transform a request into the answer that will be sent back to the user.
+Controllers são a parte central de um plugin, eles estão localizados na pasta `src/Controllers` na raiz do plugin, e eles se encarregam de transformar uma requisição na resposta que será enviada de volta ao usuário.
 
-For more information on how the controllers work you can read the [Laravel documentation](https://laravel.com/docs/controllers).
+Para mais informações sobre como os controllers funcionam, você pode ler a [documentação do Laravel](https://laravel.com/docs/controllers).
 
-example:
+Exemplo:
 ```php
 <?php
 
@@ -188,11 +188,11 @@ class TicketController extends Controller
 
 ### Models
 
-Templates represent an entry in a database table, and allow you to interact with the database.
+Os models representam uma entrada em uma tabela de banco de dados e permitem que você interaja com o banco de dados.
 
-You can also define in a model the different relationships of the model, For example, a `ticket` can have a `user` and a `category`, and have `comments`.
+Você também pode definir em um modelo os diferentes relacionamentos do modelo. Por exemplo, um `ticket` pode ter um `user` e uma `category`, e ter `comments`.
 
-You can find more information about models (also called Eloquent on Laravel) in the [Laravel documentation](https://laravel.com/docs/eloquent).
+Você pode encontrar mais informações sobre models (também chamados de Eloquent no Laravel) na [documentação do Laravel](https://laravel.com/docs/eloquent).
 
 ```php
 <?php
@@ -260,9 +260,9 @@ class Ticket extends Model
 
 ### Service Provider
 
-The service providers are the heart of a plugin, they are called at the initialization stage. Of Laravel, and allow to save the different parts of a plugin (views, translations, middlewares, dependencies, etc.).
+Os service provider são o coração de um plugin, eles são chamados no estágio de inicialização. Do Laravel, e permite salvar as diferentes partes de um plugin  (views, translations, middlewares, dependencies, etc.).
 
-Service providers must be added to the `providers` part of the `plugins.json`:
+Os service provider devem ser adicionados à parte `providers` do `plugins.json`:
 ```json
 {
     "providers": [
@@ -271,7 +271,7 @@ Service providers must be added to the `providers` part of the `plugins.json`:
 }
 ```
 
-You can find more information about the services provided in the [Laravel documentation](https://laravel.com/docs/providers).
+Você pode encontrar mais informações sobre os service provider na [documentação do Laravel](https://laravel.com/docs/providers).
 
 ```php
 <?php
@@ -318,24 +318,26 @@ class SupportServiceProvider extends BasePluginServiceProvider
 }
 ```
 
-### Dependencies
+### Dependências
 
-Within your plugin directory run your usual composer require command.
+Dentro do seu diretório de plugins, execute seu comando usual composer require.
 
-Then add `require_once __DIR__.'/../../vendor/autoload.php';` to the register method of the service provider of the plugin.
+Em seguida, adicione `require_once __DIR__.'/../../vendor/autoload.php';` ao método register do provedor de serviços do plugin.
 
-{{< warn >}}Make sure that the dependencies you require are not already provided by Azuriom to avoid versions conflicts and errors.{{< /warn >}}
+{{< warn >}}
+Certifique-se de que as dependências que você precisa não são fornecidas pela Azuriom para evitar conflitos de versões e erros.
+{{< /warn >}}
 
 ### Migration
 
-Migrations allow you to create, modify or delete tables in the database. data, they can be found in the `database/migrations` folder.
+As migrations permitem criar, modificar ou excluir tabelas no banco de dados. data, eles podem ser encontrados na pasta `database/migrations`.
 
-You can use the following command to automatically generate the migration file:
+Você pode usar o seguinte comando para gerar automaticamente o arquivo de migration:
 ```
 php artisan make:migration <migration name> --path plugins/<plugin id>/database/migrations 
 ```
 
-You can find more information about migrations in the [Laravel documentation](https://laravel.com/docs/migrations).
+Você pode encontrar mais informações sobre migrations na [documentação do Laravel](https://laravel.com/docs/migrations).
 
 ```php
 <?php
@@ -378,13 +380,13 @@ return new class extends Migration
 };
 ```
 
-### Translations
+### Traduções
 
-Translations allow you to translate a plugin (amazing), they are found at in the `resources/lang` directory at the root of a plugin, in the language folder (`en`, `fr`, etc...).
+As traduções permitem que você traduza um plugin (incrível), elas são encontradas no diretório `resources/lang` na raiz de um plugin, na pasta do idioma (`en`, `fr`, etc...).
 
-You can find more information on translations in the [Laravel documentation](https://laravel.com/docs/localization).
+Você pode encontrar mais informações sobre traduções na [documentação do Laravel](https://laravel.com/docs/localization).
 
-To retrieve a translation you can use the `trans('<plugin id>::<filename>.<message>')`, for example `trans('support::messages.tickets.home')` to display the `tickets.home` message, in the `messages.php` file of the support plugin:
+Para recuperar uma tradução, você pode usar o `trans('<plugin id>::<filename>.<message>')`, por exemplo `trans('support::messages.tickets.home')` para exibir o ` tickets.home`, no arquivo `messages.php` do plugin de suporte:
 ```php
 <?php
 
@@ -395,12 +397,11 @@ return [
 ];
 ```
 
-### Navigation
+### Barra de navegação
 
-#### Utilisateurs
+#### Usuários
 
-It is recommended to register the main routes of your plugin so that they can be easily added in the navigation bar. To do this, simply call the `$thiS->registerRouteDescriptions()` method in the plugin provider and return the different routes in the `routeDescriptions()` method with the format 
-`[<route> => <description>]`:
+Recomenda-se cadastrar as rotas principais do seu plugin para que possam ser facilmente adicionadas na barra de navegação. Para fazer isso, simplesmente chame o método `$thiS->registerRouteDescriptions()` no provedor do plugin e retorne as diferentes routes no método `routeDescriptions()` com o formato`[<route> => <description>]`:
 ```php
     /**
      * Bootstrap any plugin services.
@@ -429,7 +430,7 @@ It is recommended to register the main routes of your plugin so that they can be
 
 ### Admin
 
-To make your plugin's admin pages appear in the navbar of the admin panel, you can register them by calling the method `$this->registerAdminNavigation()` and returning the different routes in the `adminNavigation()` method.
+Para fazer com que as páginas de administração do seu plugin apareçam na barra de navegação do painel de administração, você pode registrá-las chamando o método `$this->registerAdminNavigation()` e retornando as diferentes routes no método `adminNavigation()`.
 ```php
     /**
      * Bootstrap any plugin services.

@@ -32,11 +32,11 @@ Para criar temas com uma configuração mais avançada com webpack para compilar
 ### Estrutura
 
 ```
-themes/ <-- Folder containing all installed themes
-| example/ <-- ID of your theme
-| | theme.json <-- The main file of your theme containing the various information
-| |  assets/  <-- The folder containing the assets of your theme (css, js, images, svg, etc)
-| | views/ <-- The folder containing the views of your theme.
+themes/ <-- Pasta contendo todos os temas instalados
+| example/ <-- ID do seu tema
+| | theme.json <-- O arquivo principal do seu tema contendo as várias informações
+| |  assets/  <-- A pasta que contém os ativos do seu tema (css, js, images, svg, etc)
+| | views/ <-- A pasta que contém as visualizações do seu tema.
 | | config/
 | | | config.blade.php
 | | | rules.php

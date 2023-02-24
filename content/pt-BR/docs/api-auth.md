@@ -120,7 +120,6 @@ async function login(email, password) {
 }
 ```
 
-
 ### Endpoints
 
 #### Authentification
@@ -130,11 +129,11 @@ async function login(email, password) {
 Autenticar um usuário com as credenciais do site
 
 ##### Request
-| Field    | Description                                                                                       |
+| Campo    | Descrição                                                                              	       |
 |----------|---------------------------------------------------------------------------------------------------|
-| email    | Username or e-mail address                                                                        |
+| email    | Username ou endereço de e-mail                                                                    |
 | password | Password                                                                                          |
-| code     | 2FA code, should be included only if the response `status` is `pending` and the `reason` is `2fa` |
+| code     | Código 2FA, deve ser incluído apenas se a resposta `status` for `pending` e o `reason` for `2fa`  |
 
 ##### Response
 
@@ -162,9 +161,9 @@ Retorna o usuário com suas diversas informações, e o token único que pode se
 **POST** `/verify`
 
 ##### Request
-| Field        | Description         |
-|--------------|---------------------|
-| access_token | Unique access token |
+| Campo    	   	  | Descrição     		 	  |
+|-----------------|---------------------------|
+| access_token    | Token de acesso exclusivo |
 
 ##### Response
 
@@ -204,9 +203,9 @@ Exemplo de response de erro (HTTP `4xx`):
 Faça logout do usuário e invalide o token de acesso.
 
 ##### Request
-| Field        | Description         |
-|--------------|---------------------|
-| access_token | Unique access token |
+| Campo    	   	  | Descrição     		 	  |
+|-----------------|---------------------------|
+| access_token    | Token de acesso exclusivo |
 
 ##### Response
 
