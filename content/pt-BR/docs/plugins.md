@@ -68,7 +68,7 @@ php artisan plugin:create <plugin name>
 ```
 {{< /info >}}
 
-#### Dependências
+#### Dependencies
 
 A seção `dependencies` permite que você especifique os plugins (usando seu id) que devem ser instalados para usar o plugin. Um `?` após o nome do plugin significa que o plugin é opcional, ou seja, não precisa ser instalado, mas quando for, a versão deve corresponder. Também é possível especificar uma versão do Azuriom usando o valor `azuriom`.
 
