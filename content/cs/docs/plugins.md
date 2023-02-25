@@ -100,7 +100,7 @@ vyšší. Pokud bude navíc nainstalován doplněk Vote, musí mít verzi `0.2.0
 
 Cesty (routes) vám umožňují přiřadit URL k určité akci.
 
-Jsou ukládány v adresáři `routes' v kořenovém adresáři doplňku.
+Jsou ukládány v adresáři `routes` v kořenovém adresáři doplňku.
 Pro více informací o funkčnosti cest si můžete přečíst
 [dokumentaci Laravelu](https://laravel.com/docs/routing).
 Příklad:
