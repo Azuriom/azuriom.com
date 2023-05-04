@@ -110,6 +110,12 @@ und die folgenden Zeilen zwischen den `VirtualHost`-Tags hinzufügen
 um das Umschreiben der URL zu ermöglichen:
 
 ```
+<VirtualHost *:80>
+	ServerAdmin webmaster@localhost
+	DocumentRoot /var/www/azuriom/public
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
 <Directory "/var/www/azuriom">
     Options FollowSymLinks
     AllowOverride All
