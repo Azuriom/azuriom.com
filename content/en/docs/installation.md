@@ -128,6 +128,12 @@ and add the following lines between the `<VirtualHost>` tags (replacing `var/www
 to allow URL rewrite:
 
 ```
+<VirtualHost *:80>
+	ServerAdmin webmaster@localhost
+	DocumentRoot /var/www/azuriom/public
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
 <Directory "/var/www/azuriom">
     Options FollowSymLinks
     AllowOverride All
