@@ -179,6 +179,12 @@ Il faut simplement modifier le fichier de configuration d'Apache2 (par défaut
 `/etc/apache2/sites-available/000-default.conf`) et y ajouter les lignes suivantes
 entre les balises `<VirtualHost>` (en remplaçant `var/www/azuriom` par l'emplacement du site) :
 ```
+<VirtualHost *:80>
+	ServerAdmin webmaster@localhost
+	DocumentRoot /var/www/azuriom/public
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
 <Directory "/var/www/azuriom">
     Options FollowSymLinks
     AllowOverride All
