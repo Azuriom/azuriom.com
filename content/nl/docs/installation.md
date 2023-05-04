@@ -128,6 +128,12 @@ en voeg de volgende regels toe tussen de `<VirtualHost>`-tags (waarbij `var/www/
 om URL-herschrijving toe te staan:
 
 ```
+<VirtualHost *:80>
+	ServerAdmin webmaster@localhost
+	DocumentRoot /var/www/azuriom/public
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
 <Directory "/var/www/azuriom">
     Options FollowSymLinks
     AllowOverride All
