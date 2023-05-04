@@ -128,6 +128,12 @@ a2enmod rewrite
 щоб дозволити перезапис URL:
 
 ```
+<VirtualHost *:80>
+	ServerAdmin webmaster@localhost
+	DocumentRoot /var/www/azuriom/public
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
 <Directory "/var/www/azuriom">
     Options FollowSymLinks
     AllowOverride All
