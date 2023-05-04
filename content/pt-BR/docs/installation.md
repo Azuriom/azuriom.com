@@ -113,6 +113,12 @@ a2enmod rewrite
 Então você precisa modificar a configuração do Apache2 (por padrão no arquivo `/etc/apache2/sites-available/000-default.conf`) e adicionar as seguintes linhas entre as tags `<VirtualHost>` (substituindo `var/www/azuriom` por local do site) para permitir URL Rewrite:
 
 ```
+<VirtualHost *:80>
+	ServerAdmin webmaster@localhost
+	DocumentRoot /var/www/azuriom/public
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
 <Directory "/var/www/azuriom">
     Options FollowSymLinks
     AllowOverride All
