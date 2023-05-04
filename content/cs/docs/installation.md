@@ -105,7 +105,13 @@ značky `<VirtualHost>` (nahraďdte
 `var/www/azuriom` lokací webu) pro povolení přepisování URL:
 
 ```
-<Directory "/var/www/azuriom">
+<VirtualHost *:80>
+	ServerAdmin webmaster@localhost
+	DocumentRoot /var/www/azuriom/public
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+<Directory "/var/www/azuriom/public">
     Options FollowSymLinks
     AllowOverride All
     Require all granted
