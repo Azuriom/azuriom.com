@@ -123,9 +123,8 @@ Schakel hiervoor eerst de mod "herschrijven" in:
 a2enmod rewrite
 ```
 
-Vervolgens moet u de Apache2-configuratie wijzigen (standaard in het bestand `/etc/apache2/sites-available/000-default.conf`)
-en voeg de volgende regels toe tussen de `<VirtualHost>`-tags (waarbij `var/www/azuriom` wordt vervangen door de locatie van de site)
-om URL-herschrijving toe te staan:
+Dan moet je de Apache2 configuratie aanpassen (standaard in het `/etc/apache2/sites-available/000-default.conf` bestand)
+vervang `var/www/azuriom` door site locatie om URL herschrijven toe te staan:
 
 ```
 <VirtualHost *:80>
