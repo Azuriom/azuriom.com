@@ -177,7 +177,7 @@ a2enmod rewrite
 Ensuite vous pouvez configurer le site pour autoriser la réécriture d'URL.
 Il faut simplement modifier le fichier de configuration d'Apache2 (par défaut 
 `/etc/apache2/sites-available/000-default.conf`) et y ajouter les lignes suivantes
-entre les balises `<VirtualHost>` (en remplaçant `var/www/azuriom` par l'emplacement du site) :
+en remplaçant `var/www/azuriom` par l'emplacement du site :
 ```
 <VirtualHost *:80>
 	ServerAdmin webmaster@localhost
