@@ -100,9 +100,8 @@ Abyste toho docílili, povolte nejprve modifikaci "rewrite":
 a2enmod rewrite
 ```
 
-Poté upravte soubor `/etc/apache2/sites-available/000-default.conf` a přidejte následující řádky mezi
-značky `<VirtualHost>` (nahraďdte
-`var/www/azuriom` lokací webu) pro povolení přepisování URL:
+Poté upravte soubor `/etc/apache2/sites-available/000-default.conf` a nahraďte
+`var/www/azuriom` lokací webu pro povolení přepisování URL:
 
 ```
 <VirtualHost *:80>
