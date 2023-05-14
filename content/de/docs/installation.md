@@ -105,9 +105,8 @@ a2enmod rewrite
 ```
 
 Dann musst Du die Datei `/etc/apache2/sites-available/000-default.conf` ändern
-und die folgenden Zeilen zwischen den `VirtualHost`-Tags hinzufügen
-(`var/www/azuriom` durch den Standort der Site ersetzen),
-um das Umschreiben der URL zu ermöglichen:
+und `var/www/azuriom` durch den Standort der Website ersetzen um das Umschreiben 
+der URL zu ermöglichen :
 
 ```
 <VirtualHost *:80>
