@@ -102,9 +102,8 @@ Untuk melakukan ini, pertama aktifkan mod "rewrite":
 a2enmod rewrite
 ```
 
-Lalu anda ganti file `/etc/apache2/sites-available/000-default.conf` dan tambahkan baris ini diantara
-tag `<VirtualHost>` (menggantikan
-`var/www/azuriom` dengan lokasi site) untuk mengaktifkan URL rewrite:
+Kemudian Anda perlu memodifikasi konfigurasi Apache2 (secara default dalam berkas `/etc/apache2/sites-available/000-default.conf`)
+ganti `var/www/azuriom` dengan lokasi situs untuk mengizinkan penulisan ulang URL:
 
 ```
 <VirtualHost *:80>
