@@ -124,8 +124,7 @@ a2enmod rewrite
 ```
 
 Then you need to modify the Apache2 configuration (by default in the `/etc/apache2/sites-available/000-default.conf` file)
-and add the following lines between the `<VirtualHost>` tags (replacing `var/www/azuriom` by site location)
-to allow URL rewrite:
+replace `var/www/azuriom` by site location to allow URL rewrite:
 
 ```
 <VirtualHost *:80>
