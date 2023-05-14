@@ -110,7 +110,8 @@ Para fazer isso, primeiro habilite o mod "rewrite":
 a2enmod rewrite
 ```
 
-Então você precisa modificar a configuração do Apache2 (por padrão no arquivo `/etc/apache2/sites-available/000-default.conf`) e adicionar as seguintes linhas entre as tags `<VirtualHost>` (substituindo `var/www/azuriom` por local do site) para permitir URL Rewrite:
+Em seguida, você precisa modificar a configuração do Apache2 (por padrão, no arquivo `/etc/apache2/sites-available/000-default.conf`)
+substituir `var/www/azuriom` pelo local do site para permitir a reescrita de URL:
 
 ```
 <VirtualHost *:80>
