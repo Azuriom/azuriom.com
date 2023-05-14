@@ -119,9 +119,8 @@ Azuriom 还可以部署到 [Docker](https://www.docker.com/) 中, 在[此处](ht
 a2enmod rewrite
 ```
 
-然后你需要修改 Apache2 配置文件 (一般在 `/etc/apache2/sites-available/000-default.conf`)
-并在 `<VirtualHost>` 标签之间添加以下内容 (替换 `var/www/azuriom` 为你实际的网站目录)
-以启用 URL 重写:
+然后你需要修改Apache2的配置（默认在`/etc/apache2/sites-available/000-default.conf`文件中）。
+用站点位置替换`var/www/azuriom`，以允许URL重写:
 
 ```
 <VirtualHost *:80>
