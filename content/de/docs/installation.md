@@ -110,6 +110,7 @@ und die folgenden Zeilen zwischen den `VirtualHost`-Tags hinzufügen
 um das Umschreiben der URL zu ermöglichen:
 
 ```
+DocumentRoot /var/www/azuriom/public
 <Directory "/var/www/azuriom">
     Options FollowSymLinks
     AllowOverride All

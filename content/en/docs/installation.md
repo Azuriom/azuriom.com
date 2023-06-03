@@ -128,6 +128,7 @@ and add the following lines between the `<VirtualHost>` tags (replacing `var/www
 to allow URL rewrite:
 
 ```
+DocumentRoot /var/www/azuriom/public
 <Directory "/var/www/azuriom">
     Options FollowSymLinks
     AllowOverride All

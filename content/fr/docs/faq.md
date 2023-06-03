@@ -61,7 +61,7 @@ l'emplacement du fichier `cacert.pem`:
 
 Si les images téléchargées depuis le panel admin sont bien dans la liste des images,
 mais qu'elles ne s'affichent pas, vous pouvez essayer de faire les manipulations suivantes :
-* Supprimer, s'il existe, le dossier `public/storage` (et non le dossier `storage`!)
+* Aller dans le dossier `public` du CMS puis supprimer le dossier `storage` s'il existe.
 * Puis faire la commande `php artisan storage:link` à la racine du site.
     * Si vous ne pouvez pas exécuter de commandes,
       vous pouvez à la place aller sur l'URL `/admin/settings/storage/link` de votre site.

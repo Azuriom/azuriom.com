@@ -107,6 +107,7 @@ tag `<VirtualHost>` (menggantikan
 `var/www/azuriom` dengan lokasi site) untuk mengaktifkan URL rewrite:
 
 ```
+DocumentRoot /var/www/azuriom/public
 <Directory "/var/www/azuriom">
     Options FollowSymLinks
     AllowOverride All
