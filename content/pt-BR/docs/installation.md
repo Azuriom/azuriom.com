@@ -88,7 +88,7 @@ Você também pode instalá-lo com [Docker](https://www.docker.com/) seguindo as
 
 1. (Opcional) Configure o agendador:
 
-   Alguns recursos precisam que o agendador esteja configurado, para isso você precisa configurar seu servidor para executar o comando `php craftschedule:run` a cada minuto, por exemplo, adicionando esta entrada Cron (não se esqueça de substituir `/var/www/azuriom` com a localização do site):
+   Alguns recursos precisam que o agendador esteja configurado, para isso você precisa configurar seu servidor para executar o comando `php artisan schedule:run` a cada minuto, por exemplo, adicionando esta entrada Cron (não se esqueça de substituir `/var/www/azuriom` com a localização do site):
    ```
    * * * * * cd /var/www/azuriom && php artisan schedule:run >> /dev/null 2>&1
    ```
