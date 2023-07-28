@@ -5,7 +5,6 @@ title: "Azuriom"
 
 enableRobotsTXT: true
 disableKinds: [taxonomy, term, RSS, sitemap]
-disableHugoGeneratorInject: true
 pygmentsUseClasses: true
 
 params:

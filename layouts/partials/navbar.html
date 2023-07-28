@@ -12,7 +12,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link {{ if .IsHome }}active{{ end }}" href="{{ absLangURL "/" }}">
-                        {{ i18n "nav.home" }}
+                        {{ .Site.Home.Title }}
                     </a>
                 </li>
 
@@ -90,13 +90,13 @@
 
                     <div class="dropdown-menu dropdown-menu-end locale-selector" aria-labelledby="langDropdown">
                         <a class="dropdown-item" data-theme-value="light" href="#">
-                            {{ partial "icon.html" "sun" }} Light
+                            {{ partial "icon.html" "sun" }} {{ i18n "theme.light" }}
                         </a>
                         <a class="dropdown-item" data-theme-value="dark" href="#">
-                            {{ partial "icon.html" "moon-stars" }} Dark
+                            {{ partial "icon.html" "moon-stars" }} {{ i18n "theme.dark" }}
                         </a>
                         <a class="dropdown-item" data-theme-value="auto" href="#">
-                            {{ partial "icon.html" "circle-half" }} Auto
+                            {{ partial "icon.html" "circle-half" }} {{ i18n "theme.auto" }}
                         </a>
                     </div>
                 </li>

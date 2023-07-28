@@ -13,9 +13,10 @@ Sendmail is simpler to use and install, but the mails are more likely to be cons
 Some shared web hosts provide an SMTP server that can be used directly.
 Otherwise, it is possible to install an SMTP server yourself but this is very complex,
 and it is often easier to use a dedicated service such as :
-* [Mailgun](https://www.mailgun.com/): 0.80$ / 1000 mails
-* [Amazon SES](https://aws.amazon.com/ses/): 0.10$ / 1000 emails
-* [Sendgrid](https://sendgrid.com/): 100 mails/day for free (or 15$/month for 40000 mails / month)
+* [Scaleway](https://www.scaleway.com/en/transactional-email-tem/): 3,000 emails/month for free, then 1€ for 1000 emails
+* [Brevo](https://www.brevo.com/): 300 emails/day for free, then 25$/month for 20k emails/month
+* [MailPace](https://mailpace.com/): 3.3$/month for 1,000 emails
+* [MailerSend](https://www.mailersend.com/): 3,000 emails for free, then 1$ for 1000 emails
 
 Then simply choose SMTP in Azuriom's email settings and fill in the SMTP server information.
 

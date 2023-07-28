@@ -7,7 +7,9 @@
 
         <p class="mb-4">{{ i18n "errors.notFound.info" }}</p>
 
-        <a href="{{ .Site.BaseURL | absLangURL }}" class="btn btn-primary">{{ i18n "nav.home" }}</a>
+        <a href="{{ .Site.BaseURL | absLangURL }}" class="btn btn-primary">
+            {{ .Site.Home.Title }}
+        </a>
     </div>
 
     <div class="col-md-4">
