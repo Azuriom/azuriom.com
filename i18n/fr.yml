@@ -88,7 +88,7 @@ support:
   donate: "Faire un don"
 
 docs:
-  index: "Accueil"
+  index: "Documentation | Accueil"
 
 errors:
   title: "Erreur"
