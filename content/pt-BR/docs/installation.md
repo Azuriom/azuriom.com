@@ -9,7 +9,7 @@ weight: 1
 
 Para funcionar, Azuriom simplesmente requer um **Servidor Web com PHP** com pelo menos **100 MB** de espaço em disco e os seguintes requisitos:
 
-- PHP 8.0 ou superior
+- PHP 8.1 ou superior
 - URL Rewrite
 - Permissões de Gravação/Leitura em `storage/` e `bootstrap/cache/`.
 - Extensão PHP BCMath
@@ -40,7 +40,7 @@ apt install -y nginx mariadb-server zip curl lsb-release apt-transport-https ca-
 wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
 echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list
 apt update -y
-apt install -y php8.1 php8.1-fpm php8.1-mysql php8.1-pgsql php8.1-sqlite3 php8.1-bcmath php8.1-mbstring php8.1-xml php8.1-curl php8.1-zip php8.1-gd
+apt install -y php8.2 php8.2-fpm php8.2-mysql php8.2-pgsql php8.2-sqlite3 php8.2-bcmath php8.2-mbstring php8.2-xml php8.2-curl php8.2-zip php8.2-gd
 ```
 
 O MySQL (MariaDB) agora está instalado e você pode criar um banco de dados e um usuário com os seguintes comandos (**lembre-se de substituir `<password>` por um password seguro!**):
@@ -155,7 +155,7 @@ server {
     error_page 404 /index.php;
 
     location ~ \.php$ {
-        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+        fastcgi_pass unix:/var/run/php/php8.2-fpm.sock;
         fastcgi_index index.php;
         fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
         include fastcgi_params;
@@ -169,7 +169,7 @@ server {
 
 Esta configuração deve ser colocada em um site em `site-available` e não no `nginx.conf`.
 
-Apenas lembre-se de substituir `example.com` pelo seu domínio, `/var/www/azuriom` pela localização do site (sem remover o `/public` no final da linha!) e `php8.1` por sua versão do PHP.
+Apenas lembre-se de substituir `example.com` pelo seu domínio, `/var/www/azuriom` pela localização do site (sem remover o `/public` no final da linha!) e `php8.2` por sua versão do PHP.
 
 Finalmente, você pode reiniciar o NGINX:
 

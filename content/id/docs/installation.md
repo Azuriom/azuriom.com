@@ -10,7 +10,7 @@ weight: 1
 Untuk bekerja, Azuriom membutuhkan sebuah **server web dengan PHP** yang mempunyai setidaknya **100 MB**
 untuk disk space dan persyaratan sebagai berikut:
 
-- PHP 8.0 atau yang lebih tinggi
+- PHP 8.1 atau yang lebih tinggi
 - URL Rewrite
 - Izin Write/Read di `storage/` dan `bootstrap/cache/`.
 - Ekstensi BCMath PHP
@@ -40,7 +40,7 @@ apt install -y nginx zip curl lsb-release apt-transport-https ca-certificates
 wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
 echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list
 apt update -y
-apt install -y php8.0 php8.0-fpm php8.0-mysql php8.0-pgsql php8.0-sqlite3 php8.0-bcmath php8.0-mbstring php8.0-xml php8.0-curl php8.0-zip php8.0-gd
+apt install -y php8.2 php8.2-fpm php8.2-mysql php8.2-pgsql php8.2-sqlite3 php8.2-bcmath php8.2-mbstring php8.2-xml php8.2-curl php8.2-zip php8.2-gd
 ```
 
 Setelah semuanya telah diinstal, anda harus mengkonfigurasi server webnya. Penjelasan tersedia dibawah
@@ -149,7 +149,7 @@ server {
     error_page 404 /index.php;
 
     location ~ \.php$ {
-        fastcgi_pass unix:/var/run/php/php8.0-fpm.sock;
+        fastcgi_pass unix:/var/run/php/php8.2-fpm.sock;
         fastcgi_index index.php;
         fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
         include fastcgi_params;
@@ -166,4 +166,4 @@ Konfigurasi ini harus di taruh didalam site di `site-available` dan bukan di
 
 Ingat untuk mengganti `example.com` dengan domain anda, `/var/www/azuriom`
 dengan lokasi site (tanpa menghapus `/public` diakhir baris !)
-dan `php8.0` dengan versi PHP anda.
+dan `php8.2` dengan versi PHP anda.

@@ -10,7 +10,7 @@ weight: 1
 Для роботи Azuriom просто потрібен **веб-сервер з PHP**, що має не менше **100 МБ**
 дискового простору та наступні вимоги:
 
-- PHP 8.0 чи вище
+- PHP 8.1 чи вище
 - Перезапис URL-адреси
 - Дозволи на запис/читання на `storage/` та `bootstrap/cache/`.
 - BCMath PHP Розширення
@@ -43,7 +43,7 @@ apt install -y nginx mariadb-server zip curl lsb-release apt-transport-https ca-
 wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
 echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list
 apt update -y
-apt install -y php8.1 php8.1-fpm php8.1-mysql php8.1-pgsql php8.1-sqlite3 php8.1-bcmath php8.1-mbstring php8.1-xml php8.1-curl php8.1-zip php8.1-gd
+apt install -y php8.2 php8.2-fpm php8.2-mysql php8.2-pgsql php8.2-sqlite3 php8.2-bcmath php8.2-mbstring php8.2-xml php8.2-curl php8.2-zip php8.2-gd
 ```
 
 MySQL (MariaDB) тепер встановлена, і ви можете створити базу даних і користувача за допомогою
@@ -170,7 +170,7 @@ server {
     error_page 404 /index.php;
 
     location ~ \.php$ {
-        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+        fastcgi_pass unix:/var/run/php/php8.2-fpm.sock;
         fastcgi_index index.php;
         fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
         include fastcgi_params;
@@ -187,7 +187,7 @@ server {
 
 Тільки не забудьте замінити `example.com` на ваш домен, `/var/www/azuriom` - на
 на розташування сайту (не прибираючи `/public` в кінці рядка!)
-а `php8.1` на вашу версію PHP.
+а `php8.2` на вашу версію PHP.
 
 Нарешті, ви можете перезапустити NGINX:
 

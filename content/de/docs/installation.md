@@ -11,7 +11,7 @@ weight: 1
 Um zu funktionieren, benötigt Azuriom lediglich einen **Webserver mit PHP** mit mindestens **100 MB**
 Festplattenspeicher und den folgenden Anforderungen:
 
-- PHP 8.0 oder höher
+- PHP 8.1 oder höher
 - URL Rewrite
 - Schreib-/Lese-Berechtigungen af `storage/` und `bootstrap/cache/`.
 - BCMath PHP Erweiterung
@@ -43,7 +43,7 @@ apt install lsb-release apt-transport-https ca-certificates
 wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
 echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list
 apt update
-apt install php8.0 php8.0-fpm php8.0-mysql php8.0-pgsql php8.0-sqlite php8.0-bcmath php8.0-mbstring php8.0-xml php8.0-curl php8.0-zip php8.0-gd
+apt install -y php8.2 php8.2-fpm php8.2-mysql php8.2-pgsql php8.2-sqlite3 php8.2-bcmath php8.2-mbstring php8.2-xml php8.2-curl php8.2-zip php8.2-gd
 ```
 
 Once the requirements are installed, you must configure the web server. Explanations are available at the bottom of this
@@ -152,7 +152,7 @@ server {
     error_page 404 /index.php;
 
     location ~ \.php$ {
-        fastcgi_pass unix:/var/run/php/php8.0-fpm.sock;
+        fastcgi_pass unix:/var/run/php/php8.2-fpm.sock;
         fastcgi_index index.php;
         fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
         include fastcgi_params;
@@ -170,4 +170,4 @@ und nicht in der `nginx.conf` platziert werden.
 Denke daran, `example.com` durch Deine Domain zu ersetzen,
 `/var/www/azuriom` durch den Standort der Site
 (ohne das `/public` am Ende der Zeile zu entfernen!)
-und `php8.0` durch Deine PHP-Version.
+und `php8.2` durch Deine PHP-Version.
