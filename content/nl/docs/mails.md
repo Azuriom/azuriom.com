@@ -12,10 +12,9 @@ Sendmail is eenvoudiger te gebruiken en te installeren, maar de e-mails worden e
 Sommige gedeelde webhosts bieden een SMTP-server die direct kan worden gebruikt.
 Anders is het mogelijk om zelf een SMTP-server te installeren maar dit is erg complex,
 en het is vaak gemakkelijker om een speciale dienst te gebruiken zoals:
-* [Scaleway](https://www.scaleway.com/en/transactional-email-tem/): 3,000 emails gratis per maand, dan 1€ per 1000 emails
-* [Brevo](https://www.brevo.com/): 300 emails gratis per dag, dan 25$/maand voor 20k emails/maand
-* [MailPace](https://mailpace.com/): 3.3$/maand voor 1,000 emails
-* [MailerSend](https://www.mailersend.com/): 3,000 emails gratis, dan 1$ voor 1000 emails
+* [Mailgun](https://www.mailgun.com/): 0.80$ / 1000 e-mails
+* [Amazon SES](https://aws.amazon.com/ses/): 0.10$ / 1000 e-mails
+* [Sendgrid](https://sendgrid.com/): 100 e-mails/per dag gratis (of 15$/per maand 40.000 e-mails / per maand)
 
 Kies dan gewoon SMTP in de e-mail instellingen van Azuriom en vul de SMTP-server informatie in.
 
