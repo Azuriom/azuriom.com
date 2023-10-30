@@ -9,7 +9,7 @@ layout: single
 
 ## Úvod
 
-[Azuriom](https://azuriom.com/) je herní CMS **nové generace**,
+[Azuriom]({{< url "/" >}}) je herní CMS **nové generace**,
  které je **bezplatné** a **open-source** a je **moderní**, **spolehlivou**, **rychlou a bezpečnou**
 alternativou k existujícím CMS, takže můžete mít **nejlepší možný zážitek z webu**.
 
@@ -34,6 +34,4 @@ si také zaslouží všichni [přispěvatelé Azuriomu](https://github.com/Azuri
 ### Dárci
 
 Díky dárcům je tento projekt možný, mnohokrát jim děkujeme, a konkrétně:
-* [Akuyuma](https://toxyca.fr/)
-* micro_maniaque
-* [Skillz](https://www.evolved-network.com/)
+{{< donors >}}

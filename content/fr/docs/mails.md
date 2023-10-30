@@ -17,9 +17,10 @@ d’utiliser directement.
 
 Sinon il est possible d’installer soi-même un serveur SMTP, mais cela est très
 complexe, et c'est souvent plus intéressant d’utiliser un service dédié :
-* [Mailgun](https://www.mailgun.com/) : 0.80$ / 1000 mails
-* [Amazon SES](https://aws.amazon.com/fr/ses/) : 0.10$ / 1000 mails
-* [Sendgrid](https://sendgrid.com/) : 100 mails / jour gratuitement (ou 15$ / mois pour 40000 mails / mois)
+* [Scaleway](https://www.scaleway.com/fr/email-transactionnel-tem/) : 3000 emails/mois gratuits, puis 1€ pour 1000 emails
+* [Brevo](https://www.brevo.com/) : 300 emails/jour gratuits, puis 19€/mois pour 20k emails/mois
+* [MailPace](https://mailpace.com/) : 3.3$/mois pour 1000 emails
+* [MailerSend](https://www.mailersend.com/) : 3000 emails gratuits puis 1$ pour 1000 emails
 
 Il suffit ensuite de choisir SMTP dans les paramètres mail d’Azuriom et de renseigner
 les informations du serveur SMTP.

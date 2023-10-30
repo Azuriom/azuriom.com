@@ -9,7 +9,7 @@ layout: single
 
 ## Introduction
 
-[Azuriom](https://azuriom.com/) is the **next generation** game CMS,
+[Azuriom]({{< url "/" >}}) is the **next generation** game CMS,
  it's **free** and **open-source**, and is a **modern**, **reliable**, **fast and secure**
 alternative to existing CMS, so you can have the **best web experience possible**.
 
@@ -34,6 +34,4 @@ to our partner [NiHost](https://www.ni-host.com/?utm_source=home&utm_medium=link
 ### Donors
 
 Donors make the project possible, a big thanks to them, and in particular to:
-* [Akuyuma](https://toxyca.fr/)
-* micro_maniaque
-* [Skillz](https://www.evolved-network.com/)
+{{< donors >}}

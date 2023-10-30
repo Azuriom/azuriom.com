@@ -1,0 +1,97 @@
+meta:
+  desc: "Azuriom merupakan CMS Gaming yang modern, dapat diandalkan, cepat dan aman. Ini merupakan pilihan yang tepat untuk membuat website tentang Minecraft, Garry's Mod, Rust, Ark, FiveM dan masih banyak lagi."
+
+theme:
+  light: "Light"
+  dark: "Dark"
+  auto: "Auto"
+
+nav:
+  home: "Beranda"
+  download: "Pengunduhan"
+  extensions: "Tambahan"
+  docs: "Dokumentasi"
+  demo: "Demo"
+  demoMC: "Demo Minecraft"
+  demoSteam: "Demo Steam"
+
+footer:
+  about: "Tentang Kami"
+  aboutDescription: "Azuriom merupakan CMS Game generasi selanjutnya, Ini gratis dan open-source, dan modern, dapat diandalkan, cepat dan aman. Sebuah Alternatif untuk CMS yang sudah ada sehingga anda mendapatkan pengalaman yang terbaik untuk website anda tentang Minecraft, Garry's Mod, Ark, Rust dan masih banyak lagi."
+  copyright: "Copyright &copy; 2019-{{ .year }} Azuriom - All rights reserved. Di buat dengan &nbsp;{{ .love }} oleh Azuriom."
+  partners: "Mitra"
+  links: "Tautan"
+  supportUs: "Dukung Kami"
+
+home:
+  header:
+    title: "Azuriom | Website game generasi-selanjutnya"
+    subtitle: "Website game generasi selanjutnya untuk server anda, digunakan oleh ribuan website."
+    heading: "Sebuah CMS Game"
+    typed: "gratis dan open source.|cepat dan aman.|modern dan dapat diandalkan."
+    typedFallback: "gratis dan open source, cepat, aman, modern dan dapat diandalkan."
+
+  about:
+    title: "Apa itu Azuriom"
+    description1: "Azuriom merupakan game CMS <strong>generasi selanjutnya</strong>, ini <strong>gratis</strong> dan <strong>open-source</strong>, and is a <strong>modern, reliable, fast and secure</strong> alternative to existing CMS so you can have the <strong>best web experience possible</strong>."
+    description2: "Azuriom merupakan pilihan terbaik untuk website Minecraft, Garry's Mod, Rust, FiveM, Ark dan masih banyak lagi."
+    gamesTitle: "Permainan yang didukung"
+    games: "Azuriom merupakan <strong>CMS Minecraft</strong>, tapi bukan hanya itu saja! Dengan tambahan dari Minecraft, ini juga mendukung <strong>Garry's Mod, Ark, Rust, FiveM, CS:GO dan Team Fortress 2</strong>!"
+
+  features:
+    modern:
+      title: "Modern"
+      desc: "Dibangun dengan teknologi terbaru, dengan pola yang solid."
+
+    reliable:
+      title: "Dapat diandalkan"
+      desc: "Tes protokol kami membantu mencegah error dalam produksi."
+
+    fast:
+      title: "Cepat"
+      desc: "Setiap komponen di Azuriom merupakan optimasi secara maksimal untuk performa yang tidak tertandingi."
+
+    secure:
+      title: "Aman"
+      desc: "Dengan konsep yang kuat, dan terkini, keamanan menjadi kuat."
+
+  desc1:
+    title: "Tambahan yang Unik"
+    description1: "Tambahan kami, yaitu Themes dan Plugin kami dibuat dalam cara yang sama dengan CMS sehingga ini akan menjadi satu dengan Tambahan setelah diunduh."
+    description2: "Untuk para Pengembang yang ingin membuat Tambahan, alat dan dokumentasi yang lengkap sudah tersedia untuk pengembangan yang nyaman."
+    description3: "Sebuah pasar Komunitas juga tersedia untuk mengirim Tambahan anda. Kami akan memeriksa setiap Tambahan, dan nanti kami akan terus mengikut pembaruan yang diajukan untuk membuat pasar tetap bersih."
+
+  desc2:
+    title: "Bantuan yang Aktif"
+    description1: "Kami memiliki Bantuan yang aktif di Discord dan di Github dan karena Azuriom adalah open-source, semua orang dapat berkontribusi ke proyek kami di Github!"
+    description2: "Dan Azuriom adalah open-source, jadi semua orang bisa berkontribusi dan meningkatkan proyek ini."
+
+download:
+  title: "Pengunduhan"
+  docs: "Sebelum mengunduh Azuriom, Sangat di sarankan untuk <a href=\"{{ .docs }}\" target=\"_blank\">membaca dokumentasi kami</a>."
+  support: 'Jika anda membutuhkan bantuan atau anda memiliki pertanyaan, anda bisa gabung ke server <a href="{{ .discord }}" target="_blank">Discord</a> kami.'
+  sources: 'Azuriom adalah open-source dan semua sumbernya tersedia di <a href="{{ .github }}" target="_blank">GitHub</a>.'
+
+azlink:
+  title: "AzLink"
+  info: "AzLink sebuah plugin dibuat oleh Azuriom untuk menghubungkan server anda ke website Azuriom dengan cara yang mudah, cepat dan aman."
+  download: "Pengunduhan"
+  supported: "AzLink mendukung Bukkit (dan server Bukkit lainnya seperti Spigot, Glowstone dan Cauldron), BungeeCord, Sponge dan Velocity dalam plugin yang sama. Jika anda menggunakan Minecraft 1.7.10 anda harus mengunduh versi legacy."
+  sources: 'AzLink adalah open-source dan semua sumbernya tersedia di <a href="{{ .github }}" target="_blank">GitHub</a>.'
+
+support:
+  title: "Dukung Kami"
+  description1: "Membuat proyek ini memakan waktu, dan donasi anda akan sangat membantu kami untuk bekerja dan meningkatkan proyek ini."
+  description2: "Donasi anda juga akan membantu menutupi biaya finansial untuk proyek ini: kami butuh untuk membayar domain, menyewa server (website, demo), desainer grafis, ..."
+  description3: "Anda juga membantu kami dengan memberikan bintang di repo GitHub kami, ini gratis dan hanya membutuhkan akun GitHub saja."
+  star: "Berikan bintang untuk Proyek kami"
+  donate: "Donasi"
+
+docs:
+  index: "Beranda"
+
+errors:
+  title: "Error"
+  notFound:
+    title: "Tidak ditemukan"
+    info: "Halaman yang anda cari tidak dapat di temukan."

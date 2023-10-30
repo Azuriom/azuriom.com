@@ -10,7 +10,7 @@ weight: 1
 To work, Azuriom simply requires a **web server with PHP** having at least **100 MB**
 of disk space and the following requirements:
 
-- PHP 8.0 or higher
+- PHP 8.1 or higher
 - URL Rewrite
 - Write/Read permissions on `storage/` and `bootstrap/cache/`.
 - BCMath PHP Extension
@@ -43,7 +43,7 @@ apt install -y nginx mariadb-server zip curl lsb-release apt-transport-https ca-
 wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
 echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list
 apt update -y
-apt install -y php8.1 php8.1-fpm php8.1-mysql php8.1-pgsql php8.1-sqlite3 php8.1-bcmath php8.1-mbstring php8.1-xml php8.1-curl php8.1-zip php8.1-gd
+apt install -y php8.2 php8.2-fpm php8.2-mysql php8.2-pgsql php8.2-sqlite3 php8.2-bcmath php8.2-mbstring php8.2-xml php8.2-curl php8.2-zip php8.2-gd
 ```
 
 MySQL (MariaDB) is now installed, and you can create a database and a user with the
@@ -76,7 +76,7 @@ Azuriom offers an automatic installer to install Azuriom easily by following the
 You can also install it with [Docker](https://www.docker.com/) by following the steps listed [here](https://github.com/Azuriom/Azuriom/blob/master/docker/INSTALL.md).
 {{< /info >}}
 
-1. Download the latest version of the Azuriom installer on [our website](https://azuriom.com/download).
+1. Download the latest version of the Azuriom installer on [our website]({{< url "/download" >}}).
 
 1. Extract the archive at the root of your website.
 
@@ -170,7 +170,7 @@ server {
     error_page 404 /index.php;
 
     location ~ \.php$ {
-        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+        fastcgi_pass unix:/var/run/php/php8.2-fpm.sock;
         fastcgi_index index.php;
         fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
         include fastcgi_params;
@@ -187,7 +187,7 @@ This configuration must be placed in a site in `site-available` and not in the
 
 Just remember to replace `example.com` with your domain, `/var/www/azuriom`
 with the location of the site (without removing the `/public` at the end of the line!)
-and `php8.1` with your PHP version.
+and `php8.2` with your PHP version.
 
 Finally, you can restart NGINX:
 

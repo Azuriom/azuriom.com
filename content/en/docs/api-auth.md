@@ -15,7 +15,7 @@ the `verify` method.
 ## Download
 
 AzAuth sources are available on [GitHub](https://github.com/Azuriom/AzAuth)
-and the jar file can be downloaded [here](https://oss.sonatype.org/content/repositories/snapshots/com/azuriom/azauth/0.1.0-SNAPSHOT/azauth-0.1.0-20220420.160910-3.jar).
+and the jar file can be downloaded [here](https://repo.maven.apache.org/maven2/com/azuriom/azauth/1.0.0/azauth-1.0.0.jar).
 
 If you are using a dependency manager, you can add AzAuth as a
 dependency by the following way:

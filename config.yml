@@ -5,7 +5,6 @@ title: "Azuriom"
 
 enableRobotsTXT: true
 disableKinds: [taxonomy, term, RSS, sitemap]
-disableHugoGeneratorInject: true
 pygmentsUseClasses: true
 
 params:
@@ -23,18 +22,38 @@ languages:
     params:
       code: fr_FR
       twitter: AzuriomFR
-  nl:
-    languageName: Nederlands
-    contentDir: content/nl
-    params:
-      code: nl_NL
   de:
     languageName: Deutsch
     contentDir: content/de
     params:
       code: de_DE
+  nl:
+    languageName: Nederlands
+    contentDir: content/nl
+    params:
+      code: nl_NL
+  uk:
+    languageName: Українська
+    contentDir: content/uk
+    params:
+      code: uk_UA
   cs:
-    languageName: Czech
+    languageName: Čeština
     contentDir: content/cs
     params:
       code: cs_CZ
+  id:
+    languageName: Bahasa Indonesia
+    contentDir: content/id
+    params:
+      code: id_ID
+  zh-CN:
+    languageName: 简体中文
+    contentDir: content/zh-cn
+    params:
+      code: zh_CN
+  pt-BR:
+    languageName: Brasil
+    contentDir: content/pt-BR
+    params:
+      code: pt_BR

@@ -91,7 +91,6 @@ correctly.
 To fix this issue, you can disable Cloudflare on the API, by going to Page Rules
 -> Add a rule, then add `/api/*` as the URL and these actions:
 * Cache Level: 'Bypass'
-* Always Online: 'OFF'
 * Security Level: 'Medium' or 'High'
 * Browser Integrity Check: 'OFF' 
 

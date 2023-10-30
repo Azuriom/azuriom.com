@@ -16,7 +16,7 @@ est bien valide en utilisant la méthode `verify`.
 ## Téléchargement
 
 Les sources d'AzAuth sont disponibles sur [GitHub](https://github.com/Azuriom/AzAuth)
-et le fichier "jar" peut être téléchargé [ici](https://oss.sonatype.org/content/repositories/snapshots/com/azuriom/azauth/0.1.0-SNAPSHOT/azauth-0.1.0-20220420.160910-3.jar).
+et le fichier "jar" peut être téléchargé [ici](https://repo.maven.apache.org/maven2/com/azuriom/azauth/1.0.0/azauth-1.0.0.jar).
 
 Si vous utilisez un gestionnaire de dépendances, vous pouvez ajouter AzAuth comme
 dépendance de la façon suivante :

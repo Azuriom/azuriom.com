@@ -1,16 +1,16 @@
 [build]
-command = "hugo --gc --minify"
+command = "hugo --gc"
 publish = "public"
 
 [build.environment]
-HUGO_VERSION = "0.87.0"
+HUGO_VERSION = "0.109.0"
 HUGO_UGLYURLS = "true"
 
 [context.deploy-preview]
-command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
+command = "hugo --gc -b $DEPLOY_PRIME_URL"
 
 [context.branch-deploy]
-command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
+command = "hugo --gc -b $DEPLOY_PRIME_URL"
 
 [[headers]]
 for = "/*"
@@ -38,6 +38,10 @@ from = "/api/updates"
 to = "https://market.azuriom.com/api/updates"
 
 [[redirects]]
+from = "/install/assets/v0.2.4/img/:image"
+to = "https://cdn.jsdelivr.net/gh/Azuriom/Azuriom@1.0.1/public/assets/img/games/:image"
+
+[[redirects]]
 from = "/en/*"
 to = "/en/404.html"
 status = 404
@@ -63,6 +67,26 @@ to = "/nl/404.html"
 status = 404
 
 [[redirects]]
+from = "/uk/*"
+to = "/uk/404.html"
+status = 404
+
+[[redirects]]
+from = "/id/*"
+to = "/id/404.html"
+status = 404
+
+[[redirects]]
+from = "/zh-cn/*"
+to = "/zh-cn/404.html"
+status = 404
+
+[[redirects]]
+from = "/pt-br/*"
+to = "/pt-br/404.html"
+status = 404
+
+[[redirects]]
 from = "/"
 to = "/fr"
 # TODO use Language when possible,
@@ -73,8 +97,43 @@ status = 302
 
 [[redirects]]
 from = "/"
+to = "/cs"
+conditions = { Country = ["cz"] }
+force = true
+status = 302
+
+[[redirects]]
+from = "/"
 to = "/nl"
 conditions = { Country = ["nl"] }
+force = true
+status = 302
+
+[[redirects]]
+from = "/"
+to = "/uk"
+conditions = { Country = ["ua"] }
+force = true
+status = 302
+
+[[redirects]]
+from = "/"
+to = "/id"
+conditions = { Country = ["id"] }
+force = true
+status = 302
+
+[[redirects]]
+from = "/"
+to = "/zh-cn"
+conditions = { Country = ["cn"] }
+force = true
+status = 302
+
+[[redirects]]
+from = "/"
+to = "/pt-br"
+conditions = { Country = ["BR"] }
 force = true
 status = 302
 
@@ -94,6 +153,36 @@ status = 302
 from = "/*"
 to = "/nl/:splat"
 conditions = { Country = ["nl"] }
+status = 302
+
+[[redirects]]
+from = "/*"
+to = "/uk/:splat"
+conditions = { Country = ["ua"] }
+status = 302
+
+[[redirects]]
+from = "/*"
+to = "/cs/:splat"
+conditions = { Country = ["cz"] }
+status = 302
+
+[[redirects]]
+from = "/*"
+to = "/id/:splat"
+conditions = { Country = ["id"] }
+status = 302
+
+[[redirects]]
+from = "/*"
+to = "/zh-cn/:splat"
+conditions = { Country = ["cn"] }
+status = 302
+
+[[redirects]]
+from = "/*"
+to = "/pt-br/:splat"
+conditions = { Country = ["BR"] }
 status = 302
 
 [[redirects]]

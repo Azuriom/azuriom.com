@@ -84,7 +84,6 @@ indem Du zu Seitenregeln - Regel hinzufügen gehst,
 dann `/api/*` als URL hinzufügst und diese Aktionen ausführst:
 -> Füge eine Regel hinzu, füge dann `/api/*` als URL und diese Aktionen hinzu:
 * Cache Level: 'Bypass'
-* Always Online: 'OFF'
 * Security Level: 'Medium' or 'High'
 * Browser Integrity Check: 'OFF' 
 

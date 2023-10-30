@@ -14,9 +14,11 @@ Einige gemeinsam genutzte Webhosts bieten einen SMTP-Server, der direkt verwende
 Ansonsten ist es möglich, selbst einen SMTP-Server zu installieren,
 dies ist jedoch sehr aufwendig und es ist oft einfacher, einen dedizierten Dienst zu verwenden,
 wie zum Beispiel:
-* [Mailgun](https://www.mailgun.com/): 0.80$ / 1000 E-Mails
-* [Amazon SES](https://aws.amazon.com/ses/): 0.10$ / 1000 E-Mails
-* [Sendgrid](https://sendgrid.com/): 100 E-Mails/Tag gratis (oder 15$/Monat für 40000 E-Mails/Monat)
+* [Scaleway](https://www.scaleway.com/en/transactional-email-tem/) : 3000 E-Mails/Monat gratis, oder 1€ für 1000 E-Mails
+* [Brevo](https://www.brevo.com/) : 300 E-Mails/Tag gratis, oder 19€/Monat für 20k E-Mails
+* [MailPace](https://mailpace.com/) : 3.3$/Monat für 1000 E-Mails
+* [MailerSend](https://www.mailersend.com/) : 3000 emails gratis, oder 1$ für 1000 E-Mails
+
 
 Wähle dann einfach SMTP in den E-Mail-Einstellungen von Azuriom und gebe die SMTP-Serverinformationen ein.
 

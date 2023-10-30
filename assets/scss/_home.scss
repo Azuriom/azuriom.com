@@ -28,14 +28,20 @@
 
     .hero-waves {
         position: absolute;
-        height: 110px;
         bottom: -1px;
         left: 0;
         right: 0;
+        color: var(--bs-body-bg);
     }
 
     .hero-wrapper {
         min-height: calc(100vh - 5.5rem);
+    }
+}
+
+@include color-mode(dark) {
+    .home-hero {
+        background: linear-gradient(-75deg, #022265 0, #003bb1 100%);
     }
 }
 
@@ -70,6 +76,11 @@
     @media (max-width: 768px) {
         padding: 3rem 0;
     }
+}
+
+.section-waves,
+.section-waves-reversed {
+    color: rgba(var(--bs-secondary-bg-rgb), var(--bs-bg-opacity));
 }
 
 .section-waves-reversed {

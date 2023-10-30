@@ -79,7 +79,7 @@ le nom pour créer l'id, par exemple si le nom est `Hello World`, l'id pourra ê
 
 ### Vues
 
-Les vues sont le cœur de d'un thème, ce sont les fichiers contenant l'HTML
+Les vues sont le cœur d'un thème, ce sont les fichiers contenant l'HTML
 d'un thème pour afficher les différentes parties du site.
 
 Azuriom utilisant [Laravel](https://laravel.com/), les vues peuvent être faites en utilisant le moteur

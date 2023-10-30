@@ -78,7 +78,6 @@ Cloudflare může zabránit správné funkci AzLinku nebo některých platebníc
 Pro opravení této chyby můžete zakázat Cloudflare na API tím, že půjdete do pravidel stránek
 -> Přidejte pravidlo, poté přidejte `/api/*` as the URL and these actions:
 * Cache Level: 'Bypass'
-* Always Online: 'OFF'
 * Security Level: 'Medium' nebo 'High'
 * Browser Integrity Check: 'OFF' 
 
