@@ -10,7 +10,7 @@ weight: 1
 Om te werken, heeft Azuriom een **webserver met PHP** nodig met minimaal **100 MB**
 schijfruimte en de volgende vereisten:
 
-- PHP 8.0 of hoger
+- PHP 8.1 of hoger
 - URL herschrijven
 - Schrijf-/leesrechten op `storage/` en `bootstrap/cache/`. mappen.
 - BCMath PHP Extensie
@@ -43,7 +43,7 @@ apt install -y nginx mariadb-server zip curl lsb-release apt-transport-https ca-
 wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
 echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list
 apt update -y
-apt install -y php8.1 php8.1-fpm php8.1-mysql php8.1-pgsql php8.1-sqlite3 php8.1-bcmath php8.1-mbstring php8.1-xml php8.1-curl php8.1-zip php8.1-gd
+apt install -y php8.2 php8.2-fpm php8.2-mysql php8.2-pgsql php8.2-sqlite3 php8.2-bcmath php8.2-mbstring php8.2-xml php8.2-curl php8.2-zip php8.2-gd
 ```
 
 MySQL (MariaDB) is nu geïnstalleerd en u kunt een database en een gebruiker maken met de
@@ -77,7 +77,7 @@ door deze paar stappen te volgen:
 Je kunt het ook installeren met [Docker](https://www.docker.com/) door de vermelde stappen te volgen [hier](https://github.com/Azuriom/Azuriom/blob/master/docker/INSTALL.md).
 {{< /info >}}
 
-1. Download de nieuwste versie van het Azuriom installatie programma op [onze website](https://azuriom.com/download).
+1. Download de nieuwste versie van het Azuriom installatie programma op [onze website]({{< url "/download" >}}).
 
 1. Pak het archief uit in de hoofdmap van uw website.
 
@@ -171,7 +171,7 @@ server {
     error_page 404 /index.php;
 
     location ~ \.php$ {
-        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+        fastcgi_pass unix:/var/run/php/php8.2-fpm.sock;
         fastcgi_index index.php;
         fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
         include fastcgi_params;
@@ -188,7 +188,7 @@ en niet in het `nginx.conf` bestand.
 
 Vergeet niet om `example.com` te vervangen door uw domein,
 `/var/www/azuriom` met de locatie van uw site (zonder de `/public` aan het einde van de regel te verwijderen!)
-en `php8.1` met uw PHP-versie.
+en `php8.2` met uw PHP-versie.
 
 Ten slotte kunt u NGINX opnieuw opstarten:
 

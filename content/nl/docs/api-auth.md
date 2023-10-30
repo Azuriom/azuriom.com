@@ -10,12 +10,12 @@ AzAuth is een API waarmee u gebruikers van een website onder Azuriom op elk plat
 Ongeacht hoe u de client-side auth-api gebruikt, u moet zich verifiëren op
 de server waarop het toegangstoken door de client is geretourneerd
 en geldig is door gebruik te maken van de `verificatie`-methode.
-{{< /warn>}}
+{{< /warn >}}
 
 ## Download
 
 AzAuth-bronnen zijn beschikbaar op [GitHub](https://github.com/Azuriom/AzAuth)
-en het jar-bestand kan worden gedownload [hier](https://oss.sonatype.org/content/repositories/snapshots/com/azuriom/azauth/0.1.0-SNAPSHOT/azauth-0.1.0-20220420.160910-3.jar).
+en het jar-bestand kan worden gedownload [hier](https://repo.maven.apache.org/maven2/com/azuriom/azauth/1.0.0/azauth-1.0.0.jar).
 
 Als u een afhankelijkheidsmanager gebruikt, kunt u AzAuth toevoegen als
 afhankelijkheid op de volgende manier:

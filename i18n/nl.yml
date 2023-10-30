@@ -1,6 +1,11 @@
 meta:
   desc: "Azuriom is een moderne, betrouwbare, snel en veilige game CMS. Het is de ideale keuze voor je website op Minecraft, Garry's Mod, Rust, Ark, FiveM en veel meer games."
 
+theme:
+  light: "Licht"
+  dark: "Donker"
+  auto: "Auto"
+
 nav:
   home: "Index"
   download: "Download"
