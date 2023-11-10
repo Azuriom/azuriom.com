@@ -1,5 +1,5 @@
 ---
-title: 首页
+title: 文档
 description: Azuriom 文档包含了很多关于 Azuriom 的有用信息，用于安装、使用或拓展开发。
 weight: 0
 layout: single

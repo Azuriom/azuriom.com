@@ -1,5 +1,5 @@
 ---
-title: Beranda
+title: Dokumentasi
 description: Dokumentasi Azuriom berisi tentang informasi berguna mengenai Azuriom, untuk pengunduhan, gunakan atau pengembangan Tambahan.
 weight: 0
 layout: single

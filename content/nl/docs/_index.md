@@ -1,5 +1,5 @@
 ---
-title: Index
+title: Documentatie
 description: De Azuriom documentatie bevat veel informatie over Azuriom, voor installatie, gebruik of het ontwikkelen van extensies.
 weight: 0
 layout: single

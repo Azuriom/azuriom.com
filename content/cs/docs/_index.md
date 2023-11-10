@@ -1,5 +1,5 @@
 ---
-title: Domů
+title: Dokumentace
 description: Dokumentace Azuriomu obsahuje spoustu užitečných informací o Azuriomu, instalaci nebo vývoji rozšíření.
 weight: 0
 layout: single
