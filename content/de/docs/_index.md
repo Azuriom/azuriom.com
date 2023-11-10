@@ -1,5 +1,5 @@
 ﻿---
-title: Startseite
+title: Dokumentation
 weight: 0
 layout: single
 ---

@@ -3,15 +3,18 @@
     <aside class="col-md-3 col-xl-2 bd-sidebar">
         <nav>
             <ul class="nav nav-pills flex-column">
+                {{ $currentPage := . }}
                 <li class="nav-item">
-                    <a class="nav-link {{ if eq .Title (i18n "docs.index") }}active{{ end }}" href="{{ absLangURL "docs" }}">
+                    {{ with .CurrentSection }}
+                    <a class="nav-link {{ if eq $currentPage . }}active{{ end }}" href="{{ partial "permalink.html" . }}">
                         {{ i18n "docs.index" }}
                     </a>
+                    {{ end }}
                 </li>
                 {{ $title := .Title }}
-                {{ range (where site.RegularPages "Section" "docs") }}
+                {{ range .CurrentSection.Pages }}
                 <li class="nav-item">
-                    <a class="nav-link {{ if eq .Title $title }}active{{ end }}" href="{{ partial "permalink.html" . }}">
+                    <a class="nav-link {{ if eq $currentPage . }}active{{ end }}" href="{{ partial "permalink.html" . }}">
                         {{ .Title }}
                     </a>
                 </li>
