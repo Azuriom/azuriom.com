@@ -1,37 +1,27 @@
 {{ define "main" }}
-<div class="row justify-content-center">
-    <div class="col-lg-7 col-md-10">
-        <img src="{{ absURL "assets/svg/azlink.svg" }}" alt="Azuriom" class="img-fluid mb-4 mx-md-4">
+<div class="row justify-content-center g-3">
+    <div class="col-lg-10">
+        <h1 class="display-3 fw-semibold mb-3">AzLink</h1>
 
-        <h2 class="title-divider">{{ i18n "azlink.title" }}</h2>
-
-        <p>{{ i18n "azlink.info" }}</p>
-
-        <h3 class="title-divider">{{ i18n "azlink.download" }}</h3>
-
-        <p>{{ i18n "azlink.supported" }}</p>
-
-        <p>{{ i18n "azlink.sources" (dict "github" "https://github.com/Azuriom/?q=AzLink") | safeHTML }}</p>
-
-        <div class="text-center mb-3">
-            <a href="https://github.com/Azuriom/AzLink/releases/latest/download/AzLink.jar" class="btn btn-primary" download>
-                {{ partial "icon.html" "download" }} AzLink Minecraft
-            </a>
-
-            <a href="https://github.com/Azuriom/AzLink/releases/latest/download/AzLink-Legacy.jar" class="btn btn-primary" download>
-                {{ partial "icon.html" "download" }} AzLink Minecraft Legacy
-            </a>
-        </div>
-
-        <div class="text-center">
-            <a href="https://github.com/Azuriom/AzLink-PocketMine/releases/latest/download/AzLink-PocketMine.phar" class="btn btn-secondary mb-2" download>
-                {{ partial "icon.html" "download" }} AzLink PocketMine
-            </a>
-
-            <a href="https://github.com/Azuriom/AzLink-GMod/releases/latest/download/AzLink-GMod.zip" class="btn btn-secondary mb-2" download>
-                {{ partial "icon.html" "download" }} AzLink Garry's Mod
-            </a>
-        </div>
+        <p class="lead mb-0">{{ i18n "azlink.description1" }}</p>
+        <p class="lead">{{ i18n "azlink.description2" }}</p>
     </div>
+
+    {{ range .Site.Data.games.azlink }}
+    <div class="col-md-5">
+        <a href="{{ .url }}" class="btn btn-secondary d-block rounded-1">
+            <div class="d-flex align-items-center text-start">
+                <div class="flex-shrink-0 fs-3 lh-1">
+                    {{ partial "icon.html" "download" }}
+                </div>
+                <div class="flex-grow-1 ms-3">
+                    <p class="lead fs-6 mb-0">{{ .name }}</p>
+
+                    <p class="small mb-0">{{ .info }}</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    {{ end }}
 </div>
 {{ end }}

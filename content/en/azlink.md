@@ -1,5 +1,5 @@
 ---
 title: AzLink
-description: AzLink is a plugin made for Azuriom to link your server to your Azuriom website in an easy, fast and secure way.
+description: AzLink is the best way to connect your game server to your Azuriom website. Enjoy simplicity and security on one of the many supported platforms.
 layout: azlink
 ---

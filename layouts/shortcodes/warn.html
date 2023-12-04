@@ -1,8 +1,10 @@
-<blockquote class="alert alert-warning d-flex align-items-center documentation-alert">
+<blockquote class="alert alert-secondary d-flex align-items-center documentation-alert">
     <div class="flex-shrink-0">
-        <img class="svg bg-transparent mr-3" alt="warning" src="{{ absURL "assets/svg/alert.svg" }}">
+        <div class="fs-3 lh-1 text-warning border border-warning border-2 p-3 rounded-pill">
+            {{ partial "icon.html" "exclamation-triangle" }}
+        </div>
     </div>
-    <div class="flex-grow-1 ms-3">
+    <div class="flex-grow-1 ms-3 text-body">
         {{- .Inner | markdownify -}}
     </div>
 </blockquote>

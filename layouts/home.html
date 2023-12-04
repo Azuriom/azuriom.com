@@ -1,4 +1,4 @@
-{{ define "title" }}{{ i18n "home.header.title" }}{{ end }}
+{{ define "title" }}Azuriom | {{ i18n "home.header.title" }}{{ end }}
 
 {{ define "body" }}
 <section id="home" class="home-hero">
@@ -6,27 +6,29 @@
         {{ partial "navbar.html" . }}
     </header>
 
-    <div class="position-relative">
+    <div class="home-hero-inner position-relative">
         <div class="container">
-            <div class="row align-items-center py-5 hero-wrapper">
-                <div class="col-md-5 mb-3">
-                    <h1 class="mb-4">
-                        <img src="{{ absURL "assets/svg/logo-text-white.svg" }}" alt="Azuriom" class="logo">
+            <div class="hero-wrapper">
+                <div class="col-md-8 mx-auto text-center mb-5">
+                    <h1 class="mb-3 fw-semibold">
+                        {{ i18n "home.header.title" }}
                     </h1>
 
-                    <h2 class="mb-4">{{ i18n "home.header.heading" }}
-                        <span data-typed="{{ i18n "home.header.typed" }}">{{ i18n "home.header.typedFallback" }}</span>
+                    <h2 class="lead mb-4 fs-4">
+                        {{ i18n "home.header.subtitle" | markdownify }}
                     </h2>
 
-                    <p class="lead mb-4">{{ i18n "home.header.subtitle" }}</p>
-
-                    <a href="{{ absLangURL "download" }}" class="btn btn-success btn-lg home-button text-white text-uppercase rounded-pill">
-                        {{ partial "icon.html" "download" }} {{ i18n "nav.download" }}
+                    <a href="{{ absLangURL "download" }}" class="btn btn-success btn-lg text-white mx-2 mb-4">
+                        {{ i18n "nav.download" }} {{ partial "icon.html" "rocket-takeoff" }}
                     </a>
 
-                    <ul class="list-inline social-icons text-white mt-4 mb-0">
+                    <a href="#about" class="btn btn-secondary btn-lg mx-2 mb-4">
+                        {{ partial "icon.html" "plus-lg" }} {{ i18n "home.learn" }}
+                    </a>
+
+                    <ul class="list-inline social-icons text-white mb-0">
                         <li class="list-inline-item me-4">
-                            <a href="https://github.com/Azuriom" target="_blank" rel="noopener noreferrer" title="GitHub">
+                            <a href="https://github.com/Azuriom" target="_blank" rel="noopener noreferrer" title="GitHub" >
                                 {{ partial "icon.html" "github" }}
                             </a>
                         </li>
@@ -35,7 +37,7 @@
                                 {{ partial "icon.html" "discord" }}
                             </a>
                         </li>
-                        <li class="list-inline-item me-4">
+                        <li class="list-inline-item">
                             <a href="https://twitter.com/{{ .Param "twitter" }}" target="_blank" rel="noopener noreferrer" title="Twitter">
                                 {{ partial "icon.html" "twitter" }}
                             </a>
@@ -43,13 +45,13 @@
                     </ul>
                 </div>
 
-                <div class="col-md-7" data-aos="fade-left" data-aos-delay="75">
-                    <img src="{{ absURL "assets/img/home.png" }}" alt="Azuriom" class="img-fluid float-animation">
+                <div class="col-md-9 mx-auto">
+                    <img src="{{ absURL "assets/img/home.png" }}" alt="Games" class="img-fluid">
                 </div>
             </div>
         </div>
 
-        <div class="hero-waves">
+        <div class="hero-waves position-absolute">
             <svg viewBox="0 0 1000 90" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
                 <path d="M1000,53.893c-5.811,-2.777 -11.849,-5.257 -17.717,-7.315c-23.556,-8.258 -53.919,-11.928 -80.808,-7.291c-41.443,7.191 -64.629,31.319 -104.135,41.089c-34.75,8.58 -75.994,4.563 -111.713,-2.802c-69.471,-14.333 -135.695,-31.021 -212.601,-27.525c-42.156,1.91 -82.887,9.621 -120.03,20.334c-38.31,11.059 -83.684,26.458 -127.805,14.457c-37.541,-10.242 -57.081,-32.757 -91.831,-45.131c-25.977,-9.249 -59.189,-12.572 -89.752,-9.001c-15.694,1.834 -30.591,5.504 -43.608,10.563l0,48.9l1000,0l0,-36.278Z"/>
                 <path opacity="0.4" d="M438.248,90c-2.421,-1.652 -4.843,-3.276 -7.235,-4.899c-57.281,-38.168 -126.211,-57.85 -194.571,-55.629c-64.8,2.137 -127.179,24.439 -180.956,60.5l382.762,0l0,0.028Z"/>
@@ -60,16 +62,73 @@
     </div>
 </section>
 
-<section id="about" class="section">
-    <div class="container aos-init aos-animate" data-aos="zoom-in">
-        <h2 class="title-divider">{{ i18n "home.about.title" }}</h2>
+<section id="about" class="content">
+    <div class="container">
+        <div class="row gy-4 justify-content-between">
+            <div class="col-md-6">
+                <div class="d-inline-block fs-1 lh-1 text-primary bg-primary bg-opacity-25 p-4 rounded-pill">
+                    {{ partial "icon.html" "plugin" }}
+                </div>
 
-        <p>{{ i18n "home.about.description1" | safeHTML }}</p>
-        <p>{{ i18n "home.about.description2" }}</p>
+                <h2 class="display-6 my-3 fw-semibold">
+                    {{ i18n "home.complete.title" }}
+                </h2>
 
-        <h3 class="title-divider mt-5">{{ i18n "home.about.gamesTitle" }}</h3>
+                <p class="lead">
+                    {{ i18n "home.complete.description1" | markdownify }}
+                </p>
+                <p class="lead">
+                    {{ i18n "home.complete.description2" | markdownify }}
+                </p>
+            </div>
 
-        <p>{{ i18n "home.about.games" | safeHTML }}</p>
+            <div class="col-md-5 align-self-center">
+                <div class="d-flex align-items-center mb-2 border rounded p-3">
+                    <div class="flex-shrink-0 fs-2 text-info rounded-pill ps-1">
+                        {{ partial "icon.html" "basket3" }}
+                    </div>
+                    <p class="flex-grow-1 ms-3 mb-0">
+                        {{ i18n "home.extensions.shop" | markdownify }}
+                    </p>
+                </div>
+
+                <div class="d-flex align-items-center mb-2 border rounded p-3">
+                    <div class="flex-shrink-0 fs-2 text-warning rounded-pill ps-1">
+                        {{ partial "icon.html" "trophy" }}
+                    </div>
+                    <p class="flex-grow-1 ms-3 mb-0">
+                        {{ i18n "home.extensions.vote" | markdownify }}
+                    </p>
+                </div>
+
+                <div class="d-flex align-items-center mb-2 border rounded p-3">
+                    <div class="flex-shrink-0 fs-2 text-success rounded-pill ps-1">
+                        {{ partial "icon.html" "chat-heart" }}
+                    </div>
+                    <p class="flex-grow-1 ms-3 mb-0">
+                        {{ i18n "home.extensions.forum" | markdownify }}
+                    </p>
+                </div>
+
+                <div class="d-flex align-items-center mb-2 border rounded p-3">
+                    <div class="flex-shrink-0 fs-2 text-primary rounded-pill ps-1">
+                        {{ partial "icon.html" "grid" }}
+                    </div>
+                    <p class="flex-grow-1 ms-3 mb-0">
+                        {{ i18n "home.extensions.more" | markdownify }}
+                    </p>
+                </div>
+
+                <div class="d-flex align-items-center mb-2 border rounded p-3">
+                    <div class="flex-shrink-0 fs-2 text-danger rounded-pill ps-1">
+                        {{ partial "icon.html" "droplet" }}
+                    </div>
+                    <p class="flex-grow-1 ms-3 mb-0">
+                        {{ i18n "home.extensions.themes" | markdownify }}
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -79,28 +138,28 @@
     </svg>
 </div>
 
-<section id="features" class="section bg-body-secondary text-center features">
+<section id="community" class="content bg-body-secondary">
     <div class="container">
-        <div class="row">
-            <div class="col-md-3 feature" data-aos="zoom-in" data-aos-delay="50">
-                <img class="svg" src="{{ absURL "assets/svg/rocket.svg" }}" alt="Rocket">
-                <h3>{{ i18n "home.features.modern.title" }}</h3>
-                <p>{{ i18n "home.features.modern.desc" }}</p>
+        <div class="row gy-4 justify-content-between">
+            <div class="col-md-5 align-self-center">
+                <img src="{{ absURL "assets/img/theme.png" }}" alt="Theme" class="img-fluid image-3d rounded-3">
             </div>
-            <div class="col-md-3 feature" data-aos="zoom-in" data-aos-delay="200">
-                <img class="svg" src="{{ absURL "assets/svg/guarantee.svg" }}" alt="Guarantee">
-                <h3>{{ i18n "home.features.reliable.title" }}</h3>
-                <p>{{ i18n "home.features.reliable.desc" }}</p>
-            </div>
-            <div class="col-md-3 feature" data-aos="zoom-in" data-aos-delay="350">
-                <img class="svg" src="{{ absURL "assets/svg/speed-up.svg" }}" alt="Speed up">
-                <h3>{{ i18n "home.features.fast.title" }}</h3>
-                <p>{{ i18n "home.features.fast.desc" }}</p>
-            </div>
-            <div class="col-md-3 feature" data-aos="zoom-in" data-aos-delay="500">
-                <img class="svg" src="{{ absURL "assets/svg/key.svg" }}" alt="Key">
-                <h3>{{ i18n "home.features.secure.title" }}</h3>
-                <p>{{ i18n "home.features.secure.desc" }}</p>
+
+            <div class="col-md-6">
+                <div class="d-inline-block fs-1 lh-1 text-success bg-success bg-opacity-25 p-4 rounded-pill">
+                    {{ partial "icon.html" "person-hearts" }}
+                </div>
+
+                <h2 class="display-6 my-3 fw-semibold">
+                    {{ i18n "home.community.title" }}
+                </h2>
+
+                <p class="lead">
+                    {{ i18n "home.community.description1" | markdownify }}
+                </p>
+                <p class="lead">
+                    {{ i18n "home.community.description2"| markdownify }}
+                </p>
             </div>
         </div>
     </div>
@@ -112,18 +171,34 @@
     </svg>
 </div>
 
-<section id="screen-1" class="section">
+<section id="games" class="content">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-4 text-center" data-aos="fade-up-right">
-                <img src="{{ absURL "assets/svg/code.svg" }}" alt="Screen 1" class="img-fluid float-animation">
-            </div>
-            <div class="col-md-8" data-aos="fade-left">
-                <h2 class="title-divider">{{ i18n "home.desc1.title" }}</h2>
+        <div class="row gy-4 justify-content-between">
+            <div class="col-md-6">
+                <div class="d-inline-block fs-1 lh-1 text-danger bg-danger bg-opacity-25 p-4 rounded-pill">
+                    {{ partial "icon.html" "controller" }}
+                </div>
 
-                <p>{{ i18n "home.desc1.description1" }}</p>
-                <p>{{ i18n "home.desc1.description2" }}</p>
-                <p>{{ i18n "home.desc1.description3" }}</p>
+                <h2 class="display-6 my-3 fw-semibold">
+                    {{ i18n "home.games.title" }}
+                </h2>
+
+                <p class="lead">
+                    {{ i18n "home.games.description1" | markdownify }}
+                </p>
+                <p class="lead">
+                    {{ i18n "home.games.description2" | markdownify }}
+                </p>
+            </div>
+
+            <div class="col-md-5 align-self-center">
+                <div class="row gy-4 justify-content-around">
+                    {{ range .Site.Data.games.list }}
+                    <div class="col-4 text-center py-md-3">
+                        <img src="{{ absURL .img }}" alt="{{ .name }}" title="{{ .name }}" data-bs-toggle="tooltip" class="rounded-1" height="75" width="75">
+                    </div>
+                    {{ end }}
+                </div>
             </div>
         </div>
     </div>
@@ -139,17 +214,28 @@
     <path d="M439.407,12.801c-80.921,15.363 -167.082,18.455 -248.277,2.849c-80.448,-15.463 -119.602,-14.391 -191.13,-14.391l0,68.741l1000,0l0,-68.741c-93.992,-8.581 -127.476,35.688 -278.561,19.139c-151.084,-16.548 -201.114,-22.958 -282.035,-7.597l0.003,0Z"></path>
 </svg>
 
-<section id="screen-2" class="section bg-body-secondary">
+<section id="trusted" class="content bg-body-secondary">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-8" data-aos="fade-right">
-                <h2 class="title-divider">{{ i18n "home.desc2.title" }}</h2>
-
-                <p>{{ i18n "home.desc2.description1" }}</p>
-                <p>{{ i18n "home.desc2.description2" }}</p>
+        <div class="row gy-4 justify-content-between">
+            <div class="col-md-4 offset-md-1 align-self-center">
+                <img src="{{ absURL "assets/img/map.png" }}" alt="World" class="img-fluid" loading="lazy">
             </div>
-            <div class="col-md-4 text-center" data-aos="fade-up-left">
-                <img src="{{ absURL "assets/svg/support.svg" }}" alt="Screen 2" class="img-fluid float-animation">
+
+            <div class="col-md-6">
+                <div class="d-inline-block fs-1 lh-1 text-info bg-info bg-opacity-25 p-4 rounded-pill">
+                    {{ partial "icon.html" "globe-americas" }}
+                </div>
+
+                <h2 class="display-6 my-3 fw-semibold">
+                    {{ i18n "home.trusted.title" }}
+                </h2>
+
+                <p class="lead">
+                    {{ i18n "home.trusted.description1" | markdownify }}
+                </p>
+                <p class="lead">
+                    {{ i18n "home.trusted.description2" | markdownify }}
+                </p>
             </div>
         </div>
     </div>

@@ -1,7 +1,8 @@
 import Cookies from 'js-cookie'
-import Typed from 'typed.js'
+import * as Bootstrap from 'bootstrap'
 
-import 'bootstrap'
+document.querySelectorAll('[data-bs-toggle="tooltip"]')
+  .forEach((element) => new Bootstrap.Tooltip(element))
 
 document.querySelectorAll<HTMLElement>('.locale-selector [data-locale]')
   .forEach((element) => {
@@ -17,24 +18,6 @@ document.querySelectorAll<HTMLElement>('.locale-selector [data-locale]')
         sameSite: 'Lax',
         secure: true,
       })
-    })
-  })
-
-document.querySelectorAll<HTMLElement>('[data-typed]')
-  .forEach((element) => {
-    const data = element.dataset.typed
-    if (!data) {
-      return
-    }
-
-    element.innerText = ''
-
-    new Typed(element, {
-      strings: data.split('|'),
-      typeSpeed: 100,
-      backSpeed: 25,
-      loop: true,
-      autoInsertCss: false,
     })
   })
 
@@ -60,8 +43,10 @@ function getPreferredTheme() {
 }
 
 function setCurrentTheme(theme: string) {
-  if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.documentElement.setAttribute('data-bs-theme', 'dark')
+  if (theme === 'auto') {
+    const themeColor = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+
+    document.documentElement.setAttribute('data-bs-theme', themeColor)
   } else {
     document.documentElement.setAttribute('data-bs-theme', theme)
   }
@@ -86,7 +71,9 @@ setCurrentTheme(getPreferredTheme())
 
 document.querySelectorAll('a[data-theme-value]')
   .forEach((element) => {
-    element.addEventListener('click', () => {
+    element.addEventListener('click', (ev) => {
+      ev.preventDefault()
+
       const theme = element.getAttribute('data-theme-value')
 
       if (theme) {

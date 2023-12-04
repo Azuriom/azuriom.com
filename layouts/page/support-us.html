@@ -1,25 +1,52 @@
 {{ define "main" }}
 <div class="row justify-content-center">
-    <div class="col-lg-8">
-        <h2 class="title-divider">{{ i18n "support.title" }}</h2>
+    <div class="col-lg-10">
+        <h1 class="display-3 fw-semibold mb-3">{{ i18n "support.title" }}</h1>
 
-        <p>{{ i18n "support.description1" }}</p>
+        <h2 class="display-6 fw-semibold mb-0">{{ i18n "support.subtitle1" }}</h2>
+        <h2 class="display-6 fw-semibold mb-4">{{ i18n "support.subtitle2" }}</h2>
 
-        <p>{{ i18n "support.description2" }}</p>
+        <p class="lead mb-5">{{ i18n "support.description1" }}</p>
 
-        <p class="mb-5">{{ i18n "support.description3" }}</p>
+        <div class="row justify-content-around gy-4">
+            <div class="col-md-5">
+                <div class="d-inline-block fs-2 lh-1 text-success bg-success bg-opacity-25 p-4 rounded-pill mb-3">
+                    {{ partial "icon.html" "emoji-heart-eyes" }}
+                </div>
 
-        <div class="row text-center">
-            <div class="col-md-6">
-                <a href="https://donorbox.org/azuriom" class="btn btn-primary btn-lg mb-3">
-                    {{ partial "icon.html" "heart" }} {{ i18n "support.donate" }}
-                </a>
+                <h3 class="display-6 fw-semibold">
+                    {{ i18n "support.sponsor.title" }}
+                </h3>
+
+                <p class="lead">
+                    {{ i18n "support.sponsor.info" | markdownify }}
+                </p>
+
+                <p class="text-center">
+                    <a href="https://github.com/sponsors/Azuriom" class="btn btn-primary mb-3">
+                        {{ partial "icon.html" "heart-half" }} {{ i18n "support.sponsor.button" }}
+                    </a>
+                </p>
             </div>
 
-            <div class="col-md-6">
-                <a href="https://github.com/Azuriom/Azuriom" class="btn btn-secondary btn-lg mb-3">
-                    {{ partial "icon.html" "star" }} {{ i18n "support.star" }}
-                </a>
+            <div class="col-md-5">
+                <div class="d-inline-block fs-2 lh-1 text-info bg-info bg-opacity-25 p-4 rounded-pill mb-3">
+                    {{ partial "icon.html" "stars" }}
+                </div>
+
+                <h3 class="display-6 fw-semibold">
+                    {{ i18n "support.star.title" }}
+                </h3>
+
+                <p class="lead">
+                    {{ i18n "support.star.info" | markdownify }}
+                </p>
+
+                <p class="text-center">
+                    <a href="https://donorbox.org/azuriom" class="btn btn-primary mb-3">
+                        {{ partial "icon.html" "star-half" }} {{ i18n "support.star.button" }}
+                    </a>
+                </p>
             </div>
         </div>
     </div>

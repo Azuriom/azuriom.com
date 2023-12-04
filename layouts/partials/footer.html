@@ -5,32 +5,40 @@
     </svg>
 </div>
 
-<div class="footer">
+<div class="footer pt-5 pb-3">
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 mb-1">
-                <h3 class="title-divider title-divider-sm">{{ i18n "footer.about" }}</h3>
-                <p>{{ i18n "footer.aboutDescription" }}</p>
-            </div>
+        <div class="row gy-4">
             <div class="col-md-4 mb-1">
-                <h3 class="title-divider title-divider-sm">{{ i18n "footer.partners" }}</h3>
+                <h2 class="mb-4">
+                    <img src="{{ absURL "assets/svg/logo-text.svg" }}" alt="Azuriom" height="50">
+                </h2>
+
+                <p>{{ i18n "headline" }}</p>
+            </div>
+            <div class="col-md-3 offset-md-1">
+                <h2 class="text-light mb-4">{{ i18n "footer.partner" }}</h2>
+
                 <a href="https://www.ni-host.com/?utm_source=footer&utm_medium=banner&utm_campaign=AzuriomCom" target="_blank" rel="noreferrer noopener">
                     <img src="{{ absURL "assets/svg/nihost.svg" }}" alt="NiHost" class="img-fluid mb-3">
                 </a>
             </div>
-            <div class="col-md-2 mb-1">
-                <h3 class="title-divider title-divider-sm">{{ i18n "footer.links" }}</h3>
+
+            <div class="col-md-2 offset-md-1">
+                <h2 class="text-light mb-4">{{ i18n "footer.links" }}</h2>
+
                 <ul class="list-unstyled links">
                     <li><a href="https://github.com/Azuriom" target="_blank" rel="noopener noreferrer">GitHub</a></li>
                     <li><a href="https://azuriom.com/discord" target="_blank" rel="noopener noreferrer">Discord</a></li>
                     <li><a href="https://twitter.com/{{ .Param "twitter" }}" target="_blank" rel="noopener noreferrer">Twitter</a></li>
-                    <li><a href="{{ absLangURL "support-us" }}" >{{ i18n "footer.supportUs" }}</a></li>
+                    <li><a href="{{ absLangURL "support-us" }}" >{{ i18n "support.title" }}</a></li>
                 </ul>
             </div>
         </div>
 
-        <div class="copyright text-center mt-3">
-            {{ i18n "footer.copyright" (dict "year" now.Year "love" (partial "icon.html" "heart-fill")) | safeHTML }}
+        <div class="border-top border-secondary pt-3 mt-3">
+            <p class="small text-center mb-0">
+                {{ i18n "footer.copyright" (dict "year" now.Year "love" (partial "icon.html" "heart-fill")) | safeHTML }}
+            </p>
         </div>
     </div>
 </div>

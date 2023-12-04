@@ -1,9 +1,9 @@
 // Typography
-// $font-family-sans-serif: 'Open Sans', sans-serif;
 $line-height-base: 1.6;
 $headings-font-weight: 600;
 $spacer: 1rem;
 $link-decoration: none;
+$font-weight-bolder: 700;
 
 // Colors
 //$blue: #3490dc;
@@ -13,7 +13,7 @@ $purple: #9561e2;
 $pink: #f66d9b;
 $red: #e3342f;
 $orange: #f6993f;
-$yellow: #ffed4a;
+$yellow: #e6cf00;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
@@ -25,5 +25,12 @@ $navbar-nav-link-padding-x: 1rem;
 $navbar-dark-color: rgba($white, .6);
 
 // Buttons
-$btn-padding-y: .55rem;
 $btn-padding-x: 1rem;
+$btn-padding-y: .55rem;
+$btn-padding-x-sm: 1rem;
+$btn-padding-y-sm: 0.35rem;
+$btn-padding-x-lg: 1.5rem;
+$btn-padding-y-lg: 0.75rem;
+$btn-border-radius: 50rem;
+$btn-border-radius-sm: 50rem;
+$btn-border-radius-lg: 50rem;

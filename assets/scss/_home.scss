@@ -1,171 +1,103 @@
-// Typed.js
-.typed-cursor {
-    opacity: 1;
-}
-
-.typed-cursor.typed-cursor--blink {
-    -webkit-animation: typedBlink 0.7s infinite;
-    animation: typedBlink 0.7s infinite;
-}
-
-.float-animation {
-    -webkit-animation: float ease-in-out 2.5s infinite alternate;
-    animation: float ease-in-out 2.5s infinite alternate;
-}
-
 .home-hero {
-    color: #fff;
-    background: linear-gradient(-75deg, #58c3ff 0, #004de6 55%, #003bb1 100%);
+  color: #fff;
+  background: linear-gradient(-75deg, #58c3ff 0, #004de6 55%, #003bb1 100%);
 
-    .navbar {
-        background: transparent !important;
-    }
+  .home-hero-inner {
+    background: url('/assets/svg/waves.svg') no-repeat bottom / cover;
+  }
 
-    .logo {
-        height: 85px;
-        max-width: 100%;
+  @include media-breakpoint-up(lg) {
+    h1 {
+      font-size: 3.5rem;
     }
+  }
 
-    .hero-waves {
-        position: absolute;
-        bottom: -1px;
-        left: 0;
-        right: 0;
-        color: var(--bs-body-bg);
-    }
+  .navbar {
+    background: transparent !important;
+  }
 
-    .hero-wrapper {
-        min-height: calc(100vh - 5.5rem);
+  .hero-waves {
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    color: var(--bs-body-bg);
+  }
+
+  .hero-wrapper {
+    padding-top: 3rem;
+    min-height: calc(100vh - 5.5rem);
+
+    img {
+      margin-bottom: 10vw;
     }
+  }
 }
 
 @include color-mode(dark) {
-    .home-hero {
-        background: linear-gradient(-75deg, #022265 0, #003bb1 100%);
-    }
+  .home-hero {
+    background: linear-gradient(-75deg, #022265 0, #003bb1 100%);
+  }
 }
 
-.home-button {
-    padding: 0.75rem 1.25rem;
-    transition: all 0.3s ease;
+.home-hero .btn {
+  transition: all 0.3s ease;
+
+  &.btn-success {
     -webkit-animation: flash ease-in-out 2.5s infinite;
     animation: flash ease-in-out 2.5s infinite;
+  }
 
-    .bi {
-        height: 1.1em;
-        width: 1.1em;
-        vertical-align: -.195em;
-    }
+  .bi {
+    height: 1.1em;
+    width: 1.1em;
+    vertical-align: -.195em;
+  }
 
-    &:hover {
-        box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
-        transform: translate3d(0, -.2rem, 0);
-    }
-}
-
-.features .svg {
-    height: 4rem;
-    width: 4rem;
-    text-align: center;
-    margin-bottom: 0.5rem;
-}
-
-.section {
-    padding: 5rem 0;
-
-    @media (max-width: 768px) {
-        padding: 3rem 0;
-    }
+  &:hover {
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
+    transform: translate3d(0, -.2rem, 0);
+  }
 }
 
 .section-waves,
 .section-waves-reversed {
-    color: rgba(var(--bs-secondary-bg-rgb), var(--bs-bg-opacity));
+  color: rgba(var(--bs-secondary-bg-rgb), var(--bs-bg-opacity));
 }
 
 .section-waves-reversed {
-    margin-top: -1px;
+  margin-top: -1px;
 }
 
 .social-icons {
-    a:hover svg {
-        transform: translate3d(0, -.2rem, 0);
-    }
+  a:hover svg {
+    transform: translate3d(0, -.2rem, 0);
+  }
 
-    svg {
-        height: 2.5em;
-        width: 2.5em;
-        transition: all 0.3s ease;
-        color: #fff;
-    }
+  svg {
+    height: 2em;
+    width: 2em;
+    transition: all 0.3s ease;
+    color: #fff;
+  }
 }
 
-@-webkit-keyframes typedBlink {
-    from {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
+.image-3d {
+  transform: rotate3d(.866, .5, 0, -15deg);
+  transition: transform .4s ease;
 
-@keyframes typedBlink {
-    from {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@-webkit-keyframes float {
-    from {
-        -webkit-transform: translate3d(0, -5px, 0);
-        transform: translate3d(0, -5px, 0);
-    }
-    to {
-        -webkit-transform: translate3d(0, 5px, 0);
-        transform: translate3d(0, 5px, 0);
-    }
-}
-
-@keyframes float {
-    from {
-        -webkit-transform: translate3d(0, -5px, 0);
-        transform: translate3d(0, -5px, 0);
-    }
-    to {
-        -webkit-transform: translate3d(0, 5px, 0);
-        transform: translate3d(0, 5px, 0);
-    }
-}
-
-@-webkit-keyframes flash {
-    from {
-        box-shadow: 0 0 0 0 #28a745;
-    }
-    75% {
-        box-shadow: 0 0 0 15px rgba(40, 167, 69, 0);
-    }
-    to {
-        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
-    }
+  &:hover {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
 }
 
 @keyframes flash {
-    from {
-        box-shadow: 0 0 0 0 #28a745;
-    }
-    75% {
-        box-shadow: 0 0 0 10px rgba(40, 167, 69, 0);
-    }
-    to {
-        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
-    }
+  from {
+    box-shadow: 0 0 0 0 var(--bs-success);
+  }
+  75% {
+    box-shadow: 0 0 0 10px rgba(var(--bs-success-rgb), 0);
+  }
+  to {
+    box-shadow: 0 0 0 0 rgba(var(--bs-success-rgb), 0);
+  }
 }

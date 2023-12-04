@@ -1,10 +1,14 @@
-{{ $img := "assets/svg/help.svg" }}
-{{- if .Get "img" }}{{ $img = .Get "img" }}{{ end -}}
-<blockquote class="alert alert-info d-flex align-items-center documentation-alert">
+<blockquote class="alert alert-secondary d-flex align-items-center documentation-alert">
     <div class="flex-shrink-0">
-        <img class="svg bg-transparent mr-3" alt="info" src="{{ absURL $img }}">
+        {{ if .Get "img" }}
+        <img class="svg bg-transparent" alt="info" src="{{ absURL (.Get "img") }}">
+        {{ else }}
+        <div class="fs-3 lh-1 text-info border border-info border-2 p-3 rounded-pill">
+            {{ partial "icon.html" "lightbulb" }}
+        </div>
+        {{ end }}
     </div>
-    <div class="flex-grow-1 ms-3">
+    <div class="flex-grow-1 ms-3 text-body">
         {{- .Inner | markdownify -}}
     </div>
 </blockquote>

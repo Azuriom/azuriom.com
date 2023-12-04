@@ -1,13 +1,11 @@
-meta:
-  desc: "Azuriom est un CMS de jeux moderne, fiable, rapide et sécurisé. C'est la solution idéale pour votre site sur Minecraft, Garry's Mod, Rust, Ark, FiveM et bien d'autres jeux."
-
+headline: "Azuriom est une solution web open-source complète pour les serveurs de jeux. Profitez de douzaines d'extensions pour des possibilités infinies. Plus de 1 000 serveurs nous font déjà confiance, cumulant plus d'un million d'utilisateurs."
 theme:
   light: "Clair"
   dark: "Sombre"
   auto: "Auto"
 
 nav:
-  download: "Téléchargement"
+  download: "Télécharger"
   extensions: "Extensions"
   docs: "Documentation"
   demo: "Démo"
@@ -16,76 +14,69 @@ nav:
   login: Connexion
 
 footer:
-  about: "À propos de nous"
-  aboutDescription: "Azuriom est un CMS de jeux dernière génération, gratuit et open-source, qui débuté en août 2019 avec pour objectif d'être une alternative moderne, fiable, rapide et sécurisée par rapport aux CMS existants afin de vous proposer la meilleure expérience web possible pour votre serveur Minecraft, Garry's Mod, Rust, Ark, FiveM et bien d'autres..."
   copyright: "Copyright &copy; 2019-{{ .year }} Azuriom - Tous droits réservés. Fait avec&nbsp;{{ .love }} par Azuriom."
-  partners: "Partenaires"
-  links: "Liens"
-  supportUs: "Nous soutenir"
+  partner: "Notre partenaire"
+  links: "Liens utiles"
 
 home:
   header:
-    title: "Azuriom | La dernière génération de CMS de jeux"
-    subtitle: "La dernière génération de site web pour votre serveur, utilisé par des centaines de sites."
-    heading: "Un CMS"
-    typed: "gratuit et open source.|rapide et sécurisé.|moderne et fiable."
-    typedFallback: "gratuit et open source, rapide, sécurisé, moderne et fiable."
+    title: "Améliorez votre serveur de jeu avec une solution web complète."
+    subtitle: "Azuriom est une solution web complète **gratuite** et **open-source** pour les serveurs de jeux. Profitez de dizaines d'extensions pour des possibilités sans limites."
 
-  about:
-    title: "Qu'est ce qu'Azuriom ?"
-    description1: "Azuriom est un CMS de jeux <strong>dernière génération</strong>, <strong>gratuit</strong> et <strong>open-source</strong>, qui a pour objectif d'être une alternative <strong>moderne, fiable, rapide et sécurisée</strong> par rapport aux CMS existants afin de vous proposer la <strong>meilleure expérience web possible</strong> pour votre serveur."
-    description2: "Azuriom est donc la solution idéale pour votre site sur Minecraft, Garry's Mod, Rust, Ark, FiveM et bien d'autres jeux."
-    gamesTitle: "Jeux supportés"
-    games: "Azuriom est un CMS Minecraft, mais pas seulement ! En plus de Minecraft, Azuriom supporte parfaitement Garry's Mod, Ark, Rust, FiveM, CS:GO et Team Fortress 2 ! Vous pouvez même ajouter de nouveaux jeux via une extension."
+  learn: "En savoir plus"
 
-  features:
-    modern:
-      title: "Moderne"
-      desc: "Développé avec les dernières technologies web, en utilisant des bases solides."
+  complete:
+    title: "Des extensions par dizaines. Clairement, ça en vaut la peine"
+    description1: "Des dizaines d'extensions peuvent être installées en un clic directement depuis le panel admin. Monétisez votre serveur grâce à notre boutique, construisez une communauté avec notre forum, ou utilisez un de nos thèmes pour rendre votre site vraiment unique."
+    description2: "Vous en voulez encore plus ? Pas de problème, grâce à [Laravel](https://laravel.com) créez des thèmes et plugins en toute simplicité."
 
-    reliable:
-      title: "Fiable"
-      desc: "Nos protocoles de tests rigoureux permettent d'éviter les erreurs en production."
+  extensions:
+    shop: "Monétisez votre serveur avec la boutique, avec plus de 15 moyens de paiement disponibles."
+    vote: "Encouragez vos joueurs à voter pour votre serveur avec des récompenses automatiques pour booster votre communauté."
+    forum: "Développez votre communauté en favorisant la discussion entre les membres sur le forum."
+    more: "Et des dizaines d'autres extensions sur le market... Vous trouverez forcément ce dont vous avez besoin."
+    themes: "Personne ne veut un site ennuyant. Choisissez l'un de nos nombreux thèmes pour le rendre unique."
 
-    fast:
-      title: "Rapide"
-      desc: "Chaque élément d'Azuriom est optimisé au maximum afin d'avoir des performances inégalées."
+  games:
+    title: "Des Jeux. Et pas qu'un peu"
+    description1: "Créez un site web pour votre serveur SkyBlock sur Minecraft. Vous avez un DarkRP Garry's Mod ? Ça marche, Azuriom peut faire ça, et avec connexion Steam. Vous préférez Los Santos ? Azuriom supporte FiveM avec Cfx.re!"
+    description2: "Même si votre jeu n'est pas pris en charge, vous pouvez l'ajouter avec une extension. Azuriom est basé sur [Laravel](https://laravel.com/), profitez du framework pour ajouter votre propre jeu."
 
-    secure:
-      title: "Sécurisé"
-      desc: "Grâce à sa conception très stricte, et ses dépendances à jours, la sécurité est garantie."
+  community:
+    title: "Par la communauté. Pour la communauté"
+    description1: "Azuriom est un projet open source. Vous n'avez pas à vous embêter avec des frais de transactions, ou un hébergeur bancal. Vous hébergez votre site où vous voulez, et vous pouvez le personnaliser au besoin."
+    description2: "Besoin d'aide ? Nous avons une communauté avec plusieurs milliers de membres sur [Discord](/discord). Et comme Azuriom est open source, tout le monde peut contribuer au projet sur [GitHub](https://github.com/Azuriom/Azuriom)."
 
-  desc1:
-    title: "Des extensions uniques"
-    description1: "Nos extensions, c'est-à-dire nos thèmes et nos plugins sont réalisés de la même façon que le CMS afin qu'il ne fasse qu'un avec celles-ci une fois installées."
-    description2: "Pour les développeurs qui souhaitent réaliser leurs extensions, des outils ainsi qu'une documentation complète sont mis à dispositions pour un confort de travail unique."
-    description3: "De nombreuses extensions communautaires sont disponibles et vous pouvez aussi publier les vôtres. Nous vérifions chaque extension, puis nous suivons régulièrement les mises à jour proposées sur ces dernières afin de garder un écosystème optimal."
-
-  desc2:
-    title: "Support actif"
-    description1: "Nous proposons un support actif et à l'écoute, que ce soit par GitHub ou sur notre serveur Discord."
-    description2: "Comme Azuriom est entièrement open-source, n'importe qui peut y contribuer pour l'améliorer, en plus des nombreuses mises à jour proposées par notre équipe."
+  trusted:
+    title: "Aimé. Par 1000 serveurs dans le monde entier"
+    description1: "Développé en Suisse, à l'EPFL, l'une des meilleures universités technologique au monde, Azuriom est utilisé par plus d'un millier de serveurs dans le monde, et est traduits dans [plus de 15 langues](https://translate.azuriom.com)."
+    description2: "Conçu avec [Laravel](https://laravel.com/), le framework PHP le plus populaire, vous pouvez ainsi avoir un site sécurisé et fiable. Profitez d'un site qui vous correspond, vous le méritez !"
 
 download:
-  title: "Téléchargement"
-  docs: "Avant de télécharger Azuriom, il est conseillé de <a href=\"{{ .docs }}\" target=\"_blank\">lire notre documentation</a> pour éviter d'être perdu lors de l'installation par exemple."
-  support: "Si vous avez des questions, vous pouvez les poser dans le salon support de notre <a href=\"{{ .discord }}\" target=\"_blank\">serveur Discord</a>."
-  sources: "Azuriom est un projet entièrement open-source et le code source est disponible sur <a href=\"{{ .github }}\" target=\"_blank\">GitHub</a>."
+  title: "Télécharger Azuriom"
+  docs: "Prêt à commencer ? Parfait, veillez à lire la [documentation]({{ .docs }}) pour une installation agréable."
+  community: 'Rejoignez la communauté sur [Discord]({{ .discord }}) pour recevoir les dernières nouveautés et obtenir de l''aide.'
+  support: "Satisfait d'Azuriom ? Pour qu'Azuriom puisse continuer de s'améliorer, il y a plusieurs façons de [soutenir le projet]({{ .support }})."
 
 azlink:
-  title: "AzLink"
-  info: "AzLink est un plugin de liaison site-serveur spécialement conçu pour Azuriom afin de vous permettre de lier votre serveur à votre site de façon simple, rapide et sécurisée."
-  download: "Téléchargement"
-  supported: "AzLink Minecraft supporte Bukkit (et ses dérivés comme Spigot, Glowstone et Cauldron), BungeeCord, Sponge et Velocity dans le même plugin. Si vous utilisez Minecraft 1.7.10 vous devez télécharger la version legacy."
-  sources: "AzLink est open-source et le code source est disponible sur <a href=\"{{ .github }}\" target=\"_blank\">GitHub</a>."
+  description1: "La meilleure façon de connecter votre serveur de jeu à votre site Azuriom."
+  description2: "Profitez de la simplicité et de la sécurité sur l'une des nombreuses plateformes compatibles."
 
 support:
   title: "Nous soutenir"
-  description1: "Développer Azuriom nous prend beaucoup de temps et c'est donc grâce à votre soutien que ce projet peut continuer de façon totalement gratuite et open-source pour tous !"
-  description2: "Actuellement il existe deux façons principales pour nous soutenir : la première est de mettre une \"étoile\" sur le projet GitHub, cela ne vous coûte strictement rien et nécessite seulement un compte GitHub qui peut être créé en quelques minutes."
-  description3: "La deuxième façon de nous soutenir est de nous faire un don. Même si Azuriom est gratuit, fournir une application de qualité à la communauté a un coût (maintenance, hébergeurs, domaines...)."
-  star: "\"Star\" le projet"
-  donate: "Faire un don"
+  subtitle1: "Vous pouvez faire une différence."
+  subtitle2: "Contribuez à la croissance d'Azuriom."
+  description1: "Nous apprécions vraiment améliorer Azuriom, et nous espérons que vous aimez l'utiliser. Si c'est le cas, et que vous voulez que le projet continue à se développer, il y a plusieurs façons de nous soutenir."
+
+  sponsor:
+    title: "Sponsor"
+    info: "Même si Azuriom est gratuit, il nous coûte de l'argent. L'hébergement, noms de domaine, etc ont un prix. Vous pouvez sponsoriser le projet sur GitHub pour obtenir des **avantages uniques**."
+    button: "Sponsoriser sur GitHub"
+
+  star:
+    title: "Star le projet"
+    info: "Vous ne pouvez pas ou ne voulez pas nous sponsoriser ? Aucun problème, vous pouvez toujours nous soutenir en mettant une star sur le projet GitHub. C'est **totalement gratuit** et ça ne prend que quelques secondes."
+    button: "Star le projet"
 
 docs:
   index: "Accueil"

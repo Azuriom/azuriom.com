@@ -1,167 +1,101 @@
 .markdown-content {
-    hr {
-        border-top: 0.3em solid var(--bs-tertiary-bg);
-        margin: 24px 0;
-    }
+  hr {
+    border-top: 0.3em solid var(--bs-tertiary-bg);
+    margin: 1.5rem 0;
+  }
 
-    input {
-        font: inherit;
-        margin: 0;
-    }
+  h1 {
+    margin-bottom: 2.5rem;
+  }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        margin-bottom: 16px;
-        margin-top: 24px;
-    }
+  h2 {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
 
-    h1 {
-        font-size: 2em;
-        margin: .67em 0;
-    }
+  h3 {
+    margin-top: 2rem;
+  }
 
-    h1,
-    h2 {
-        border-bottom: 1px solid var(--bs-tertiary-bg);
-        padding-bottom: .3em;
-    }
+  img {
+    background: var(--bs-tertiary-bg);
+    box-sizing: content-box;
+    max-width: 100%;
+  }
 
-    h2 {
-        font-size: 1.5em;
-    }
+  blockquote {
+    color: #6a737d;
+    border-left: .25em solid var(--bs-tertiary-bg);
+    padding-left: 1em;
+  }
 
-    h3 {
-        font-size: 1.25em;
-    }
+  blockquote:first-child {
+    margin-top: 0;
+  }
 
-    h3,
-    h4 {
-        font-weight: 600;
-    }
+  blockquote:last-child {
+    margin-bottom: 0;
+  }
 
-    h4 {
-        font-size: 1em;
-    }
+  code {
+    background: var(--bs-tertiary-bg);
+    border-radius: 3px;
+    padding: .2em .4em;
+    font-size: 82%;
+  }
 
-    h5 {
-        font-size: .875em;
-    }
+  pre {
+    background: var(--bs-tertiary-bg);
+    border-radius: var(--bs-border-radius);
+    padding: .75rem 1.25rem;;
+  }
 
-    h6 {
-        font-size: .85em;
-    }
+  pre code {
+    font-size: inherit;
+    background: transparent;
+    padding: 0;
+  }
 
-    img {
-        background: var(--bs-tertiary-bg);
-        box-sizing: content-box;
-        max-width: 100%;
-    }
+  table {
+    display: block;
+    overflow: auto;
+    width: 100%;
+    border-spacing: 0;
+  }
 
-    blockquote {
-        color: #6a737d;
-        border-left: .25em solid var(--bs-tertiary-bg);
-        padding-left: 1em;
-    }
+  table td,
+  table th {
+    padding: 0.5rem 1rem;
+  }
 
-    blockquote:first-child {
-        margin-top: 0;
-    }
+  table tr {
+    background: var(--bs-tertiary-bg);
+    border-top: 1px solid var(--bs-secondary-bg);
+  }
 
-    blockquote:last-child {
-        margin-bottom: 0;
-    }
+  table tr:nth-child(2n) {
+    background: var(--bs-tertiary-bg);
+  }
 
-    code {
-        background: rgba(27, 31, 35, .05);
-        border-radius: 3px;
-        padding: .2em .4em;
-        font-size: 82%;
-    }
+  td,
+  th {
+    padding: 0;
+  }
 
-    pre {
-        background: var(--bs-tertiary-bg);
-        border-radius: 3px;
-        padding: 1rem;
-    }
+  .heading-permalink {
+    opacity: 0.75;
+    margin-right: 0.2em;
 
-    pre code {
-        font-size: inherit;
-        color: inherit;
-        background: transparent;
-        padding: 0;
+    &::before {
+      content: '#';
     }
+  }
 
-    ol,
-    ul {
-        padding-left: 2em;
-    }
-
-    ol ol,
-    ul ol {
-        list-style-type: lower-roman;
-    }
-
-    ol ol ol,
-    ol ul ol,
-    ul ol ol,
-    ul ul ol {
-        list-style-type: lower-alpha;
-    }
-
-    li + li {
-        margin-top: .25em;
-    }
-
-    table {
-        display: block;
-        overflow: auto;
-        width: 100%;
-        border-spacing: 0;
-    }
-
-    table th {
-        font-weight: 600;
-    }
-
-    table td,
-    table th {
-        border: 1px solid var(--bs-tertiary-bg);
-        padding: 6px 13px;
-    }
-
-    table tr {
-        background: var(--bs-tertiary-bg);
-        border-top: 1px solid var(--bs-tertiary-bg);
-    }
-
-    table tr:nth-child(2n) {
-        background: var(--bs-secondary-bg);
-    }
-
-    td,
-    th {
-        padding: 0;
-    }
-
-    .heading-permalink {
-        opacity: 0.75;
-        margin-right: 0.2em;
-
-        &::before {
-            content: '#';
-        }
-    }
-
-    h1:hover .heading-permalink,
-    h2:hover .heading-permalink,
-    h3:hover .heading-permalink,
-    h4:hover .heading-permalink,
-    h5:hover .heading-permalink,
-    h6:hover .heading-permalink {
-        opacity: 1;
-    }
+  h2:hover .heading-permalink,
+  h3:hover .heading-permalink,
+  h4:hover .heading-permalink,
+  h5:hover .heading-permalink,
+  h6:hover .heading-permalink {
+    opacity: 1;
+  }
 }
