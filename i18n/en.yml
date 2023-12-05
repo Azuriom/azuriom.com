@@ -1,4 +1,4 @@
-headline: "Azuriom is a complete open-source web solution for game servers. Enjoy dozens of extensions for endless possibilities. Already trusted by over 1,000 servers, cumulating more than a million users."
+headline: "Azuriom is a complete open-source web solution for game servers. Enjoy dozens of extensions for endless possibilities. Already trusted by over 1,800 servers, cumulating more than two millions users."
 
 theme:
   light: "Light"
@@ -41,7 +41,7 @@ home:
   games:
     title: "One Project, Many Games"
     description1: "Create a website for your SkyBlock server on Minecraft. Have a DarkRP on Garry's Mod? Sure, Azuriom can do that too, and with Steam login. Prefer Los Santos? ? No problem, Azuriom supports FiveM with Cfx.re!"
-    description2: "Even if your game is not supported, you can add support for it with an extension. Azuriom is built on [Laravel](https://laravel.com/), enjoy the power of the framework to add your own game."
+    description2: "Even if your game is not supported, you can add support for it with an extension. A perfect example of this is the game [Flyff](https://universe.flyff.com)."
 
   community:
     title: "Built by the community. For the Community"
@@ -50,7 +50,7 @@ home:
 
   trusted:
     title: "Trusted by over a thousand servers. Loved all around the world"
-    description1: "Developed in Switzerland, at EPFL, one of the world's top technical universities, Azuriom is trusted by over a thousand servers around the world and translated in [more than 15 languages](https://translate.azuriom.com)."
+    description1: "Developed in Switzerland, Azuriom is trusted by over a thousand servers around the world and translated in [more than 15 languages](https://translate.azuriom.com)."
     description2: "Build with [Laravel](https://laravel.com/), the most popular PHP framework, so you can enjoy a secure and reliable website. You deserve it !"
 
 download:

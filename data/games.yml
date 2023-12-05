@@ -15,9 +15,17 @@ azlink:
     info: Garry's Mod
     url: https://github.com/Azuriom/AzLink-GMod/releases/latest/download/AzLink-GMod.zip
 
+  - name: AzLink FiveM
+    info: FiveM (GTA V)
+    url: https://github.com/Azuriom/AzLink-FiveM/releases/latest/download/AzLink-FiveM.
+
+  - name: AzLink Oxide
+    info: Rust & 7 Days to Die
+    url: https://github.com/Azuriom/AzLink-Oxide/releases/latest/download/AzLink.cs
+
 list:
   - name: Minecraft
-    img: /assets/games/minecraft.png
+    img: /assets/games/minecraft.svg
   - name: Garry's Mod
     img: /assets/games/gmod.svg
   - name: FiveM
@@ -25,11 +33,11 @@ list:
   - name: Rust
     img: /assets/games/rust.svg
   - name: 7 Days to Die
-    img: /assets/games/7dtd.png
+    img: /assets/games/7dtd.svg
   - name: "ARK: Survival Evolved"
-    img: /assets/games/ark.png
-  - name: "Counter-Strike: Global Offensive"
-    img: /assets/games/csgo.png
+    img: /assets/games/ark.svg
+  - name: "Counter-Strike 2"
+    img: /assets/games/cs2.svg
   - name: "Team Fortress 2"
     img: /assets/games/tf2.svg
   - name: "Unturned"

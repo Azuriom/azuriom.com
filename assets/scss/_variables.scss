@@ -2,7 +2,7 @@
 $line-height-base: 1.6;
 $headings-font-weight: 600;
 $spacer: 1rem;
-$link-decoration: none;
+$link-decoration: underline rgba(var(--bs-link-color-rgb), .5);
 $font-weight-bolder: 700;
 
 // Colors

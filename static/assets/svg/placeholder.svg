@@ -1,4 +1,4 @@
-<svg viewBox="0 0 100 50" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
     <rect height="100%" width="100%" fill="#999"/>
     <path fill="#fff" d="M48.044,15.324l3.884,0l7.532,19.464l-3.86,0l-7.556,-19.464Z"/>
     <path fill="#e2e2e2" d="M49.988,20.328l-1.94,-5.004l-7.536,19.464l3.86,0l5.616,-14.46Z"/>
