@@ -58,6 +58,8 @@ download:
   docs: "Pronto para começar? Ótimo, não deixe de conferir a [documentation]({{ .docs }}) para uma instalação tranquila."
   community: 'Junte-se à comunidade em [Discord]({{ .discord }}) para receber as últimas notícias e obter suporte.'
   support: "Habilitado pelo Azuriom? Para nos ajudar a continuar melhorando o Azuriom, há várias maneiras que você pode [nos apoiar]({{ .support }})."
+  cloud-info: "Experimente a Azuriom na nuvem gratuitamente ou use seu próprio nome de domínio por 2 euros/mês."
+  cloud-click: "Clique aqui para descobrir o AzuriomCloud"
 
 azlink:
   description1: "A melhor maneira de conectar seu servidor de jogos ao seu site do Azuriom."

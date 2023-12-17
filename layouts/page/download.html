@@ -30,9 +30,16 @@
             </p>
         </div>
 
-        <a href="https://github.com/Azuriom/AzuriomInstaller/releases/latest/download/AzuriomInstaller.zip" target="_blank" class="btn btn-lg btn-primary">
-            {{ partial "icon.html" "download" }} <span class="azuriom-last-version"><span class="spinner-border spinner-border-sm" role="status"></span></span>
-        </a>
+        <div class="alert alert-info text-center">
+            {{ i18n "download.cloud-info" }}<br>
+            <a href="https://azuriom.cloud" target="_blank" rel="noopener noreferrer">{{ i18n "download.cloud-click" }}</a>
+        </div>
+
+        <div class="text-center">
+            <a href="https://github.com/Azuriom/AzuriomInstaller/releases/latest/download/AzuriomInstaller.zip" target="_blank" class="btn btn-lg btn-primary">
+                {{ partial "icon.html" "download" }} <span class="azuriom-last-version"><span class="spinner-border spinner-border-sm" role="status"></span></span>
+            </a>
+        </div>
     </div>
 </div>
 {{ end }}

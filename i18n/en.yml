@@ -58,7 +58,9 @@ download:
   docs: "Ready to start? Great, make sure to check out the [documentation]({{ .docs }}) for a smooth installation."
   community: 'Join the community on [Discord]({{ .discord }}) to receive the latest news and get support.'
   support: "Empowered by Azuriom? To help us continue improving Azuriom, there are several ways you can [support us]({{ .support }})."
-
+  cloud-info: "Try Azuriom in the cloud for free or use your own domain name at 2€/month."
+  cloud-click: "Click here to discover AzuriomCloud"
+  
 azlink:
   description1: "The best way to connect your game server to your Azuriom website."
   description2: "Enjoy simplicity and security on one of the many supported platforms."
