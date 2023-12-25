@@ -72,8 +72,6 @@ download:
   docs: "Bevor du Azuriom herunterlädst, empfehlen wir dir, <a href=\"{{ .docs }}\" target=\"_blank\">unsere Dokumentation zu lesen</a>."
   support: 'Wenn du Hilfe benötigst oder eine Frage hast, kannst du unserem <a href="{{ .discord }}" target="_blank">Discord-Server</a> beitreten.'
   sources: 'Azuriom ist Open-Source und die Quellen sind auf <a href="{{ .github }}" target="_blank">GitHub</a> verfügbar.'
-  cloud-info: "Testen Sie Azuriom in der Cloud kostenlos oder nutzen Sie Ihren eigenen Domainnamen für 2€/Monat."
-  cloud-click: "Klicken Sie hier, um AzuriomCloud zu entdecken"
 
 azlink:
   title: "AzLink"

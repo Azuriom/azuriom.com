@@ -72,8 +72,6 @@ download:
   docs: "在下载 Azuriom 之前，建议 <a href=\"{{ .docs }}\" target=\"_blank\">阅读我们的文档</a>."
   support: '如果你需要帮助，你可以加入我们的 <a href="{{ .discord }}" target="_blank">Discord</a> 服务器.'
   sources: '前往 <a href="{{ .github }}" target="_blank">GitHub</a> 访问 Azuriom 的源码.'
-  cloud-info: "免费试用云 Azuriom, 或使用自己的域名, 月费 2 欧元。"
-  cloud-click: "点击此处了解 AzuriomCloud"
 
 azlink:
   title: "AzLink"

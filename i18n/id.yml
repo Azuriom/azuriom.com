@@ -71,8 +71,6 @@ download:
   docs: "Sebelum mengunduh Azuriom, Sangat di sarankan untuk <a href=\"{{ .docs }}\" target=\"_blank\">membaca dokumentasi kami</a>."
   support: 'Jika anda membutuhkan bantuan atau anda memiliki pertanyaan, anda bisa gabung ke server <a href="{{ .discord }}" target="_blank">Discord</a> kami.'
   sources: 'Azuriom adalah open-source dan semua sumbernya tersedia di <a href="{{ .github }}" target="_blank">GitHub</a>.'
-  cloud-info: "Coba Azuriom di awan secara gratis atau gunakan nama domain Anda sendiri dengan harga 2 €/bulan."
-  cloud-click: "Klik di sini untuk menemukan AzuriomCloud"
 
 azlink:
   title: "AzLink"

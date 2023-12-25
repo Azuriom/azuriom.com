@@ -72,8 +72,6 @@ download:
   docs: "Перед завантаженням Azuriom рекомендується <a href=\"{{ .docs }}\" target=\"_blank\">прочитати нашу документацію</a>."
   support: 'Якщо вам потрібна допомога або у вас є питання, ви можете приєднатися до нас у <a href="{{ .discord }}" target="_blank">Discord</a> сервер.'
   sources: 'Azuriom є відкритим кодом, і вихідні коди доступні на <a href="{{ .github }}" target="_blank">GitHub</a>.'
-  cloud-info: "Спробуйте Azuriom у хмарі безкоштовно або використовуйте власне доменне ім'я за 2 євро/місяць."
-  cloud-click: "Натисніть тут, щоб відкрити для себе AzuriomCloud"
 
 azlink:
   title: "AzLink"
