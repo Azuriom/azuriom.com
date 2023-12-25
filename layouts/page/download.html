@@ -21,12 +21,21 @@
             </p>
         </div>
 
-        <div class="d-flex align-items-center mb-5">
+        <div class="d-flex align-items-center mb-4">
             <div class="flex-shrink-0 fs-3 lh-1 text-success bg-success bg-opacity-25 p-3 rounded-pill">
                 {{ partial "icon.html" "emoji-heart-eyes" }}
             </div>
             <p class="flex-grow-1 lead ms-3 mb-0">
                 {{ i18n "download.support" (dict "support" (absLangURL "support-us")) | markdownify }}
+            </p>
+        </div>
+
+        <div class="d-flex align-items-center mb-5">
+            <div class="flex-shrink-0 fs-3 lh-1 text-info bg-info bg-opacity-25 p-3 rounded-pill">
+                {{ partial "icon.html" "rocket-takeoff" }}
+            </div>
+            <p class="flex-grow-1 lead ms-3 mb-0">
+                {{ i18n "download.cloud" (dict "cloud" "[AzuriomCloud](https://azuriom.cloud/)") | markdownify }}
             </p>
         </div>
 
