@@ -4,7 +4,7 @@
   "description": "The Azuriom website",
   "scripts": {
     "build": "hugo --gc",
-    "serve": "hugo server"
+    "dev": "hugo server"
   },
   "author": "Azuriom",
   "license": "MIT",

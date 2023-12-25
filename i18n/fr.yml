@@ -1,4 +1,4 @@
-headline: "Azuriom est une solution web open-source complète pour les serveurs de jeux. Profitez de douzaines d'extensions pour des possibilités infinies. Plus de 1 000 serveurs nous font déjà confiance, cumulant plus de deux millions d'utilisateurs."
+headline: "Azuriom est une solution web open-source complète pour les serveurs de jeux. Profitez de douzaines d'extensions pour des possibilités infinies. Plus de 1 800 serveurs nous font déjà confiance, cumulant plus de deux millions d'utilisateurs."
 theme:
   light: "Clair"
   dark: "Sombre"
@@ -15,7 +15,7 @@ nav:
 
 footer:
   copyright: "Copyright &copy; 2019-{{ .year }} Azuriom - Tous droits réservés. Fait avec&nbsp;{{ .love }} par Azuriom."
-  partner: "Notre partenaire"
+  partner: "Notre Partenaire"
   links: "Liens utiles"
 
 home:
@@ -39,7 +39,7 @@ home:
 
   games:
     title: "Des Jeux. Et pas qu'un peu"
-    description1: "Créez un site web pour votre serveur SkyBlock sur Minecraft. Vous avez un DarkRP Garry's Mod ? Ça marche, Azuriom peut faire ça, et avec connexion Steam. Vous préférez Los Santos ? Azuriom supporte FiveM avec Cfx.re!"
+    description1: "Créez un site web pour votre serveur SkyBlock sur Minecraft. Vous avez un DarkRP Garry's Mod ? Ça marche, Azuriom peut faire ça, et avec connexion Steam. Vous préférez Los Santos ? Azuriom supporte aussi FiveM!"
     description2: "Même si votre jeu n'est pas pris en charge nativement, une extension suffit pour l'ajouter. Un exemple parfait est le jeu [Flyff](https://universe.flyff.com)."
 
   community:
@@ -50,7 +50,7 @@ home:
   trusted:
     title: "Aimé. Par 1800 serveurs dans le monde entier"
     description1: "Développé en Suisse, dans les Alpes, Azuriom est utilisé par plus d'un millier de serveurs dans le monde, et est traduits dans [plus de 15 langues](https://translate.azuriom.com)."
-    description2: "Conçu avec [Laravel](https://laravel.com/), le framework PHP le plus populaire, vous pouvez ainsi avoir un site sécurisé et fiable. Profitez d'un site qui vous correspond, vous le méritez !"
+    description2: "Conçu avec [Laravel](https://laravel.com/), le framework PHP le plus populaire, vous pouvez ainsi avoir un site sécurisé et fiable. Profitez d'un site qui vous correspond, vous le méritez!"
 
 download:
   title: "Télécharger Azuriom"

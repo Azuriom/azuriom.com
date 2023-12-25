@@ -17,7 +17,7 @@ azlink:
 
   - name: AzLink FiveM
     info: FiveM (GTA V)
-    url: https://github.com/Azuriom/AzLink-FiveM/releases/latest/download/AzLink-FiveM.
+    url: https://github.com/Azuriom/AzLink-FiveM/releases/latest/download/AzLink-FiveM.zip
 
   - name: AzLink Oxide
     info: Rust & 7 Days to Die

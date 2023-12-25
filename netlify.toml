@@ -52,6 +52,26 @@ to = "/fr/404.html"
 status = 404
 
 [[redirects]]
+from = "/de/*"
+to = "/de/404.html"
+status = 404
+
+[[redirects]]
+from = "/ru/*"
+to = "/ru/404.html"
+status = 404
+
+[[redirects]]
+from = "/cs/*"
+to = "/cs/404.html"
+status = 404
+
+[[redirects]]
+from = "/uk/*"
+to = "/uk/404.html"
+status = 404
+
+[[redirects]]
 from = "/pt-br/*"
 to = "/pt-br/404.html"
 status = 404
@@ -67,8 +87,36 @@ status = 302
 
 [[redirects]]
 from = "/"
+to = "/de"
+conditions = { Country = ["de"] }
+force = true
+status = 302
+
+[[redirects]]
+from = "/"
+to = "/ru"
+conditions = { Country = ["ru"] }
+force = true
+status = 302
+
+[[redirects]]
+from = "/"
+to = "/cs"
+conditions = { Country = ["cz"] }
+force = true
+status = 302
+
+[[redirects]]
+from = "/"
+to = "/uk"
+conditions = { Country = ["ua"] }
+force = true
+status = 302
+
+[[redirects]]
+from = "/"
 to = "/pt-br"
-conditions = { Country = ["BR"] }
+conditions = { Country = ["br"] }
 force = true
 status = 302
 
@@ -86,8 +134,32 @@ status = 302
 
 [[redirects]]
 from = "/*"
+to = "/de/:splat"
+conditions = { Country = ["de"] }
+status = 302
+
+[[redirects]]
+from = "/*"
+to = "/ru/:splat"
+conditions = { Country = ["ru"] }
+status = 302
+
+[[redirects]]
+from = "/*"
+to = "/cs/:splat"
+conditions = { Country = ["cz"] }
+status = 302
+
+[[redirects]]
+from = "/*"
+to = "/uk/:splat"
+conditions = { Country = ["ua"] }
+status = 302
+
+[[redirects]]
+from = "/*"
 to = "/pt-br/:splat"
-conditions = { Country = ["BR"] }
+conditions = { Country = ["br"] }
 status = 302
 
 [[redirects]]

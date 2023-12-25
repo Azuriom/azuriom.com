@@ -8,16 +8,19 @@ The Azuriom's website, available at [azuriom.com](https://azuriom.com) and made 
 ## Project setup for development
 
 ### Install required dependencies
-```
+
+```sh
 npm install
 ```
 
 ### Compiles and hot-reloads for development
-```
-npm run serve
+
+```sh
+npm run dev
 ```
 
 ### Compiles and minifies for production
-```
+
+```sh
 npm run build
 ```

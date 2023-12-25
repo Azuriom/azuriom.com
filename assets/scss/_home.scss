@@ -31,11 +31,23 @@
       margin-bottom: 10vw;
     }
   }
+
+  .img-dark {
+    display: none;
+  }
 }
 
 @include color-mode(dark) {
   .home-hero {
     background: linear-gradient(-75deg, #022265 0, #003bb1 100%);
+  }
+
+  .img-light {
+    display: none;
+  }
+
+  .img-dark {
+    display: block;
   }
 }
 
