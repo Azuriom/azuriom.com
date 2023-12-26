@@ -3,7 +3,7 @@ command = "hugo --gc"
 publish = "public"
 
 [build.environment]
-HUGO_VERSION = "0.109.0"
+HUGO_VERSION = "0.121.1"
 HUGO_UGLYURLS = "true"
 
 [context.deploy-preview]
@@ -41,6 +41,13 @@ to = "https://market.azuriom.com/api/updates"
 from = "/install/assets/v0.2.4/img/:image"
 to = "https://cdn.jsdelivr.net/gh/Azuriom/Azuriom@1.0.1/public/assets/img/games/:image"
 
+# Redirects untranslated documentations
+[[redirects]]
+from = "/ru/docs/*"
+to = "/en/docs/:splat"
+status = 302
+
+# Serve translated 404 pages
 [[redirects]]
 from = "/en/*"
 to = "/en/404.html"
@@ -76,47 +83,46 @@ from = "/pt-br/*"
 to = "/pt-br/404.html"
 status = 404
 
+# Redirect home page to the user language
 [[redirects]]
 from = "/"
 to = "/fr"
-# TODO use Language when possible,
-#  see https://answers.netlify.com/t/language-based-redirect-only-works-when-1-browser-language-set/4252
-conditions = { Country = ["fr"] }
+conditions = { Language = ["fr"] }
 force = true
 status = 302
 
 [[redirects]]
 from = "/"
 to = "/de"
-conditions = { Country = ["de"] }
+conditions = { Language = ["de"] }
 force = true
 status = 302
 
 [[redirects]]
 from = "/"
 to = "/ru"
-conditions = { Country = ["ru"] }
+conditions = { Language = ["ru"] }
 force = true
 status = 302
 
 [[redirects]]
 from = "/"
 to = "/cs"
-conditions = { Country = ["cz"] }
+conditions = { Language = ["cs"] }
 force = true
 status = 302
 
 [[redirects]]
 from = "/"
 to = "/uk"
-conditions = { Country = ["ua"] }
+conditions = { Language = ["uk"] }
 force = true
 status = 302
 
 [[redirects]]
 from = "/"
 to = "/pt-br"
-conditions = { Country = ["br"] }
+conditions = { Language = ["pt-br"] }
 force = true
 status = 302
 
@@ -126,40 +132,41 @@ to = "/en"
 force = true
 status = 302
 
+# Redirect pages to the user language
 [[redirects]]
 from = "/*"
 to = "/fr/:splat"
-conditions = { Country = ["fr"] }
+conditions = { Language = ["fr"] }
 status = 302
 
 [[redirects]]
 from = "/*"
 to = "/de/:splat"
-conditions = { Country = ["de"] }
+conditions = { Language = ["de"] }
 status = 302
 
 [[redirects]]
 from = "/*"
 to = "/ru/:splat"
-conditions = { Country = ["ru"] }
+conditions = { Language = ["ru"] }
 status = 302
 
 [[redirects]]
 from = "/*"
 to = "/cs/:splat"
-conditions = { Country = ["cz"] }
+conditions = { Language = ["cs"] }
 status = 302
 
 [[redirects]]
 from = "/*"
 to = "/uk/:splat"
-conditions = { Country = ["ua"] }
+conditions = { Language = ["uk"] }
 status = 302
 
 [[redirects]]
 from = "/*"
 to = "/pt-br/:splat"
-conditions = { Country = ["br"] }
+conditions = { Language = ["pt-br"] }
 status = 302
 
 [[redirects]]
