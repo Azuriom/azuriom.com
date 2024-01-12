@@ -21,7 +21,7 @@ Solltest du Hilfe benötigen oder eine Frage haben, kannst du unserem [Discord S
 Azuriom wurde von [MrMicky](https://mrmicky.fr/) & [SkyWarZzeur](https://twitter.com/SkyWarZzeur) mit dem PHP Framework [Laravel](https://laravel.com/) geschaffen.
 
 Auch ein großes Dankeschön an [Jav](https://www.linkedin.com/in/jean-alexandre-valentin-531236153/) für seine großartigen Beiträge,
-an unseren Partnern für das Vertrauen in uns und an alle [Azuriom-Mitwirkenden]((https://github.com/Azuriom/Azuriom/graphs/contributors)) für ihre Hilfe
+an unseren Partnern für das Vertrauen in uns und an alle [Azuriom-Mitwirkenden](https://github.com/Azuriom/Azuriom/graphs/contributors) für ihre Hilfe
 
 ### Spender
 
