@@ -58,6 +58,7 @@ download:
   docs: "Pronto para começar? Ótimo, não deixe de conferir a [documentation]({{ .docs }}) para uma instalação tranquila."
   community: 'Junte-se à comunidade em [Discord]({{ .discord }}) para receber as últimas notícias e obter suporte.'
   support: "Habilitado pelo Azuriom? Para nos ajudar a continuar melhorando o Azuriom, há várias maneiras que você pode [nos apoiar]({{ .support }})."
+  cloud: "Não quer instalar o Azuriom sozinho? Experimente o {{ .cloud }} gratuitamente para hospedar seu site com facilidade."
 
 azlink:
   description1: "A melhor maneira de conectar seu servidor de jogos ao seu site do Azuriom."
@@ -84,7 +85,6 @@ docs:
 
 errors:
   title: "Error"
-
   notFound:
     title: "Não encontrado"
     info: "A página que você procura não foi encontrada."
