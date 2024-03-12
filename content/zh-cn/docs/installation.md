@@ -124,6 +124,7 @@ a2enmod rewrite
 以启用 URL 重写:
 
 ```
+DocumentRoot /var/www/azuriom/public
 <Directory "/var/www/azuriom">
     Options FollowSymLinks
     AllowOverride All

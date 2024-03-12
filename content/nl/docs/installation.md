@@ -128,6 +128,7 @@ en voeg de volgende regels toe tussen de `<VirtualHost>`-tags (waarbij `var/www/
 om URL-herschrijving toe te staan:
 
 ```
+DocumentRoot /var/www/azuriom/public
 <Directory "/var/www/azuriom">
     Options FollowSymLinks
     AllowOverride All

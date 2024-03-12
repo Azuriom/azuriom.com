@@ -105,6 +105,7 @@ značky `<VirtualHost>` (nahraďdte
 `var/www/azuriom` lokací webu) pro povolení přepisování URL:
 
 ```
+DocumentRoot /var/www/azuriom/public
 <Directory "/var/www/azuriom">
     Options FollowSymLinks
     AllowOverride All

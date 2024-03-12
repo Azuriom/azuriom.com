@@ -128,6 +128,7 @@ a2enmod rewrite
 щоб дозволити перезапис URL:
 
 ```
+DocumentRoot /var/www/azuriom/public
 <Directory "/var/www/azuriom">
     Options FollowSymLinks
     AllowOverride All
