@@ -1,0 +1,89 @@
+headline: "Azuriom, oyun sunucuları için eksiksiz bir açık kaynaklı web çözümüdür. Sonsuz olasılıklar için düzinelerce uzantının keyfini çıkarın. İki milyondan fazla kullanıcıyı bir araya getiren 1.800'den fazla sunucu tarafından zaten güveniliyor."
+
+theme:
+  light: "Aydınlık"
+  dark: "Karanlık"
+  auto: "Otomatik"
+
+nav:
+  download: "İndir"
+  extensions: "Eklentiler"
+  docs: "Dökümanlar"
+  demo: "Demo"
+  demoMC: "Minecraft Demosu"
+  demoSteam: "Steam Demosu"
+  login: Giriş
+
+footer:
+  copyright: "Telif hakkı &copy; 2019-{{ .year }} Azuriom - Tüm hakları saklıdır. Azuriom tarafından&nbsp;{{ .love }} ile yapılmıştır."
+  partner: "Partnerimiz"
+  links: "Bağlantılar"
+
+home:
+  header:
+    title: "Oyun sunucunuzu eksiksiz bir web çözümü ile geliştirin."
+    subtitle: "Azuriom, oyun sunucuları için eksiksiz bir **ücretsiz** ve **açık kaynaklı** web çözümüdür. Sonsuz olasılıklar için düzinelerce uzantının keyfini çıkarın."
+
+  learn: "Daha fazla bilgi edinin"
+
+  complete:
+    title: "Uzantıları tek tıkla yükleyin. Olasılıklar sonsuz"
+    description1: "Düzinelerce uzantı doğrudan yönetici panelinden kurulabilir. Mağazamızla sunucunuzdan para kazanın, forumlarımızla bir topluluk oluşturun veya birçok muhteşem temamızdan biriyle sitenizi güzelleştirin!"
+    description2: "Daha fazlasına mı ihtiyacınız var? Sorun değil, [Laravel](https://laravel.com) sayesinde tema ve eklenti oluşturmak çok kolay."
+
+  extensions:
+    shop: "Sunucunuzdan para kazanın ve 15'ten fazla ödeme yöntemi ile oyuncularınıza eşya satın."
+    vote: "Topluluğunuzu güçlendirmek için oyuncularınızı otomatik ödüllerle sunucunuza oy vermeye teşvik edin."
+    forum: "Zengin özelliklere sahip bir forum ile oyuncularınızın ilgisini çekerek bir topluluk oluşturun."
+    more: "Piyasada düzinelerce başka uzantı var. Elbette ihtiyacınız olanı bulacaksınız."
+    themes: "Kimse sıkıcı tasarlanmış bir web sitesi istemez. Sitenizi öne çıkarmak için birçok temamızdan birini seçin."
+
+  games:
+    title: "Tek Proje, Birçok Oyun"
+    description1: "Minecraft'ta SkyBlock sunucunuz için bir web sitesi oluşturun. Garry's Mod'da bir DarkRP'niz mi var? Elbette, Azuriom bunu da yapabilir ve Steam girişi ile. Los Santos'u mu tercih ediyorsunuz? Sorun değil, Azuriom Cfx.re ile FiveM'i destekliyor!"
+    description2: "Oyununuz desteklenmiyor olsa bile, bir uzantı ile ona destek ekleyebilirsiniz. Bunun mükemmel bir örneği [Flyff](https://universe.flyff.com) oyunudur."
+
+  community:
+    title: "Topluluk tarafından; topluluk için inşa edildi."
+    description1: "Azuriom açık kaynaklı bir projedir. Pahalı mağaza ücretleri veya kötü barındırma konusunda endişelenmenize gerek yok. Sitenizi istediğiniz yerde barındırır ve hatta gerektiği gibi özelleştirirsiniz."
+    description2: "Yardıma mı ihtiyacınız var? Sorun değil, [Discord](/discord) üzerinde binlerce üyeden oluşan aktif bir topluluğumuz var. Ve Azuriom açık kaynaklıdır, bu nedenle herkes [GitHub](https://github.com/Azuriom/Azuriom) üzerinden projeye katkıda bulunabilir."
+
+  trusted:
+    title: "Yüzlerce sunucunun güvenini kazanmıştır. Dünyanın her yerinde seviliyor"
+    description1: "İsviçre'de geliştirilen Azuriom, dünya çapında binden fazla sunucu tarafından güvenilmekte ve [15'ten fazla dile](https://translate.azuriom.com) çevrilmektedir."
+    description2: "En popüler PHP çerçevesi olan [Laravel](https://laravel.com/) ile oluşturulmuştur, böylece güvenli ve güvenilir bir web sitesinin keyfini çıkarabilirsiniz. Bunu hak ediyorsunuz!"
+
+download:
+  title: "Azuriom'u İndir"
+  docs: "Başlamaya hazır mısınız? Harika, sorunsuz bir kurulum için [documentation]({{ .docs }}) belgesine göz attığınızdan emin olun."
+  community: 'En son haberleri almak ve destek almak için [Discord]({{ .discord }}) üzerindeki topluluğa katılın.'
+  support: "Azuriom tarafından güçlendirildi mi? Azuriom'u geliştirmeye devam etmemize yardımcı olmak için [bizi destekleyebileceğiniz]({{ .support }}) çeşitli yollar vardır."
+
+azlink:
+  description1: "Oyun sunucunuzu Azuriom web sitenize bağlamanın en iyi yolu."
+  description2: "Desteklenen birçok platformdan birinde basitliğin ve güvenliğin keyfini çıkarın."
+
+support:
+  title: "Bizi destekle"
+  subtitle1: "Bir fark yaratabilirsin."
+  subtitle2: "Azuriom'un büyümesine katkıda bulunun."
+  description1: "Azuriom'u geliştirmekten içtenlikle keyif alıyoruz ve umarız siz de kullanmaktan keyif alırsınız. Projenin büyümeye devam etmesini istiyorsanız, bizi destekleyebileceğiniz birkaç yol var."
+
+  sponsor:
+    title: "Sponsor"
+    info: "Azuriom ücretsiz olmasına rağmen, bakımı ücretsiz değildir. Sunucu barındırma, alan adları ve diğer hizmetler maliyetlidir. Eşsiz avantajlar** elde etmek için projeyi GitHub'da destekleyebilirsiniz."
+    button: "GitHub'da Sponsor ol"
+
+  star:
+    title: "Projeyi yıldızla"
+    info: "Bize sponsor olamıyor ya da olmak istemiyor musunuz? Sorun değil, projeyi GitHub'da başlatarak bizi hala destekleyebilirsiniz. Tamamen ücretsizdir** ve sadece birkaç saniye sürer, ancak bize çok yardımcı olur."
+    button: "Projeyi yıldızla"
+
+docs:
+  index: "Ana Sayfa"
+
+errors:
+  title: "Hata"
+  notFound:
+    title: "Bulunamadı"
+    info: "Aradığınız sayfa bulunamadı."

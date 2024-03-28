@@ -20,7 +20,12 @@ Edit your Apache2 configuration (by default in `/etc/apache2/sites-available/000
 </Directory>
 ```
 
-Then restart Apache2 with
+Enable the `rewrite` module of Apache2:
+```
+a2enmod rewrite
+```
+
+Then restart Apache2:
 ```
 service apache2 restart
 ```
@@ -88,8 +93,8 @@ it is recommended to reduce the size of the image (ideally below 1 MB).
 Cloudflare can prevent AzLink or some payment gateways from working
 correctly.
 
-To fix this issue, you can disable Cloudflare on the API, by going to Page Rules
--> Add a rule, then add `/api/*` as the URL and these actions:
+To fix this issue, you can disable Cloudflare on the API, by going to in the Cloudflare Dashboard,
+in Page Rules -> Add a rule, then add `/api/*` as the URL and these actions:
 * Cache Level: 'Bypass'
 * Security Level: 'Medium' or 'High'
 * Browser Integrity Check: 'OFF' 

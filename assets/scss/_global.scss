@@ -8,6 +8,10 @@ body {
   flex-direction: column;
 }
 
+a {
+  text-decoration-color: rgba(var(--bs-link-color-rgb), 0.5);
+}
+
 .content {
   padding-top: 6rem;
   padding-bottom: 6rem;
@@ -64,7 +68,7 @@ body {
 
   a {
     color: inherit;
-    text-decoration: underline rgba(205, 209, 213, 0.5);
+    text-decoration-color: rgba(205, 209, 213, 0.5);
   }
 
   a:hover {

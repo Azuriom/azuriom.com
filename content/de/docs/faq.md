@@ -22,6 +22,11 @@ Du musst die Datei `/etc/apache2/sites-available/000-default.conf` ändern und d
 </Directory>
 ```
 
+Aktiviere das `rewrite`-Modul von Apache2:
+```
+a2enmod rewrite
+```
+
 Dann starte mit
 ```
 service apache2 restart

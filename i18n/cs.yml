@@ -40,7 +40,7 @@ home:
 
   games:
     title: "Jeden projekt, spousta her"
-    description1: "Vytvořte web pro svůj SkyBlock server v Minecraftu. Máte DarkRP v Garry's Modu? Jasně, Azuriom dokáže i to, navíc s přihlášením přes službu Steam. Nebo raději Los Santos? Žádný problém, Azuriom podporuje i FiveM pomocí Cfx.re!"
+    description1: "Vytvořte web pro svůj SkyBlock server v Minecraftu. Máte DarkRP v Garry's Modu? Jasně, Azuriom dokáže i to, navíc s přihlášením přes službu Steam. Nebo raději Los Santos? Žádný problém, Azuriom podporuje i FiveM!"
     description2: "I když vaše hra není podporovaná, můžete pro ni přidat podporu pomocí rozšíření. Dokonalým příkladem je hra [Flyff](https://universe.flyff.com)."
 
   community:
@@ -58,6 +58,7 @@ download:
   docs: "Připraveni začít? Výborně! Pro bezproblémovou instalaci doporučujeme navštívit naši [dokumentaci]({{ .docs }})."
   community: 'Přidejte se ke komunitě na [Discordu]({{ .discord }}) pro nejnovější aktuality a podporu.'
   support: "Zjednodušil vám Azuriom práci? Pokud nám chcete pomoct nadále vylepšovat Azuriom, existuje několik způsobů, jak nás můžete [podpořit]({{ .support }})."
+  cloud: "Nechcete instalovat Azuriom sami? Vyzkoušejte zdarma {{ .cloud }} pro snadné hostování vašich stránek."
 
 azlink:
   description1: "Nejlepší způsob, jak propojit váš herní server s vaším webem s Azuriomem."

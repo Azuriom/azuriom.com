@@ -20,6 +20,11 @@ Modifiez votre configuration Apache2 (par défaut dans `/etc/apache2/sites-avail
 </Directory>
 ```
 
+Activer le module `rewrite` d'Apache2 :
+```
+a2enmod rewrite
+```
+
 Puis redémarrez Apache2 pour appliquer les changements :
 ```
 service apache2 restart
@@ -27,7 +32,7 @@ service apache2 restart
 
 ## Réécriture d'URL avec NGINX
 Pour qu'Azuriom fonctionne, NGINX doit pointer vers le dossier `public`.
-Pour cela il faut modifier la configuration de votre site (dans `/etc/nginx/sites-available/`) et rajouter `/public` à la fin de la
+Pour cela, il faut modifier la configuration de votre site (dans `/etc/nginx/sites-available/`) et rajouter `/public` à la fin de la
 ligne contenant `root`, ce qui donne par exemple :
 ```
 root /var/www/html/public;
@@ -90,8 +95,8 @@ la taille de l'image (idéalement en dessous de 1 MO).
 Cloudflare peut empêcher AzLink ou certains moyens de paiements de fonctionner
 correctement.
 
-Pour corriger ce problème vous pouvez désactiver Cloudflare sur l’API, en allant
-dans l'onglet Page Rules -> Ajouter une règle, puis en mettant `votre-site.fr/api/*` dans l’URL
+Pour corriger ce problème, vous pouvez désactiver Cloudflare sur l’API, en allant sur le dashboard Cloudflare,
+dans l'onglet Page Rules, Ajouter une règle, puis en mettant `votre-site.fr/api/*` dans l’URL
 (en remplaçant `votre-site.fr` par l'URL de votre site) et les actions suivantes :
 * Niveau de cache : 'Ignorer'
 * Niveau de sécurité : 'Moyen' ou 'Élevé'

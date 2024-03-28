@@ -1,8 +1,6 @@
 // Typography
 $line-height-base: 1.6;
 $headings-font-weight: 600;
-$spacer: 1rem;
-$link-decoration: underline rgba(var(--bs-link-color-rgb), .5);
 $font-weight-bolder: 700;
 
 // Colors
@@ -20,7 +18,7 @@ $cyan: #6cb2eb;
 $white: #fff;
 
 // Navbar
-$navbar-padding-y: $spacer;
+$navbar-padding-y: 1rem;
 $navbar-nav-link-padding-x: 1rem;
 $navbar-dark-color: rgba($white, .6);
 

@@ -43,7 +43,17 @@ to = "https://cdn.jsdelivr.net/gh/Azuriom/Azuriom@1.0.1/public/assets/img/games/
 
 # Redirects untranslated documentations
 [[redirects]]
+from = "/pl/docs/*"
+to = "/en/docs/:splat"
+status = 302
+
+[[redirects]]
 from = "/ru/docs/*"
+to = "/en/docs/:splat"
+status = 302
+
+[[redirects]]
+from = "/tr/docs/*"
 to = "/en/docs/:splat"
 status = 302
 
@@ -64,8 +74,23 @@ to = "/de/404.html"
 status = 404
 
 [[redirects]]
+from = "/zh-cn/*"
+to = "/zh-cn/404.html"
+status = 404
+
+[[redirects]]
+from = "/pl/*"
+to = "/pl/404.html"
+status = 404
+
+[[redirects]]
 from = "/ru/*"
 to = "/ru/404.html"
+status = 404
+
+[[redirects]]
+from = "/tr/*"
+to = "/tr/404.html"
 status = 404
 
 [[redirects]]
@@ -100,8 +125,29 @@ status = 302
 
 [[redirects]]
 from = "/"
+to = "/zh-cn"
+conditions = { Language = ["zh"] }
+force = true
+status = 302
+
+[[redirects]]
+from = "/"
+to = "/pl"
+conditions = { Language = ["pl"] }
+force = true
+status = 302
+
+[[redirects]]
+from = "/"
 to = "/ru"
 conditions = { Language = ["ru"] }
+force = true
+status = 302
+
+[[redirects]]
+from = "/"
+to = "/tr"
+conditions = { Language = ["tr"] }
 force = true
 status = 302
 
@@ -147,8 +193,26 @@ status = 302
 
 [[redirects]]
 from = "/*"
+to = "/zh-cn/:splat"
+conditions = { Language = ["zh"] }
+status = 302
+
+[[redirects]]
+from = "/*"
+to = "/pl/:splat"
+conditions = { Language = ["pl"] }
+status = 302
+
+[[redirects]]
+from = "/*"
 to = "/ru/:splat"
 conditions = { Language = ["ru"] }
+status = 302
+
+[[redirects]]
+from = "/*"
+to = "/tr/:splat"
+conditions = { Language = ["tr"] }
 status = 302
 
 [[redirects]]

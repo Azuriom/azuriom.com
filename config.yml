@@ -27,16 +27,26 @@ languages:
     contentDir: content/de
     params:
       code: de_DE
-#  zh-CN:
-#    languageName: 简体中文
-#    contentDir: content/zh-cn
-#    params:
-#      code: zh_CN
+  zh-CN:
+    languageName: 简体中文
+    contentDir: content/zh-cn
+    params:
+      code: zh_CN
+  pl:
+    languageName: Polski
+    contentDir: content/pl
+    params:
+      code: pl_PL
   ru:
     languageName: Русский
     contentDir: content/ru
     params:
       code: ru_RU
+  tr:
+    languageName: Türkçe
+    contentDir: content/tr
+    params:
+      code: tr_TR
 #  nl:
 #    languageName: Nederlands
 #    contentDir: content/nl
