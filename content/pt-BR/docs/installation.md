@@ -44,6 +44,7 @@ apt install -y php8.2 php8.2-fpm php8.2-mysql php8.2-pgsql php8.2-sqlite3 php8.2
 ```
 
 O MySQL (MariaDB) agora está instalado e você pode criar um banco de dados e um usuário com os seguintes comandos (**lembre-se de substituir `<password>` por um password seguro!**):
+
 ```
 mysql -u root
 CREATE USER 'azuriom'@'127.0.0.1' IDENTIFIED BY '<password>';
@@ -57,31 +58,31 @@ Durante a instalação, o banco de dados e o usuário do banco de dados serão `
 Uma vez instalados os requisitos, você deve configurar o servidor web. As explicações estão disponíveis na parte inferior desta página.
 
 {{< info >}}
-Se preferir, você também pode usar este [script de instalação automática](https://github.com/AzuriomCommunity/Script-AutoInstall) _não oficial_  que instalará todos os pré-requisitos automaticamente.
+Se preferir, você também pode usar este [script de instalação automática](https://github.com/AzuriomCommunity/Script-AutoInstall) _não oficial_ que instalará todos os pré-requisitos automaticamente.
 {{< /info >}}
 
 ## Instalação
 
 O Azuriom oferece um instalador automático para instalar o Azuriom facilmente seguindo estes poucos passos:
 
-{{< info >}}
-Você também pode instalá-lo com [Docker](https://www.docker.com/) seguindo as etapas listadas [aqui](https://github.com/Azuriom/Azuriom/blob/master/docker/INSTALL.md).
-{{< /info >}}
-
 1. Baixe a versão mais recente do instalador Azuriom em [nosso site]({{< url "/download" >}}).
 
 1. Extraia o arquivo no root do seu site.
 
 1. Defina as permissões de gravação/leitura para a raiz do seu servidor web:
+
    ```
    chmod -R 755 /var/www/azuriom
    ```
+
    (basta substituir `/var/www/azuriom` pela localização do site)
 
    Se o usuário atual não for o usuário do servidor web, pode ser necessário alterar o proprietário dos arquivos:
-    ```
-    chown -R www-data:www-data /var/www/azuriom
-    ```
+
+   ```
+   chown -R www-data:www-data /var/www/azuriom
+   ```
+
    (substitua `/var/www/azuriom` pela localização do site e `www-data` pelo usuário do servidor web)
 
 1. Acesse no seu site e siga as etapas de instalação.
@@ -89,9 +90,11 @@ Você também pode instalá-lo com [Docker](https://www.docker.com/) seguindo as
 1. (Opcional) Configure o agendador:
 
    Alguns recursos precisam que o agendador esteja configurado, para isso você precisa configurar seu servidor para executar o comando `php artisan schedule:run` a cada minuto, por exemplo, adicionando esta entrada Cron (não se esqueça de substituir `/var/www/azuriom` com a localização do site):
+
    ```
    * * * * * cd /var/www/azuriom && php artisan schedule:run >> /dev/null 2>&1
    ```
+
    Isso pode ser feito modificando a configuração do crontab com o comando `crontab -e`.
 
 {{< warn >}}

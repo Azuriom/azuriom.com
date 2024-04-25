@@ -48,6 +48,7 @@ apt install -y php8.2 php8.2-fpm php8.2-mysql php8.2-pgsql php8.2-sqlite3 php8.2
 
 MySQL (MariaDB) is now installed, and you can create a database and a user with the
 following commands (**remember to replace `<password>` with a secure password!**):
+
 ```
 mysql -u root
 CREATE USER 'azuriom'@'127.0.0.1' IDENTIFIED BY '<password>';
@@ -72,24 +73,24 @@ which will install all the prerequisites automatically.
 
 Azuriom offers an automatic installer to install Azuriom easily by following these few steps:
 
-{{< info >}}
-You can also install it with [Docker](https://www.docker.com/) by following the steps listed [here](https://github.com/Azuriom/Azuriom/blob/master/docker/INSTALL.md).
-{{< /info >}}
-
 1. Download the latest version of the Azuriom installer on [our website]({{< url "/download" >}}).
 
 1. Extract the archive at the root of your website.
 
 1. Set write/read permissions to the root of your web server:
+
    ```
    chmod -R 755 /var/www/azuriom
    ```
+
    (just replace `/var/www/azuriom` with the site location)
 
    If the current user is not the web server user, it may be necessary to change the owner of the files:
-    ```
-    chown -R www-data:www-data /var/www/azuriom
-    ```
+
+   ```
+   chown -R www-data:www-data /var/www/azuriom
+   ```
+
    (replace `/var/www/azuriom` with the site location and `www-data`
    with the web server user)
 
@@ -101,9 +102,11 @@ You can also install it with [Docker](https://www.docker.com/) by following the 
    command `php artisan schedule:run` every minute, for example by adding this Cron entry (don't forget to
    replace `/var/www/azuriom`
    with the location of the site):
+
    ```
    * * * * * cd /var/www/azuriom && php artisan schedule:run >> /dev/null 2>&1
    ```
+
    This can be done by modifying the crontab configuration with the `crontab -e` command.
 
 {{< warn >}}

@@ -32,7 +32,7 @@ weight: 1
 在共享的虚拟主机上, 很可能已经安装了这些依赖.
 你可以直接安装 Azuriom
 
-如果你使用的是VPS或专用服务器，可能需要自己安装一个 Web 服务器, PHP 和 MySQL.
+如果你使用的是 VPS 或专用服务器，可能需要自己安装一个 Web 服务器, PHP 和 MySQL.
 例如，在 Debian 或 Ubuntu 下可以通过以下命令完成环境的安装
 
 ```
@@ -47,6 +47,7 @@ apt install -y php8.2 php8.2-fpm php8.2-mysql php8.2-pgsql php8.2-sqlite3 php8.2
 ```
 
 MySQL (MariaDB) 现在已经安装了, 随后你可以使用以下命令创建数据库和密码 (**`密码` 请使用你自己的密码替换!!**):
+
 ```
 mysql -u root
 CREATE USER 'azuriom'@'127.0.0.1' IDENTIFIED BY '密码';
@@ -55,9 +56,9 @@ GRANT ALL PRIVILEGES ON azuriom.* TO 'azuriom'@'127.0.0.1' WITH GRANT OPTION;
 exit
 ```
 
-经过以上一番操作, 将会创建一个名为 `azuriom` 的数据库且密码为 `密码`  
+经过以上一番操作, 将会创建一个名为 `azuriom` 的数据库且密码为 `密码`
 
-这些要求安装后, 你需要配置 Web 服务器. 本页底部有解释.  
+这些要求安装后, 你需要配置 Web 服务器. 本页底部有解释.
 
 {{< info >}}
 如果你懒你还可以用
@@ -69,24 +70,24 @@ exit
 
 Azuriom 提供了一个自动安装程序，只要按照以下几个步骤即可轻松安装:
 
-{{< info >}}
-Azuriom 还可以部署到 [Docker](https://www.docker.com/) 中, 在[此处](https://github.com/Azuriom/Azuriom/blob/master/docker/INSTALL.md)查看相关步骤(英文).
-{{< /info >}}
-
 1. 在[我们的网站]({{< url "/download" >}})下载最新版本的 Azuriom 安装程序.
 
 1. 解压到你的网站根目录.
 
 1. 为你的网站根目录设置 读/写 权限:
+
    ```
    chmod -R 755 /var/www/azuriom
    ```
+
    (将 `/var/www/azuriom` 替代为你实际的网站目录)
 
-   如果当前用户不是Web服务器用户, 可能需要改变文件的所有者:
-    ```
-    chown -R www-data:www-data /var/www/azuriom
-    ```
+   如果当前用户不是 Web 服务器用户, 可能需要改变文件的所有者:
+
+   ```
+   chown -R www-data:www-data /var/www/azuriom
+   ```
+
    (将 `/var/www/azuriom` 替代为你实际的网站目录, `www-data` 替代为你实际的用户名)
 
 1. 进入你的网站并按照其中的步骤进行安装.
@@ -97,9 +98,11 @@ Azuriom 还可以部署到 [Docker](https://www.docker.com/) 中, 在[此处](ht
    以每分钟执行一次 `php artisan schedule:run`, 例如通过添加这个 Cron 条目 (别忘了
    替换 `/var/www/azuriom`
    为你实际的网站目录):
+
    ```
    * * * * * cd /var/www/azuriom && php artisan schedule:run >> /dev/null 2>&1
    ```
+
    可以使用命令 `crontab -e` 完成此修改.
 
 {{< warn >}}
@@ -182,7 +185,7 @@ server {
 
 记得替换 `example.com` 为你的实际域名, `/var/www/azuriom`
 为你实际的网站目录 (不要移除后面的 `/public`!)
- `php8.2` 为你的 PHP 版本.
+`php8.2` 为你的 PHP 版本.
 
 最后, 重启 NGINX:
 

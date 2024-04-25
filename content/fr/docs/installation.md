@@ -31,24 +31,26 @@ Il est également très fortement recommandé de posséder **une base de donnée
 Azuriom peut être installé sur n'importe quel VPS ou serveur dédié ainsi que sur
 la majorité des hébergeurs web ayant les prérequis ci-dessus, cependant certains
 hébergeurs ne sont pas compatibles ou nécessitent des petites adaptations :
-* [000webhost](https://www.000webhost.com/) : Incompatible (La fonction `putenv()` est désactivée).
-* [InovaPerf](https://inovaperf.fr/) : Incompatible avec l'offre gratuite (La fonction `fsockopen()` est désactivée).
-* [mTxServ](https://mtxserv.com/) : Incompatible (La fonction `symlink()` est désactivée).
-* [LWS](https://www.lws.fr/) : Incompatible (La fonction `symlink()` est désactivée et la réécriture d'URL pose problème).
-* [Ionos](https://www.ionos.fr/) : En cas d'erreur 500 après l'installation,
+
+- [000webhost](https://www.000webhost.com/) : Incompatible (La fonction `putenv()` est désactivée).
+- [InovaPerf](https://inovaperf.fr/) : Incompatible avec l'offre gratuite (La fonction `fsockopen()` est désactivée).
+- [mTxServ](https://mtxserv.com/) : Incompatible (La fonction `symlink()` est désactivée).
+- [LWS](https://www.lws.fr/) : Incompatible (La fonction `symlink()` est désactivée et la réécriture d'URL pose problème).
+- [Ionos](https://www.ionos.fr/) : En cas d'erreur 500 après l'installation,
   il faut simplement modifier le fichier `.htaccess` à la racine du site et
   rajouter `RewriteBase /` juste au-dessus de la ligne `RewriteEngine On`,
   ce qui doit donner quelque chose comme ça :
-    ```
-        ...
-        </IfModule>
 
-        RewriteBase /
-        RewriteEngine On
-    
-        # Handle Authorization Header
-        ...
-    ```
+  ```
+      ...
+      </IfModule>
+
+      RewriteBase /
+      RewriteEngine On
+
+      # Handle Authorization Header
+      ...
+  ```
 
 {{< info img="assets/svg/nihost-circle.svg" >}}
 Si vous recherchez un hébergeur web associatif **abordable mais de qualité**, nous
@@ -65,6 +67,7 @@ installés, et vous pouvez directement passer à l'installation d'Azuriom.
 
 Si vous utilisez un VPS ou un serveur dédié, il sera sûrement nécessaire d'installer
 vous-même un serveur web, PHP et MySQL, cela peut se faire par exemple sous Debian ou Ubuntu avec les commandes suivantes :
+
 ```
 apt update -y && apt upgrade -y
 
@@ -78,6 +81,7 @@ apt install -y php8.2 php8.2-fpm php8.2-mysql php8.2-pgsql php8.2-sqlite3 php8.2
 
 MySQL (MariaDB) étant maintenant installé, vous pouvez créer une base de données et un utilisateur
 avec les commandes suivantes (**pensez à remplacer `<password>` par un mot de passe sécurisé !**)
+
 ```
 mysql -u root
 CREATE USER 'azuriom'@'127.0.0.1' IDENTIFIED BY '<password>';
@@ -101,10 +105,6 @@ qui installera tous les prérequis automatiquement
 
 ## Installation
 
-{{< info >}}
-Azuriom peut être installé avec [Docker](https://www.docker.com/) en suivant les étapes listées [ici](https://github.com/Azuriom/Azuriom/blob/master/docker/INSTALL.md).
-{{< /info >}}
-
 Azuriom propose un installateur automatique pour installer Azuriom facilement en suivant ces quelques étapes :
 
 1. Télécharger la dernière version de l'installateur d'Azuriom sur [notre site]({{< url "/download" >}}).
@@ -112,16 +112,20 @@ Azuriom propose un installateur automatique pour installer Azuriom facilement en
 1. Extraire l'archive à la racine de votre site web.
 
 1. Mettre les droits d'écriture à la racine du serveur web, par exemple avec cette commande :
-    ```
-    chmod -R 755 /var/www/azuriom
-    ```
+
+   ```
+   chmod -R 755 /var/www/azuriom
+   ```
+
    (en remplaçant simplement `/var/www/azuriom` par l'emplacement du site)
 
    Si l'utilisateur actuel n'est pas le même que l'utilisateur du serveur web,
    il peut être nécessaire de changer le propriétaire des fichiers, par exemple avec cette commande :
+
    ```
    chown -R www-data:www-data /var/www/azuriom
    ```
+
    (en remplaçant simplement `/var/www/azuriom` par l'emplacement du site et `www-data` par
    l'utilisateur du serveur web)
 
@@ -150,6 +154,7 @@ faire des thèmes/plugins), il est très fortement recommandé d'activer le déb
 afin de simplifier le développement.
 Cela peut se faire très simplement en modifiant ces 2 lignes dans le fichier d'environnement `.env` à la
 racine du site :
+
 ```
 APP_ENV=local
 APP_DEBUG=true
@@ -170,14 +175,16 @@ déconseillé d'activer le débogage et de configurer l'environnement de dévelo
 Si vous utilisez Apache2, il peut être nécessaire d'activer la réécriture d'URL.
 
 Pour cela, commencez par activer le module "rewrite" avec la commande suivante :
+
 ```
 a2enmod rewrite
 ```
 
 Ensuite vous pouvez configurer le site pour autoriser la réécriture d'URL.
-Il faut simplement modifier le fichier de configuration d'Apache2 (par défaut 
+Il faut simplement modifier le fichier de configuration d'Apache2 (par défaut
 `/etc/apache2/sites-available/000-default.conf`) et y ajouter les lignes suivantes
 entre les balises `<VirtualHost>` (en remplaçant `var/www/azuriom` par l'emplacement du site) :
+
 ```
 <Directory "/var/www/azuriom">
     Options FollowSymLinks
@@ -187,6 +194,7 @@ entre les balises `<VirtualHost>` (en remplaçant `var/www/azuriom` par l'emplac
 ```
 
 Pour finir, appliquez les changements en redémarrant Apache2 :
+
 ```
 service apache2 restart
 ```
@@ -241,6 +249,7 @@ par l'emplacement du site (sans enlever le `/public` de la ligne) et `php8.2`
 par votre version de PHP.
 
 Pour finir, appliquez les changements en redémarrant NGINX :
+
 ```
 service nginx restart
 ```

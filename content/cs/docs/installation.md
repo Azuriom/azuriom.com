@@ -54,10 +54,6 @@ který automaticky nainstaluje všechny požadavky
 
 Azuriom nabízí automatický instalátor pro jednoduchou instalaci Azuriomu pomocí následujících kroků:
 
-{{< info >}}
-Můžete jej také nainstalovat do [Dockeru](https://www.docker.com/) pomocí kroků vypsaných [zde](https://github.com/Azuriom/Azuriom/blob/master/docker/INSTALL.md).
-{{< /info >}}
-
 1. Stáhněte si nejnovější verzi instalátoru Azuriomu na [našem webu]({{< url "/download" >}}).
 
 1. Extrahujte archiv do kořenové složky vašeho webu.
