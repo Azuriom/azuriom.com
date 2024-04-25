@@ -14,7 +14,7 @@ untuk disk space dan persyaratan sebagai berikut:
 - URL Rewrite
 - Izin Write/Read di `storage/` dan `bootstrap/cache/`.
 - Ekstensi BCMath PHP
-- Ekstensi Ctype PHP 
+- Ekstensi Ctype PHP
 - Ekstensi JSON PHP
 - Ekstensi Mbstring PHP
 - Ekstensi OpenSSL PHP
@@ -56,24 +56,24 @@ yang nantinya akan menginstal semua prasyarat secara otomatis.
 
 Azuriom menawarkan instal otomatis untuk Azuriom secara mudah dengan beberapa cara:
 
-{{< info >}}
-Anda juga bisa menginstal dengan [Docker](https://www.docker.com/) dengan mengikut cara yang ada by [disini](https://github.com/Azuriom/Azuriom/blob/master/docker/INSTALL.md).
-{{< /info >}}
-
 1. Instal versi terbaru dari Azuriom Installer di [website kami]({{< url "/download" >}}).
 
 1. Ekstrak arsip dari root website anda.
 
 1. Mengubah izin write/read ke root server web anda:
+
    ```
    chmod -R 755 /var/www/azuriom
    ```
+
    (ganti saja `/var/www/azuriom` dengan lokasi site)
 
    Jika pengguna saar ini bukan pengguna server web, disarankan untuk mengubah pemilik file:
-    ```
-    chown -R www-data:www-data /var/www/azuriom
-    ```
+
+   ```
+   chown -R www-data:www-data /var/www/azuriom
+   ```
+
    (ganti `/var/www/azuriom` dengan lokasi site dan `www-data`
    dengan pengguna server web)
 
@@ -85,9 +85,11 @@ Anda juga bisa menginstal dengan [Docker](https://www.docker.com/) dengan mengik
    perintah `php artisan schedule:run` setiap menit, sebagai contohnya menambahkan Cron (jangan lupa untuk
    mengganti `/var/www/azuriom`
    dengan lokasi site):
+
    ```
    * * * * * cd /var/www/azuriom && php artisan schedule:run >> /dev/null 2>&1
    ```
+
    Ini bisa dijalankan dengan mengubah konfigurasi crontab dengan perintah `crontab -e`.
 
 ## Konfigurasi server web

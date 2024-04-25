@@ -48,6 +48,7 @@ apt install -y php8.2 php8.2-fpm php8.2-mysql php8.2-pgsql php8.2-sqlite3 php8.2
 
 MySQL (MariaDB) is nu geïnstalleerd en u kunt een database en een gebruiker maken met de
 volgende commando's (**vergeet niet om `<password>` te vervangen met een veilig wachtwoord!**):
+
 ```
 mysql -u root
 CREATE USER 'azuriom'@'127.0.0.1' IDENTIFIED BY '<password>';
@@ -73,24 +74,24 @@ waarmee alle vereisten automatisch geïnstalleerd worden.
 Azuriom biedt een automatisch installatie programma om Azuriom eenvoudig te installeren
 door deze paar stappen te volgen:
 
-{{< info >}}
-Je kunt het ook installeren met [Docker](https://www.docker.com/) door de vermelde stappen te volgen [hier](https://github.com/Azuriom/Azuriom/blob/master/docker/INSTALL.md).
-{{< /info >}}
-
 1. Download de nieuwste versie van het Azuriom installatie programma op [onze website]({{< url "/download" >}}).
 
 1. Pak het archief uit in de hoofdmap van uw website.
 
 1. Stel schrijf-/leesrechten in op de hoofdmap van uw webserver:
+
    ```
    chmod -R 755 /var/www/azuriom
    ```
+
    (verplaats `/var/www/azuriom` met de locatie van je site)
 
    Als de huidige gebruiker niet de webserver gebruiker is, kan het nodig zijn om de eigenaar van de bestanden te wijzigen:
-    ```
-    chown -R www-data:www-data /var/www/azuriom
-    ```
+
+   ```
+   chown -R www-data:www-data /var/www/azuriom
+   ```
+
    (verplaats `/var/www/azuriom` met de locatie van je site en `www-data`
    met de webserver gebruiker)
 
@@ -101,9 +102,11 @@ Je kunt het ook installeren met [Docker](https://www.docker.com/) door de vermel
    Voor sommige functies moet de planner worden ingesteld, hiervoor moet u uw server configureren
    om de commando `php artisan schedule:run` elke minuut uit te voeren, bijvoorbeeld
    door dit Cron-item toe te voegen (vergeet niet om `/var/www/azuriom` te vervangen met de locatie van je site):
+
    ```
    * * * * * cd /var/www/azuriom && php artisan schedule:run >> /dev/null 2>&1
    ```
+
    Dit kan gedaan worden door de crontab-configuratie te wijzigen met de `crontab -e` commando.
 
 {{< warn >}}

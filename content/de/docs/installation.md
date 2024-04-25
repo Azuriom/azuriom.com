@@ -7,7 +7,6 @@ weight: 1
 
 ## Anforderungen
 
-
 Um zu funktionieren, benötigt Azuriom lediglich einen **Webserver mit PHP** mit mindestens **100 MB**
 Festplattenspeicher und den folgenden Anforderungen:
 
@@ -29,7 +28,6 @@ Festplattenspeicher und den folgenden Anforderungen:
 Es wird durchaus empfohlen, über eine **MySQL/MariaDB oder PostgreSQL Datenbank** zu verfügen.
 
 ### Benötigte Installationen
-
 
 Wenn Sie einen VPS oder einen dedizierten Server verwenden, müssen Sie wahrscheinlich selbst einen Webserver, PHP und MySQL installieren.
 Dies kann mit den folgenden Befehlen erfolgen:
@@ -59,24 +57,24 @@ which will install all the prerequisites automatically.
 
 Azuriom bietet ein automatisches Installationsprogramm zur einfachen Installation von Azuriom, indem Sie die folgenden Schritte ausführen:
 
-{{< info >}}
-Du kannst auch mit [Docker](https://www.docker.com/) installieren, folge dazu den [hier](https://github.com/Azuriom/Azuriom/blob/master/docker/INSTALL.md) gelisteten Schritten.
-{{< /info >}}
-
 1. Lade die aktuelle Version des Azuriom Installiers auf [unserer Website]({{< url "/download" >}}) herunter.
 
 1. Extrahiere das Archiv in das Root-Verzeichnis des Webservers.
 
 1. Setze schreib/lese Berechtigungen auf das Root-Verzeichnis des Webservers:
+
    ```
    chmod -R 755 /var/www/azuriom
    ```
+
    (just replace `/var/www/azuriom` with the site location)
 
    Wenn der aktuelle Benutzer nicht der Benutzer des Webservers ist, kann es erforderlich sein, den Eigentümer der Dateien zu ändern:
-    ```
-    chown -R www-data:www-data /var/www/azuriom
-    ```
+
+   ```
+   chown -R www-data:www-data /var/www/azuriom
+   ```
+
    (ersetze `/var/www/azuriom` mit dem Website Ort und `www-data`
    mit dem Webserver Benutzer)
 
@@ -87,9 +85,11 @@ Du kannst auch mit [Docker](https://www.docker.com/) installieren, folge dazu de
    Für einige Funktionen muss der Scheduler eingerichtet sein.
    Dazu musst Du Deinen Server so konfigurieren, dass der Befehl `php artisan schedule:run` jede Minute ausgeführt wird, indem Du beispielsweise diesen Cron-Eintrag hinzufügst
    (vergesse nicht, `/var/www/azuriom` durch den Standort der Site zu ersetzen):
+
    ```
    * * * * * cd /var/www/azuriom && php artisan schedule:run >> /dev/null 2>&1
    ```
+
    Dies kann durch Ändern der crontab-Konfiguration mit dem Befehl `crontab -e` erfolgen.
 
 ## Web Server Konfiguration
