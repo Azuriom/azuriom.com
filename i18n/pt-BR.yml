@@ -1,4 +1,4 @@
-headline: "O Azuriom é uma solução web de código aberto completa para servidores de jogos. Aproveite dezenas de extensões por infinitas possibilidades. Já confia em mais de 1.000 servidores, acumulando mais de um milhão de usuários."
+headline: "O Azuriom é uma solução web de código aberto completa para servidores de jogos. Aproveite dezenas de extensões por infinitas possibilidades. Já confiável por mais de 1.800 servidores, acumulando mais de dois milhões de usuários."
 
 theme:
   light: "Claro"
@@ -40,8 +40,8 @@ home:
 
   games:
     title: "Um Projeto, Muitos Jogos"
-    description1: "Crie um site para o seu servidor SkyBlock no Minecraft. Tem um DarkRP no Mod de Garry? Claro, o Azuriom também pode fazer isso, e com login no Steam. Prefere Los Santos? ? Não tem problema, Azuriom oferece suporte a FiveM com Cfx.re!"
-    description2: "Mesmo que o seu jogo não seja compatível, você pode adicionar suporte para ele com uma extensão. Azuriom é construído em [Laravel](https://laravel.com/), aproveite o poder do framework para adicionar seu próprio jogo."
+    description1: "Crie um site para o seu servidor SkyBlock no Minecraft. Tem um DarkRP no Garry's Mod? Claro, o Azuriom também pode fazer isso, e com login Steam. Prefere Los Santos? Não tem problema, a Azuriom também suporta FiveM!"
+    description2: "Mesmo que seu jogo não seja suportado, você pode adicionar suporte para ele com uma extensão. Um exemplo perfeito disso é o jogo [Flyff](https://universe.flyff.com)."
 
   community:
     title: "Construído pela comunidade. Para a Comunidade"
@@ -50,7 +50,7 @@ home:
 
   trusted:
     title: "Confiado por mais de mil servidores. Amado em todo o mundo"
-    description1: "Desenvolvido na Suíça, na EPFL, uma das principais universidades técnicas do mundo, o Azuriom conta com a confiança de mais de mil servidores em todo o mundo e é traduzido em [mais de 15 idiomas](https://translate.azuriom.com)."
+    description1: "Desenvolvido na Suíça, Azuriom é confiável por mais de mil servidores ao redor do mundo e traduzido em [mais de 15 idiomas](https://translate.azuriom.com)."
     description2: "Construa com [Laravel](https://laravel.com/), o framework PHP mais popular para que você possa desfrutar de um site seguro e confiável. Você merece!"
 
 download:
@@ -58,7 +58,7 @@ download:
   docs: "Pronto para começar? Ótimo, não deixe de conferir a [documentation]({{ .docs }}) para uma instalação tranquila."
   community: 'Junte-se à comunidade em [Discord]({{ .discord }}) para receber as últimas notícias e obter suporte.'
   support: "Habilitado pelo Azuriom? Para nos ajudar a continuar melhorando o Azuriom, há várias maneiras que você pode [nos apoiar]({{ .support }})."
-  cloud: "Não quer instalar o Azuriom sozinho? Experimente o {{ .cloud }} gratuitamente para hospedar seu site com facilidade."
+  cloud: "Não quer instalar o Azuriom você mesmo? Experimente {{ .cloud }} gratuitamente para hospedar seu site facilmente."
 
 azlink:
   description1: "A melhor maneira de conectar seu servidor de jogos ao seu site do Azuriom."

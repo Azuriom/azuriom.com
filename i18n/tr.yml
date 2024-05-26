@@ -40,13 +40,13 @@ home:
 
   games:
     title: "Tek Proje, Birçok Oyun"
-    description1: "Minecraft'ta SkyBlock sunucunuz için bir web sitesi oluşturun. Garry's Mod'da bir DarkRP'niz mi var? Elbette, Azuriom bunu da yapabilir ve Steam girişi ile. Los Santos'u mu tercih ediyorsunuz? Sorun değil, Azuriom Cfx.re ile FiveM'i destekliyor!"
+    description1: "Minecraft'ta SkyBlock sunucunuz için bir web sitesi oluşturun. Garry's Mod'da bir DarkRP'niz mi var? Azuriom Steam giriş desteği ile bunu da yapabilir. Los Santos'u mu tercih ediyorsunuz? Sorun değil, Azuriom FiveM'i de destekliyor!"
     description2: "Oyununuz desteklenmiyor olsa bile, bir uzantı ile ona destek ekleyebilirsiniz. Bunun mükemmel bir örneği [Flyff](https://universe.flyff.com) oyunudur."
 
   community:
     title: "Topluluk tarafından; topluluk için inşa edildi."
     description1: "Azuriom açık kaynaklı bir projedir. Pahalı mağaza ücretleri veya kötü barındırma konusunda endişelenmenize gerek yok. Sitenizi istediğiniz yerde barındırır ve hatta gerektiği gibi özelleştirirsiniz."
-    description2: "Yardıma mı ihtiyacınız var? Sorun değil, [Discord](/discord) üzerinde binlerce üyeden oluşan aktif bir topluluğumuz var. Ve Azuriom açık kaynaklıdır, bu nedenle herkes [GitHub](https://github.com/Azuriom/Azuriom) üzerinden projeye katkıda bulunabilir."
+    description2: "Yardıma mı ihtiyacınız var? Sorun değil, [Discord](/discord) üzerinde binlerce üyeden oluşan aktif bir topluluğumuz var. Ayrıca Azuriom açık kaynaklıdır, bu nedenle herkes [GitHub](https://github.com/Azuriom/Azuriom) üzerinden projeye katkıda bulunabilir."
 
   trusted:
     title: "Yüzlerce sunucunun güvenini kazanmıştır. Dünyanın her yerinde seviliyor"
@@ -56,8 +56,9 @@ home:
 download:
   title: "Azuriom'u İndir"
   docs: "Başlamaya hazır mısınız? Harika, sorunsuz bir kurulum için [documentation]({{ .docs }}) belgesine göz attığınızdan emin olun."
-  community: 'En son haberleri almak ve destek almak için [Discord]({{ .discord }}) üzerindeki topluluğa katılın.'
+  community: 'En son haberleri almak ve destek almak için [Discord]({{ .discord }}) toplulumuza katılın.'
   support: "Azuriom tarafından güçlendirildi mi? Azuriom'u geliştirmeye devam etmemize yardımcı olmak için [bizi destekleyebileceğiniz]({{ .support }}) çeşitli yollar vardır."
+  cloud: "Azuriom'u kendiniz kurmak istemiyor musunuz? Web sitenizi kolayca barındırmak için {{ .cloud }}'u ücretsiz deneyin."
 
 azlink:
   description1: "Oyun sunucunuzu Azuriom web sitenize bağlamanın en iyi yolu."

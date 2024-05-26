@@ -47,11 +47,11 @@ languages:
     contentDir: content/tr
     params:
       code: tr_TR
-#  nl:
-#    languageName: Nederlands
-#    contentDir: content/nl
-#    params:
-#      code: nl_NL
+  nl:
+    languageName: Nederlands
+    contentDir: content/nl
+    params:
+      code: nl_NL
   cs:
     languageName: Čeština
     contentDir: content/cs

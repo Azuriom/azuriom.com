@@ -74,6 +74,11 @@ to = "/de/404.html"
 status = 404
 
 [[redirects]]
+from = "/nl/*"
+to = "/nl/404.html"
+status = 404
+
+[[redirects]]
 from = "/zh-cn/*"
 to = "/zh-cn/404.html"
 status = 404
@@ -120,6 +125,13 @@ status = 302
 from = "/"
 to = "/de"
 conditions = { Language = ["de"] }
+force = true
+status = 302
+
+[[redirects]]
+from = "/"
+to = "/nl"
+conditions = { Language = ["nl"] }
 force = true
 status = 302
 
@@ -189,6 +201,12 @@ status = 302
 from = "/*"
 to = "/de/:splat"
 conditions = { Language = ["de"] }
+status = 302
+
+[[redirects]]
+from = "/*"
+to = "/nl/:splat"
+conditions = { Language = ["nl"] }
 status = 302
 
 [[redirects]]

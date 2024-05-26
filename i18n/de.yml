@@ -40,7 +40,7 @@ home:
 
   games:
     title: "Ein Projekt, viele Spiele"
-    description1: "Erstelle eine Webseite für deinen SkyBlock Server in Minecraft. Hast du ein DarkRP auf Garry's Mod? Klar, auch das kann Azuriom, sogar mit Steam Login. Bevorzugst du Los Santos? Kein Problem, Azuriom unterstützt FiveM mit Cfx.re!"
+    description1: "Erstelle eine Webseite für deinen Minecraft Skyblock Server. Hast du ein DarkRP auf Garry's Mod? Klar, auch das kann Azuriom, sogar mit Steam Login. Bevorzugst du Los Santos? Kein Problem, Azuriom unterstützt FiveM!"
     description2: "Auch wenn dein Spiel nicht unterstützt wird, kannst du mit einer Erweiterung Unterstützung dafür hinzufügen. Ein perfektes Beispiel dafür ist das Spiel [Flyff](https://universe.flyff.com)."
 
   community:
@@ -58,6 +58,7 @@ download:
   docs: "Bereit zum Start? Großartig, schau dir die [Dokumentation]({{ .docs }}) für eine reibungslose Installation an."
   community: 'Tritt der Community auf [Discord]({{ .discord }}) bei, um die neuesten Updates zu erhalten und Hilfe zu bekommen.'
   support: "War Azuriom dir von Nutzen? Um uns zu helfen, Azuriom weiter zu verbessern, gibt es verschiedene Möglichkeiten, wie du uns [unterstützen kannst]({{ .support }})."
+  cloud: "Willst du Azuriom nicht selbst installieren? Probiere {{ .cloud }} kostenlos aus, um deine Website einfach zu hosten."
 
 azlink:
   description1: "Der beste Weg, um deinen Spieleserver mit deiner Azuriom Website zu verbinden."

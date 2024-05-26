@@ -1,4 +1,5 @@
-headline: "Azuriom是游戏服务器的一个完整的开源网络解决方案。享受数十个无限的扩展。 已经有1 800多个服务器信任，累计超过200万用户。"
+headline: "Azuriom 是游戏服务器的一个完整的开源网络解决方案. 使用数个扩展为您创造无限的可能. 已由 1800 多个服务器信任, 累计超过 200 万用户."
+
 theme:
   light: "浅色"
   dark: "深色"
@@ -20,14 +21,14 @@ footer:
 
 home:
   header:
-    title: "通过完整的 web 解决方案增强您的游戏服务器。"
-    subtitle: "Azuriom是一个 **完全免费** 和 **开源** 的游戏服务器网络解决方案。享受数十种扩展功能，带来无限可能。"
+    title: "通过完整的 web 解决方案增强您的游戏服务器."
+    subtitle: "Azuriom 是一个 **完全免费** 和 **开源** 的游戏服务器网络解决方案. 通过数个扩展功能, 创造无限可能."
 
   learn: "了解更多信息"
 
   complete:
-    title: "一键安装扩展功能。无限的可能性"
-    description1: "可直接从管理仪表板安装数十种扩展。使用我们的商店为您的服务器盈利，使用我们的论坛建立社区，或者使用我们众多华丽的主题之一来美化您的网站！"
+    title: "一键安装扩展. 无限的可能性"
+    description1: "可直接从管理仪表板安装许多扩展. 使用我们的商店为您的服务器盈利, 使用我们的论坛建立社区, 或者使用我们众多华丽的主题之一来美化您的网站!"
     description2: "还需要更多吗？没问题，有了 [Laravel](https://laravel.com)，创建主题和插件易如反掌。"
 
   extensions:
@@ -39,11 +40,11 @@ home:
 
   games:
     title: "一个项目，多种游戏"
-    description1: "在 Minecraft 上为您的 SkyBlock 服务器创建一个网站。Garry's Mod 上有 DarkRP 吗？当然，Azuriom 也能做到这一点，而且还能使用 Steam 登录。更喜欢 Los Santos？没问题，Azuriom 通过 Cfx.re 支持 FiveM！"
+    description1: "为您的Minecraft SkyBlock服务器创建一个网站。在Garry's Mod上有一个DarkRP吗？没问题，Azuriom也可以做到，并支持Steam登录。更喜欢洛圣都吗？没问题，Azuriom也支持FiveM！"
     description2: "即使您的游戏不受支持，您也可以通过扩展为其添加支持。游戏 [Flyff](https://universe.flyff.com)就是一个很好的例子。"
 
   community:
-    title: "由社区而创建，为社区而创建"
+    title: "由社区创造，为社区创造"
     description1: "Azuriom 是一个开源项目。你不必担心昂贵的商店费用或糟糕的托管服务。你可以将网站托管在你想要的地方，甚至可以根据需要进行定制。"
     description2: "需要帮助？没问题，我们在 [Discord](/discord) 上有一个由数千名成员组成的活跃社区。Azuriom 是开源的，因此任何人都可以在 [GitHub](https://github.com/Azuriom/Azuriom) 上为项目做出贡献。"
 
@@ -56,11 +57,12 @@ download:
   title: "下载 Azuriom"
   docs: "准备好开始了吗？很好，请务必查看 [文档]({{ .docs }})，以便顺利安装。"
   community: '在 [Discord]({{ .discord }}) 上加入社区，接收最新消息并获得支持。'
-  support: "通过 Azuriom 增强能力？为了帮助我们继续改进 Azuriom，您可以通过多种方式 [支持我们] ({{ .support }})。"
+  support: "通过 Azuriom 增强体验？为了帮助我们继续改进 Azuriom，您可以通过多种方式 [支持我们]({{ .support }})."
+  cloud: "不想自己安装Azuriom吗？试试{{ .cloud }}免费轻松托管您的网站。"
 
 azlink:
-  description1: "将您的游戏服务器连接到 Azuriom 网站的最佳方法。"
-  description2: "在众多支持平台之一上享受简单和安全。"
+  description1: "将您的游戏服务器连接到 Azuriom 网站的最佳方法."
+  description2: "在众多支持平台之一享受简单和安全."
 
 support:
   title: "支持我们"
@@ -74,9 +76,9 @@ support:
     button: "在 GitHub 上赞助我们"
 
   star:
-    title: "给项目加星"
-    info: "您不能或不想赞助我们嘛？没关系，您仍然可以通过在 GitHub 上为项目加星来支持我们。这是 **完全免费的**，只需几秒钟，但对我们帮助很大。"
-    button: "给项目加星"
+    title: "给项目 Star"
+    info: "您不能或不想赞助我们嘛？没关系，您仍然可以通过在 GitHub 上为项目 Star 来支持我们。这是 **完全免费的**，只需几秒钟，但对我们帮助很大。"
+    button: "给项目 Star"
 
 docs:
   index: "首页"

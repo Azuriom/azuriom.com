@@ -1,14 +1,12 @@
-meta:
-  desc: "Azuriom is een moderne, betrouwbare, snel en veilige game CMS. Het is de ideale keuze voor je website op Minecraft, Garry's Mod, Rust, Ark, FiveM en veel meer games."
+headline: "Azuriom is een volledige open-source weboplossing voor spelservers. Geniet van tientallen extensies voor eindeloze mogelijkheden. Al meer dan 1.800 servers vertrouwd, samen met meer dan twee miljoen gebruikers."
 
 theme:
-  light: "Licht"
+  light: "Helder"
   dark: "Donker"
   auto: "Auto"
 
 nav:
-  home: "Index"
-  download: "Download"
+  download: "Downloaden"
   extensions: "Extensies"
   docs: "Documentatie"
   demo: "Demo"
@@ -17,82 +15,76 @@ nav:
   login: Inloggen
 
 footer:
-  about: "Over ons"
-  aboutDescription: "Azuriom is de volgende generatie game CMS, het is gratis en open-source, modern, betrouwbaar, snel en een veilig alternatief tegenover bestaande CMS zodat u de best mogelijke webervaring voor uw website op Minecraft, Garry's Mod, Ark, Rust en vele andere games kunt hebben."
-  copyright: "Auteursrechten &copy; 2019-{{ .year }} Azuriom - Alle rechten voorbehouden Gemaakt met&nbsp;{{ .love }} door Azuriom."
-  partners: "Partners"
+  copyright: "Copyright &copy; 2019-{{ .year }} Azuriom - Alle rechten voorbehouden. Gemaakt met&nbsp;{{ .love }} door Azuriom."
+  partner: "Onze Partners"
   links: "Links"
-  supportUs: "Steun ons"
 
 home:
   header:
-    title: "Azuriom | De gamingwebsite van de volgende generatie"
-    subtitle: "De volgende generatie gamingwebsite voor uw server, gebruikt door honderden websites."
-    heading: "Een game CMS dat"
-    typed: "gratis en open-source is.|snel en veilig is.|modern en betrouwbaar is."
-    typedFallback: "gratis en open-source, snel, veilig, modern en betrouwbaar."
+    title: "Verbeter uw spelserver met een volledige weboplossing."
+    subtitle: "Azuriom is een volledige **gratis** en **open-source** weboplossing voor spelservers. Geniet van tientallen extensies voor eindeloze mogelijkheden."
 
-  about:
-    title: "Wat is Azuriom"
-    description1: "Azuriom is de <strong>volgende generatie</strong> game CMS, Het is <strong>gratis</strong> en <strong>open-source</strong>, is <strong>modern, betrouwbaar, snel en veilig</strong> alternatief voor het bestaande CMS, zodat u de <strong>best mogelijke webervaring kunt hebben</strong>."
-    description2: "Azuriom is de ideale keuze voor je website voor Minecraft, Garry's Mod, Rust, FiveM, Ark en vele andere games."
-    gamesTitle: "Ondersteunde games"
-    games: "Azuriom is een <strong>Minecraft CMS</strong>, maar niet alleen! Naast Minecraft, ondersteunt het ook <strong>Garry's Mod, Ark, Rust, FiveM, CS:GO, Team Fortress 2</strong>! Je kunt zelfs ondersteuning voor je eigen games toevoegen via een extensie."
+  learn: "Leer meer"
 
-  features:
-    modern:
-      title: "Modern"
-      desc: "Gebouwd met de laatste technologieën, met solide patronen."
+  complete:
+    title: "Installatieextensies met één klik. Oneindige mogelijkheden"
+    description1: "Tientallen extensies kunnen direct vanaf het admin dashboard geïnstalleerd worden. Genereer inkomsten met uw server met onze winkel, bouw een community met onze forums of maak uw site op met één van onze vele prachtige thema's!"
+    description2: "Nog meer nodig? Geen probleem, dankzij [Laravel](https://laravel.com) is het maken van thema's en plugins een fluitje van een cent."
 
-    reliable:
-      title: "Betrouwbaar"
-      desc: "Onze testprotocollen helpen fouten in de productie te voorkomen."
+  extensions:
+    shop: "Monetiseer uw server en verkoop items aan uw spelers met meer dan 15 betaalgateways."
+    vote: "Moedig je spelers aan om voor je server te stemmen met automatische beloningen om je community een boost te geven."
+    forum: "Bouw een community door uw spelers erbij te betrekken met een functie-rijk forum."
+    more: "Er zijn nog tientallen andere uitbreidingen op de markt te vinden en waarschijnlijk zult u vinden wat u nodig heeft."
+    themes: "Niemand wil een vervelend ontworpen website. Kies een van onze vele thema's om uw website op te laten vallen."
 
-    fast:
-      title: "Snel"
-      desc: "Elk onderdeel van Azuriom is maximaal geoptimaliseerd voor ongeëvenaarde prestaties."
+  games:
+    title: "Één Project, Veel Spellen"
+    description1: "Maak een website voor uw SkyBlock server op Minecraft. Heeft u een DarkRP op Garry's Mod? Prima, Azuriom kan dat ook doen, en u kan zelfs met Steam inloggen. Liever toch Los Santos? Geen probleem, Azuriom steunt ook de FiveM!"
+    description2: "Zelfs als uw spel niet wordt ondersteund, kunt u er steun voor toevoegen met een extensie. Een perfect voorbeeld hiervan is het spel [Flyff](https://universe.flyff.com)."
 
-    secure:
-      title: "Veilig"
-      desc: "Met zijn sterke concept, en afhankelijkheden up-to-date, is de beveiliging sterk."
+  community:
+    title: "Gebouwd door de community. Voor de Community"
+    description1: "Azuriom is een opensourceproject. U hoeft zich geen zorgen te maken over dure winkelkosten of slechte hosting. U organiseert uw site waar u wilt en past deze zelfs aan indien nodig."
+    description2: "Hulp nodig? Geen probleem, we hebben een actieve community van duizenden leden op [Discord](/discord). En Azuriom is open-source, dus iedereen kan bijdragen aan het project op [GitHub](https://github.com/Azuriom/Azuriom)."
 
-  desc1:
-    title: "Unieke extensies"
-    description1: "Onze extensies, dat wil zeggen onze thema's en plug-ins, worden op dezelfde manier gemaakt als het CMS, zodat het één is met de extensies zodra ze zijn geïnstalleerd."
-    description2: "Voor ontwikkelaars die hun uitbreidingen willen uitvoeren, zijn tools en volledige documentatie beschikbaar voor een uniek werk comfort."
-    description3: "Er is ook een Community-markt beschikbaar om uw extensies te plaatsen. We controleren elke extensie en volgen regelmatig de updates die erop worden voorgesteld om een schone markt te behouden."
-
-  desc2:
-    title: "Actieve ondersteuning"
-    description1: "We hebben een actieve ondersteuning op Discord en op GitHub, en aangezien Azuriom open-source is, kan iedereen bijdragen aan het project op GitHub!"
-    description2: "Azuriom is open-source, dus iedereen kan bijdragen en het project verbeteren."
+  trusted:
+    title: "Vertrouwd door meer dan duizend servers. Over de gehele wereld geliefd"
+    description1: "Ontwikkeld in Zwitserland, Azuriom wordt vertrouwd door meer dan duizend servers over de hele wereld en vertaald in [meer dan 15 talen](https://translate.azuriom.com)."
+    description2: "Gebouwd met [Laravel](https://laravel.com/), het populairste PHP-framework, zodat u kunt genieten van een veilige en betrouwbare website. U verdient het!"
 
 download:
-  title: "Download"
-  docs: "Voordat u Azuriom downloadt, is het raadzaam om <a href=\"{{ .docs }}\" target=\"_blank\">onze documentatie te lezen</a>."
-  support: 'Als u hulp nodig hebt of een vraag hebt, kunt u lid worden van onze <a href="{{ .discord }}" target="_blank">Discord</a> server.'
-  sources: 'Azuriom is open-source en de bronnen zijn beschikbaar op <a href="{{ .github }}" target="_blank">GitHub</a>.'
+  title: "Azuriom downloaden"
+  docs: "Klaar om te beginnen? Uitstekend, zorg ervoor om de [documentation]({{ .docs }}) te checken voor een soepele installatie."
+  community: 'Word lid van de community [Discord]({{ .discord }}) om het laatste nieuws te ontvangen en krijg ondersteuning.'
+  support: "Aangedreven door Azuriom? Om ons te ondersteunen met het continu verbeteren van Azuriom, zijn er verschillende manieren waarop u ons kunt [ondersteunen]({{ .support }})."
+  cloud: "Wilt u Azuriom niet zelf installeren? Probeer {{ .cloud }} gratis om uw website eenvoudig te hosten."
 
 azlink:
-  title: "AzLink"
-  info: "AzLink is een plug-in gemaakt voor Azuriom om uw server op een gemakkelijke, snelle en veilige manier to koppelen aan uw Azuriom-website."
-  download: "Download"
-  supported: "AzLink ondersteunt Bukkit (en op Bukkit gebaseerde servers zoals Spigot, Glowstone en Cauldron), BungeeCord, Sponge en Velocity in dezelfde plug-in. Als u Minecraft 1.7.10 gebruikt, moet u de oude versie downloaden."
-  sources: 'AzLink is open-source en de bronnen zijn beschikbaar op <a href="{{ .github }}" target="_blank">GitHub</a>.'
+  description1: "De beste manier om uw spelserver te verbinden met uw Azuriom website."
+  description2: "Geniet van eenvoud en veiligheid op een van de vele ondersteunde platformen."
 
 support:
   title: "Steun ons"
-  description1: "Het maken van dit project is tijdrovend en uw donatie zal ons helpen dit project te verbeteren."
-  description2: "Uw donatie zal ook helpen om de financiële kosten van dit project te dekken: we moeten het domein betalen, servers huren (website, demo), grafisch ontwerper, ..."
-  description3: "Je kunt ons ook steunen door de GitHub-repository een ster te geven, het is gratis en je hebt alleen een GitHub-account nodig."
-  star: "Geef het project een ster"
-  donate: "Doneren"
+  subtitle1: "Je kunt een verschil maken."
+  subtitle2: "Draag bij aan de groei van Azuriom."
+  description1: "We genieten van het ontwikkelen van Azuriom, en we hopen dat u er plezier in zult hebben. Indien u wilt dat het project blijft groeien, zijn er verschillende manieren waarop u ons kunt steunen."
+
+  sponsor:
+    title: "Sponsor"
+    info: "Hoewel Azuriom gratis is, is het behouden ervan dat niet. Server hosting, domeinnamen en andere diensten kosten geld. Je kunt het project op GitHub ondersteunen om **unieke voordelen** te krijgen."
+    button: "Sponsor ons op GitHub"
+
+  star:
+    title: "Ster het project"
+    info: "Kunt of wilt u ons niet sponsoren? Geen probleem, u kunt ons nog steeds steunen door het project als favoriet aan te geven op GitHub. Het is **volledig gratis** en duurt maar een paar seconden, maar het helpt ons veel."
+    button: "Ster het project"
 
 docs:
-  index: "Index"
+  index: "Startpagina"
 
 errors:
   title: "Fout"
   notFound:
     title: "Niet gevonden"
-    info: "De pagina die u zoekt is niet gevonden."
+    info: "De pagina waar je op zoekt is niet gevonden."
