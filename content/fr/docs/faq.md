@@ -96,15 +96,12 @@ Cloudflare peut empêcher AzLink ou certains moyens de paiements de fonctionner
 correctement.
 
 Pour corriger ce problème, vous pouvez désactiver Cloudflare sur l’API, en allant sur le dashboard Cloudflare,
-dans l'onglet Page Rules, Ajouter une règle, puis en mettant `votre-site.fr/api/*` dans l’URL
-(en remplaçant `votre-site.fr` par l'URL de votre site) et les actions suivantes :
-* Niveau de cache : 'Ignorer'
-* Niveau de sécurité : 'Moyen' ou 'Élevé'
-* Vérification de l'intégrité du navigateur : 'OFF'
+dans l'onglet "Règles" puis "Règles de configuration", ajoutez une règle en sélectionnant "Expression personnalisée" avec
+"Chemin URI commence par `/api/`" et les actions suivantes :
+* Niveau de sécurité : Faible
+* Contrôle de l’intégrité du navigateur : Désactivé
 
 Si le problème persiste, vérifiez également les règles du pare-feu.
-
-Plus de détails sont disponibles sur le [site de Cloudflare](https://support.cloudflare.com/hc/en-us/articles/200504045-Using-Cloudflare-with-your-API).
 
 ## Forcer le HTTPS avec Apache2
 
@@ -114,6 +111,18 @@ RewriteCond %{HTTPS} off
 RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
 ```
 
+## Configurer les tâches planifiées (Cron)
+
+Certaines fonctionnalités ont besoin des tâches planifiées soient mises en place.
+Pour cela, vous devez configurer votre serveur pour que la commande `php artisan schedule:run`
+soit exécutée toutes les minutes. Par exemple, en ajoutant cette entrée Cron
+(n'oubliez pas de remplacer `/var/www/azuriom` par l'emplacement du site) :
+```
+* * * * * cd /var/www/azuriom && php artisan schedule:run >> /dev/null 2>&1
+```
+
+Cela peut être fait en modifiant la configuration de crontab avec la commande `crontab -e`.
+
 ## Les votes chargent indéfiniment
 
 Vous pouvez activer la compatibilité IPv4/IPv6 dans les paramètres du plugin vote
@@ -121,11 +130,6 @@ pour résoudre ce problème.
 
 Si vous utilisez Cloudflare, pensez également à installer le plugin
 [Cloudflare Support](https://market.azuriom.com/resources/12).
-
-## Obtenir un flux RSS ou Atom pour les articles
-
-Un flux RSS pour les articles est disponible sur l'URL `/api/rss` et un flux
-Atom peut être obtenu sur `/api/atom`.
 
 ## Changer les identifiants de la base de données
 

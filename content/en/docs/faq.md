@@ -42,7 +42,6 @@ Then restart Nginx with
 service nginx restart
 ```
 
-
 ## Error 500 during registration
 
 If the account is created correctly despite the error, this problem can occur if
@@ -93,15 +92,13 @@ it is recommended to reduce the size of the image (ideally below 1 MB).
 Cloudflare can prevent AzLink or some payment gateways from working
 correctly.
 
-To fix this issue, you can disable Cloudflare on the API, by going to in the Cloudflare Dashboard,
-in Page Rules -> Add a rule, then add `/api/*` as the URL and these actions:
-* Cache Level: 'Bypass'
-* Security Level: 'Medium' or 'High'
-* Browser Integrity Check: 'OFF' 
+To fix this issue, you can disable Cloudflare on the API, by going on the Cloudflare Dashboard,
+in "Rules", "Page Rules", add a rule with "Custom filter expression" and select 
+"URI Path starts with `/api/`" and the following actions:
+* Security Level: Low
+* Browser Integrity Check: Disabled
 
 If the problem persists, check the firewall rules as well.
-
-More details are available on the [Cloudflare website](https://support.cloudflare.com/hc/en-us/articles/200504045-Using-Cloudflare-with-your-API).
 
 ## Force HTTPS on Apache2
 
@@ -111,6 +108,17 @@ RewriteCond %{HTTPS} off
 RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
 ```
 
+## Setup CRON jobs
+
+Some features need the scheduler to be set up, for this you need to configure your server to run the
+command `php artisan schedule:run` every minute, for example by adding this Cron entry (don't forget to
+replace `/var/www/azuriom` with the location of the site):
+```
+* * * * * cd /var/www/azuriom && php artisan schedule:run >> /dev/null 2>&1
+```
+
+This can be done by modifying the crontab configuration with the `crontab -e` command.
+
 ## Votes load indefinitely
 
 You can enable ipv4/ipv6 compatibility in the vote plugin settings
@@ -118,11 +126,6 @@ to solve this issue.
 
 If you use Cloudflare, also consider installing the plugin
 [Cloudflare Support](https://market.azuriom.com/resources/12).
-
-## Get an RSS or Atom feed for the news
-
-An RSS feed for the news is available at the URL `/api/rss` and an Atom feed 
-on `/api/atom`.
 
 ## Change the database credentials
 
