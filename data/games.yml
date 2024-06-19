@@ -21,7 +21,11 @@ azlink:
 
   - name: AzLink Oxide
     info: Rust & 7 Days to Die
-    url: https://github.com/Azuriom/AzLink-Oxide/releases/latest/download/AzLink.cs
+    url: https://github.com/Azuriom/AzLink-CSharp/releases/latest/download/AzLink.cs
+
+  - name: AzLink CounterStrikeSharp
+    info: Counter-Strike 2
+    url: https://github.com/Azuriom/AzLink-CSharp/releases/latest/download/AzLink-CounterStrikeSharp.zip
 
 list:
   - name: Minecraft

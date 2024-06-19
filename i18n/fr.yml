@@ -49,7 +49,7 @@ home:
 
   trusted:
     title: "Aimé. Par 1800 serveurs dans le monde entier"
-    description1: "Développé en Suisse, dans les Alpes, Azuriom est utilisé par plus d'un millier de serveurs dans le monde, et est traduits dans [plus de 15 langues](https://translate.azuriom.com)."
+    description1: "Développé en Suisse, Azuriom est utilisé par plus d'un millier de serveurs dans le monde, et est traduits dans [plus de 15 langues](https://translate.azuriom.com)."
     description2: "Conçu avec [Laravel](https://laravel.com/), le framework PHP le plus populaire, vous pouvez ainsi avoir un site sécurisé et fiable. Profitez d'un site qui vous correspond, vous le méritez!"
 
 download:
