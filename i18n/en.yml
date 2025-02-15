@@ -1,4 +1,4 @@
-headline: "Azuriom is a complete open-source web solution for game servers. Enjoy dozens of extensions for endless possibilities. Already trusted by over 1,800 servers, cumulating more than two millions users."
+headline: "Azuriom is a complete open-source web solution for game servers. Enjoy dozens of extensions for endless possibilities. Already trusted by over 1,800 servers, totaling more than two million users."
 
 theme:
   light: "Light"
@@ -8,7 +8,7 @@ theme:
 nav:
   download: "Download"
   extensions: "Extensions"
-  docs: "Docs"
+  docs: "Documentation"
   demo: "Demo"
   demoMC: "Minecraft Demo"
   demoSteam: "Steam Demo"
@@ -82,6 +82,7 @@ support:
 
 docs:
   index: "Home"
+  navigation: "On this page"
 
 errors:
   title: "Error"

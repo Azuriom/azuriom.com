@@ -1,7 +1,7 @@
 baseURL: https://azuriom.com/
-languageCode: "en"
+languageCode: en
 defaultContentLanguageInSubdir: true
-title: "Azuriom"
+title: Azuriom
 
 enableRobotsTXT: true
 disableKinds: [taxonomy, term, RSS, sitemap]
@@ -32,6 +32,11 @@ languages:
     contentDir: content/zh-cn
     params:
       code: zh_CN
+  lt:
+    languageName: Lietuvių
+    contentDir: content/lt
+    params:
+      code: lt_LT
   pl:
     languageName: Polski
     contentDir: content/pl
@@ -63,7 +68,7 @@ languages:
     params:
       code: uk_UA
   pt-BR:
-    languageName: "Português do Brasil"
+    languageName: Português do Brasil
     contentDir: content/pt-BR
     params:
       code: pt_BR

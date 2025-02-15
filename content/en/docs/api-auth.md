@@ -4,27 +4,26 @@ title: Auth API
 
 # AzAuth
 
-AzAuth is an api allowing you to authenticate users of a website under Azuriom on any platform.
+AzAuth is an API for authenticating users with Azuriom. It can be used in Java, JavaScript, or any other language that can make HTTP requests.
+
+Before using AzAuth, please make sure it is enabled in the admin dashboard, in Settings -> Authentication.
 
 {{< warn >}}
-Regardless of how you use the client-side auth api, you must verify on
-the server that the access token returned by the client is valid by using
-the `verify` method.
+Regardless of how you use the API on the client side, you must verify the access token returned by the client on the server side.
+This can be done by calling the `/verify` endpoint or using the `verify` method.
 {{< /warn >}}
 
-## Download
+## Java
 
-AzAuth sources are available on [GitHub](https://github.com/Azuriom/AzAuth)
-and the jar file can be downloaded [here](https://repo.maven.apache.org/maven2/com/azuriom/azauth/1.0.0/azauth-1.0.0.jar).
+AzAuth Java sources are available on [GitHub](https://github.com/Azuriom/AzAuth) and the jar file can be downloaded from [GitHub releases](https://github.com/Azuriom/AzAuth/releases).
 
-If you are using a dependency manager, you can add AzAuth as a
-dependency by the following way:
+The recommended way to use AzAuth in a project is to use a dependency manager, like Maven or Gradle.
 
-### Gradle
+### Installation
 
-In the `build.gradle`:
+On Gradle, add these lines to the `build.gradle`:
 
-```groovy
+```gradle
 repositories {
     mavenCentral()
 } 
@@ -34,39 +33,50 @@ dependencies {
 }
 ```
 
-### Maven
+On Maven, add these lines to the `pom.xml`:
 
-In the `pom.xml`:
 ```xml
 <dependencies>
     <dependency>
         <groupId>com.azuriom</groupId>
         <artifactId>azauth</artifactId>
         <version>1.0.0</version>
-        <scope>compile</scope>
     </dependency>
 </dependencies>
 ```
 
-## AzAuth usage (Java)
+### Usage
 
-Before using AzAuth, please make sure that the API is activated by going to
-in the settings of your site, on your admin panel.
+AzAuth is lightweight and has as [Google Gson](https://github.com/google/gson) as its only dependency.
 
-### Usage without OpenLauncherLib
+The entry point of the library is the `AuthClient` class. You can create an instance of it by passing the URL of your Azuriom website.
+Then, you can use the `login(String username, String password, Supplier<String> codeSupplier)` method to authenticate a user.
+The `codeSupplier` is called when the user has 2FA enabled, and the user code should be returned to the supplier.
 
-AzAuth has been designed with [Gson](https://github.com/google/gson) as its only dependency, so you can use it perfectly well if you don't use
-OpenLauncherLib, you can simply use `AuthClient#authenticate(String username, String password, Supplier<String> codeSupplier)` and that will
-give you directly a `User` containing a username, uuid, rank, access token and lots of other useful data. The `codeSupplier`
-is called when the user has 2FA enabled, and the user code should be returned to the supplier.
+Here is an example of how to use AzAuth in a Java application:
 
-### Using with [OpenLauncherLib](https://github.com/Litarvan/OpenLauncherLib/) _(for minecraft launcher)_
+```java{hl_lines=["2-3", "9-10"]}
+public static User auth(String username, String password) throws AuthException {
+    // IMPORTANT: Replace <url> with the URL of your Azuriom website
+    AuthClient authenticator = new AuthClient("<url>");
 
-To begin, add AzAuth as a dependency to your project.
-Also, if you are using [OpenAuth](https://github.com/Litarvan/OpenAuth/), it is recommended that you remove it,
-although it does not cause any real problems, it is no longer used if you use AzAuth.
+    return authenticator.authenticate(username, password, () -> {
+        String code = null;
 
-You should have in the code of your launcher an `auth` method similar to the code below:
+        while (code == null || code.isEmpty()) {
+            // IMPORTANT: Replace <2fa_code> with the user's temporary code
+            code = "<2fa_code>";
+        }
+
+        return code;
+    });
+}
+```
+
+### OpenLauncherLib Usage
+
+For a Minecraft launcher with [OpenLauncherLib](https://github.com/Litarvan/OpenLauncherLib),
+the default `auth` method should look like this:
 ```java
 public static void auth(String username, String password) throws AuthenticationException {
     Authenticator authenticator = new Authenticator(Authenticator.MOJANG_AUTH_URL, AuthPoints.NORMAL_AUTH_POINTS);
@@ -75,16 +85,17 @@ public static void auth(String username, String password) throws AuthenticationE
 }
 ```
 
-You just have to replace it by the code below, to modify `<url>` by the URL of your Azuriom's website root.
-```java
+This method can be replaced with the following code to use AzAuth instead of Mojang's authentication system:
+```java{hl_lines=["2-3", "9-12"]}
 public static void auth(String username, String password) throws AuthException {
+    // IMPORTANT: Replace <url> with the URL of your Azuriom website
     AuthClient authenticator = new AuthClient("<url>");
 
     authInfos = authenticator.login(username, password, () -> {
         String code = null;
 
         while (code == null || code.isEmpty()) {
-            // The parent component for the dialog. You should replace the code
+            // IMPORTANT: The parent component for the dialog. You should replace the code
             // below with an instance of your launcher frame/panel/etc
             Container parentComponent = LauncherFrame.getInstance().getLauncherPanel();
             parentComponent.setVisible(true);
@@ -97,28 +108,33 @@ public static void auth(String username, String password) throws AuthException {
 }
 ```
 
-## Usage with JavaScript
+## JavaScript
 
 ### Installation
 
 The source code is available on [GitHub](https://github.com/Azuriom/AzAuthJS)
 and the package can be installed with [npm](https://www.npmjs.com/):
-```
+```sh
 npm install azuriom-auth
 ```
 
-### Example
+### Usage
 
-```js
+The entry point of the library is the `AuthClient` class. You can create an instance of it by passing the URL of your Azuriom website.
+Then, you can use the `login` method to authenticate a user.
+
+```js{hl_lines=["4-5", "10-11"]}
 import { AuthClient } from 'azuriom-auth'
 
 async function login(email, password) {
-    const client = new AuthClient('<url of your website>')
+    // IMPORTANT: Replace <url> with the URL of your Azuriom website
+    const client = new AuthClient('<url>')
 
     let result = await client.login(email, password)
 
     if (result.status === 'pending' && result.requires2fa) {
-        const twoFactorCode = '' // IMPORTANT: Replace with the 2FA user temporary code
+        // IMPORTANT: Replace <2fa_code> with the user's temporary code
+        const twoFactorCode = '<2fa_code>'
 
         result = await client.login(email, password, twoFactorCode)
     }
@@ -131,6 +147,14 @@ async function login(email, password) {
 }
 ```
 
+## HTTP API
+
+AzAuth can be used in any language without the need for a specific library,
+directly by making plain HTTP requests to the API endpoints.
+
+The API uses JSON, and the base path of the API is `/api/auth`.
+
+A code 200 is returned on success, and a code 422 on missing or invalid parameters. Dates are returned in ISO 8601 format.
 
 ### Endpoints
 
@@ -143,14 +167,15 @@ Authenticate a user with their website credentials
 ##### Request
 | Field    | Description                                                                                       |
 |----------|---------------------------------------------------------------------------------------------------|
-| email    | Username or e-mail address                                                                        |
+| email    | Username or email address                                                                         |
 | password | Password                                                                                          |
 | code     | 2FA code, should be included only if the response `status` is `pending` and the `reason` is `2fa` |
 
 ##### Response
 
-Returns the user with his various information, and the unique token
-which can be used to verify the connection or to disconnect.
+Returns the user and the unique token that can be used to verify the connection or to log out.
+
+Success response example (HTTP `2xx`):
 
 ```json
 {
@@ -178,12 +203,12 @@ which can be used to verify the connection or to disconnect.
 |--------------|---------------------|
 | access_token | Unique access token |
 
-##### Réponse
+##### Response
 
-Returns the user with his various information, and the unique token
-which can be used to verify the connection or to disconnect.
+Returns the user and the unique token that can be used to verify the connection or to log out.
 
 Success response example (HTTP `2xx`):
+
 ```json
 {
     "id": 1,
@@ -214,7 +239,7 @@ Error response example (HTTP `4xx`):
 
 **POST** `/logout`
 
-Logout the user and invalidates the access token.
+Log out the user and invalidate the access token.
 
 ##### Request
 | Field        | Description         |
@@ -223,4 +248,4 @@ Logout the user and invalidates the access token.
 
 ##### Response
 
-Empty response, with `2xx` status code.
+Empty response, with `2xx` status code on success.

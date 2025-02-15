@@ -81,6 +81,7 @@ support:
 
 docs:
   index: "Accueil"
+  navigation: "Sur cette page"
 
 errors:
   title: "Erreur"

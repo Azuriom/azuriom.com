@@ -1,214 +1,136 @@
 ---
 title: Thèmes
+weight: 6
 ---
 
-# Thèmes
+# Développement de Thèmes
 
 ## Introduction
 
-Un thème permet de personnaliser entièrement l'apparence d'un site utilisant Azuriom.
-
-Pour installer un thème il suffit de placer celui-ci dans le dossier `resources/themes/` à
-la racine de votre site.
-
-## Création d'un thème
-
-Pour créer un thème rapidement il est possible d'utiliser la commande suivante qui
-va générer automatiquement le dossier du thème ainsi que le fichier `theme.json`:
-```
-php artisan theme:create <nom du thème>
-```
+Les thèmes sont essentiels pour un site web et en définissent l'apparence complète.
+Des dizaines de thèmes prêts à l'emploi sont disponibles sur le marché.
+Cependant, vous pouvez aussi créer vos propres thèmes pour adapter votre site selon vos besoins.
 
 {{< info >}}
-Pour créer des thèmes avec une structure plus poussée avec webpack pour compiler
-du SASS et optimiser les fichiers JavaScript, vous pouvez utiliser ce
-[boilerplate non-officiel](https://github.com/nolway/azuriom-theme-boilerplate)
-(il est également nécessaire d'installer [Node.js](https://nodejs.org) avec NPM)
-{{< /info >}}
-
-{{< warn >}}
-Lorsque Azuriom est installé en local pour du développement de thème,
-il est très fortement recommandé d'activer le débogage afin de simplifier le développement.
-Cela peut se faire très simplement en modifiant ces 2 paramètres dans le fichier d'environnement `.env` à la
-racine du site :
-```
+L'installation d'Azuriom en locale est fortement recommandée pour simplifier le développement de thèmes.
+Lorsque Azuriom est installé localement, le mode debug peut être activé en modifiant les lignes suivantes dans
+le fichier `.env` :
+```env
 APP_ENV=local
 APP_DEBUG=true
 ```
-{{< /warn >}}
+{{< /info >}}
 
-### Structuration
+## Création d'un Thème
+
+La façon recommandée de créer un thème est en utilisant la commande suivante pour générer les fichiers requis :
+```sh
+php artisan theme:create <nom_du_theme>
+```
+
+## Structure du Thème
 
 ```
 themes/  <-- Dossier contenant tous les thèmes installés
-|  example/  <-- Identifiant de votre thème
-|  |  theme.json  <-- Le fichier principal de votre thème contenant les différentes informations
-|  |  assets/  <-- Le dossier contenant les assets de votre thème (css, js, images, svg, etc)
-|  |  views/  <-- Le dossier contenant les vues de votre thème
-|  |  config/
-|  |  |  config.blade.php
-|  |  |  rules.php
-|  |  config.json
+| example/  <-- Identifiant du thème
+| | theme.json  <-- Fichier contenant les informations du thème
+| | assets/ <-- Dossier contenant les ressources du thème (CSS, JS, images, etc.)
+| | views/  <-- Dossier contenant les vues du thème
+| | config/
+| | | config.blade.php  <-- Vue contenant le formulaire de configuration du thème
+| | | rules.php  <-- Règles de validation pour la configuration du thème
+| | config.json  <-- Configuration par défaut du thème
 ```
 
-### Le fichier theme.json
+### Fichier `theme.json`
 
-Tous les thèmes ont besoin d'avoir un fichier `theme.json` à leur racine, c'est
-le seul élément indispensable pour un thème et il se présente sous cette forme :
+Un thème doit inclure un fichier `theme.json` à sa racine, contenant les informations de base du thème :
 ```json
 {
-    "id": "exemple",
-    "name": "Exemple",
+    "id": "example",
+    "name": "Example",
     "version": "1.0.0",
-    "description": "Un super thème",
-    "url" : "https://azuriom.com",
+    "description": "Un excellent thème.",
+    "url": "https://azuriom.com",
     "authors": [
         "Azuriom"
     ],
-    "azuriom_api": "1.0.0"
+    "azuriom_api": "1.2.0"
 }
 ```
 
-#### ID du thème
+#### Identifiant
 
-Chaque thème doit posséder un id, qui doit être unique et qui doit contenir seulement
-des chiffres, des lettres minuscules et des tirets. Il est recommandé de se baser pour
-le nom pour créer l'id, par exemple si le nom est `Hello World`, l'id pourra être
-`hello-world`.
-Également le dossier du thème doit avoir le même nom que son id.
+Un thème doit avoir un identifiant unique qui ne contient que des chiffres, des lettres minuscules et des tirets.
+L'identifiant est utilisé pour identifier le thème dans le système et doit correspondre au nom du dossier du thème.
+Par exemple, un thème nommé `Hello World` pourrait avoir l'identifiant `hello-world`.
 
-### Vues
+## Vues
 
-Les vues sont le cœur d'un thème, ce sont les fichiers contenant l'HTML
-d'un thème pour afficher les différentes parties du site.
+Azuriom est basé sur [Laravel](https://laravel.com) et utilise le moteur de templates Blade pour créer les vues.
+Pour plus d'informations sur Blade, consultez la [documentation de Blade](https://laravel.com/docs/blade).
 
-Azuriom utilisant [Laravel](https://laravel.com/), les vues peuvent être faites en utilisant le moteur
-de template Blade. Si vous ne maitrisez pas Blade il est très vivement recommandé
-de lire [sa documentation](https://laravel.com/docs/blade), d'autant plus que celle-ci est assez courte.
+Lors du rendu d'une vue, Azuriom la recherche d'abord dans le thème. Si elle n'est pas trouvée,
+elle est ensuite recherchée dans Azuriom ou dans le plugin correspondant.
+Les parties des vues peuvent être réparties à différents endroits, ce qui permet de personnaliser la mise en page d'Azuriom tout en conservant le contenu par défaut d'une vue.
+
+### Mise en Page
+
+Le layout principal d'Azuriom se trouve dans le fichier `views/layouts/base.blade.php`.
+Ce layout contient la structure de base du site, y compris le header, footer et le contenu de la page (affiché avec `@yield('content')`).
+Toutes les pages, à l'exception de la page d'accueil, étendent un sous-layout, `views/layouts/app.blade.php`, qui étend le layout de base.
+
+Les composants peuvent être inclus dans le layout à l'aide de `@include`. Par exemple, pour inclure la barre de navigation :
+```html
+@include('elements.navbar')
+```
 
 {{< warn >}}
-Il est très vivement recommandé de ne PAS utiliser la syntaxe PHP
-traditionnelle lorsque vous travaillez avec Blade, en effet celle-ci n'apporte
-aucun avantage et seulement des inconvénients.
+Il est fortement recommandé **de ne pas modifier** les vues autres que le layout, les composants (comme la barre de navigation) et la page d'accueil,
+car cela peut entraîner des problèmes de compatibilité avec les plugins et les mises à jour futures.
+
+Il est préférable d'utiliser du CSS pour personnaliser l'apparence du site.
 {{< /warn >}}
 
-Côté CSS, il est recommandé d'utiliser framework par défaut du cms qui est [Bootstrap 5](https://getbootstrap.com/), 
-cela permettra de réaliser plus facilement un thème et sera compatible avec les nouveaux plugins 
-ce qui vous évitera de faire des mises à jour constamment.
-Mais si vous préférez, vous pouvez utiliser un autre framework CSS.
+### Couleur du Thème
 
-Côté Javascript, la seule dépendance nécessaire est [Axios](https://github.com/axios/axios).
-
-{{< info >}}
-Si jamais une vue n'est pas présente dans le thème, mais est présente de
-base dans le CMS ou dans un plugin, celle-ci sera automatiquement utilisée.
-{{< /info >}}
-
-#### Layout
-
-Le layout est la structure de l'ensemble des pages d'un thème. Il contient
-en effet les metas, assets du thème, header, footer, etc.
-
-Pour définir le layout de la page, il faut que la vue étende la vue contenant
-le layout, vous pouvez soit utiliser le layout par défaut avec
-`@extends('layouts.app')`, soit créer votre propre layout et l'étendre.
-
-Pour afficher le contenu de la page actuelle, vous pouvez utiliser
-`@yield('content')`, et pour afficher le titre de la page actuelle vous pouvez
-utiliser `@yield('title')`.
-
-Également vous pouvez intégrer différents éléments avec
-`@include('<nom de la vue>')`, par exemple `@include('element.navbar')` pour
-inclure la navbar.
-
-#### Vues d'un plugin
-
-Pour changer les vues d'un plugin, il suffit de créer un dossier `plugins` dans
-le dossier `views` du thème et de créer un dossier pour chaque plugin (en utilisant
-l'id du plugin et non le nom du plugin), puis d'y ajouter les vues du plugin.
-
-Par exemple pour le plugin vote, cela donnera `views/plugins/vote/index.blade.php`.
-
-### Méthodes
-
-#### Assets
-
-Pour avoir le lien vers un asset de du thème vous pouvez utiliser la fonction
-`theme_asset`: 
+La couleur principale par défaut de Bootstrap est le bleu (`#0d6efd`),
+mais Azuriom propose une solution simple pour la modifier,
+en ajoutant simplement la ligne suivante dans la section `<head>` du layout (après le fichier CSS de Bootstrap),
+où `$color` représente la valeur hexadécimale de la couleur :
 ```html
-<link rel="stylesheet" href="{{ theme_asset('css/style.css') }}">
+@include('elements.theme-color', ['color' => $color])
 ```
 
-#### Utilisateur actuel
+## Ressources
 
-L'utilisateur actuel peut être récupéré grâce à la fonction `auth()->user()`.
-Pour plus de détails sur l'authentification, vous pouvez vous référer à la
-[documentation de Laravel](https://laravel.com/docs/authentication).
+Azuriom repose sur [Bootstrap 5](https://getbootstrap.com) afin de garantir une bonne cohérence visuelle sur l'ensemble du site et plugins,
+tout en profitant des différents composants et utilitaires fournis par Bootstrap.
+Pour plus d'informations sur Bootstrap, consultez la [documentation de Bootstrap](https://getbootstrap.com/docs/5.2/).
 
-#### Fonctions utiles
-
-Vous pouvez récupérer un certain nombre de paramètres du site via des fonctions
-dédiées :
-
-| Fonction         | Description                                                                                                          |
-|------------------|----------------------------------------------------------------------------------------------------------------------|
-| `site_name()`    | Permet de récupérer le nom du site                                                                                   |
-| `site_logo()`    | Permet d'avoir le lien du logo du site                                                                               |
-| `favicon()`      | Permet d'avoir le lien de la favicon                                                                                 |
-| `format_date()`  | Affiche une date formatée avec la langue actuelle. Cette fonction prend en paramètre une instance de `Carbon\Carbon` |
-| `money_name()`   | Retourne le nom de la monnaie du site                                                                                |
-| `format_money()` | Retourne un montant formaté avec la monnaie du site                                                                  |
-
-#### Affichage des joueurs connectés sur le serveur
-
-Pour afficher les joueurs connectés, il suffit de vérifier que la variable `$server`
-n'est pas null et que le serveur est en ligne, et si c'est le cas utiliser
-`$server->getOnlinePlayers()` pour récupérer le nombre de joueurs en ligne.
-
-```blade
-@if($server && $server->isOnline())
-    {{ trans_choice('messages.server.online', $server->getOnlinePlayers()) }}
-@else
-    {{ trans('messages.server.offline') }}
-@endif
+Vous pouvez ajouter de nouveaux fichiers CSS/JavaScript et images dans le thème, en les plaçant dans le dossier `assets` du thème.
+Ces fichiers peuvent ensuite être inclus en utilisant la fonction `theme_asset`, qui génère l'URL correspondante pour chaque fichier.
+```html
+<link href="{{ theme_asset('css/style.css') }}" rel="stylesheet">
 ```
 
-### Traductions
+Veuillez éviter d'utiliser jQuery dans votre thème, car il n'est pas inclus par défaut dans Azuriom et peut être facilement remplacé par du JavaScript natif.
 
-Un thème peut, s’il en a besoin, charger des traductions.
+## Configuration
 
-Pour cela il suffit de créer un fichier `messages.php` dans le dossier `lang/<lang>` (ex : `lang/fr`)
-du thème, vous pouvez ensuite affichez une traduction via la fonction
-`trans` : `{{ trans('theme::messages.hello') }}` ou via la directive `@lang`: 
-`@lang('theme::messages.hello')`.
-Vous pouvez également utiliser `trans_choice` pour une traduction comportant des
-nombres, et `trans_bool` pour traduire un boolean (retournera en français `Oui`
-/ `Non`).
+Les thèmes peuvent inclure une configuration, pour permettre aux utilisateurs de personnaliser facilement le thème depuis le panel admin.
 
-Pour plus de détails sur les traductions, vous pouvez vous référer à la
-[documentation de Laravel](https://laravel.com/docs/localization).
-
-### Configuration
-
-Vous pouvez ajouter une configuration dans un thème, pour cela il vous suffit
-de créer à la racine du thème :
-* Une vue `config/config.blade.php` contenant l'élément `<form>` pour la configuration
-* Un fichier `config/rules.php` contenant les différentes règles de validation pour
-la configuration d'un thème.
-* Un fichier `config.json` où sera stocké la configuration du thème et contenant les valeurs par défaut 
-
-##### Exemple
-
-config.blade.php
+La vue pour la configuration est créée dans un fichier Blade nommé `config.blade.php`, situé dans le dossier `config` du thème,
+et contient les champs nécessaires à la configuration du thème.
 ```html
 <form action="{{ route('admin.themes.update', $theme) }}" method="POST">
     @csrf
 
     <div class="form-group">
-        <label for="discordInput">{{ trans('theme::carbon.config.discord') }}</label>
-        <input type="text" class="form-control @error('discord-id') is-invalid @enderror" id="discordInput" name="discord-id" required value="{{ old('discord-id', config('theme.discord-id')) }}">
+        <label for="discordInput">{{ trans('theme::messages.discord') }}</label>
+        <input type="text" class="form-control @error('discord') is-invalid @enderror" id="discordInput" name="discord" required value="{{ old('discord', theme_config('discord')) }}">
 
-        @error('discord-id')
+        @error('discord')
         <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
         @enderror
     </div>
@@ -219,9 +141,81 @@ config.blade.php
 </form>
 ```
 
-config.json
+Pour pouvoir sauvegarder la configuration, le formulaire doit être envoyé sur la route `admin.themes.update` avec l'id du thème en paramètre.
+La configuration doit être validée via un fichier `rules.php` dans le dossier `config` du thème, qui contient les règles de validation.
+```php
+<?php
+
+return [
+    'discord' => 'required|string',
+];
+```
+
+Pour définir une configuration par défaut pour le thème, créez un fichier `config.json` à la racine du thème, contenant la configuration par défaut au format JSON.
 ```json
 {
-    "discord-id": "625774284823986183"
+    "discord": "https://azuriom.com/discord"
 }
 ```
+
+Enfin, vous pouvez accéder à la configuration dans vos vues en utilisant la fonction d'aide `theme_config`, qui accepte la clé de en paramètre.
+```php
+<a href="{{ theme_config('discord') }}">Discord</a>
+```
+
+## Traductions
+
+Azuriom est entièrement traduit en plusieurs langues, et les thèmes peuvent également être traduits en utilisant le système de traduction de Laravel.
+Les traductions d'un thème sont stockées dans le dossier `lang` du thème, avec un sous-dossier pour chaque langue, contenant les fichiers PHP avec les traductions.
+
+Par exemple, un fichier de traduction en français serait stocké dans `lang/fr/messages.php` :
+```php
+<?php
+
+return [
+    'hello' => 'Bonjour',
+];
+```
+
+Une traduction peut ensuite être affichée dans une vue en utilisant la fonction `trans` avec le préfixe `theme::` :
+```html
+<p>{{ trans('theme::messages.hello') }}</p>
+```
+
+Pour traduire un booléen, vous pouvez utiliser la fonction `trans_bool`. Par exemple, en français "Oui" ou "Non" sera renvoyé : `{{ trans_bool($boolean) }}`.
+Une date peut être formatée avec les fonctions `format_date` ou `format_date_compatct`, qui renvoient la date formatée selon la langue actuelle : `format_date($date)`.
+
+Pour plus d'informations sur les traductions, consultez la [documentation de Laravel](https://laravel.com/docs/localization).
+
+## Fonctions Communes
+
+Azuriom fournit plusieurs fonctions pour faciliter le développement de thèmes et garantir une certaine cohérence sur l'ensemble du site :
+
+| Fonction                                      | Description                                                                                               |
+|-----------------------------------------------|-----------------------------------------------------------------------------------------------------------|
+| `site_name(): string`                         | Retourne le nom du site tel que défini dans les paramètres                                                |
+| `site_logo(): string`                         | Retourne l'URL du logo tel que défini dans les paramètres                                                 |
+| `favicon(): string`                           | Retourne l'URL du favicon tel que défini dans les paramètres                                              |
+| `format_date(Carbon $carbon): string`         | Formate une date selon la langue actuelle. L'argument `$carbon` doit être une instance de `Carbon\Carbon` |
+| `money_name(): string`                        | Retourne le nom de la monnaie du site                                                                     |
+| `format_money(float $amount): string`         | Retourne `$amount` formaté avec la monnaie du site                                                        |
+| `dark_theme(bool $defaultDark = false): bool` | Retourne `true` si l'utilisateur utilise le thème sombre, et `false` sinon                                |
+| `hex2rgb(string $hex): [int, int, int]`       | Convertit la couleur `$hex` en un tableau contenant les valeurs R, G, B sous forme d'`int`                |
+| `color_contrast(string $hex): string`         | Retourne `black` ou `white` selon celui qui offre le meilleur contraste pour la couleur `$hex`            |
+| `trans(string $key): string`                  | Retourne la traduction correspondant à la clé `$key`                                                      |
+| `trans_bool(bool $value): string`             | Retourne la traduction de la valeur booléenne donnée. Renvoie "Oui" ou "Non" en français                  |
+| `auth()->user(): \Azuriom\Models\user`        | Retourne l'utilisateur connecté sur le site, ou `null` si l'utilisateur n'est pas connecté                |
+
+Laravel fournit de nombreuses fonctions pour faciliter le développement d'un site. Pour plus d'informations, consultez la [documentation de Laravel](https://laravel.com/docs/helpers).
+
+## Directives Blade
+
+Azuriom et Laravel fournissent plusieurs directives Blade pour faciliter le développement de thèmes :
+
+| Directive                               | Description                                                                        |
+|-----------------------------------------|------------------------------------------------------------------------------------|
+| `@plugin('<plugin id>') ... @endplugin` | Inclut le code contenu uniquement si le plugin avec l'id spécifié est activé       |
+| `@route('<route>') ... @endroute`       | Inclut le code contenu uniquement sur la route spécifiée                           |
+| `@auth ... @endauth`                    | Inclut le code contenu uniquement si l'utilisateur est connecté sur le site        |
+| `@guest ... @endguest`                  | Inclut le code contenu uniquement si l'utilisateur n'est pas connecté              |
+| `@can('<permission>') ... @endcan`      | Inclut le code contenu uniquement si l'utilisateur dispose de la permission donnée |

@@ -1,172 +1,120 @@
 ---
 title: Plugins
+weight: 5
 ---
 
-# Plugins
+# Développement de Plugins
 
 ## Introduction
 
-Un plugin vous permet d'ajouter de nouvelles fonctionnalités à votre site, de
-nombreux plugins sont disponibles sur notre [Market](https://market.azuriom.com)
-mais vous pouvez en créer un si vous n'en trouvez pas un qui correspond à vos
-besoins.
+Les plugins sont la clé pour rendre votre site Azuriom unique.
+Ils permettent d'ajouter de nouvelles fonctionnalités à votre site, telles qu'une boutique, un forum ou un système de support.
+Des dizaines de plugins sont disponibles sur le marché, mais vous pouvez également créer vos propres plugins selon vos besoins.
 
-## Création d'un plugin
-
-Avant de créer un plugin, il est recommandé de lire la
-[documentation de Laravel](https://laravel.com/docs/).
-
-{{< warn >}}
-Lorsque Azuriom est installé en local pour du développement de plugin,
-il est très fortement recommandé d'activer le débogage afin de simplifier le développement.
-Cela peut se faire très simplement en modifiant ces 2 lignes dans le fichier d'environnement `.env` à la
-racine du site :
-```
+{{< info >}}
+L'installation d'Azuriom en locale est fortement recommandée pour simplifier le développement de plugins.
+Lorsque Azuriom est installé localement, le mode debug peut être activé en modifiant les lignes suivantes dans
+le fichier `.env` :
+```env
 APP_ENV=local
 APP_DEBUG=true
 ```
-{{< /warn >}}
+{{< /info >}}
 
-### Structuration d'un plugin
+Azuriom est basé sur [Laravel](https://laravel.com/), il est donc recommandé de consulter la [documentation de Laravel](https://laravel.com/docs/)
+pour comprendre le fonctionnement du framework.
 
-```
-plugins/  <-- Dossier contenant les différents plugins installés
-|  example/  <-- Identifiant unique de votre plugin
-|  |  plugin.json  <-- Le fichier principal de votre thème contenant différentes informations
-|  |  assets/  <-- Le dossier contenant les assets de votre plugin (css, js, images, svg, etc)
-|  |  database/
-|  |  |  migrations/ <-- Le dossier contenant les migrations de votre plugin
-|  |  resources/
-|  |  |  lang/  <-- Le dossier contenant les traductions de votre plugin
-|  |  |  views/  <-- Le dossier contenant les vues de votre plugin
-|  |  routes/ <-- Le dossier contenant les différents routes de votre plugin
-|  |  src/ <-- Le dossier contenant les sources de votre plugin
+## Création d'un Plugin
+
+La façon recommandée de créer un plugin est en utilisant la commande suivante pour générer les fichiers requis :
+```sh
+php artisan plugin:create <nom_du_plugin>
 ```
 
-### Le fichier plugin.json
+## Structure du Plugin
 
-Le fichier `plugin.json` est indispensable pour charger un plugin et
-contient quelques métadonnées concernant votre plugin :
+```
+plugins/  <-- Dossier contenant tous les plugins installés
+| example/  <-- Identifiant du plugin
+| | plugin.json  <-- Fichier contenant les informations du plugin
+| | assets/  <-- Dossier contenant les ressources du plugin (CSS, JS, images, etc.)
+| | database/
+| | | migrations/  <-- Dossier contenant les migrations du plugin
+| | resources/
+| | | lang/  <-- Dossier contenant les traductions du plugin
+| | | views/  <-- Dossier contenant les vues du plugin
+| | routes/  <-- Dossier contenant les routes du plugin
+| | src/  <-- Dossier contenant les contrôleurs, modèles, etc. du plugin
+```
+
+### Fichier `plugin.json`
+
+Un plugin doit inclure un fichier `plugin.json` à sa racine, contenant les informations de base du plugin :
 ```json
 {
-    "id": "exemple",
-    "name": "Exemple",
+    "id": "example",
+    "name": "Example",
     "version": "1.0.0",
-    "description": "Un super plugin",
-    "url" : "https://azuriom.com",
+    "description": "Un excellent plugin.",
+    "url": "https://azuriom.com",
     "authors": [
         "Azuriom"
     ],
-    "azuriom_api": "1.0.0",
+    "azuriom_api": "1.2.0",
     "providers": [
-        "\\Azuriom\\Plugin\\Exemple\\Providers\\ExempleServiceProvider",
-        "\\Azuriom\\Plugin\\Exemple\\Providers\\RouteServiceProvider"
+        "\\Azuriom\\Plugin\\Example\\Providers\\ExampleServiceProvider",
+        "\\Azuriom\\Plugin\\Example\\Providers\\RouteServiceProvider"
     ]
 }
 ```
 
-{{< info >}}
-Pour créer un plugin, vous pouvez utiliser la commande suivante qui va
-générer automatiquement le dossier du plugin ainsi que l'arborescence de fichiers
-par défaut :
-```
-php artisan plugin:create <nom du plugin>
-```
-{{< /info >}}
+La section `providers` vous permet de spécifier les service providers, qui seront chargés lors de l'initialisation de Laravel.
 
-#### Identifiant du plugin
+#### Identifiant
 
-Chaque plugin doit posséder un `ID`, qui doit être unique et qui doit contenir seulement
-des chiffres, des lettres minuscules et des tirets. Il est recommandé de se baser pour
-le nom pour créer l'identifiant. Par exemple, si le nom de votre plugin est `Hello World`,
-un identifiant judicieux pourrait être `hello-world`.
-De plus, le nom du dossier contenant un plugin doit être identique à son identfiant.
+Un plugin doit avoir un identifiant unique qui ne contient que des chiffres, des lettres minuscules et des tirets.
+L'identifiant est utilisé pour identifier le plugin dans le système et doit correspondre au nom du dossier du plugin.
+Par exemple, un plugin nommé `Hello World` pourrait avoir l'identifiant `hello-world`.
 
 #### Dépendances
 
-La partie `dependencies` permet de spécifier les plugins (en utilisant leur ID)
-qui doivent être installés pour pouvoir utiliser le plugin.
-Un `?` après le nom du plugin signifie que le plugin est optionnel, c’est-à-dire que
-celui-ci n’a pas besoin d’être installé, mais que lorsqu’il l’est, la version doit correspondre.
-Il est également possible de spécifier une version d’Azuriom en utilisant la valeur `azuriom`.
-
-Par exemple, ce plugin a besoin d’Azuriom `0.4.0` ou supérieur, du plugin `shop` version`0.1.0`
-ou supérieur. Enfin, lorsque le plugin Vote est installé, celui-ci doit être en version `0.2.0` ou plus récent :
+Si votre plugin dépend d'autres plugins, indiquez leurs identifiants dans la section `dependencies` du fichier `plugin.json`.
+Les dépendances optionnelles peuvent être spécifiées en ajoutant un `?` à la fin de l'id du plugin.
+La version d'une dépendance est indiquée en utilisant le [format de version de Composer](https://getcomposer.org/doc/articles/versions.md).
 ```json
-"dependencies": {
-    "azuriom": "^0.4.0",
-    "shop": "^0.1.0",
-    "vote?": "^0.2.0"
+{
+    // ...
+    "dependencies": {
+      "required-plugin": "^1.0.0",
+      "optional-plugin?": "^1.0.0"
+    }
 }
 ```
 
-### Routes
+## Routes
 
-Les routes permettent d'associer une URL à une action en particulier.
+Les routes servent de points d'entrée pour un plugin, définissant les différentes URL accessibles.
+Pour plus d'informations sur les routes, consultez la [documentation Laravel](https://laravel.com/docs/routing).
 
-Elles sont enregistrées dans le dossier `routes` à la racine du plugin.
-
-Pour plus d'informations sur le fonctionnement des routes, vous pouvez lire la
-[documentation de Laravel](https://laravel.com/docs/routing).
-
-Exemple :
-```php
-Route::get('/support', 'SupportController@index')->name('index');
-```
+Par défaut, trois fichiers de routes sont disponibles dans le dossier `routes` du plugin :
+* `web.php` pour les routes principales du plugin
+* `api.php` pour les routes API du plugin
+* `admin.php` pour les routes d'administration du plugin, dédiées au panel admin
 
 {{< warn >}}
-Veuillez faire attention à ne pas utiliser de routes avec des closures,
-car celles-ci ne sont pas compatibles avec certaines optimisations du CMS.
+Il est déconseillé d'utiliser des closures dans les routes, car cela empêche la mise en cache et peut impacter les performances.
 {{< /warn >}}
 
-#### Assets
+## Vues
 
-Les assets (CSS, JS, images, etc) se trouvent dans le dossier `assets/` et peuvent
-être utilisés avec la fonction `plugin_asset('<id du plugin>', '<chemin de l asset>')`.
+Les vues définissent la structure des pages HTML affichées à l'utilisateur.
+Azuriom est basé sur Laravel et utilise le moteur de templates Blade pour créer les vues.
+Pour plus d'informations sur Blade, consultez la [documentation de Blade](https://laravel.com/docs/blade).
 
-Les assets peuvent être inclus dans la page via une [stack Blade](https://laravel.com/docs/blade#stacks)
-à 2 endroits différents de la page selon le type de l'asset :
-* `styles` pour les fichiers CSS (situé dans le `<head>`)
-* `scripts` pour les fichiers JS (situé dans le `<head>`, ne pas oublier d'ajouter l'attribut `defer`
-  aux scripts afin qu'ils ne bloquent pas le rendu de la page)
+Pour afficher une vue, vous pouvez utiliser la fonction `view('<nom_de_la_vue>')`.
 
-Ce qui donne par exemple :
-```html
-@push('scripts')
-    <script src="{{ plugin_asset('vote', 'js/vote.js') }}" defer></script>
-@endpush
-```
-
-#### Routes admin
- 
- Pour qu'une route soit accessible depuis l'interface d'administration, il suffit de la placer dans le fichier
- `routes/admin.php` du plugin.
-
-### Vues
-
-Les vues sont la partie visible d'un plugin, ce sont les fichiers contenant le balisage
-HTML du plugin pour effectuer le rendu d'une page.
-
-Azuriom utilisant [Laravel](https://laravel.com/), les vues peuvent être conçues en utilisant le moteur
-de template Blade. Si vous ne maitrisez pas Blade il est très vivement recommandé
-de lire [sa documentation](https://laravel.com/docs/blade), d'autant plus que celle-ci est assez courte.
-
-{{< warn >}}
-Il est très vivement recommandé de ne PAS utiliser la syntaxe PHP
-traditionnelle lorsque vous travaillez avec Blade, en effet celle-ci n'apporte
-aucun avantage et seulement des inconvénients.
-{{< /warn >}}
-
-Pour afficher une vue vous pouvez utiliser `view('<id du plugin>::<nom de la vue>')`,
-par exemple `view('support::tickets.index')` pour afficher la vue `tickets.index`
-du plugin support.
-
-Pour définir l'agencement (layout) de la page, il faut que la vue étende la vue contenant
-le layout, vous pouvez soit utiliser le layout par défaut (ou du thème s’il y en a)
-avec `@extends('layouts.app')`, soit créer votre propre layout et l'étendre.
-
-Ensuite, il faudra mettre tout le contenu principal au sein de la section `content`,
-et le titre de la page dans la section `title`.
+Les vues se trouvent dans le dossier `resources/views` du plugin, doivent utiliser l'extension `.blade.php` et doivent utiliser le layout `layouts.app` (le layout par défaut d'Azuriom).
+Le contenu principal de la vue doit être placé dans la section `content`, comme ceci :
 
 ```html
 @extends('layouts.app')
@@ -182,22 +130,32 @@ et le titre de la page dans la section `title`.
 @endsection
 ```
 
-#### Vue admin
+### Ressources
 
-Pour qu'une page utilise le layout de l'interface d'administration, il suffit d'utiliser
-le layout `admin.layouts.admin`, il est également recommandé de créer un dossier
-admin dans le dossier `resources` et d'y placer les vues admin dedans.
+Les ressources (CSS, JS, images, etc.) se trouvent dans le dossier `assets/`,
+et peuvent être récupérées via la fonction `plugin_asset('<id_du_plugin>', '<chemin_de_la_ressource>')`.
 
-### Contrôleurs
+Les ressources peuvent être incluses sur la page via une [stack Blade](https://laravel.com/docs/blade#stacks)
+dans trois sections différentes, selon le type de ressource :
+* `styles` pour les fichiers CSS (situé dans le `<head>`)
+* `scripts` pour les fichiers JS (situé dans le `<head>`, n'oubliez pas d'ajouter l'attribut `defer` pour ne pas bloquer le rendu de la page)
+* `footer-scripts` pour les fichiers JS (situé à la fin du `<body>`)
 
-Les contrôleurs sont une partie centrale d'un plugin, ils se trouvent dans le dossier
-`src/Controllers` à la racine du plugin et c'est eux qui s'occupent
-de transformer une requête en la réponse qui sera renvoyée à l'utilisateur.
+Par exemple :
+```html
+@push('scripts')
+    <script src="{{ plugin_asset('vote', 'js/vote.js') }}" defer></script>
+@endpush
+```
 
-Pour plus d'informations sur le fonctionnement des contrôleurs, vous pouvez lire la
-[documentation de Laravel](https://laravel.com/docs/controllers).
+## Contrôleurs
 
-Exemple :
+Les contrôleurs contiennent la logique d'un plugin, ils définissent le comportement de ses différentes routes,
+traitent les requêtes et renvoient une réponse (comme une vue ou une réponse JSON).
+Pour plus d'informations sur les contrôleurs, consultez la [documentation de Laravel](https://laravel.com/docs/controllers).
+
+Les contrôleurs se situent dans le dossier `src/Controllers` du plugin et étendent de la classe `Azuriom\Http\Controllers\Controller`.
+Les différentes méthodes d'un contrôleur renvoient une réponse, par exemple :
 ```php
 <?php
 
@@ -212,32 +170,26 @@ class TicketController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     */
+   */
     public function index()
     {
-        // On récupère l'ensemble des tickets
+        // Nous récupérons tous les tickets
         $tickets = Ticket::all();
 
-        // On retourne une vue, en lui passant les tickets
-        return view('support::tickets.index', [
-            'tickets' => $tickets,
-        ]);
+        // Nous renvoyons une vue en lui passant les tickets
+        return view('support::tickets.index', ['tickets' => $tickets]);
     }
 }
 ```
 
-### Modèles
+## Modèles
 
-Les modèles représentent une entrée dans une table de la base de données et permettent
-d'interagir avec la base de données.
+Les modèles représentent les données d'un plugin et définissent la structure de ses tables dans la base de données.
+Azuriom est basé sur Laravel et utilise l'ORM Eloquent pour interagir avec la base de données.
+Pour plus d'informations sur les modèles, consultez la [documentation de Laravel](https://laravel.com/docs/eloquent).
 
-Vous pouvez également définir dans un modèle les différentes relations de celui-ci,
-par exemple un `ticket` peut avoir un `user` et une `category`, et avoir des `comments`.
-
-Vous pouvez trouver plus d'informations sur les modèles (aussi appelés Eloquent sur Laravel) dans la
-[documentation de Laravel](https://laravel.com/docs/eloquent).
-
-Exemple :
+Les modèles sont situés dans le dossier `src/Models` du plugin et étendent de la classe `Illuminate\Database\Eloquent\Model`.
+Les modèles Eloquent vous permettent d'interagir avec la base de données, de définir des relations entre les modèles, ainsi que d'utiliser des mutateurs d'attributs, des casts et des scopes :
 ```php
 <?php
 
@@ -302,14 +254,87 @@ class Ticket extends Model
 }
 ```
 
-### Service Provider
+### Modèle `User`
 
-Les services providers sont le cœur d'un plugin, ils sont appelés à l'initialisation
-de Laravel, et permettent d'enregistrer les différentes parties d'un plugin (vues, traductions, middlewares, librairies, etc).
+Le modèle `User` représente un utilisateur dans Azuriom et se trouve dans le namespace `Azuriom\Models`.
+L'utilisateur connecté peut être récupéré en utilisant la méthode `$request->user()`,
+qui renvoie une instance de la classe `Azuriom\Models\User`, ou `null` si l'utilisateur n'est pas connecté.
 
-Les services providers doivent être ajoutés dans la partie `providers` du `plugins.json`.
+Si aucune instance de la requête n'est disponible, vous pouvez utiliser la fonction `auth()->user()`.
+L'attribut `name` de l'utilisateur permet d'obtenir son nom, et la méthode `getAvatar()` renvoie l'URL de son avatar.
 
-Exemple :
+{{< warn >}}
+N'utilisez pas une API d'image spécifique à un jeu pour obtenir l'avatar de l'utilisateur, et utilisez plutôt la méthode `getAvatar()` du modèle `User`.
+{{< /warn >}}
+
+### Traits Disponibles
+
+Azuriom fournit plusieurs traits PHP pour simplifier la création et la gestion des modèles.
+
+#### `HasTablePrefix`
+
+Le trait `HasTablePrefix` permet de définir un préfixe pour la table d'un modèle.
+C'est une méthode pratique pour éviter les conflits entre les tables des différents plugins.
+Le préfixe de la table est défini dans la propriété `$prefix` du modèle et doit être l'id du plugin suivi d'un underscore.
+
+#### `HasUser`
+
+Le trait `HasUser` permet d'indiquer qu'un modèle possède un utilisateur,
+qui sera automatiquement associé à l'utilisateur connecté lors de la création d'une nouvelle instance du modèle.
+Par défaut, l'attribut utilisé est `user_id`, mais il peut être modifié en définissant la propriété `$userKey` dans le modèle.
+
+#### `HasMarkdown`
+
+Le trait `HasMarkdown` permet de simplifier l'utilisation du Markdown dans un modèle.
+Le contenu est automatiquement mis en cache après le rendu, pour éviter des traitements inutiles,
+et le cache est supprimé lorsque le contenu est mis à jour.
+Un attribut peut être converti en Markdown en utilisant la méthode `parseMarkdown(string $attribute)` du modèle.
+Par exemple, pour convertir l'attribut `content` en Markdown :
+
+```php
+public function parseContent(): string
+{
+  return $this->parseMarkdown('content');
+}
+```
+
+#### `HasImage`
+
+Le trait `HasImage` permet de simplifier l'utilisation des images dans un modèle.
+Il fournit des méthodes pour stocker et récupérer des images, et supprime automatiquement l'ancienne image lorsqu'une nouvelle est transférée, ainsi que lors de la suppression du modèle.
+Par défaut, le nom de l'image est stocké dans l'attribut `image`, mais cela peut être modifié en définissant la propriété `$imageKey` du modèle.
+La méthode `imageUrl()` renvoie l'URL de l'image (ou `null` si aucune image n'est définie), et `hasImage()` renvoie un booléen indiquant si une image est définie.
+
+#### `Searchable`
+
+Le trait `Searchable` ajoute une méthode `search` au modèle, basée sur les attributs définis dans la propriété `$searchable`.
+La propriété `$searchable` doit être un tableau des attributs pouvant être utilisés pour la recherche.
+Les relations qui utilisent également le trait `Searchable` peuvent être recherchées en utilisant la notation par points.
+Lorsqu'on utilise la notation par points, `*` peut être utilisé pour rechercher dans tous les attributs du modèle lié.
+```php
+class Ticket extends Model
+{
+    use Searchable;
+
+    protected $searchable = ['subject', 'author.name', 'category.*'];
+}
+```
+
+Ensuite, les modèles peuvent être recherchés ainsi :
+```php
+$tickets = Ticket::search('requête de recherche')->latest()->get();
+```
+
+## Services Providers
+
+Les fournisseurs de services (services providers) servent de points d'entrée pour un plugin,
+et définissent les services offerts par celui-ci.
+Azuriom est basé sur Laravel et utilise des fournisseurs de services pour enregistrer
+les routes, vues, traductions, etc.
+Pour plus d'informations sur les fournisseurs de services, consultez la
+[documentation de Laravel](https://laravel.com/docs/providers).
+
+Les fournisseurs de services doivent être listés dans la section `providers` du fichier `plugin.json` :
 ```json
 {
     "providers": [
@@ -317,9 +342,6 @@ Exemple :
     ]
 }
 ```
-
-Vous pouvez trouver plus d'informations sur les services providers dans la
-[documentation de Laravel](https://laravel.com/docs/providers).
 
 ```php
 <?php
@@ -332,10 +354,8 @@ class SupportServiceProvider extends BasePluginServiceProvider
 {
     /**
      * Register any plugin services.
-     *
-     * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->registerMiddlewares();
 
@@ -344,10 +364,8 @@ class SupportServiceProvider extends BasePluginServiceProvider
 
     /**
      * Bootstrap any plugin services.
-     *
-     * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         // $this->registerPolicies();
 
@@ -366,26 +384,107 @@ class SupportServiceProvider extends BasePluginServiceProvider
 }
 ```
 
-### Librairies
+{{< warn >}}
+Les fournisseurs de services sont automatiquement chargés et appelés pour toutes les requêtes, même celles qui n'utilisent pas le plugin.
+Par conséquent, il est essentiel de garder les méthodes `register()` et `boot()` aussi efficaces que possible afin d'éviter
+d'impacter les performances de l'ensemble du site.
+{{< /warn >}}
 
-Pour ajouter une libraire Composer, dans le dossier de votre plugin, exécutez la commande Composer pour installer une librairie composer.
+### Descriptions des Routes
 
-Puis ajoutez `require_once __DIR__.'/../../vendor/autoload.php';` à la méthode `register` du service provider de votre plugin.
+Les descriptions de routes indiquent la route principale d'un plugin.
+Ces routes seront disponibles lors de la création ou de la mise à jour d'un élément de la barre de navigation
+dans le panel d'admin.
 
-{{< warn >}} Vérifiez que les librairies que vous ajoutez ne sont pas déjà incluses dans Azuriom afin d'éviter des conflits entre les versions et des erreurs.{{< /warn >}}
-
-### Migrations
-
-Les migrations permettent de créer, modifier ou supprimer des tables dans la base
-de données, elles se trouvent dans le dossier `database/migrations`.
-
-Vous pouvez utiliser la commande suivante qui va générer automatiquement le fichier de migration :
+Pour ajouter une description de route, vous devez utiliser la méthode `RouteDescription::registerRouteDescriptions(array $routes)`
+dans la méthode `boot()` du fournisseur de services du plugin.
+Les clés du tableau correspondent aux noms des routes, et les valeurs sont le nom affiché de la route (la description) :
+```php
+/**
+ * Returns the routes that should be able to be added to the navbar.
+ *
+ * @return array<string, string>
+ */
+protected function routeDescriptions(): array
+{
+    return [
+        'shop.home' => trans('shop::messages.title'),
+    ];
+}
 ```
-php artisan make:migration <nom de migration> --path plugins/<id du plugin>/database/migrations 
+
+Ensuite, assurez-vous que la méthode `$this->registerRouteDescriptions();` est appelée
+dans la méthode `boot()` du fournisseur de services.
+
+### Navigation Utilisateur
+
+Les éléments de navigation utilisateur sont les liens qui apparaissent dans le menu de l'utilisateur lorsqu'il est connecté.
+Un élément de navigation utilisateur peut être ajouté dans la méthode `userNavigation()`
+du fournisseur de services du plugin :
+
+```php
+/**
+ * Return the user navigations routes to register in the user menu.
+ *
+ * @return array<string, array<string, string>>
+ */
+protected function userNavigation(): array
+{
+    return [
+        'support' => [ // L'identifiant unique de l'élément de navigation, par exemple l'id du plugin
+            'route' => 'shop.profile', // Le nom de la route
+            'name' => trans('shop::messages.payments'), // Le nom de l'élément de navigation
+            'icon' => 'bi bi-cash-coin', // L'icône Bootstrap à afficher
+        ],
+    ];
+}
 ```
 
-Pour plus d'informations sur les migrations, nous vous conseillons de vous rendre sur la
-[documentation de Laravel](https://laravel.com/docs/migrations).
+Ensuite, assurez-vous que la méthode `$this->registerUserNavigation();` est appelée
+dans la méthode `boot()` du fournisseur de services.
+
+### Navigation Admin
+
+Les éléments de navigation administrateur sont les liens qui apparaissent dans la
+barre latérale du panel admin.
+Un élément de navigation administrateur peut être ajouté dans la méthode `adminNavigation()`
+du fournisseur de services du plugin :
+
+```php
+/**
+ * Return the admin navigations routes to register in the dashboard.
+ *
+ * @return array<string, array<string, string>>
+ */
+protected function adminNavigation(): array
+{
+    return [
+        'shop' => [ // L'identifiant unique de l'élément de navigation, par exemple l'id du plugin
+            'name' => trans('shop::admin.nav.title'), // Le nom de l'élément de navigation
+            'type' => 'dropdown', // Le type d'élément de navigation (dropdown ou link). La valeur par défaut est link
+            'icon' => 'bi bi-cart', // L'icône Bootstrap à afficher
+            'route' => 'shop.admin.*', // Pour un lien, le nom de la route. Pour un dropdown, les routes correspondantes (utilisez * comme joker)
+            'items' => [ // Les éléments du dropdown, si le type est dropdown
+                'shop.admin.settings' => [ // Le nom de la route de l'élément du dropdown
+                    'name' => trans('shop::admin.nav.settings'), // Le nom de l'élément du dropdown
+                    'permission' => 'shop.settings', // Optionnel, la permission requise pour voir l'élément
+                ],
+            ],
+        ],
+    ];
+}
+```
+
+Ensuite, assurez-vous que la méthode `$this->registerAdminNavigation();` est appelée
+dans la méthode `boot()` du fournisseur de services.
+
+## Migrations
+
+Les migrations permettent de créer et de modifier le schéma de la base de données d'un plugin.
+Pour plus d'informations sur les migrations, consultez la [documentation Laravel](https://laravel.com/docs/migrations).
+
+Les fichiers de migration se trouvent dans le dossier `database/migrations` du
+plugin et doivent étendre de la classe `Illuminate\Database\Migrations\Migration`.
 
 ```php
 <?php
@@ -397,11 +496,9 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
-     *
-     * @return void
+     * Exécute les migrations.
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('support_tickets', function (Blueprint $table) {
             $table->increments('id');
@@ -417,108 +514,106 @@ return new class extends Migration
     }
 
     /**
-     * Reverse the migrations.
-     *
-     * @return void
+     * Annule les migrations.
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('support_tickets');
     }
 };
 ```
 
-### Traductions
+## Traductions
 
-Les traductions permettent de traduire un plugin (incroyable), elles se trouvent
-dans le dossier `resources/lang` à la racine d'un plugin, dans le dossier de la 
-langue (`en`, `fr`, etc).
+Azuriom est entièrement traduit en plusieurs langues et utilise le système de traduction de Laravel pour gérer les traductions.
+Pour plus d'informations sur les traductions, consultez la [documentation Laravel](https://laravel.com/docs/localization).
 
-Vous pouvez trouver plus d'informations sur les traductions dans la
-[documentation de Laravel](https://laravel.com/docs/localization).
-
-Pour récupérer une traduction vous pouvez utiliser la fonction
-`trans('<id du plugin>::<nom du fichier>.<message>')`, par exemple
-`trans('support::messages.tickets.home')` pour afficher le message `tickets.home`,
-dans le fichier `messages.php` du plugin support :
+Les traductions d'un plugin sont stockées dans le dossier `resources/lang` du plugin, avec un sous-dossier
+pour chaque langue, qui contient les fichiers PHP des traductions :
 ```php
 <?php
 
 return [
-  'tickets' => [
-    'home' => 'Vos tickets',
-  ],
+    'hello' => 'Bonjour',
 ];
 ```
 
-### Navigation
-
-#### Utilisateurs
-
-Il est recommandé d'enregistrer les routes principales de votre plugin 
-afin que celles-ci puissent facilement être ajoutée dans la barre de navigation.
-Pour cela il suffit d'appeler la méthode `$thiS->registerRouteDescriptions()`
-dans le provider du plugin et de retourner les différentes routes dans la méthode
-`routeDescriptions()` au format `[<route> => <description>]` :
-```php
-    /**
-     * Bootstrap any plugin services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        // ...
-
-        $this->registerRouteDescriptions();
-    }
-
-    /**
-     * Returns the routes that should be able to be added to the navbar.
-     *
-     * @return array
-     */
-    protected function routeDescriptions()
-    {
-        return [
-            'support.tickets.index' => trans('support::messages.title'),
-        ];
-    }
+Une traduction peut ensuite être affichée dans une vue en utilisant la fonction `trans`
+avec l'identifiant du plugin comme espace de noms de traduction :
+```html
+<p>{{ trans('support::messages.hello') }}</p>
 ```
 
-### Admin
+Pour traduire un booléen, vous pouvez utiliser la fonction `trans_bool`. Par exemple, en français "Oui" ou "Non" sera renvoyé : `{{ trans_bool($boolean) }}`.
+Une date peut être formatée avec les fonctions `format_date` ou `format_date_compatct`, qui renvoient la date formatée selon la langue actuelle : `format_date($date)`.
 
-Pour que les pages d'administration de votre plugin apparaissent dans la barre de
-navigation du panel admin, vous pouvez les enregistrer en appelant la méthode
-`$this->registerAdminNavigation()` et en retournant les différentes routes dans
-la méthode `adminNavigation()` :
+## Permissions
+
+Les permissions permettent de contrôler l'accès à certaines parties du site, comme le panel administrateur, les pages ou certaines actions.
+Les permissions sont associées aux rôles et peuvent être configurées depuis le panel admin.
+
+Pour enregistrer des permissions, vous pouvez utiliser la méthode `Permission::registerPermissions(array $permissions)`
+dans la méthode `boot()` du fournisseur de services du plugin.
+Les clés du tableau correspondent aux noms des permissions, et les valeurs aux clés de traduction de ces permissions :
 ```php
-    /**
-     * Bootstrap any plugin services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        // ...
-
-        $this->registerAdminNavigation();
-    }
-
-    /**
-     * Return the admin navigations routes to register in the dashboard.
-     *
-     * @return array
-     */
-    protected function adminNavigation()
-    {
-        return [
-            'support' => [
-                'name' => trans('support::admin.title'), // Traduction du nom de l'onglet
-                'icon' => 'bi bi-joystick', // Icône Bootstrap Icons
-                'route' => 'support.admin.tickets.index', // Route de la page
-                'permission' => 'support.tickets', // (Optionnel) Permission nécessaire pour voir cet onglet
-            ],
-        ];
-    }
+Permission::registerPermissions([
+    'support.settings' => 'support::admin.permissions.settings',
+]);
 ```
+
+Ensuite, vous pouvez vérifier si un utilisateur dispose d'une permission avec la méthode `can(string $permission): bool` du modèle `User`, ou avec le middleware `can:<permission>` dans les routes.
+
+## Log d'Actions
+
+Les logs d'actions permettent de suivre les actions d'un utilisateur sur le site
+et sont visibles dans le panel admin du site, dans la section "Logs".
+
+### Logs Automatiques
+
+Azuriom enregistre automatiquement les actions d'un modèle grâce au trait `Loggable`.
+Par défaut, les événements `created`, `updated` et `deleted` sont enregistrés,
+mais vous pouvez personnaliser les événements à enregistrer en définissant la propriété `$logEvents` dans le modèle.
+Les modèles doivent ensuite être enregistrés dans la méthode `boot()` du fournisseur
+de services à l'aide de la méthode `ActionLog::registerLogModels(array $models, string $transPrefix)`,
+en passant un tableau des modèles à enregistrer et le préfixe de traduction qui sera utilisé pour traduire les messages de log.
+
+```php
+ActionLog::registerLogModels([
+    Ticket::class,
+], 'support::admin.logs');
+```
+
+### Logs Manuels
+
+Vous pouvez également enregistrer une action manuellement avec la méthode
+`ActionLog::log(string $action, ?Model $model = null)`.
+Le premier argument correspond au type d'action à enregistrer, et le deuxième, s'il existe, au modèle associé au log.
+
+Les types d'actions sont enregistrés dans la méthode `boot()` du fournisseur de
+services à l'aide de la méthode `ActionLog::registerLogActions(array $actions)` :
+```php
+ActionLog::registerLogs([
+    'support.tickets.closed' => [
+        'icon' => 'credit-card', // L'icône Bootstrap à afficher, sans le préfixe `bi-`
+        'color' => 'check-circle', // Une couleur Bootstrap (primary, secondary, success, danger, warning, info)
+        'message' => 'support::admin.logs.tickets.closed', // La clé de traduction du message de log
+        'model' => Ticket::class, // Le modèle associé au log, le cas échéant
+    ],
+]);
+```
+
+## Fonctions Utiles
+
+Azuriom fournit plusieurs fonctions pour faciliter le développement de plugins et garantir la cohérence sur l'ensemble du site :
+
+| Fonction                                      | Description                                                                                               |
+|-----------------------------------------------|-----------------------------------------------------------------------------------------------------------|
+| `site_name(): string`                         | Retourne le nom du site tel que défini dans les paramètres                                                |
+| `site_logo(): string`                         | Retourne l'URL du logo tel que défini dans les paramètres                                                 |
+| `favicon(): string`                           | Retourne l'URL du favicon tel que défini dans les paramètres                                              |
+| `format_date(Carbon $carbon): string`         | Formate une date selon la langue actuelle. L'argument `$carbon` doit être une instance de `Carbon\Carbon` |
+| `money_name(): string`                        | Retourne le nom de la monnaie du site                                                                     |
+| `format_money(float $amount): string`         | Retourne `$amount` formaté avec la monnaie du site                                                        |
+| `trans(string $key): string`                  | Retourne la traduction correspondant à la clé `$key`                                                      |
+| `trans_bool(bool $value): string`             | Retourne la traduction de la valeur booléenne donnée. Renvoie "Oui" ou "Non" en français                  |
+| `auth()->user(): \Azuriom\Models\user`        | Retourne l'utilisateur connecté sur le site, ou `null` si l'utilisateur n'est pas connecté                |

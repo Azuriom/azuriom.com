@@ -5,39 +5,53 @@ weight: 0
 layout: single
 ---
 
-# Accueil
+# Introduction
 
-## Introduction
+Azuriom est une solution web complète, gratuite et open-source pour les serveurs de jeux.
+Les extensions sont au cœur d'Azuriom, avec des dizaines d'extensions prêtes à l'emploi,
+vous pouvez facilement ajouter de nouvelles fonctionnalités à votre site et le personnaliser pour répondre à vos besoins.
+Pour encore plus de personnalisation, vous pouvez même créer vos propres extensions.
 
-[Azuriom]({{< url "/" >}}) est un CMS de jeux **dernière génération**,
-**gratuit** et **open source**, qui a pour objectif d'être une alternative
-**moderne**, **fiable**, **rapide** et **sécurisée** par rapport aux CMS existants
-afin de vous proposer la **meilleure expérience web possible** pour votre serveur.
+Azuriom est conçu pour être facile à utiliser, avec une interface simple et intuitive,
+vous permettant de vous concentrer sur l'essentiel : votre communauté.
 
-Azuriom possède également un système d'extensions **avancé**, qui permet de pouvoir
-entièrement **personnaliser** votre site simplement grâce aux extensions de notre
-market communautaire tels que des thèmes **modernes** et **responsives**
-ou bien des **plugins complets** tels que la **boutique**, le **forum** et bien plus !
+Depuis son lancement en 2020, Azuriom est continuellement maintenu et est désormais utilisé par plus de 1 800 communautés dans le monde entier,
+avec plus d'un million d'utilisateurs. Pourquoi ne pas les rejoindre ?
 
-Vous pouvez trouver dans cette documentation l'ensemble des informations concernant
-Azuriom, allant de l'installation à la création de plugins/thèmes en passant
-par la liaison serveur-site.
+## Support
 
-Si vous avez besoin d'aide ou vous avez des questions vous pouvez rejoindre
-notre [serveur Discord](https://azuriom.com/discord).
+Vous trouverez la plupart des informations dont vous avez besoin dans la documentation,
+y compris des instructions sur l'installation et la configuration d'Azuriom, ainsi que sur la création d'extensions.
 
-## Crédits
+Si vous avez besoin d'aide, vous pouvez rejoindre le [serveur Discord d'Azuriom](https://azuriom.com/discord).
 
-Azuriom a été créé par [MrMicky](https://mrmicky.fr/) & [SkyWarZzeur](https://twitter.com/SkyWarZzeur)
-avec le framework PHP [Laravel](https://laravel.com/).
+## Jeux supportés
 
-Également un immense merci à [Jav](https://www.linkedin.com/in/jean-alexandre-valentin-531236153/) pour ses très
-nombreuses contributions, à notre partenaire [NiHost](https://www.ni-host.com/?utm_source=home&utm_medium=links&utm_campaign=AzuriomCom) pour
-leur confiance, ainsi que tous les
-[contributeurs d'Azuriom](https://github.com/Azuriom/Azuriom/graphs/contributors)
-pour leur aide.
+Azuriom supporte nativement un grand nombre de jeux :
+* Minecraft (Java Edition & Bedrock Edition)
+* Garry's Mod
+* ARK: Survival Evolved
+* Rust
+* FiveM
+* Unturned
+* Counter-Strike 2
+* 7 Days to Die
+* Team Fortress 2
 
-### Donateurs
+De nouveaux jeux peuvent être ajoutés avec des extensions,
+comme pour le jeu [Flyff](https://github.com/AzuriomCommunity/Game-Flyff).
 
-Les donateurs permettent de faire vivre le projet, un grand merci à eux, et en particulier à :
+## Credits
+
+Azuriom a été créé par [MrMicky](https://mrmicky.fr/) et [SkyWarZzeur](https://twitter.com/SkyWarZzeur) en utilisant
+le framework PHP [Laravel](https://laravel.com/).
+Un grand merci également à [Jav](https://www.linkedin.com/in/jean-alexandre-valentin-531236153/) pour ses précieuses contributions, à notre partenaire [NiHost](https://www.ni-host.com/?utm_source=home&utm_medium=links&utm_campaign=AzuriomCom)
+pour leur confiance, et à tous les [contributeurs d'Azuriom](https://github.com/Azuriom/Azuriom/graphs/contributors) pour leur aide.
+
+## Sponsors
+
+Nos sponsors permettent au projet de vivre, permettant ainsi qu'il reste gratuit pour tous.
+Pensez à [nous soutenir]({{< url "/support-us" >}}) si le projet vous plaît !
+
+Un grand merci à nos principaux sponsors :
 {{< donors >}}

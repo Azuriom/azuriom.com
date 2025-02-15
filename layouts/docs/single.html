@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div class="row">
-    <aside class="col-md-3 col-xl-2 bd-sidebar">
+    <aside class="col-md-3 col-lg-2 mb-4">
         <nav>
             <ul class="nav nav-pills flex-column">
                 {{ $currentPage := . }}
@@ -24,8 +24,16 @@
         </nav>
     </aside>
 
-    <main class="col-md-9 col-xl-9 markdown-content">
+    <main class="col-md-9 col-lg-8 markdown-content">
         {{ .Content }}
     </main>
+
+    <aside class="col-md-3 col-lg-2 d-lg-block d-none">
+        <nav class="table-of-contents sticky-top pt-3">
+            <p class="h5">{{ i18n "docs.navigation" }}</p>
+
+            {{ .TableOfContents }}
+        </nav>
+    </aside>
 </div>
 {{ end }}

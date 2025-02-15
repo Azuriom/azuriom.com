@@ -1,0 +1,91 @@
+headline: "Azuriom yra išsamus atviro kodo tinklalapių sprendimas žaidimų serveriams. Mėgaukitės dešimtimis plėtinių, suteikiančių begalines galimybes. Juo jau pasitiki daugiau nei 1,800 serverių, kurie kartu turi daugiau nei du milijonus vartotojų."
+
+theme:
+  light: "Šviesus"
+  dark: "Tamsus"
+  auto: "Auto"
+
+nav:
+  download: "Atsisiuntimas"
+  extensions: "Plėtiniai"
+  docs: "Dokumentacija"
+  demo: "Demo"
+  demoMC: "Minecraft Demo"
+  demoSteam: "Steam Demo"
+  login: Prisijungti
+
+footer:
+  copyright: "Autorių teisės &copy; 2019-{{ .year }} Azuriom - Visos teisės saugomos. Sukurta su&nbsp;{{ .love }} Azuriom."
+  partner: "Mūsų Partneris"
+  links: "Nuorodos"
+
+home:
+  header:
+    title: "Patobulinkite savo žaidimų serverį naudodami išsamų tinklalapio sprendimą."
+    subtitle: "Azuriom yra išsamus **nemokamas** ir **atviro kodo** tinklalapio sprendimas žaidimų serveriams. Mėgaukitės dešimtimis plėtinių, suteikiančių begalines galimybes."
+
+  learn: "Sužinokite daugiau"
+
+  complete:
+    title: "Plėtinių diegimas vienu paspaudimu. Begalinės galimybės"
+    description1: "Dešimtis plėtinių galima įdiegti tiesiogiai iš administratoriaus skydelio. Monetizuokite savo serverį naudodami mūsų parduotuvę, kurkite bendruomenę su mūsų forumais arba pagyvinkite savo tinklalapį viena iš mūsų daugybės nuostabių temų!"
+    description2: "Reikia dar daugiau? Jokių problemų, ačiū [Laravel](https://laravel.com), temų ir įskiepių kūrimas yra paprastas."
+
+  extensions:
+    shop: "Monetizuokite savo serverį ir parduokite daiktus savo žaidėjams naudodami daugiau nei 15 mokėjimo sistemų."
+    vote: "Skatinkite savo žaidėjus balsuoti už jūsų serverį su automatiniais apdovanojimais, kad sustiprintumėte savo bendruomenę."
+    forum: "Kurkite bendruomenę įtraukdami savo žaidėjus į funkcijų gausų forumą."
+    more: "Rinkoje yra dešimtys kitų plėtinių. Tikrai rasite tai, ko jums reikia."
+    themes: "Niekas nenori nuobodžiai sukurto tinklalapio. Pasirinkite vieną iš mūsų daugybės temų, kad jūsų tinklalapis išsiskirtų."
+
+  games:
+    title: "Vienas projektas, daug žaidimų"
+    description1: "Sukurkite tinklalapį savo SkyBlock serveriui Minecraft žaidime. Turite DarkRP Garry's Mod žaidime? Žinoma, Azuriom gali ir tai, su Steam prisijungimu. Labiau mėgstate Los Santos? Jokių problemų, Azuriom taip pat palaiko FiveM!"
+    description2: "Net jei jūsų žaidimas nėra palaikomas, galite pridėti jo palaikymą naudodami plėtinį. Puikus to pavyzdys yra žaidimas [Flyff](https://universe.flyff.com)."
+
+  community:
+    title: "Sukurta bendruomenės. Bendruomenei"
+    description1: "Azuriom yra atviro kodo projektas. Jums nereikia jaudintis dėl brangių parduotuvės mokesčių ar prasto prieglobos. Jūs talpinate savo tinklalapį kur norite ir netgi galite jį pritaikyti pagal poreikius."
+    description2: "Reikia pagalbos? Jokių problemų, mes turime aktyvią tūkstančių narių bendruomenę [Discord](/discord) platformoje. O Azuriom yra atviro kodo, todėl bet kas gali prisidėti prie projekto [GitHub](https://github.com/Azuriom/Azuriom) platformoje."
+
+  trusted:
+    title: "Pasitiki daugiau nei tūkstantis serverių. Mylimas visame pasaulyje"
+    description1: "Sukurtas Šveicarijoje, Azuriom yra patikimas daugiau nei tūkstančiui serverių visame pasaulyje ir išverstas į [daugiau nei 15 kalbų](https://translate.azuriom.com)."
+    description2: "Sukurtas su [Laravel](https://laravel.com/), populiariausiu PHP karkasu, kad galėtumėte mėgautis saugiu ir patikimu tinklalapiu. Jūs to nusipelnėte!"
+
+download:
+  title: "Atsisiųsti Azuriom"
+  docs: "Pasiruošę pradėti? Puiku, būtinai peržiūrėkite [dokumentaciją]({{ .docs }}) sklandžiam diegimui."
+  community: 'Prisijunkite prie bendruomenės [Discord]({{ .discord }}) platformoje, kad gautumėte naujausias naujienas ir pagalbą.'
+  support: "Įkvėpė Azuriom? Kad padėtumėte mums toliau tobulinti Azuriom, yra keletas būdų, kaip galite mus [paremti]({{ .support }})."
+  cloud: "Nenorite patys diegti Azuriom? Išbandykite {{ .cloud }} nemokamai, kad lengvai talpintumėte savo tinklalapį."
+
+azlink:
+  description1: "Geriausias būdas sujungti jūsų žaidimo serverį su jūsų Azuriom tinklalapiu."
+  description2: "Mėgaukitės paprastumu ir saugumu vienoje iš daugelio palaikomų platformų."
+
+support:
+  title: "Paremkite mus"
+  subtitle1: "Jūs galite padaryti pokytį."
+  subtitle2: "Prisidėkite prie Azuriom augimo."
+  description1: "Mes nuoširdžiai mėgaujamės Azuriom kūrimu ir tikimės, kad jums patinka jį naudoti. Jei taip ir norite, kad projektas toliau augtų, yra keletas būdų, kaip galite mus paremti."
+
+  sponsor:
+    title: "Rėmėjas"
+    info: "Nors Azuriom yra nemokamas, jo priežiūra nėra nemokama. Serverių priegloba, domenų vardai ir kitos paslaugos kainuoja. Galite paremti projektą GitHub platformoje ir gauti **unikalių privalumų**."
+    button: "Paremkite GitHub platformoje"
+
+  star:
+    title: "Uždėkite žvaigždę GitHub platformoje"
+    info: "Negalite arba nenorite mūsų paremti? Jokių problemų, vis tiek galite mus paremti pažymėdami projektą žvaigždute GitHub platformoje. Tai yra **visiškai nemokama** ir užtrunka tik kelias sekundes, bet mums labai padeda."
+    button: "Pažymėkite projektą žvaigždute"
+
+docs:
+  index: "Pagrindinis"
+
+errors:
+  title: "Klaida"
+
+  notFound:
+    title: "Nerasta"
+    info: "Puslapis, kurio ieškote, nerastas."

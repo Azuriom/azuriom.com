@@ -5,6 +5,14 @@
 
 The Azuriom's website, available at [azuriom.com](https://azuriom.com) and made with [Hugo](https://gohugo.io/).
 
+## Contributing
+
+### Translations
+
+If you want to help us translate the website, you can do it on [Crowdin](https://translate.azuriom.com).
+
+To prevent outdated translations and simplify the process, the documentation is unfortunately not available for translation.
+
 ## Project setup for development
 
 ### Install required dependencies

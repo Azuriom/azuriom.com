@@ -41,7 +41,22 @@ to = "https://market.azuriom.com/api/updates"
 from = "/install/assets/v0.2.4/img/:image"
 to = "https://cdn.jsdelivr.net/gh/Azuriom/Azuriom@1.0.1/public/assets/img/games/:image"
 
-# Redirects untranslated documentations
+# Redirect untranslated documentations
+[[redirects]]
+from = "/de/docs/*"
+to = "/en/docs/:splat"
+status = 302
+
+[[redirects]]
+from = "/nl/docs/*"
+to = "/en/docs/:splat"
+status = 302
+
+[[redirects]]
+from = "/zh-cn/docs/*"
+to = "/en/docs/:splat"
+status = 302
+
 [[redirects]]
 from = "/pl/docs/*"
 to = "/en/docs/:splat"
@@ -54,6 +69,21 @@ status = 302
 
 [[redirects]]
 from = "/tr/docs/*"
+to = "/en/docs/:splat"
+status = 302
+
+[[redirects]]
+from = "/cs/docs/*"
+to = "/en/docs/:splat"
+status = 302
+
+[[redirects]]
+from = "/uk/docs/*"
+to = "/en/docs/:splat"
+status = 302
+
+[[redirects]]
+from = "/pt-br/docs/*"
 to = "/en/docs/:splat"
 status = 302
 

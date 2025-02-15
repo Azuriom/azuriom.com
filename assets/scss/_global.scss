@@ -83,4 +83,32 @@ a {
     height: 4rem;
     width: 4rem;
   }
+
+  p {
+    margin-bottom: 0.5rem;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.table-of-contents {
+  ul {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      margin-bottom: 0.25rem;
+    }
+
+    ul {
+      padding-left: 1rem;
+    }
+  }
+
+  a:not(:hover) {
+    color: var(--bs-body-color);
+    text-decoration: none;
+  }
 }

@@ -4,71 +4,82 @@ title: API Auth
 
 # AzAuth
 
-AzAuth est une api qui permet d'authentifier les utilisateurs d'un site sous Azuriom sur n'importe quelle plateforme
-(par exemple un launcher Minecraft personnalisé).
+AzAuth est une API permettant d'authentifier les utilisateurs avec Azuriom.
+Elle peut être utilisée en Java, en JavaScript, ou tout autre langage capable d'effectuer des requêtes HTTP.
+
+Avant d'utiliser AzAuth, assurez-vous qu'elle est activée dans le panel administrateur (dans **Paramètres → Authentification**).
 
 {{< warn >}}
-Quelle que soit la façon dont vous utilisez l'auth API coté client, vous
-devez impérativement vérifier coté serveur que le token d'accès renvoyé par le client
-est bien valide en utilisant la méthode `verify`.
+Quel que soit le mode d'utilisation de l'API côté client, vous devez vérifier le token d'accès côté serveur.
+Cela peut être fait en appelant le point d'accès `/verify` ou en utilisant la méthode `verify`.
 {{< /warn >}}
 
-## Téléchargement
+## Java
 
-Les sources d'AzAuth sont disponibles sur [GitHub](https://github.com/Azuriom/AzAuth)
-et le fichier "jar" peut être téléchargé [ici](https://repo.maven.apache.org/maven2/com/azuriom/azauth/1.0.0/azauth-1.0.0.jar).
+Les sources d'AzAuth Java sont disponibles sur [GitHub](https://github.com/Azuriom/AzAuth),
+et le fichier `jar` peut être téléchargé depuis les [releases GitHub](https://github.com/Azuriom/AzAuth/releases).
 
-Si vous utilisez un gestionnaire de dépendances, vous pouvez ajouter AzAuth comme
-dépendance de la façon suivante :
+La méthode recommandée pour utiliser AzAuth dans un projet est d'utiliser un gestionnaire de dépendances comme Maven ou Gradle.
 
-### Gradle
+### Installation
 
-Dans le `build.gradle`:
-```groovy
+Avec Gradle, ajoutez ces lignes dans votre fichier `build.gradle` :
+
+```gradle
 repositories {
     mavenCentral()
-} 
+}
 
 dependencies {
     implementation 'com.azuriom:azauth:1.0.0'
 }
 ```
 
-### Maven
+Avec Maven, ajoutez ces lignes dans votre fichier `pom.xml` :
 
-Dans le `pom.xml`:
 ```xml
 <dependencies>
     <dependency>
         <groupId>com.azuriom</groupId>
         <artifactId>azauth</artifactId>
         <version>1.0.0</version>
-        <scope>compile</scope>
     </dependency>
 </dependencies>
 ```
 
-## Utilisation de AzAuth (Java)
+### Utilisation
 
-Avant d'utiliser AzAuth, veuillez vérifier que l'API est bien activée en allant
-dans les réglages de votre site, sur votre panel admin.
+AzAuth est léger et utilise comme seule dépendance [Google Gson](https://github.com/google/gson).
 
+Le point d'entrée de la librairie est la classe `AuthClient`, dont vous pouvez créer une instance en passant l'URL de votre site Azuriom.
 
-### Utilisation sans OpenLauncherLib
+Ensuite, vous pouvez utiliser la méthode `login(String username, String password, Supplier<String> codeSupplier)`
+Le `codeSupplier` est appelé lorsque l'utilisateur a activé la 2FA, et le code de l'utilisateur doit être renvoyé par ce fournisseur.
 
-AzAuth a été conçu avec comme seule dépendance [Gson](https://github.com/google/gson), vous pouvez donc parfaitement l'utiliser si vous n'utilisez pas
-OpenLauncherLib, vous pouvez simplement utiliser `AuthClient#authenticate(String username, String password, Supplier<String> codeSupplier)` et cela va
-vous donner directement un `User` contenant le pseudo, l'UUID, le grade, le token d'accès et d'autres données utiles. Le paramètre `codeSupplier`
-est appelé lorsque l'utilisateur a l'authentification à deux facteurs activée, et dans ce cas
-le code temporaire doit être retournée dans le `Supplier`.
+Un exemple d'utilisation d'AzAuth dans une application Java :
 
-### Utilisation avec [OpenLauncherLib](https://github.com/Litarvan/OpenLauncherLib/) _(pour launcher minecraft)_
+```java{hl_lines=["2-3", "9-10"]}
+public static User auth(String username, String password) throws AuthException {
+    // IMPORTANT : Remplacez <url> par l'URL de votre site Azuriom
+    AuthClient authenticator = new AuthClient("<url>");
 
-Pour commencer, ajoutez AzAuth en dépendance à votre projet.
-Également si vous utilisez [OpenAuth](https://github.com/Litarvan/OpenAuth/), il est recommandé de le retirer,
-bien que ne causant pas de réels problèmes, il ne sera simplement plus utilisé si vous utilisez AzAuth.
+    return authenticator.login(username, password, () -> {
+        String code = null;
 
-Vous devriez avoir dans le code de votre launcher une méthode `auth` ressemblant au code ci-dessous :
+        while (code == null || code.isEmpty()) {
+            // IMPORTANT : Remplacez <code_2fa> par le code temporaire de l'utilisateur
+            code = "<code_2fa>";
+        }
+
+        return code;
+    });
+}
+```
+
+### Utilisation avec OpenLauncherLib
+
+Pour un launcher Minecraft utilisant [OpenLauncherLib](https://github.com/Litarvan/OpenLauncherLib), la méthode `auth` ressemble généralement de base à ceci :
+
 ```java
 public static void auth(String username, String password) throws AuthenticationException {
     Authenticator authenticator = new Authenticator(Authenticator.MOJANG_AUTH_URL, AuthPoints.NORMAL_AUTH_POINTS);
@@ -77,21 +88,23 @@ public static void auth(String username, String password) throws AuthenticationE
 }
 ```
 
-Il vous suffit de la remplacer par le code ci-dessous, en remplaçant `<url>` par l'URL de la racine de votre site sous Azuriom.
-```java
+Cette méthode peut être remplacée par le code suivant pour utiliser AzAuth à la place du système d'authentification de Mojang :
+
+```java{hl_lines=["2-3", "9-12"]}
 public static void auth(String username, String password) throws AuthException {
+    // IMPORTANT : Remplacez <url> par l'URL de votre site Azuriom
     AuthClient authenticator = new AuthClient("<url>");
 
     authInfos = authenticator.login(username, password, () -> {
         String code = null;
 
         while (code == null || code.isEmpty()) {
-            // The parent component for the dialog. You should replace the code
-            // below with an instance of your launcher frame/panel/etc
+            // IMPORTANT : Le composant parent pour la boîte de dialogue.
+            // Remplacez le code ci-dessous par une instance de votre frame/panel/etc. de launcher.
             Container parentComponent = LauncherFrame.getInstance().getLauncherPanel();
             parentComponent.setVisible(true);
 
-            code = JOptionPane.showInputDialog(parentComponent, "Enter your 2FA code", "2FA", JOptionPane.PLAIN_MESSAGE);
+            code = JOptionPane.showInputDialog(parentComponent, "Entrez votre code 2FA", "2FA", JOptionPane.PLAIN_MESSAGE);
         }
 
         return code;
@@ -99,74 +112,79 @@ public static void auth(String username, String password) throws AuthException {
 }
 ```
 
-## Utilisation de AzAuth JavaScript
+## JavaScript
 
 ### Installation
 
-Les sources d'AzAuth JS sont disponibles sur [GitHub](https://github.com/Azuriom/AzAuthJS)
-et le package peut être installé via [npm](https://www.npmjs.com/) dans votre projet : 
-```
+Le code source est disponible sur [GitHub](https://github.com/Azuriom/AzAuthJS),
+et peut être installé via [npm](https://www.npmjs.com/) :
+
+```sh
 npm install azuriom-auth
 ```
 
 ### Utilisation
 
-```js
+Le point d'entrée est la classe `AuthClient`, dont vous pouvez créer une instance en passant l'URL de votre site Azuriom.
+Ensuite, vous pouvez utiliser la méthode `login` pour authentifier un utilisateur.
+
+```js{hl_lines=["4-5", "10-11"]}
 import { AuthClient } from 'azuriom-auth'
 
 async function login(email, password) {
-    const client = new AuthClient('<url of your website>')
-
+    // IMPORTANT : Remplacez <url> par l'URL de votre site Azuriom
+    const client = new AuthClient('<url>')
+    
     let result = await client.login(email, password)
-
+    
     if (result.status === 'pending' && result.requires2fa) {
-        const twoFactorCode = '' // IMPORTANT: Replace with the 2FA user temporary code
-
+        // IMPORTANT : Remplacez <code_2fa> par le code temporaire de l'utilisateur
+        const twoFactorCode = '<code_2fa>'
+        
         result = await client.login(email, password, twoFactorCode)
     }
-
+    
     if (result.status !== 'success') {
         throw 'Unexpected result: ' + JSON.stringify(result)
     }
-
+    
     return result
 }
 ```
 
+## API HTTP
 
-## Utilisation hors Java
+AzAuth peut être utilisé dans n'importe quel langage, sans utiliser de bibliothèque spécifique,
+en effectuant directement des requêtes HTTP vers les points d'accès de l'API.
 
-L'auth API peut être utilisée dans n'importe quel langage sans utiliser de librairie
-spécifique, il suffit juste de faire des requêtes HTTP aux différents points de terminaison (endpoints).
+L'API utilise le format JSON, et le chemin de base est `/api/auth`.
 
-L'ensemble de l'API utilise du JSON et l'URL de base de l'API est `/api/auth`.
+Un code de statut HTTP 200 est renvoyé en cas de succès, et 422 en cas de paramètres manquants ou invalides.
+Les dates sont renvoyées au format ISO 8601.
 
-Les dates sont retournées au format ISO 8601.
-
-L'API retourne un code 200 en cas de succès, un code 422 en cas de paramètres manquants
-ou invalides. En cas d'une autre erreur, le code associé pourra être retourné. 
-
-### Endpoints
+### Points d'accès
 
 #### Authentification
 
 **POST** `/authenticate`
 
-Permet d'authentifier un utilisateur grâce à ses identifiants du site.
+Authentifier un utilisateur avec ses identifiants du site.
 
 ##### Requête
-| Champ    | Description                                                                                      |
-|----------|--------------------------------------------------------------------------------------------------|
-| email    | E-Mail (ou pseudo) de l'utilisateur                                                              |
-| password | Mot de passe de l'utilisateur                                                                    |
-| code     | Code de l'A2F, doit être inclus si le `status` de la réponse est `pending` et `reason` est `2fa` |
+
+| Champ    | Description                                                                                          |
+|----------|------------------------------------------------------------------------------------------------------|
+| email    | Nom d'utilisateur ou adresse email                                                                   |
+| password | Mot de passe                                                                                         |
+| code     | Code 2FA, doit être inclus uniquement si la réponse a `status` à `pending` et que `reason` est `2fa` |
 
 ##### Réponse
 
 Retourne l'utilisateur avec ses différentes informations ainsi que le jeton (token) unique
-qui pourra être utilisé pour vérifier la connexion ou pour la déconnexion.
+pour vérifier la connexion ou pour la déconnexion.
 
 Exemple de réponse de succès (HTTP `2xx`) :
+
 ```json
 {
     "id": 1,
@@ -198,30 +216,41 @@ Exemple de réponse d'erreur (HTTP `4xx`) :
 **POST** `/verify`
 
 ##### Requête
-| Champ        | Description                           |
-|--------------|---------------------------------------|
-| access_token | Token d'accès unique de l'utilisateur |
+
+| Champ        | Description          |
+|--------------|----------------------|
+| access_token | Jeton d'accès unique |
 
 ##### Réponse
 
-Retourne l'utilisateur avec ses différentes informations ainsi que le jeton (token) unique
-qui pourra être utilisé pour la déconnexion.
+Retourne l'utilisateur avec ses différentes informations ainsi que le jeton (token) unique pour la déconnexion.
 
 Exemple de réponse de succès (HTTP `2xx`) :
+
 ```json
 {
-    "id": 1,
-    "username": "Username",
-    "uuid": "00000000-0000-0000-0000-000000000000",
-    "email_verified": true,
-    "money": 100.0,
-    "role": {
-        "name": "Member",
-        "color": "#e10d11"
-    },
-    "banned": false,
-    "created_at": "2020-06-29T17:39:12+00:00",
-    "access_token": "xxxxxxxx"
+"id": 1,
+"username": "Username",
+"uuid": "00000000-0000-0000-0000-000000000000",
+"email_verified": true,
+"money": 100.0,
+"role": {
+"name": "Member",
+"color": "#e10d11"
+},
+"banned": false,
+"created_at": "2020-06-29T17:39:12+00:00",
+"access_token": "xxxxxxxx"
+}
+```
+
+Exemple de réponse en cas d'erreur (HTTP `4xx`) :
+
+```json
+{
+"status": "error",
+"reason": "invalid_credentials",
+"message": "Invalid credentials"
 }
 ```
 
@@ -229,7 +258,7 @@ Exemple de réponse de succès (HTTP `2xx`) :
 
 **POST** `/logout`
 
-Déconnecte l'utilisateur et rend invalide le jeton (token) fourni.
+Déconnecte l'utilisateur et invalide le jeton d'accès.
 
 ##### Requête
 | Champ        | Description                           |
@@ -238,4 +267,4 @@ Déconnecte l'utilisateur et rend invalide le jeton (token) fourni.
 
 ##### Réponse
 
-En cas de succès, une réponse vide avec un code de statut `2xx` est apportée.
+Réponse vide, avec un code de statut `2xx` en cas de succès.

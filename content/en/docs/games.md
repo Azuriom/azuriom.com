@@ -1,118 +1,77 @@
 ---
-title: Custom games
+title: Custom Games
 ---
 
-# Add support for a new game
+# Game Development
 
-## Requirements
+Azuriom supports custom games, which means you can create a plugin to add a game
+that is not natively supported by Azuriom.
 
-- An access to a terminal to run commands like `php -v` and be somewhat familiar with programming
-
-If you have Azuriom installed you can skip to the Setup step.
-
-If you never installed Azuriom, you need to install it. During installation it will ask you to choose a game.
-
-You will navigate to the URL `/install/game/custom`. With that in mind you can now follow the installation instruction.
-
-Once Azuriom is installed, you can run the following command in a terminal to create an admin user:
+{{< info >}}
+Installing Azuriom locally is highly recommended to simplify game development.
+When Azuriom is installed locally, debug mode can be enabled for easier development,
+by editing the following lines in the `.env` file:
+```env
+APP_ENV=local
+APP_DEBUG=true
 ```
+{{< /info >}}
+
+## Installation
+
+If Azuriom is already installed, you can skip this step.
+Otherwise, you can install Azuriom by following the [installation guide](installation).
+During the installation process, immediately after the database configuration, when prompted to choose a game,
+manually navigate to the URL `/install/game/custom` to install Azuriom without a game.
+
+Once Azuriom is installed, you can create an admin user by running the following command in a terminal:
+```sh
 php artisan user:create --admin
 ```
 
-## Setup
+## Creating a Game
 
-You can run the following command to generate the project layout for your game, with `MyNewGame` the name of your game:
+The recommended way to create a game plugin is to use the following command, which generates the required files:
+```sh
+php artisan game:create <game name>
 ```
-php artisan game:create MyNewGame
-```
 
-## Connecting Azuriom to a game
+## `Game` Class
 
-### Using custom database
+The heart of the game plugin is the game class, which extends the `Azuriom\Games\Game` class.
 
-go to `plugins/mynewgame/src/Providers/MyNewGameServiceProvider.php` and edit the file
+### OAuth Login
 
-Under `use Azuriom\Extensions\Plugin\BasePluginServiceProvider;` paste `use Illuminate\Support\Facades\DB;`
+Azuriom uses Laravel Socialite for OAuth login. For more information about Socialite,
+and how to add a new driver, see the [Socialite documentation](https://laravel.com/docs/socialite).
 
-Now locate the `boot` method and under `$this->registerUserNavigation();` add `$this->setupDatabaseConnection();`
-
-You can now paste the function bellow just under the `}` of the boot method:
-
+To automatically log in a user with OAuth, you need to implement the `loginWithOAuth()`
+and `getSocialiteDriverName()` methods in the game class:
 ```php
-protected function setupDatabaseConnection()
+public function loginWithOAuth(): bool
 {
-    $driver = 'mysql'; // Can also be pgsql, sqlsrv
-    $config = config('database.connections.'.$driver);
+    return true;
+}
 
-    /**
-     * To use credentials in the .env file, you can use your plugin's config file.
-     * in plugins/mynewgame/config/azuriom_mynewgame.php, you will see by default only one 'custom_config' key,
-     * but you can add more like: 'CUSTOM_DB_ADDRESS' => env('CUSTOM_DB_ADDRESS', '127.0.0.1')
-     * 
-     * To access it: config('azuriom_mynewgame.CUSTOM_DB_ADDRESS');
-     * 
-     */ 
-    $config['host'] = config('azuriom_mynewgame.CUSTOM_DB_ADDRESS');
-    $config['port'] = config('azuriom_mynewgame.CUSTOM_DB_PORT');
-    $config['username'] = config('azuriom_mynewgame.CUSTOM_DB_USER');
-    $config['password'] = config('azuriom_mynewgame.CUSTOM_DB_PASSWORD');
-    $config['database'] = config('azuriom_mynewgame.CUSTOM_DB_DATABASE');
-
-    config(['database.connections.my-custom-connection' => $config]);
-    DB::purge();
+public function getSocialiteDriverName(): string
+{
+    return 'steam'; // The name of a Laravel Socialite driver
 }
 ```
 
-Now you can create your first model using your game database connection. Go to `plugins/mynewgame/src/Models`, create a
-new file `Character.php` and add the following code:
+## Server Bridge
 
-```php
-<?php
+The server bridge is used to retrieve information from the game server, such as the number of online players,
+and to send commands to the game server.
 
-namespace Azuriom\Plugin\MyNewGame\Models;
+A `ServerBridge` instance always includes an associated `Azuriom\Models\Server` instance,
+which stores the server information and can be accessed via the `$this->server property.
 
-use Illuminate\Database\Eloquent\Model;
+The method `getServerData()` should return an array containing the server information,
+including at least the `players key for the current number of online players and the `max_players` key for the maximum number of players.
 
-class Character extends Model
-{
-    protected $connection = 'my-custom-connection';
-}
-```
+If the server bridge supports sending commands to the game server, the `canExecuteCommand()` method should
+return `true`, and you should implement the `sendCommands()` method should be implemented to send commands to the game server.
 
-Now edit `plugins/mynewgame/src/Controllers/Admin/AdminController.php` and under `use Azuriom\Http\Controllers\Controller;`,
-add `use Azuriom\Plugin\MyNewGame\Models\Character;`
-
-Then replace function `index` by:
-
-```php
-public function index()
-{
-    $characters = Character::paginate();
-    return view('mynewgame::admin.index', ['characters' => $characters]);
-}
-```
-
-Now to show the characters in your admin menu edit `plugins/mynewgame/resources/views/admin/index.blade.php` and replace
-`<p>This is the admin page of your plugin</p>` by:
-
-```php
-@foreach($characters as $character)
-    <p>{{$character->name}}</p> {{-- "name" can be any properties from you database --}}
-@endforeach
-
-{{ $characters->links() }}
-```
-
-
-### Using Rcon/API and/or to execute commands
-
-Go to `plugins/mynewgame/src/Games/MyNewGameServerBridge.php` and have a look at the content.
-
-To have real world exemple you can have a look at :
-- [Dofus Game](https://github.com/Javdu10/Game-Dofus129/blob/main/src/Game/DofusServerBridge.php) which uses an SSL 
-connection to send commands to the game server
-- [Flyff Game](https://github.com/AzuriomCommunity/Game-Flyff/blob/master/src/Games/FlyffServerBridge.php) which uses a
-custom encoding and protection with a password. (It also sends items to database as fallback mechanisms).
-
-Within the `sendCommands()` method, you should handle if a player is connected in-game or not and take the proper actions
-like [here in the flyff game](https://github.com/AzuriomCommunity/Game-Flyff/blob/v0.2.8/src/Games/FlyffServerBridge.php#L76).
+For a real-world example, you can look at the [Flyff game server bridge](https://github.com/AzuriomCommunity/Game-Flyff/blob/master/src/Games/FlyffServerBridge.php)
+or the [Rust Rcon bridge](https://github.com/Azuriom/Azuriom/blob/master/app/Games/Steam/Servers/RustRcon.php).
