@@ -1,6 +1,6 @@
 ---
 title: Documentation
-description: La documentation d'Azuriom contient de nombreuses informations utiles sur Azuriom, que ce soit pour l'installation, l'utilisation ou le développement d'extensions.
+description: Le guide complet pour la mise en place et la personnalisation de votre site web propulsé par Azuriom.
 weight: 0
 layout: single
 ---

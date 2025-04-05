@@ -12,7 +12,7 @@
 
 @include color-mode(light) {
   /* Error */ .chroma .err { color:#a61717;background-color:#e3d2d2 }
-  /* LineHighlight */ .chroma .hl { background-color:#e5e5e5 }
+  /* LineHighlight */ .chroma .hl { background-color: #dbe7ff }
   /* LineNumbersTable */ .chroma .lnt { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f }
   /* LineNumbers */ .chroma .ln { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f }
   /* KeywordType */ .chroma .kt { color: #4d609a }
@@ -73,7 +73,7 @@
 
 @include color-mode(dark) {
   /* Error */ .chroma .err { color:#f85149 }
-  /* LineHighlight */ .chroma .hl { background-color: #111315 }
+  /* LineHighlight */ .chroma .hl { background-color: #14263f }
   /* LineNumbersTable */ .chroma .lnt { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#737679 }
   /* LineNumbers */ .chroma .ln { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681 }
   /* Keyword */ .chroma .k { color:#ff7b72 }

@@ -76,6 +76,10 @@ Un plugin doit avoir un identifiant unique qui ne contient que des chiffres, des
 L'identifiant est utilisé pour identifier le plugin dans le système et doit correspondre au nom du dossier du plugin.
 Par exemple, un plugin nommé `Hello World` pourrait avoir l'identifiant `hello-world`.
 
+{{< info >}}
+Le dossier dans lequel le plugin est installé doit être nommé avec l'identifiant du plugin.
+{{< /info >}}
+
 #### Dépendances
 
 Si votre plugin dépend d'autres plugins, indiquez leurs identifiants dans la section `dependencies` du fichier `plugin.json`.

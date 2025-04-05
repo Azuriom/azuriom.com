@@ -58,7 +58,7 @@ assurez-vous également de transférer les fichiers cachés tels que `.htaccess`
 Avec WinSCP, cela peut se faire en activant l'option « Afficher les fichiers cachés » dans les paramètres.
 {{< /info >}}
 
-### Permissions
+### Permissions des Fichiers
 
 Une fois les fichiers transférés, vous devez définir les permissions en lecture/écriture sur les fichiers d'Azuriom.
 

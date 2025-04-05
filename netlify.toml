@@ -3,7 +3,7 @@ command = "hugo --gc"
 publish = "public"
 
 [build.environment]
-HUGO_VERSION = "0.121.1"
+HUGO_VERSION = "0.143.1"
 HUGO_UGLYURLS = "true"
 
 [context.deploy-preview]
@@ -73,6 +73,11 @@ to = "/en/docs/:splat"
 status = 302
 
 [[redirects]]
+from = "/lt/docs/*"
+to = "/en/docs/:splat"
+status = 302
+
+[[redirects]]
 from = "/cs/docs/*"
 to = "/en/docs/:splat"
 status = 302
@@ -126,6 +131,11 @@ status = 404
 [[redirects]]
 from = "/tr/*"
 to = "/tr/404.html"
+status = 404
+
+[[redirects]]
+from = "/lt/*"
+to = "/lt/404.html"
 status = 404
 
 [[redirects]]
@@ -261,6 +271,12 @@ status = 302
 from = "/*"
 to = "/tr/:splat"
 conditions = { Language = ["tr"] }
+status = 302
+
+[[redirects]]
+from = "/*"
+to = "/lt/:splat"
+conditions = { Language = ["lt"] }
 status = 302
 
 [[redirects]]

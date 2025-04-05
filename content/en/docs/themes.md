@@ -65,6 +65,11 @@ A theme must have a unique id that contains only numbers, lowercase letters, and
 The id is used to identify the theme within the system and must match the name of the theme's folder.
 For example, a theme named `Hello World` might have the id `hello-world`.
 
+{{< info >}}
+The theme must be placed in a folder with the same name as the **theme ID**, located inside the `resources/themes` directory.
+{{< /info >}}
+
+
 ## Views
 
 Azuriom is based on [Laravel](https://laravel.com) and uses the Blade template engine to create views.
@@ -97,6 +102,7 @@ The default primary color of Bootstrap is blue (`#0d6efd`),
 but Azuriom provides an easy way to change it by adding the following line in the `<head>` section of the layout
 (after the Bootstrap CSS file), where `$color` is the hexadecimal color value:
 ```html
+<link href="{{ asset('css/base.css') }}" rel="stylesheet">
 @include('elements.theme-color', ['color' => $color])
 ```
 

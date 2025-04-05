@@ -77,7 +77,7 @@ Cette limite peut être augmentée dans le fichier `php.ini`, mais il est fortem
 déconseillé d'upload des images lourdes. Il est recommandé de redimensionner l'image
 avant de l'uploader afin d'évier les problèmes de performance.
 
-## Problèmes avec AzLink et les paiements
+## Problèmes avec AzLink ou les Paiements
 
 Cloudflare peut parfois empêcher AzLink ou certains systèmes de paiement de fonctionner correctement.  
 Pour résoudre ce problème, désactivez Cloudflare sur l'API en vous connectant au tableau de bord Cloudflare, en allant dans "Règles" → "Règles de Configuration",

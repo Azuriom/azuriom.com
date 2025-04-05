@@ -75,7 +75,7 @@ Although this limit can be increased in the `php.ini` file, uploading large imag
 
 Instead, it is recommended that you resize the image before uploading to avoid performance issues.
 
-## AzLink and payments issues
+## AzLink or Payments Issues
 
 Cloudflare can prevent AzLink or some payment gateways from working
 correctly.

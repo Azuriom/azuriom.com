@@ -74,6 +74,10 @@ A plugin must have a unique id consisting only of numbers, lowercase letters, an
 This id is used to identify the plugin within the system and must match the plugin’s folder name.
 For example, a plugin named `Hello World` might have the id `hello-world`.
 
+{{< info >}}
+The plugin must be placed in a folder with the same name as the plugin ID, located inside the `plugins` directory.
+{{< /info >}}
+
 #### Dependencies
 
 If your plugin depends on other plugins, list their ids in the `dependencies` section of the `plugin.json` file.

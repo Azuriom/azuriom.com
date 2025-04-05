@@ -48,7 +48,7 @@ hidden files like `.htaccess`. If you are using WinSCP, this can be done by enab
 the option "Show hidden files" in the settings.
 {{< /info >}}
 
-### Permissions
+### Files Permissions
 
 Once the files are uploaded, you will need to set the read/write permissions on the Azuriom files.
 

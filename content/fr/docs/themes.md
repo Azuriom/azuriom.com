@@ -65,6 +65,10 @@ Un thème doit avoir un identifiant unique qui ne contient que des chiffres, des
 L'identifiant est utilisé pour identifier le thème dans le système et doit correspondre au nom du dossier du thème.
 Par exemple, un thème nommé `Hello World` pourrait avoir l'identifiant `hello-world`.
 
+{{< info >}}
+Le dossier dans lequel le thème est installé doit être nommé avec l'identifiant du thème.
+{{< /info >}}
+
 ## Vues
 
 Azuriom est basé sur [Laravel](https://laravel.com) et utilise le moteur de templates Blade pour créer les vues.
@@ -99,6 +103,7 @@ mais Azuriom propose une solution simple pour la modifier,
 en ajoutant simplement la ligne suivante dans la section `<head>` du layout (après le fichier CSS de Bootstrap),
 où `$color` représente la valeur hexadécimale de la couleur :
 ```html
+<link href="{{ asset('css/base.css') }}" rel="stylesheet">
 @include('elements.theme-color', ['color' => $color])
 ```
 
