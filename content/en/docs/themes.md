@@ -66,7 +66,7 @@ The id is used to identify the theme within the system and must match the name o
 For example, a theme named `Hello World` might have the id `hello-world`.
 
 {{< info >}}
-The theme must be placed in a folder with the same name as the **theme ID**, located inside the `resources/themes` directory.
+The theme must be placed in a folder with the same name as the theme ID, located inside the `resources/themes` directory.
 {{< /info >}}
 
 
