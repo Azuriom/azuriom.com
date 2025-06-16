@@ -61,6 +61,24 @@ public function getSocialiteDriverName(): string
 }
 ```
 
+## Activation d'un Jeu
+
+Dans le service provider de votre plugin, enregistrez votre classe de jeu
+(qui doit étendre `Azuriom\Games\Game`) dans la méthode `register()` :
+```php
+public function register(): void
+{
+    GameServiceProvider::registerGames(['my_game' => MyGame::class]);
+}
+```
+
+Une fois le plugin de jeu activé depuis le panel admin, celui-ci peut être défini
+comme le jeu actif en modifiant la ligne `AZURIOM_GAME` dans le fichier `.env` à la racine du site :
+```env
+AZURIOM_GAME=my_game
+```
+Une fois fait, supprimez le fichier `bootstrap/cache/config.php`, s'il existe.
+
 ## Connexion au Serveur
 
 La connexion au serveur est utilisée pour récupérer les informations du serveur de jeu,

@@ -39,7 +39,7 @@ home:
 
   games:
     title: "Des Jeux. Et pas qu'un peu"
-    description1: "Créez un site web pour votre serveur SkyBlock sur Minecraft. Vous avez un DarkRP Garry's Mod ? Ça marche, Azuriom peut faire ça, et avec connexion Steam. Vous préférez Los Santos ? Azuriom supporte aussi FiveM!"
+    description1: "Envie d’un CMS Minecraft pour votre SkyBlock ? Azuriom supporte toutes les versions. Un DarkRP sur Garry’s Mod ? Azuriom fait ça aussi, et avec connexion Steam. Et si vous préférez Los Santos, FiveM est aussi pris en charge !"
     description2: "Même si votre jeu n'est pas pris en charge nativement, une extension suffit pour l'ajouter. Un exemple parfait est le jeu [Flyff](https://universe.flyff.com)."
 
   community:
@@ -50,7 +50,7 @@ home:
   trusted:
     title: "Aimé. Par 1800 serveurs dans le monde entier"
     description1: "Développé en Suisse, Azuriom est utilisé par plus d'un millier de serveurs dans le monde, et est traduits dans [plus de 15 langues](https://translate.azuriom.com)."
-    description2: "Conçu avec [Laravel](https://laravel.com/), le framework PHP le plus populaire, vous pouvez ainsi avoir un site sécurisé et fiable. Profitez d'un site qui vous correspond, vous le méritez!"
+    description2: "Conçu avec [Laravel](https://laravel.com/), le framework PHP le plus populaire, vous pouvez ainsi avoir un site sécurisé et fiable. Profitez d'un site qui vous correspond, vous le méritez !"
 
 download:
   title: "Télécharger Azuriom"

@@ -94,9 +94,19 @@ n'est pas accessible directement via l'IP du serveur (ex : http://0.0.0.0).
 Cette dernière étape est optionnelle, mais certaines fonctionnalités nécessitent les tâches CRON pour certaines opérations,
 comme le renouvellement automatique des abonnements dans la boutique.
 
+#### Hébergement Web
+
 Sur un hébergement mutualisé, vous pouvez généralement configurer les tâches CRON directement via le panel de l'hébergeur,
-dans la section « Tâches CRON » ou « Tâches planifiées »,
-en ajoutant une nouvelle tâche avec la commande `php artisan schedule:run`.
+dans la section « Tâches CRON » ou « Tâches planifiées ».
+
+Ajoutez une tâche executée **toutes les minutes** avec la commande `cd /azuriom && php artisan schedule:run` (**remplacez `/azuriom`
+par l'emplacement de votre site**, par exemple `/public_html` sur cPanel).
+
+Sur certains panels, il est nécessaire de sélectionner un fichier PHP avec un argument, dans ce cas, choisissez :
+* Script PHP : `/azuriom/artisan` (**remplacez `/azuriom` par l'emplacement de votre site**, comme `/httpdocs` sur Plesk, mais en gardant le `/artisan`)
+* Argument : `schedule:run`
+
+#### VPS ou Serveur Dédié
 
 Sur un VPS ou un serveur dédié, vous pouvez ajouter une nouvelle tâche CRON avec la commande `crontab -e`
 et en ajoutant la ligne suivante (**remplacez `/var/www/azuriom` par l'emplacement de votre site**) :

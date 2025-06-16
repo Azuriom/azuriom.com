@@ -59,6 +59,24 @@ public function getSocialiteDriverName(): string
 }
 ```
 
+## Enabling a Game
+
+In your plugin's service provider, register your game class
+(which must extend `Azuriom\Games\Game`) in the `register()` method:
+```php
+public function register(): void
+{
+    GameServiceProvider::registerGames(['my_game' => MyGame::class]);
+}
+```
+
+Once the game plugin has been enabled from the admin panel, it can be defined
+as the active game by modifying the `AZURIOM_GAME` line in the `.env` file at the site root:
+```env
+AZURIOM_GAME=my_game
+```
+Once done, delete the `bootstrap/cache/config.php` file, if it exists.
+
 ## Server Bridge
 
 The server bridge is used to retrieve information from the game server, such as the number of online players,

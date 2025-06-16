@@ -40,7 +40,7 @@ home:
 
   games:
     title: "One Project, Many Games"
-    description1: "Create a website for your SkyBlock server on Minecraft. Have a DarkRP on Garry's Mod? Sure, Azuriom can do that too, and with Steam login. Prefer Los Santos? No problem, Azuriom also supports FiveM!"
+    description1: "Want a Minecraft CMS for your SkyBlock? Azuriom supports all versions. A DarkRP on Garry's Mod? Azuriom can do that too, with Steam connection. And if you prefer Los Santos, FiveM is also supported!"
     description2: "Even if your game is not supported, you can add support for it with an extension. A perfect example of this is the game [Flyff](https://universe.flyff.com)."
 
   community:

@@ -80,8 +80,19 @@ can't be accessed directly from the IP of the server (ex: http://0.0.0.0).
 
 This last step is optional, but some features require CRON tasks to schedule tasks, such as automatic subscription renewals in the store.
 
-On a shared web hosting, you can usually set up CRON tasks directly in the hosting panel, look for the "CRON Tasks" or "Scheduled Tasks" section,
-and add a new task with the `php artisan schedule:run` command.
+#### Web Hosting
+
+On shared hosting, you can usually configure CRON tasks directly through your hosting provider's control panel,
+in the “CRON tasks” or “Scheduled tasks” section.
+
+Add a task running **every minute** with the command `cd /azuriom && php artisan schedule:run` (**replace `/azuriom`
+with the location of your site**, e.g. `/public_html` on cPanel).
+
+On some panels, it is necessary to select a PHP script with an argument, in this case choose:
+* Script path: `/azuriom/artisan` (**replace `/azuriom` with the location of your site**, e.g. `/httpdocs` on Plesk, but keep the `/artisan`)
+* Argument: `schedule:run`
+
+#### VPS or Dedicated Server
 
 On a VPS or a dedicated server, you can add a new CRON task by editing the crontab with the command `crontab -e` and adding the following line
 (**replace `/var/www/azuriom` with the location of the site**):
