@@ -7,7 +7,7 @@ layout: single
 
 # Introduction
 
-Azuriom is a complete free and open-source web solution for game servers.
+Azuriom is a complete free and open source web solution for game servers.
 Extensions are at the heart of Azuriom, with dozens of ready-to-use extensions available on the market, so you can add new features to your site and customize it to suit your needs. 
 For even more customization, you can create your own extensions.
 

@@ -80,11 +80,11 @@ Instead, it is recommended that you resize the image before uploading to avoid p
 Cloudflare can prevent AzLink or some payment gateways from working
 correctly.
 
-To fix this issue, you can disable Cloudflare on the API, by going on the Cloudflare Dashboard,
-in "Rules", "Page Rules", add a rule with "Custom filter expression" and select 
-"URI Path starts with `/api/`" and the following actions:
-* Security Level: Low
-* Browser Integrity Check: Disabled
+To fix this issue, you can configure Cloudflare on the API, by going on the Cloudflare Dashboard,
+in "Rules", create a "Configuration Rule" with "Custom filter expression" and select 
+"URI Path starts with `/api/`" and the following settings:
+* I'm Under Attack: add and set to off
+* Browser Integrity Check: add and set to off
 
 If the problem persists, review the firewall rules as well.
 

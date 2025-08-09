@@ -26,6 +26,16 @@ Le code `AZURIOM` vous permet d'avoir une **réduction de 10% sur vos services**
 _(hors domaines & TeamSpeak)_.
 {{< /info >}}
 
+{{< info >}}
+Pour une utilisation en local, une image [Docker](https://www.docker.com/) prête à l'emploi est disponible,
+avec tous les prérequis installés.
+Pour l'utiliser, téléchargez Azuriom depuis les [releases GitHub](https://github.com/Azuriom/Azuriom/releases) et exécutez la commande suivante
+dans le dossier d'Azuriom :
+```sh
+docker-compose up -d
+```
+{{< /info >}}
+
 ## Démarrer
 
 Si vous gérez votre propre serveur (VPS, serveur dédié, etc.), vous devrez installer vous-même les prérequis.

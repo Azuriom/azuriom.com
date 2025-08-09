@@ -80,10 +80,10 @@ avant de l'uploader afin d'évier les problèmes de performance.
 ## Problèmes avec AzLink ou les Paiements
 
 Cloudflare peut parfois empêcher AzLink ou certains systèmes de paiement de fonctionner correctement.  
-Pour résoudre ce problème, désactivez Cloudflare sur l'API en vous connectant au tableau de bord Cloudflare, en allant dans "Règles" → "Règles de Configuration",
-en ajoutant une règle avec une "Expression personnalisée" avec "Chemin URI commence par `/api/`" et les actions suivantes :
-* Niveau de sécurité : Faible
-* Contrôle de l'intégrité du navigateur : Désactivé
+Pour résoudre ce problème, configurez Cloudflare sur l'API en vous connectant au tableau de bord Cloudflare, en allant dans "Règles",
+créez une "Règles de configuration" avec une "Expression de filtre personnalisée" avec "Chemin URI commence par `/api/`" et les paramètres suivants :
+* I'm Under Attack : ajouter et désactiver
+* Contrôle d'intégrité du navigateur : ajouter et désactiver
 
 Si le problème persiste, vérifiez également les règles du pare-feu.
 

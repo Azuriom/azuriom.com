@@ -188,7 +188,7 @@ Une traduction peut ensuite être affichée dans une vue en utilisant la fonctio
 ```
 
 Pour traduire un booléen, vous pouvez utiliser la fonction `trans_bool`. Par exemple, en français "Oui" ou "Non" sera renvoyé : `{{ trans_bool($boolean) }}`.
-Une date peut être formatée avec les fonctions `format_date` ou `format_date_compatct`, qui renvoient la date formatée selon la langue actuelle : `format_date($date)`.
+Une date peut être formatée avec les fonctions `format_date` ou `format_date_compact`, qui renvoient la date formatée selon la langue actuelle : `format_date($date)`.
 
 Pour plus d'informations sur les traductions, consultez la [documentation de Laravel](https://laravel.com/docs/localization).
 

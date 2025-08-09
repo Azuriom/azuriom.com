@@ -5,13 +5,13 @@ theme:
   auto: "Auto"
 
 nav:
-  download: "Télécharger"
+  download: "Téléchargement"
   extensions: "Extensions"
   docs: "Documentation"
   demo: "Démo"
   demoMC: "Démo Minecraft"
   demoSteam: "Démo Steam"
-  login: Connexion
+  login: "Connexion"
 
 footer:
   copyright: "Copyright &copy; 2019-{{ .year }} Azuriom - Tous droits réservés. Fait avec&nbsp;{{ .love }} par Azuriom."
@@ -21,7 +21,7 @@ footer:
 home:
   header:
     title: "Améliorez votre serveur de jeu avec une solution web complète."
-    subtitle: "Azuriom est une solution web complète **gratuite** et **open-source** pour les serveurs de jeux. Profitez de dizaines d'extensions pour des possibilités sans limites."
+    subtitle: "Azuriom est une solution web complète **gratuite** et **open source** pour les serveurs de jeux. Profitez de dizaines d'extensions pour des possibilités sans limites."
 
   learn: "En savoir plus"
 

@@ -17,6 +17,16 @@ To run Azuriom, you need a web server with the following requirements:
 
 While not strictly required, a **MySQL/MariaDB** or **PostgreSQL** database is recommended.
 
+{{< info >}}
+For local use, a ready-to-use [Docker](https://www.docker.com/) image is available
+with all prerequisites installed.
+To do this, download Azuriom from the [GitHub releases](https://github.com/Azuriom/Azuriom/releases) and run the following command
+in the Azuriom folder:
+```sh
+docker-compose up -d
+```
+{{< /info >}}
+
 ## Getting Started
 
 If you manage your own server (VPS, dedicated server, etc.), you will need to install the requirements yourself.

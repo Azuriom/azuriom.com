@@ -189,7 +189,7 @@ A translation can then be displayed in a view using the trans function with the 
 ```
 
 To translate a boolean, you can use the `trans_bool` function, which returns "Yes" or "No" in English: `{{ trans_bool($boolean) }}`.
-A date can be formatted with the `format_date` or `format_date_compatct` functions, which return the date formatted with the current language: `format_date($date)`.
+A date can be formatted with the `format_date` or `format_date_compact` functions, which return the date formatted with the current language: `format_date($date)`.
 
 For more information on translations, see the [Laravel documentation](https://laravel.com/docs/localization).
 

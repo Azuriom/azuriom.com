@@ -15,6 +15,11 @@ This can be done by calling the `/verify` endpoint or using the `verify` method.
 
 ## Java
 
+{{< info >}}
+AzAuth Java is a Java library and not a Minecraft plugin, and can be used for example in a Minecraft launcher,
+to add Azuriom authentication to it.
+{{< /info >}}
+
 AzAuth Java sources are available on [GitHub](https://github.com/Azuriom/AzAuth) and the jar file can be downloaded from [GitHub releases](https://github.com/Azuriom/AzAuth/releases).
 
 The recommended way to use AzAuth in a project is to use a dependency manager, like Maven or Gradle.
@@ -29,7 +34,7 @@ repositories {
 } 
 
 dependencies {
-    implementation 'com.azuriom:azauth:1.0.0'
+    implementation 'com.azuriom:azauth:1.1.0'
 }
 ```
 
@@ -40,7 +45,7 @@ On Maven, add these lines to the `pom.xml`:
     <dependency>
         <groupId>com.azuriom</groupId>
         <artifactId>azauth</artifactId>
-        <version>1.0.0</version>
+        <version>1.1.0</version>
     </dependency>
 </dependencies>
 ```

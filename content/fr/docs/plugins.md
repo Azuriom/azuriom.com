@@ -549,7 +549,7 @@ avec l'identifiant du plugin comme espace de noms de traduction :
 ```
 
 Pour traduire un booléen, vous pouvez utiliser la fonction `trans_bool`. Par exemple, en français "Oui" ou "Non" sera renvoyé : `{{ trans_bool($boolean) }}`.
-Une date peut être formatée avec les fonctions `format_date` ou `format_date_compatct`, qui renvoient la date formatée selon la langue actuelle : `format_date($date)`.
+Une date peut être formatée avec les fonctions `format_date` ou `format_date_compact`, qui renvoient la date formatée selon la langue actuelle : `format_date($date)`.
 
 ## Permissions
 

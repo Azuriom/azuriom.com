@@ -1,4 +1,4 @@
-headline: "Azuriom is a complete open-source web solution for game servers. Enjoy dozens of extensions for endless possibilities. Already trusted by over 1,800 servers, totaling more than two million users."
+headline: "Azuriom is a complete open source web solution for game servers. Enjoy dozens of extensions for endless possibilities. Already trusted by over 1,800 servers, totaling more than two million users."
 
 theme:
   light: "Light"
@@ -12,7 +12,7 @@ nav:
   demo: "Demo"
   demoMC: "Minecraft Demo"
   demoSteam: "Steam Demo"
-  login: Login
+  login: "Login"
 
 footer:
   copyright: "Copyright &copy; 2019-{{ .year }} Azuriom - All rights reserved. Made with&nbsp;{{ .love }} by Azuriom."
@@ -22,7 +22,7 @@ footer:
 home:
   header:
     title: "Enhance your game server with a complete web solution."
-    subtitle: "Azuriom is a complete **free** and **open-source** web solution for game servers. Enjoy dozens of extensions for endless possibilities."
+    subtitle: "Azuriom is a complete **free** and **open source** web solution for game servers. Enjoy dozens of extensions for endless possibilities."
 
   learn: "Learn more"
 
@@ -40,13 +40,13 @@ home:
 
   games:
     title: "One Project, Many Games"
-    description1: "Want a Minecraft CMS for your SkyBlock? Azuriom supports all versions. A DarkRP on Garry's Mod? Azuriom can do that too, with Steam connection. And if you prefer Los Santos, FiveM is also supported!"
+    description1: "Want a Minecraft CMS for your SkyBlock? Azuriom supports all versions. A DarkRP on Garry's Mod? Azuriom can do that too, with Steam login. And if you prefer Los Santos, FiveM is also supported!"
     description2: "Even if your game is not supported, you can add support for it with an extension. A perfect example of this is the game [Flyff](https://universe.flyff.com)."
 
   community:
     title: "Built by the community. For the Community"
     description1: "Azuriom is an open source project. You don't have to worry about expensive shop fees or bad hosting. You host your site where you want, and even customize it as needed."
-    description2: "Need help? No problem, we have an active community of thousands of members on [Discord](/discord). And Azuriom is open-source, so anyone can contribute to the project on [GitHub](https://github.com/Azuriom/Azuriom)."
+    description2: "Need help? No problem, we have an active community of thousands of members on [Discord](/discord). And Azuriom is open source, so anyone can contribute to the project on [GitHub](https://github.com/Azuriom/Azuriom)."
 
   trusted:
     title: "Trusted by over a thousand servers. Loved all around the world"
