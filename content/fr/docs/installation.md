@@ -59,7 +59,7 @@ Une fois l'archive téléchargée, vous pouvez la transférer sur votre serveur 
 Sur un hébergement mutualisé, la racine du site est généralement le dossier `public_html` ou `httpdocs`.
 En cas de doute, contactez le support de votre hébergeur.
 
-Sur un VPS ou un serveur dédié, la racine du site est généralement `/var/www/azuriom`,
+Sur un VPS ou un serveur dédié, la racine du site est généralement `/var/www/html`,
 et peut être modifiée dans la configuration du serveur web (Apache, Nginx, etc).
 
 {{< info >}}

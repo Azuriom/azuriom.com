@@ -26,6 +26,10 @@ from = "/discord"
 to = "https://discord.gg/VKpSJrV"
 
 [[redirects]]
+from = "/docs/discord-link"
+to = "https://youtu.be/S-azQ8CxNiQ"
+
+[[redirects]]
 from = "/market/*"
 to = "https://market.azuriom.com/:splat"
 

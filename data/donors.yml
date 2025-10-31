@@ -1,3 +1,6 @@
+- name: Master
+  url: https://knightworld.fr/
+
 - name: DoctorSneepy
   url: https://timeywimey.fr/
 
@@ -12,6 +15,5 @@
 - name: micro_maniaque
 
 - name: Skillz
-  url: https://www.evolved-network.com/
 
 - name: Akuyuma

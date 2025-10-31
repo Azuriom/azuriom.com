@@ -49,7 +49,7 @@ Once the archive is downloaded, you can upload it to your server and extract it 
 On a shared web hosting, the website root is usually the `public_html` or `httpdocs` folder.
 If you are unsure, you can ask your hosting provider.
 
-On a VPS or a dedicated server, the root of the website is usually `/var/www/azuriom`,
+On a VPS or a dedicated server, the root of the website is usually `/var/www/html`,
 but can be changed in the web server configuration.
 
 {{< info >}}
