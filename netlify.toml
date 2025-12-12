@@ -3,7 +3,7 @@ command = "hugo --gc"
 publish = "public"
 
 [build.environment]
-HUGO_VERSION = "0.145.0"
+HUGO_VERSION = "0.152.2"
 HUGO_UGLYURLS = "true"
 
 [context.deploy-preview]
@@ -46,6 +46,11 @@ from = "/install/assets/v0.2.4/img/:image"
 to = "https://cdn.jsdelivr.net/gh/Azuriom/Azuriom@1.0.1/public/assets/img/games/:image"
 
 # Redirect untranslated documentations
+[[redirects]]
+from = "/es/docs/*"
+to = "/en/docs/:splat"
+status = 302
+
 [[redirects]]
 from = "/de/docs/*"
 to = "/en/docs/:splat"
@@ -108,6 +113,11 @@ to = "/fr/404.html"
 status = 404
 
 [[redirects]]
+from = "/es/*"
+to = "/es/404.html"
+status = 404
+
+[[redirects]]
 from = "/de/*"
 to = "/de/404.html"
 status = 404
@@ -162,6 +172,13 @@ status = 404
 from = "/"
 to = "/fr"
 conditions = { Language = ["fr"] }
+force = true
+status = 302
+
+[[redirects]]
+from = "/"
+to = "/es"
+conditions = { Language = ["es"] }
 force = true
 status = 302
 
@@ -239,6 +256,12 @@ status = 302
 from = "/*"
 to = "/fr/:splat"
 conditions = { Language = ["fr"] }
+status = 302
+
+[[redirects]]
+from = "/*"
+to = "/es/:splat"
+conditions = { Language = ["es"] }
 status = 302
 
 [[redirects]]

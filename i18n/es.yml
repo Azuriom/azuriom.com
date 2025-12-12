@@ -1,0 +1,91 @@
+headline: "Azuriom es una solución de código abierto para servidores de juegos. Disfruta de docenas de extensiones con posibilidades infinitas. Confiado por más de 1,800 servidores y más de dos millones de usuarios."
+
+theme:
+  light: "Claro"
+  dark: "Oscuro"
+  auto: "Automático"
+
+nav:
+  download: "Descargar"
+  extensions: "Extensiones"
+  docs: "Documentación"
+  demo: "Demostración"
+  demoMC: "Demostración de Minecraft"
+  demoSteam: "Demostración de Steam"
+  login: Iniciar sesión
+
+footer:
+  copyright: "Copyright &copy; 2019-{{ .year }} Azuriom - Todos los derechos reservados. Hecho con &nbsp;{{ .love }} por Azuriom."
+  partner: "Nuestros socios"
+  links: "Enlaces"
+
+home:
+  header:
+    title: "Mejora tu servidor de juegos con una solución web completa."
+    subtitle: "Azuriom es una solución web completa, **gratis** y de **código abierto** para servidores de juegos. Disfruta de docenas de extensiones con posibilidades infinitas."
+
+  learn: "Aprender más"
+
+  complete:
+    title: "Posibilidades infinitas, instala extensiones con un simple clic"
+    description1: "Docenas de extensiones que pueden ser instaladas desde el panel de administración. ¡Monetiza tu servidor con nuestra tienda, construye una comunidad con nuestro foro o mejora tu sitio con uno de nuestros muchos temas!"
+    description2: "¿Necesitas más? Sin problemas, gracias a [Laravel](https://laravel.com) crear temas y extensiones es muy fácil."
+
+  extensions:
+    shop: "Monetiza tu servidor y vende artículos a tus jugadores con hasta 15 métodos de pago diferentes."
+    vote: "Invita a tus jugadores a votar por tu servidor con recompensas automáticas para agrandar tu comunidad."
+    forum: "Construye una comunidad para tus jugadores con un asombroso foro."
+    more: "Existen docenas de extensiones en el mercado. Seguro encontrarás lo que estás buscando."
+    themes: "Nadie quiere un diseño aburrido para su sitio web. Escoge uno de nuestros muchos temas para destacar tu sitio web."
+
+  games:
+    title: "Un proyecto, Muchos juegos"
+    description1: "Crea un sitio web para tu servidor de SkyBlock en Minecraft. ¿Tienes un DarkRP en Garry's Mod? Claro, Azuriom también puede hacerlo, y con acceso a Steam. ¿Preferimos Los Santos? ¡No hay problema, Azuriom también soporta FiveM!"
+    description2: "Incluso si el juego no está soportado, puedes agregarlo con una extensión. Un ejemplo perfecto es el juego de [Flyff](https://universe.flyff.com)."
+
+  community:
+    title: "Creado por la comunidad. Para la comunidad"
+    description1: "Azuriom es un proyecto de código abierto. No tienes que preocuparte por cuotas de tiendas de terceros o mal servicio de hosting. Tú puedes hospedar tu sitio donde tú quieras y configurarlo a tus necesidades."
+    description2: "¿Necesitas ayuda? No te preocupes, tenemos una comunidad activa de cientos de miembros en [Discord](/discord). Además, Azuriom es un proyecto de código abierto donde cualquiera puede contribuir al mismo en [GitHub](https://github.com/Azuriom/Azuriom)."
+
+  trusted:
+    title: "Con la confianza de miles de servidores alrededor del mundo"
+    description1: "Desarrollado en Suiza. Azuriom es confiado por miles de servidores alrededor del mundo y traducido en [más de 15 idiomas](https://translate.azuriom.com)."
+    description2: "Construido en [Laravel](https://laravel.com/). La framework más popular de PHP, así puedes disfrutar de un ambiente seguro y confiable. ¡Te lo mereces!"
+
+download:
+  title: "Descarga Azuriom"
+  docs: "¿Listo para empezar? Genial, asegúrate de revisar la [documentación]({{ .docs }}) para una instalación sin problemas."
+  community: 'Únete a la comunidad en [Discord]({{ .discord }}) para recibir las últimas novedades y obtener soporte técnico.'
+  support: "¿Potenciado por Azuriom? Para ayudarnos a seguir mejorando Azuriom, hay varias maneras que puedes [apoyarnos]({{ .support }})."
+  cloud: "¿No quieres instalar Azuriom por ti mismo? Prueba {{ .cloud }} gratis para alojar fácilmente tu sitio web."
+
+azlink:
+  description1: "La mejor manera de conectar tu servidor de juegos a tu sitio web Azuriom."
+  description2: "Disfrute de la simplicidad y seguridad en una de las muchas plataformas soportadas."
+
+support:
+  title: "Apóyanos"
+  subtitle1: "Usted puede marcar la diferencia."
+  subtitle2: "Contribuir al crecimiento de Azuriom."
+  description1: "Nos gusta sinceramente desarrollar Azuriom, y esperamos que disfrutes usándolo. Si lo haces y quieres que el proyecto siga creciendo, hay varias maneras en las que puedes apoyarnos."
+
+  sponsor:
+    title: "Patrocinador"
+    info: "Aunque Azuriom es libre, el mantenimiento no lo es, el alojamiento de servidores, nombres de dominio y otros servicios cuestan dinero. Puedes apoyar el proyecto en GitHub para obtener **beneficios únicos**."
+    button: "Patrocinador en GitHub"
+
+  star:
+    title: "Destacar el proyecto"
+    info: "¿No puedes o no quieres patrocinarnos? No hay problema, puedes apoyarnos marcando el proyecto en GitHub. Es **completamente gratis** y solo tarda unos segundos, pero nos ayuda mucho."
+    button: "Destacar el proyecto"
+
+docs:
+  index: "Inicio"
+
+errors:
+  title: "Error"
+
+  notFound:
+    title: "No encontrado"
+    info: "La página que está buscando no se ha podido encontrar."

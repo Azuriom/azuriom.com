@@ -22,6 +22,11 @@ languages:
     params:
       code: fr_FR
       twitter: AzuriomFR
+  es:
+    languageName: Español
+    contentDir: content/es
+    params:
+      code: es_ES
   de:
     languageName: Deutsch
     contentDir: content/de
