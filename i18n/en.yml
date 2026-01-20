@@ -42,6 +42,7 @@ home:
     title: "One Project, Many Games"
     description1: "Want a Minecraft CMS for your SkyBlock? Azuriom supports all versions. A DarkRP on Garry's Mod? Azuriom can do that too, with Steam login. And if you prefer Los Santos, FiveM is also supported!"
     description2: "Even if your game is not supported, you can add support for it with an extension. A perfect example of this is the game [Flyff](https://universe.flyff.com)."
+    hytale: "**NEW**: [Hytale](https://hytale.com/) is now fully supported on Azuriom!"
 
   community:
     title: "Built by the community. For the Community"

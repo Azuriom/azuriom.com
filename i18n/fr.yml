@@ -41,6 +41,7 @@ home:
     title: "Des Jeux. Et pas qu'un peu"
     description1: "Envie d’un CMS Minecraft pour votre SkyBlock ? Azuriom supporte toutes les versions. Un DarkRP sur Garry’s Mod ? Azuriom fait ça aussi, et avec connexion Steam. Et si vous préférez Los Santos, FiveM est aussi pris en charge !"
     description2: "Même si votre jeu n'est pas pris en charge nativement, une extension suffit pour l'ajouter. Un exemple parfait est le jeu [Flyff](https://universe.flyff.com)."
+    hytale: "**NOUVEAUTÉ** : [Hytale](https://hytale.com/) est désormais entièrement pris en charge par Azuriom !"
 
   community:
     title: "Par la communauté. Pour la communauté"

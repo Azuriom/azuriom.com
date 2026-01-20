@@ -10,7 +10,7 @@ weight: 1
 Azuriom is written in PHP, which allows it to run on almost all shared hosting environments. It can also be easily installed on a VPS or dedicated server.
 
 To run Azuriom, you need a web server with the following requirements:
-- PHP 8.2 or higher (PHP 8.3 or 8.4 is recommended)
+- PHP 8.2 or higher (PHP 8.4 or 8.5 is recommended)
 - PHP Extensions: BCMath, Ctype, JSON, Mbstring, OpenSSL, PDO, Tokenizer, XML, XMLWriter, cURL and ZIP
 - Enabled URL Rewrite (for Apache2)
 - Symlink support
@@ -130,7 +130,7 @@ If the PHP version detected by the installer during installation does not match 
 
 ### Debian
 
-For convenience, here is a quick guide to install Nginx, MariaDB and PHP 8.3 on a **Debian** server:
+For convenience, here is a quick guide to install Nginx, MariaDB and PHP 8.4 on a **Debian** server:
 1. Update the package list and upgrade the system:
    ```sh
    apt update -y && apt upgrade -y
@@ -139,12 +139,12 @@ For convenience, here is a quick guide to install Nginx, MariaDB and PHP 8.3 on 
    ```sh
    apt install -y nginx mariadb-server zip curl lsb-release apt-transport-https ca-certificates
    ```
-3. Add the PHP repository and install PHP 8.3 with the required extensions:
+3. Add the PHP repository and install PHP 8.4 with the required extensions:
    ```sh
    wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
    echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list
    apt update -y
-   apt install -y php8.3 php8.3-fpm php8.3-mysql php8.3-pgsql php8.3-sqlite3 php8.3-bcmath php8.3-mbstring php8.3-xml php8.3-curl php8.3-zip php8.3-gd
+   apt install -y php8.4 php8.4-fpm php8.4-mysql php8.4-pgsql php8.4-sqlite3 php8.4-bcmath php8.4-mbstring php8.4-xml php8.4-curl php8.4-zip php8.4-gd
    ```
 4. Create a new SQL user and database for Azuriom (**replace `<password>` with a secure password!**):
    ```sh
@@ -199,7 +199,7 @@ service apache2 restart
 The following configuration is an example of a Nginx configuration for Azuriom.
 
 Make sure to replace `example.com` with your domain, `/var/www/azuriom` with the location of the site,
-and `php8.3` with the installed PHP version.
+and `php8.4` with the installed PHP version.
 
 The `root` line must end with `/public` after the site location.
 
@@ -228,7 +228,7 @@ server {
     error_page 404 /index.php;
 
     location ~ \.php$ {
-        fastcgi_pass unix:/var/run/php/php8.3-fpm.sock;
+        fastcgi_pass unix:/var/run/php/php8.4-fpm.sock;
         fastcgi_index index.php;
         fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
         include fastcgi_params;

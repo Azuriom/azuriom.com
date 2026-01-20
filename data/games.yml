@@ -1,11 +1,15 @@
 azlink:
-  - name: AzLink Java
+  - name: AzLink Minecraft
     info: Bukkit/Spigot/Folia, Sponge, BungeeCord, Velocity, Nukkit
     url: https://github.com/Azuriom/AzLink/releases/latest/download/AzLink.jar
 
-  - name: AzLink Java - Legacy
+  - name: AzLink Minecraft - Legacy
     info: Bukkit/Spigot 1.7.10
     url: https://github.com/Azuriom/AzLink/releases/latest/download/AzLink-Legacy.jar
+
+  - name: AzLink Hytale
+    info: Hytale (Early Access)
+    url: https://github.com/Azuriom/AzLink/releases/latest/download/AzLink.jar
 
   - name: AzLink PocketMine-MP
     info: PocketMine-MP v5
@@ -27,22 +31,32 @@ azlink:
     info: Counter-Strike 2
     url: https://github.com/Azuriom/AzLink-CSharp/releases/latest/download/AzLink-CounterStrikeSharp.zip
 
+  - name: AzLink Minecraft - Mod
+    info: FabricMC & NeoForge
+    url: https://github.com/Azuriom/AzLink/actions/workflows/build.yml?query=branch%3Adev%2Fmods
+
 list:
   - name: Minecraft
     img: /assets/games/minecraft.svg
+  - name: Hytale
+    img: /assets/games/hytale.png
   - name: Garry's Mod
     img: /assets/games/gmod.svg
   - name: FiveM
     img: /assets/games/fivem.svg
   - name: Rust
     img: /assets/games/rust.svg
-  - name: 7 Days to Die
-    img: /assets/games/7dtd.svg
   - name: "ARK: Survival Evolved"
     img: /assets/games/ark.svg
+  - name: 7 Days to Die
+    img: /assets/games/7dtd.svg
+    small: true
   - name: "Counter-Strike 2"
     img: /assets/games/cs2.svg
+    small: true
   - name: "Team Fortress 2"
     img: /assets/games/tf2.svg
+    small: true
   - name: "Unturned"
     img: /assets/games/unturned.svg
+    small: true

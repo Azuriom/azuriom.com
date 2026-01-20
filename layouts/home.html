@@ -190,13 +190,17 @@
                 <p class="lead">
                     {{ i18n "home.games.description2" | markdownify }}
                 </p>
+                <p class="lead">
+                    {{ i18n "home.games.hytale" | markdownify }}
+                </p>
             </div>
 
             <div class="col-md-5 align-self-center">
                 <div class="row gy-4 justify-content-around">
                     {{ range .Site.Data.games.list }}
-                    <div class="col-4 text-center py-md-3">
-                        <img src="{{ absURL .img }}" alt="{{ .name }}" title="{{ .name }}" data-bs-toggle="tooltip" class="rounded-1" height="75" width="75">
+                    <div class="{{ if eq .small true }} col-3 {{ else }} col-4 {{ end }} text-center py-md-3">
+                        <img src="{{ absURL .img }}" alt="{{ .name }}" title="{{ .name }}" data-bs-toggle="tooltip"
+                             class="rounded-1 img-fluid" {{ if eq .small true }} width="65" {{ else }} width="90" {{ end }}>
                     </div>
                     {{ end }}
                 </div>
