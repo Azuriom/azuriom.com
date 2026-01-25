@@ -6,19 +6,17 @@ title: Auth API
 
 AzAuth is an API for authenticating users with Azuriom. It can be used in Java, JavaScript, or any other language that can make HTTP requests.
 
-Before using AzAuth, please make sure it is enabled in the admin dashboard, in Settings -> Authentication.
+Before using AzAuth, please make sure it is enabled in the admin dashboard, in Settings → Authentication.
 
-{{< warn >}}
-Regardless of how you use the API on the client side, you must verify the access token returned by the client on the server side.
-This can be done by calling the `/verify` endpoint or using the `verify` method.
-{{< /warn >}}
+> [!WARNING]
+> Regardless of how you use the API on the client side, you must verify the access token returned by the client on the server side. 
+> This can be done by calling the `/verify` endpoint or using the `verify` method.
 
 ## Java
 
-{{< info >}}
-AzAuth Java is a Java library and not a Minecraft plugin, and can be used for example in a Minecraft launcher,
+> [!TIP]
+> AzAuth Java is a Java library and not a Minecraft plugin, and can be used for example in a Minecraft launcher,
 to add Azuriom authentication to it.
-{{< /info >}}
 
 AzAuth Java sources are available on [GitHub](https://github.com/Azuriom/AzAuth) and the jar file can be downloaded from [GitHub releases](https://github.com/Azuriom/AzAuth/releases).
 

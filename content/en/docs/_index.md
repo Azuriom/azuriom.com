@@ -50,4 +50,5 @@ Our sponsors keep the project alive, ensuring that it remains free for everyone.
 Please consider [supporting us]({{< url "/support-us" >}}) if you like the project!
 
 Many thanks to our main sponsors:
+
 {{< donors >}}

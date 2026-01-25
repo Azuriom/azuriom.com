@@ -9,17 +9,15 @@ Elle peut être utilisée en Java, en JavaScript, ou tout autre langage capable 
 
 Avant d'utiliser AzAuth, assurez-vous qu'elle est activée dans le panel administrateur (dans **Paramètres → Authentification**).
 
-{{< warn >}}
-Quel que soit le mode d'utilisation de l'API côté client, vous devez vérifier le token d'accès côté serveur.
-Cela peut être fait en appelant le point d'accès `/verify` ou en utilisant la méthode `verify`.
-{{< /warn >}}
+> [!WARNING]
+> Quel que soit le mode d'utilisation de l'API côté client, vous devez vérifier le token d'accès côté serveur.
+> Cela peut être fait en appelant le point d'accès `/verify` ou en utilisant la méthode `verify`.
 
 ## Java
 
-{{< info >}}
-AzAuth Java est une librairie Java et non un plugin Minecraft, et peut être utilisé par exemple dans un launcher Minecraft,
+> [!TIP]
+> AzAuth Java est une librairie Java et non un plugin Minecraft, et peut être utilisé par exemple dans un launcher Minecraft,
 pour y ajouter l'authentification avec Azuriom .
-{{< /info >}}
 
 Les sources d'AzAuth Java sont disponibles sur [GitHub](https://github.com/Azuriom/AzAuth),
 et le fichier `jar` peut être téléchargé depuis les [releases GitHub](https://github.com/Azuriom/AzAuth/releases).

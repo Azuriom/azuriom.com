@@ -7,15 +7,14 @@ title: Jeux Customs
 Azuriom prend en charge les jeux personnalisés, ce qui signifie que vous pouvez
 créer un plugin pour ajouter un jeu qui n'est pas supporté nativement par Azuriom.
 
-{{< info >}}
-L'installation d'Azuriom en locale est fortement recommandée pour simplifier le développement de jeux.
-Lorsque Azuriom est installé localement, le mode debug peut être activé en modifiant les lignes suivantes dans
+> [!TIP]
+> L'installation d'Azuriom en locale est fortement recommandée pour simplifier le développement de jeux en affichant directement les erreurs.
+> Lorsque Azuriom est installé localement, le mode debug peut être activé en modifiant les lignes suivantes dans
 le fichier `.env` :
-```env
-APP_ENV=local
-APP_DEBUG=true
-```
-{{< /info >}}
+> ```env
+> APP_ENV=local
+> APP_DEBUG=true
+> ```
 
 ## Installation
 

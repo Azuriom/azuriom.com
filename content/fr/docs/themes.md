@@ -11,15 +11,14 @@ Les thèmes sont essentiels pour un site web et en définissent l'apparence comp
 Des dizaines de thèmes prêts à l'emploi sont disponibles sur le marché.
 Cependant, vous pouvez aussi créer vos propres thèmes pour adapter votre site selon vos besoins.
 
-{{< info >}}
-L'installation d'Azuriom en locale est fortement recommandée pour simplifier le développement de thèmes.
-Lorsque Azuriom est installé localement, le mode debug peut être activé en modifiant les lignes suivantes dans
+> [!TIP]
+> L'installation d'Azuriom en locale est fortement recommandée pour simplifier le développement de thèmes en affichant les erreurs.
+> Lorsque Azuriom est installé localement, le mode debug peut être activé en modifiant les lignes suivantes dans
 le fichier `.env` :
-```env
-APP_ENV=local
-APP_DEBUG=true
-```
-{{< /info >}}
+> ```env
+> APP_ENV=local
+> APP_DEBUG=true
+> ```
 
 ## Création d'un Thème
 
@@ -65,9 +64,8 @@ Un thème doit avoir un identifiant unique qui ne contient que des chiffres, des
 L'identifiant est utilisé pour identifier le thème dans le système et doit correspondre au nom du dossier du thème.
 Par exemple, un thème nommé `Hello World` pourrait avoir l'identifiant `hello-world`.
 
-{{< info >}}
-Le dossier dans lequel le thème est installé doit être nommé avec l'identifiant du thème.
-{{< /info >}}
+> [!TIP]
+> Le dossier dans lequel le thème est installé doit être nommé avec l'identifiant du thème.
 
 ## Vues
 
@@ -89,12 +87,11 @@ Les composants peuvent être inclus dans le layout à l'aide de `@include`. Par 
 @include('elements.navbar')
 ```
 
-{{< warn >}}
-Il est fortement recommandé **de ne pas modifier** les vues autres que le layout, les composants (comme la barre de navigation) et la page d'accueil,
+> [!WARNING]
+> Il est fortement recommandé **de ne pas modifier** les vues autres que le layout, les composants (comme la barre de navigation) et la page d'accueil,
 car cela peut entraîner des problèmes de compatibilité avec les plugins et les mises à jour futures.
-
-Il est préférable d'utiliser du CSS pour personnaliser l'apparence du site.
-{{< /warn >}}
+>
+> Il est préférable d'utiliser du CSS pour personnaliser l'apparence du site.
 
 ### Couleur du Thème
 

@@ -7,6 +7,12 @@ enableRobotsTXT: true
 disableKinds: [taxonomy, term, RSS, sitemap]
 pygmentsUseClasses: true
 
+markup:
+  goldmark:
+    parser:
+      attribute:
+        block: true
+
 params:
   twitter: Azuriom
 

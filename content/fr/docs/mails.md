@@ -18,10 +18,9 @@ et il est souvent plus facile d'utiliser un service dédié comme :
 * [MailPace](https://mailpace.com/) (3€ par mois pour 1 000 emails)
 * [MailerSend](https://www.mailersend.com/) (3 000 emails gratuitement, puis 1€ pour 1 000 emails)
 
-{{< warn >}}
-Utiliser la configuration SMTP d'une adresse email personnelle, comme que Gmail ou Outlook,
+> [!WARNING]
+> Utiliser la configuration SMTP d'une adresse email personnelle, comme que Gmail ou Outlook,
 n'est **pas recommandé**, car la plupart des boites mails vont considérer les emails comme spam.
-{{< /warn >}}
 
 ## Sendmail
 
@@ -34,7 +33,5 @@ Sur un VPS ou un serveur dédié, vous pouvez installer Sendmail avec la command
 apt install -y sendmail
 ```
 
-{{< warn >}}
-Sendmail augmente le risque que les emails soient considérés comme spam.
-Il est recommandé d'utiliser un service de messagerie dédié à la place.
-{{< /warn >}}
+> [!WARNING]
+> Sendmail augmente le risque que les emails soient considérés comme spam. Il est recommandé d'utiliser un service de messagerie dédié à la place.

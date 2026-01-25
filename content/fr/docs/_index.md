@@ -54,4 +54,5 @@ Nos sponsors permettent au projet de vivre, permettant ainsi qu'il reste gratuit
 Pensez à [nous soutenir]({{< url "/support-us" >}}) si le projet vous plaît !
 
 Un grand merci à nos principaux sponsors :
+
 {{< donors >}}

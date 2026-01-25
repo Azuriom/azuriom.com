@@ -7,15 +7,14 @@ title: Custom Games
 Azuriom supports custom games, which means you can create a plugin to add a game
 that is not natively supported by Azuriom.
 
-{{< info >}}
-Installing Azuriom locally is highly recommended to simplify game development.
-When Azuriom is installed locally, debug mode can be enabled for easier development,
+> [!TIP]
+> Installing Azuriom locally is highly recommended to simplify game development.
+> When Azuriom is installed locally, debug mode can be enabled for easier development,
 by editing the following lines in the `.env` file:
-```env
-APP_ENV=local
-APP_DEBUG=true
-```
-{{< /info >}}
+> ```env
+> APP_ENV=local
+> APP_DEBUG=true
+> ```
 
 ## Installation
 

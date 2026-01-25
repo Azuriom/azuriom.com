@@ -18,23 +18,22 @@ Pour utiliser Azuriom, vous avez besoin d'un serveur web avec les prérequis sui
 
 Bien que cela ne soit pas obligatoire, une base de données **MySQL/MariaDB** ou **PostgreSQL** est recommandée.
 
-{{< info img="assets/svg/nihost-circle.svg" >}}
-Si vous recherchez un hébergeur web associatif **abordable et de qualité**, nous
+> [!TIP]
+> Si vous recherchez un hébergeur web associatif **abordable et de qualité**, nous
 vous recommandons notre partenaire [NiHost](https://www.ni-host.com/?utm_source=installation&utm_medium=links&utm_campaign=AzuriomCom) !
-
-Le code `AZURIOM` vous permet d'avoir une **réduction de 10% sur vos services**
+> 
+> Le code `AZURIOM` vous permet d'avoir une **réduction de 10% sur vos services**
 _(hors domaines & TeamSpeak)_.
-{{< /info >}}
+{img="assets/svg/nihost-circle.svg"}
 
-{{< info >}}
-Pour une utilisation en local, une image [Docker](https://www.docker.com/) prête à l'emploi est disponible,
+> [!TIP]
+> Pour une utilisation en local, une image [Docker](https://www.docker.com/) prête à l'emploi est disponible,
 avec tous les prérequis installés.
-Pour l'utiliser, téléchargez Azuriom depuis les [releases GitHub](https://github.com/Azuriom/Azuriom/releases) et exécutez la commande suivante
+> Pour l'utiliser, téléchargez Azuriom depuis les [releases GitHub](https://github.com/Azuriom/Azuriom/releases) et exécutez la commande suivante
 dans le dossier d'Azuriom :
-```sh
-docker-compose up -d
-```
-{{< /info >}}
+> ```sh
+> docker-compose up -d
+> ```
 
 ## Démarrer
 
@@ -45,10 +44,9 @@ Consultez la section [Installation des Prérequis](#installation-des-prérequis)
 Cependant, si vous utilisez un hébergement mutualisé, les prérequis devraient déjà être installés,
 et vous pouvez passer directement au téléchargement et à l'installation d'Azuriom.
 
-{{< info >}}
-Pour vous aider à commencer, l'installation complète sur cPanel
+> [!TIP]
+> Pour vous aider à commencer, l'installation complète sur cPanel
 est disponible dans un [tutoriel vidéo](https://www.youtube.com/watch?v=aT2zntvqCYM).
-{{< /info >}}
 
 ### Télécharger Azuriom
 
@@ -62,11 +60,10 @@ En cas de doute, contactez le support de votre hébergeur.
 Sur un VPS ou un serveur dédié, la racine du site est généralement `/var/www/html`,
 et peut être modifiée dans la configuration du serveur web (Apache, Nginx, etc).
 
-{{< info >}}
-Lorsque l'archive n'est pas téléchargée directement sur le serveur,
+> [!TIP]
+> Lorsque l'archive n'est pas téléchargée directement sur le serveur,
 assurez-vous également de transférer les fichiers cachés tels que `.htaccess`.
-Avec WinSCP, cela peut se faire en activant l'option « Afficher les fichiers cachés » dans les paramètres.
-{{< /info >}}
+> Avec WinSCP, cela peut se faire en activant l'option « Afficher les fichiers cachés » dans les paramètres.
 
 ### Permissions des Fichiers
 
@@ -91,13 +88,12 @@ et de créer le premier compte administrateur.
 
 Une fois l'installation terminée, félicitations ! Votre site Azuriom est installé et prêt à être utilisé.
 
-Vous pouvez ensuite vous connecter à votre site, et accéder au panel adminstrateur en cliquant sur votre nom
+Vous pouvez ensuite vous connecter à votre site, et accéder au panel administrateur en cliquant sur votre nom
 dans le coin supérieur droit.
 
-{{< warn >}}
-Une fois l'installation terminée, pour éviter tout problème, assurez-vous que votre site
+> [!WARNING]
+> Une fois l'installation terminée, pour éviter tout problème, assurez-vous que votre site
 n'est pas accessible directement via l'IP du serveur (ex : http://0.0.0.0).
-{{< /warn >}}
 
 ### Tâches CRON
 
@@ -115,6 +111,12 @@ par l'emplacement de votre site**, par exemple `/public_html` sur cPanel).
 Sur certains panels, il est nécessaire de sélectionner un fichier PHP avec un argument, dans ce cas, choisissez :
 * Script PHP : `/azuriom/artisan` (**remplacez `/azuriom` par l'emplacement de votre site**, comme `/httpdocs` sur Plesk, mais en gardant le `/artisan`)
 * Argument : `schedule:run`
+
+> [!TIP]
+> Certains rares hébergeurs permettent uniquement d'exécuter des tâches planifiées via une URL.
+> Dans ce cas, vous pouvez installer le plugin [API Extender](https://market.azuriom.com/resources/167), et l'URL à appeler est `/cron/execute`, avec :
+> * Nom d'utilisateur : `cron`
+> * Mot de passe : une clé d'API du plugin API Extender
 
 #### VPS ou Serveur Dédié
 
@@ -140,11 +142,10 @@ il est impossible de fournir les détails de l'installation pour chaque platefor
 * Sur un serveur Linux, de nombreux tutoriels sont disponibles en ligne pour les différentes distributions
 expliquant comment installer Nginx, MariaDB et PHP (ou tout autre serveur web et base de données supportés).
 
-{{< info >}}
-Si la version de PHP détectée par l'installateur pendant l'installation ne correspond pas à celle renvoyée
+> [!TIP]
+> Si la version de PHP détectée par l'installateur pendant l'installation ne correspond pas à celle renvoyée
 par la commande `php -v`, c'est probablement que la version de PHP CLI (Interface en Ligne de Commande)
 est différente de la version de PHP utilisée par le serveur web (Apache, Nginx, etc.).
-{{< /info >}}
 
 ### Debian
 

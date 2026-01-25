@@ -1,0 +1,23 @@
+{{- $alerts := dict
+    "note" (dict "color" "primary" "icon" "info-lg")
+    "tip" (dict "color" "info" "icon" "lightbulb")
+    "warning" (dict "color" "warning" "icon" "exclamation-triangle")
+    "caution" (dict "color" "danger" "icon" "exclamation-lg")
+-}}
+
+{{ $alert := (index $alerts .AlertType) }}
+
+<blockquote class="alert alert-secondary d-flex align-items-center documentation-alert">
+    <div class="flex-shrink-0">
+        {{ if .Attributes.img }}
+            <img class="svg bg-transparent" alt="{{ .AlertType }}" src="{{ .Attributes.img | absURL }}">
+        {{ else }}
+            <div class="fs-3 lh-1 text-{{ $alert.color }} border border-{{ $alert.color }} border-2 p-3 rounded-pill">
+                {{ partial "icon.html" $alert.icon }}
+            </div>
+        {{ end }}
+    </div>
+    <div class="flex-grow-1 ms-3 text-body">
+        {{- .Text -}}
+    </div>
+</blockquote>

@@ -101,4 +101,12 @@ If that is not possible, you can configure Apache to run them on the same domain
     RewriteEngine On
     RewriteRule ^ - [L]
 </IfModule>
-``` 
+```
+
+## Migrate to Another Host
+
+An existing Azuriom installation can be migrated to a new host by following the steps below to ensure a smooth transition:
+
+1. Transfer all Azuriom files to the new host and export the SQL database from the old server, then import it on the new one.
+2. Update the database credentials in the `.env` file to match the new host configuration (see [above for more details](#edit-database-credentials)).
+3. If issues occurs with some extensions after the migration, disable the active theme and plugins, then re-enable them to ensure they are correctly loaded.

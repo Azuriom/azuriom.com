@@ -11,15 +11,14 @@ Les plugins sont la clé pour rendre votre site Azuriom unique.
 Ils permettent d'ajouter de nouvelles fonctionnalités à votre site, telles qu'une boutique, un forum ou un système de support.
 Des dizaines de plugins sont disponibles sur le marché, mais vous pouvez également créer vos propres plugins selon vos besoins.
 
-{{< info >}}
-L'installation d'Azuriom en locale est fortement recommandée pour simplifier le développement de plugins.
-Lorsque Azuriom est installé localement, le mode debug peut être activé en modifiant les lignes suivantes dans
+> [!TIP]
+> L'installation d'Azuriom en locale est fortement recommandée pour simplifier le développement de plugins en affichant directement les erreurs.
+> Lorsque Azuriom est installé localement, le mode debug peut être activé en modifiant les lignes suivantes dans
 le fichier `.env` :
-```env
-APP_ENV=local
-APP_DEBUG=true
-```
-{{< /info >}}
+> ```env
+> APP_ENV=local
+> APP_DEBUG=true
+> ```
 
 Azuriom est basé sur [Laravel](https://laravel.com/), il est donc recommandé de consulter la [documentation de Laravel](https://laravel.com/docs/)
 pour comprendre le fonctionnement du framework.
@@ -68,7 +67,7 @@ Un plugin doit inclure un fichier `plugin.json` à sa racine, contenant les info
 }
 ```
 
-La section `providers` vous permet de spécifier les service providers, qui seront chargés lors de l'initialisation de Laravel.
+La section `providers` vous permet de spécifier les services providers, qui seront chargés lors de l'initialisation de Laravel.
 
 #### Identifiant
 
@@ -76,9 +75,8 @@ Un plugin doit avoir un identifiant unique qui ne contient que des chiffres, des
 L'identifiant est utilisé pour identifier le plugin dans le système et doit correspondre au nom du dossier du plugin.
 Par exemple, un plugin nommé `Hello World` pourrait avoir l'identifiant `hello-world`.
 
-{{< info >}}
-Le dossier dans lequel le plugin est installé doit être nommé avec l'identifiant du plugin.
-{{< /info >}}
+> [!TIP]
+> Le dossier dans lequel le plugin est installé doit être nommé avec l'identifiant du plugin.
 
 #### Dépendances
 
@@ -105,9 +103,8 @@ Par défaut, trois fichiers de routes sont disponibles dans le dossier `routes` 
 * `api.php` pour les routes API du plugin
 * `admin.php` pour les routes d'administration du plugin, dédiées au panel admin
 
-{{< warn >}}
-Il est déconseillé d'utiliser des closures dans les routes, car cela empêche la mise en cache et peut impacter les performances.
-{{< /warn >}}
+> [!WARNING]
+> Il est déconseillé d'utiliser des closures dans les routes, car cela empêche la mise en cache et peut impacter les performances.
 
 ## Vues
 
@@ -267,9 +264,8 @@ qui renvoie une instance de la classe `Azuriom\Models\User`, ou `null` si l'util
 Si aucune instance de la requête n'est disponible, vous pouvez utiliser la fonction `auth()->user()`.
 L'attribut `name` de l'utilisateur permet d'obtenir son nom, et la méthode `getAvatar()` renvoie l'URL de son avatar.
 
-{{< warn >}}
-N'utilisez pas une API d'image spécifique à un jeu pour obtenir l'avatar de l'utilisateur, et utilisez plutôt la méthode `getAvatar()` du modèle `User`.
-{{< /warn >}}
+> [!WARNING]
+> N'utilisez pas une API d'image spécifique à un jeu pour obtenir l'avatar de l'utilisateur, et utilisez plutôt la méthode `getAvatar()` du modèle `User`.
 
 ### Traits Disponibles
 
@@ -388,11 +384,10 @@ class SupportServiceProvider extends BasePluginServiceProvider
 }
 ```
 
-{{< warn >}}
-Les fournisseurs de services sont automatiquement chargés et appelés pour toutes les requêtes, même celles qui n'utilisent pas le plugin.
-Par conséquent, il est essentiel de garder les méthodes `register()` et `boot()` aussi efficaces que possible afin d'éviter
+> [!WARNING]
+> Les fournisseurs de services sont automatiquement chargés et appelés pour toutes les requêtes, même celles qui n'utilisent pas le plugin. 
+> Par conséquent, il est essentiel de garder les méthodes `register()` et `boot()` aussi efficaces que possible afin d'éviter
 d'impacter les performances de l'ensemble du site.
-{{< /warn >}}
 
 ### Descriptions des Routes
 
@@ -606,7 +601,7 @@ ActionLog::registerLogs([
 ]);
 ```
 
-## Fonctions Utiles
+## Fonctions Intégrées
 
 Azuriom fournit plusieurs fonctions pour faciliter le développement de plugins et garantir la cohérence sur l'ensemble du site :
 
@@ -621,3 +616,33 @@ Azuriom fournit plusieurs fonctions pour faciliter le développement de plugins 
 | `trans(string $key): string`                  | Retourne la traduction correspondant à la clé `$key`                                                      |
 | `trans_bool(bool $value): string`             | Retourne la traduction de la valeur booléenne donnée. Renvoie "Oui" ou "Non" en français                  |
 | `auth()->user(): \Azuriom\Models\user`        | Retourne l'utilisateur connecté sur le site, ou `null` si l'utilisateur n'est pas connecté                |
+
+## Fonctions Utilitaires
+
+Certains plugins peuvent vouloir définir des fonctions utilitaires globales (_helpers_).
+Dans ce cas, ces fichiers doivent être déclarés dans la section `autoload`, puis `files`, du fichier `composer.json` du plugin.
+
+Ces fichiers seront automatiquement chargés par Azuriom, sans configuration supplémentaire.
+
+```json
+{
+    "autoload": {
+        // ...
+        "files": [
+            "src/helpers.php"
+        ]
+    }
+}
+````
+
+Les noms des fonctions utilitaires **doivent être uniques afin d'éviter toute collision avec d'autres plugins**.
+De plus, **chaque fonction doit être protégée par une condition `if (! function_exists('<fonction>'))`** pour éviter des erreurs fatales en cas de conflit de nom :
+
+```php
+if (! function_exists('my_plugin_helper')) {
+    function my_plugin_helper(string $value): void
+    {
+        // code de la fonction
+    }
+}
+```

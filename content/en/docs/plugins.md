@@ -10,14 +10,13 @@ weight: 5
 Plugins are the key to extending the functionality of Azuriom. They allow you to add new features to your website, such as a store, a forum or a support system.
 Dozens of plugins are available on the market, yet you can also create your own to customize your site.
 
-{{< info >}}
-Installing Azuriom locally is highly recommended to simplify plugin development.
-When installed locally, you can enable debug mode for easier development by editing the following lines in the `.env` file:
-```env
-APP_ENV=local
-APP_DEBUG=true
-```
-{{< /info >}}
+> [!TIP]
+> Installing Azuriom locally is highly recommended to simplify plugin development by displaying errors directly.
+> When installed locally, you can enable debug mode for easier development by editing the following lines in the `.env` file:
+> ```env
+> APP_ENV=local
+> APP_DEBUG=true
+> ```
 
 Since Azuriom is based on [Laravel](https://laravel.com/), it is recommended to consult the
 [Laravel documentation](https://laravel.com/docs/) to understand how the framework works.
@@ -66,17 +65,16 @@ A plugin must include a `plugin.json` file at the root of its directory, contain
 }
 ```
 
-The `providers` section allows you to specify the plugin’s service providers, which will be loaded during Laravel’s initialization.
+The `providers` section allows you to specify the plugin's service providers, which will be loaded during Laravel's initialization.
 
 #### Identifier
 
 A plugin must have a unique id consisting only of numbers, lowercase letters, and hyphens.
-This id is used to identify the plugin within the system and must match the plugin’s folder name.
+This id is used to identify the plugin within the system and must match the plugin's folder name.
 For example, a plugin named `Hello World` might have the id `hello-world`.
 
-{{< info >}}
-The plugin must be placed in a folder with the same name as the plugin ID, located inside the `plugins` directory.
-{{< /info >}}
+> [!TIP]
+> The plugin must be placed in a folder with the same name as the plugin ID, located inside the `plugins` directory.
 
 #### Dependencies
 
@@ -103,9 +101,8 @@ By default, three route files are available in the `routes` folder:
 * `api.php` for the API routes of the plugin
 * `admin.php` for the admin routes of the plugin, dedicated to the administration dashboard
 
-{{< warn >}}
-Routes with closures are not recommended, as they prevent caching and result in slower performance.
-{{< /warn >}}
+> [!WARNING]
+> Routes with closures are not recommended, as they prevent caching and result in slower performance.
 
 ## Views
 
@@ -115,7 +112,7 @@ You can find more information on Blade in the [Blade documentation](https://lara
 
 To render a view, the `view('<view name>')` function is used.
 
-Views are located in the plugin’s `resources/views` folder, must use the `.blade.php` extension,
+Views are located in the plugin's `resources/views` folder, must use the `.blade.php` extension,
 and should extend the `layouts.app` layout (the default layout of Azuriom).
 The main content of the view should be placed in the `content` section, like this:
 
@@ -270,9 +267,8 @@ or `null` if the user is not authenticated. If no request instance is available,
 
 The `name` attribute of the user is used to display the user's name, and the `getAvatar()` method returns the URL of the user's avatar.
 
-{{< warn >}}
-Do not use a game-specific images API to obtain the user's avatar. Instead, use the `getAvatar()` method of the `User` model.
-{{< /warn >}}
+> [!WARNING]
+> Do not use a game-specific images API to obtain the user's avatar. Instead, use the `getAvatar()` method of the `User` model.
 
 ### Built-in traits
 
@@ -391,10 +387,9 @@ class SupportServiceProvider extends BasePluginServiceProvider
 }
 ```
 
-{{< warn >}}
-Service providers are automatically loaded and invoked for all requests—even those that do not require the plugin.
+> [!WARNING]
+> Service providers are automatically loaded and invoked for all requests—even those that do not require the plugin.
 Consequently, it is crucial to keep the `register()` and `boot()` methods as lightweight as possible to avoid performance impacts.
-{{< /warn >}}
 
 ### Routes Descriptions
 
@@ -522,7 +517,7 @@ return new class extends Migration
 
 ## Translations
 
-Azuriom is fully translated into several languages and uses Laravel’s translation system to manage translations.
+Azuriom is fully translated into several languages and uses Laravel's translation system to manage translations.
 You can find more information about translations in the [Laravel documentation](https://laravel.com/docs/localization).
 
 Translations of a plugin are stored in the `resources/lang` folder of the plugin, with one directory for each language, in which PHP files with the translations are stored:
@@ -605,3 +600,31 @@ Azuriom provides several functions to facilitate plugin development and ensure c
 | `trans(string $key): string`                  | Return the translation corresponding to the given `$key`                                                       |
 | `trans_bool(bool $value): string`             | Returns the translation of the given boolean value. In English, this is 'Yes' or 'No'                          |
 | `auth()->user(): \Azuriom\Models\User`        | Returns the authenticated user, or `null` if no user is authenticated                                          |
+
+## Helpers files
+
+Some plugins may need to expose global helper functions. In that case, helper files should be registered in the `autoload` then `files` section of the plugin's `composer.json`.
+
+These files will be automatically loaded by Azuriom, without any additional configuration.
+
+```json
+{
+    "autoload": {
+        // ...
+        "files": [
+            "src/helpers.php"
+        ]
+    }
+}
+```
+
+Helper function names **must be sufficiently unique to avoid collisions with other plugins**.
+Moreover, **each function must be wrapped in an `if (! function_exists('<function name>'))` condition** to prevent fatal errors if a name conflict occurs:
+```php
+if (! function_exists('my_plugin_helper')) {
+    function my_plugin_helper(string $value): void
+    {
+        // helper code
+    }
+}
+```

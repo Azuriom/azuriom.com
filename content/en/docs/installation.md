@@ -17,15 +17,14 @@ To run Azuriom, you need a web server with the following requirements:
 
 While not strictly required, a **MySQL/MariaDB** or **PostgreSQL** database is recommended.
 
-{{< info >}}
-For local use, a ready-to-use [Docker](https://www.docker.com/) image is available
+> [!TIP]
+> For local use, a ready-to-use [Docker](https://www.docker.com/) image is available
 with all prerequisites installed.
-To do this, download Azuriom from the [GitHub releases](https://github.com/Azuriom/Azuriom/releases) and run the following command
+> To do this, download Azuriom from the [GitHub releases](https://github.com/Azuriom/Azuriom/releases) and run the following command
 in the Azuriom folder:
-```sh
-docker-compose up -d
-```
-{{< /info >}}
+> ```sh
+> docker-compose up -d
+> ```
 
 ## Getting Started
 
@@ -35,10 +34,9 @@ See the [Requirements Installation](#requirements-installation) section for more
 
 On the other hand, if you are using a shared web hosting, the requirements should already be installed, and you can continue directly to the download and installation of Azuriom.
 
-{{< info >}}
-To help get started, the complete installation process on cPanel (a popular shared hosting panel)
+> [!TIP]
+> To help get started, the complete installation process on cPanel (a popular shared hosting panel)
 is shown in a [video tutorial](https://www.youtube.com/watch?v=aT2zntvqCYM).
-{{< /info >}}
 
 ### Download Azuriom
 
@@ -52,11 +50,10 @@ If you are unsure, you can ask your hosting provider.
 On a VPS or a dedicated server, the root of the website is usually `/var/www/html`,
 but can be changed in the web server configuration.
 
-{{< info >}}
-When the archive is not uploaded directly on the server, make sure to also upload
+> [!TIP]
+> When the archive is not uploaded directly on the server, make sure to also upload
 hidden files like `.htaccess`. If you are using WinSCP, this can be done by enabling
 the option "Show hidden files" in the settings.
-{{< /info >}}
 
 ### Files Permissions
 
@@ -81,10 +78,9 @@ Once the installation is complete, congratulations! Your Azuriom website is now 
 
 You can then log in to your website, and access the administration dashboard by clicking on your name in the top right corner.
 
-{{< warn >}}
-Once the installation is complete, to prevent any issues, make sure your website
+> [!WARNING]
+> Once the installation is complete, to prevent any issues, make sure your website
 can't be accessed directly from the IP of the server (ex: http://0.0.0.0).
-{{< /warn >}}
 
 ### CRON tasks
 
@@ -102,6 +98,12 @@ On some panels, it is necessary to select a PHP script with an argument, in this
 * Script path: `/azuriom/artisan` (**replace `/azuriom` with the location of your site**, e.g. `/httpdocs` on Plesk, but keep the `/artisan`)
 * Argument: `schedule:run`
 
+> [!TIP]
+> Although uncommon, some hosts only allow scheduled tasks to be executed via a URL.
+> In this case, you can install the [API Extender](https://market.azuriom.com/resources/167) plugin. The URL to call is `/cron/execute`, with:
+> * Username: `cron`
+> * Password: an API key from the API Extender plugin.
+
 #### VPS or Dedicated Server
 
 On a VPS or a dedicated server, you can add a new CRON task by editing the crontab with the command `crontab -e` and adding the following line
@@ -118,15 +120,14 @@ If you are using a shared web hosting service, the prerequisites will most likel
 The recommended software are **PHP** with **Nginx** and a **MySQL/MariaDB** or **PostgreSQL** database.
 However, Azuriom can also run on other web servers like Apache2, and support SQLite and SQLServer (although these databases are not recommended).
 
-If you are using a shared web hosting service, the prerequisites are most likely already installed and you can proceed directly to the Azuriom installation.
+If you are using a shared web hosting service, the prerequisites are most likely already installed, and you can proceed directly to the Azuriom installation.
 
 Due to the wide variety of operating systems and distributions, it is impossible to provide an exhaustive installation guide for all platforms:
 * On Windows, you can use a tool like [Laragon](https://laragon.org/) for easy setup for local development.
 * On a Linux server, there are many tutorials available online for each distribution on how to install Nginx, MariaDB and PHP (or any supported web server and database).
 
-{{< info >}}
-If the PHP version detected by the installer during installation does not match the version returned by the `php -v` command, this is probably because the PHP CLI (Command Line Interface) version is different from the PHP version used by the web server (Apache, Nginx, etc.).
-{{< /info >}}
+> [!TIP]
+> If the installer detects a different PHP version than the `php -v` command, it’s likely because the PHP CLI (Command Line Interface) version differs from the PHP version used by the web server (Apache, Nginx, etc.).
 
 ### Debian
 

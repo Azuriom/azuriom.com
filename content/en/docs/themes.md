@@ -11,15 +11,14 @@ Themes are essential for a website as they define its entire appearance.
 Dozens of ready-to-use themes are available on the market.
 However, you can also create your own themes to tailor your website to your preferences.
 
-{{< info >}}
-Installing Azuriom locally is highly recommended to simplify theme development.
-When Azuriom is installed locally, debug mode can be enabled for easier development,
+> [!TIP]
+> Installing Azuriom locally is highly recommended to simplify theme development by displaying errors directly.
+> When Azuriom is installed locally, debug mode can be enabled for easier development,
 by editing the following lines in the `.env` file:
-```env
-APP_ENV=local
-APP_DEBUG=true
-```
-{{< /info >}}
+> ```env
+> APP_ENV=local
+> APP_DEBUG=true
+> ```
 
 ## Creating a Theme
 
@@ -65,10 +64,8 @@ A theme must have a unique id that contains only numbers, lowercase letters, and
 The id is used to identify the theme within the system and must match the name of the theme's folder.
 For example, a theme named `Hello World` might have the id `hello-world`.
 
-{{< info >}}
-The theme must be placed in a folder with the same name as the theme ID, located inside the `resources/themes` directory.
-{{< /info >}}
-
+> [!TIP]
+> The theme must be placed in a folder with the same name as the theme ID, located inside the `resources/themes` directory.
 
 ## Views
 
@@ -90,11 +87,10 @@ Components can be included in the layout using the `@include` directive; for exa
 @include('elements.navbar')
 ```
 
-{{< warn >}}
-It is highly recommended **not to modify** views other than the layout, components (such as the navbar), and the homepage, as doing so may cause compatibility issues with plugins and future updates.
-
-Instead, CSS should be used to customize the appearance of the site.
-{{< /warn >}}
+> [!WARNING]
+> It is highly recommended **not to modify** views other than the layout, components (such as the navbar), and the homepage, as doing so may cause compatibility issues with plugins and future updates.
+>
+> Instead, CSS should be used to customize the appearance of the site.
 
 ### Theme Color
 

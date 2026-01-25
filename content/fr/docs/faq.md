@@ -89,11 +89,19 @@ Si le problème persiste, vérifiez également les règles du pare-feu.
 
 ## Second site sur Apache2
 
-Si vous souhaitez installer un autre site (par exemple, le panneau Pterodactyl) sur le même serveur web qu'Azuriom, il est recommandé de l'installer sur un sous-domaine (par exemple, panel.votre-site.com).  
-Si cela n'est pas possible, vous pouvez configurer Apache pour les faire fonctionner sur le même domaine en ajoutant un fichier `.htaccess` dans le répertoire de l'autre site (par exemple, /panel) avec le contenu suivant :
+Si vous souhaitez installer un autre site (par exemple, le panneau Pterodactyl) sur le même serveur web qu'Azuriom, il est recommandé de l'installer sur un sous-domaine (par exemple, `panel.votre-site.com`).  
+Si cela n'est pas possible, vous pouvez configurer Apache pour les faire fonctionner sur le même domaine en ajoutant un fichier `.htaccess` dans le répertoire de l'autre site (par exemple, `/panel`) avec le contenu suivant :
 ```apache
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteRule ^ - [L]
 </IfModule>
 ```
+
+## Changement d'hébergeur
+
+Une installation existante d'Azuriom peut être migrée vers un nouvel hébergement en suivant les étapes ci-dessous pour une transition fluide :
+
+1. Transférez l'ensemble des fichiers d'Azuriom vers le nouvel hébergeur, puis exportez la base de données SQL depuis l'ancien serveur vers le nouveau.
+2. Mettez à jour les identifiants de la base de données dans le fichier `.env` avec les nouveaux identifiants (voir [ci-dessus pour plus de détails](#modifier-les-accès-bdd)).
+3. Si des problèmes surviennent avec certaines extensions après la migration, désactivez le thème actif et les plugins, puis réactivez-les afin de vous assurer qu'ils soient correctement chargés.
