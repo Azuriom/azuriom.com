@@ -633,7 +633,7 @@ Ces fichiers seront automatiquement chargés par Azuriom, sans configuration sup
         ]
     }
 }
-````
+```
 
 Les noms des fonctions utilitaires **doivent être uniques afin d'éviter toute collision avec d'autres plugins**.
 De plus, **chaque fonction doit être protégée par une condition `if (! function_exists('<fonction>'))`** pour éviter des erreurs fatales en cas de conflit de nom :

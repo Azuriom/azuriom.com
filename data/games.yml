@@ -1,19 +1,19 @@
 azlink:
   - name: AzLink Minecraft
     info: Bukkit/Spigot/Folia, Sponge, BungeeCord, Velocity, Nukkit
-    url: https://github.com/Azuriom/AzLink/releases/latest/download/AzLink.jar
+    url: https://modrinth.com/plugin/azuriom/versions?g=1.13&l=bukkit&l=bungeecord&l=sponge&l=velocity
 
   - name: AzLink Minecraft - Legacy
     info: Bukkit/Spigot 1.7.10
-    url: https://github.com/Azuriom/AzLink/releases/latest/download/AzLink-Legacy.jar
+    url: https://modrinth.com/plugin/azuriom/versions?g=1.7.10&l=bukkit
+
+  - name: AzLink Minecraft - Mod
+    info: FabricMC, Forge, NeoForge
+    url: https://modrinth.com/plugin/azuriom/versions?l=fabric&l=forge&l=neoforge
 
   - name: AzLink Hytale
     info: Hytale (Early Access)
-    url: https://github.com/Azuriom/AzLink/releases/latest/download/AzLink.jar
-
-  - name: AzLink PocketMine-MP
-    info: PocketMine-MP v5
-    url: https://github.com/Azuriom/AzLink-PocketMine/releases/latest/download/AzLink-PocketMine.phar
+    url: https://github.com/Azuriom/AzLink/releases/latest
 
   - name: AzLink GMod
     info: Garry's Mod
@@ -31,9 +31,9 @@ azlink:
     info: Counter-Strike 2
     url: https://github.com/Azuriom/AzLink-CSharp/releases/latest/download/AzLink-CounterStrikeSharp.zip
 
-  - name: AzLink Minecraft - Mod
-    info: FabricMC & NeoForge
-    url: https://github.com/Azuriom/AzLink/actions/workflows/build.yml?query=branch%3Adev%2Fmods+event%3Apush
+  - name: AzLink PocketMine-MP
+    info: PocketMine-MP v5
+    url: https://github.com/Azuriom/AzLink-PocketMine/releases/latest/download/AzLink-PocketMine.phar
 
 list:
   - name: Minecraft

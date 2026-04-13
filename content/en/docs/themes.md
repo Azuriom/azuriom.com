@@ -123,7 +123,7 @@ Themes can include a configuration form that allows users to easily customize th
 The configuration form is created in a Blade view file called `config.blade.php`
 (located in the theme's `config` directory), which contains the fields required to configure the theme.
 ```html
-<form action="{{ route('admin.themes.update', $theme) }}" method="POST">
+<form action="{{ route('admin.themes.config', $theme) }}" method="POST">
     @csrf
 
     <div class="form-group">

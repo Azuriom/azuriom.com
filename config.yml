@@ -43,6 +43,11 @@ languages:
     contentDir: content/zh-cn
     params:
       code: zh_CN
+  hu:
+    languageName: Magyar
+    contentDir: content/hu
+    params:
+      code: hu_HU
   lt:
     languageName: Lietuvių
     contentDir: content/lt

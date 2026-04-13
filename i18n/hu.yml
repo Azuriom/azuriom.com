@@ -1,0 +1,90 @@
+headline: "Az Azuriom egy teljes nyílt forráskódú webes megoldás a játékszerverekhez. Élvezze a tucatnyi bővítményt a végtelen lehetőségekért. Már több mint 1,800 szerver bízik benne, több mint kétmillió felhasználóval."
+
+theme:
+  light: "Világos"
+  dark: "Sötét"
+  auto: "Automatikus"
+
+nav:
+  download: "Letöltés"
+  extensions: "Bővítmények"
+  docs: "Dokumentáció"
+  demo: "Demó"
+  demoMC: "Minecraft Demó"
+  demoSteam: "Steam Demó"
+  login: Bejelentkezés
+
+footer:
+  copyright: "Copyright &copy; 2019-{{ .year }} Azuriom - Minden jog fenntartva. Készült &nbsp;{{ .love }} Azuriom által."
+  partner: "Partnereink"
+  links: "Linkek"
+
+home:
+  header:
+    title: "Fejlessze játékszerverét egy teljes webes megoldással."
+    subtitle: "Azuriom teljesen **Ingynes** és **Nyil forráskódú** web megoldás játékszervereknek. Élvezd a tucatnyi kiterjesztés a végtelen lehetőségekért."
+
+  learn: "Tudjon meg többet"
+
+  complete:
+    title: "Egy kattintással telepítheti a bővítményeket. Végtelen lehetőségek"
+    description1: "Több tucatnyi bővítmény telepíthető közvetlenül az adminisztrátori műszerfalról. Pénzesítse szerverét a boltunkkal, építsen közösséget a fórumainkkal, vagy dobja fel oldalát a sok gyönyörű témánk egyikével!"
+    description2: "Szeretnél többet? Semmi probléma, köszöntehő [Laravelnek](https://laravel.com) hogy létrehozta a pluginokat és témákat."
+
+  extensions:
+    shop: "Pénzesítsd a szerveredet, és adj el tárgyakat a játékosoknak több mint 15 fizetési átjáróval."
+    vote: "Bátorítsd a játékosokat, hogy szavazzanak a szerveredre automatikus jutalmakkal, hogy növeld a közösségedet."
+    forum: "Építsen közösséget a játékosok bevonásával egy funkciógazdag fórummal."
+    more: "Több tucatnyi más kiterjesztés van a piacon. Biztosan megtalálja, amire szüksége van."
+    themes: "Senki sem akar egy unalmasan megtervezett weboldalt. Válasszon egyet a számos témánk közül, hogy webhelye kitűnjön."
+
+  games:
+    title: "Egy projekt, Sok játék"
+    description1: "Hozzon létre egy weboldalt a SkyBlock szerveréhez a Minecraftban. Van egy DarkRP-d a Garry's Modon? Persze, Azuriom ezt is meg tudja csinálni, méghozzá Steam bejelentkezéssel. Inkább a Los Santost részesíted előnyben? Nem probléma, az Azuriom támogatja a FiveM-et is!"
+    description2: "Még ha a játékod nem is támogatott, akkor is hozzáadhatod a támogatást egy bővítménnyel. Erre tökéletes példa a játék [Flyff](https://universe.flyff.com)."
+
+  community:
+    title: "A közösség által épített. A közösségért"
+    description1: "Az Azuriom egy nyílt forráskódú projekt. Nem kell aggódnia a drága bolti díjak vagy a rossz tárhely miatt. Ott hosztolod a webhelyedet, ahol akarod, és még testreszabhatod is, ahogyan szükséges."
+    description2: "Segítségre van szüksége? Semmi gond, több ezer tagból álló aktív közösségünk van a [Discordon](/discord). És Azuriom nyilt forrákódú, szócal bárki tudja fejleszteni a projektet [Githubon](https://github.com/Azuriom/Azuriom)."
+
+  trusted:
+    title: "Több mint ezer szerver bízik benne. A világ minden táján szeretik"
+    description1: "A Svájcban kifejlesztett Azuriomban világszerte több mint ezer szerver bízik, és a következő nyelvekre fordították le: A világ minden táján. [Több mint 15 nyelvre](https://translate.azuriom.com)."
+    description2: "Készült [Laravel-lel](https://laravel.com/), a legnépszerűbb PHP framework, így egy biztonságos és megbízható webhelyet élvezhet. Megérdemled!"
+
+download:
+  title: "Azuriom Letöltése"
+  docs: "Készen állsz? Super, nézd meg a [dokumentációt]({{ .docs }}) a zökkenőmentes telepítésért."
+  community: 'Csatlakoz a közöségünkhöz [Discordon]({{ .discord }})hogy megkapd a legujabb híreket és támogatást.'
+  support: "Azuriom által felhatalmazva? Hogy segítsen nekünk az Azuriom további fejlesztésében, többféleképpen is segíthet nekünk [támogas minket]({{ .support }})."
+  cloud: "Nem szeretnéd telepíteni az azuriomot? Probáld ki {{ .cloud }} ingyen is könnyedén hostolj egy weboldalt."
+
+azlink:
+  description1: "A legjobb módja annak, hogy játékszerverét az Azuriom weboldalához csatlakoztassa."
+  description2: "Élvezze az egyszerűséget és a biztonságot a számos támogatott platform egyikén."
+
+support:
+  title: "Támogass minket"
+  subtitle1: "Te is tehetsz valamit."
+  subtitle2: "Hozzájáruljon az Azuriom növekedéséhez."
+  description1: "Őszintén élvezzük az Azuriom fejlesztését, és reméljük, hogy Ön is élvezni fogja a használatát. Ha igen, és azt szeretnéd, hogy a projekt tovább fejlődjön, többféleképpen is támogathatsz minket."
+
+  sponsor:
+    title: "Szponzor"
+    info: "Bár az Azuriom ingyenes, a fenntartása nem az. A szerver hosting, a domain nevek és egyéb szolgáltatások pénzbe kerülnek. Támogathatod a projektet a GitHubon, hogy **egyedi előnyökhöz** juss."
+    button: "Sponsor Githubon"
+
+  star:
+    title: "Csilag a projekt"
+    info: "Nem tudsz vagy nem akarsz minket szponzorálni? Semmi gond, akkor is támogathatsz minket, ha a GitHubon jelölöd meg a projektet. Ez **teljesen ingyenes** és csak néhány másodpercet vesz igénybe, de sokat segít nekünk."
+    button: "Csilag a projekt"
+
+docs:
+  index: "Kezdőoldal"
+
+errors:
+  title: "Hiba"
+  notFound:
+    title: "Nem található"
+    info: "A keresett oldal nem található."

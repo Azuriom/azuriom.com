@@ -125,7 +125,7 @@ Les thèmes peuvent inclure une configuration, pour permettre aux utilisateurs d
 La vue pour la configuration est créée dans un fichier Blade nommé `config.blade.php`, situé dans le dossier `config` du thème,
 et contient les champs nécessaires à la configuration du thème.
 ```html
-<form action="{{ route('admin.themes.update', $theme) }}" method="POST">
+<form action="{{ route('admin.themes.config', $theme) }}" method="POST">
     @csrf
 
     <div class="form-group">
