@@ -7,6 +7,22 @@ enableRobotsTXT: true
 disableKinds: [taxonomy, term, RSS, sitemap]
 pygmentsUseClasses: true
 
+mediaTypes:
+  text/plain:
+    suffixes: [txt]
+
+outputFormats:
+  Security: # security.txt
+    mediaType: text/plain
+    baseName: security
+    path: .well-known
+    isPlainText: true
+    notAlternative: true
+    root: true
+
+outputs:
+  home: [HTML, Security]
+
 markup:
   goldmark:
     parser:
