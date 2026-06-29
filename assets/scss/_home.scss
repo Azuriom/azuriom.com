@@ -49,6 +49,10 @@
   .img-dark {
     display: block;
   }
+
+  .invert-dark {
+    filter: invert(1);
+  }
 }
 
 .home-hero .btn {

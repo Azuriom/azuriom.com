@@ -42,12 +42,19 @@ list:
     img: /assets/games/hytale.svg
   - name: Garry's Mod
     img: /assets/games/gmod.svg
-  - name: FiveM
-    img: /assets/games/fivem.svg
   - name: Rust
     img: /assets/games/rust.svg
+    small: true
+  - name: FiveM
+    img: /assets/games/fivem.svg
+    small: true
+  - name: DayZ
+    img: /assets/games/dayz.svg
+    small: true
+    invert_dark: true
   - name: "ARK: Survival Evolved"
     img: /assets/games/ark.svg
+    small: true
   - name: 7 Days to Die
     img: /assets/games/7dtd.svg
     small: true

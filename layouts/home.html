@@ -33,7 +33,7 @@
                             </a>
                         </li>
                         <li class="list-inline-item me-4">
-                            <a href="https://azuriom.com/discord" target="_blank" rel="noopener noreferrer" title="Discord">
+                            <a href="{{ .Param "discord" }}" target="_blank" rel="noopener noreferrer" title="Discord">
                                 {{ partial "icon.html" "discord" }}
                             </a>
                         </li>
@@ -200,7 +200,8 @@
                     {{ range .Site.Data.games.list }}
                     <div class="{{ if eq .small true }} col-3 {{ else }} col-4 {{ end }} text-center py-md-3">
                         <img src="{{ absURL .img }}" alt="{{ .name }}" title="{{ .name }}" data-bs-toggle="tooltip"
-                             class="rounded-1 img-fluid" {{ if eq .small true }} width="65" {{ else }} width="90" {{ end }}>
+                             class="rounded-1 img-fluid {{- if eq .invert_dark true }} invert-dark {{- end }}"
+                             {{ if eq .small true }} width="65" {{- else -}} width="90" {{- end }}>
                     </div>
                     {{ end }}
                 </div>
