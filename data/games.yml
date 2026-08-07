@@ -38,10 +38,13 @@ azlink:
 list:
   - name: Minecraft
     img: /assets/games/minecraft.svg
-  - name: Hytale
-    img: /assets/games/hytale.svg
+    small: true
   - name: Garry's Mod
     img: /assets/games/gmod.svg
+    small: true
+  - name: Hytale
+    img: /assets/games/hytale.svg
+    small: true
   - name: Rust
     img: /assets/games/rust.svg
     small: true
@@ -67,3 +70,7 @@ list:
   - name: "Unturned"
     img: /assets/games/unturned.svg
     small: true
+  - name: "Project Zomboid"
+    img: /assets/games/project-zomboid.svg
+    small: true
+    invert_dark: true
