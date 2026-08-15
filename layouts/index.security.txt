@@ -1,4 +1,4 @@
-{{- $expiry := now.AddDate 1 0 0 | time.Format "2006-01-02T15:04:05.000Z" -}}
+{{- $expiry := now.AddDate 1 0 0 | time.Format "2006-01-02T15:04:05Z07:00" -}}
 Canonical: https://azuriom.com/.well-known/security.txt
 Contact: mailto:security@azuriom.com
 Expires: {{ $expiry }}

@@ -1,13 +1,13 @@
+{{- with hugo.Data.donors }}
 <ul>
-  {{- range $.Site.Data.donors }}
-    <li>
-      {{ if .url }}
-      <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">
-        {{ .name }}
-      </a>
-      {{ else }}
+  {{- range . }}
+  <li>
+    {{- if .url -}}
+      <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a>
+    {{- else -}}
       {{ .name }}
-      {{ end }}
-    </li>
-  {{ end }}
+    {{- end -}}
+  </li>
+  {{- end }}
 </ul>
+{{- end }}

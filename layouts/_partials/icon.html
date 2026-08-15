@@ -1,1 +1,1 @@
-{{ printf "node_modules/bootstrap-icons/icons/%s.svg" . | readFile | safeHTML  }}
+{{- printf "node_modules/bootstrap-icons/icons/%s.svg" . | os.ReadFile | safeHTML -}}

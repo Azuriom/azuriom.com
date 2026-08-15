@@ -7,7 +7,7 @@
 
         <p class="lead mb-4">{{ i18n "errors.notFound.info" }}</p>
 
-        <a href="{{ .Site.BaseURL | absLangURL }}" class="btn btn-lg btn-primary">
+        <a href="{{ absLangURL "" }}" class="btn btn-lg btn-primary">
             {{ partial "icon.html" "house" }} {{ .Site.Home.Title }}
         </a>
     </div>

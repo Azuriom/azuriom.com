@@ -1,0 +1,13 @@
+{{- with hugo.Data.games.list }}
+<ul>
+  {{- range . }}
+  <li>
+    {{- if .url -}}
+    <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a>
+    {{- else -}}
+    {{ .name }}
+    {{- end -}}
+  </li>
+  {{- end }}
+</ul>
+{{- end }}

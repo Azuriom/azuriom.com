@@ -12,24 +12,13 @@ document.querySelectorAll<HTMLElement>('.locale-selector [data-locale]')
         return
       }
 
-      Cookies.set('nf_country', locale, {
+      Cookies.set('nf_lang', locale, {
         expires: 30,
         domain: window.location.host,
         sameSite: 'Lax',
         secure: true,
       })
     })
-  })
-
-document.querySelectorAll('.azuriom-last-version')
-  .forEach((element) => {
-    fetch('https://api.github.com/repos/Azuriom/Azuriom/releases/latest')
-      .then((response) => response.json())
-      .then((json) => {
-        const version = json['tag_name'].replace('v', '')
-
-        element.innerHTML = `Azuriom v${version}`
-      })
   })
 
 const storedTheme = Cookies.get('theme')

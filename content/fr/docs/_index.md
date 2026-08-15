@@ -28,25 +28,10 @@ Si vous avez besoin d'aide, vous pouvez rejoindre le [serveur Discord d'Azuriom]
 ## Jeux supportés
 
 Azuriom supporte nativement un grand nombre de jeux :
-* Minecraft (Java Edition & Bedrock Edition)
-* Garry's Mod
-* ARK: Survival Evolved
-* Rust
-* FiveM
-* Unturned
-* Counter-Strike 2
-* 7 Days to Die
-* Team Fortress 2
+{{< games >}}
 
 De nouveaux jeux peuvent être ajoutés avec des extensions,
 comme pour le jeu [Flyff](https://github.com/AzuriomCommunity/Game-Flyff).
-
-## Credits
-
-Azuriom a été créé par [MrMicky](https://mrmicky.fr/) et [SkyWarZzeur](https://twitter.com/SkyWarZzeur) en utilisant
-le framework PHP [Laravel](https://laravel.com/).
-Un grand merci également à [Jav](https://www.linkedin.com/in/jean-alexandre-valentin-531236153/) pour ses précieuses contributions, à notre partenaire [NiHost](https://www.ni-host.com/?utm_source=home&utm_medium=links&utm_campaign=AzuriomCom)
-pour leur confiance, et à tous les [contributeurs d'Azuriom](https://github.com/Azuriom/Azuriom/graphs/contributors) pour leur aide.
 
 ## Sponsors
 

@@ -7,7 +7,7 @@
         <p class="lead">{{ i18n "azlink.description2" }}</p>
     </div>
 
-    {{ range .Site.Data.games.azlink }}
+    {{ range hugo.Data.games.azlink }}
     <div class="col-md-5">
         <a href="{{ .url }}" class="btn btn-secondary d-block rounded-1">
             <div class="d-flex align-items-center text-start">

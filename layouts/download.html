@@ -40,7 +40,14 @@
         </div>
 
         <a href="https://github.com/Azuriom/AzuriomInstaller/releases/latest/download/AzuriomInstaller.zip" target="_blank" class="btn btn-lg btn-primary">
-            {{ partial "icon.html" "download" }} <span class="azuriom-last-version"><span class="spinner-border spinner-border-sm" role="status"></span></span>
+            {{ partial "icon.html" "download" }}
+            {{ with try (resources.GetRemote "https://api.github.com/repos/Azuriom/Azuriom/releases/latest") }}
+                {{ with .Err }}
+                    {{ warnf "%s" . }}
+                {{ else with .Value }}
+                    Azuriom {{ (unmarshal .Content).tag_name }}
+                {{ end }}
+            {{ end }}
         </a>
     </div>
 </div>

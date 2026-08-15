@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary-gradient">
+<nav class="navbar navbar-expand-lg bg-primary-gradient" data-bs-theme="dark">
     <div class="container">
         <a class="navbar-brand" href="{{ absLangURL "" }}">
             <img src="{{ absURL "assets/svg/logo-white.svg" }}" height="45" width="45" alt="Azuriom">
@@ -11,20 +11,27 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link {{ if .IsHome }}active{{ end }}" href="{{ absLangURL "/" }}">
-                        {{ .Site.Home.Title }}
+                    {{ $active := .IsHome }}
+                    <a class="nav-link{{ if $active }} active{{ end }}" href="{{ absLangURL "" }}"{{ if $active }} aria-current="page"{{ end }}>
+                    {{ .Site.Home.Title }}
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link {{ if eq .Title (i18n "nav.download") }}active{{ end }}" href="{{ absLangURL "download" }}">
-                        {{ i18n "nav.download" }}
+                    {{ $active := eq .Layout "download" }}
+                    <a class="nav-link{{ if $active }} active{{ end }}" href="{{ absLangURL "download" }}"{{ if $active }} aria-current="page"{{ end }}>
+                    {{ i18n "nav.download" }}
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link {{ if eq .Type "docs" }}active{{ end }}" href="{{ absLangURL "docs" }}">
-                        {{ i18n "nav.docs" }}
+                    {{ $docsURL := absURL "en/docs" }}
+                    {{ if in (slice "en" "fr") .Site.Language.Lang }}
+                        {{ $docsURL = absLangURL "docs" }}
+                    {{ end }}
+                    {{ $active := eq .Type "docs" }}
+                    <a class="nav-link{{ if $active }} active{{ end }}" href="{{ $docsURL }}"{{ if $active }} aria-current="page"{{ end }}>
+                    {{ i18n "nav.docs" }}
                     </a>
                 </li>
 
@@ -70,8 +77,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="https://twitter.com/{{ .Param "twitter" }}" target="_blank" rel="noopener noreferrer" title="Twitter" class="nav-link pe-3">
-                        {{ partial "icon.html" "twitter" }}
+                    <a href="{{ .Param "twitter" }}" target="_blank" rel="noopener noreferrer" title="X (Twitter)" class="nav-link pe-3">
+                        {{ partial "icon.html" "twitter-x" }}
                     </a>
                 </li>
 
@@ -88,7 +95,7 @@
                         </span>
                     </a>
 
-                    <div class="dropdown-menu dropdown-menu-end locale-selector" role="menu" aria-labelledby="langDropdown">
+                    <div class="dropdown-menu dropdown-menu-end" role="menu" aria-labelledby="themeDropdown">
                         <a class="dropdown-item" data-theme-value="light" href="#">
                             {{ partial "icon.html" "sun" }} {{ i18n "theme.light" }}
                         </a>
@@ -103,16 +110,16 @@
 
                 <li class="nav-item dropdown">
                     <a id="langDropdown" class="nav-link dropdown-toggle px-3" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {{ $flag := printf "assets/svg/country/%s.svg" (substr (.Param "code" | lower) 3) -}}
-                        <img src="{{ $flag | absURL }}" class="svg country" alt="{{ .Site.Language.LanguageName }}">
+                        {{ $flag := printf "assets/svg/country/%s.svg" (substr (.Language.Locale | lower) 3) }}
+                        <img src="{{ $flag | absURL }}" class="svg country" alt="{{ .Site.Language.Label }}">
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-end locale-selector" role="menu" aria-labelledby="langDropdown">
                         {{ range .AllTranslations }}
-                        <a class="dropdown-item" data-locale="{{ .Language.Lang }}" href="{{ partial "permalink.html" . }}">
-                            {{ $flag := printf "assets/svg/country/%s.svg" (substr (.Param "code" | lower) 3) -}}
-                            <img src="{{ $flag | absURL }}" class="svg" alt="{{ .Language.LanguageName }}">
-                            {{ .Language.LanguageName }}
+                        <a class="dropdown-item" data-locale="{{ .Language.Name }}" href="{{ partial "permalink.html" . }}">
+                            {{ $flag := printf "assets/svg/country/%s.svg" (substr (.Language.Locale | lower) 3) }}
+                            <img src="{{ $flag | absURL }}" class="svg" alt="{{ .Language.Label }}">
+                            {{ .Language.Label }}
                         </a>
                         {{ end }}
                     </div>

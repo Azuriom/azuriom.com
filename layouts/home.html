@@ -38,8 +38,8 @@
                             </a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="https://twitter.com/{{ .Param "twitter" }}" target="_blank" rel="noopener noreferrer" title="Twitter">
-                                {{ partial "icon.html" "twitter" }}
+                            <a href="{{ .Param "twitter" }}" target="_blank" rel="noopener noreferrer" title="X (Twitter)">
+                                {{ partial "icon.html" "twitter-x" }}
                             </a>
                         </li>
                     </ul>
@@ -143,7 +143,7 @@
     <div class="container">
         <div class="row gy-4 justify-content-between">
             <div class="col-md-5 align-self-center">
-                <img src="{{ absURL "assets/img/theme.png" }}" alt="Theme" class="img-fluid image-3d rounded-3" width="700" height="474">
+                <img src="{{ absURL "assets/img/theme.png" }}" alt="Theme" class="img-fluid image-3d rounded-3" width="700" height="474" loading="lazy">
             </div>
 
             <div class="col-md-6">
@@ -197,11 +197,11 @@
 
             <div class="col-md-5 align-self-center">
                 <div class="row gy-4 justify-content-around">
-                    {{ range .Site.Data.games.list }}
-                    <div class="{{ if eq .small true }} col-3 {{ else }} col-4 {{ end }} text-center py-md-3">
+                    {{ range hugo.Data.games.list }}
+                    <div class="{{ if .small }} col-3 {{ else }} col-4 {{ end }} text-center py-md-3">
                         <img src="{{ absURL .img }}" alt="{{ .name }}" title="{{ .name }}" data-bs-toggle="tooltip"
-                             class="rounded-1 img-fluid {{- if eq .invert_dark true }} invert-dark {{- end }}"
-                             {{ if eq .small true }} width="65" {{- else -}} width="90" {{- end }}>
+                             class="rounded-1 img-fluid {{- if .invert_dark }} invert-dark {{- end }}"
+                             {{ if .small }} width="65" {{- else -}} width="90" {{- end }}>
                     </div>
                     {{ end }}
                 </div>
@@ -215,10 +215,6 @@
         <path d="M439.407,12.801c-80.921,15.363 -167.082,18.455 -248.277,2.849c-80.448,-15.463 -119.602,-14.391 -191.13,-14.391l0,68.741l1000,0l0,-68.741c-93.992,-8.581 -127.476,35.688 -278.561,19.139c-151.084,-16.548 -201.114,-22.958 -282.035,-7.597l0.003,0Z"></path>
     </svg>
 </div>
-
-<svg viewBox="0 0 1000 70" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="section-waves">
-    <path d="M439.407,12.801c-80.921,15.363 -167.082,18.455 -248.277,2.849c-80.448,-15.463 -119.602,-14.391 -191.13,-14.391l0,68.741l1000,0l0,-68.741c-93.992,-8.581 -127.476,35.688 -278.561,19.139c-151.084,-16.548 -201.114,-22.958 -282.035,-7.597l0.003,0Z"></path>
-</svg>
 
 <section id="trusted" class="content bg-body-secondary">
     <div class="container">

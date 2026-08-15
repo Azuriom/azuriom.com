@@ -6,16 +6,17 @@
                 {{ $currentPage := . }}
                 <li class="nav-item">
                     {{ with .CurrentSection }}
-                    <a class="nav-link {{ if eq $currentPage . }}active{{ end }}" href="{{ partial "permalink.html" . }}">
-                        {{ i18n "docs.index" }}
+                    {{ $active := eq $currentPage . }}
+                    <a class="nav-link{{ if $active }} active{{ end }}" href="{{ partial "permalink.html" . }}"{{ if $active }} aria-current="page"{{ end }}>
+                    {{ i18n "docs.index" }}
                     </a>
                     {{ end }}
                 </li>
-                {{ $title := .Title }}
                 {{ range .CurrentSection.Pages }}
                 <li class="nav-item">
-                    <a class="nav-link {{ if eq $currentPage . }}active{{ end }}" href="{{ partial "permalink.html" . }}">
-                        {{ .Title }}
+                    {{ $active := eq $currentPage . }}
+                    <a class="nav-link{{ if $active }} active{{ end }}" href="{{ partial "permalink.html" . }}"{{ if $active }} aria-current="page"{{ end }}>
+                    {{ .Title }}
                     </a>
                 </li>
                 {{ end }}
