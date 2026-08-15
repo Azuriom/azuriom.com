@@ -1,5 +1,7 @@
 baseURL: https://azuriom.com/
+defaultContentLanguage: en
 defaultContentLanguageInSubdir: true
+disableDefaultLanguageRedirect: true
 title: Azuriom
 
 enableRobotsTXT: true
