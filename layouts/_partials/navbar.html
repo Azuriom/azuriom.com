@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-primary-gradient" data-bs-theme="dark">
     <div class="container">
-        <a class="navbar-brand" href="{{ absLangURL "" }}">
+        <a class="navbar-brand" href="{{ absLangURL "" | strings.TrimSuffix "/" }}">
             <img src="{{ absURL "assets/svg/logo-white.svg" }}" height="45" width="45" alt="Azuriom">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,7 +12,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     {{ $active := .IsHome }}
-                    <a class="nav-link{{ if $active }} active{{ end }}" href="{{ absLangURL "" }}"{{ if $active }} aria-current="page"{{ end }}>
+                    <a class="nav-link{{ if $active }} active{{ end }}" href="{{ absLangURL "" | strings.TrimSuffix "/" }}"{{ if $active }} aria-current="page"{{ end }}>
                     {{ .Site.Home.Title }}
                     </a>
                 </li>

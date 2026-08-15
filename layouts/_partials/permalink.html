@@ -1,1 +1,3 @@
-{{- replace .Permalink ".html" "" -}}
+{{- $url := strings.TrimSuffix "index.html" .Permalink -}}
+{{- $url = strings.TrimSuffix ".html" $url -}}
+{{- strings.TrimSuffix "/" $url -}}
